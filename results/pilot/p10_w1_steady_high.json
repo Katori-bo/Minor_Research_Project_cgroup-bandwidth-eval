@@ -1,0 +1,82 @@
+{
+  "run_id": "p10_w1_steady_high",
+  "trial": 1,
+  "seed": 42,
+  "timestamp_start": 1789997941.0384295,
+  "timestamp_end": 1789997961.037722,
+  "config": {
+    "period_us": 10000,
+    "quota_us": 5000,
+    "is_unlimited": false,
+    "workers": 1,
+    "pattern": "steady",
+    "rate": 80.0,
+    "burst_low": 0.0,
+    "burst_high": 0.0,
+    "burst_period_sec": 10.0,
+    "warmup_sec": 5,
+    "duration_sec": 20
+  },
+  "cgroup_metrics": {
+    "delta_usage_usec": 7498689,
+    "delta_nr_periods": 2000,
+    "delta_nr_throttled": 59,
+    "delta_throttled_usec": 216093,
+    "throttling_fraction": 0.0295,
+    "cpu_usage_cores": 0.3749477087696458
+  },
+  "loadgen_metrics": {
+    "target_url": "http://127.0.0.1:8080/work?iterations=40000",
+    "pattern": "steady",
+    "duration_sec": 19.987703035,
+    "target_rate": 80,
+    "burst_low_rate": 30,
+    "burst_high_rate": 70,
+    "burst_period_sec": 10,
+    "total_scheduled": 1600,
+    "total_dispatched": 1600,
+    "total_completed": 1600,
+    "total_success": 1600,
+    "total_503": 0,
+    "total_errors": 0,
+    "client_dropped": 0,
+    "missed_arrivals": 0,
+    "achieved_throughput_rps": 80.04921812167598,
+    "dispatch_lag_summary": {
+      "count": 1600,
+      "mean_ms": 0.561137593125,
+      "p50_ms": 0.557208,
+      "p90_ms": 0.97074,
+      "p95_ms": 1.012312,
+      "p99_ms": 1.073933,
+      "p999_ms": 1.36198,
+      "max_ms": 1.739807
+    },
+    "service_latency_summary": {
+      "count": 1600,
+      "mean_ms": 4.772791116875,
+      "p50_ms": 4.885768,
+      "p90_ms": 5.148552,
+      "p95_ms": 5.209307,
+      "p99_ms": 5.497928,
+      "p999_ms": 8.018062,
+      "max_ms": 8.263424
+    },
+    "end_to_end_latency_summary": {
+      "count": 1600,
+      "mean_ms": 5.33392871,
+      "p50_ms": 5.358481,
+      "p90_ms": 5.967848,
+      "p95_ms": 6.081547,
+      "p99_ms": 6.342716,
+      "p999_ms": 8.591683,
+      "max_ms": 9.625404
+    }
+  },
+  "environment_metrics": {
+    "mean_temp_c": 0.0,
+    "max_temp_c": 0.0,
+    "mean_util_core01_pct": 0.0,
+    "mean_util_core24_pct": 0.0
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": 2,
+  "run_id": "unlimited",
+  "phase": "pilot",
+  "timestamp_start": 1789999909.4964793,
+  "timestamp_end": 1789999927.0794168,
+  "config": {
+    "iterations": 40000,
+    "rate": 40,
+    "period_us": 0,
+    "quota_us": 0,
+    "workers": 1,
+    "pattern": "steady",
+    "burst_low": 20.0,
+    "burst_high": 60.0,
+    "duration_sec": 10,
+    "warmup_sec": 2
+  },
+  "cgroup_initial": {
+    "usage_usec": 351801,
+    "user_usec": 322958,
+    "system_usec": 28842,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 0,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "cgroup_final": {
+    "usage_usec": 1915464,
+    "user_usec": 1834293,
+    "system_usec": 81170,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 0,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "cgroup_metrics": {
+    "delta": {
+      "usage_usec": 1563663,
+      "user_usec": 1511335,
+      "system_usec": 52328,
+      "nice_usec": 0,
+      "core_sched.force_idle_usec": 0,
+      "nr_periods": 0,
+      "nr_throttled": 0,
+      "throttled_usec": 0,
+      "nr_bursts": 0,
+      "burst_usec": 0
+    },
+    "elapsed_sec": 10.010038450003776,
+    "cpu_usage_cores": 0.15620948988456784,
+    "throttling_fraction": null
+  },
+  "loadgen_metrics": {
+    "elapsed_including_drain_sec": 10.001207858,
+    "successful_throughput_rps": 39.9951691514979,
+    "target_url": "http://127.0.0.1:18080/work?iterations=40000",
+    "pattern": "steady",
+    "duration_sec": 10,
+    "target_rate": 40,
+    "burst_low_rate": 30,
+    "burst_high_rate": 70,
+    "burst_period_sec": 10,
+    "total_scheduled": 400,
+    "total_dispatched": 400,
+    "total_completed": 400,
+    "total_success": 400,
+    "total_503": 0,
+    "total_errors": 0,
+    "client_dropped": 0,
+    "missed_arrivals": 0,
+    "achieved_throughput_rps": 39.9951691514979,
+    "dispatch_lag_summary": {
+      "count": 400,
+      "mean_ms": 0.59632676,
+      "p50_ms": 0.595224,
+      "p90_ms": 0.989859,
+      "p95_ms": 1.064768,
+      "p99_ms": 1.117254,
+      "p999_ms": 2.887161,
+      "max_ms": 2.887161
+    },
+    "service_latency_summary": {
+      "count": 400,
+      "mean_ms": 4.1196153225,
+      "p50_ms": 4.0992,
+      "p90_ms": 4.340622,
+      "p95_ms": 4.426532,
+      "p99_ms": 4.821052,
+      "p999_ms": 6.317044,
+      "max_ms": 6.317044
+    },
+    "end_to_end_latency_summary": {
+      "count": 400,
+      "mean_ms": 4.7159420825,
+      "p50_ms": 4.717461,
+      "p90_ms": 5.172681,
+      "p95_ms": 5.324844,
+      "p99_ms": 5.828248,
+      "p999_ms": 7.333425,
+      "max_ms": 7.333425
+    }
+  },
+  "monitor_samples": 9,
+  "temperatures_before": {
+    "/sys/class/hwmon/hwmon5/temp1_input": 64.375
+  },
+  "quality_flags": []
+}

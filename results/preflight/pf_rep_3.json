@@ -1,0 +1,82 @@
+{
+  "run_id": "pf_repeat_3",
+  "trial": 1,
+  "seed": 42,
+  "timestamp_start": 1789998695.3228014,
+  "timestamp_end": 1789998703.321367,
+  "config": {
+    "period_us": 100000,
+    "quota_us": 50000,
+    "is_unlimited": false,
+    "workers": 1,
+    "pattern": "steady",
+    "rate": 80.0,
+    "burst_low": 30.0,
+    "burst_high": 70.0,
+    "burst_period_sec": 10.0,
+    "warmup_sec": 2,
+    "duration_sec": 8
+  },
+  "cgroup_metrics": {
+    "delta_usage_usec": 2751246,
+    "delta_nr_periods": 80,
+    "delta_nr_throttled": 0,
+    "delta_throttled_usec": 0,
+    "throttling_fraction": 0.0,
+    "cpu_usage_cores": 0.3439674193166663
+  },
+  "loadgen_metrics": {
+    "target_url": "http://127.0.0.1:8080/work?iterations=40000",
+    "pattern": "steady",
+    "duration_sec": 7.987966937,
+    "target_rate": 80,
+    "burst_low_rate": 30,
+    "burst_high_rate": 70,
+    "burst_period_sec": 10,
+    "total_scheduled": 640,
+    "total_dispatched": 640,
+    "total_completed": 640,
+    "total_success": 640,
+    "total_503": 0,
+    "total_errors": 0,
+    "client_dropped": 0,
+    "missed_arrivals": 0,
+    "achieved_throughput_rps": 80.12051189590446,
+    "dispatch_lag_summary": {
+      "count": 640,
+      "mean_ms": 0.55031468125,
+      "p50_ms": 0.53864,
+      "p90_ms": 0.962886,
+      "p95_ms": 1.017112,
+      "p99_ms": 1.080637,
+      "p999_ms": 1.22159,
+      "max_ms": 1.22159
+    },
+    "service_latency_summary": {
+      "count": 640,
+      "mean_ms": 4.4358795390625,
+      "p50_ms": 4.4013,
+      "p90_ms": 5.073009,
+      "p95_ms": 5.18023,
+      "p99_ms": 5.680579,
+      "p999_ms": 6.254815,
+      "max_ms": 6.254815
+    },
+    "end_to_end_latency_summary": {
+      "count": 640,
+      "mean_ms": 4.9861942203125,
+      "p50_ms": 4.924915,
+      "p90_ms": 5.806854,
+      "p95_ms": 5.938698,
+      "p99_ms": 6.229017,
+      "p999_ms": 7.209601,
+      "max_ms": 7.209601
+    }
+  },
+  "environment_metrics": {
+    "mean_temp_c": 44.29,
+    "max_temp_c": 46.0,
+    "mean_util_core01_pct": 9.96,
+    "mean_util_core24_pct": 22.93
+  }
+}

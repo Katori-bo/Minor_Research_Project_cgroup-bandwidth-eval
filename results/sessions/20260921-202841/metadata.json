@@ -1,0 +1,81 @@
+{
+  "created": "2026-09-21T20:28:41.880343+05:30",
+  "diagnostic": false,
+  "topology": {
+    "0": {
+      "core": "0",
+      "package": "0",
+      "siblings": "0-1"
+    },
+    "1": {
+      "core": "0",
+      "package": "0",
+      "siblings": "0-1"
+    },
+    "2": {
+      "core": "1",
+      "package": "0",
+      "siblings": "2-3"
+    },
+    "3": {
+      "core": "1",
+      "package": "0",
+      "siblings": "2-3"
+    },
+    "4": {
+      "core": "2",
+      "package": "0",
+      "siblings": "4-5"
+    },
+    "5": {
+      "core": "2",
+      "package": "0",
+      "siblings": "4-5"
+    }
+  },
+  "server_cpus": "2,4",
+  "client_cpus": "0,1",
+  "kernel": "Linux archlinux 7.2.6-arch2-1 #1 SMP PREEMPT_DYNAMIC Mon, 14 Sep 2026 22:41:30 +0000 x86_64 GNU/Linux",
+  "docker": "Client:\n Version:           29.8.1\n API version:       1.56\n Go version:        go1.27.1-X:nodwarf5\n Git commit:        4a63305d74\n Built:             Fri Sep 18 15:27:28 2026\n OS/Arch:           linux/amd64\n Context:           default\n\nServer:\n Engine:\n  Version:          29.8.1\n  API version:      1.56 (minimum version 1.40)\n  Go version:       go1.27.1-X:nodwarf5\n  Git commit:       464cd50c3d\n  Built:            Fri Sep 18 15:27:28 2026\n  OS/Arch:          linux/amd64\n  Experimental:     false\n containerd:\n  Version:          v2.4.0\n  GitCommit:        a7fe631d96c08fb14cf8eff0afdc280e99c30a94.m\n runc:\n  Version:          1.5.1\n  GitCommit:        \n docker-init:\n  Version:          0.19.0\n  GitCommit:        de40ad0",
+  "docker_info": "Client:\n Version:    29.8.1\n Context:    default\n Debug Mode: false\n\nServer:\n Containers: 2\n  Running: 0\n  Paused: 0\n  Stopped: 2\n Images: 22\n Server Version: 29.8.1\n Storage Driver: overlayfs\n  driver-type: io.containerd.snapshotter.v1\n Logging Driver: json-file\n Cgroup Driver: systemd\n Cgroup Version: 2\n Plugins:\n  Volume: local\n  Network: bridge host ipvlan macvlan null overlay\n  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog\n CDI spec directories:\n  /etc/cdi\n  /var/run/cdi\n Swarm: inactive\n Runtimes: io.containerd.runc.v2 runc\n Default Runtime: runc\n Init Binary: docker-init\n containerd version: a7fe631d96c08fb14cf8eff0afdc280e99c30a94.m\n runc version: \n init version: de40ad0\n Security Options:\n  seccomp\n   Profile: builtin\n  cgroupns\n Kernel Version: 7.2.6-arch2-1\n Operating System: Arch Linux\n OSType: linux\n Architecture: x86_64\n CPUs: 12\n Total Memory: 14.97GiB\n Name: archlinux\n ID: 011f0261-03d4-484c-b184-c108c5a99443\n Docker Root Dir: /var/lib/docker\n Debug Mode: false\n Experimental: false\n Insecure Registries:\n  ::1/128\n  127.0.0.0/8\n Live Restore Enabled: false\n Firewall Backend: iptables\n  EnableUserlandProxy: true\n  UserlandProxyPath: /usr/bin/docker-proxy",
+  "image_id": "sha256:2bea99dc6ce2ff293274297337607230d6d02e4d1bcf643635a58faf0f315706",
+  "source_sha256": {
+    "service/source/main_test.go": "194737a0036616c495df12cbb547cba2be21ccfb41ee82a2f0a0fe2dac766751",
+    "service/source/main.go": "e21d2eaa353cd9adee904fc22cd1f07ae3e1148a4f3f10ba6dd7d0019d9c7431",
+    "tools/loadgen/main_test.go": "db464121407be78b038a0f103f7a5b56ba5f33fd46188b3893ce0d933106f65c",
+    "tools/loadgen/main.go": "8e8c327b0439b6e18050b8d96d05c35c07c1c90552a9b3d4a893269980a2ff94",
+    "scripts/experiment.py": "fc6276152d65e3293f57787910c2be16511a371ad2a2c15e1de41de505f38037",
+    "scripts/monitor_host.py": "afa691ad69c7afc480811f63cadac92f5e95570bad9011ec72523942e3f0d5d3",
+    "scripts/verify_v2.py": "1904ea41bde15444b7c54bf5a566777cb8edadac6a1e7daf794434df2f91a7cd",
+    "scripts/environment_controls.py": "a0e265b0212f4103adf407ceba965348995f7770e9dca55cad5bc9b9e11c1cd8",
+    "scripts/calibrate.sh": "5c1106fd187b91050cd0044aad35a41658e998acfa83eb16dc4e8ea4b1228222",
+    "scripts/validate_preflight.sh": "0d8eae268e1eb012d6e2ef16aec254ac1608f406c55445456441e16b0c0e1baf",
+    "scripts/check_environment.sh": "003f6b3f74f5735b30f7a8c7864797985e71f13ae50b78ad0522a79b64ff49f9",
+    "scripts/run_single.sh": "fe5fd70bf1a305be2c62779a2990270f291235d48513185620f01b287523888a",
+    "scripts/run_matrix.sh": "7c43b6e926b6304488e2a35ee0d1744dd00f9a4409d78dfc1bb233075fad5823",
+    "scripts/build_v2.sh": "568e8c14494f55b11ebe85feb676aa27492058f5b57128adb35ed16d377a9522",
+    "scripts/start_fresh.sh": "c426c119bd40e3e7e04549523fd36448b85ad4218d02c3bf0f13337a5983867a",
+    "scripts/run_pilot.sh": "73a8bbf638403e43462384e23c8eae1ee597db04e4fcc901a9190cab48909d4e",
+    "analysis/analyze_v2.py": "1eae2daa5743af9b4f6bb83efd04edd78a08b199524d473b85c3d0ebedf4c216",
+    "service/Dockerfile": "4e70b0c9f68b2a434b9b9d457b8aaae9e1c3a8d49d1a2ee586ee40fa5e08030d",
+    "tools/loadgen/bin/loadgen": "c41dcd8685bf1e09800c7da5b3ab9497bceffa37e4e8ac0ffb7b36b4bab1e599"
+  },
+  "temperatures": {
+    "k10temp:Tctl": 43.625
+  },
+  "governors": {
+    "/sys/devices/system/cpu/cpufreq/policy11/scaling_governor": "powersave",
+    "/sys/devices/system/cpu/cpufreq/policy8/scaling_governor": "powersave",
+    "/sys/devices/system/cpu/cpufreq/policy6/scaling_governor": "powersave",
+    "/sys/devices/system/cpu/cpufreq/policy4/scaling_governor": "powersave",
+    "/sys/devices/system/cpu/cpufreq/policy2/scaling_governor": "powersave",
+    "/sys/devices/system/cpu/cpufreq/policy0/scaling_governor": "powersave",
+    "/sys/devices/system/cpu/cpufreq/policy9/scaling_governor": "powersave",
+    "/sys/devices/system/cpu/cpufreq/policy10/scaling_governor": "powersave",
+    "/sys/devices/system/cpu/cpufreq/policy7/scaling_governor": "powersave",
+    "/sys/devices/system/cpu/cpufreq/policy5/scaling_governor": "powersave",
+    "/sys/devices/system/cpu/cpufreq/policy3/scaling_governor": "powersave",
+    "/sys/devices/system/cpu/cpufreq/policy1/scaling_governor": "powersave"
+  },
+  "processes": "PID COMMAND         %CPU\n      1 systemd          0.0\n      2 kthreadd         0.0\n      3 pool_workqueue_  0.0\n      4 kworker/R-rcu_g  0.0\n      5 kworker/R-sync_  0.0\n      6 kworker/R-kvfre  0.0\n      7 kworker/R-slub_  0.0\n      8 kworker/R-netns  0.0\n     11 kworker/0:0H-kb  0.0\n     14 kworker/R-mm_pe  0.0\n     15 ksoftirqd/0      0.0\n     16 rcu_preempt      0.0\n     17 rcub/0           0.0\n     18 rcu_exp_par_gp_  0.0\n     19 rcu_exp_gp_kthr  0.0\n     20 migration/0      0.0\n     21 kprobe-optimize  0.0\n     22 idle_inject/0    0.0\n     23 cpuhp/0          0.0\n     24 cpuhp/2          0.0\n     25 idle_inject/2    0.0\n     26 migration/2      0.0\n     27 ksoftirqd/2      0.0\n     29 kworker/2:0H-kb  0.0\n     30 cpuhp/4          0.0\n     31 idle_inject/4    0.0\n     32 migration/4      0.0\n     33 ksoftirqd/4      0.0\n     35 kworker/4:0H-kb  0.0\n     36 cpuhp/6          0.0\n     37 idle_inject/6    0.0\n     38 migration/6      0.0\n     39 ksoftirqd/6      0.0\n     41 kworker/6:0H-kb  0.0\n     42 cpuhp/8          0.0\n     43 idle_inject/8    0.0\n     44 migration/8      0.0\n     45 ksoftirqd/8      0.0\n     47 kworker/8:0H-kb  0.0\n     48 cpuhp/10         0.0\n     49 idle_inject/10   0.0\n     50 migration/10     0.0\n     51 ksoftirqd/10     0.0\n     53 kworker/10:0H-k  0.0\n     54 cpuhp/1          0.0\n     55 idle_inject/1    0.0\n     56 migration/1      0.0\n     57 ksoftirqd/1      0.0\n     59 kworker/1:0H-kb  0.0\n     60 cpuhp/3          0.0\n     61 idle_inject/3    0.0\n     62 migration/3      0.0\n     63 ksoftirqd/3      0.0\n     65 kworker/3:0H-kb  0.0\n     66 cpuhp/5          0.0\n     67 idle_inject/5    0.0\n     68 migration/5      0.0\n     69 ksoftirqd/5      0.0\n     71 kworker/5:0H-kb  0.0\n     72 cpuhp/7          0.0\n     73 idle_inject/7    0.0\n     74 migration/7      0.0\n     75 ksoftirqd/7      0.0\n     77 kworker/7:0H-kb  0.0\n     78 cpuhp/9          0.0\n     79 idle_inject/9    0.0\n     80 migration/9      0.0\n     81 ksoftirqd/9      0.0\n     83 kworker/9:0H-kb  0.0\n     84 cpuhp/11         0.0\n     85 idle_inject/11   0.0\n     86 migration/11     0.0\n     87 ksoftirqd/11     0.0\n     89 kworker/11:0H-k  0.0\n     90 kdevtmpfs        0.0\n     91 kworker/R-inet_  0.0\n     92 rcu_tasks_kthre  0.0\n     93 rcu_tasks_rude_  0.0\n     94 kauditd          0.0\n     95 khungtaskd       0.0\n     96 oom_reaper       0.0\n     99 kworker/R-write  0.0\n    100 kcompactd0       0.0\n    101 ksmd             0.0\n    102 khugepaged       0.0\n    103 kworker/R-kbloc  0.0\n    104 kworker/R-blkcg  0.0\n    105 kworker/R-kinte  0.0\n    106 irq/9-acpi       0.0\n    107 kworker/R-tpm_d  0.0\n    108 kworker/R-ata_s  0.0\n    110 kworker/R-edac-  0.0\n    111 kworker/R-devfr  0.0\n    112 watchdogd        0.0\n    113 kworker/R-quota  0.0\n    115 irq/25-AMD-Vi0-  0.0\n    116 irq/26-AMD-Vi0-  0.0\n    117 irq/27-AMD-Vi0-  0.0\n    118 kswapd0          0.0\n    119 kworker/R-kthro  0.0\n    121 irq/38-pciehp    0.0\n    122 kworker/R-acpi_  0.0\n    125 scsi_eh_0        0.0\n    126 kworker/R-scsi_  0.0\n    127 scsi_eh_1        0.0\n    128 kworker/R-scsi_  0.0\n    132 kworker/R-mld    0.0\n    133 kworker/R-ipv6_  0.0\n    134 kworker/R-kstrp  0.0\n    143 kworker/R-zswap  0.0\n    147 irq/28-ACPI:Eve  0.0\n    148 irq/29-ACPI:Eve  0.0\n    149 irq/30-ACPI:Eve  0.0\n    150 irq/31-ACPI:Eve  0.0\n    151 irq/32-ACPI:Eve  0.0\n    152 irq/33-ACPI:Eve  0.0\n    153 irq/34-ACPI:Eve  0.0\n    154 irq/35-ACPI:Eve  0.0\n    155 irq/36-ACPI:Eve  0.0\n    156 irq/37-ACPI:Eve  0.0\n    207 nv_queue         0.0\n    208 nv_mem_pool_scr  0.0\n    209 nv_mem_pool_scr  0.0\n    210 nv_mem_pool_scr  0.0\n    211 nv_queue         0.0\n    213 nv_open_q        0.0\n    235 irq/68-nvidia    0.0\n    236 nvidia           0.0\n    237 nv_queue         0.0\n    243 kworker/R-nvme-  0.0\n    244 kworker/R-nvme-  0.0\n    245 kworker/R-nvme-  0.0\n    246 kworker/R-nvme-  0.0\n    247 nvidia-modeset/  0.0\n    248 nvidia-modeset/  0.0\n    249 UVM global queu  0.0\n    250 UVM deferred re  0.0\n    251 UVM Tools Event  0.0\n    252 kworker/7:2-eve  0.0\n    253 kworker/5:1H-kb  0.0\n    258 kworker/2:1H-kb  0.0\n    259 kworker/0:1H-kb  0.0\n    262 jbd2/nvme0n1p3-  0.0\n    263 kworker/R-ext4-  0.0\n    274 kworker/R-amdgp  0.0\n    275 kworker/R-ttm    0.0\n    276 kworker/R-amdgp  0.0\n    277 kworker/R-amdgp  0.0\n    278 kworker/R-dm_vb  0.0\n    279 kworker/R-hdmi_  0.0\n    280 card2-crtc0      0.0\n    281 card2-crtc1      0.0\n    282 card2-crtc2      0.0\n    283 card2-crtc3      0.0\n    284 kworker/R-gfx    0.0\n    285 kworker/R-comp_  0.0\n    286 kworker/R-comp_  0.0\n    287 kworker/R-comp_  0.0\n    288 kworker/R-comp_  0.0\n    289 kworker/R-comp_  0.0\n    290 kworker/R-comp_  0.0\n    291 kworker/R-comp_  0.0\n    292 kworker/R-comp_  0.0\n    293 kworker/R-sdma0  0.0\n    294 kworker/R-vcn_d  0.0\n    295 kworker/R-vcn_e  0.0\n    296 kworker/R-vcn_e  0.0\n    297 kworker/R-jpeg_  0.0\n    306 kworker/11:1H-k  0.0\n    333 kworker/1:1H-kb  0.0\n    334 psimon           0.0\n    343 systemd-journal  0.0\n    371 systemd-userdbd  0.0\n    374 kworker/6:1H-kb  0.0\n    378 psimon           0.0\n    381 kworker/7:1H-kb  0.0\n    382 kworker/8:1H-kb  0.0\n    385 kworker/4:1H-kb  0.0\n    386 kworker/10:1H-k  0.0\n    387 systemd-timesyn  0.0\n    393 systemd-udevd    0.0\n    395 psimon           0.0\n    459 irq/98-DELL0A6E  0.0\n    465 kworker/R-cfg80  0.0\n    468 irq/104-iwlwifi  0.0\n    469 irq/105-iwlwifi  0.0\n    470 irq/106-iwlwifi  0.0\n    471 irq/107-iwlwifi  0.0\n    472 irq/108-iwlwifi  0.0\n    474 irq/109-iwlwifi  0.0\n    475 irq/110-iwlwifi  0.0\n    476 irq/111-iwlwifi  0.0\n    477 irq/112-iwlwifi  0.0\n    478 irq/113-iwlwifi  0.0\n    479 irq/114-iwlwifi  0.0\n    480 irq/115-iwlwifi  0.0\n    481 irq/116-iwlwifi  0.0\n    482 irq/117-iwlwifi  0.0\n    541 dbus-broker-lau  0.0\n    542 dbus-broker      0.0\n    543 NetworkManager   0.0\n    545 bluetoothd       0.0\n    547 systemd-logind   0.0\n    591 wpa_supplicant   0.0\n    602 containerd       0.1\n    612 sddm             0.0\n    624 Xorg             0.0\n    651 nvidia-drm/time  0.0\n    660 kworker/3:1H-kb  0.0\n    688 upowerd          0.0\n    694 polkitd          0.0\n    736 dockerd          0.0\n    765 kworker/9:1H-kb  0.0\n    971 power-profiles-  0.0\n    979 sddm-helper      0.0\n    999 systemd          0.0\n   1001 (sd-pam)         0.0\n   1017 ksecretd         0.0\n   1018 startplasma-way  0.0\n   1038 dbus-broker-lau  0.0\n   1039 dbus-broker      0.0\n   1048 kwin_wayland_wr  0.0\n   1054 baloo_file       0.0\n   1055 kwin_wayland     4.0\n   1063 udisksd          0.0\n   1073 nvidia-drm/time  0.0\n   1074 nvidia-drm/time  0.0\n   1077 nvidia-drm/time  0.0\n   1080 nvidia-drm/time  0.0\n   1081 nvidia-drm/time  0.0\n   1082 nvidia-drm/time  0.0\n   1083 nvidia-drm/time  0.0\n   1084 nvidia-drm/time  0.0\n   1085 nvidia-drm/time  0.0\n   1114 pipewire         0.0\n   1115 wireplumber      0.6\n   1121 rtkit-daemon     0.0\n   1148 Xwayland         0.0\n   1153 krfcommd         0.0\n   1191 at-spi-bus-laun  0.0\n   1203 dbus-broker-lau  0.0\n   1208 dbus-broker      0.0\n   1215 ksmserver        0.0\n   1217 kded6            0.0\n   1228 plasmashell      0.1\n   1229 at-spi2-registr  0.0\n   1244 pipewire-pulse   0.1\n   1275 dconf-service    0.0\n   1276 kactivitymanage  0.0\n   1278 gmenudbusmenupr  0.0\n   1279 kaccess          0.0\n   1284 polkit-kde-auth  0.0\n   1285 org_kde_powerde  0.0\n   1286 xembedsniproxy   0.0\n   1376 xsettingsd       0.0\n   1504 copyq            0.0\n   1511 xdg-desktop-por  0.0\n   1513 DiscoverNotifie  0.0\n   1524 xdg-permission-  0.0\n   1532 xdg-document-po  0.0\n   1544 fusermount3      0.0\n   1547 xdg-desktop-por  0.0\n   1582 keyboxd          0.0\n   1586 copyq            0.0\n   1590 xdg-desktop-por  0.0\n   1645 accounts-daemon  0.0\n   1990 kwalletd6        0.0\n   2528 baloorunner      0.0\n   2540 ChatGPT          1.3\n   2545 browser_crashpa  0.0\n   2547 browser_crashpa  0.0\n   2555 ChatGPT          0.0\n   2556 ChatGPT          0.0\n   2558 ChatGPT          0.0\n   2600 ChatGPT          3.2\n   2605 ChatGPT          0.1\n   2615 ChatGPT          0.0\n   2647 ChatGPT          0.0\n   2752 plasma-browser-  0.0\n   2916 ChatGPT          0.0\n   2917 ChatGPT         12.0\n   2941 codex            0.1\n   3473 ChatGPT          0.0\n   3825 ChatGPT          0.0\n   3850 ChatGPT          0.2\n   3888 ChatGPT          0.0\n   4114 codex-code-mode  0.0\n   4463 ChatGPT          0.0\n  25128 kworker/10:0-ev  0.0\n  50990 kworker/11:0-ev  0.0\n  51453 kworker/9:0-eve  0.0\n  60964 MainThread       0.0\n  60966 node_repl        0.0\n  60967 MainThread       0.0\n  61030 node_repl        0.0\n  61313 kworker/6:2-eve  0.0\n  63152 kworker/5:2-eve  0.0\n 100223 kworker/1:1-eve  0.0\n 101799 kworker/4:0-eve  0.0\n 110527 kworker/u49:5-t  0.0\n 110657 kworker/u48:5-e  0.1\n 113934 kworker/8:0-eve  0.0\n 149547 kworker/2:2-eve  0.0\n 151710 kworker/3:3-eve  0.0\n 163433 kworker/u48:0-f  0.0\n 163470 kworker/u48:1-e  0.0\n 163567 kworker/5:0-eve  0.0\n 163580 kworker/8:2-cgr  0.0\n 163750 kworker/2:1-eve  0.0\n 164431 kworker/7:1      0.0\n 164435 kitty            0.1\n 164448 kitten           0.0\n 164450 bash             0.0\n 164456 kitten           0.0\n 164840 kworker/u49:6-t  0.0\n 164881 kworker/3:1-eve  0.0\n 164945 kworker/0:1-mm_  0.0\n 164956 kworker/11:2     0.0\n 164992 kworker/1:0      0.0\n 165025 kworker/0:0-eve  0.0\n 165035 kworker/6:0      0.0\n 165039 kworker/10:1     0.0\n 165044 kworker/u48:2-d  0.0\n 165046 kworker/9:1      0.0\n 165049 kworker/4:2      0.0\n 165454 kworker/3:0      0.0\n 165464 kworker/0:2      0.0\n 165480 kworker/4:1-mld  0.0\n 165486 kworker/10:2     0.0\n 165516 kworker/5:1-eve  0.0\n 165531 systemd-userwor  0.0\n 165536 systemd-userwor  0.0\n 165554 systemd-userwor  0.0\n 165562 kworker/u49:0-t  0.0\n 165571 bash             0.0\n 165577 python          53.8\n 165578 tee              0.0\n 165616 ps               0.0"
+}
