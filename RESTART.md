@@ -20,6 +20,7 @@ cd /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency
 bash scripts/start_fresh.sh
 ```
 
+
 The terminal must remain open. Do not use the computer for other work during measurement. Choose **Balanced** before launching. The runner starts with an automatic ten-minute settling period, so you do not need to time it manually. Expect roughly 13–16 hours including calibration, checks, and at least one minute of settling per trial; actual time depends on temperature stability and queue drain. Output and failures are saved under `results/launch-logs/`. The launcher prints the session path. Ctrl-C stops the run and cleans up only the container it created.
 
 With applications open, test the workflow using `bash scripts/start_fresh.sh --diagnostic`. This runs calibration, saturation checks, and a pilot; it never starts the formal matrix. Such sessions cannot be resumed into publication data.
