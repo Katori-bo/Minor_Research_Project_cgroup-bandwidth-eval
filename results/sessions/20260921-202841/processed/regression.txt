@@ -1,0 +1,72 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                log_p99   R-squared:                       0.989
+Model:                            OLS   Adj. R-squared:                  0.986
+Method:                 Least Squares   F-statistic:                 1.563e+06
+Date:                Fri, 25 Sep 2026   Prob (F-statistic):               0.00
+Time:                        19:35:14   Log-Likelihood:                -1.4989
+No. Observations:                 240   AIC:                             99.00
+Df Residuals:                     192   BIC:                             266.1
+Df Model:                          47                                         
+Covariance Type:                  HC3                                         
+===================================================================================================================================================
+                                                                                      coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                                           6.9795      0.018    377.535      0.000       6.943       7.016
+C(period_us)[T.50000]                                                              -0.0658      0.019     -3.468      0.001      -0.103      -0.029
+C(period_us)[T.100000]                                                             -0.2598      0.022    -11.747      0.000      -0.303      -0.216
+C(period_us)[T.250000]                                                             -0.8085      0.022    -35.985      0.000      -0.853      -0.765
+C(workers)[T.2]                                                                     0.1955      0.023      8.398      0.000       0.150       0.241
+C(workers)[T.4]                                                                     0.1482      0.039      3.837      0.000       0.072       0.224
+C(pattern)[T.steady]                                                               -3.9510      0.270    -14.612      0.000      -4.481      -3.421
+C(load)[T.moderate]                                                                -5.0910      0.020   -256.916      0.000      -5.130      -5.052
+C(period_us)[T.50000]:C(workers)[T.2]                                               0.0189      0.024      0.796      0.426      -0.028       0.065
+C(period_us)[T.100000]:C(workers)[T.2]                                              0.7609      0.321      2.368      0.018       0.131       1.391
+C(period_us)[T.250000]:C(workers)[T.2]                                              0.2160      0.027      7.936      0.000       0.163       0.269
+C(period_us)[T.50000]:C(workers)[T.4]                                               0.1699      0.039      4.371      0.000       0.094       0.246
+C(period_us)[T.100000]:C(workers)[T.4]                                              1.4991      0.041     36.663      0.000       1.419       1.579
+C(period_us)[T.250000]:C(workers)[T.4]                                              0.7160      0.113      6.327      0.000       0.494       0.938
+C(period_us)[T.50000]:C(pattern)[T.steady]                                         -0.9681      0.271     -3.569      0.000      -1.500      -0.436
+C(period_us)[T.100000]:C(pattern)[T.steady]                                        -0.9670      0.271     -3.573      0.000      -1.498      -0.436
+C(period_us)[T.250000]:C(pattern)[T.steady]                                        -0.4329      0.271     -1.599      0.110      -0.963       0.098
+C(workers)[T.2]:C(pattern)[T.steady]                                                2.0244      0.611      3.313      0.001       0.827       3.222
+C(workers)[T.4]:C(pattern)[T.steady]                                                2.4049      0.562      4.277      0.000       1.303       3.507
+C(period_us)[T.50000]:C(load)[T.moderate]                                           0.0569      0.021      2.748      0.006       0.016       0.098
+C(period_us)[T.100000]:C(load)[T.moderate]                                          0.2471      0.024     10.487      0.000       0.201       0.293
+C(period_us)[T.250000]:C(load)[T.moderate]                                          0.7920      0.024     33.149      0.000       0.745       0.839
+C(workers)[T.2]:C(load)[T.moderate]                                                 0.5813      0.397      1.465      0.143      -0.196       1.359
+C(workers)[T.4]:C(load)[T.moderate]                                                -0.1439      0.042     -3.419      0.001      -0.226      -0.061
+C(pattern)[T.steady]:C(load)[T.moderate]                                            3.9503      0.270     14.604      0.000       3.420       4.480
+C(period_us)[T.50000]:C(workers)[T.2]:C(pattern)[T.steady]                         -2.2931      0.612     -3.746      0.000      -3.493      -1.093
+C(period_us)[T.100000]:C(workers)[T.2]:C(pattern)[T.steady]                        -2.9763      0.690     -4.313      0.000      -4.329      -1.624
+C(period_us)[T.250000]:C(workers)[T.2]:C(pattern)[T.steady]                        -2.4399      0.611     -3.992      0.000      -3.638      -1.242
+C(period_us)[T.50000]:C(workers)[T.4]:C(pattern)[T.steady]                         -2.7893      0.563     -4.957      0.000      -3.892      -1.686
+C(period_us)[T.100000]:C(workers)[T.4]:C(pattern)[T.steady]                        -4.0648      0.562     -7.227      0.000      -5.167      -2.962
+C(period_us)[T.250000]:C(workers)[T.4]:C(pattern)[T.steady]                        -3.2775      0.572     -5.727      0.000      -4.399      -2.156
+C(period_us)[T.50000]:C(workers)[T.2]:C(load)[T.moderate]                          -0.8012      0.397     -2.019      0.043      -1.579      -0.023
+C(period_us)[T.100000]:C(workers)[T.2]:C(load)[T.moderate]                         -1.5377      0.510     -3.015      0.003      -2.537      -0.538
+C(period_us)[T.250000]:C(workers)[T.2]:C(load)[T.moderate]                         -0.9899      0.397     -2.493      0.013      -1.768      -0.212
+C(period_us)[T.50000]:C(workers)[T.4]:C(load)[T.moderate]                          -0.1803      0.043     -4.227      0.000      -0.264      -0.097
+C(period_us)[T.100000]:C(workers)[T.4]:C(load)[T.moderate]                         -1.5034      0.044    -33.807      0.000      -1.591      -1.416
+C(period_us)[T.250000]:C(workers)[T.4]:C(load)[T.moderate]                         -0.7142      0.115     -6.238      0.000      -0.939      -0.490
+C(period_us)[T.50000]:C(pattern)[T.steady]:C(load)[T.moderate]                      0.9734      0.271      3.586      0.000       0.441       1.505
+C(period_us)[T.100000]:C(pattern)[T.steady]:C(load)[T.moderate]                     0.9808      0.271      3.621      0.000       0.450       1.512
+C(period_us)[T.250000]:C(pattern)[T.steady]:C(load)[T.moderate]                     0.4461      0.271      1.647      0.100      -0.085       0.977
+C(workers)[T.2]:C(pattern)[T.steady]:C(load)[T.moderate]                           -2.7979      0.728     -3.842      0.000      -4.225      -1.371
+C(workers)[T.4]:C(pattern)[T.steady]:C(load)[T.moderate]                           -2.4105      0.563     -4.285      0.000      -3.513      -1.308
+C(period_us)[T.50000]:C(workers)[T.2]:C(pattern)[T.steady]:C(load)[T.moderate]      3.0763      0.729      4.219      0.000       1.647       4.505
+C(period_us)[T.100000]:C(workers)[T.2]:C(pattern)[T.steady]:C(load)[T.moderate]     3.7435      0.796      4.705      0.000       2.184       5.303
+C(period_us)[T.250000]:C(workers)[T.2]:C(pattern)[T.steady]:C(load)[T.moderate]     3.2083      0.728      4.405      0.000       1.781       4.636
+C(period_us)[T.50000]:C(workers)[T.4]:C(pattern)[T.steady]:C(load)[T.moderate]      2.8081      0.563      4.988      0.000       1.705       3.912
+C(period_us)[T.100000]:C(workers)[T.4]:C(pattern)[T.steady]:C(load)[T.moderate]     4.0720      0.563      7.236      0.000       2.969       5.175
+C(period_us)[T.250000]:C(workers)[T.4]:C(pattern)[T.steady]:C(load)[T.moderate]     3.2797      0.573      5.728      0.000       2.158       4.402
+==============================================================================
+Omnibus:                      212.013   Durbin-Watson:                   2.235
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             8224.913
+Skew:                           3.131   Prob(JB):                         0.00
+Kurtosis:                      30.987   Cond. No.                         123.
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+Exploratory factor model; check residuals and multiplicity before inference.
