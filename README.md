@@ -1,5 +1,19 @@
 # CPU Quota Period, Worker Concurrency, and Tail Latency under Linux cgroup v2
 
+## Completed experiment
+
+Session `20260921-202841` contains all 300 planned trials. The completed-data backup is
+commit `80612a8`. Read the [interpretation and audit](results/sessions/20260921-202841/processed/review/interpretation.md)
+and the [revised paper draft](paper/paper_draft.md) for findings from this dataset.
+The review reports successful-request latency alongside queue rejections and timeouts;
+all completed observations are retained. Reproduce it with:
+
+```bash
+venv/bin/python analysis/review_completed.py results/sessions/20260921-202841
+```
+
+The remaining README sections describe the earlier exploratory implementation and results.
+
 > **Restart protocol:** use [RESTART.md](RESTART.md) and `bash scripts/start_fresh.sh` for new measurements. The instructions below describe the legacy exploratory pipeline; its calibration and plots have known limitations. New v2 sessions preserve raw monitoring and request data, calibrate rates automatically, and exclude legacy results.
 
 An experimental research framework evaluating how Linux cgroup v2 CPU bandwidth control (`cpu.max`) interacts with CFS period length, worker pool concurrency, and workload burstiness to affect request tail latency and throttling dynamics.

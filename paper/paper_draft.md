@@ -1,121 +1,284 @@
 # CPU Quota Period, Worker Concurrency, and Tail Latency under Linux cgroup v2
 
-> **Exploratory draft, not publication-ready.** Existing empirical claims come from the legacy short pilot and incomplete matrix. Replace them with the new session's validated results and update the methodology before submission. See `RESTART.md`.
-
-**Authors**: Anonymous (Prepared for Peer Review)  
-**Artifact Repository**: `cpu-quota-tail-latency`  
-**Target Venue**: Student Research Competition / Workshop on Cloud Systems and Performance  
-
----
+> Completed-experiment draft based on session `20260921-202841` (300 trials).
+> These results replace the legacy pilot claims. Related work, independent replication,
+> and submission formatting remain to be completed. The earlier draft is preserved in
+> [archive/paper_draft_legacy.md](archive/paper_draft_legacy.md).
 
 ## Abstract
 
-In modern containerized infrastructures, CPU bandwidth limits enforce fair resource sharing and multi-tenant isolation. Under Linux cgroup v2, bandwidth allocation is governed by `cpu.max = QUOTA PERIOD`, regulating the maximum cumulative CPU time a cgroup may consume within each period window. While conventional wisdom frequently assumes that CPU allocation is solely determined by the fractional ratio $\text{QUOTA} / \text{PERIOD}$, this paper investigates the subtle yet profound interplay between CFS period length, worker pool concurrency, and workload burstiness on request tail latency. Using a custom open-loop HTTP load generator avoiding coordinated omission and high-precision host-side cgroup accounting on bare-metal hardware, we systematically evaluate 0.5-CPU allocations across 10 ms, 50 ms, 100 ms, and 250 ms periods, contrasted against an uncapped baseline. Our empirical findings demonstrate that shorter periods (e.g., 10 ms) incur severe premature quota exhaustion under bursty and multi-worker regimes—inducing up to 3.4% period throttling and extending p99 tail latencies—whereas larger periods amortize transient burst demands without violating long-term quota fairness. We synthesize these observations into actionable operational guidelines for sizing container bandwidth controls.
+An average CPU limit does not fully describe the latency experienced by a containerized
+service. We evaluate four quota periods at a fixed nominal allocation of 0.5 CPU, together
+with an unlimited comparison, on one Linux host. A randomized factorial experiment crosses
+CPU configuration, one/two/four workers, two offered loads, and steady/bursty arrivals, with
+five repetitions per condition (300 trials). At moderate load, most condition means of run
+p99 latency are approximately 6–7 ms. At high steady load, the 10 ms period produces variable
+tail inflation, particularly with multiple workers. At high bursty load, mean run p99 ranges
+from 479 to 4303 ms across capped conditions, versus approximately 6.46 ms without a quota.
+Increasing the period from 10 to 250 ms reduces high-burst p99 most clearly with one or two
+workers; the relationship is not monotonic across all worker counts. We retain 23,059 queue
+rejections and 17 request timeouts as outcomes and report latency conditional on success.
+These observations support joint evaluation of quota period, concurrency, and arrivals,
+with conclusions limited to the tested workload and host.
 
----
+## 1. Research question and scope
 
-## 1. Introduction & Background
+Linux cgroup v2 exposes bandwidth control through `cpu.max`, specifying a quota and period.
+For example, 5 ms per 10 ms and 50 ms per 100 ms both express a nominal 0.5-CPU limit. The
+controller also exposes usage and throttling counters [1]. Runtime is distributed to CPU
+run queues, and threads can be throttled when runtime is unavailable; the kernel documentation
+describes allocation and hierarchy caveats [2].
 
-Container orchestrators such as Kubernetes and Docker rely heavily on Linux Completely Fair Scheduler (CFS) bandwidth control to provide multi-tenant isolation and prevent noisy-neighbor phenomena. In cgroup v1, CPU quotas were configured via independent control files: `cpu.cfs_quota_us` and `cpu.cfs_period_us`. In Linux cgroup v2, this mechanism is unified under a single interface:
+We ask how quota period affects tail latency at the same nominal CPU fraction, how worker
+count interacts with that effect, and how bursty arrivals change outcomes at the same mean
+offered rate. The contribution is a reproducible measurement of these interactions for a
+specific service, with raw requests, counters, environmental traces, and interruption records.
+The unlimited configuration has greater available CPU bandwidth; it is not another 0.5-CPU
+allocation. We make no claim of a universally optimal quota period.
 
-$$\texttt{cpu.max} = \text{QUOTA}\quad\text{PERIOD}$$
+## 2. Experimental methods
 
-For example, assigning `cpu.max = 50000 100000` grants 50 ms of CPU runtime per 100 ms period, equivalent to an average allocation of 0.5 CPU cores.
+### 2.1 Host and service
 
-While the nominal average bandwidth is identical for any proportional pair (e.g., $5\,\text{ms} / 10\,\text{ms} = 50\,\text{ms} / 100\,\text{ms} = 0.5$), the operational impact on tail latency differs markedly:
-1. **CFS Period Granularity**: Once a container consumes its quota within a given period, all threads belonging to the cgroup are unscheduled until the period expires and the quota refreshes.
-2. **Worker Concurrency ($GOMAXPROCS$ & Worker Pools)**: Multiple worker threads active concurrently drain the shared cgroup quota at a rate proportional to active concurrency ($W \times \text{wall\_time}$), exhausting the quota in a fraction of the period window.
-3. **Traffic Arrival Dynamics**: Real-world microservices rarely receive perfectly uniform traffic. Bursty arrivals exacerbate transient quota exhaustion.
+The recorded host is an AMD Ryzen 5 5600H system with 12 logical CPUs, approximately 16 GB
+RAM, Arch Linux, kernel `7.2.6-arch2-1`, Docker Engine `29.8.1`, and cgroup v2. Versions are
+reported from session metadata. The service uses logical CPUs 2 and 4; the runner, generator,
+and monitor use CPUs 0 and 1. This affinity separates their selected physical cores but does
+not provide exclusive isolation: host processes and SMT siblings remain possible noise sources.
 
-This paper addresses the following research questions:
-- **RQ1**: How does CFS quota period length affect application tail latency under identical average CPU bandwidth?
-- **RQ2**: How does worker pool concurrency interact with quota drainage and throttling probability?
-- **RQ3**: What is the quantitative impact of bursty vs. steady traffic arrivals under equivalent mean offered load?
+The Go HTTP service executes 44,000 SHA-256 iterations per request. A queue of capacity 128
+feeds one, two, or four workers; a full queue causes HTTP 503. `GOMAXPROCS` is fixed at two,
+so four workers do not imply four simultaneously executing CPUs. Each trial starts a fresh
+container. Its quota, period, zero `cpu.max.burst`, affinity, and recorded ancestor limits
+are verified.
 
----
+### 2.2 Calibration and arrivals
 
-## 2. Experimental Methodology
+Work is calibrated with cgroup CPU accounting toward approximately 5 ms per request; that
+target does not guarantee constant cost across CPU frequencies and load conditions. Capacity
+calibration uses one worker, a 100 ms period, and a 50 ms quota. Thirty-second windows and
+three bracket refinements yield a lower stable reference of 133.19 requests/s and an upper
+unstable point of 135.70. Common rates are then used throughout the matrix:
 
-### 2.1 Hardware and OS Environment
-Experiments were conducted on a dedicated bare-metal Linux system running Arch Linux (Kernel `7.2.6-arch2-1`, x86_64) on an AMD Ryzen 5 5600H processor (6 physical cores, 12 logical SMT threads, 16 MB L3 cache, base frequency 3.3 GHz) with 16 GB RAM and cgroup v2 (`cgroup2fs`). Docker Engine 29.8.1 was configured with the `systemd` cgroup driver.
+| Load | Mean requests/s | Burst low rate | Burst high rate |
+| --- | ---: | ---: | ---: |
+| Moderate | 66.59 | 33.295 | 99.885 |
+| High | 113.21 | 56.605 | 169.815 |
 
-To avoid virtualization jitter, thermal distortion, and NUMA artifacts:
-- **CPU-Affinity Partitioning**: 
-  - Cores 0–1 (logical CPUs 0 and 1, physical Core 0) were dedicated to the host operating system, background monitoring, and the load generator via `taskset -c 0,1`.
-  - Cores 2 and 4 (logical CPUs 2 and 4, corresponding to physical Core 1 Thread 0 and physical Core 2 Thread 0) were allocated exclusively to the container under test via Docker's `--cpuset-cpus="2,4"`. Neither core shares execution pipelines, L1, or L2 caches with the load generator.
-- **Hierarchy & Burst Verification**: We verified that `system.slice/cpu.max.burst` is strictly 0 and that ancestor slices enforce no secondary CPU caps (`cpu.max = max 100000`).
+Steady traffic uses the mean throughout. Bursty traffic alternates five seconds at each
+rate. Its high-load peak exceeds the calibrated reference, deliberately allowing transient
+overload. The reference capacity is specific to one configuration; “high” does not imply
+the same utilization in every condition.
 
-### 2.2 Synthetic Service Architecture
-We developed a deterministic, CPU-bound synthetic microservice in Go (`go1.27.1`), containerized in a scratch runtime:
-- **Concurrency Pipeline**: Follows a strict `HTTP Handler -> Bounded Job Queue (cap=128) -> Worker Pool -> Response` architecture. Only configured worker goroutines execute CPU work; incoming requests overflowing the queue immediately return `HTTP 503 Service Unavailable`.
-- **Calibrated CPU Work**: Each job executes iterative SHA-256 rounds. Work was calibrated using single-worker unlimited execution to require exactly $5.08 \pm 0.2\,\text{ms}$ per request ($N = 40,000$ iterations). Hash digests are returned in response headers to eliminate dead-code optimization.
-- **Runtime Concurrency**: `GOMAXPROCS=2` was enforced across all runs.
+The custom generator schedules arrivals independently of previous completions, using 512
+client workers, persistent connections within each phase, and a five-second HTTP timeout.
+It records dispatch delay, status, and scheduled-to-completion latency including body reading.
+The independent schedule and recorded lateness make delays in generating traffic visible.
 
-### 2.3 Accountable Open-Loop Load Generation
-Standard closed-loop tools (such as standard `wrk`) suffer from Coordinated Omission: when the system under test stalls, client-side requests are delayed, artificially truncating recorded latency. Furthermore, common open-loop tools fail to maintain persistent connections across changing burst rates.
+### 2.3 Matrix and environment
 
-We engineered a high-precision open-loop load generator in Go:
-- **Independent Scheduled Dispatch**: Calculates an exact deterministic sequence of arrival times $t_k = t_0 + k \cdot \Delta t$.
-- **Accountability Logging**: Records dispatch lag ($t_{\text{actual}} - t_k$) and missed arrivals (>10 ms). Reports both scheduled-arrival-to-completion (end-to-end) and actual-start-to-completion (service) latencies.
-- **Persistent HTTP Keep-Alive**: Reuses connection pools (`MaxIdleConnsPerHost=256`), preventing socket exhaustion or TCP handshake artifacts during burst transitions.
-- **Matched Traffic Profiles**:
-  - *Moderate Load* ($\sim 50\%$ capacity): Steady at 50 rps vs. Bursty alternating 5s at 30 rps and 5s at 70 rps (mean = 50 rps).
-  - *High Load* ($\sim 80\%$ capacity): Steady at 80 rps vs. Bursty alternating 5s at 60 rps and 5s at 100 rps (mean = 80 rps).
+Five CPU configurations (10, 50, 100, and 250 ms periods at 0.5 CPU, plus unlimited), three
+worker counts, two loads, and two patterns form 60 conditions. Five repetitions produce
+300 trials in a fixed shuffled order (Python random seed 42). Each has 20 seconds of warm-up
+and 60 seconds of scheduled measurement arrivals, followed by request drain before final
+accounting. Repetitions share one machine. Saturation checks observe 0.4986–0.5013 CPU cores
+across capped periods; pilot checks verify instrumentation and unlimited own throttling.
 
-### 2.4 External cgroup Accounting
-Rather than using `docker exec` (which injects foreign processes into the target cgroup), our monitoring harness inspects `/proc/<container_pid>/cgroup` to discover the container's relative slice in `/sys/fs/cgroup/system.slice/docker-<id>.scope/cpu.stat`. Initial counters are snapshotted immediately **after** the warm-up period, and final counters are taken at the exact conclusion of the measurement window.
+The initial `k10temp:Tctl` baseline is 40.77°C. Before every trial, the last full minute must
+average within ±3°C, vary by no more than 2°C, and have an absolute fitted trend no greater
+than 1°C/minute. Resume requires at least ten minutes of settling. These are starting-condition
+rules, not hardware safety thresholds. Power settings are checked at boundaries and during
+measurement. Under-load temperature and frequency traces are retained as observations.
 
----
+Collection spans September 21–25, 2026, in five segments: trials 1–93, 94–95, 96–99, 100–177,
+and 178–300. Four archived failed trial attempts produced no complete matrix result; 22
+resume-settling attempts are recorded, including attempts without subsequent measurements.
+An explicit inventory amendment before trial 94 adds an offline USB-C supply entry while
+retaining the required online AC supply. Every completed matrix observation is retained.
 
-## 3. Empirical Results
+### 2.4 Endpoints and analysis
 
-### 3.1 Pre-Flight Sanity Validations
-Prior to full matrix runs, all seven pre-flight assertions passed:
-1. `cpu.max` correctly reflected period/quota parameters (`50000 100000`).
-2. Ancestor cgroups enforced zero burst and no CPU caps.
-3. Unlimited baseline produced $0.0\%$ throttling.
-4. 10 ms period under 80 rps produced measurable throttling escalation (36 events).
-5. Load generator host utilization on Cores 0–1 remained at $8.23\%$ (well below the $50\%$ safety margin).
-6. Zero application-level drops, timeouts, or 503 errors under steady 80 rps load.
-7. Latency repeatability across 5 consecutive runs achieved a Coefficient of Variation of **$1.70\%$** (well within the $<10\%$ threshold).
+The primary endpoint is each trial's nearest-rank p99 among successful requests, measured
+from scheduled arrival to completion. Tables show arithmetic means of five run p99 values,
+not a pooled request percentile. Figures show every repetition and the median across runs.
+Rejections and timeouts are separate outcomes; successful-request p99 is not a reliability
+measure for all offered requests.
 
-### 3.2 Pilot Experimentation Findings
+A separate audit recalculates p50, p95, and p99 from raw requests and reconciles saved
+reports and the summary table. It checks request accounting, matrix/configuration matches,
+cgroup limits and counter deltas, power consistency, accepted starting conditions, monitoring,
+and original source/binary hashes. No discrepancies were found. Internal consistency does
+not establish absence of all measurement bias.
 
-| Configuration | Period / Quota | Workers | Pattern | Offered Rate | Achieved (rps) | p50 (ms) | p99 (ms) | Throttled % | Throttled Time |
-|---|---|---|---|---|---|---|---|---|---|
-| `unlim_w1_high` | Unlimited | 1 | Steady | 80 rps | 80.0 | 5.35 | 6.62 | 0.0% | 0.0 ms |
-| `unlim_w4_high` | Unlimited | 4 | Steady | 80 rps | 80.0 | 5.26 | 6.54 | 0.0% | 0.0 ms |
-| `p100_w1_high` | 100ms / 50ms | 1 | Steady | 80 rps | 80.0 | 4.98 | 6.19 | 0.0% | 0.0 ms |
-| `p100_w4_high` | 100ms / 50ms | 4 | Steady | 80 rps | 80.0 | 5.26 | 6.41 | 0.0% | 0.0 ms |
-| `p10_w1_high` | 10ms / 5ms | 1 | Steady | 80 rps | 80.0 | 5.36 | 6.34 | **2.95%** | **216.1 ms** |
-| `p10_w4_high` | 10ms / 5ms | 4 | Steady | 80 rps | 80.0 | 5.41 | 6.44 | **3.40%** | **292.6 ms** |
-| `p10_w1_bursty`| 10ms / 5ms | 1 | Bursty | 80 rps | 80.0 | 4.88 | 6.49 | **2.85%** | **211.6 ms** |
-| `p10_w4_bursty`| 10ms / 5ms | 4 | Bursty | 80 rps | 80.0 | 4.79 | 6.74 | **1.65%** | **57.0 ms** |
+Exploratory Welch tests [3] on log(run p99) give geometric-mean ratios and pointwise 95% intervals.
+We consider 62 contrasts: twelve 250/10 ms, twenty four/one worker, and thirty bursty/steady
+comparisons. P values receive a joint Holm correction [4]; intervals are unadjusted. These
+contrasts were chosen during analysis, not preregistered. Repetition labels are not treated
+as paired observations. Five trials per cell limit assessment of distributions and rare events.
 
-### 3.3 Key Findings
-1. **Period Length Sensitivity**: At 100 ms period, 0.5 CPU quota provides a 50 ms budget per period. Since each request requires $\sim 5\,\text{ms}$, up to 10 requests can be serviced in a single period before quota exhaustion. Consequently, throttling was $0.0\%$. Conversely, at 10 ms period, the quota is only $5\,\text{ms}$—the cost of a single request! Any overlap or thread contention causes instant exhaustion, resulting in **$2.95\% - 3.40\%$ throttled periods** and cumulative stall times exceeding 290 ms.
-2. **Worker Concurrency Effect**: Increasing worker pool concurrency from 1 to 4 under 10 ms period escalated throttled periods from 59 to 68 and increased throttled duration by $+35.4\%$ (from 216.1 ms to 292.6 ms). Multiple active workers drain the 5 ms quota faster, triggering earlier thread suspension.
-3. **Bursty Traffic Amplification**: Under bursty traffic with 4 workers, peak p99 tail latency increased to 6.74 ms.
+A post hoc sensitivity model includes separate means for all 60 conditions, collection
+segment, and starting temperature, with HC3 standard errors [5]. A separate model checks linear
+trial-order drift. Under-load temperature is not adjusted away because it may be caused by
+the workload. The original automatic regression remains exploratory; its high R-squared
+does not establish a causal mechanism.
 
----
+## 3. Results
 
-## 4. Practical Implications for Containerized Services
+### 3.1 Completion and failures
 
-Based on our empirical observations, we formulate three practical recommendations for engineering containerized workloads:
+All 300 trials completed without recorded instrumentation flags. Of 1,618,350 scheduled
+requests, 1,595,274 succeeded, 23,059 received HTTP 503, and 17 recorded client timeouts while
+awaiting headers. There were no generator client drops or missed arrivals. The largest run
+dispatch-lag p99 was 1.095 ms, below the declared 2 ms gate. Every trial has 58–60 monitor
+samples. Unlimited trials have zero own cgroup throttling events.
 
-1. **Avoid Sub-50ms CFS Periods for CPU-Bound Services**: When setting `cpu.max` (or `--cpu-period` in Docker), period lengths below 50 ms dramatically increase throttling susceptibility for services whose individual request execution time is on the order of milliseconds. Setting a 100 ms or 250 ms period provides temporal elasticity.
-2. **Align Worker Pool Concurrency with Quota Allocation**: Over-provisioning application worker threads (or setting `GOMAXPROCS` high) on a tightly throttled container causes threads to compete for quota, causing rapid exhaustion and collective suspension.
-3. **Monitor `nr_throttled / nr_periods` as a Primary Health Indicator**: Standard CPU utilization metrics often report $< 50\%$ utilization even while requests suffer hundreds of milliseconds of scheduling delay due to CFS throttling.
+### 3.2 Moderate load
 
----
+Moderate steady condition means of run p99 span approximately 6.57–6.63 ms. Moderate bursty
+means are approximately 6.50–6.64 ms except at 10 ms with two workers: mean 18.37 ms, with
+individual runs spanning 6.54–40.92 ms. Moderate trials record no rejections or errors. Small
+differences among the remaining conditions do not justify broad operational recommendations.
 
-## 5. Limitations & Future Work
+![Moderate load: all trials and median](../results/sessions/20260921-202841/processed/review/p99_moderate.png)
 
-- **Hardware Scope**: Evaluations were conducted on an AMD Zen 3 architecture; future studies should evaluate asymmetric big.LITTLE architectures (e.g., Intel Alder Lake / ARM big.LITTLE).
-- **Cluster Orchestration**: Experiments utilized Docker Engine directly; evaluating Kubernetes CPU manager policies (`Static` vs. `None`) and CFS burst features (`cpu.cfs_burst_us` / `cpu.max.burst`) represents a natural progression.
+### 3.3 High steady traffic
 
----
+Mean run p99 (ms), five repetitions per cell:
 
-## 6. Conclusion
+| Quota period | 1 worker | 2 workers | 4 workers |
+| --- | ---: | ---: | ---: |
+| 10 ms | 23.65 | 355.77 | 429.83 |
+| 50 ms | 7.35 | 6.97 | 6.88 |
+| 100 ms | 6.06 | 6.09 | 5.98 |
+| 250 ms | 5.97 | 5.95 | 5.92 |
+| Unlimited | 5.93 | 5.93 | 5.94 |
 
-Linux cgroup v2 bandwidth control using `cpu.max` provides resource limits, but fixing the average allocation does not guarantee predictable tail latency. We demonstrated that smaller CFS periods and uncalibrated worker concurrency induce severe throttling and tail latency inflation. Tuning period lengths to amortize request-level computation offers an effective mechanism to eliminate quota-induced tail latency spikes.
+At 10 ms, the two-worker median run p99 is 127.96 ms but one run reaches 1296.25 ms; with
+four workers the median is 215.01 ms and maximum 1423.29 ms. Those two extreme runs contain
+all 810 high-steady queue rejections. All observations remain in the analysis. Mean
+throttled-period fractions at 10 ms are 63.3%, 89.1%, and 91.0% for one, two, and four workers;
+at 250 ms they are 6.7%, 4.7%, and 4.5%. This counter ratio is not the fraction of requests
+throttled or the fraction of wall-clock time stalled.
+
+### 3.4 High bursty traffic
+
+Mean run p99 (ms), five repetitions per cell:
+
+| Quota period | 1 worker | 2 workers | 4 workers |
+| --- | ---: | ---: | ---: |
+| 10 ms | 1075.01 | 1306.87 | 1248.33 |
+| 50 ms | 1005.99 | 1246.51 | 1382.65 |
+| 100 ms | 828.76 | 2500.33 | 4302.71 |
+| 250 ms | 478.78 | 722.37 | 1157.63 |
+| Unlimited | 6.46 | 6.45 | 6.46 |
+
+![High load: all trials and median](../results/sessions/20260921-202841/processed/review/p99_high.png)
+
+With one worker, 250 versus 10 ms reduces geometric-mean run p99 by 55.4% (ratio 0.446;
+pointwise 95% interval 0.425–0.467); with two workers the reduction is 44.7% (ratio 0.553;
+interval 0.534–0.572). Both Holm-adjusted p values are below 0.00001. With four workers the
+ratio is 0.912 (0.704–1.180), so a consistent advantage is not established. The 100 ms/four-worker
+cell is worst, with mean 4302.71 ms and range 4220.35–4353.54 ms. The 100 ms/two-worker
+cell is much more variable, spanning 1082.12–3903.52 ms.
+
+Failed requests as a percentage of all scheduled high-bursty requests, summed over five
+trials (33,965 requests per cell):
+
+| Quota period | 1 worker | 2 workers | 4 workers |
+| --- | ---: | ---: | ---: |
+| 10 ms | 5.71% | 13.90% | 7.22% |
+| 50 ms | 6.26% | 13.82% | 13.43% |
+| 100 ms | 0.00% | 4.77% | 0.44% |
+| 250 ms | 0.00% | 0.00% | 0.00% |
+| Unlimited | 0.00% | 0.00% | 0.00% |
+
+![High-load failures](../results/sessions/20260921-202841/processed/review/failures_high.png)
+
+All 17 timeouts occur at 100 ms with two or four workers. Higher rejection can change which
+requests contribute to successful latency, so latency and failures must be interpreted
+together. For example, the 100 ms/four-worker condition has worse successful-request tails
+but fewer failures than 50 ms/four-worker. We do not combine these outcomes into a single
+service-quality ranking.
+
+### 3.5 Repeatability and interruption sensitivity
+
+Six of 60 conditions have a run-p99 coefficient of variation above 10%, a descriptive
+screen used during analysis. The detailed report lists them and retains every repetition.
+The pretrial means span 37.89–43.49°C; the maximum under-load Tctl sample is 61.875°C.
+Passing the starting-temperature gate does not force identical temperatures during work.
+
+![Collection diagnostics](../results/sessions/20260921-202841/processed/review/collection_diagnostics.png)
+
+Adjusting for segment and starting temperature changes standardized condition geometric
+means by −1.59% to +2.90%. The last-segment multiplier relative to the first is 0.993 (95%
+interval 0.919–1.072). The separate order model gives 1.013 per 100 trials (p=0.523). These
+checks show no clear overall shift, but do not establish equivalence across resumptions
+or rule out condition-specific confounding. Segments with two and four trials provide
+particularly limited independent information.
+
+## 4. Interpretation and limitations
+
+Quota-period effects depend on load and concurrency. Most moderate conditions have similar
+latency. High steady traffic exposes occasional severe delay at the shortest period, while
+high bursty traffic produces substantial tails under every quota and a strong worker-count
+interaction. The findings are consistent with runtime constraints and finite-queue behavior
+during arrival peaks. They do not isolate the contributions of CPU-local allocation, Go
+scheduling, queue occupancy, or timeout handling. Queue-depth and scheduler traces are
+needed to explain the unusually poor 100 ms multi-worker conditions directly.
+
+For this service, 250 ms with one worker has the lowest observed high-bursty tail among
+capped conditions and no failed requests. The non-monotonic multi-worker results prevent
+a universal recommendation to increase periods or worker counts. The legacy draft's claim
+that longer periods eliminate quota-induced tail latency is not supported by this dataset.
+
+Limits on interpretation include:
+
+- One physical host and a synthetic service with a fixed queue and runtime parallelism;
+  results do not directly generalize to Kubernetes, other applications, or other hardware.
+- Five repetitions per cell on a shared machine, leaving uncertainty about rare events
+  and dependence between trials despite randomization and settling.
+- Affinity without exclusive isolation. Background applications appear in process snapshots;
+  adaptive CPU frequencies, host activity, and interrupted collection remain possible
+  influences. Temperature checks do not establish absence of thermal throttling.
+- Short capacity calibration on one reference configuration, with deliberately over-capacity
+  burst peaks. The same offered rate need not imply the same utilization across conditions.
+- Successful-request latency excludes rejections and five-second timeouts. Queued service
+  work can continue after a client times out. Failures must accompany latency in reporting.
+- Exploratory statistical choices and limited distributional evidence. Holm adjustment
+  covers the specified test family, not all analysis choices or external generalization.
+
+Before submission, complete related work and independently repeat the variable 10 ms
+high-steady cells, the 10 ms/two-worker moderate-bursty cell, and the extreme 100/250 ms
+multi-worker high-bursty cells. New instrumentation or baseline choices require a separate
+session with its own provenance. Mechanism-focused work should capture queue occupancy
+and scheduler events.
+
+## 5. Conclusion
+
+The 300-trial experiment shows that the same nominal CPU fraction can produce different
+tail latency depending on period, worker count, and arrivals. High bursty traffic produces
+the largest delays; moderate traffic is mostly insensitive. The evidence supports joint
+evaluation of these controls and reporting both successful latency and failures. It does
+not establish a universally preferred quota period or benefit from additional workers.
+
+## Artifact and reproduction
+
+The dataset is `results/sessions/20260921-202841/`; `source/` and `metadata.json` preserve
+experiment provenance. The completed-data backup is Git commit `80612a8`. Original automatic
+outputs remain in `processed/`. Reproduce the review from the repository root:
+
+```bash
+venv/bin/python analysis/review_completed.py results/sessions/20260921-202841
+```
+
+The review writes tables, raw-file hashes, audit results, exploratory contrasts, sensitivity
+models, and figures to `processed/review/`. See [the detailed report](../results/sessions/20260921-202841/processed/review/interpretation.md)
+for definitions, all-cell summaries, and variability details.
+
+## References
+
+1. Linux kernel documentation. [Control Group v2: CPU interface](https://docs.kernel.org/admin-guide/cgroup-v2.html#cpu).
+2. Linux kernel documentation. [CFS Bandwidth Control](https://docs.kernel.org/scheduler/sched-bwc.html).
+3. SciPy documentation. [Independent-sample t tests, including Welch's test](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html).
+4. statsmodels documentation. [Multiple-testing correction methods](https://www.statsmodels.org/stable/generated/statsmodels.stats.multitest.multipletests.html).
+5. statsmodels documentation. [Robust covariance estimation for OLS](https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLSResults.get_robustcov_results.html).
