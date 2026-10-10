@@ -1,0 +1,421 @@
+{
+  "schema": 29,
+  "date": "2026-10-09",
+  "purpose": "fresh_same_service_quota_worksize_robustness",
+  "seed": 2808102026,
+  "trial_order": [
+    {
+      "id": "cal_b1_steady15",
+      "kind": "steady",
+      "low_rate": 7.5,
+      "block": 1,
+      "collection_order": 1
+    },
+    {
+      "id": "cal_b1_steady120",
+      "kind": "steady",
+      "low_rate": 60.0,
+      "block": 1,
+      "collection_order": 2
+    },
+    {
+      "id": "cal_b1_idle0",
+      "kind": "idle",
+      "low_rate": 0.0,
+      "block": 1,
+      "collection_order": 3
+    },
+    {
+      "id": "cal_b1_steady60",
+      "kind": "steady",
+      "low_rate": 30.0,
+      "block": 1,
+      "collection_order": 4
+    },
+    {
+      "id": "cal_b1_mixed30",
+      "kind": "mixed",
+      "low_rate": 15.0,
+      "block": 1,
+      "collection_order": 5,
+      "high_rate": 84.9
+    },
+    {
+      "id": "cal_b1_mixed15",
+      "kind": "mixed",
+      "low_rate": 7.5,
+      "block": 1,
+      "collection_order": 6,
+      "high_rate": 84.9
+    },
+    {
+      "id": "cal_b1_steady90",
+      "kind": "steady",
+      "low_rate": 45.0,
+      "block": 1,
+      "collection_order": 7
+    },
+    {
+      "id": "cal_b1_steady30",
+      "kind": "steady",
+      "low_rate": 15.0,
+      "block": 1,
+      "collection_order": 8
+    },
+    {
+      "id": "cal_b2_steady30",
+      "kind": "steady",
+      "low_rate": 15.0,
+      "block": 2,
+      "collection_order": 9
+    },
+    {
+      "id": "cal_b2_steady90",
+      "kind": "steady",
+      "low_rate": 45.0,
+      "block": 2,
+      "collection_order": 10
+    },
+    {
+      "id": "cal_b2_mixed15",
+      "kind": "mixed",
+      "low_rate": 7.5,
+      "block": 2,
+      "collection_order": 11,
+      "high_rate": 84.9
+    },
+    {
+      "id": "cal_b2_mixed30",
+      "kind": "mixed",
+      "low_rate": 15.0,
+      "block": 2,
+      "collection_order": 12,
+      "high_rate": 84.9
+    },
+    {
+      "id": "cal_b2_steady60",
+      "kind": "steady",
+      "low_rate": 30.0,
+      "block": 2,
+      "collection_order": 13
+    },
+    {
+      "id": "cal_b2_idle0",
+      "kind": "idle",
+      "low_rate": 0.0,
+      "block": 2,
+      "collection_order": 14
+    },
+    {
+      "id": "cal_b2_steady120",
+      "kind": "steady",
+      "low_rate": 60.0,
+      "block": 2,
+      "collection_order": 15
+    },
+    {
+      "id": "cal_b2_steady15",
+      "kind": "steady",
+      "low_rate": 7.5,
+      "block": 2,
+      "collection_order": 16
+    },
+    {
+      "id": "val_b1_low30_p6",
+      "kind": "validation",
+      "low_rate": 15.0,
+      "block": 1,
+      "collection_order": 17,
+      "period_sec": 6,
+      "low_duration_sec": 4,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b1_low30_p12",
+      "kind": "validation",
+      "low_rate": 15.0,
+      "block": 1,
+      "collection_order": 18,
+      "period_sec": 12,
+      "low_duration_sec": 8,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b1_low15_p6",
+      "kind": "validation",
+      "low_rate": 7.5,
+      "block": 1,
+      "collection_order": 19,
+      "period_sec": 6,
+      "low_duration_sec": 4,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b1_low15_p12",
+      "kind": "validation",
+      "low_rate": 7.5,
+      "block": 1,
+      "collection_order": 20,
+      "period_sec": 12,
+      "low_duration_sec": 8,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b2_low30_p12",
+      "kind": "validation",
+      "low_rate": 15.0,
+      "block": 2,
+      "collection_order": 21,
+      "period_sec": 12,
+      "low_duration_sec": 8,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b2_low15_p12",
+      "kind": "validation",
+      "low_rate": 7.5,
+      "block": 2,
+      "collection_order": 22,
+      "period_sec": 12,
+      "low_duration_sec": 8,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b2_low30_p6",
+      "kind": "validation",
+      "low_rate": 15.0,
+      "block": 2,
+      "collection_order": 23,
+      "period_sec": 6,
+      "low_duration_sec": 4,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b2_low15_p6",
+      "kind": "validation",
+      "low_rate": 7.5,
+      "block": 2,
+      "collection_order": 24,
+      "period_sec": 6,
+      "low_duration_sec": 4,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b3_low15_p12",
+      "kind": "validation",
+      "low_rate": 7.5,
+      "block": 3,
+      "collection_order": 25,
+      "period_sec": 12,
+      "low_duration_sec": 8,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b3_low15_p6",
+      "kind": "validation",
+      "low_rate": 7.5,
+      "block": 3,
+      "collection_order": 26,
+      "period_sec": 6,
+      "low_duration_sec": 4,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b3_low30_p12",
+      "kind": "validation",
+      "low_rate": 15.0,
+      "block": 3,
+      "collection_order": 27,
+      "period_sec": 12,
+      "low_duration_sec": 8,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b3_low30_p6",
+      "kind": "validation",
+      "low_rate": 15.0,
+      "block": 3,
+      "collection_order": 28,
+      "period_sec": 6,
+      "low_duration_sec": 4,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b4_low15_p6",
+      "kind": "validation",
+      "low_rate": 7.5,
+      "block": 4,
+      "collection_order": 29,
+      "period_sec": 6,
+      "low_duration_sec": 4,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b4_low30_p6",
+      "kind": "validation",
+      "low_rate": 15.0,
+      "block": 4,
+      "collection_order": 30,
+      "period_sec": 6,
+      "low_duration_sec": 4,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b4_low15_p12",
+      "kind": "validation",
+      "low_rate": 7.5,
+      "block": 4,
+      "collection_order": 31,
+      "period_sec": 12,
+      "low_duration_sec": 8,
+      "high_rate": 90.0
+    },
+    {
+      "id": "val_b4_low30_p12",
+      "kind": "validation",
+      "low_rate": 15.0,
+      "block": 4,
+      "collection_order": 32,
+      "period_sec": 12,
+      "low_duration_sec": 8,
+      "high_rate": 90.0
+    }
+  ],
+  "planned_calibration_trials": 16,
+  "planned_validation_trials": 16,
+  "quota_cpu": 0.25,
+  "steady_windows_sec": [
+    [
+      3,
+      10
+    ],
+    [
+      10,
+      17
+    ],
+    [
+      17,
+      24
+    ]
+  ],
+  "busy_windows_sec": {
+    "calibration": [
+      [
+        11.5,
+        14.5
+      ],
+      [
+        26.5,
+        29.5
+      ],
+      [
+        41.5,
+        44.5
+      ],
+      [
+        56.5,
+        59.5
+      ]
+    ],
+    "6": [
+      [
+        4.8,
+        5.8
+      ],
+      [
+        10.8,
+        11.8
+      ],
+      [
+        16.8,
+        17.8
+      ],
+      [
+        22.8,
+        23.8
+      ],
+      [
+        28.8,
+        29.8
+      ],
+      [
+        34.8,
+        35.8
+      ],
+      [
+        40.8,
+        41.8
+      ],
+      [
+        46.8,
+        47.8
+      ],
+      [
+        52.8,
+        53.8
+      ],
+      [
+        58.8,
+        59.8
+      ]
+    ],
+    "12": [
+      [
+        10,
+        11.8
+      ],
+      [
+        22,
+        23.8
+      ],
+      [
+        34,
+        35.8
+      ],
+      [
+        46,
+        47.8
+      ],
+      [
+        58,
+        59.8
+      ]
+    ]
+  },
+  "rules": {
+    "calibration_capacity_range_pct": 5,
+    "capacity_error_pct": 5,
+    "deadline_error_pp": 3,
+    "advantage_pp": 1
+  },
+  "analysis": {
+    "t_critical_95_df3": 3.182446305284263,
+    "unit": "four_validation_blocks"
+  },
+  "measurement_bound_sec": 7200,
+  "runtime_preparation_bound_sec": 600,
+  "analysis_bound_sec": 600,
+  "technical_retries": 1,
+  "monitor_lifecycle": {
+    "readiness_bound_sec": 5,
+    "completion_bound_sec": 30
+  },
+  "historical_analysis_seal": "44f07ecc6bdedd44cfe54b4f4ef0b7050846e3c67f0bd1d5faf8d8868b38b4ef",
+  "native_sampler": false,
+  "novelty_established": false,
+  "context": "q025_small",
+  "context_contract": {
+    "quota_us": 25000,
+    "iterations": 44000,
+    "size": "small"
+  },
+  "deadline_grid_ms": [
+    25,
+    50,
+    100,
+    200,
+    500,
+    1000
+  ],
+  "primary_deadline_ms": 500
+}

@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-08",
+  "sources": [
+    {
+      "id": "sarde_2021",
+      "title": "SARDE: A Framework for Continuous and Self-Adaptive Resource Demand Estimation",
+      "url": "https://se.informatik.uni-wuerzburg.de/publications/?cHash=c7300d8a02e65b7dcd8870de230e3338&tx_extbibsonomycsl_publicationlist%5Baction%5D=download&tx_extbibsonomycsl_publicationlist%5Bcontroller%5D=Document&tx_extbibsonomycsl_publicationlist%5BfileName%5D=SARDE_TaaS2020.pdf&tx_extbibsonomycsl_publicationlist%5BintraHash%5D=fc3fb3694ee15b680f1466a5acc7bc64&tx_extbibsonomycsl_publicationlist%5BuserName%5D=se-group",
+      "coverage": "Primary preprint sections 5.2-5.4 on cross-validation, tuning, real/proxy errors and learned selection. Ordinary two-block selector implemented; full pipeline untested.",
+      "relevance": "Window/step tuning, estimator selection and internal cross-validation proxies."
+    },
+    {
+      "id": "computational_requirements",
+      "title": "Estimating Computational Requirements in Multi-Threaded Applications",
+      "url": "https://juanfperez.com/data/2015_02_des_TSE.pdf",
+      "coverage": "Primary author PDF sections 3-6; BL equation (1), RPS equation (3), CPU-related response and shared-CPU assumptions. Single-worker elapsed special case only; no full published implementation.",
+      "relevance": "Alternatives using response/resource-queue observations; detailed quota applicability unaudited."
+    },
+    {
+      "id": "moving_horizon_2018",
+      "title": "Moving Horizon Estimation of Service Demands in Queuing Networks",
+      "url": "https://cse.lab.imtlucca.it/~mirco.tribastone/papers/mascots18.pdf",
+      "coverage": "Primary author PDF sections II-III equations (1),(3)-(8); open one-queue observed-flow/exposure adaptation; explicit seconds correction and quadrature sensitivity. No full network QP executed.",
+      "relevance": "Passive transient demand inference from queue traces; known topology/routing, exponential services and fluid approximation."
+    },
+    {
+      "id": "dec_thesis_2010",
+      "title": "DEC: A Technique for Estimating Resource Demands of Software Services",
+      "url": "https://www.collectionscanada.gc.ca/obj/thesescanada/vol2/002/MR69450.PDF?is_thesis=1&oclc_number=806535411",
+      "coverage": "Kalbasi's 2010 primary thesis: title, chapters 3\u20134 selected passages, benchmark acquisition and chapters 5\u20136 confidence limitations inspected",
+      "relevance": "Benchmark mixtures, replication-based demand confidence and validation; narrow regression intervals can accompany poor predictions. Not full verification of the 2012 journal revision."
+    },
+    {
+      "id": "mpora_2026",
+      "title": "Uncertainty-Aware Resource Allocation for Multi-Path Programs with In-Kernel Predictions",
+      "url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol375-ecrts2026/html/LIPIcs.ECRTS.2026.17/LIPIcs.ECRTS.2026.17.html",
+      "coverage": "Primary paper: abstract, problem/approach and conformal-calibration/shift passages in sections 4\u20136 inspected",
+      "relevance": "Offline state/allocation profiles and held-out error calibration; uncertainty-aware deadline constraints; marginal rather than conditional coverage, shift assumptions."
+    },
+    {
+      "id": "ordinary_conformal_and_selective_risk",
+      "title": "A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification",
+      "url": "https://arxiv.org/html/2107.07511v6",
+      "coverage": "Primary author tutorial section 1.1 finite-sample rank/marginal coverage; section 5.5 conditional selected-risk control and i.i.d. assumptions. Count feasibility only; no guard reproduction or guarantee."
+    }
+  ],
+  "technical_reference": {
+    "title": "CFS Bandwidth Control \u2014 Linux Kernel documentation",
+    "url": "https://docs.kernel.org/scheduler/sched-bwc.html",
+    "coverage": "Overview, hierarchy and quota caveats inspected",
+    "usage": "Quota is an upper CPU-time budget, with replenishment, throttling and per-CPU slices; do not equate it to guaranteed continuous supply."
+  },
+  "prior_screen": "analysis/runtime_io_passive_novelty_screen/20261008/sources.json",
+  "scope": "Targeted applicability assessment, not exhaustive firstness search",
+  "novelty_established": false
+}

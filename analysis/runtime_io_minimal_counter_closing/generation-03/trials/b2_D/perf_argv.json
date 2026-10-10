@@ -1,0 +1,23 @@
+[
+  "/usr/bin/perf",
+  "stat",
+  "-a",
+  "-C",
+  "2,4",
+  "-A",
+  "-j",
+  "-D",
+  "-1",
+  "--timeout",
+  "300000",
+  "--control",
+  "fd:3,6",
+  "-o",
+  "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_minimal_counter_closing/generation-03/trials/b2_D/perf.jsonl",
+  "-e",
+  "{cycles:u,instructions:u}",
+  "-G",
+  "system.slice/docker-6d87925738eb70a501d9d30c0140f746373de169397a66771a8786dcd53df301.scope",
+  "--",
+  "/usr/bin/cat"
+]

@@ -1,0 +1,322 @@
+{
+  "run_id": "pilot_overhead_2",
+  "config": {
+    "study": "D",
+    "period_us": 100000,
+    "quota_us": 50000,
+    "workers": 4,
+    "gomaxprocs": 2,
+    "pattern": "bursty",
+    "rate": 113.21,
+    "burst_low": 56.605,
+    "burst_high": 169.815,
+    "iterations": 44000,
+    "rep": 5,
+    "instrument": false,
+    "duration_sec": 20,
+    "warmup_sec": 10,
+    "timeout_sec": 5,
+    "client_trace": false,
+    "run_id": "pilot_overhead_2"
+  },
+  "limits": {
+    "/sys/fs/cgroup/system.slice/docker-364ceef8c21f742386b0c73c654d5d2135df7d28d1620cc65ca2288ae3be450e.scope": {
+      "cpu.max": "50000 100000",
+      "cpu.max.burst": "0",
+      "cpuset.cpus.effective": "2,4"
+    },
+    "/sys/fs/cgroup/system.slice": {
+      "cpu.max": "max 100000",
+      "cpu.max.burst": "0",
+      "cpuset.cpus.effective": "0-11"
+    }
+  },
+  "cgroup_path": "/sys/fs/cgroup/system.slice/docker-364ceef8c21f742386b0c73c654d5d2135df7d28d1620cc65ca2288ae3be450e.scope",
+  "runtime": {
+    "active_handlers": 0,
+    "admitted": 0,
+    "client_gone_at_completion": 0,
+    "completed": 0,
+    "go_version": "go1.26.1",
+    "godebug": "",
+    "gomaxprocs": 2,
+    "gomaxprocs_env": "2",
+    "instrument": false,
+    "num_cpu": 2,
+    "queue_cap": 128,
+    "queue_len": 0,
+    "queue_max": 0,
+    "rejected": 0,
+    "workers": 4
+  },
+  "runtime_end": {
+    "active_handlers": 0,
+    "admitted": 2265,
+    "client_gone_at_completion": 0,
+    "completed": 2265,
+    "go_version": "go1.26.1",
+    "godebug": "",
+    "gomaxprocs": 2,
+    "gomaxprocs_env": "2",
+    "instrument": false,
+    "num_cpu": 2,
+    "queue_cap": 128,
+    "queue_len": 0,
+    "queue_max": 92,
+    "rejected": 0,
+    "workers": 4
+  },
+  "cgroup_initial": {
+    "usage_usec": 4728437,
+    "user_usec": 4609684,
+    "system_usec": 118752,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 117,
+    "nr_throttled": 65,
+    "throttled_usec": 9439366,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "cgroup_client_end": {
+    "usage_usec": 13876000,
+    "user_usec": 13564204,
+    "system_usec": 311796,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 332,
+    "nr_throttled": 203,
+    "throttled_usec": 29454939,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "cgroup_final": {
+    "usage_usec": 13876273,
+    "user_usec": 13564471,
+    "system_usec": 311802,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 332,
+    "nr_throttled": 203,
+    "throttled_usec": 29454939,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "cgroup_delta": {
+    "usage_usec": 9147836,
+    "user_usec": 8954787,
+    "system_usec": 193050,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 215,
+    "nr_throttled": 138,
+    "throttled_usec": 20015573,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "elapsed_sec": 21.52696989099786,
+  "cpu_usage_cores": 0.42494768405958694,
+  "throttling_fraction": 0.641860465116279,
+  "quality_flags": [],
+  "power_before": {
+    "policies": {
+      "policy0": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy1": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy10": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy11": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy2": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy3": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy4": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy5": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy6": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy7": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy8": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy9": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      }
+    },
+    "platform_profile": "balanced",
+    "external_power": {
+      "ACAD": "1"
+    },
+    "desktop_profile": "balanced"
+  },
+  "power_after": {
+    "policies": {
+      "policy0": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy1": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy10": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy11": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy2": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy3": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy4": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy5": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy6": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy7": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy8": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy9": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      }
+    },
+    "platform_profile": "balanced",
+    "external_power": {
+      "ACAD": "1"
+    },
+    "desktop_profile": "balanced"
+  },
+  "thermal": {
+    "stable": true,
+    "sensors": {
+      "k10temp:Tctl": {
+        "mean_c": 39.08653846153846,
+        "range_c": 1.625,
+        "slope_c_per_min": -0.13969538988316765,
+        "near_baseline": true
+      }
+    }
+  },
+  "monitor_samples": 21,
+  "server_unseen_dispatched": 0,
+  "measurement_started_at": "2026-09-30T01:58:49.581033+05:30",
+  "measurement_ended_at": "2026-09-30T01:59:11.108032+05:30"
+}

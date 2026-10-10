@@ -1,0 +1,26 @@
+{
+  "id": "5b13a96905471d82cb5d0990c765684370921b9817ff704553e8af2512b4aa45",
+  "name": "quota-diagnostic-d18041c1fb09069d",
+  "command": [
+    "docker",
+    "create",
+    "--name",
+    "quota-diagnostic-d18041c1fb09069d",
+    "--label",
+    "quota.diagnostic.session=/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix/full",
+    "--cpuset-cpus=2,4",
+    "--cpu-period=100000",
+    "--cpu-quota=50000",
+    "-e",
+    "WORKERS=1",
+    "-e",
+    "QUEUE_SIZE=128",
+    "-e",
+    "GOMAXPROCS=2",
+    "-e",
+    "INSTRUMENT=1",
+    "-p",
+    "127.0.0.1:18080:8080",
+    "quota-diagnostic-service:1"
+  ]
+}

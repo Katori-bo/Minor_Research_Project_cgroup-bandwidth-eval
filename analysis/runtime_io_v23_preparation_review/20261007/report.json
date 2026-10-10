@@ -1,0 +1,189 @@
+{
+  "schema": 1,
+  "at": "2026-10-07T06:21:55.410968+00:00",
+  "status": "implementation_and_preparation_passed_performance_unrun",
+  "generation": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v23/generation-01",
+  "source_count": 135,
+  "tests_passed": 46,
+  "v22_frozen_source_files_unchanged": 126,
+  "preparation_seal": "d1c94c4ce6488f0a3e3d4cb31e3098f3090bdb78098c80775c055434981a78ab",
+  "scientific_design_seal": "008ea735bea8dbc38314c1c06a657efb71730da68fb9c311bdde68a613fc5379",
+  "checks": [
+    {
+      "case": "resource_preflight",
+      "cgroup_absent_now": true,
+      "preparation_owner_exited": true,
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false,
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-e37107cbea5c5a8f7039c71caaeb48164a87f30998338bf5d8996bce1dbe6061.scope",
+        "container_id": "e37107cbea5c5a8f7039c71caaeb48164a87f30998338bf5d8996bce1dbe6061"
+      }
+    },
+    {
+      "case": "functional_small_A",
+      "cgroup_absent_now": true,
+      "preparation_owner_exited": true,
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false,
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-fce7ead8760a962d202fc985bf1d5aa9c49467c78700d13eb78074412d55033f.scope",
+        "container_id": "fce7ead8760a962d202fc985bf1d5aa9c49467c78700d13eb78074412d55033f"
+      },
+      "outcomes": {
+        "success": 170
+      }
+    },
+    {
+      "case": "functional_small_B",
+      "cgroup_absent_now": true,
+      "preparation_owner_exited": true,
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false,
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-9c366658680845518afc5889ac4a3363621b5a010beead4618958a3ca029c9d1.scope",
+        "container_id": "9c366658680845518afc5889ac4a3363621b5a010beead4618958a3ca029c9d1"
+      },
+      "outcomes": {
+        "success": 114
+      }
+    },
+    {
+      "case": "functional_small_B_cancel",
+      "cgroup_absent_now": true,
+      "preparation_owner_exited": true,
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false,
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-64f6e08a98a30ef65995ca459864531d0b7fe4d46067aae7221b4a9a24aea62d.scope",
+        "container_id": "64f6e08a98a30ef65995ca459864531d0b7fe4d46067aae7221b4a9a24aea62d"
+      },
+      "outcomes": {
+        "timeout": 452,
+        "rejected": 1
+      }
+    },
+    {
+      "case": "functional_small_C",
+      "cgroup_absent_now": true,
+      "preparation_owner_exited": true,
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false,
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-5e43842f6cb3e41fa0e2e41f9120ffada151cdd25c14fd3988d927e42872a6fe.scope",
+        "container_id": "5e43842f6cb3e41fa0e2e41f9120ffada151cdd25c14fd3988d927e42872a6fe"
+      },
+      "outcomes": {
+        "success": 114
+      }
+    },
+    {
+      "case": "functional_large_A",
+      "cgroup_absent_now": true,
+      "preparation_owner_exited": true,
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false,
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-f65486863464c61d221067a95608226ca89a9c3cfdd578cc6b18edad1dfde0db.scope",
+        "container_id": "f65486863464c61d221067a95608226ca89a9c3cfdd578cc6b18edad1dfde0db"
+      },
+      "outcomes": {
+        "success": 85
+      }
+    },
+    {
+      "case": "functional_large_B",
+      "cgroup_absent_now": true,
+      "preparation_owner_exited": true,
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false,
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-ccbc38d147192aa0eba211ac3be9470bee792f67de24ab62d54880ab1ecbac8f.scope",
+        "container_id": "ccbc38d147192aa0eba211ac3be9470bee792f67de24ab62d54880ab1ecbac8f"
+      },
+      "outcomes": {
+        "success": 57
+      }
+    },
+    {
+      "case": "functional_large_B_cancel",
+      "cgroup_absent_now": true,
+      "preparation_owner_exited": true,
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false,
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-df514e34ce796a5561d45cd04a9b4a47328a17fc58d5a73e1c2fd20f7c75848c.scope",
+        "container_id": "df514e34ce796a5561d45cd04a9b4a47328a17fc58d5a73e1c2fd20f7c75848c"
+      },
+      "outcomes": {
+        "timeout": 227
+      }
+    },
+    {
+      "case": "functional_large_C",
+      "cgroup_absent_now": true,
+      "preparation_owner_exited": true,
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false,
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-9235b5abf23cb1c55271cf036d8b3079e444f26a47add422a8a142dbda9ff28b.scope",
+        "container_id": "9235b5abf23cb1c55271cf036d8b3079e444f26a47add422a8a142dbda9ff28b"
+      },
+      "outcomes": {
+        "success": 57
+      }
+    }
+  ],
+  "performance_status": {
+    "generation": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v23/generation-01",
+    "completed": {
+      "qualification": 0,
+      "calibration": 0,
+      "validation": 0
+    },
+    "predictions_sealed": false,
+    "progress": {
+      "stage": "prepared"
+    },
+    "counts_are_markers_full_verification_separate": true
+  },
+  "observer_review": "fresh external read-only root inventory still required",
+  "novelty_established": false,
+  "independent_workload_generality_established": false
+}

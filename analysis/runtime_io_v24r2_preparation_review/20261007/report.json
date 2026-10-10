@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "decision": "offline_package_ready_runtime_qualification_deferred",
+  "generation": "analysis/runtime_io_v24/generation-02",
+  "bundle_seal_sha256": "2a072ea7481ead56d8075e8fdec4ad4d11e32cdb701faff0e75952fdbe4b0915",
+  "sampler_repair_receipt_seal_sha256": "b03ed6ce69d72e708e969e9325a9eaaeb3657bc5dc394da28fe6370ffc5546c3",
+  "bundle_sources": 161,
+  "unchanged_historical_source_counts": {
+    "V22": 126,
+    "V23": 135,
+    "V24 revision1": 148
+  },
+  "previous_failed_evidence_hashes_verified": true,
+  "previous_generation_decision": "incomplete",
+  "science_design_seal_sha256": "c6d263872b2ce24071ecb4973794f74ab10414a5832a42f0e5d463970d3fcb59",
+  "science_matrix_and_schedules_unchanged": true,
+  "software_checks": {
+    "revision2_unit_checks": 29,
+    "combined_regressions": 94,
+    "combined_command": "PYTHONPATH=diagnostic python3 -m unittest test_v22 test_v23 test_v24 test_v24r2 -v",
+    "passed": true,
+    "full_duration_synthetic_recording": {
+      "samples": 5441,
+      "duration_sec": 110.016546733,
+      "max_read_width_ms": 0.642202,
+      "p99_read_width_ms": 0.31775,
+      "max_adjacent_gap_ms": 21.461897,
+      "own_cpu_ms": 864.33454,
+      "gc_collections_during_capture": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "qualification": {
+    "real_service": false,
+    "docker_invoked": false,
+    "sudo_invoked": false,
+    "real_cgroup_sampler_invoked": false,
+    "performance_trials_completed": 0,
+    "performance_trials_planned": 12,
+    "host_settings_changed": false
+  },
+  "external_launch": "bash diagnostic/start_v24r2.sh run analysis/runtime_io_v24/generation-02",
+  "limits": "The software check removes observed GC scans as a timing risk; original pause attribution remains unproven. Actual cgroup timing and paired observer comparability require the next external quiet-window run."
+}

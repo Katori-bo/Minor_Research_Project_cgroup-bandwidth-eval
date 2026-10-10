@@ -1,0 +1,1224 @@
+{
+  "analysis_version": 2,
+  "complete": true,
+  "go_version": "go1.26.1",
+  "runtime_event_count": 708,
+  "clock_mapping": {
+    "offset_low_ns": 166310666020771,
+    "offset_high_ns": 166310666021443,
+    "uncertainty_ns": 672,
+    "anchor_count": 2
+  },
+  "successful_request_count": 2,
+  "request_count": 4,
+  "outcome_counts": {
+    "success": 2,
+    "rejected": 1,
+    "timeout": 1,
+    "error": 0
+  },
+  "unobserved_request_count": 0,
+  "matched": [
+    {
+      "group": "slow",
+      "id": 4,
+      "outcome": "success",
+      "status": 200,
+      "error": "",
+      "e2e_ns": 239037,
+      "socket_write_count": 1,
+      "intervals": {
+        "handler": {
+          "start_ns": 103656857,
+          "end_ns": 103707040,
+          "duration_ns": 50183,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 24967,
+            "sync_or_other_wait_ns": 23488,
+            "runnable_ns": 1728
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_exit_to_connection_done": {
+          "start_ns": 103707040,
+          "end_ns": 103768085,
+          "duration_ns": 61045,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 21493,
+            "syscall_ns": 23488,
+            "sync_or_other_wait_ns": 11968,
+            "runnable_ns": 4096
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "connection_context_before_handler": {
+          "start_ns": 103539437,
+          "end_ns": 103656857,
+          "duration_ns": 117420,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 49452,
+            "syscall_ns": 6144,
+            "network_wait_ns": 61248,
+            "runnable_ns": 576
+          },
+          "association": "connection_context_not_request_arrival",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "read_request_return_to_handler": {
+          "start_ns": 103637631,
+          "end_ns": 103656857,
+          "duration_ns": 19226,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 19226
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_exit_to_first_socket_write": {
+          "start_ns": 103707040,
+          "end_ns": 103722590,
+          "duration_ns": 15550,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 15550
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "socket_write_0": {
+          "start_ns": 103722590,
+          "end_ns": 103747967,
+          "duration_ns": 25377,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 1889,
+            "syscall_ns": 23488
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "final_socket_write_to_connection_done": {
+          "start_ns": 103747967,
+          "end_ns": 103768085,
+          "duration_ns": 20118,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 4054,
+            "sync_or_other_wait_ns": 11968,
+            "runnable_ns": 4096
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "worker": {
+          "start_ns": 103675972,
+          "end_ns": 103691652,
+          "duration_ns": 15680,
+          "goroutine": 39,
+          "states": {
+            "go_running_ns": 15680
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "worker_completion_to_handler_resume": {
+          "start_ns": 103691652,
+          "end_ns": 103698134,
+          "duration_ns": 6482,
+          "goroutine": 38,
+          "states": {
+            "sync_or_other_wait_ns": 3529,
+            "runnable_ns": 1728,
+            "go_running_ns": 1225
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_resume_to_application_write": {
+          "start_ns": 103698134,
+          "end_ns": 103703644,
+          "duration_ns": 5510,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 5510
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "application_write": {
+          "start_ns": 103703644,
+          "end_ns": 103706049,
+          "duration_ns": 2405,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 2405
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "application_write_to_handler_exit": {
+          "start_ns": 103706049,
+          "end_ns": 103707040,
+          "duration_ns": 991,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 991
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        }
+      },
+      "client_offsets": {},
+      "server_observation": "observed",
+      "conn": 2,
+      "handler_g": 38,
+      "server_outcome": "admitted",
+      "socket_write_error_count": 0,
+      "socket_writes": [
+        {
+          "bytes": 273,
+          "conn": 2,
+          "end_ns": 103747967,
+          "kind": "write",
+          "request": 4,
+          "request_known": true,
+          "start_ns": 103722590
+        }
+      ],
+      "final_connection_state": "conn_idle",
+      "connection_reuse_index": 2,
+      "handler_span_ns": 50183,
+      "outside_handler_signed_ns": 188854,
+      "read_association": "ambiguous_http_framing",
+      "context_reads": [
+        {
+          "bytes": 120,
+          "conn": 2,
+          "end_ns": 103612724,
+          "kind": "read",
+          "request": 0,
+          "request_known": false,
+          "start_ns": 103541270
+        }
+      ],
+      "first_socket_write_after_exit_ns": 15550,
+      "last_socket_write_end_ns": 103747967,
+      "worker_g": 39,
+      "queue_ns": 14407,
+      "processing_ns": 15680,
+      "post_work_ns": 6482,
+      "application_write_error": "",
+      "unresolved": "Connection context does not timestamp this request arriving; final socket write does not prove client delivery. Go Running does not prove continuous CPU execution."
+    },
+    {
+      "group": "typical",
+      "id": 4,
+      "outcome": "success",
+      "status": 200,
+      "error": "",
+      "e2e_ns": 239037,
+      "socket_write_count": 1,
+      "intervals": {
+        "handler": {
+          "start_ns": 103656857,
+          "end_ns": 103707040,
+          "duration_ns": 50183,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 24967,
+            "sync_or_other_wait_ns": 23488,
+            "runnable_ns": 1728
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_exit_to_connection_done": {
+          "start_ns": 103707040,
+          "end_ns": 103768085,
+          "duration_ns": 61045,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 21493,
+            "syscall_ns": 23488,
+            "sync_or_other_wait_ns": 11968,
+            "runnable_ns": 4096
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "connection_context_before_handler": {
+          "start_ns": 103539437,
+          "end_ns": 103656857,
+          "duration_ns": 117420,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 49452,
+            "syscall_ns": 6144,
+            "network_wait_ns": 61248,
+            "runnable_ns": 576
+          },
+          "association": "connection_context_not_request_arrival",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "read_request_return_to_handler": {
+          "start_ns": 103637631,
+          "end_ns": 103656857,
+          "duration_ns": 19226,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 19226
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_exit_to_first_socket_write": {
+          "start_ns": 103707040,
+          "end_ns": 103722590,
+          "duration_ns": 15550,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 15550
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "socket_write_0": {
+          "start_ns": 103722590,
+          "end_ns": 103747967,
+          "duration_ns": 25377,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 1889,
+            "syscall_ns": 23488
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "final_socket_write_to_connection_done": {
+          "start_ns": 103747967,
+          "end_ns": 103768085,
+          "duration_ns": 20118,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 4054,
+            "sync_or_other_wait_ns": 11968,
+            "runnable_ns": 4096
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "worker": {
+          "start_ns": 103675972,
+          "end_ns": 103691652,
+          "duration_ns": 15680,
+          "goroutine": 39,
+          "states": {
+            "go_running_ns": 15680
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "worker_completion_to_handler_resume": {
+          "start_ns": 103691652,
+          "end_ns": 103698134,
+          "duration_ns": 6482,
+          "goroutine": 38,
+          "states": {
+            "sync_or_other_wait_ns": 3529,
+            "runnable_ns": 1728,
+            "go_running_ns": 1225
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_resume_to_application_write": {
+          "start_ns": 103698134,
+          "end_ns": 103703644,
+          "duration_ns": 5510,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 5510
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "application_write": {
+          "start_ns": 103703644,
+          "end_ns": 103706049,
+          "duration_ns": 2405,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 2405
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "application_write_to_handler_exit": {
+          "start_ns": 103706049,
+          "end_ns": 103707040,
+          "duration_ns": 991,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 991
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        }
+      },
+      "client_offsets": {},
+      "server_observation": "observed",
+      "conn": 2,
+      "handler_g": 38,
+      "server_outcome": "admitted",
+      "socket_write_error_count": 0,
+      "socket_writes": [
+        {
+          "bytes": 273,
+          "conn": 2,
+          "end_ns": 103747967,
+          "kind": "write",
+          "request": 4,
+          "request_known": true,
+          "start_ns": 103722590
+        }
+      ],
+      "final_connection_state": "conn_idle",
+      "connection_reuse_index": 2,
+      "handler_span_ns": 50183,
+      "outside_handler_signed_ns": 188854,
+      "read_association": "ambiguous_http_framing",
+      "context_reads": [
+        {
+          "bytes": 120,
+          "conn": 2,
+          "end_ns": 103612724,
+          "kind": "read",
+          "request": 0,
+          "request_known": false,
+          "start_ns": 103541270
+        }
+      ],
+      "first_socket_write_after_exit_ns": 15550,
+      "last_socket_write_end_ns": 103747967,
+      "worker_g": 39,
+      "queue_ns": 14407,
+      "processing_ns": 15680,
+      "post_work_ns": 6482,
+      "application_write_error": "",
+      "unresolved": "Connection context does not timestamp this request arriving; final socket write does not prove client delivery. Go Running does not prove continuous CPU execution."
+    }
+  ],
+  "all_requests": [
+    {
+      "id": 2,
+      "outcome": "timeout",
+      "status": 0,
+      "error": "Get \"http://127.0.0.1:45199/work?iterations=100&id=2\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+      "e2e_ns": 100506271,
+      "socket_write_count": 1,
+      "intervals": {
+        "handler": {
+          "start_ns": 1102914,
+          "end_ns": 101448955,
+          "duration_ns": 100346041,
+          "goroutine": 71,
+          "states": {
+            "go_running_ns": 11385,
+            "sync_or_other_wait_ns": 100331008,
+            "runnable_ns": 3648
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_exit_to_connection_done": {
+          "start_ns": 101448955,
+          "end_ns": 101526660,
+          "duration_ns": 77705,
+          "goroutine": 71,
+          "states": {
+            "go_running_ns": 28681,
+            "syscall_ns": 49024
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "connection_context_before_handler": {
+          "start_ns": 809585,
+          "end_ns": 1102914,
+          "duration_ns": 293329,
+          "goroutine": 71,
+          "states": {
+            "go_running_ns": 46673,
+            "syscall_ns": 6400,
+            "network_wait_ns": 240000,
+            "runnable_ns": 256
+          },
+          "association": "connection_context_not_request_arrival",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "read_request_return_to_handler": {
+          "start_ns": 1091473,
+          "end_ns": 1102914,
+          "duration_ns": 11441,
+          "goroutine": 71,
+          "states": {
+            "go_running_ns": 11441
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_exit_to_first_socket_write": {
+          "start_ns": 101448955,
+          "end_ns": 101466437,
+          "duration_ns": 17482,
+          "goroutine": 71,
+          "states": {
+            "go_running_ns": 17482
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "socket_write_0": {
+          "start_ns": 101466437,
+          "end_ns": 101517393,
+          "duration_ns": 50956,
+          "goroutine": 71,
+          "states": {
+            "go_running_ns": 1932,
+            "syscall_ns": 49024
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "final_socket_write_to_connection_done": {
+          "start_ns": 101517393,
+          "end_ns": 101526660,
+          "duration_ns": 9267,
+          "goroutine": 71,
+          "states": {
+            "go_running_ns": 9267
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "worker": {
+          "start_ns": 102074605,
+          "end_ns": 102097198,
+          "duration_ns": 22593,
+          "goroutine": 39,
+          "states": {
+            "go_running_ns": 22593
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        }
+      },
+      "client_offsets": {},
+      "server_observation": "observed",
+      "conn": 1,
+      "handler_g": 71,
+      "server_outcome": "admitted",
+      "socket_write_error_count": 0,
+      "socket_writes": [
+        {
+          "bytes": 75,
+          "conn": 1,
+          "end_ns": 101517393,
+          "kind": "write",
+          "request": 2,
+          "request_known": true,
+          "start_ns": 101466437
+        }
+      ],
+      "final_connection_state": "conn_idle",
+      "connection_reuse_index": 0,
+      "handler_span_ns": 100346041,
+      "outside_handler_signed_ns": 160230,
+      "read_association": "ambiguous_http_framing",
+      "context_reads": [
+        {
+          "bytes": 120,
+          "conn": 1,
+          "end_ns": 1071225,
+          "kind": "read",
+          "request": 0,
+          "request_known": false,
+          "start_ns": 820576
+        }
+      ],
+      "first_socket_write_after_exit_ns": 17482,
+      "last_socket_write_end_ns": 101517393,
+      "worker_g": 39,
+      "queue_ns": 100965199,
+      "processing_ns": 22593,
+      "unresolved": "Connection context does not timestamp this request arriving; final socket write does not prove client delivery. Go Running does not prove continuous CPU execution."
+    },
+    {
+      "id": 1,
+      "outcome": "rejected",
+      "status": 503,
+      "error": "",
+      "e2e_ns": 554618,
+      "socket_write_count": 1,
+      "intervals": {
+        "handler": {
+          "start_ns": 101847871,
+          "end_ns": 101861106,
+          "duration_ns": 13235,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 13235
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_exit_to_connection_done": {
+          "start_ns": 101861106,
+          "end_ns": 101916940,
+          "duration_ns": 55834,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 13658,
+            "syscall_ns": 27136,
+            "sync_or_other_wait_ns": 14208,
+            "runnable_ns": 832
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "connection_context_before_handler": {
+          "start_ns": 101690907,
+          "end_ns": 101847871,
+          "duration_ns": 156964,
+          "goroutine": 38,
+          "states": {
+            "not_created_or_ended_ns": 10418,
+            "runnable_ns": 11328,
+            "go_running_ns": 94642,
+            "syscall_ns": 6720,
+            "network_wait_ns": 33856
+          },
+          "association": "connection_context_not_request_arrival",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "read_request_return_to_handler": {
+          "start_ns": 101814038,
+          "end_ns": 101847871,
+          "duration_ns": 33833,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 33833
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_exit_to_first_socket_write": {
+          "start_ns": 101861106,
+          "end_ns": 101869912,
+          "duration_ns": 8806,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 8806
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "socket_write_0": {
+          "start_ns": 101869912,
+          "end_ns": 101898476,
+          "duration_ns": 28564,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 1428,
+            "syscall_ns": 27136
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "final_socket_write_to_connection_done": {
+          "start_ns": 101898476,
+          "end_ns": 101916940,
+          "duration_ns": 18464,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 3424,
+            "sync_or_other_wait_ns": 14208,
+            "runnable_ns": 832
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        }
+      },
+      "client_offsets": {},
+      "server_observation": "observed",
+      "conn": 2,
+      "handler_g": 38,
+      "server_outcome": "rejected",
+      "socket_write_error_count": 0,
+      "socket_writes": [
+        {
+          "bytes": 178,
+          "conn": 2,
+          "end_ns": 101898476,
+          "kind": "write",
+          "request": 1,
+          "request_known": true,
+          "start_ns": 101869912
+        }
+      ],
+      "final_connection_state": "conn_idle",
+      "connection_reuse_index": 0,
+      "handler_span_ns": 13235,
+      "outside_handler_signed_ns": 541383,
+      "read_association": "ambiguous_http_framing",
+      "context_reads": [
+        {
+          "bytes": 120,
+          "conn": 2,
+          "end_ns": 101771669,
+          "kind": "read",
+          "request": 0,
+          "request_known": false,
+          "start_ns": 101727035
+        }
+      ],
+      "first_socket_write_after_exit_ns": 8806,
+      "last_socket_write_end_ns": 101898476,
+      "unresolved": "Connection context does not timestamp this request arriving; final socket write does not prove client delivery. Go Running does not prove continuous CPU execution."
+    },
+    {
+      "id": 0,
+      "outcome": "success",
+      "status": 200,
+      "error": "",
+      "e2e_ns": 211176,
+      "socket_write_count": 1,
+      "intervals": {
+        "handler": {
+          "start_ns": 103254223,
+          "end_ns": 103288437,
+          "duration_ns": 34214,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 16230,
+            "sync_or_other_wait_ns": 16960,
+            "runnable_ns": 1024
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_exit_to_connection_done": {
+          "start_ns": 103288437,
+          "end_ns": 103350643,
+          "duration_ns": 62206,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 29694,
+            "syscall_ns": 25024,
+            "sync_or_other_wait_ns": 5824,
+            "runnable_ns": 1664
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "connection_context_before_handler": {
+          "start_ns": 101916940,
+          "end_ns": 103254223,
+          "duration_ns": 1337283,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 43715,
+            "syscall_ns": 5184,
+            "network_wait_ns": 1287808,
+            "runnable_ns": 576
+          },
+          "association": "connection_context_not_request_arrival",
+          "other_jobs_completed": 1,
+          "other_job_id_sample": [
+            2
+          ],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "read_request_return_to_handler": {
+          "start_ns": 103244555,
+          "end_ns": 103254223,
+          "duration_ns": 9668,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 9668
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_exit_to_first_socket_write": {
+          "start_ns": 103288437,
+          "end_ns": 103299548,
+          "duration_ns": 11111,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 11111
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "socket_write_0": {
+          "start_ns": 103299548,
+          "end_ns": 103327560,
+          "duration_ns": 28012,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 2988,
+            "syscall_ns": 25024
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "final_socket_write_to_connection_done": {
+          "start_ns": 103327560,
+          "end_ns": 103350643,
+          "duration_ns": 23083,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 15595,
+            "sync_or_other_wait_ns": 5824,
+            "runnable_ns": 1664
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "worker": {
+          "start_ns": 103264612,
+          "end_ns": 103278068,
+          "duration_ns": 13456,
+          "goroutine": 39,
+          "states": {
+            "go_running_ns": 13456
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "worker_completion_to_handler_resume": {
+          "start_ns": 103278068,
+          "end_ns": 103280763,
+          "duration_ns": 2695,
+          "goroutine": 38,
+          "states": {
+            "sync_or_other_wait_ns": 729,
+            "runnable_ns": 1024,
+            "go_running_ns": 942
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_resume_to_application_write": {
+          "start_ns": 103280763,
+          "end_ns": 103286173,
+          "duration_ns": 5410,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 5410
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "application_write": {
+          "start_ns": 103286173,
+          "end_ns": 103287836,
+          "duration_ns": 1663,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 1663
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "application_write_to_handler_exit": {
+          "start_ns": 103287836,
+          "end_ns": 103288437,
+          "duration_ns": 601,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 601
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        }
+      },
+      "client_offsets": {},
+      "server_observation": "observed",
+      "conn": 2,
+      "handler_g": 38,
+      "server_outcome": "admitted",
+      "socket_write_error_count": 0,
+      "socket_writes": [
+        {
+          "bytes": 272,
+          "conn": 2,
+          "end_ns": 103327560,
+          "kind": "write",
+          "request": 0,
+          "request_known": true,
+          "start_ns": 103299548
+        }
+      ],
+      "final_connection_state": "conn_idle",
+      "connection_reuse_index": 1,
+      "handler_span_ns": 34214,
+      "outside_handler_signed_ns": 176962,
+      "read_association": "ambiguous_http_framing",
+      "context_reads": [
+        {
+          "bytes": 120,
+          "conn": 2,
+          "end_ns": 103215861,
+          "kind": "read",
+          "request": 0,
+          "request_known": false,
+          "start_ns": 101919135
+        }
+      ],
+      "first_socket_write_after_exit_ns": 11111,
+      "last_socket_write_end_ns": 103327560,
+      "worker_g": 39,
+      "queue_ns": 5570,
+      "processing_ns": 13456,
+      "post_work_ns": 2695,
+      "application_write_error": "",
+      "unresolved": "Connection context does not timestamp this request arriving; final socket write does not prove client delivery. Go Running does not prove continuous CPU execution."
+    },
+    {
+      "id": 4,
+      "outcome": "success",
+      "status": 200,
+      "error": "",
+      "e2e_ns": 239037,
+      "socket_write_count": 1,
+      "intervals": {
+        "handler": {
+          "start_ns": 103656857,
+          "end_ns": 103707040,
+          "duration_ns": 50183,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 24967,
+            "sync_or_other_wait_ns": 23488,
+            "runnable_ns": 1728
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_exit_to_connection_done": {
+          "start_ns": 103707040,
+          "end_ns": 103768085,
+          "duration_ns": 61045,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 21493,
+            "syscall_ns": 23488,
+            "sync_or_other_wait_ns": 11968,
+            "runnable_ns": 4096
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "connection_context_before_handler": {
+          "start_ns": 103539437,
+          "end_ns": 103656857,
+          "duration_ns": 117420,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 49452,
+            "syscall_ns": 6144,
+            "network_wait_ns": 61248,
+            "runnable_ns": 576
+          },
+          "association": "connection_context_not_request_arrival",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "read_request_return_to_handler": {
+          "start_ns": 103637631,
+          "end_ns": 103656857,
+          "duration_ns": 19226,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 19226
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_exit_to_first_socket_write": {
+          "start_ns": 103707040,
+          "end_ns": 103722590,
+          "duration_ns": 15550,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 15550
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "socket_write_0": {
+          "start_ns": 103722590,
+          "end_ns": 103747967,
+          "duration_ns": 25377,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 1889,
+            "syscall_ns": 23488
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "final_socket_write_to_connection_done": {
+          "start_ns": 103747967,
+          "end_ns": 103768085,
+          "duration_ns": 20118,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 4054,
+            "sync_or_other_wait_ns": 11968,
+            "runnable_ns": 4096
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "worker": {
+          "start_ns": 103675972,
+          "end_ns": 103691652,
+          "duration_ns": 15680,
+          "goroutine": 39,
+          "states": {
+            "go_running_ns": 15680
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "worker_completion_to_handler_resume": {
+          "start_ns": 103691652,
+          "end_ns": 103698134,
+          "duration_ns": 6482,
+          "goroutine": 38,
+          "states": {
+            "sync_or_other_wait_ns": 3529,
+            "runnable_ns": 1728,
+            "go_running_ns": 1225
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "handler_resume_to_application_write": {
+          "start_ns": 103698134,
+          "end_ns": 103703644,
+          "duration_ns": 5510,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 5510
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "application_write": {
+          "start_ns": 103703644,
+          "end_ns": 103706049,
+          "duration_ns": 2405,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 2405
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        },
+        "application_write_to_handler_exit": {
+          "start_ns": 103706049,
+          "end_ns": 103707040,
+          "duration_ns": 991,
+          "goroutine": 38,
+          "states": {
+            "go_running_ns": 991
+          },
+          "association": "request",
+          "other_jobs_completed": 0,
+          "other_job_id_sample": [],
+          "clock_mapping_uncertainty_ns": 672
+        }
+      },
+      "client_offsets": {},
+      "server_observation": "observed",
+      "conn": 2,
+      "handler_g": 38,
+      "server_outcome": "admitted",
+      "socket_write_error_count": 0,
+      "socket_writes": [
+        {
+          "bytes": 273,
+          "conn": 2,
+          "end_ns": 103747967,
+          "kind": "write",
+          "request": 4,
+          "request_known": true,
+          "start_ns": 103722590
+        }
+      ],
+      "final_connection_state": "conn_idle",
+      "connection_reuse_index": 2,
+      "handler_span_ns": 50183,
+      "outside_handler_signed_ns": 188854,
+      "read_association": "ambiguous_http_framing",
+      "context_reads": [
+        {
+          "bytes": 120,
+          "conn": 2,
+          "end_ns": 103612724,
+          "kind": "read",
+          "request": 0,
+          "request_known": false,
+          "start_ns": 103541270
+        }
+      ],
+      "first_socket_write_after_exit_ns": 15550,
+      "last_socket_write_end_ns": 103747967,
+      "worker_g": 39,
+      "queue_ns": 14407,
+      "processing_ns": 15680,
+      "post_work_ns": 6482,
+      "application_write_error": "",
+      "unresolved": "Connection context does not timestamp this request arriving; final socket write does not prove client delivery. Go Running does not prove continuous CPU execution."
+    }
+  ],
+  "limitations": [
+    "go_running_ns is Go scheduler state time; OS descheduling or CPU quota throttling can occur within it.",
+    "Connection pre-handler context includes idle, read-ahead and parsing; socket reads have no request byte framing.",
+    "ConnState Active follows readRequest in Go 1.26.1, including parse errors; only a matched handler establishes a valid request.",
+    "Socket Write return and connection Idle/Closed do not establish client receipt.",
+    "Client and service absolute clocks are never subtracted.",
+    "Reads spanning capture boundaries can be absent; read evidence is contextual, not an exhaustive packet timeline."
+  ]
+}

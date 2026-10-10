@@ -1,0 +1,77 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  743.9kB
+Step 1/25 : ARG COMPILER_IMAGE
+Step 2/25 : FROM ${COMPILER_IMAGE} AS control-build
+ ---> 2389ebfa5b7f
+Step 3/25 : ENV CGO_ENABLED=0 GOTOOLCHAIN=local GOENV=off
+ ---> Using cache
+ ---> 3bfcfd36fa8e
+Step 4/25 : COPY control_runtime/proc.go /usr/local/go/src/runtime/proc.go
+ ---> Using cache
+ ---> 05833bc59b34
+Step 5/25 : COPY control_runtime/export_test.go /usr/local/go/src/runtime/export_test.go
+ ---> Using cache
+ ---> dfd70a43de58
+Step 6/25 : COPY control_runtime/proc_test.go /usr/local/go/src/runtime/proc_test.go
+ ---> Using cache
+ ---> ece5589efa6e
+Step 7/25 : WORKDIR /src
+ ---> Using cache
+ ---> 0272da01c30b
+Step 8/25 : COPY service/ ./
+ ---> Using cache
+ ---> 2b5274956df5
+Step 9/25 : RUN go test -v runtime -run '^(TestResearchProbeCounters|TestResearchPendingPreemptFairQueue|TestSchedLocalQueue|TestSchedLocalQueueSteal|TestSchedLocalQueueEmpty|TestPreemption|TestPreemptionGC|TestPreemptionAfterSyscall)$' -count=1 -timeout=180s && go test -v -count=1 ./... && go build -trimpath -o /server .
+ ---> Using cache
+ ---> f39b7e894447
+Step 10/25 : FROM ${COMPILER_IMAGE} AS observed-build
+ ---> 2389ebfa5b7f
+Step 11/25 : ENV CGO_ENABLED=0 GOTOOLCHAIN=local GOENV=off
+ ---> Using cache
+ ---> 3bfcfd36fa8e
+Step 12/25 : COPY observed_runtime/proc.go /usr/local/go/src/runtime/proc.go
+ ---> Using cache
+ ---> e4cb3092f80c
+Step 13/25 : COPY observed_runtime/export_test.go /usr/local/go/src/runtime/export_test.go
+ ---> Using cache
+ ---> 1ef3252b29c9
+Step 14/25 : COPY observed_runtime/proc_test.go /usr/local/go/src/runtime/proc_test.go
+ ---> Using cache
+ ---> a770142d3b22
+Step 15/25 : WORKDIR /src
+ ---> Using cache
+ ---> 99cac1750cc0
+Step 16/25 : COPY service/ ./
+ ---> Using cache
+ ---> 2a574cb83e35
+Step 17/25 : RUN go test -v runtime -run '^(TestResearchProbeCounters|TestResearchPendingPreemptFairQueue|TestSchedLocalQueue|TestSchedLocalQueueSteal|TestSchedLocalQueueEmpty|TestPreemption|TestPreemptionGC|TestPreemptionAfterSyscall)$' -count=1 -timeout=180s && go test -v -count=1 ./... && go build -trimpath -o /server .
+ ---> Using cache
+ ---> 71dd6b0b2301
+Step 18/25 : FROM scratch AS control
+ ---> 
+Step 19/25 : LABEL research.runtime.variant="pending-probe-control"
+ ---> Using cache
+ ---> 5c5918d5a69f
+Step 20/25 : COPY --from=control-build /server /server
+ ---> Using cache
+ ---> 1a5cfe7335fa
+Step 21/25 : ENTRYPOINT ["/server"]
+ ---> Using cache
+ ---> 69e7b5e014d9
+Step 22/25 : FROM scratch AS observed
+ ---> 
+Step 23/25 : LABEL research.runtime.variant="pending-probe-observed"
+ ---> Running in 27be0ab4102c
+ ---> Removed intermediate container 27be0ab4102c
+ ---> d096b2656450
+Step 24/25 : COPY --from=observed-build /server /server
+ ---> d9cc11a10145
+Step 25/25 : ENTRYPOINT ["/server"]
+ ---> Running in 2a14c208724b
+ ---> Removed intermediate container 2a14c208724b
+ ---> 00d138636bbc
+Successfully built 00d138636bbc
+Successfully tagged quota-diagnostic-pending-observed:10

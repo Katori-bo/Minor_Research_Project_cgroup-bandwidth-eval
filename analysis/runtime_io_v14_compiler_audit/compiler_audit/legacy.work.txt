@@ -1,0 +1,48 @@
+TEXT main.work(SB) research-service/main.go
+  main.go:107		0x642880		493b6610		CMPQ SP, 0x10(R14)			
+  main.go:107		0x642884		0f8693000000		JBE 0x64291d				
+  main.go:107		0x64288a		55			PUSHQ BP				
+  main.go:107		0x64288b		4889e5			MOVQ SP, BP				
+  main.go:107		0x64288e		4883ec60		SUBQ $0x60, SP				
+  main.go:107		0x642892		488d542470		LEAQ 0x70(SP), DX			
+  main.go:107		0x642897		440f113a		MOVUPS X15, 0(DX)			
+  main.go:107		0x64289b		440f117a10		MOVUPS X15, 0x10(DX)			
+  main.go:108		0x6428a0		488d742438		LEAQ 0x38(SP), SI			
+  main.go:108		0x6428a5		440f113e		MOVUPS X15, 0(SI)			
+  main.go:108		0x6428a9		440f117e10		MOVUPS X15, 0x10(SI)			
+  main.go:108		0x6428ae		31c9			XORL CX, CX				
+  main.go:109		0x6428b0		eb07			JMP 0x6428b9				
+  main.go:110		0x6428b2		884c0c38		MOVB CL, 0x38(SP)(CX*1)			
+  main.go:109		0x6428b6		48ffc1			INCQ CX					
+  main.go:109		0x6428b9		4883f920		CMPQ CX, $0x20				
+  main.go:109		0x6428bd		7cf3			JL 0x6428b2				
+  main.go:109		0x6428bf		90			NOPL					
+  main.go:109		0x6428c0		eb3e			JMP 0x642900				
+  main.go:112		0x6428c2		4889442458		MOVQ AX, 0x58(SP)			
+  main.go:113		0x6428c7		4889f0			MOVQ SI, AX				
+  main.go:113		0x6428ca		bb20000000		MOVL $0x20, BX				
+  main.go:113		0x6428cf		4889d9			MOVQ BX, CX				
+  main.go:113		0x6428d2		e809d5e8ff		CALL crypto/sha256.Sum256(SB)		
+  main.go:113		0x6428d7		488d742438		LEAQ 0x38(SP), SI			
+  main.go:113		0x6428dc		4889e2			MOVQ SP, DX				
+  main.go:113		0x6428df		440f1032		MOVUPS 0(DX), X14			
+  main.go:113		0x6428e3		440f1136		MOVUPS X14, 0(SI)			
+  main.go:113		0x6428e7		440f107210		MOVUPS 0x10(DX), X14			
+  main.go:113		0x6428ec		440f117610		MOVUPS X14, 0x10(SI)			
+  main.go:112		0x6428f1		488b442458		MOVQ 0x58(SP), AX			
+  main.go:112		0x6428f6		48ffc8			DECQ AX					
+  main.go:112		0x6428f9		488d542470		LEAQ 0x70(SP), DX			
+  main.go:112		0x6428fe		6690			NOPW					
+  main.go:112		0x642900		4885c0			TESTQ AX, AX				
+  main.go:112		0x642903		7fbd			JG 0x6428c2				
+  main.go:115		0x642905		440f1036		MOVUPS 0(SI), X14			
+  main.go:115		0x642909		440f1132		MOVUPS X14, 0(DX)			
+  main.go:115		0x64290d		440f107610		MOVUPS 0x10(SI), X14			
+  main.go:115		0x642912		440f117210		MOVUPS X14, 0x10(DX)			
+  main.go:115		0x642917		4883c460		ADDQ $0x60, SP				
+  main.go:115		0x64291b		5d			POPQ BP					
+  main.go:115		0x64291c		c3			RET					
+  main.go:107		0x64291d		4889442428		MOVQ AX, 0x28(SP)			
+  main.go:107		0x642922		e8795ee4ff		CALL runtime.morestack_noctxt.abi0(SB)	
+  main.go:107		0x642927		488b442428		MOVQ 0x28(SP), AX			
+  main.go:107		0x64292c		e94fffffff		JMP main.work(SB)

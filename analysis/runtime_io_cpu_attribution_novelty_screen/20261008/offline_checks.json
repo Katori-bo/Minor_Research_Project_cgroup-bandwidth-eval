@@ -1,0 +1,89 @@
+{
+  "closed_cohort_aggregate_allocations": [
+    {
+      "cgroup_cpu_sec": 4.0,
+      "completed": 1000,
+      "name": "request_cost",
+      "request_cpu_sec_per_job": 0.004,
+      "request_system": 0.2,
+      "request_user": 3.8,
+      "shared_user": 0.0,
+      "wall_sec": 10
+    },
+    {
+      "cgroup_cpu_sec": 4.0,
+      "completed": 1000,
+      "name": "shared_cost",
+      "request_cpu_sec_per_job": 0.003,
+      "request_system": 0.2,
+      "request_user": 2.8,
+      "shared_user": 1.0,
+      "wall_sec": 10
+    }
+  ],
+  "consumption_limitation": "U/T is used CPU, not unavailable runnable opportunity; low utilization alone cannot identify supply loss.",
+  "decision": "stop_custom_method_and_collection_at_this_gate",
+  "equal_elapsed_different_cpu": [
+    {
+      "elapsed_ms": 10,
+      "off_cpu_ms": 6,
+      "on_cpu_ms": 4
+    },
+    {
+      "elapsed_ms": 10,
+      "off_cpu_ms": 0,
+      "on_cpu_ms": 10
+    }
+  ],
+  "load_proportional_background_confounding_even_with_idle": [
+    {
+      "both_cpu_sec": 0.1,
+      "completed": 0,
+      "wall_sec": 10
+    },
+    {
+      "both_cpu_sec": 0.5,
+      "completed": 100,
+      "wall_sec": 10
+    },
+    {
+      "both_cpu_sec": 2.1,
+      "completed": 500,
+      "wall_sec": 10
+    },
+    {
+      "both_cpu_sec": 4.1,
+      "completed": 1000,
+      "wall_sec": 10
+    }
+  ],
+  "new_collection": false,
+  "novelty_established": false,
+  "ordinary_additive_fit": {
+    "counts": [
+      100,
+      1000
+    ],
+    "cpu_sec": [
+      1.3,
+      4.0
+    ],
+    "fitted_constant_background_cpu_fraction": 0.1,
+    "fitted_request_cpu_sec": 0.003,
+    "wall_sec": 10
+  },
+  "ordinary_attribution_reference": "Correct labeled/request CPU totals distinguish 4 ms/job from 3 ms/job and reveal 1 CPU second shared work; label accuracy and coverage are assumptions.",
+  "scope": "Exact declared arithmetic; no identical Linux-trace claim and no reproduced profiler/estimator.",
+  "throughput_alone_confounds_cost_and_consumption": [
+    {
+      "consumed_cpu_fraction": 0.5,
+      "request_cpu_sec": 0.005,
+      "throughput_rps": 100
+    },
+    {
+      "consumed_cpu_fraction": 0.4,
+      "request_cpu_sec": 0.004,
+      "throughput_rps": 100
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "passed": true,
+  "performance_run": false,
+  "records": [
+    {
+      "arm": "legacy",
+      "gomaxprocs": 1,
+      "requests": 6,
+      "clock_uncertainty_ns": 125264
+    },
+    {
+      "arm": "legacy",
+      "gomaxprocs": 2,
+      "requests": 6,
+      "clock_uncertainty_ns": 133310
+    },
+    {
+      "arm": "clocks",
+      "gomaxprocs": 1,
+      "requests": 6,
+      "clock_uncertainty_ns": 175939
+    },
+    {
+      "arm": "clocks",
+      "gomaxprocs": 2,
+      "requests": 6,
+      "clock_uncertainty_ns": 113773
+    },
+    {
+      "arm": "passive",
+      "gomaxprocs": 1,
+      "requests": 6,
+      "clock_uncertainty_ns": 113913
+    },
+    {
+      "arm": "passive",
+      "gomaxprocs": 2,
+      "requests": 6,
+      "clock_uncertainty_ns": 113603
+    },
+    {
+      "arm": "mutex_early",
+      "gomaxprocs": 1,
+      "requests": 6,
+      "clock_uncertainty_ns": 144270
+    },
+    {
+      "arm": "mutex_early",
+      "gomaxprocs": 2,
+      "requests": 6,
+      "clock_uncertainty_ns": 129913
+    },
+    {
+      "arm": "mutex_late",
+      "gomaxprocs": 1,
+      "requests": 6,
+      "clock_uncertainty_ns": 135143
+    },
+    {
+      "arm": "mutex_late",
+      "gomaxprocs": 2,
+      "requests": 6,
+      "clock_uncertainty_ns": 144250
+    },
+    {
+      "arm": "v13",
+      "gomaxprocs": 1,
+      "requests": 6,
+      "clock_uncertainty_ns": 107631
+    },
+    {
+      "arm": "v13",
+      "gomaxprocs": 2,
+      "requests": 6,
+      "clock_uncertainty_ns": 125995
+    }
+  ],
+  "build_sha256": "83c3775ca8dad2c08c5acc2d5dc61a0b0bd2b66c95a3c3f3279fb5e643919653",
+  "analyzer_sha256": "ad9696ecb75fd8bcbefa6b54dc17edecde3c1b8139679b230c940d4cef0c1a1e",
+  "files_sha256": {
+    "fixture_clocks_g1/client.log": "c1c2972c3da516cb36f55e841347585ee95b34ed377cfc05b9314fc5fbccda13",
+    "fixture_clocks_g1/loadgen.json": "e708c862b5158a4dbb0bb880dc331226de85cef6c289ab97a691789da2702dbf",
+    "fixture_clocks_g1/server_metrics.json": "707190d9d11bc562a6152d61131023abd740e63f61d3cadd0c795ca5d10983d0",
+    "fixture_clocks_g2/client.log": "44c24d9600e907e6f739b5b3c608b1a34f9466de923d5bb452731b59c01f6dca",
+    "fixture_clocks_g2/loadgen.json": "3fc40c7f3c5215619c3b2ab954732a663a71364b55f144c606f0ae4d9ccca122",
+    "fixture_clocks_g2/server_metrics.json": "59e307a79fcb6de83847636b5b99f48c4a68ad2d5193827e16b2cd4feacf40a9",
+    "fixture_legacy_g1/client.log": "8cef0f2d10b6b5c89304c7033ba7e8192056f6b866fdc90ee543fd2118a173a2",
+    "fixture_legacy_g1/loadgen.json": "3014742e5f8525bf7d2dd8364c9ffb272b9b1dd264a8eaa85672609821cf9543",
+    "fixture_legacy_g1/server_metrics.json": "92c0ae5106cb965ca167a6911fa812f4d995b1c6ccc5e734957797a3fe3f6b35",
+    "fixture_legacy_g2/client.log": "f33e985a0109e752e0c96c570f9d8e544324d98b8e4005bc63568e812e1879a0",
+    "fixture_legacy_g2/loadgen.json": "26f88e6234151c8518c387180e3c00a88e68e0bf1e6863a6dc1d1a9f6fd0bea1",
+    "fixture_legacy_g2/server_metrics.json": "ee067b05d545940e811facfb9046d9afc82346b5466644056a185b2f38d871c3",
+    "fixture_mutex_early_g1/client.log": "453d0724d09c760699db7f6fab40788d7c05495ffc668ca6f50a126d5e567f6d",
+    "fixture_mutex_early_g1/loadgen.json": "997745a9f5696e4b49e24983111e757c19222908abb9bc1b66c5332bacdf32d1",
+    "fixture_mutex_early_g1/server_metrics.json": "0505bc29af1d91923922b5824d58e07f7270bcdbe0a4f205db7ed9f3b2347e32",
+    "fixture_mutex_early_g2/client.log": "bfdd105f79a9545328746857bc1f70bc6066d6426150bcf79471bdc5b14a3e7f",
+    "fixture_mutex_early_g2/loadgen.json": "7d8c13b29fcce8c8087f785fafbcdbc9d85d1e12a2de0b4b18742eb965bad8ae",
+    "fixture_mutex_early_g2/server_metrics.json": "add6cb3cea26fb9a49c17d6fff6f13abca05ddb2bbed527104820ae53cd4b83e",
+    "fixture_mutex_late_g1/client.log": "81029d90fbc5f74da0e6cc32f4041f70c2db16f86554dff08a5cc8b5c484643c",
+    "fixture_mutex_late_g1/loadgen.json": "5d716bffcb0c8926bd04e10b423801f91e5b33183ed795fc96ec0f02cb48a2cf",
+    "fixture_mutex_late_g1/server_metrics.json": "f223a0e691eef1f75dd77c8c5da84208792706b052c8bdcc672593d204bc2ed3",
+    "fixture_mutex_late_g2/client.log": "7c77d43327a237ed7ad41114b9425fde76fd7c959dfa813293a91c0dc57cc64a",
+    "fixture_mutex_late_g2/loadgen.json": "b6e60ac4a491e0fcd5ecf458834a3963ac9b44b49700b6ec0adbd1336c8ad5b3",
+    "fixture_mutex_late_g2/server_metrics.json": "d71c1ab56ef9f6a7b8905abe35c8d03d3e8e8be26405e95def0e529f5ea18eec",
+    "fixture_passive_g1/client.log": "757c87004141a141fdb273319a13f7f8e241f516cd632373cb7b02f4f905c364",
+    "fixture_passive_g1/loadgen.json": "8d5c0084bfae209a0f591f8330a5e3529107d2965aa2495d0eda783693a9c120",
+    "fixture_passive_g1/server_metrics.json": "1b40fcd05de86a397bfeb8df7b82f77bb277fff598a60dab6930b3f6d7304c21",
+    "fixture_passive_g2/client.log": "877eb3f9aaa1086a6990361f55aa3bc6e73c9ada1ecc31087fcc3582545a6284",
+    "fixture_passive_g2/loadgen.json": "7cc50cd99cfb0830c517804f2ebe28f6a1d9a2705fbb29d5ecb9623c242dab6a",
+    "fixture_passive_g2/server_metrics.json": "e9939478792fd9bce70d7f2554dd3132fe0ef672be0670990564354ed0319c78",
+    "fixture_v13_g1/client.log": "e598a3e5b12f68d3415428adb535f91484b5557eaea2f1df53f81ccd1de43339",
+    "fixture_v13_g1/loadgen.json": "6646183f0e6683fce3bb4163953dee7516e3d023ca8c451f801cdd611c256109",
+    "fixture_v13_g1/server_metrics.json": "06bb810849f2454561515b023161695485eeeaa8440147e1b2e9609fce4c1d31",
+    "fixture_v13_g2/client.log": "0d36f1cb9f6a0f0623c9e47518aa23ae605bcfaed253738e385a438783909708",
+    "fixture_v13_g2/loadgen.json": "babe10c903fe30604e32d2beb0c938a1a6eac06361d7c93c3715f1d5403ea42b",
+    "fixture_v13_g2/server_metrics.json": "f0f9a8e7a8117f655532ac3a90c63b298547205b53e1510d71b0e4de874c30a0"
+  }
+}

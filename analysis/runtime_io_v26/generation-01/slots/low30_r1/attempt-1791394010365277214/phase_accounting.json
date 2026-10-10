@@ -1,0 +1,156 @@
+{
+  "trial": "low30_r1",
+  "size": "small",
+  "block": 1,
+  "order": 2,
+  "repeat": 1,
+  "rate": 30,
+  "counter_probe": true,
+  "recording_quality_pass": true,
+  "whole_cpu_usec_per_job": 4564.392222222222,
+  "miss_pct": 0.0,
+  "measurement_quality": {
+    "cost_relative_bound_width": 0.00344691768684567,
+    "pass_budget": true,
+    "busy_delivery_check": "inapplicable_no_busy_phase"
+  },
+  "acquisition_diagnostics": {
+    "samples": 2559,
+    "max_wall_ms": 0.040706,
+    "max_thread_cpu_ms": 0.03731,
+    "reads_over_2ms": 0,
+    "skipped_deadlines": 0,
+    "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+  },
+  "phases": {
+    "low": {
+      "windows_sec": [
+        [
+          5,
+          25
+        ]
+      ],
+      "clock_bounded_completions": [
+        600,
+        600
+      ],
+      "cpu_delta_bounds": {
+        "usage_usec": [
+          2736938,
+          2746372
+        ],
+        "user_usec": [
+          2558272,
+          2565924
+        ],
+        "system_usec": [
+          178665,
+          180448
+        ],
+        "nice_usec": [
+          0,
+          0
+        ],
+        "core_sched.force_idle_usec": [
+          0,
+          0
+        ],
+        "nr_periods": [
+          200,
+          200
+        ],
+        "nr_throttled": [
+          0,
+          0
+        ],
+        "throttled_usec": [
+          0,
+          0
+        ],
+        "nr_bursts": [
+          0,
+          0
+        ],
+        "burst_usec": [
+          0,
+          0
+        ]
+      },
+      "counter_windows": [
+        {
+          "window_sec": [
+            5,
+            25
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              2736938,
+              2746372
+            ],
+            "user_usec": [
+              2558272,
+              2565924
+            ],
+            "system_usec": [
+              178665,
+              180448
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              200,
+              200
+            ],
+            "nr_throttled": [
+              0,
+              0
+            ],
+            "throttled_usec": [
+              0,
+              0
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "queue_minima": [
+        0
+      ],
+      "queue_maxima": [
+        1
+      ],
+      "state_eligible": true,
+      "duration_sec": 20,
+      "worker_processing_wall_ms": {
+        "n": 600,
+        "mean": 4.343042388333333,
+        "p50": 4.525174,
+        "p99": 4.848063,
+        "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+      },
+      "cpu_usec_per_completion_bounds": [
+        4561.5633333333335,
+        4577.286666666667
+      ],
+      "delivered_cpu_fraction_bounds": [
+        0.1368469,
+        0.1373186
+      ],
+      "state_definition": "at_most_one_waiting_job_and_no_throttled_periods"
+    }
+  },
+  "sampler_own_cpu_ms": 46.863084
+}

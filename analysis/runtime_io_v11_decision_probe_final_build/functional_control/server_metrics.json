@@ -1,0 +1,103 @@
+{
+  "active_handlers": 0,
+  "admitted": 3,
+  "client_gone_at_completion": 0,
+  "completed": 3,
+  "custom_recording": true,
+  "events": [
+    {
+      "id": 0,
+      "admission_ns": 24013249,
+      "worker_start_ns": 24020091,
+      "completion_ns": 27485908,
+      "queue_wait_ns": 6842,
+      "processing_ns": 3465817,
+      "depth_at_admission": 0,
+      "client_gone_at_completion": false
+    },
+    {
+      "id": 1,
+      "admission_ns": 27975806,
+      "worker_start_ns": 27978932,
+      "completion_ns": 31195457,
+      "queue_wait_ns": 3126,
+      "processing_ns": 3216525,
+      "depth_at_admission": 0,
+      "client_gone_at_completion": false
+    },
+    {
+      "id": 2,
+      "admission_ns": 32640476,
+      "worker_start_ns": 32648371,
+      "completion_ns": 36096044,
+      "queue_wait_ns": 7895,
+      "processing_ns": 3447673,
+      "depth_at_admission": 0,
+      "client_gone_at_completion": false
+    }
+  ],
+  "go_version": "go1.26.1",
+  "gomaxprocs": 2,
+  "handler_events": [
+    {
+      "id": 0,
+      "entry_ns": 24010754,
+      "admission_ns": 24013249,
+      "resume_ns": 27493823,
+      "pre_admission_ns": 2495,
+      "post_work_wait_ns": 7915,
+      "write_start_ns": 27503190,
+      "write_end_ns": 27507007,
+      "handler_exit_ns": 27507348,
+      "write_calls": 1,
+      "write_bytes": 39,
+      "write_error": ""
+    },
+    {
+      "id": 1,
+      "entry_ns": 27973482,
+      "admission_ns": 27975806,
+      "resume_ns": 31199574,
+      "pre_admission_ns": 2324,
+      "post_work_wait_ns": 4117,
+      "write_start_ns": 31204293,
+      "write_end_ns": 31206046,
+      "handler_exit_ns": 31206517,
+      "write_calls": 1,
+      "write_bytes": 39,
+      "write_error": ""
+    },
+    {
+      "id": 2,
+      "entry_ns": 32637691,
+      "admission_ns": 32640476,
+      "resume_ns": 36112805,
+      "pre_admission_ns": 2785,
+      "post_work_wait_ns": 16761,
+      "write_start_ns": 36122954,
+      "write_end_ns": 36126821,
+      "handler_exit_ns": 36127382,
+      "write_calls": 1,
+      "write_bytes": 39,
+      "write_error": ""
+    }
+  ],
+  "instrument": true,
+  "queue_cap": 128,
+  "queue_len": 0,
+  "queue_max": 0,
+  "rejected": 0,
+  "runtime_capture": false,
+  "runtime_trace_storage": "memory",
+  "scheduler_capture": {
+    "capacity": 262144,
+    "events": [],
+    "reserved": 0,
+    "schema": 1,
+    "stopped_ns": 74077026239937,
+    "window": "trace_start_to_drained_trace_stop"
+  },
+  "scheduler_observation_enabled": false,
+  "worker_yield": false,
+  "workers": 4
+}

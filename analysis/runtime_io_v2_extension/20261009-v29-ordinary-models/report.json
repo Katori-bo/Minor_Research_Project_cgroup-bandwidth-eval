@@ -1,0 +1,845 @@
+{
+  "status": "ordinary_model_discovery_complete",
+  "contexts": {
+    "q050_small": {
+      "parameters": {
+        "busy_capacity_rps": 153.79166666666669,
+        "quadratic_capacity_rps": 132.30505866731517,
+        "capacity_sensitivity_rps": [
+          153.58333333333334,
+          154.08333333333334
+        ],
+        "effective_demand_ms": 3.2511514494716875,
+        "calibration_delay_trials": [
+          "cal_b1_steady15",
+          "cal_b1_steady30",
+          "cal_b2_steady30",
+          "cal_b2_steady15"
+        ],
+        "delay_samples": 2699,
+        "delay_mean_ms": 1.3766910666913672,
+        "delay_p50_ms": 1.380382,
+        "delay_p95_ms": 1.9600809999999997,
+        "quota_ms": 50.0,
+        "period_ms": 100.0
+      },
+      "methods": {
+        "fluid_busy": {
+          "25": {
+            "mae_pp": 3.4510788690476186,
+            "maximum_error_pp": 5.416666666666657
+          },
+          "50": {
+            "mae_pp": 1.5174851190476195,
+            "maximum_error_pp": 2.875
+          },
+          "100": {
+            "mae_pp": 1.0199032738095233,
+            "maximum_error_pp": 3.357142857142854
+          },
+          "200": {
+            "mae_pp": 0.8800223214285694,
+            "maximum_error_pp": 3.214285714285708
+          },
+          "500": {
+            "mae_pp": 0.4786086309523814,
+            "maximum_error_pp": 1.7380952380952372
+          },
+          "1000": {
+            "mae_pp": 0.0,
+            "maximum_error_pp": 0.0
+          }
+        },
+        "fluid_quadratic": {
+          "25": {
+            "mae_pp": 6.6861979166666625,
+            "maximum_error_pp": 10.520833333333329
+          },
+          "50": {
+            "mae_pp": 6.732514880952382,
+            "maximum_error_pp": 10.6875
+          },
+          "100": {
+            "mae_pp": 9.469308035714285,
+            "maximum_error_pp": 14.333333333333329
+          },
+          "200": {
+            "mae_pp": 19.0757068452381,
+            "maximum_error_pp": 26.85714285714286
+          },
+          "500": {
+            "mae_pp": 29.436197916666668,
+            "maximum_error_pp": 35.07142857142857
+          },
+          "1000": {
+            "mae_pp": 3.515625,
+            "maximum_error_pp": 7.5
+          }
+        },
+        "fluid_busy_calibrated_delay": {
+          "25": {
+            "mae_pp": 3.687773676648318,
+            "maximum_error_pp": 5.7112202050142
+          },
+          "50": {
+            "mae_pp": 1.6113525567229479,
+            "maximum_error_pp": 3.085263060392734
+          },
+          "100": {
+            "mae_pp": 0.9483997187009305,
+            "maximum_error_pp": 3.0728223857160515
+          },
+          "200": {
+            "mae_pp": 0.9015408457056395,
+            "maximum_error_pp": 2.8401612590200926
+          },
+          "500": {
+            "mae_pp": 0.5480209132791685,
+            "maximum_error_pp": 1.9400218775913487
+          },
+          "1000": {
+            "mae_pp": 0.0,
+            "maximum_error_pp": 0.0
+          }
+        },
+        "periodic_zero_phase_full_budget": {
+          "25": {
+            "mae_pp": 1.294456845238095,
+            "maximum_error_pp": 4.619047619047606
+          },
+          "50": {
+            "mae_pp": 3.2994791666666705,
+            "maximum_error_pp": 7.285714285714292
+          },
+          "100": {
+            "mae_pp": 5.250186011904761,
+            "maximum_error_pp": 10.0
+          },
+          "200": {
+            "mae_pp": 4.896019345238095,
+            "maximum_error_pp": 9.619047619047617
+          },
+          "500": {
+            "mae_pp": 1.2007068452380958,
+            "maximum_error_pp": 4.428571428571431
+          },
+          "1000": {
+            "mae_pp": 0.0,
+            "maximum_error_pp": 0.0
+          }
+        },
+        "periodic_uniform_phase": {
+          "25": {
+            "mae_pp": 2.6256324404761937,
+            "maximum_error_pp": 6.5530952380952385
+          },
+          "50": {
+            "mae_pp": 4.838824404761906,
+            "maximum_error_pp": 9.41357142857143
+          },
+          "100": {
+            "mae_pp": 6.692247023809525,
+            "maximum_error_pp": 11.978571428571428
+          },
+          "200": {
+            "mae_pp": 6.365319940476189,
+            "maximum_error_pp": 11.612142857142853
+          },
+          "500": {
+            "mae_pp": 1.7360267857142864,
+            "maximum_error_pp": 5.582142857142859
+          },
+          "1000": {
+            "mae_pp": 0.0,
+            "maximum_error_pp": 0.0
+          }
+        },
+        "periodic_uniform_phase_calibrated_delay": {
+          "25": {
+            "mae_pp": 2.3541564887348105,
+            "maximum_error_pp": 6.167579173944489
+          },
+          "50": {
+            "mae_pp": 4.6588301801593195,
+            "maximum_error_pp": 9.154171562659897
+          },
+          "100": {
+            "mae_pp": 6.42046600427407,
+            "maximum_error_pp": 11.599869616612857
+          },
+          "200": {
+            "mae_pp": 6.215322189986588,
+            "maximum_error_pp": 11.398289578150635
+          },
+          "500": {
+            "mae_pp": 1.6361751321036007,
+            "maximum_error_pp": 5.369061116110025
+          },
+          "1000": {
+            "mae_pp": 0.0,
+            "maximum_error_pp": 0.0
+          }
+        }
+      },
+      "sampled_envelope": {
+        "25": {
+          "covered_trials": 6,
+          "mean_width_pp": 3.136160714285717
+        },
+        "50": {
+          "covered_trials": 0,
+          "mean_width_pp": 3.258184523809529
+        },
+        "100": {
+          "covered_trials": 0,
+          "mean_width_pp": 3.6994047619047628
+        },
+        "200": {
+          "covered_trials": 0,
+          "mean_width_pp": 3.625
+        },
+        "500": {
+          "covered_trials": 8,
+          "mean_width_pp": 1.686755952380952
+        },
+        "1000": {
+          "covered_trials": 16,
+          "mean_width_pp": 0.0
+        }
+      },
+      "source_report_path": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v29/q050_small/generation-03/analysis/1791494554710867073/report.json"
+    },
+    "q025_small": {
+      "parameters": {
+        "busy_capacity_rps": 69.625,
+        "quadratic_capacity_rps": 59.13390389837025,
+        "capacity_sensitivity_rps": [
+          69.41666666666667,
+          70.0
+        ],
+        "effective_demand_ms": 3.5906642728904847,
+        "calibration_delay_trials": [
+          "cal_b1_steady15",
+          "cal_b1_steady30",
+          "cal_b2_steady30",
+          "cal_b2_steady15"
+        ],
+        "delay_samples": 1350,
+        "delay_mean_ms": 1.3712186666666668,
+        "delay_p50_ms": 1.357893,
+        "delay_p95_ms": 1.920513,
+        "quota_ms": 25.0,
+        "period_ms": 100.0
+      },
+      "methods": {
+        "fluid_busy": {
+          "25": {
+            "mae_pp": 3.157738095238095,
+            "maximum_error_pp": 5.857142857142847
+          },
+          "50": {
+            "mae_pp": 2.329241071428574,
+            "maximum_error_pp": 4.761904761904759
+          },
+          "100": {
+            "mae_pp": 0.6476934523809517,
+            "maximum_error_pp": 2.285714285714292
+          },
+          "200": {
+            "mae_pp": 1.652529761904761,
+            "maximum_error_pp": 3.5416666666666643
+          },
+          "500": {
+            "mae_pp": 1.3593749999999987,
+            "maximum_error_pp": 2.8571428571428594
+          },
+          "1000": {
+            "mae_pp": 0.5539434523809524,
+            "maximum_error_pp": 2.166666666666666
+          }
+        },
+        "fluid_quadratic": {
+          "25": {
+            "mae_pp": 6.366071428571431,
+            "maximum_error_pp": 9.0
+          },
+          "50": {
+            "mae_pp": 6.583705357142855,
+            "maximum_error_pp": 9.666666666666671
+          },
+          "100": {
+            "mae_pp": 6.2287946428571415,
+            "maximum_error_pp": 9.0
+          },
+          "200": {
+            "mae_pp": 9.668898809523807,
+            "maximum_error_pp": 14.380952380952372
+          },
+          "500": {
+            "mae_pp": 23.301339285714285,
+            "maximum_error_pp": 33.33333333333333
+          },
+          "1000": {
+            "mae_pp": 18.18936011904762,
+            "maximum_error_pp": 33.142857142857146
+          }
+        },
+        "fluid_busy_calibrated_delay": {
+          "25": {
+            "mae_pp": 3.5552281746031724,
+            "maximum_error_pp": 6.293474426807748
+          },
+          "50": {
+            "mae_pp": 2.3297371031746055,
+            "maximum_error_pp": 4.762610229276902
+          },
+          "100": {
+            "mae_pp": 0.5985036375661368,
+            "maximum_error_pp": 1.9153439153439251
+          },
+          "200": {
+            "mae_pp": 1.3822558421516788,
+            "maximum_error_pp": 3.124691358024698
+          },
+          "500": {
+            "mae_pp": 1.181382275132274,
+            "maximum_error_pp": 2.510758377425047
+          },
+          "1000": {
+            "mae_pp": 0.46837797619047616,
+            "maximum_error_pp": 1.958333333333334
+          }
+        },
+        "periodic_zero_phase_full_budget": {
+          "25": {
+            "mae_pp": 0.499255952380949,
+            "maximum_error_pp": 1.5714285714285694
+          },
+          "50": {
+            "mae_pp": 1.4892113095238093,
+            "maximum_error_pp": 3.142857142857139
+          },
+          "100": {
+            "mae_pp": 3.531622023809523,
+            "maximum_error_pp": 7.0
+          },
+          "200": {
+            "mae_pp": 5.347470238095238,
+            "maximum_error_pp": 8.476190476190482
+          },
+          "500": {
+            "mae_pp": 5.3950892857142865,
+            "maximum_error_pp": 8.571428571428573
+          },
+          "1000": {
+            "mae_pp": 1.7406994047619047,
+            "maximum_error_pp": 4.523809523809524
+          }
+        },
+        "periodic_uniform_phase": {
+          "25": {
+            "mae_pp": 1.7857738095238105,
+            "maximum_error_pp": 3.8428571428571416
+          },
+          "50": {
+            "mae_pp": 3.1369494047619026,
+            "maximum_error_pp": 5.58142857142856
+          },
+          "100": {
+            "mae_pp": 5.711235119047619,
+            "maximum_error_pp": 9.941428571428574
+          },
+          "200": {
+            "mae_pp": 6.996175595238095,
+            "maximum_error_pp": 10.860000000000007
+          },
+          "500": {
+            "mae_pp": 7.10654761904762,
+            "maximum_error_pp": 10.897619047619049
+          },
+          "1000": {
+            "mae_pp": 2.3355059523809523,
+            "maximum_error_pp": 5.690416666666666
+          }
+        },
+        "periodic_uniform_phase_calibrated_delay": {
+          "25": {
+            "mae_pp": 1.690170822310403,
+            "maximum_error_pp": 3.7096296296296174
+          },
+          "50": {
+            "mae_pp": 2.981316413139324,
+            "maximum_error_pp": 5.362714285714276
+          },
+          "100": {
+            "mae_pp": 5.577036144179895,
+            "maximum_error_pp": 9.753323456790127
+          },
+          "200": {
+            "mae_pp": 6.89627093253968,
+            "maximum_error_pp": 10.719822574955913
+          },
+          "500": {
+            "mae_pp": 6.973147729276896,
+            "maximum_error_pp": 10.715850440917109
+          },
+          "1000": {
+            "mae_pp": 2.2891752645502645,
+            "maximum_error_pp": 5.60579938271605
+          }
+        }
+      },
+      "sampled_envelope": {
+        "25": {
+          "covered_trials": 11,
+          "mean_width_pp": 4.642857142857139
+        },
+        "50": {
+          "covered_trials": 0,
+          "mean_width_pp": 4.635416666666664
+        },
+        "100": {
+          "covered_trials": 0,
+          "mean_width_pp": 5.008928571428573
+        },
+        "200": {
+          "covered_trials": 0,
+          "mean_width_pp": 4.77827380952381
+        },
+        "500": {
+          "covered_trials": 0,
+          "mean_width_pp": 5.581845238095237
+        },
+        "1000": {
+          "covered_trials": 8,
+          "mean_width_pp": 2.5863095238095237
+        }
+      },
+      "source_report_path": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v29/q025_small/generation-03/analysis/1791500887094427964/report.json"
+    },
+    "q050_large": {
+      "parameters": {
+        "busy_capacity_rps": 77.64583333333333,
+        "quadratic_capacity_rps": 67.03263931302013,
+        "capacity_sensitivity_rps": [
+          77.41666666666667,
+          77.83333333333333
+        ],
+        "effective_demand_ms": 6.439495572846794,
+        "calibration_delay_trials": [
+          "cal_b1_steady15",
+          "cal_b1_steady30",
+          "cal_b2_steady30",
+          "cal_b2_steady15"
+        ],
+        "delay_samples": 1350,
+        "delay_mean_ms": 1.380744631111111,
+        "delay_p50_ms": 1.379298,
+        "delay_p95_ms": 1.905734,
+        "quota_ms": 50.0,
+        "period_ms": 100.0
+      },
+      "methods": {
+        "fluid_busy": {
+          "25": {
+            "mae_pp": 5.175967261904763,
+            "maximum_error_pp": 8.19047619047619
+          },
+          "50": {
+            "mae_pp": 3.09263392857143,
+            "maximum_error_pp": 5.857142857142861
+          },
+          "100": {
+            "mae_pp": 0.9520089285714266,
+            "maximum_error_pp": 2.1666666666666643
+          },
+          "200": {
+            "mae_pp": 1.2801339285714282,
+            "maximum_error_pp": 3.142857142857146
+          },
+          "500": {
+            "mae_pp": 0.6722470238095238,
+            "maximum_error_pp": 2.3333333333333357
+          },
+          "1000": {
+            "mae_pp": 0.0,
+            "maximum_error_pp": 0.0
+          }
+        },
+        "fluid_quadratic": {
+          "25": {
+            "mae_pp": 8.497395833333336,
+            "maximum_error_pp": 12.625
+          },
+          "50": {
+            "mae_pp": 8.67001488095238,
+            "maximum_error_pp": 12.874999999999993
+          },
+          "100": {
+            "mae_pp": 11.454985119047617,
+            "maximum_error_pp": 16.619047619047613
+          },
+          "200": {
+            "mae_pp": 21.843377976190474,
+            "maximum_error_pp": 31.57142857142857
+          },
+          "500": {
+            "mae_pp": 29.993675595238095,
+            "maximum_error_pp": 38.52380952380952
+          },
+          "1000": {
+            "mae_pp": 11.796130952380953,
+            "maximum_error_pp": 24.80952380952381
+          }
+        },
+        "fluid_busy_calibrated_delay": {
+          "25": {
+            "mae_pp": 5.295510912698411,
+            "maximum_error_pp": 8.360493827160496
+          },
+          "50": {
+            "mae_pp": 3.1333790784832405,
+            "maximum_error_pp": 5.914991181657854
+          },
+          "100": {
+            "mae_pp": 1.1324046516754849,
+            "maximum_error_pp": 2.5839506172839535
+          },
+          "200": {
+            "mae_pp": 1.3444031084656107,
+            "maximum_error_pp": 3.32169312169313
+          },
+          "500": {
+            "mae_pp": 0.7344273589065261,
+            "maximum_error_pp": 2.358377425044093
+          },
+          "1000": {
+            "mae_pp": 0.0,
+            "maximum_error_pp": 0.0
+          }
+        },
+        "periodic_zero_phase_full_budget": {
+          "25": {
+            "mae_pp": 0.7548363095238066,
+            "maximum_error_pp": 1.8095238095238102
+          },
+          "50": {
+            "mae_pp": 2.0651041666666647,
+            "maximum_error_pp": 4.125
+          },
+          "100": {
+            "mae_pp": 4.361979166666666,
+            "maximum_error_pp": 7.5
+          },
+          "200": {
+            "mae_pp": 4.0658482142857135,
+            "maximum_error_pp": 6.791666666666664
+          },
+          "500": {
+            "mae_pp": 1.241443452380952,
+            "maximum_error_pp": 5.857142857142858
+          },
+          "1000": {
+            "mae_pp": 0.0,
+            "maximum_error_pp": 0.0
+          }
+        },
+        "periodic_uniform_phase": {
+          "25": {
+            "mae_pp": 1.5299107142857125,
+            "maximum_error_pp": 3.4004166666666578
+          },
+          "50": {
+            "mae_pp": 3.776443452380953,
+            "maximum_error_pp": 6.200000000000003
+          },
+          "100": {
+            "mae_pp": 6.093660714285717,
+            "maximum_error_pp": 9.64
+          },
+          "200": {
+            "mae_pp": 5.889598214285714,
+            "maximum_error_pp": 9.004166666666663
+          },
+          "500": {
+            "mae_pp": 1.8369494047619046,
+            "maximum_error_pp": 7.0600000000000005
+          },
+          "1000": {
+            "mae_pp": 0.0,
+            "maximum_error_pp": 0.0
+          }
+        },
+        "periodic_uniform_phase_calibrated_delay": {
+          "25": {
+            "mae_pp": 1.3850072751322742,
+            "maximum_error_pp": 3.207856481481471
+          },
+          "50": {
+            "mae_pp": 3.5480269841269814,
+            "maximum_error_pp": 5.917970987654314
+          },
+          "100": {
+            "mae_pp": 5.777312885802472,
+            "maximum_error_pp": 9.244508641975308
+          },
+          "200": {
+            "mae_pp": 5.582645965608464,
+            "maximum_error_pp": 8.60541697530864
+          },
+          "500": {
+            "mae_pp": 1.7738011684303352,
+            "maximum_error_pp": 6.925152733686069
+          },
+          "1000": {
+            "mae_pp": 0.0,
+            "maximum_error_pp": 0.0
+          }
+        }
+      },
+      "sampled_envelope": {
+        "25": {
+          "covered_trials": 13,
+          "mean_width_pp": 3.5967261904761845
+        },
+        "50": {
+          "covered_trials": 0,
+          "mean_width_pp": 3.770833333333334
+        },
+        "100": {
+          "covered_trials": 0,
+          "mean_width_pp": 4.444940476190476
+        },
+        "200": {
+          "covered_trials": 0,
+          "mean_width_pp": 5.022321428571428
+        },
+        "500": {
+          "covered_trials": 11,
+          "mean_width_pp": 2.4747023809523805
+        },
+        "1000": {
+          "covered_trials": 16,
+          "mean_width_pp": 0.0
+        }
+      },
+      "source_report_path": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v29/q050_large/generation-03/analysis/1791507365583471109/report.json"
+    },
+    "q025_large": {
+      "parameters": {
+        "busy_capacity_rps": 34.85416666666667,
+        "quadratic_capacity_rps": 29.810073101551133,
+        "capacity_sensitivity_rps": [
+          34.833333333333336,
+          34.916666666666664
+        ],
+        "effective_demand_ms": 7.172743574417214,
+        "calibration_delay_trials": [
+          "cal_b1_steady15",
+          "cal_b1_steady30",
+          "cal_b2_steady30",
+          "cal_b2_steady15"
+        ],
+        "delay_samples": 676,
+        "delay_mean_ms": 1.4102281449704144,
+        "delay_p50_ms": 1.4297209999999998,
+        "delay_p95_ms": 1.9667389999999998,
+        "quota_ms": 25.0,
+        "period_ms": 100.0
+      },
+      "methods": {
+        "fluid_busy": {
+          "25": {
+            "mae_pp": 20.624255952380953,
+            "maximum_error_pp": 27.5
+          },
+          "50": {
+            "mae_pp": 2.979166666666668,
+            "maximum_error_pp": 5.5
+          },
+          "100": {
+            "mae_pp": 0.5550595238095237,
+            "maximum_error_pp": 2.0
+          },
+          "200": {
+            "mae_pp": 0.7626488095238093,
+            "maximum_error_pp": 2.75
+          },
+          "500": {
+            "mae_pp": 1.2946428571428579,
+            "maximum_error_pp": 2.666666666666666
+          },
+          "1000": {
+            "mae_pp": 0.7529761904761904,
+            "maximum_error_pp": 2.3809523809523796
+          }
+        },
+        "fluid_quadratic": {
+          "25": {
+            "mae_pp": 20.624255952380953,
+            "maximum_error_pp": 27.5
+          },
+          "50": {
+            "mae_pp": 6.8988095238095255,
+            "maximum_error_pp": 10.916666666666657
+          },
+          "100": {
+            "mae_pp": 6.75446428571429,
+            "maximum_error_pp": 9.666666666666671
+          },
+          "200": {
+            "mae_pp": 10.17485119047619,
+            "maximum_error_pp": 14.75
+          },
+          "500": {
+            "mae_pp": 23.56845238095238,
+            "maximum_error_pp": 33.904761904761905
+          },
+          "1000": {
+            "mae_pp": 17.788690476190474,
+            "maximum_error_pp": 34.857142857142854
+          }
+        },
+        "fluid_busy_calibrated_delay": {
+          "25": {
+            "mae_pp": 20.624255952380953,
+            "maximum_error_pp": 27.5
+          },
+          "50": {
+            "mae_pp": 3.028696463792624,
+            "maximum_error_pp": 5.561637080867854
+          },
+          "100": {
+            "mae_pp": 0.9821428571428559,
+            "maximum_error_pp": 2.952380952380949
+          },
+          "200": {
+            "mae_pp": 0.7626488095238093,
+            "maximum_error_pp": 2.75
+          },
+          "500": {
+            "mae_pp": 1.2946428571428579,
+            "maximum_error_pp": 2.666666666666666
+          },
+          "1000": {
+            "mae_pp": 0.749152490138067,
+            "maximum_error_pp": 2.802902225979148
+          }
+        },
+        "periodic_zero_phase_full_budget": {
+          "25": {
+            "mae_pp": 0.527529761904761,
+            "maximum_error_pp": 2.0
+          },
+          "50": {
+            "mae_pp": 0.6160714285714306,
+            "maximum_error_pp": 1.9166666666666714
+          },
+          "100": {
+            "mae_pp": 3.4062500000000018,
+            "maximum_error_pp": 5.61904761904762
+          },
+          "200": {
+            "mae_pp": 3.0364583333333313,
+            "maximum_error_pp": 6.083333333333336
+          },
+          "500": {
+            "mae_pp": 4.375,
+            "maximum_error_pp": 6.25
+          },
+          "1000": {
+            "mae_pp": 1.154761904761905,
+            "maximum_error_pp": 4.38095238095238
+          }
+        },
+        "periodic_uniform_phase": {
+          "25": {
+            "mae_pp": 1.4854464285714286,
+            "maximum_error_pp": 3.441666666666677
+          },
+          "50": {
+            "mae_pp": 2.2767261904761895,
+            "maximum_error_pp": 4.748333333333335
+          },
+          "100": {
+            "mae_pp": 5.232142857142859,
+            "maximum_error_pp": 8.149523809523814
+          },
+          "200": {
+            "mae_pp": 6.014226190476188,
+            "maximum_error_pp": 9.686666666666667
+          },
+          "500": {
+            "mae_pp": 5.9594047619047625,
+            "maximum_error_pp": 8.304761904761904
+          },
+          "1000": {
+            "mae_pp": 1.810714285714286,
+            "maximum_error_pp": 5.7714285714285705
+          }
+        },
+        "periodic_uniform_phase_calibrated_delay": {
+          "25": {
+            "mae_pp": 1.3863808907438724,
+            "maximum_error_pp": 3.3103254437869936
+          },
+          "50": {
+            "mae_pp": 2.1642727264722446,
+            "maximum_error_pp": 4.603623027613409
+          },
+          "100": {
+            "mae_pp": 5.089692210834036,
+            "maximum_error_pp": 7.917831783601017
+          },
+          "200": {
+            "mae_pp": 5.876464100803042,
+            "maximum_error_pp": 9.51334442800789
+          },
+          "500": {
+            "mae_pp": 5.755736431036911,
+            "maximum_error_pp": 8.016497604959142
+          },
+          "1000": {
+            "mae_pp": 1.7784570917864193,
+            "maximum_error_pp": 5.705924204001127
+          }
+        }
+      },
+      "sampled_envelope": {
+        "25": {
+          "covered_trials": 11,
+          "mean_width_pp": 3.7083333333333357
+        },
+        "50": {
+          "covered_trials": 10,
+          "mean_width_pp": 3.735119047619044
+        },
+        "100": {
+          "covered_trials": 0,
+          "mean_width_pp": 4.107142857142856
+        },
+        "200": {
+          "covered_trials": 0,
+          "mean_width_pp": 4.866071428571431
+        },
+        "500": {
+          "covered_trials": 0,
+          "mean_width_pp": 4.101190476190476
+        },
+        "1000": {
+          "covered_trials": 9,
+          "mean_width_pp": 1.5625
+        }
+      },
+      "source_report_path": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v29/q025_large/generation-04/analysis/1791524007266803222/report.json"
+    }
+  },
+  "scope": "All V29 outcomes are discovery data. Calibration-only parameter fitting does not make this retrospective comparison prospective.",
+  "phase_measured": false,
+  "hard_bound_established": false,
+  "novelty_established": false,
+  "sources": [
+    "https://docs.kernel.org/scheduler/sched-bwc.html",
+    "https://retis.santannapisa.it/people/nino/publication/TCC23.pdf"
+  ]
+}

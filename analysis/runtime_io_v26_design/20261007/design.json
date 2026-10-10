@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "revision": 26,
+  "date": "2026-10-07",
+  "purpose": "steady_low_load_qualification",
+  "question": "Do fixed steady15/30 jobs/s windows qualify as shallow-queue and unthrottled?",
+  "rates": [
+    15,
+    30
+  ],
+  "trial_order": [
+    {
+      "id": "low15_r1",
+      "rate": 15,
+      "repeat": 1,
+      "block": 1,
+      "collection_order": 1
+    },
+    {
+      "id": "low30_r1",
+      "rate": 30,
+      "repeat": 1,
+      "block": 1,
+      "collection_order": 2
+    },
+    {
+      "id": "low30_r2",
+      "rate": 30,
+      "repeat": 2,
+      "block": 2,
+      "collection_order": 3
+    },
+    {
+      "id": "low15_r2",
+      "rate": 15,
+      "repeat": 2,
+      "block": 2,
+      "collection_order": 4
+    }
+  ],
+  "windows": {
+    "low": [
+      [
+        5,
+        25
+      ]
+    ]
+  },
+  "sampler": {
+    "interval_sec": 0.02,
+    "bound_sec": 110,
+    "read_width_ms": null,
+    "max_gap_ms": 50,
+    "boundary_span_ms": 60,
+    "cadence": "absolute_skip_missed",
+    "record_capacity": 6000,
+    "raw_capacity": 4096
+  },
+  "measurement_quality": {
+    "max_cost_relative_bound_width": 0.04,
+    "busy_delivery_check": "inapplicable_no_busy_phase"
+  },
+  "measurement_bound_sec": 2700,
+  "runtime_preparation_bound_sec": 600,
+  "analysis_bound_sec": 600,
+  "technical_retries": 1,
+  "planned_trials": 4,
+  "scientific_confirmation": false,
+  "novelty_established": false,
+  "state_rules": {
+    "low": "queue_maximum_at_most_one_and_no_throttled_periods_in_counter_bounds"
+  },
+  "host_monitor_min_records": 45,
+  "previous_completed_study_seal_sha256": "3b97e880641d680dbed4ea424457ee8272a325397dd41c717023afa49d515cdd"
+}

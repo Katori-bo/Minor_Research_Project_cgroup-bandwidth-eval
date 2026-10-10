@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "compiler_image_id": "sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039",
+  "prepared_sha256": {
+    "loadgen/Dockerfile": "cd3ddf1ad7a768766115fff4052367159e625e5e2fb59ac2b28d1959146c9d71",
+    "loadgen/go.mod": "bc8481bc762a2d9150e6dba23c42e074e42ecfee5e5ab42c50ec8cad27629481",
+    "loadgen/main.go": "4689a8653fa8a1de3c370c09d41e66dbdb06987476359705f5de9d719829dcfc",
+    "loadgen/main_test.go": "430e80b06219d76d72f564ce561016ac03636be8dd1cf2388e32c68eae843dc3",
+    "loadgen/parallelism_clock.go": "10717b9456b1483224f3ec529bdb66875d92e8c304b8e131f143138200699afa",
+    "loadgen/parallelism_clock_test.go": "8ffab6fe90a696d0ad05855b3a19d6fc92efca93095cabab54f02cc5acff0ed4",
+    "service/Dockerfile": "f33611655c008d1a8fdc1ae61b7c9815752f492da49e99a42cb298b4651a7dad",
+    "service/ablation_service.go": "1ee5618aaed4980b6222ca0a7df5f5bf6417302cb12c16e21533d17dee06d825",
+    "service/ablation_service_test.go": "b5ac89a943fbdd0c46f6a43c81f5c0cdacce3eb1b20c6628c9d4b2351f1a8f5e",
+    "service/go.mod": "03add46220d8804f97c5b9966c66b6da037ab94403a5570707ba5b3e558dafba",
+    "service/main.go": "da351394b3694366db3ab859d59717f7f39e9b74bd4fc9d3e39638e80dd3362e",
+    "service/main_test.go": "2357765adc8255b34af937fe2d9371c30abddfbc6e162a5df70d03d5a895564d",
+    "service/parallelism_service.go": "b92a2fc2e7949dc7793c3fe6c42c4330449234997533a82a61fa626f9765a507",
+    "service/parallelism_service_test.go": "880ee84d61962b9f933d11df732d4265ba990eabd3de93279a162093d8b9591a",
+    "service/trace_diag.go": "ad4dc8b64b1233c9dcf44ed087e57dd98d7f2bd89a7c69f9287a23e474b5866c",
+    "service/trace_diag_test.go": "1f0a378fe5c16fd485bfb62c4193ea09a5c0840589d03994e4dada2d88c2b3d4",
+    "service/yield_test.go": "c7a96bfdab0cb3577c64173c2c2485ff96cd4cd969758fa514ea28131873ff81"
+  },
+  "go_binary_sha256": "548e61b2d08ae52043be2f1924ed3c1d2b2c41967e360f3e317667f6fa912fc2",
+  "source_adjustment": {
+    "file": "trace_diag.go",
+    "original": "const tracePath = \"/runtime.trace\"",
+    "replacement": "const tracePath = \"/tmp/quota-ablation-race-z7m1t967/runtime.trace\""
+  },
+  "race_source_sha256": {
+    "Dockerfile": "f33611655c008d1a8fdc1ae61b7c9815752f492da49e99a42cb298b4651a7dad",
+    "ablation_service.go": "1ee5618aaed4980b6222ca0a7df5f5bf6417302cb12c16e21533d17dee06d825",
+    "ablation_service_test.go": "b5ac89a943fbdd0c46f6a43c81f5c0cdacce3eb1b20c6628c9d4b2351f1a8f5e",
+    "go.mod": "03add46220d8804f97c5b9966c66b6da037ab94403a5570707ba5b3e558dafba",
+    "main.go": "da351394b3694366db3ab859d59717f7f39e9b74bd4fc9d3e39638e80dd3362e",
+    "main_test.go": "2357765adc8255b34af937fe2d9371c30abddfbc6e162a5df70d03d5a895564d",
+    "parallelism_service.go": "b92a2fc2e7949dc7793c3fe6c42c4330449234997533a82a61fa626f9765a507",
+    "parallelism_service_test.go": "880ee84d61962b9f933d11df732d4265ba990eabd3de93279a162093d8b9591a",
+    "trace_diag.go": "78093aecf32115f151a2eb530dc2d2f2f13e467211eaaa618dfc2a6fa8ace9cf",
+    "trace_diag_test.go": "1f0a378fe5c16fd485bfb62c4193ea09a5c0840589d03994e4dada2d88c2b3d4",
+    "yield_test.go": "c7a96bfdab0cb3577c64173c2c2485ff96cd4cd969758fa514ea28131873ff81"
+  },
+  "gcc_version": "gcc (GCC) 16.2.1 20260810\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+  "log_sha256": "961e12d54cb9eeb3c049bdca1a51b78c6a6bcadc1fdd39b3db785f3efc263ac0"
+}

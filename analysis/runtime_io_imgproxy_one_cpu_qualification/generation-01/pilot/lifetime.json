@@ -1,0 +1,64 @@
+{
+  "started_monotonic": 96329.548667369,
+  "deadline_monotonic": 97409.548667369,
+  "protocol": {
+    "candidate": "imgproxy-one-cpu-generation-01",
+    "role": "prospective engineering qualification; no scientific replication",
+    "reason": "Enforce a single granted logical CPU despite native worker threads; cause of prior throttle remains unknown.",
+    "resource_change": {
+      "old_cpuset": "2,4",
+      "new_cpuset": "2"
+    },
+    "functional_created_cap": 2,
+    "pilot_created_cap": 12,
+    "retries": 0,
+    "pilot_total_sec": 1200,
+    "cleanup_reserve_sec": 120,
+    "active_trial_sec": 120,
+    "settling_sec": 10,
+    "pairs": 6,
+    "pair_orders": [
+      "stock,observed",
+      "observed,stock",
+      "stock,observed",
+      "observed,stock",
+      "stock,observed",
+      "observed,stock"
+    ],
+    "rate": 5,
+    "interval_ns": 200000000,
+    "warmup_offers": 25,
+    "measurement_offers": 200,
+    "limits": {
+      "cpu.max": "25000 100000",
+      "cpu.max.burst": "0",
+      "cpuset.cpus.effective": "2",
+      "memory.max": "536870912",
+      "pids.max": "128"
+    },
+    "gomaxprocs": 1,
+    "application_workers": 1,
+    "queue_capacity": 128,
+    "recorded_events_capacity": 1024,
+    "observer_gates": {
+      "cpu_per_offer_upper_relative": 0.05,
+      "median_latency_upper_relative": 0.05,
+      "t_multiplier": 2.571,
+      "df": 5,
+      "dispatch_p99_ns": 2000000,
+      "dispatch_max_ns": 10000000,
+      "required_success_fraction": 1,
+      "required_queue_le_100us_fraction": 0.99,
+      "recorded_measurement_throttled_periods": 0
+    },
+    "image_operation_changed": false,
+    "application_binaries_changed": false,
+    "quota_changed": false,
+    "client_changed": false,
+    "periodic_memory_free_changed": false,
+    "counter_sampler": false,
+    "scientific_collection": false,
+    "original_qualification_status": "unavailable; retained, never replaced",
+    "execution_model_gate": "Single-CPU allowance constrains simultaneous CPU execution, not background interference or worker/service-time equivalence."
+  }
+}

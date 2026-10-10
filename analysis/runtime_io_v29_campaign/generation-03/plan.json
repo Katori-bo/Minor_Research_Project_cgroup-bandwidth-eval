@@ -1,0 +1,44 @@
+{
+  "context_order": [
+    "q050_small",
+    "q025_small",
+    "q050_large",
+    "q025_large"
+  ],
+  "contexts": {
+    "q050_small": {
+      "quota_us": 50000,
+      "iterations": 44000,
+      "size": "small"
+    },
+    "q025_small": {
+      "quota_us": 25000,
+      "iterations": 44000,
+      "size": "small"
+    },
+    "q050_large": {
+      "quota_us": 50000,
+      "iterations": 88000,
+      "size": "large"
+    },
+    "q025_large": {
+      "quota_us": 25000,
+      "iterations": 88000,
+      "size": "large"
+    }
+  },
+  "contexts_sequential": true,
+  "primary_deadline_ms": 500,
+  "secondary_deadlines_ms": [
+    25,
+    50,
+    100,
+    200,
+    500,
+    1000
+  ],
+  "planned_calibration_trials": 64,
+  "planned_validation_trials": 64,
+  "independent_applications": 1,
+  "independent_hosts": 1
+}

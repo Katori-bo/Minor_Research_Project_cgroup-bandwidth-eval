@@ -1,0 +1,122 @@
+{
+  "status": "single_measurement_revalidated_after_checker_bug",
+  "attempt_status": "failed_incomplete",
+  "failure": {
+    "error": "name 'env' is not defined",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/execution_state_pilot.py\", line 157, in collect\n    result=replay(directory,session,functional)\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/execution_state_pilot.py\", line 260, in replay\n    verify_trial_settling(directory,env)\n                                    ^^^\nNameError: name 'env' is not defined\n"
+  },
+  "measurement": {
+    "summary": {
+      "trial": "b1_A",
+      "block": 1,
+      "arm": "A",
+      "order": 1,
+      "kind": "minimal",
+      "period_ms": 100,
+      "counters": false,
+      "condition": "automatic",
+      "cpu_usec_per_completed_work": 3298.731195783463,
+      "native_cpu_usec_per_job": 3298.7125356319316,
+      "capacity": 151.77938015083933,
+      "cpu_cores": 0.500679376180251,
+      "completed": 9107,
+      "cgroup_native_cpu_relative_difference": 5.6567983206523564e-06,
+      "wall_sec": 60.001562735,
+      "memory_peak_bytes": 7430144
+    },
+    "counter": {
+      "counts": null,
+      "bounds": {
+        "usage_usec": {
+          "lower": 30041545,
+          "upper": 30041545,
+          "midpoint": 30041545.0
+        },
+        "user_usec": {
+          "lower": 30011084,
+          "upper": 30011084,
+          "midpoint": 30011084.0
+        },
+        "system_usec": {
+          "lower": 30461,
+          "upper": 30461,
+          "midpoint": 30461.0
+        },
+        "relative_alignment_width": 0.0,
+        "wall_sec": 61.753760267
+      },
+      "metrics": {}
+    }
+  },
+  "restoration": {
+    "restored": true,
+    "errors": [],
+    "observed": {
+      "2": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985",
+        "boost": "1",
+        "related_cpus": "2",
+        "cpuinfo_min_freq": "412625",
+        "cpuinfo_max_freq": "4280985",
+        "siblings": "2-3",
+        "nominal_freq_mhz": "3301"
+      },
+      "3": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985",
+        "boost": "1",
+        "related_cpus": "3",
+        "cpuinfo_min_freq": "412625",
+        "cpuinfo_max_freq": "4280985",
+        "siblings": "2-3",
+        "nominal_freq_mhz": "3301"
+      },
+      "4": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985",
+        "boost": "1",
+        "related_cpus": "4",
+        "cpuinfo_min_freq": "412625",
+        "cpuinfo_max_freq": "4280985",
+        "siblings": "4-5",
+        "nominal_freq_mhz": "3301"
+      },
+      "5": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985",
+        "boost": "1",
+        "related_cpus": "5",
+        "cpuinfo_min_freq": "412625",
+        "cpuinfo_max_freq": "4280985",
+        "siblings": "4-5",
+        "nominal_freq_mhz": "3301"
+      }
+    },
+    "timestamp": 1791305925.068568
+  },
+  "controls_match_original_now": true,
+  "counter_fixtures_passed": true,
+  "evidence_receipts": {
+    "preparation/seal.json": "4ab48c673f59cd2469b779d58ed75437db75023c3e19ea96238fb7d11bc8d246",
+    "trials/b1_A/seal.json": "80d559575c0b4ccb2ba1f16bfb363cc639c0fc85954ad1789f430aede0124d9b",
+    "conditions/automatic/environment_seal.json": "bc21fd53f7447c47664c2430b38a7df36b4bd0b904da2016e239bb1e315060f0",
+    "speed_control/seal.json": "75ede28070876e3a5a34af5962615a14695c6b7b8785f46d9e99edc8135ced7c",
+    "counter_fixtures/seal.json": "5ebda66e86b29f3d810627e8707f675984a2a3c87179e5a083531ee3ac05f541"
+  },
+  "fixed_checker_sha256": "a0feee9170e516dcc46c9dffebc93e9b5d52f6b9ffd4b657b571031278509e42",
+  "historical_cause_established": false,
+  "period_or_speed_comparison_possible": false
+}

@@ -1,0 +1,58 @@
+{
+  "protocol": {
+    "functional_created_cap": 2,
+    "pilot_created_cap": 12,
+    "retries": 0,
+    "rate": 5,
+    "interval_ns": 200000000,
+    "warmup_offers": 25,
+    "measurement_offers": 200,
+    "pair_orders": [
+      "reference,observed",
+      "observed,reference",
+      "reference,observed",
+      "observed,reference",
+      "reference,observed",
+      "observed,reference"
+    ],
+    "limits": {
+      "cpu.max": "25000 100000",
+      "cpu.max.burst": "0",
+      "cpuset.cpus.effective": "2",
+      "memory.max": "536870912",
+      "pids.max": "128"
+    },
+    "queue_capacity": 128,
+    "worker_jobs": 1,
+    "client_inflight_cap": 32,
+    "active_service_sec": 120,
+    "total_sec": 1200,
+    "cleanup_reserve_sec": 120,
+    "dispatch_p99_ns": 2000000,
+    "dispatch_max_ns": 10000000,
+    "queue_le_100us_fraction": 0.99,
+    "measurement_throttled_periods": 0,
+    "required_success_fraction": 1,
+    "observer_cost_upper_relative": 0.05,
+    "pairs": 6,
+    "t_multiplier": 2.571,
+    "df": 5,
+    "endpoints": [
+      "whole-cgroup CPU per offered request",
+      "median offered-to-full-body latency"
+    ],
+    "candidate": "gnu-gzip-1.15-fixed-ndjson-generation-01",
+    "application_user": "1000:1000",
+    "preparation_measurement_offers": 25,
+    "preparation_total_sec": 300,
+    "preparation_cleanup_reserve_sec": 120,
+    "mandatory_audit": "Both arms verify gated child PID/start ticks, pidfd, affinity, same cgroup, exec and reap.",
+    "cpu_window_end": "After client drain and one common audit/idle confirmation, before raw event export.",
+    "per_job_timeout_sec": 10,
+    "request_timeout_sec": 10,
+    "recorded_events_capacity": 1024,
+    "scientific_collection": false,
+    "ready_for_scientific_collection": false
+  },
+  "started_monotonic": 100676.834491481
+}

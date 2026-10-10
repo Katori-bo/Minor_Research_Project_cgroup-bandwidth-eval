@@ -1,0 +1,74 @@
+=== RUN   TestPreemption
+--- PASS: TestPreemption (0.00s)
+=== RUN   TestPreemptionGC
+--- PASS: TestPreemptionGC (0.01s)
+=== RUN   TestSchedLocalQueue
+--- PASS: TestSchedLocalQueue (0.00s)
+=== RUN   TestSchedLocalQueueSteal
+--- PASS: TestSchedLocalQueueSteal (0.00s)
+=== RUN   TestSchedLocalQueueEmpty
+--- PASS: TestSchedLocalQueueEmpty (5.88s)
+=== RUN   TestPreemptionAfterSyscall
+=== RUN   TestPreemptionAfterSyscall/10µs
+=== RUN   TestPreemptionAfterSyscall/100µs
+=== RUN   TestPreemptionAfterSyscall/1ms
+--- PASS: TestPreemptionAfterSyscall (0.65s)
+    --- PASS: TestPreemptionAfterSyscall/10µs (0.60s)
+    --- PASS: TestPreemptionAfterSyscall/100µs (0.03s)
+    --- PASS: TestPreemptionAfterSyscall/1ms (0.01s)
+=== RUN   TestResearchPendingPreemptFairQueue
+--- PASS: TestResearchPendingPreemptFairQueue (0.00s)
+PASS
+ok  	runtime	6.545s
+=== RUN   TestTimedOutQueuedWorkCompletesAndResetWaits
+--- PASS: TestTimedOutQueuedWorkCompletesAndResetWaits (0.00s)
+=== RUN   TestSnapshotsDoNotPublishCompletionBeforeEvents
+--- PASS: TestSnapshotsDoNotPublishCompletionBeforeEvents (0.15s)
+=== RUN   TestTimingHeadersMatchAndOffMeansOff
+--- PASS: TestTimingHeadersMatchAndOffMeansOff (0.00s)
+=== RUN   TestWorkMatchesOriginalSHAWork
+--- PASS: TestWorkMatchesOriginalSHAWork (0.00s)
+=== RUN   TestExitMarkerIncludesFinalLockWait
+--- PASS: TestExitMarkerIncludesFinalLockWait (0.02s)
+=== RUN   TestWriteFailureIsRetained
+--- PASS: TestWriteFailureIsRetained (0.00s)
+=== RUN   TestRealHTTPResponseUnchangedAndEventsDrained
+--- PASS: TestRealHTTPResponseUnchangedAndEventsDrained (0.00s)
+=== RUN   TestTraceConnectionReuseAndFinalFlush
+    main_test.go:247: 500
+--- FAIL: TestTraceConnectionReuseAndFinalFlush (0.00s)
+=== RUN   TestTraceOutcomeFixture
+    trace_diag_test.go:70: 500
+--- FAIL: TestTraceOutcomeFixture (0.00s)
+=== RUN   TestFileTraceOutcomeFixture
+    trace_diag_test.go:70: 500
+--- FAIL: TestFileTraceOutcomeFixture (0.00s)
+=== RUN   TestComponentOutcomeFixtures
+=== RUN   TestComponentOutcomeFixtures/runtime
+    trace_diag_test.go:70: 500
+=== RUN   TestComponentOutcomeFixtures/custom
+--- FAIL: TestComponentOutcomeFixtures (0.10s)
+    --- FAIL: TestComponentOutcomeFixtures/runtime (0.00s)
+    --- PASS: TestComponentOutcomeFixtures/custom (0.10s)
+=== RUN   TestYieldOutcomeFixtures
+=== RUN   TestYieldOutcomeFixtures/combined
+    trace_diag_test.go:70: 500
+=== RUN   TestYieldOutcomeFixtures/custom
+--- FAIL: TestYieldOutcomeFixtures (0.10s)
+    --- FAIL: TestYieldOutcomeFixtures/combined (0.00s)
+    --- PASS: TestYieldOutcomeFixtures/custom (0.10s)
+=== RUN   TestMemoryTraceDeferredPersistenceAndOverflow
+--- PASS: TestMemoryTraceDeferredPersistenceAndOverflow (0.00s)
+=== RUN   TestMemoryTracePersistenceFailureInvalidatesStatus
+--- PASS: TestMemoryTracePersistenceFailureInvalidatesStatus (0.00s)
+=== RUN   TestTraceWriteErrorAndDisabledMode
+--- PASS: TestTraceWriteErrorAndDisabledMode (0.00s)
+=== RUN   TestTraceStopRejectsUndrainedResponse
+--- PASS: TestTraceStopRejectsUndrainedResponse (0.00s)
+=== RUN   TestWorkerYieldCompletesIdenticalWork
+--- PASS: TestWorkerYieldCompletesIdenticalWork (0.00s)
+=== RUN   TestWorkerYieldEnvironmentIsExplicit
+--- PASS: TestWorkerYieldEnvironmentIsExplicit (0.00s)
+FAIL
+FAIL	research-service	0.391s
+FAIL

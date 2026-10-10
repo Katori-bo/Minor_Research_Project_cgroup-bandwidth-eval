@@ -1,0 +1,154 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-08T09:28:50.085043+00:00",
+  "step": 4,
+  "status": "Harder-case offline gate completed; practical advantage gate failed; originality unresolved",
+  "practical_gate_passed": false,
+  "novelty_established": false,
+  "originality_audit_complete": false,
+  "scientific_collection_launched": false,
+  "solvers_changed": false,
+  "cases": 24,
+  "pool": 1200,
+  "eligible_pool": 1060,
+  "total_timed_runs": 432,
+  "batches": [
+    {
+      "package": "20261008-01",
+      "runs": 216,
+      "completions": {
+        "candidate": 72,
+        "reachable": 72,
+        "compact_smt": 45
+      },
+      "incomplete_runs": 27,
+      "candidate_faster_cases": 6,
+      "candidate_at_least_2x_cases": 0,
+      "practical_gate_passed": false
+    },
+    {
+      "package": "20261008-02-confirmation",
+      "runs": 216,
+      "completions": {
+        "candidate": 72,
+        "reachable": 72,
+        "compact_smt": 45
+      },
+      "incomplete_runs": 27,
+      "candidate_faster_cases": 7,
+      "candidate_at_least_2x_cases": 0,
+      "practical_gate_passed": false
+    }
+  ],
+  "confirmation_largest_median_speedup": 1.3088930631403144,
+  "five_probe_extremum_misses": [
+    {
+      "case": "clustered_16_larger_buffer",
+      "minimum": 3,
+      "maximum": 15,
+      "sampled_minimum": 4,
+      "sampled_maximum": 15,
+      "misses_minimum": true,
+      "misses_maximum": false
+    },
+    {
+      "case": "clustered_64_larger_buffer",
+      "minimum": 29,
+      "maximum": 63,
+      "sampled_minimum": 30,
+      "sampled_maximum": 63,
+      "misses_minimum": true,
+      "misses_maximum": false
+    },
+    {
+      "case": "mixed_gaps_16_small_buffer",
+      "minimum": 0,
+      "maximum": 14,
+      "sampled_minimum": 0,
+      "sampled_maximum": 13,
+      "misses_minimum": false,
+      "misses_maximum": true
+    },
+    {
+      "case": "mixed_gaps_64_small_buffer",
+      "minimum": 21,
+      "maximum": 57,
+      "sampled_minimum": 21,
+      "sampled_maximum": 56,
+      "misses_minimum": false,
+      "misses_maximum": true
+    }
+  ],
+  "timing_correction": "Original verification test process overlapped part of first batch; all frozen runs repeated after it finished, retaining both batches. No result-dependent solver/selection/budget changes.",
+  "preservation": {
+    "protected_files_verified": 1911,
+    "old_seals": [
+      {
+        "package": "runtime_io_deadline_guard_exploration/20261008-review",
+        "sealed_files_verified": 8,
+        "seal_sha256": "e5c35db55d897ae5a977869f4edef391c2dd7a84a51f2e7ede98e178fcfffb32"
+      },
+      {
+        "package": "runtime_io_originality_review/20261008-01",
+        "sealed_files_verified": 5,
+        "seal_sha256": "927e16980252efe32f958e92150abbf28e7c55e152e5a5d5e6f9fe47edd8a0b9"
+      },
+      {
+        "package": "runtime_io_fifo_reference/20261008-01",
+        "sealed_files_verified": 15,
+        "seal_sha256": "4bd7fdeb3d1407dd4c081779d9b4cdefbe57e4c29e7c0b9ad61b2d7525b53d71"
+      },
+      {
+        "package": "runtime_io_fifo_smt_baseline/20261008-01",
+        "sealed_files_verified": 44,
+        "seal_sha256": "39c2c2990486b83a7795757ba13180d47a9b8592876824aa938e42f96062b2d3"
+      },
+      {
+        "package": "runtime_io_fifo_admission_step3/20261008-01",
+        "sealed_files_verified": 54,
+        "seal_sha256": "6285b0ab0834220c849177a5836f4f5b890e0afda1c0d73bf28ca453da067858"
+      }
+    ],
+    "old_source_files_verified": 12,
+    "historical_sha256": {
+      "docs/runtime_io_short_working_draft_v4.md": "d5418476bbf8bee996c1da0372f1ac9ba096c0569c288c6f051e406a8884058c",
+      "docs/runtime_io_load_dependent_baseline_assessment_20261008.md": "defd85ea1cefd04bda9b45d7fde9693e49e2bce6eeaabd9bc3f8be14c6092df5"
+    }
+  },
+  "tests": [
+    {
+      "command": "/tmp/fifo-step2-venv/bin/python3 -m unittest discover -s analysis -p test_finite_fifo_deadline_admission.py -v",
+      "exit_code": 0,
+      "log": "admission_verification.log"
+    },
+    {
+      "command": "/tmp/fifo-step2-venv/bin/python3 -m unittest discover -s analysis -p test_finite_fifo_deadline_shortcut.py -v",
+      "exit_code": 0,
+      "log": "shortcut_verification.log"
+    }
+  ],
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "z3": "4.15.4",
+    "executable": "/tmp/fifo-step2-venv/bin/python3",
+    "platform": "Linux-7.2.8-arch1-2-x86_64-with-glibc2.44"
+  },
+  "source_files_sha256": {
+    "analysis/compare_finite_fifo_step4.py": "bc789933d49d724c634bf3629b621bacc651a3d28c81e85b9709221461ab278f",
+    "analysis/audit_finite_fifo_step4.py": "fb9c5946b7884546dfee77e552aca23bc2d662a12beb0da66cd5fcc9d3512078",
+    "analysis/compare_finite_fifo_step3.py": "461364d298d1bb020e7fd15851f1ac827d0449db053a9ea5dfec52cabaca4f18",
+    "analysis/finite_fifo_deadline_reference.py": "945f4f8c057878467cf25453d3cae1ab36313cf45814b08bf48b22acf3511fab",
+    "analysis/finite_fifo_deadline_symbolic_check.py": "013598120ba62af333caec1beb98a08393f7c7c341aa234732e4149b4f0d612f",
+    "analysis/finite_fifo_deadline_smt.py": "6e173fef05e96e325114151e98a25c900df81961b8ad0eb3e262d13ec6998c8d",
+    "analysis/finite_fifo_deadline_compact_smt.py": "f42849cb4453b8af33d443181fb6eb0dd96603291382ece7cc627d4146998c4e",
+    "analysis/finite_fifo_deadline_admission.py": "4ee3b9acea9dbad06ba6729dd9df7c573e4e7b6a524791db88d4f2dac0f479ee",
+    "analysis/finite_fifo_deadline_shortcut.py": "0e72c9b102f5f197b2d64692b6fa299a54c750b0b4d8d2a8c3b2f72c56eec443",
+    "analysis/test_finite_fifo_deadline_admission.py": "aedbc7fb857b1b1f0429cce4f992ee025a36e537e0b265268fe6313ad10e4dee",
+    "analysis/test_finite_fifo_deadline_shortcut.py": "aa57ab182e9aa943cae2f094462f4910143e89a14dd69dd121fe9b5ff085d42d",
+    "analysis/finite_fifo_smt_requirements.txt": "2bc40e2fcd7a609ec720d16ae245d16061a265276184c9c9bb7460cc5a0e6d56",
+    "docs/runtime_io_fifo_hardcases_step4_20261008.md": "102a5645a7ab446b3557120545c323254bd0e7d5fbc7bb9c4706c5ae05a71b42"
+  },
+  "confirmation_seal_sha256": "5e52c2456ffe0a138cbcc41a7ba535a044fb865096372a9049a891295513b3ce",
+  "recommendation": "Shelve current speedup route. Retain proof/reference assets; review exact theorem originality and significance with a knowledgeable researcher before another campaign.",
+  "report": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/docs/runtime_io_fifo_hardcases_step4_20261008.md"
+}

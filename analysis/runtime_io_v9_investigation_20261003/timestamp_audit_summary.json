@@ -1,0 +1,1431 @@
+[
+  {
+    "run_id": "fairness_b1_stock_on",
+    "attempt": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v9-fairness-1/session/attempts/fairness_b1_stock_on/001",
+    "output_matches_pinned": true,
+    "original_time_chain_valid": true,
+    "issues": [],
+    "adjusted_events": 4010,
+    "adjustments_over_1ms": 3500,
+    "maximum_adjustment_ns": 981870593,
+    "dropped": {
+      "same_state_census": 2952
+    },
+    "clock_mapping": {
+      "offset_low_ns": 21239836992635,
+      "offset_high_ns": 21239836993332,
+      "uncertainty_ns": 697,
+      "anchor_count": 2
+    },
+    "adjustments_by_kind": {
+      "StateTransition": 2562,
+      "Log": 532,
+      "Sync": 20,
+      "Metric": 110,
+      "RegionEnd": 273,
+      "RegionBegin": 249,
+      "TaskEnd": 124,
+      "TaskBegin": 140
+    },
+    "largest_adjustments": [
+      {
+        "event_index": 64205,
+        "raw_ns": 21256077295232,
+        "decoded_ns": 21257059165825,
+        "adjustment_ns": 981870593,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21257059165825 N=17 Trace=21256152177664 Mono=21256152177633 Wall=2026-10-03T00:22:15.913936551+05:30"
+      },
+      {
+        "event_index": 64206,
+        "raw_ns": 21256152178624,
+        "decoded_ns": 21257059165826,
+        "adjustment_ns": 906987202,
+        "header": "M=9 P=1 G=1328 StateTransition Time=21257059165826 ProcID=1 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 64207,
+        "raw_ns": 21256152178752,
+        "decoded_ns": 21257059165827,
+        "adjustment_ns": 906987075,
+        "header": "M=9 P=1 G=1328 StateTransition Time=21257059165827 GoID=1328 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 64208,
+        "raw_ns": 21256152180224,
+        "decoded_ns": 21257059165828,
+        "adjustment_ns": 906985604,
+        "header": "M=10 P=0 G=1803 StateTransition Time=21257059165828 ProcID=0 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 64209,
+        "raw_ns": 21256152180416,
+        "decoded_ns": 21257059165829,
+        "adjustment_ns": 906985413,
+        "header": "M=10 P=0 G=1803 StateTransition Time=21257059165829 GoID=1803 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 64210,
+        "raw_ns": 21256152203392,
+        "decoded_ns": 21257059165830,
+        "adjustment_ns": 906962438,
+        "header": "M=9 P=1 G=1328 Metric Time=21257059165830 Name=\"/sched/gomaxprocs:threads\" Value=Value{Uint64(2)}"
+      },
+      {
+        "event_index": 64211,
+        "raw_ns": 21256152204288,
+        "decoded_ns": 21257059165831,
+        "adjustment_ns": 906961543,
+        "header": "M=9 P=1 G=1328 StateTransition Time=21257059165831 GoID=1328 Running->Runnable Reason=\"preempted\""
+      },
+      {
+        "event_index": 64212,
+        "raw_ns": 21256152205376,
+        "decoded_ns": 21257059165832,
+        "adjustment_ns": 906960456,
+        "header": "M=9 P=1 G=-1 StateTransition Time=21257059165832 GoID=1345 Waiting->Waiting Reason=\"\""
+      },
+      {
+        "event_index": 64213,
+        "raw_ns": 21256152205568,
+        "decoded_ns": 21257059165833,
+        "adjustment_ns": 906960265,
+        "header": "M=9 P=1 G=-1 StateTransition Time=21257059165833 GoID=1345 Waiting->Runnable Reason=\"\""
+      },
+      {
+        "event_index": 64214,
+        "raw_ns": 21256152206208,
+        "decoded_ns": 21257059165834,
+        "adjustment_ns": 906959626,
+        "header": "M=9 P=1 G=-1 StateTransition Time=21257059165834 GoID=1345 Runnable->Running Reason=\"\""
+      },
+      {
+        "event_index": 64215,
+        "raw_ns": 21256152207232,
+        "decoded_ns": 21257059165835,
+        "adjustment_ns": 906958603,
+        "header": "M=9 P=1 G=1345 StateTransition Time=21257059165835 GoID=1345 Running->Waiting Reason=\"system goroutine wait\""
+      },
+      {
+        "event_index": 64216,
+        "raw_ns": 21256152208064,
+        "decoded_ns": 21257059165836,
+        "adjustment_ns": 906957772,
+        "header": "M=9 P=1 G=-1 StateTransition Time=21257059165836 GoID=3040 Runnable->Runnable Reason=\"\""
+      },
+      {
+        "event_index": 64217,
+        "raw_ns": 21256152208128,
+        "decoded_ns": 21257059165837,
+        "adjustment_ns": 906957709,
+        "header": "M=9 P=1 G=-1 StateTransition Time=21257059165837 GoID=3040 Runnable->Running Reason=\"\""
+      },
+      {
+        "event_index": 64218,
+        "raw_ns": 21256152210816,
+        "decoded_ns": 21257059165838,
+        "adjustment_ns": 906955022,
+        "header": "M=10 P=0 G=1803 Log Time=21257059165838 Task=0 Category=\"connection\" Message=\"conn=210 state=idle\""
+      },
+      {
+        "event_index": 64219,
+        "raw_ns": 21256152213184,
+        "decoded_ns": 21257059165839,
+        "adjustment_ns": 906952655,
+        "header": "M=10 P=0 G=1803 StateTransition Time=21257059165839 GoID=1803 Running->Syscall Reason=\"\""
+      },
+      {
+        "event_index": 64220,
+        "raw_ns": 21256152215744,
+        "decoded_ns": 21257059165840,
+        "adjustment_ns": 906950096,
+        "header": "M=9 P=1 G=3040 StateTransition Time=21257059165840 GoID=2194 Waiting->Waiting Reason=\"\""
+      },
+      {
+        "event_index": 64221,
+        "raw_ns": 21256152216192,
+        "decoded_ns": 21257059165841,
+        "adjustment_ns": 906949649,
+        "header": "M=9 P=1 G=3040 StateTransition Time=21257059165841 GoID=2194 Waiting->Runnable Reason=\"\""
+      },
+      {
+        "event_index": 64222,
+        "raw_ns": 21256152216704,
+        "decoded_ns": 21257059165842,
+        "adjustment_ns": 906949138,
+        "header": "M=9 P=1 G=3040 StateTransition Time=21257059165842 GoID=3040 Running->NotExist Reason=\"\""
+      },
+      {
+        "event_index": 64223,
+        "raw_ns": 21256152217792,
+        "decoded_ns": 21257059165843,
+        "adjustment_ns": 906948051,
+        "header": "M=9 P=1 G=-1 StateTransition Time=21257059165843 GoID=2194 Runnable->Running Reason=\"\""
+      },
+      {
+        "event_index": 64224,
+        "raw_ns": 21256152219072,
+        "decoded_ns": 21257059165844,
+        "adjustment_ns": 906946772,
+        "header": "M=10 P=0 G=1803 StateTransition Time=21257059165844 GoID=1803 Syscall->Running Reason=\"\""
+      }
+    ],
+    "source_sha256": {
+      "runtime_trace": "8e9d11c33f24bdc5b8f2e3a395cc9841d0981614835e266ec87495d44ecb1d4b",
+      "baseline": "6b3d1035777659c65c576307b442c242246dc14044975618dd8741bfb3c0a893",
+      "audit_decoder": "3b3b9c0431f14d97ea3a6bdc4bb999d2435d7f3681786dd8571f163a733528e4",
+      "ledger": "4a8514d106b6ae436ebdf139e0b1ca3a700aceab8cda477811a1c0d124bb5faf",
+      "restored": "29cfec848b75bd3a92bb0b4a51a4132f22d4968676b4f7289c52702515231f12"
+    },
+    "eligible_for_full": false
+  },
+  {
+    "run_id": "fairness_b1_patched_on",
+    "attempt": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v9-fairness-1/session/attempts/fairness_b1_patched_on/001",
+    "output_matches_pinned": true,
+    "original_time_chain_valid": true,
+    "issues": [],
+    "adjusted_events": 386,
+    "adjustments_over_1ms": 1,
+    "maximum_adjustment_ns": 78245761,
+    "dropped": {
+      "same_state_census": 2872
+    },
+    "clock_mapping": {
+      "offset_low_ns": 21378036859130,
+      "offset_high_ns": 21378036859892,
+      "uncertainty_ns": 762,
+      "anchor_count": 2
+    },
+    "adjustments_by_kind": {
+      "Log": 37,
+      "RegionEnd": 12,
+      "StateTransition": 269,
+      "Sync": 20,
+      "Metric": 25,
+      "TaskBegin": 16,
+      "RegionBegin": 7
+    },
+    "largest_adjustments": [
+      {
+        "event_index": 30544,
+        "raw_ns": 21387049360448,
+        "decoded_ns": 21387127606209,
+        "adjustment_ns": 78245761,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21387127606209 N=9 Trace=21387127588224 Mono=21387127588196 Wall=2026-10-03T00:24:26.889347124+05:30"
+      },
+      {
+        "event_index": 2615,
+        "raw_ns": 21379056494976,
+        "decoded_ns": 21379057061377,
+        "adjustment_ns": 566401,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21379057061377 N=2 Trace=21379056992512 Mono=21379056992514 Wall=2026-10-03T00:24:18.818751432+05:30"
+      },
+      {
+        "event_index": 50256,
+        "raw_ns": 21391227952256,
+        "decoded_ns": 21391228263233,
+        "adjustment_ns": 310977,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21391228263233 N=13 Trace=21391228237120 Mono=21391228237120 Wall=2026-10-03T00:24:30.989996047+05:30"
+      },
+      {
+        "event_index": 10841,
+        "raw_ns": 21382061284608,
+        "decoded_ns": 21382061484353,
+        "adjustment_ns": 199745,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21382061484353 N=5 Trace=21382061462528 Mono=21382061462517 Wall=2026-10-03T00:24:21.823221405+05:30"
+      },
+      {
+        "event_index": 60780,
+        "raw_ns": 21394234269824,
+        "decoded_ns": 21394234349121,
+        "adjustment_ns": 79297,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21394234349121 N=16 Trace=21394234300672 Mono=21394234300674 Wall=2026-10-03T00:24:33.996059592+05:30"
+      },
+      {
+        "event_index": 39361,
+        "raw_ns": 21388135502080,
+        "decoded_ns": 21388135563777,
+        "adjustment_ns": 61697,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21388135563777 N=10 Trace=21388135541376 Mono=21388135541384 Wall=2026-10-03T00:24:27.897300312+05:30"
+      },
+      {
+        "event_index": 53153,
+        "raw_ns": 21392229693120,
+        "decoded_ns": 21392229751809,
+        "adjustment_ns": 58689,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21392229751809 N=14 Trace=21392229724160 Mono=21392229724157 Wall=2026-10-03T00:24:31.991483075+05:30"
+      },
+      {
+        "event_index": 8097,
+        "raw_ns": 21381059635776,
+        "decoded_ns": 21381059693313,
+        "adjustment_ns": 57537,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21381059693313 N=4 Trace=21381059653760 Mono=21381059653712 Wall=2026-10-03T00:24:20.82141261+05:30"
+      },
+      {
+        "event_index": 2616,
+        "raw_ns": 21379057006848,
+        "decoded_ns": 21379057061378,
+        "adjustment_ns": 54530,
+        "header": "M=10 P=0 G=1337 StateTransition Time=21379057061378 ProcID=0 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 2617,
+        "raw_ns": 21379057007040,
+        "decoded_ns": 21379057061379,
+        "adjustment_ns": 54339,
+        "header": "M=10 P=0 G=1337 StateTransition Time=21379057061379 GoID=1337 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 43450,
+        "raw_ns": 21389225543360,
+        "decoded_ns": 21389225595905,
+        "adjustment_ns": 52545,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21389225595905 N=11 Trace=21389225578816 Mono=21389225578816 Wall=2026-10-03T00:24:28.987337734+05:30"
+      },
+      {
+        "event_index": 5357,
+        "raw_ns": 21380058643584,
+        "decoded_ns": 21380058694785,
+        "adjustment_ns": 51201,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21380058694785 N=3 Trace=21380058673792 Mono=21380058673809 Wall=2026-10-03T00:24:19.820432737+05:30"
+      },
+      {
+        "event_index": 80711,
+        "raw_ns": 21399142777152,
+        "decoded_ns": 21399142827201,
+        "adjustment_ns": 50049,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21399142827201 N=20 Trace=21399142812352 Mono=21399142812007 Wall=2026-10-03T00:24:38.904570945+05:30"
+      },
+      {
+        "event_index": 2618,
+        "raw_ns": 21379057013696,
+        "decoded_ns": 21379057061380,
+        "adjustment_ns": 47684,
+        "header": "M=10 P=0 G=1337 Metric Time=21379057061380 Name=\"/sched/gomaxprocs:threads\" Value=Value{Uint64(2)}"
+      },
+      {
+        "event_index": 60781,
+        "raw_ns": 21394234301504,
+        "decoded_ns": 21394234349122,
+        "adjustment_ns": 47618,
+        "header": "M=1 P=1 G=1337 StateTransition Time=21394234349122 ProcID=1 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 60782,
+        "raw_ns": 21394234301696,
+        "decoded_ns": 21394234349123,
+        "adjustment_ns": 47427,
+        "header": "M=1 P=1 G=1337 StateTransition Time=21394234349123 GoID=1337 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 60783,
+        "raw_ns": 21394234301760,
+        "decoded_ns": 21394234349124,
+        "adjustment_ns": 47364,
+        "header": "M=10 P=0 G=2076 StateTransition Time=21394234349124 ProcID=0 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 60784,
+        "raw_ns": 21394234301888,
+        "decoded_ns": 21394234349125,
+        "adjustment_ns": 47237,
+        "header": "M=10 P=0 G=2076 StateTransition Time=21394234349125 GoID=2076 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 64715,
+        "raw_ns": 21395238811520,
+        "decoded_ns": 21395238857665,
+        "adjustment_ns": 46145,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21395238857665 N=17 Trace=21395238837568 Mono=21395238837552 Wall=2026-10-03T00:24:35.00059646+05:30"
+      },
+      {
+        "event_index": 23225,
+        "raw_ns": 21385246765696,
+        "decoded_ns": 21385246811713,
+        "adjustment_ns": 46017,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21385246811713 N=8 Trace=21385246803328 Mono=21385246803340 Wall=2026-10-03T00:24:25.008562278+05:30"
+      }
+    ],
+    "source_sha256": {
+      "runtime_trace": "299741402416ff6694d2c82bafb823196c3c6b9faa70b4eb00d02570d64917aa",
+      "baseline": "292bce3cde90ada07a0ff76bc9a46d62f4b00eb2f8c0f0783b01e828bd3f99ff",
+      "audit_decoder": "3b3b9c0431f14d97ea3a6bdc4bb999d2435d7f3681786dd8571f163a733528e4",
+      "ledger": "48df53037d0c5191e0cd80d4e5e2d029b5f1105d0019b3c9bba36903d59bbde9",
+      "restored": "0ef6e83654bfb2b0b06009438f8dc8b761c8b783b9fa2190b5a59fddd971bfd2"
+    },
+    "eligible_for_full": false
+  },
+  {
+    "run_id": "fairness_b2_stock_on",
+    "attempt": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v9-fairness-1/session/attempts/fairness_b2_stock_on/001",
+    "output_matches_pinned": true,
+    "original_time_chain_valid": true,
+    "issues": [],
+    "adjusted_events": 8658,
+    "adjustments_over_1ms": 8377,
+    "maximum_adjustment_ns": 2291894721,
+    "dropped": {
+      "same_state_census": 2363
+    },
+    "clock_mapping": {
+      "offset_low_ns": 21645604508590,
+      "offset_high_ns": 21645604509194,
+      "uncertainty_ns": 604,
+      "anchor_count": 2
+    },
+    "adjustments_by_kind": {
+      "RegionEnd": 601,
+      "StateTransition": 5447,
+      "Sync": 19,
+      "Metric": 204,
+      "Log": 1188,
+      "TaskBegin": 301,
+      "TaskEnd": 299,
+      "RegionBegin": 599
+    },
+    "largest_adjustments": [
+      {
+        "event_index": 64993,
+        "raw_ns": 21662861852352,
+        "decoded_ns": 21665153747073,
+        "adjustment_ns": 2291894721,
+        "header": "M=-1 P=-1 G=-1 Sync Time=21665153747073 N=18 Trace=21662938800384 Mono=21662938800389 Wall=2026-10-03T00:29:02.700559307+05:30"
+      },
+      {
+        "event_index": 64994,
+        "raw_ns": 21662938801216,
+        "decoded_ns": 21665153747074,
+        "adjustment_ns": 2214945858,
+        "header": "M=10 P=1 G=1345 StateTransition Time=21665153747074 ProcID=1 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 64995,
+        "raw_ns": 21662938801344,
+        "decoded_ns": 21665153747075,
+        "adjustment_ns": 2214945731,
+        "header": "M=10 P=1 G=1345 StateTransition Time=21665153747075 GoID=1345 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 64996,
+        "raw_ns": 21662938818432,
+        "decoded_ns": 21665153747076,
+        "adjustment_ns": 2214928644,
+        "header": "M=10 P=1 G=1345 Metric Time=21665153747076 Name=\"/sched/gomaxprocs:threads\" Value=Value{Uint64(2)}"
+      },
+      {
+        "event_index": 64997,
+        "raw_ns": 21662938819264,
+        "decoded_ns": 21665153747077,
+        "adjustment_ns": 2214927813,
+        "header": "M=10 P=1 G=1345 StateTransition Time=21665153747077 GoID=1345 Running->Runnable Reason=\"preempted\""
+      },
+      {
+        "event_index": 64998,
+        "raw_ns": 21662938820160,
+        "decoded_ns": 21665153747078,
+        "adjustment_ns": 2214926918,
+        "header": "M=10 P=1 G=-1 StateTransition Time=21665153747078 GoID=1346 Waiting->Waiting Reason=\"\""
+      },
+      {
+        "event_index": 64999,
+        "raw_ns": 21662938820352,
+        "decoded_ns": 21665153747079,
+        "adjustment_ns": 2214926727,
+        "header": "M=10 P=1 G=-1 StateTransition Time=21665153747079 GoID=1346 Waiting->Runnable Reason=\"\""
+      },
+      {
+        "event_index": 65000,
+        "raw_ns": 21662938820864,
+        "decoded_ns": 21665153747080,
+        "adjustment_ns": 2214926216,
+        "header": "M=10 P=1 G=-1 StateTransition Time=21665153747080 GoID=1346 Runnable->Running Reason=\"\""
+      },
+      {
+        "event_index": 65001,
+        "raw_ns": 21662938821632,
+        "decoded_ns": 21665153747081,
+        "adjustment_ns": 2214925449,
+        "header": "M=10 P=1 G=1346 StateTransition Time=21665153747081 GoID=1346 Running->Waiting Reason=\"system goroutine wait\""
+      },
+      {
+        "event_index": 65002,
+        "raw_ns": 21662938822464,
+        "decoded_ns": 21665153747082,
+        "adjustment_ns": 2214924618,
+        "header": "M=10 P=1 G=-1 StateTransition Time=21665153747082 GoID=3174 Runnable->Runnable Reason=\"\""
+      },
+      {
+        "event_index": 65003,
+        "raw_ns": 21662938822528,
+        "decoded_ns": 21665153747083,
+        "adjustment_ns": 2214924555,
+        "header": "M=10 P=1 G=-1 StateTransition Time=21665153747083 GoID=3174 Runnable->Running Reason=\"\""
+      },
+      {
+        "event_index": 65004,
+        "raw_ns": 21662938828992,
+        "decoded_ns": 21665153747084,
+        "adjustment_ns": 2214918092,
+        "header": "M=10 P=1 G=3174 StateTransition Time=21665153747084 GoID=1859 Waiting->Waiting Reason=\"\""
+      },
+      {
+        "event_index": 65005,
+        "raw_ns": 21662938829312,
+        "decoded_ns": 21665153747085,
+        "adjustment_ns": 2214917773,
+        "header": "M=10 P=1 G=3174 StateTransition Time=21665153747085 GoID=1859 Waiting->Runnable Reason=\"\""
+      },
+      {
+        "event_index": 65006,
+        "raw_ns": 21662938829696,
+        "decoded_ns": 21665153747086,
+        "adjustment_ns": 2214917390,
+        "header": "M=10 P=1 G=3174 StateTransition Time=21665153747086 GoID=3174 Running->NotExist Reason=\"\""
+      },
+      {
+        "event_index": 65007,
+        "raw_ns": 21662938830656,
+        "decoded_ns": 21665153747087,
+        "adjustment_ns": 2214916431,
+        "header": "M=10 P=1 G=-1 StateTransition Time=21665153747087 GoID=1859 Runnable->Running Reason=\"\""
+      },
+      {
+        "event_index": 65008,
+        "raw_ns": 21662938835712,
+        "decoded_ns": 21665153747088,
+        "adjustment_ns": 2214911376,
+        "header": "M=10 P=1 G=1859 Log Time=21665153747088 Task=0 Category=\"connection\" Message=\"conn=220 state=idle\""
+      },
+      {
+        "event_index": 65009,
+        "raw_ns": 21662938837312,
+        "decoded_ns": 21665153747089,
+        "adjustment_ns": 2214909777,
+        "header": "M=10 P=1 G=1859 StateTransition Time=21665153747089 GoID=1859 Running->Syscall Reason=\"\""
+      },
+      {
+        "event_index": 65010,
+        "raw_ns": 21662938841984,
+        "decoded_ns": 21665153747090,
+        "adjustment_ns": 2214905106,
+        "header": "M=10 P=1 G=1859 StateTransition Time=21665153747090 GoID=1859 Syscall->Running Reason=\"\""
+      },
+      {
+        "event_index": 65011,
+        "raw_ns": 21662938856064,
+        "decoded_ns": 21665153747091,
+        "adjustment_ns": 2214891027,
+        "header": "M=10 P=1 G=1859 Log Time=21665153747091 Task=0 Category=\"connection\" Message=\"conn=220 state=active\""
+      },
+      {
+        "event_index": 65012,
+        "raw_ns": 21662938857792,
+        "decoded_ns": 21665153747092,
+        "adjustment_ns": 2214889300,
+        "header": "M=10 P=1 G=1859 StateTransition Time=21665153747092 GoID=3211 NotExist->Runnable Reason=\"\""
+      }
+    ],
+    "source_sha256": {
+      "runtime_trace": "78678b875ef81f9a0185831d38326a63dc328ad672e1809a197b922d5adf5d37",
+      "baseline": "85e07accd433c57e1dba3d8e7b07a26c7cae84a37d1ff3b23eb285c2e138ecbc",
+      "audit_decoder": "3b3b9c0431f14d97ea3a6bdc4bb999d2435d7f3681786dd8571f163a733528e4",
+      "ledger": "4f0dd97cb3de3d51a1359031784b20a73c0bb32e8bf58893bba277ff9a1c3932",
+      "restored": "34421435a964684b5381d83f15f21758b991362c77e784db4fc38a3b8e4a76fc"
+    },
+    "eligible_for_full": false
+  },
+  {
+    "run_id": "fairness_b2_patched_on",
+    "attempt": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v9-fairness-1/session/attempts/fairness_b2_patched_on/001",
+    "output_matches_pinned": true,
+    "original_time_chain_valid": true,
+    "issues": [],
+    "adjusted_events": 354,
+    "adjustments_over_1ms": 1,
+    "maximum_adjustment_ns": 1811521,
+    "dropped": {
+      "same_state_census": 3295
+    },
+    "clock_mapping": {
+      "offset_low_ns": 22037613628096,
+      "offset_high_ns": 22037613628837,
+      "uncertainty_ns": 741,
+      "anchor_count": 2
+    },
+    "adjustments_by_kind": {
+      "StateTransition": 251,
+      "Sync": 21,
+      "Metric": 24,
+      "RegionEnd": 14,
+      "Log": 29,
+      "TaskBegin": 8,
+      "RegionBegin": 7
+    },
+    "largest_adjustments": [
+      {
+        "event_index": 18551,
+        "raw_ns": 22043673244992,
+        "decoded_ns": 22043675056513,
+        "adjustment_ns": 1811521,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22043675056513 N=7 Trace=22043675037376 Mono=22043675037376 Wall=2026-10-03T00:35:23.436796304+05:30"
+      },
+      {
+        "event_index": 10772,
+        "raw_ns": 22041634080064,
+        "decoded_ns": 22041634544001,
+        "adjustment_ns": 463937,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22041634544001 N=5 Trace=22041634520128 Mono=22041634520100 Wall=2026-10-03T00:35:21.396279028+05:30"
+      },
+      {
+        "event_index": 13485,
+        "raw_ns": 22042635116416,
+        "decoded_ns": 22042635209217,
+        "adjustment_ns": 92801,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22042635209217 N=6 Trace=22042635181760 Mono=22042635181707 Wall=2026-10-03T00:35:22.396940604+05:30"
+      },
+      {
+        "event_index": 75728,
+        "raw_ns": 22056873260480,
+        "decoded_ns": 22056873331073,
+        "adjustment_ns": 70593,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22056873331073 N=20 Trace=22056873308608 Mono=22056873308578 Wall=2026-10-03T00:35:36.635067496+05:30"
+      },
+      {
+        "event_index": 5297,
+        "raw_ns": 22039631996160,
+        "decoded_ns": 22039632058049,
+        "adjustment_ns": 61889,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22039632058049 N=3 Trace=22039632042112 Mono=22039632042088 Wall=2026-10-03T00:35:19.393801006+05:30"
+      },
+      {
+        "event_index": 2558,
+        "raw_ns": 22038631380864,
+        "decoded_ns": 22038631434049,
+        "adjustment_ns": 53185,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22038631434049 N=2 Trace=22038631403072 Mono=22038631403054 Wall=2026-10-03T00:35:18.393161972+05:30"
+      },
+      {
+        "event_index": 53247,
+        "raw_ns": 22051789169024,
+        "decoded_ns": 22051789219777,
+        "adjustment_ns": 50753,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22051789219777 N=15 Trace=22051789195712 Mono=22051789195708 Wall=2026-10-03T00:35:31.550954636+05:30"
+      },
+      {
+        "event_index": 22557,
+        "raw_ns": 22044676546176,
+        "decoded_ns": 22044676593857,
+        "adjustment_ns": 47681,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22044676593857 N=8 Trace=22044676579200 Mono=22044676579160 Wall=2026-10-03T00:35:24.438338088+05:30"
+      },
+      {
+        "event_index": 43913,
+        "raw_ns": 22048785503552,
+        "decoded_ns": 22048785551233,
+        "adjustment_ns": 47681,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22048785551233 N=12 Trace=22048785533504 Mono=22048785533507 Wall=2026-10-03T00:35:28.547292435+05:30"
+      },
+      {
+        "event_index": 82008,
+        "raw_ns": 22058782698112,
+        "decoded_ns": 22058782744577,
+        "adjustment_ns": 46465,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22058782744577 N=21 Trace=22058782727424 Mono=22058782727454 Wall=2026-10-03T00:35:38.544486372+05:30"
+      },
+      {
+        "event_index": 30661,
+        "raw_ns": 22046684063424,
+        "decoded_ns": 22046684108673,
+        "adjustment_ns": 45249,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22046684108673 N=10 Trace=22046684094400 Mono=22046684094373 Wall=2026-10-03T00:35:26.445853301+05:30"
+      },
+      {
+        "event_index": 56412,
+        "raw_ns": 22052790345216,
+        "decoded_ns": 22052790389057,
+        "adjustment_ns": 43841,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22052790389057 N=16 Trace=22052790366976 Mono=22052790366978 Wall=2026-10-03T00:35:32.552125906+05:30"
+      },
+      {
+        "event_index": 61249,
+        "raw_ns": 22053793694144,
+        "decoded_ns": 22053793736449,
+        "adjustment_ns": 42305,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22053793736449 N=17 Trace=22053793712000 Mono=22053793712019 Wall=2026-10-03T00:35:33.555470957+05:30"
+      },
+      {
+        "event_index": 39516,
+        "raw_ns": 22047774288512,
+        "decoded_ns": 22047774328897,
+        "adjustment_ns": 40385,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22047774328897 N=11 Trace=22047774314880 Mono=22047774314869 Wall=2026-10-03T00:35:27.536073797+05:30"
+      },
+      {
+        "event_index": 50333,
+        "raw_ns": 22050788283712,
+        "decoded_ns": 22050788323713,
+        "adjustment_ns": 40001,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22050788323713 N=14 Trace=22050788291136 Mono=22050788291125 Wall=2026-10-03T00:35:30.550050043+05:30"
+      },
+      {
+        "event_index": 27002,
+        "raw_ns": 22045679654976,
+        "decoded_ns": 22045679694337,
+        "adjustment_ns": 39361,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22045679694337 N=9 Trace=22045679681024 Mono=22045679681034 Wall=2026-10-03T00:35:25.441439962+05:30"
+      },
+      {
+        "event_index": 65078,
+        "raw_ns": 22054794758528,
+        "decoded_ns": 22054794795905,
+        "adjustment_ns": 37377,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22054794795905 N=18 Trace=22054794778624 Mono=22054794778664 Wall=2026-10-03T00:35:34.556537592+05:30"
+      },
+      {
+        "event_index": 69119,
+        "raw_ns": 22055795592704,
+        "decoded_ns": 22055795629505,
+        "adjustment_ns": 36801,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22055795629505 N=19 Trace=22055795612608 Mono=22055795612635 Wall=2026-10-03T00:35:35.557371563+05:30"
+      },
+      {
+        "event_index": 47406,
+        "raw_ns": 22049786848448,
+        "decoded_ns": 22049786880513,
+        "adjustment_ns": 32065,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22049786880513 N=13 Trace=22049786857088 Mono=22049786857083 Wall=2026-10-03T00:35:29.54861601+05:30"
+      },
+      {
+        "event_index": 50334,
+        "raw_ns": 22050788292224,
+        "decoded_ns": 22050788323714,
+        "adjustment_ns": 31490,
+        "header": "M=1 P=1 G=1343 StateTransition Time=22050788323714 ProcID=1 Running->Running Reason=\"\""
+      }
+    ],
+    "source_sha256": {
+      "runtime_trace": "6d43a1434ca443c123f60b642e482dea50bb1517f0b3ddda4fb5f7282d8b3144",
+      "baseline": "fb399d13370c3876224187e400570fde22263ca7aac8b9c305326960ee607179",
+      "audit_decoder": "3b3b9c0431f14d97ea3a6bdc4bb999d2435d7f3681786dd8571f163a733528e4",
+      "ledger": "246edce6c4151834193eb22f7bad2df4b4d08995f85d09b5df02da430ec4b731",
+      "restored": "f8db0584b1eb4f668ecdbd2595e78cf27f3dd2b6d7bb2460aeb3966eb7397bec"
+    },
+    "eligible_for_full": false
+  },
+  {
+    "run_id": "fairness_b3_patched_on",
+    "attempt": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v9-fairness-1/session/attempts/fairness_b3_patched_on/001",
+    "output_matches_pinned": true,
+    "original_time_chain_valid": true,
+    "issues": [],
+    "adjusted_events": 353,
+    "adjustments_over_1ms": 0,
+    "maximum_adjustment_ns": 261441,
+    "dropped": {
+      "same_state_census": 3112
+    },
+    "clock_mapping": {
+      "offset_low_ns": 22315601055986,
+      "offset_high_ns": 22315601056837,
+      "uncertainty_ns": 851,
+      "anchor_count": 2
+    },
+    "adjustments_by_kind": {
+      "StateTransition": 239,
+      "RegionEnd": 16,
+      "Sync": 21,
+      "Metric": 28,
+      "Log": 32,
+      "TaskEnd": 3,
+      "TaskBegin": 11,
+      "RegionBegin": 3
+    },
+    "largest_adjustments": [
+      {
+        "event_index": 53749,
+        "raw_ns": 22329918513536,
+        "decoded_ns": 22329918774977,
+        "adjustment_ns": 261441,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22329918774977 N=15 Trace=22329918748288 Mono=22329918748280 Wall=2026-10-03T00:40:09.680507208+05:30"
+      },
+      {
+        "event_index": 5377,
+        "raw_ns": 22317620342528,
+        "decoded_ns": 22317620411905,
+        "adjustment_ns": 69377,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22317620411905 N=3 Trace=22317620398208 Mono=22317620398239 Wall=2026-10-03T00:39:57.382157167+05:30"
+      },
+      {
+        "event_index": 2613,
+        "raw_ns": 22316619154240,
+        "decoded_ns": 22316619214017,
+        "adjustment_ns": 59777,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22316619214017 N=2 Trace=22316619182656 Mono=22316619182645 Wall=2026-10-03T00:39:56.380941553+05:30"
+      },
+      {
+        "event_index": 39725,
+        "raw_ns": 22325794040192,
+        "decoded_ns": 22325794095489,
+        "adjustment_ns": 55297,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22325794095489 N=11 Trace=22325794078656 Mono=22325794078647 Wall=2026-10-03T00:40:05.555837565+05:30"
+      },
+      {
+        "event_index": 18774,
+        "raw_ns": 22321695042880,
+        "decoded_ns": 22321695096129,
+        "adjustment_ns": 53249,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22321695096129 N=7 Trace=22321695072640 Mono=22321695072604 Wall=2026-10-03T00:40:01.456831532+05:30"
+      },
+      {
+        "event_index": 79002,
+        "raw_ns": 22335407038784,
+        "decoded_ns": 22335407091905,
+        "adjustment_ns": 53121,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22335407091905 N=20 Trace=22335407078656 Mono=22335407078669 Wall=2026-10-03T00:40:15.168837597+05:30"
+      },
+      {
+        "event_index": 47953,
+        "raw_ns": 22327915454976,
+        "decoded_ns": 22327915506945,
+        "adjustment_ns": 51969,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22327915506945 N=13 Trace=22327915486592 Mono=22327915486595 Wall=2026-10-03T00:40:07.677245523+05:30"
+      },
+      {
+        "event_index": 50853,
+        "raw_ns": 22328916783936,
+        "decoded_ns": 22328916835393,
+        "adjustment_ns": 51457,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22328916835393 N=14 Trace=22328916793536 Mono=22328916793491 Wall=2026-10-03T00:40:08.678552389+05:30"
+      },
+      {
+        "event_index": 66151,
+        "raw_ns": 22333097117632,
+        "decoded_ns": 22333097167489,
+        "adjustment_ns": 49857,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22333097167489 N=18 Trace=22333097147200 Mono=22333097147208 Wall=2026-10-03T00:40:12.858906136+05:30"
+      },
+      {
+        "event_index": 70058,
+        "raw_ns": 22334101312960,
+        "decoded_ns": 22334101362305,
+        "adjustment_ns": 49345,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22334101362305 N=19 Trace=22334101343552 Mono=22334101343513 Wall=2026-10-03T00:40:13.863102441+05:30"
+      },
+      {
+        "event_index": 30735,
+        "raw_ns": 22324701517376,
+        "decoded_ns": 22324701565953,
+        "adjustment_ns": 48577,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22324701565953 N=10 Trace=22324701551168 Mono=22324701551128 Wall=2026-10-03T00:40:04.463310056+05:30"
+      },
+      {
+        "event_index": 61898,
+        "raw_ns": 22331994918208,
+        "decoded_ns": 22331994964929,
+        "adjustment_ns": 46721,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22331994964929 N=17 Trace=22331994944896 Mono=22331994944879 Wall=2026-10-03T00:40:11.756703807+05:30"
+      },
+      {
+        "event_index": 26770,
+        "raw_ns": 22323698079232,
+        "decoded_ns": 22323698122369,
+        "adjustment_ns": 43137,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22323698122369 N=9 Trace=22323698107072 Mono=22323698107062 Wall=2026-10-03T00:40:03.45986599+05:30"
+      },
+      {
+        "event_index": 82514,
+        "raw_ns": 22336698281216,
+        "decoded_ns": 22336698323777,
+        "adjustment_ns": 42561,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22336698323777 N=21 Trace=22336698305664 Mono=22336698305629 Wall=2026-10-03T00:40:16.460064556+05:30"
+      },
+      {
+        "event_index": 8099,
+        "raw_ns": 22318620891968,
+        "decoded_ns": 22318620934145,
+        "adjustment_ns": 42177,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22318620934145 N=4 Trace=22318620903936 Mono=22318620903914 Wall=2026-10-03T00:39:58.382662812+05:30"
+      },
+      {
+        "event_index": 13579,
+        "raw_ns": 22320622715648,
+        "decoded_ns": 22320622757633,
+        "adjustment_ns": 41985,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22320622757633 N=6 Trace=22320622745408 Mono=22320622745408 Wall=2026-10-03T00:40:00.384504336+05:30"
+      },
+      {
+        "event_index": 50854,
+        "raw_ns": 22328916794624,
+        "decoded_ns": 22328916835394,
+        "adjustment_ns": 40770,
+        "header": "M=10 P=1 G=1338 StateTransition Time=22328916835394 ProcID=1 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 50855,
+        "raw_ns": 22328916794944,
+        "decoded_ns": 22328916835395,
+        "adjustment_ns": 40451,
+        "header": "M=10 P=1 G=1338 StateTransition Time=22328916835395 GoID=1338 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 57567,
+        "raw_ns": 22330920184000,
+        "decoded_ns": 22330920223553,
+        "adjustment_ns": 39553,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22330920223553 N=16 Trace=22330920203392 Mono=22330920203423 Wall=2026-10-03T00:40:10.681962361+05:30"
+      },
+      {
+        "event_index": 23036,
+        "raw_ns": 22322696528384,
+        "decoded_ns": 22322696567809,
+        "adjustment_ns": 39425,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22322696567809 N=8 Trace=22322696556544 Mono=22322696556561 Wall=2026-10-03T00:40:02.458315489+05:30"
+      }
+    ],
+    "source_sha256": {
+      "runtime_trace": "b7fa336507954cbc8a0776a95ac3c0d7c65260c3ab030d125ec9c3cdcae70007",
+      "baseline": "9c669bc8253757dd0072e4ab1248fbcbcb8d2f6a18ebafb892718ebbaf1bedfd",
+      "audit_decoder": "3b3b9c0431f14d97ea3a6bdc4bb999d2435d7f3681786dd8571f163a733528e4",
+      "ledger": "b637cffc72f9fe099d1d7339259db00b68342d406c1640e3541758b72ed8894b",
+      "restored": "8db39404ae4fc01d3f3fe9b0b6f725704886948f387c802c4973a77854515e81"
+    },
+    "eligible_for_full": false
+  },
+  {
+    "run_id": "fairness_b3_stock_on",
+    "attempt": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v9-fairness-1/session/attempts/fairness_b3_stock_on/001",
+    "output_matches_pinned": true,
+    "original_time_chain_valid": true,
+    "issues": [],
+    "adjusted_events": 523,
+    "adjustments_over_1ms": 0,
+    "maximum_adjustment_ns": 430977,
+    "dropped": {
+      "same_state_census": 3173
+    },
+    "clock_mapping": {
+      "offset_low_ns": 22458873122960,
+      "offset_high_ns": 22458873123581,
+      "uncertainty_ns": 621,
+      "anchor_count": 2
+    },
+    "adjustments_by_kind": {
+      "StateTransition": 362,
+      "RegionEnd": 23,
+      "Sync": 21,
+      "Metric": 35,
+      "Log": 50,
+      "TaskEnd": 5,
+      "TaskBegin": 24,
+      "RegionBegin": 3
+    },
+    "largest_adjustments": [
+      {
+        "event_index": 10784,
+        "raw_ns": 22462894437824,
+        "decoded_ns": 22462894868801,
+        "adjustment_ns": 430977,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22462894868801 N=5 Trace=22462894854400 Mono=22462894854415 Wall=2026-10-03T00:42:22.656613343+05:30"
+      },
+      {
+        "event_index": 53741,
+        "raw_ns": 22473150778496,
+        "decoded_ns": 22473150897409,
+        "adjustment_ns": 118913,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22473150897409 N=15 Trace=22473150842432 Mono=22473150842431 Wall=2026-10-03T00:42:32.912601349+05:30"
+      },
+      {
+        "event_index": 83230,
+        "raw_ns": 22479348095744,
+        "decoded_ns": 22479348190785,
+        "adjustment_ns": 95041,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22479348190785 N=21 Trace=22479348172992 Mono=22479348173001 Wall=2026-10-03T00:42:39.109931929+05:30"
+      },
+      {
+        "event_index": 39904,
+        "raw_ns": 22469048071872,
+        "decoded_ns": 22469048159233,
+        "adjustment_ns": 87361,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22469048159233 N=11 Trace=22469048146048 Mono=22469048146066 Wall=2026-10-03T00:42:28.809904994+05:30"
+      },
+      {
+        "event_index": 44359,
+        "raw_ns": 22470147383232,
+        "decoded_ns": 22470147457601,
+        "adjustment_ns": 74369,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22470147457601 N=12 Trace=22470147409088 Mono=22470147409074 Wall=2026-10-03T00:42:29.909168002+05:30"
+      },
+      {
+        "event_index": 18500,
+        "raw_ns": 22464937949120,
+        "decoded_ns": 22464938022465,
+        "adjustment_ns": 73345,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22464938022465 N=7 Trace=22464937980544 Mono=22464937980531 Wall=2026-10-03T00:42:24.699739449+05:30"
+      },
+      {
+        "event_index": 66712,
+        "raw_ns": 22476237725696,
+        "decoded_ns": 22476237788097,
+        "adjustment_ns": 62401,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22476237788097 N=18 Trace=22476237762496 Mono=22476237762495 Wall=2026-10-03T00:42:35.999521413+05:30"
+      },
+      {
+        "event_index": 57341,
+        "raw_ns": 22474152098240,
+        "decoded_ns": 22474152155777,
+        "adjustment_ns": 57537,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22474152155777 N=16 Trace=22474152130432 Mono=22474152130421 Wall=2026-10-03T00:42:33.913889339+05:30"
+      },
+      {
+        "event_index": 2569,
+        "raw_ns": 22459890800768,
+        "decoded_ns": 22459890856513,
+        "adjustment_ns": 55745,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22459890856513 N=2 Trace=22459890827264 Mono=22459890827249 Wall=2026-10-03T00:42:19.652586167+05:30"
+      },
+      {
+        "event_index": 53742,
+        "raw_ns": 22473150843520,
+        "decoded_ns": 22473150897410,
+        "adjustment_ns": 53890,
+        "header": "M=10 P=1 G=1345 StateTransition Time=22473150897410 ProcID=1 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 53743,
+        "raw_ns": 22473150843648,
+        "decoded_ns": 22473150897411,
+        "adjustment_ns": 53763,
+        "header": "M=10 P=1 G=1345 StateTransition Time=22473150897411 GoID=1345 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 61559,
+        "raw_ns": 22475152553920,
+        "decoded_ns": 22475152607233,
+        "adjustment_ns": 53313,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22475152607233 N=17 Trace=22475152588352 Mono=22475152588369 Wall=2026-10-03T00:42:34.914347307+05:30"
+      },
+      {
+        "event_index": 13491,
+        "raw_ns": 22463895654016,
+        "decoded_ns": 22463895702593,
+        "adjustment_ns": 48577,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22463895702593 N=6 Trace=22463895689728 Mono=22463895689708 Wall=2026-10-03T00:42:23.657448586+05:30"
+      },
+      {
+        "event_index": 44360,
+        "raw_ns": 22470147409984,
+        "decoded_ns": 22470147457602,
+        "adjustment_ns": 47618,
+        "header": "M=8 P=1 G=1345 StateTransition Time=22470147457602 ProcID=1 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 44361,
+        "raw_ns": 22470147410112,
+        "decoded_ns": 22470147457603,
+        "adjustment_ns": 47491,
+        "header": "M=8 P=1 G=1345 StateTransition Time=22470147457603 GoID=1345 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 44362,
+        "raw_ns": 22470147411520,
+        "decoded_ns": 22470147457604,
+        "adjustment_ns": 46084,
+        "header": "M=9 P=0 G=2419 StateTransition Time=22470147457604 ProcID=0 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 72434,
+        "raw_ns": 22477238218048,
+        "decoded_ns": 22477238264129,
+        "adjustment_ns": 46081,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22477238264129 N=19 Trace=22477238246272 Mono=22477238246261 Wall=2026-10-03T00:42:37.000005179+05:30"
+      },
+      {
+        "event_index": 44363,
+        "raw_ns": 22470147411648,
+        "decoded_ns": 22470147457605,
+        "adjustment_ns": 45957,
+        "header": "M=9 P=0 G=2419 StateTransition Time=22470147457605 GoID=2419 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 44364,
+        "raw_ns": 22470147411776,
+        "decoded_ns": 22470147457606,
+        "adjustment_ns": 45830,
+        "header": "M=9 P=0 G=2419 Metric Time=22470147457606 Name=\"/memory/classes/heap/objects:bytes\" Value=Value{Uint64(83011184)}"
+      },
+      {
+        "event_index": 5305,
+        "raw_ns": 22460892503360,
+        "decoded_ns": 22460892547905,
+        "adjustment_ns": 44545,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22460892547905 N=3 Trace=22460892532992 Mono=22460892532991 Wall=2026-10-03T00:42:20.654291909+05:30"
+      }
+    ],
+    "source_sha256": {
+      "runtime_trace": "25576cd92e21bc8586cdcf9d19ce31452c29469b5bef20ae5c30541a96e1e26a",
+      "baseline": "2d31f7cbab095e181c8819d81c983845b1862ccbfe9d44d51aaa928c8576fe81",
+      "audit_decoder": "3b3b9c0431f14d97ea3a6bdc4bb999d2435d7f3681786dd8571f163a733528e4",
+      "ledger": "92d02ae66c1f0b17e08135cb37ce95595736357a5583ff95119e4092f9acd849",
+      "restored": "246a723768368a93182e933a684a7069ca5ab329158b578d6a08def4e9ebb0c9"
+    },
+    "eligible_for_full": false
+  },
+  {
+    "run_id": "fairness_b4_patched_on",
+    "attempt": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v9-fairness-1/session/attempts/fairness_b4_patched_on/001",
+    "output_matches_pinned": true,
+    "original_time_chain_valid": true,
+    "issues": [],
+    "adjusted_events": 376,
+    "adjustments_over_1ms": 1,
+    "maximum_adjustment_ns": 2840001,
+    "dropped": {
+      "same_state_census": 2742
+    },
+    "clock_mapping": {
+      "offset_low_ns": 22721161867906,
+      "offset_high_ns": 22721161868584,
+      "uncertainty_ns": 678,
+      "anchor_count": 2
+    },
+    "adjustments_by_kind": {
+      "StateTransition": 261,
+      "Sync": 20,
+      "Metric": 27,
+      "Log": 41,
+      "RegionEnd": 6,
+      "TaskBegin": 12,
+      "TaskEnd": 1,
+      "RegionBegin": 8
+    },
+    "largest_adjustments": [
+      {
+        "event_index": 41509,
+        "raw_ns": 22731697287808,
+        "decoded_ns": 22731700127809,
+        "adjustment_ns": 2840001,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22731700127809 N=11 Trace=22731700114688 Mono=22731700114675 Wall=2026-10-03T00:46:51.461873613+05:30"
+      },
+      {
+        "event_index": 2531,
+        "raw_ns": 22722179300736,
+        "decoded_ns": 22722179691201,
+        "adjustment_ns": 390465,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22722179691201 N=2 Trace=22722179665792 Mono=22722179665757 Wall=2026-10-03T00:46:41.941424675+05:30"
+      },
+      {
+        "event_index": 48818,
+        "raw_ns": 22733708952192,
+        "decoded_ns": 22733709028865,
+        "adjustment_ns": 76673,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22733709028865 N=13 Trace=22733708987520 Mono=22733708987508 Wall=2026-10-03T00:46:53.470746426+05:30"
+      },
+      {
+        "event_index": 8000,
+        "raw_ns": 22724182518272,
+        "decoded_ns": 22724182568001,
+        "adjustment_ns": 49729,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22724182568001 N=4 Trace=22724182531200 Mono=22724182531150 Wall=2026-10-03T00:46:43.944290038+05:30"
+      },
+      {
+        "event_index": 5256,
+        "raw_ns": 22723181015744,
+        "decoded_ns": 22723181061249,
+        "adjustment_ns": 45505,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22723181061249 N=3 Trace=22723181046400 Mono=22723181046412 Wall=2026-10-03T00:46:42.94280533+05:30"
+      },
+      {
+        "event_index": 13461,
+        "raw_ns": 22726184688896,
+        "decoded_ns": 22726184734081,
+        "adjustment_ns": 45185,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22726184734081 N=6 Trace=22726184720320 Mono=22726184720295 Wall=2026-10-03T00:46:45.946479213+05:30"
+      },
+      {
+        "event_index": 82921,
+        "raw_ns": 22742303646976,
+        "decoded_ns": 22742303690241,
+        "adjustment_ns": 43265,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22742303690241 N=20 Trace=22742303677760 Mono=22742303677773 Wall=2026-10-03T00:47:02.065436691+05:30"
+      },
+      {
+        "event_index": 58629,
+        "raw_ns": 22736714075520,
+        "decoded_ns": 22736714117057,
+        "adjustment_ns": 41537,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22736714117057 N=16 Trace=22736714094080 Mono=22736714094113 Wall=2026-10-03T00:46:56.475853051+05:30"
+      },
+      {
+        "event_index": 72388,
+        "raw_ns": 22740305230784,
+        "decoded_ns": 22740305272193,
+        "adjustment_ns": 41409,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22740305272193 N=19 Trace=22740305256512 Mono=22740305256542 Wall=2026-10-03T00:47:00.06701547+05:30"
+      },
+      {
+        "event_index": 18309,
+        "raw_ns": 22727198831040,
+        "decoded_ns": 22727198871681,
+        "adjustment_ns": 40641,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22727198871681 N=7 Trace=22727198856384 Mono=22727198856363 Wall=2026-10-03T00:46:46.960615291+05:30"
+      },
+      {
+        "event_index": 48819,
+        "raw_ns": 22733708988288,
+        "decoded_ns": 22733709028866,
+        "adjustment_ns": 40578,
+        "header": "M=9 P=1 G=1349 StateTransition Time=22733709028866 ProcID=1 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 48820,
+        "raw_ns": 22733708988480,
+        "decoded_ns": 22733709028867,
+        "adjustment_ns": 40387,
+        "header": "M=9 P=1 G=1349 StateTransition Time=22733709028867 GoID=1349 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 22494,
+        "raw_ns": 22728201926720,
+        "decoded_ns": 22728201965761,
+        "adjustment_ns": 39041,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22728201965761 N=8 Trace=22728201952512 Mono=22728201952512 Wall=2026-10-03T00:46:47.96371143+05:30"
+      },
+      {
+        "event_index": 27399,
+        "raw_ns": 22729504769792,
+        "decoded_ns": 22729504808385,
+        "adjustment_ns": 38593,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22729504808385 N=9 Trace=22729504795264 Mono=22729504795243 Wall=2026-10-03T00:46:49.266554171+05:30"
+      },
+      {
+        "event_index": 45245,
+        "raw_ns": 22732707642176,
+        "decoded_ns": 22732707679873,
+        "adjustment_ns": 37697,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22732707679873 N=12 Trace=22732707665024 Mono=22732707665046 Wall=2026-10-03T00:46:52.469423974+05:30"
+      },
+      {
+        "event_index": 62608,
+        "raw_ns": 22737717216768,
+        "decoded_ns": 22737717254017,
+        "adjustment_ns": 37249,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22737717254017 N=17 Trace=22737717238272 Mono=22737717238259 Wall=2026-10-03T00:46:57.478997197+05:30"
+      },
+      {
+        "event_index": 66571,
+        "raw_ns": 22738718132096,
+        "decoded_ns": 22738718168769,
+        "adjustment_ns": 36673,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22738718168769 N=18 Trace=22738718152768 Mono=22738718152761 Wall=2026-10-03T00:46:58.479911699+05:30"
+      },
+      {
+        "event_index": 54611,
+        "raw_ns": 22735710498048,
+        "decoded_ns": 22735710531969,
+        "adjustment_ns": 33921,
+        "header": "M=-1 P=-1 G=-1 Sync Time=22735710531969 N=15 Trace=22735710504576 Mono=22735710504553 Wall=2026-10-03T00:46:55.472263471+05:30"
+      },
+      {
+        "event_index": 8001,
+        "raw_ns": 22724182534848,
+        "decoded_ns": 22724182568002,
+        "adjustment_ns": 33154,
+        "header": "M=8 P=0 G=1349 StateTransition Time=22724182568002 ProcID=0 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 8002,
+        "raw_ns": 22724182535168,
+        "decoded_ns": 22724182568003,
+        "adjustment_ns": 32835,
+        "header": "M=8 P=0 G=1349 StateTransition Time=22724182568003 GoID=1349 Running->Running Reason=\"\""
+      }
+    ],
+    "source_sha256": {
+      "runtime_trace": "655b510fdf5d92b8038bbd88d034e2bad54a035a17f47075d32be95c79ed422c",
+      "baseline": "0b871fdef663cacfce6f8c5963648a2e823055606e039963dfec40fa667c4777",
+      "audit_decoder": "3b3b9c0431f14d97ea3a6bdc4bb999d2435d7f3681786dd8571f163a733528e4",
+      "ledger": "afccfc36f27f1be9c20bb6b62baa89261a1dd6ae7cfe86cac23119cf0f535489",
+      "restored": "569a553b6eeed7228109038cd596d8b49c2a4869ed707f42308da5a50b95b84d"
+    },
+    "eligible_for_full": false
+  },
+  {
+    "run_id": "fairness_b4_stock_on",
+    "attempt": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v9-fairness-1/session/attempts/fairness_b4_stock_on/001",
+    "output_matches_pinned": true,
+    "original_time_chain_valid": true,
+    "issues": [],
+    "adjusted_events": 489,
+    "adjustments_over_1ms": 1,
+    "maximum_adjustment_ns": 2859777,
+    "dropped": {
+      "same_state_census": 3097
+    },
+    "clock_mapping": {
+      "offset_low_ns": 23107614473619,
+      "offset_high_ns": 23107614474332,
+      "uncertainty_ns": 713,
+      "anchor_count": 2
+    },
+    "adjustments_by_kind": {
+      "StateTransition": 338,
+      "RegionEnd": 26,
+      "Sync": 21,
+      "Metric": 33,
+      "Log": 51,
+      "TaskBegin": 15,
+      "RegionBegin": 5
+    },
+    "largest_adjustments": [
+      {
+        "event_index": 43479,
+        "raw_ns": 23118001761408,
+        "decoded_ns": 23118004621185,
+        "adjustment_ns": 2859777,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23118004621185 N=11 Trace=23118004601920 Mono=23118004601900 Wall=2026-10-03T00:53:17.766360828+05:30"
+      },
+      {
+        "event_index": 56711,
+        "raw_ns": 23122025181952,
+        "decoded_ns": 23122025654401,
+        "adjustment_ns": 472449,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23122025654401 N=15 Trace=23122025629440 Mono=23122025629437 Wall=2026-10-03T00:53:21.787388365+05:30"
+      },
+      {
+        "event_index": 83949,
+        "raw_ns": 23128201710336,
+        "decoded_ns": 23128201919745,
+        "adjustment_ns": 209409,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23128201919745 N=21 Trace=23128201876288 Mono=23128201876231 Wall=2026-10-03T00:53:27.963635129+05:30"
+      },
+      {
+        "event_index": 31287,
+        "raw_ns": 23115901670464,
+        "decoded_ns": 23115901747777,
+        "adjustment_ns": 77313,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23115901747777 N=9 Trace=23115901724672 Mono=23115901724647 Wall=2026-10-03T00:53:15.663483565+05:30"
+      },
+      {
+        "event_index": 2582,
+        "raw_ns": 23108632815168,
+        "decoded_ns": 23108632890497,
+        "adjustment_ns": 75329,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23108632890497 N=2 Trace=23108632849152 Mono=23108632849129 Wall=2026-10-03T00:53:08.394608016+05:30"
+      },
+      {
+        "event_index": 53788,
+        "raw_ns": 23121023633536,
+        "decoded_ns": 23121023702977,
+        "adjustment_ns": 69441,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23121023702977 N=14 Trace=23121023645376 Mono=23121023645326 Wall=2026-10-03T00:53:20.785404224+05:30"
+      },
+      {
+        "event_index": 53789,
+        "raw_ns": 23121023646656,
+        "decoded_ns": 23121023702978,
+        "adjustment_ns": 56322,
+        "header": "M=8 P=1 G=1333 StateTransition Time=23121023702978 ProcID=1 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 53790,
+        "raw_ns": 23121023647168,
+        "decoded_ns": 23121023702979,
+        "adjustment_ns": 55811,
+        "header": "M=8 P=1 G=1333 StateTransition Time=23121023702979 GoID=1333 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 5325,
+        "raw_ns": 23109634136128,
+        "decoded_ns": 23109634190081,
+        "adjustment_ns": 53953,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23109634190081 N=3 Trace=23109634174976 Mono=23109634174962 Wall=2026-10-03T00:53:09.395933879+05:30"
+      },
+      {
+        "event_index": 64864,
+        "raw_ns": 23124103075968,
+        "decoded_ns": 23124103123713,
+        "adjustment_ns": 47745,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23124103123713 N=17 Trace=23124103103936 Mono=23124103103935 Wall=2026-10-03T00:53:23.864862853+05:30"
+      },
+      {
+        "event_index": 8069,
+        "raw_ns": 23110635034624,
+        "decoded_ns": 23110635082113,
+        "adjustment_ns": 47489,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23110635082113 N=4 Trace=23110635046720 Mono=23110635046649 Wall=2026-10-03T00:53:10.396805547+05:30"
+      },
+      {
+        "event_index": 68800,
+        "raw_ns": 23125106851200,
+        "decoded_ns": 23125106896769,
+        "adjustment_ns": 45569,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23125106896769 N=18 Trace=23125106879360 Mono=23125106879365 Wall=2026-10-03T00:53:24.868638293+05:30"
+      },
+      {
+        "event_index": 13493,
+        "raw_ns": 23112637298496,
+        "decoded_ns": 23112637343041,
+        "adjustment_ns": 44545,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23112637343041 N=6 Trace=23112637328256 Mono=23112637328233 Wall=2026-10-03T00:53:12.399087151+05:30"
+      },
+      {
+        "event_index": 72868,
+        "raw_ns": 23126110426240,
+        "decoded_ns": 23126110469953,
+        "adjustment_ns": 43713,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23126110469953 N=19 Trace=23126110451776 Mono=23126110451759 Wall=2026-10-03T00:53:25.872210687+05:30"
+      },
+      {
+        "event_index": 83950,
+        "raw_ns": 23128201877632,
+        "decoded_ns": 23128201919746,
+        "adjustment_ns": 42114,
+        "header": "M=8 P=0 G=1333 StateTransition Time=23128201919746 ProcID=0 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 83951,
+        "raw_ns": 23128201877824,
+        "decoded_ns": 23128201919747,
+        "adjustment_ns": 41923,
+        "header": "M=8 P=0 G=1333 StateTransition Time=23128201919747 GoID=1333 Running->Running Reason=\"\""
+      },
+      {
+        "event_index": 76922,
+        "raw_ns": 23127112723904,
+        "decoded_ns": 23127112764737,
+        "adjustment_ns": 40833,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23127112764737 N=20 Trace=23127112747648 Mono=23127112747641 Wall=2026-10-03T00:53:26.874506569+05:30"
+      },
+      {
+        "event_index": 47570,
+        "raw_ns": 23119022127168,
+        "decoded_ns": 23119022166785,
+        "adjustment_ns": 39617,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23119022166785 N=12 Trace=23119022145472 Mono=23119022145488 Wall=2026-10-03T00:53:18.783904416+05:30"
+      },
+      {
+        "event_index": 24944,
+        "raw_ns": 23114722321920,
+        "decoded_ns": 23114722359489,
+        "adjustment_ns": 37569,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23114722359489 N=8 Trace=23114722339520 Mono=23114722339542 Wall=2026-10-03T00:53:14.48409848+05:30"
+      },
+      {
+        "event_index": 18637,
+        "raw_ns": 23113704340800,
+        "decoded_ns": 23113704378241,
+        "adjustment_ns": 37441,
+        "header": "M=-1 P=-1 G=-1 Sync Time=23113704378241 N=7 Trace=23113704365952 Mono=23113704365928 Wall=2026-10-03T00:53:13.466124856+05:30"
+      }
+    ],
+    "source_sha256": {
+      "runtime_trace": "4e044c347c30ec79aa824c55f696fee1ad052866c55d0ed812f5b5de0d2dbe08",
+      "baseline": "26e9a5b055ea228c3574910c9dba25efb735afd98c8e246eb7d2f98783657b17",
+      "audit_decoder": "3b3b9c0431f14d97ea3a6bdc4bb999d2435d7f3681786dd8571f163a733528e4",
+      "ledger": "71f24cb8514b9ccbc80f11a8d7c48b2feaa91d8fd3584bd48c32ccfc9386acbc",
+      "restored": "3e53d99890cdb1d0e296719814db39c37d489eba985bb3a729ac9bca26823645"
+    },
+    "eligible_for_full": false
+  }
+]

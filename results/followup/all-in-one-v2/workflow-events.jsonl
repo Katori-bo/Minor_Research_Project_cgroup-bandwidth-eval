@@ -1,0 +1,29 @@
+{"at": "2026-09-26T14:02:54.184232+05:30", "state": "starting", "stage": "launch", "error": null, "sleep_inhibitor": true}
+{"at": "2026-09-26T14:02:54.265157+05:30", "state": "running", "stage": "acquire-experiment-lock", "worker_pid": 3660, "error": null}
+{"at": "2026-09-26T14:02:54.265593+05:30", "state": "running", "stage": "build-and-go-tests", "command": ["/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/build.sh"]}
+{"at": "2026-09-26T14:02:54.781835+05:30", "stage": "build-and-go-tests", "state": "stage_complete"}
+{"at": "2026-09-26T14:02:54.806646+05:30", "state": "running", "stage": "python-regression-tests", "command": ["/usr/bin/python3", "-m", "unittest", "discover", "-s", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup", "-p", "test_*.py", "-v"]}
+{"at": "2026-09-26T14:02:57.585823+05:30", "stage": "python-regression-tests", "state": "stage_complete"}
+{"at": "2026-09-26T14:02:57.586053+05:30", "state": "running", "stage": "pilot-collection", "command": ["/usr/bin/python3", "-u", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py", "new", "--session", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/pilot", "--pilot"]}
+{"at": "2026-09-26T14:03:59.225637+05:30", "state": "interrupted", "stage": "pilot-collection", "error": "signal 15"}
+{"at": "2026-09-27T22:05:17.935634+05:30", "state": "starting", "stage": "launch", "error": null, "sleep_inhibitor": true}
+{"at": "2026-09-27T22:05:18.015015+05:30", "state": "running", "stage": "acquire-experiment-lock", "worker_pid": 5367, "error": null}
+{"at": "2026-09-27T22:05:18.015429+05:30", "state": "running", "stage": "verify-existing-build"}
+{"at": "2026-09-27T22:05:18.097117+05:30", "state": "running", "stage": "python-regression-tests", "command": ["/usr/bin/python3", "-m", "unittest", "discover", "-s", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup", "-p", "test_*.py", "-v"]}
+{"at": "2026-09-27T22:05:20.804433+05:30", "stage": "python-regression-tests", "state": "stage_complete"}
+{"at": "2026-09-27T22:05:20.804641+05:30", "state": "running", "stage": "pilot-collection", "command": ["/usr/bin/python3", "-u", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py", "resume", "--session", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/pilot"]}
+{"at": "2026-09-27T22:08:58.121397+05:30", "state": "interrupted", "stage": "pilot-collection", "error": "signal 15"}
+{"at": "2026-09-27T22:10:33.601182+05:30", "state": "starting", "stage": "launch", "error": null, "sleep_inhibitor": true}
+{"at": "2026-09-27T22:10:33.683973+05:30", "state": "running", "stage": "acquire-experiment-lock", "worker_pid": 6627, "error": null}
+{"at": "2026-09-27T22:10:33.684402+05:30", "state": "running", "stage": "verify-existing-build"}
+{"at": "2026-09-27T22:10:33.720404+05:30", "state": "running", "stage": "python-regression-tests", "command": ["/usr/bin/python3", "-m", "unittest", "discover", "-s", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup", "-p", "test_*.py", "-v"]}
+{"at": "2026-09-27T22:10:36.361106+05:30", "stage": "python-regression-tests", "state": "stage_complete"}
+{"at": "2026-09-27T22:10:36.361335+05:30", "state": "running", "stage": "pilot-collection", "command": ["/usr/bin/python3", "-u", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py", "resume", "--session", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/pilot"]}
+{"at": "2026-09-27T22:36:45.193640+05:30", "stage": "pilot-collection", "state": "stage_complete"}
+{"at": "2026-09-27T22:36:45.193821+05:30", "state": "running", "stage": "pilot-analysis", "command": ["/usr/bin/python3", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/analyze.py", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/pilot"]}
+{"at": "2026-09-27T22:36:45.475880+05:30", "stage": "pilot-analysis", "state": "stage_complete"}
+{"at": "2026-09-27T22:36:45.589852+05:30", "state": "running", "stage": "full-collection", "command": ["/usr/bin/python3", "-u", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py", "new", "--session", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/full", "--pilot-session", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/pilot"]}
+{"at": "2026-09-28T01:41:04.318032+05:30", "stage": "full-collection", "state": "stage_complete"}
+{"at": "2026-09-28T01:41:04.318220+05:30", "state": "running", "stage": "full-analysis", "command": ["/usr/bin/python3", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/analyze.py", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/full"]}
+{"at": "2026-09-28T01:41:10.478930+05:30", "stage": "full-analysis", "state": "stage_complete"}
+{"at": "2026-09-28T01:41:10.479904+05:30", "state": "complete", "stage": "complete", "report": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/COMPLETED.md"}

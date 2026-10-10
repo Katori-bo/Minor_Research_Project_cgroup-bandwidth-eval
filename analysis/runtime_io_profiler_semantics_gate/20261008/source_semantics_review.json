@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-08",
+  "pins": {
+    "coz": [
+      "plasma-umass/coz",
+      "256e3c389424d6a1691ee5d18b5ecb5a6c1001ec",
+      ""
+    ],
+    "bcoz": [
+      "s3yonsei/blocked_samples",
+      "2836bd096e1c5d07ab5fed83a69977e1e3a94a97",
+      "bcoz/"
+    ]
+  },
+  "inspected_rules": [
+    "Linux task-clock configuration",
+    "CPU and weighted blocked sample matching",
+    "local/global and delayed_local counter updates",
+    "pre_block/post_block/catch_up and exported hooks",
+    "experiment normalization and count filters",
+    "throughput and latency point capture",
+    "native viewer parsing, aggregation and getSpeedupData",
+    "Coz pure CLI parsing and calculate_speedups",
+    "phase correction described in paper vs metadata handling in pinned reporters"
+  ],
+  "source_scope_limitation": "No patched kernel/glibc build, quota blocked-stack attribution or runtime scheduling reproduction. Coz hypothetical all-blocked records are reporting controls only, not a supported Coz sampling mode.",
+  "close_sources": [
+    {
+      "name": "COZ+",
+      "url": "https://hpcforge.eng.uci.edu/publication/sigmetrics19-coz%2B/sigmetrics19-coz%2B.pdf",
+      "scope": "indexed primary sections 3.2 and 4; direct retrieval failed"
+    },
+    {
+      "name": "SCOZ",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/spe.2930",
+      "scope": "publisher full text, sections 2 and 3; PDF author link unavailable"
+    },
+    {
+      "name": "VCoz",
+      "url": "https://www.performance2020.deib.polimi.it/wp-content/uploads/2020/11/Performance_2020_paper_86.pdf",
+      "scope": "indexed primary sections 3.2 and 4; relative component scaling"
+    },
+    {
+      "name": "SchedCoz",
+      "url": "https://eunomia.dev/others/ideas/",
+      "scope": "project objectives/expected outcomes; no evaluated quota implementation established"
+    }
+  ],
+  "no_firstness_claim": true,
+  "runtime_failure_established": false,
+  "novelty_established": false,
+  "new_collection": false
+}

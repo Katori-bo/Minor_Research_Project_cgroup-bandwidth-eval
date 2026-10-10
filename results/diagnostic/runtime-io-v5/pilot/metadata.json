@@ -1,0 +1,186 @@
+{
+  "schema": 6,
+  "created": "2026-10-01T23:44:08.248014+05:30",
+  "pilot": true,
+  "source_sha256": {
+    "diagnostic/analysis/completed.py": "3a142866875b30a6bd1cb330ea928660ac0331a1217ef690d39405083f37ba63",
+    "diagnostic/analysis/existing.py": "071bea2491c65e57a784a7ef67c8801f8e8bb12d109c64319179f19d8027e4b6",
+    "diagnostic/analyze.py": "e0ee0e707f35445d4e5e6475ad802814cabd854816bf5b4e625ec338c2680176",
+    "diagnostic/build.sh": "98be9cde820efb868fb60d2d0799a07e9a4b64b68f81d1bd73738f4c9dd87153",
+    "diagnostic/loadgen/Dockerfile": "7a36cc4f98c225751a2bf4cffd8cbac6f523502776ef44948fd3bc1f30942c65",
+    "diagnostic/loadgen/go.mod": "bc8481bc762a2d9150e6dba23c42e074e42ecfee5e5ab42c50ec8cad27629481",
+    "diagnostic/loadgen/main.go": "141e77c1a3eaa22eb4dee86f88f50fded7c07888bbb390ecfcfbe63a27cb1ca7",
+    "diagnostic/loadgen/main_test.go": "430e80b06219d76d72f564ce561016ac03636be8dd1cf2388e32c68eae843dc3",
+    "diagnostic/pipeline.py": "d7bc231b15a6b9e1bd587ab6b2d9f3ee1206a0f1b89adb4d3a9b1bf7283dc075",
+    "diagnostic/run.py": "e860d3adbaa8e4e1b0d1c3b8c365d5e16521b0859473bd39780a6277058113c4",
+    "diagnostic/run_all.sh": "8098d0b8b87e5a596fce3ed5fa0faf9dca95b17805094363fdc2553bb12c693a",
+    "diagnostic/service/Dockerfile": "d8a51f67f21bce0e74d774f3d4b55916f27dc34a92b6502a001326a6e0bb01bd",
+    "diagnostic/service/go.mod": "03add46220d8804f97c5b9966c66b6da037ab94403a5570707ba5b3e558dafba",
+    "diagnostic/service/main.go": "2a7185c81143b7dcf0d032249b8ff771c197a192cbf2aafb2132673c41cb0bcb",
+    "diagnostic/service/main_test.go": "2357765adc8255b34af937fe2d9371c30abddfbc6e162a5df70d03d5a895564d",
+    "diagnostic/service/trace_diag.go": "f8aaeee863ee1a6bb72a8fcb27e675429ab34472704bc5f74609dde96d80bc1a",
+    "diagnostic/service/trace_diag_test.go": "f58b35b4f020e48b085e1d93a929fa9bcf1e4d3ee6eaf83a07bafe8c32e7420a",
+    "diagnostic/test_diagnostic.py": "c26b0ce5f4c07eb7de3e7b2e5d44e4689f162dab6cca4dc41a08e9b929459869",
+    "diagnostic/test_trace_analysis.py": "2e49693e4034ed7bd8b7f8397347af92e1a077a8763c6954574df540a6af5791",
+    "diagnostic/trace_analysis.py": "06d888352e0068354340cf476532531955899c9e2e23afe617a876e791ae0866",
+    "docs/diagnostic_protocol.md": "88ef4b570c15b258519eb3ab667816f42a25604e08ae6e800a742935aa27f8bf",
+    "scripts/environment_controls.py": "8b46ce9c0016895631455e62422939a1a0b77df3d10fb135c9d01bb157ebb3a2",
+    "scripts/experiment.py": "fc6276152d65e3293f57787910c2be16511a371ad2a2c15e1de41de505f38037",
+    "scripts/monitor_host.py": "afa691ad69c7afc480811f63cadac92f5e95570bad9011ec72523942e3f0d5d3",
+    "diagnostic/bin/loadgen": "10a0b90dff713d120e21a092b112af2a397181d80ff6401aa2776b0f961c62cc",
+    "diagnostic/bin/build.json": "48a18d7cd70d859725aacbea3ad2da999be0b8b13c71ad9c76ba8930e945dc5f"
+  },
+  "build": {
+    "schema": 6,
+    "sources": {
+      "diagnostic/loadgen/Dockerfile": "7a36cc4f98c225751a2bf4cffd8cbac6f523502776ef44948fd3bc1f30942c65",
+      "diagnostic/loadgen/go.mod": "bc8481bc762a2d9150e6dba23c42e074e42ecfee5e5ab42c50ec8cad27629481",
+      "diagnostic/loadgen/main.go": "141e77c1a3eaa22eb4dee86f88f50fded7c07888bbb390ecfcfbe63a27cb1ca7",
+      "diagnostic/loadgen/main_test.go": "430e80b06219d76d72f564ce561016ac03636be8dd1cf2388e32c68eae843dc3",
+      "diagnostic/service/Dockerfile": "d8a51f67f21bce0e74d774f3d4b55916f27dc34a92b6502a001326a6e0bb01bd",
+      "diagnostic/service/go.mod": "03add46220d8804f97c5b9966c66b6da037ab94403a5570707ba5b3e558dafba",
+      "diagnostic/service/main.go": "2a7185c81143b7dcf0d032249b8ff771c197a192cbf2aafb2132673c41cb0bcb",
+      "diagnostic/service/main_test.go": "2357765adc8255b34af937fe2d9371c30abddfbc6e162a5df70d03d5a895564d",
+      "diagnostic/service/trace_diag.go": "f8aaeee863ee1a6bb72a8fcb27e675429ab34472704bc5f74609dde96d80bc1a",
+      "diagnostic/service/trace_diag_test.go": "f58b35b4f020e48b085e1d93a929fa9bcf1e4d3ee6eaf83a07bafe8c32e7420a"
+    },
+    "loadgen_sha256": "10a0b90dff713d120e21a092b112af2a397181d80ff6401aa2776b0f961c62cc",
+    "image_id": "sha256:894692c873227afbc5af8edb3be2e7e70f3f1a865aa6c04d417c565595090c80",
+    "client_image_id": "sha256:87b456713ae7aadc98743513639ff7cee21953d620324dd52a72b0e28a36ac66",
+    "built_at": "2026-10-01T23:44:07.642716+05:30",
+    "compiler_image_id": "sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039"
+  },
+  "topology": {
+    "0": {
+      "core": "0",
+      "package": "0",
+      "siblings": "0-1"
+    },
+    "1": {
+      "core": "0",
+      "package": "0",
+      "siblings": "0-1"
+    },
+    "2": {
+      "core": "1",
+      "package": "0",
+      "siblings": "2-3"
+    },
+    "3": {
+      "core": "1",
+      "package": "0",
+      "siblings": "2-3"
+    },
+    "4": {
+      "core": "2",
+      "package": "0",
+      "siblings": "4-5"
+    },
+    "5": {
+      "core": "2",
+      "package": "0",
+      "siblings": "4-5"
+    }
+  },
+  "server_cpus": "2,4",
+  "client_cpus": "0,1",
+  "kernel": "Linux archlinux 7.2.7-arch1-1 #1 SMP PREEMPT_DYNAMIC Mon, 21 Sep 2026 18:51:14 +0000 x86_64 GNU/Linux",
+  "docker_version": "Client:\n Version:           29.8.2\n API version:       1.56\n Go version:        go1.27.1-X:nodwarf5\n Git commit:        7fc2dff9bc\n Built:             Thu Oct  1 00:40:10 2026\n OS/Arch:           linux/amd64\n Context:           default\n\nServer:\n Engine:\n  Version:          29.8.1\n  API version:      1.56 (minimum version 1.40)\n  Go version:       go1.27.1-X:nodwarf5\n  Git commit:       464cd50c3d\n  Built:            Fri Sep 18 15:27:28 2026\n  OS/Arch:          linux/amd64\n  Experimental:     false\n containerd:\n  Version:          v2.4.0\n  GitCommit:        a7fe631d96c08fb14cf8eff0afdc280e99c30a94.m\n runc:\n  Version:          1.5.2\n  GitCommit:        \n docker-init:\n  Version:          0.19.0\n  GitCommit:        de40ad0",
+  "python": "3.14.7 (main, Aug 10 2026, 07:46:56) [GCC 16.1.1 20260728]",
+  "source_session": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/sessions/20260921-202841",
+  "source_calibration_sha256": "e1e03788024d5d96714b4f1379efaa0f3c1d35ef6239341606a3f402199d3958",
+  "power_settings": {
+    "policies": {
+      "policy0": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy1": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy10": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy11": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy2": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy3": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy4": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy5": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy6": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy7": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy8": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy9": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      }
+    },
+    "platform_profile": "balanced",
+    "external_power": {
+      "ACAD": "1"
+    },
+    "desktop_profile": "balanced"
+  },
+  "matrix_sha256": "60405267cf6fa19633c904c4f42f3440158cc9fccbe55cfc0c9b6ea520ffda1c"
+}

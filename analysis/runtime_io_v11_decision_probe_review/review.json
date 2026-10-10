@@ -1,0 +1,1255 @@
+{
+  "trials": [
+    {
+      "run_id": "decisions_b1_observed",
+      "block": 1,
+      "events": 34630,
+      "choices": 10912,
+      "runnext": 7286,
+      "forced_choices": 8,
+      "pending_choices": 9,
+      "forced_sources": {
+        "fair_global": 8
+      },
+      "forced_roles": {
+        "http": 6,
+        "worker": 2
+      },
+      "matched_waits": 763,
+      "waits_over_1s": 159,
+      "waits_over_2s": 97,
+      "long_waits_without_other_forced_choice": 37,
+      "unmatched_dispatches": 0,
+      "unresolved_wakes": 0,
+      "cleanup_ambiguous": 0,
+      "unlinked_http_network_waits": 192,
+      "ready_p99_ms": 3924.899575
+    },
+    {
+      "run_id": "decisions_b2_observed",
+      "block": 2,
+      "events": 34863,
+      "choices": 11010,
+      "runnext": 7296,
+      "forced_choices": 43,
+      "pending_choices": 44,
+      "forced_sources": {
+        "fair_global": 43
+      },
+      "forced_roles": {
+        "http": 12,
+        "worker": 24,
+        "runtime_background": 4,
+        "http_background_reader": 3
+      },
+      "matched_waits": 780,
+      "waits_over_1s": 152,
+      "waits_over_2s": 103,
+      "long_waits_without_other_forced_choice": 7,
+      "unmatched_dispatches": 0,
+      "unresolved_wakes": 0,
+      "cleanup_ambiguous": 0,
+      "unlinked_http_network_waits": 193,
+      "ready_p99_ms": 4018.310176
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "block": 3,
+      "events": 34664,
+      "choices": 10952,
+      "runnext": 7252,
+      "forced_choices": 66,
+      "pending_choices": 67,
+      "forced_sources": {
+        "fair_global": 66
+      },
+      "forced_roles": {
+        "runtime_background": 3,
+        "worker": 38,
+        "http": 24,
+        "http_background_reader": 1
+      },
+      "matched_waits": 863,
+      "waits_over_1s": 104,
+      "waits_over_2s": 63,
+      "long_waits_without_other_forced_choice": 10,
+      "unmatched_dispatches": 0,
+      "unresolved_wakes": 0,
+      "cleanup_ambiguous": 0,
+      "unlinked_http_network_waits": 189,
+      "ready_p99_ms": 3220.334092
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "block": 4,
+      "events": 34812,
+      "choices": 11012,
+      "runnext": 7260,
+      "forced_choices": 64,
+      "pending_choices": 65,
+      "forced_sources": {
+        "fair_global": 64
+      },
+      "forced_roles": {
+        "runtime_background": 5,
+        "worker": 35,
+        "http": 24
+      },
+      "matched_waits": 872,
+      "waits_over_1s": 109,
+      "waits_over_2s": 64,
+      "long_waits_without_other_forced_choice": 17,
+      "unmatched_dispatches": 0,
+      "unresolved_wakes": 0,
+      "cleanup_ambiguous": 0,
+      "unlinked_http_network_waits": 188,
+      "ready_p99_ms": 3115.318758
+    }
+  ],
+  "examples": [
+    {
+      "run_id": "decisions_b1_observed",
+      "request_id": 413,
+      "g": 1673,
+      "outcome": "success",
+      "wait_ms": 4202.865232,
+      "dispatches_ahead": 2200,
+      "by_role": {
+        "http": 1117,
+        "http_background_reader": 524,
+        "worker": 558,
+        "runtime_background": 1
+      },
+      "by_source": {
+        "runnext": 1632,
+        "regular_local": 559,
+        "fair_global": 9
+      },
+      "other_forced_choices": 0,
+      "other_forced_selected": [],
+      "final_source": "fair_global",
+      "final_pending": false,
+      "final_forced": false
+    },
+    {
+      "run_id": "decisions_b1_observed",
+      "request_id": 1624,
+      "g": 2367,
+      "outcome": "success",
+      "wait_ms": 4016.452867,
+      "dispatches_ahead": 2196,
+      "by_role": {
+        "http": 1112,
+        "worker": 535,
+        "http_background_reader": 541,
+        "runtime_background": 8
+      },
+      "by_source": {
+        "runnext": 1602,
+        "regular_local": 575,
+        "fair_global": 13,
+        "gc_worker": 4,
+        "global_batch": 2
+      },
+      "other_forced_choices": 3,
+      "other_forced_selected": [
+        {
+          "g": 2502,
+          "role": "http",
+          "time_ns": 951447927582,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 28611,
+            "time_ns": 951447927582,
+            "kind": 2,
+            "g": 2502,
+            "actor_g": 0,
+            "m": 0,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2341,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 951447928223
+        },
+        {
+          "g": 2385,
+          "role": "http",
+          "time_ns": 951858906737,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29370,
+            "time_ns": 951858906737,
+            "kind": 2,
+            "g": 2385,
+            "actor_g": 0,
+            "m": 4,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2371,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 951858906918
+        },
+        {
+          "g": 2380,
+          "role": "http",
+          "time_ns": 951859317150,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29375,
+            "time_ns": 951859317150,
+            "kind": 2,
+            "g": 2380,
+            "actor_g": 0,
+            "m": 0,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2373,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 951859317471
+        }
+      ],
+      "final_source": "regular_local",
+      "final_pending": false,
+      "final_forced": false
+    },
+    {
+      "run_id": "decisions_b1_observed",
+      "request_id": 1625,
+      "g": 2364,
+      "outcome": "success",
+      "wait_ms": 4012.38739,
+      "dispatches_ahead": 2191,
+      "by_role": {
+        "http": 1108,
+        "worker": 534,
+        "http_background_reader": 541,
+        "runtime_background": 8
+      },
+      "by_source": {
+        "runnext": 1599,
+        "regular_local": 573,
+        "fair_global": 13,
+        "gc_worker": 4,
+        "global_batch": 2
+      },
+      "other_forced_choices": 3,
+      "other_forced_selected": [
+        {
+          "g": 2502,
+          "role": "http",
+          "time_ns": 951447927582,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 28611,
+            "time_ns": 951447927582,
+            "kind": 2,
+            "g": 2502,
+            "actor_g": 0,
+            "m": 0,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2341,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 951447928223
+        },
+        {
+          "g": 2385,
+          "role": "http",
+          "time_ns": 951858906737,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29370,
+            "time_ns": 951858906737,
+            "kind": 2,
+            "g": 2385,
+            "actor_g": 0,
+            "m": 4,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2371,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 951858906918
+        },
+        {
+          "g": 2380,
+          "role": "http",
+          "time_ns": 951859317150,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29375,
+            "time_ns": 951859317150,
+            "kind": 2,
+            "g": 2380,
+            "actor_g": 0,
+            "m": 0,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2373,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 951859317471
+        }
+      ],
+      "final_source": "regular_local",
+      "final_pending": false,
+      "final_forced": false
+    },
+    {
+      "run_id": "decisions_b2_observed",
+      "request_id": 443,
+      "g": 1693,
+      "outcome": "success",
+      "wait_ms": 4318.038292,
+      "dispatches_ahead": 2311,
+      "by_role": {
+        "http": 1178,
+        "http_background_reader": 552,
+        "worker": 580,
+        "runtime_background": 1
+      },
+      "by_source": {
+        "runnext": 1704,
+        "regular_local": 596,
+        "fair_global": 11
+      },
+      "other_forced_choices": 1,
+      "other_forced_selected": [
+        {
+          "g": 1675,
+          "role": "http",
+          "time_ns": 1073255544401,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 14478,
+            "time_ns": 1073255544401,
+            "kind": 2,
+            "g": 1675,
+            "actor_g": 0,
+            "m": 4,
+            "p": 1,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 1611,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1073255545022
+        }
+      ],
+      "final_source": "global_batch",
+      "final_pending": false,
+      "final_forced": false
+    },
+    {
+      "run_id": "decisions_b2_observed",
+      "request_id": 444,
+      "g": 1643,
+      "outcome": "success",
+      "wait_ms": 4314.594585,
+      "dispatches_ahead": 2300,
+      "by_role": {
+        "http": 1171,
+        "http_background_reader": 550,
+        "worker": 578,
+        "runtime_background": 1
+      },
+      "by_source": {
+        "runnext": 1698,
+        "regular_local": 592,
+        "fair_global": 10
+      },
+      "other_forced_choices": 1,
+      "other_forced_selected": [
+        {
+          "g": 1675,
+          "role": "http",
+          "time_ns": 1073255544401,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 14478,
+            "time_ns": 1073255544401,
+            "kind": 2,
+            "g": 1675,
+            "actor_g": 0,
+            "m": 4,
+            "p": 1,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 1611,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1073255545022
+        }
+      ],
+      "final_source": "fair_global",
+      "final_pending": false,
+      "final_forced": false
+    },
+    {
+      "run_id": "decisions_b2_observed",
+      "request_id": 1610,
+      "g": 2398,
+      "outcome": "success",
+      "wait_ms": 4101.154844,
+      "dispatches_ahead": 2218,
+      "by_role": {
+        "http": 1118,
+        "worker": 540,
+        "http_background_reader": 548,
+        "runtime_background": 12
+      },
+      "by_source": {
+        "runnext": 1621,
+        "regular_local": 574,
+        "fair_global": 13,
+        "gc_worker": 8,
+        "global_batch": 2
+      },
+      "other_forced_choices": 4,
+      "other_forced_selected": [
+        {
+          "g": 1345,
+          "role": "http",
+          "time_ns": 1080055542272,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 25379,
+            "time_ns": 1080055542272,
+            "kind": 2,
+            "g": 1345,
+            "actor_g": 0,
+            "m": 2,
+            "p": 1,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2191,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1080055542953
+        },
+        {
+          "g": 2366,
+          "role": "http",
+          "time_ns": 1082468053342,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29653,
+            "time_ns": 1082468053342,
+            "kind": 2,
+            "g": 2366,
+            "actor_g": 0,
+            "m": 3,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2350,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1082468053482
+        },
+        {
+          "g": 2432,
+          "role": "http",
+          "time_ns": 1082468069652,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29655,
+            "time_ns": 1082468069652,
+            "kind": 2,
+            "g": 2432,
+            "actor_g": 0,
+            "m": 3,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2351,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1082468070083
+        },
+        {
+          "g": 2400,
+          "role": "http",
+          "time_ns": 1082468416707,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29658,
+            "time_ns": 1082468416707,
+            "kind": 2,
+            "g": 2400,
+            "actor_g": 0,
+            "m": 3,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2352,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1082468417048
+        }
+      ],
+      "final_source": "regular_local",
+      "final_pending": false,
+      "final_forced": false
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 1554,
+      "g": 2387,
+      "outcome": "success",
+      "wait_ms": 3406.082099,
+      "dispatches_ahead": 1796,
+      "by_role": {
+        "http": 902,
+        "http_background_reader": 436,
+        "worker": 451,
+        "runtime_background": 7
+      },
+      "by_source": {
+        "runnext": 1331,
+        "regular_local": 449,
+        "fair_global": 11,
+        "gc_worker": 5
+      },
+      "other_forced_choices": 3,
+      "other_forced_selected": [
+        {
+          "g": 1938,
+          "role": "http",
+          "time_ns": 1343082992640,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29573,
+            "time_ns": 1343082992640,
+            "kind": 2,
+            "g": 1938,
+            "actor_g": 0,
+            "m": 4,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2397,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1343082992850
+        },
+        {
+          "g": 2386,
+          "role": "http",
+          "time_ns": 1343083383612,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29583,
+            "time_ns": 1343083383612,
+            "kind": 2,
+            "g": 2386,
+            "actor_g": 0,
+            "m": 4,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2398,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1343083383733
+        },
+        {
+          "g": 2532,
+          "role": "http",
+          "time_ns": 1343083415201,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29585,
+            "time_ns": 1343083415201,
+            "kind": 2,
+            "g": 2532,
+            "actor_g": 0,
+            "m": 4,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2399,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1343083415402
+        }
+      ],
+      "final_source": "fair_global",
+      "final_pending": true,
+      "final_forced": true
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 1559,
+      "g": 1938,
+      "outcome": "success",
+      "wait_ms": 3405.32494,
+      "dispatches_ahead": 1791,
+      "by_role": {
+        "http": 899,
+        "http_background_reader": 436,
+        "worker": 450,
+        "runtime_background": 6
+      },
+      "by_source": {
+        "runnext": 1330,
+        "regular_local": 449,
+        "fair_global": 8,
+        "gc_worker": 4
+      },
+      "other_forced_choices": 0,
+      "other_forced_selected": [],
+      "final_source": "fair_global",
+      "final_pending": true,
+      "final_forced": true
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 1575,
+      "g": 2225,
+      "outcome": "success",
+      "wait_ms": 3320.341776,
+      "dispatches_ahead": 1827,
+      "by_role": {
+        "http": 907,
+        "http_background_reader": 471,
+        "worker": 440,
+        "runtime_background": 9
+      },
+      "by_source": {
+        "runnext": 1346,
+        "regular_local": 461,
+        "fair_global": 14,
+        "gc_worker": 5,
+        "global_batch": 1
+      },
+      "other_forced_choices": 6,
+      "other_forced_selected": [
+        {
+          "g": 1938,
+          "role": "http",
+          "time_ns": 1343082992640,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29573,
+            "time_ns": 1343082992640,
+            "kind": 2,
+            "g": 1938,
+            "actor_g": 0,
+            "m": 4,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2397,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1343082992850
+        },
+        {
+          "g": 2386,
+          "role": "http",
+          "time_ns": 1343083383612,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29583,
+            "time_ns": 1343083383612,
+            "kind": 2,
+            "g": 2386,
+            "actor_g": 0,
+            "m": 4,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2398,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1343083383733
+        },
+        {
+          "g": 2532,
+          "role": "http",
+          "time_ns": 1343083415201,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29585,
+            "time_ns": 1343083415201,
+            "kind": 2,
+            "g": 2532,
+            "actor_g": 0,
+            "m": 4,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2399,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1343083415402
+        },
+        {
+          "g": 2387,
+          "role": "http",
+          "time_ns": 1343083750159,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29588,
+            "time_ns": 1343083750159,
+            "kind": 2,
+            "g": 2387,
+            "actor_g": 0,
+            "m": 4,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2400,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1343083750389
+        },
+        {
+          "g": 1649,
+          "role": "http",
+          "time_ns": 1343098070000,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29723,
+            "time_ns": 1343098070000,
+            "kind": 2,
+            "g": 1649,
+            "actor_g": 0,
+            "m": 0,
+            "p": 1,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2300,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1343098070120
+        },
+        {
+          "g": 2206,
+          "role": "http",
+          "time_ns": 1343098101278,
+          "source": "fair_global",
+          "selection": {
+            "sequence": 29727,
+            "time_ns": 1343098101278,
+            "kind": 2,
+            "g": 2206,
+            "actor_g": 0,
+            "m": 4,
+            "p": 0,
+            "source": 3,
+            "pending": true,
+            "fair": true,
+            "inherit": false,
+            "network": false,
+            "schedtick": 2401,
+            "request": 0,
+            "start_pc": 6505440,
+            "function": "net/http.(*Server).Serve.gowrap3"
+          },
+          "matched_dispatch_ns": 1343098101378
+        }
+      ],
+      "final_source": "regular_local",
+      "final_pending": false,
+      "final_forced": false
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 470,
+      "g": 1696,
+      "outcome": "success",
+      "wait_ms": 4416.609977,
+      "dispatches_ahead": 2407,
+      "by_role": {
+        "http": 1221,
+        "http_background_reader": 593,
+        "worker": 592,
+        "runtime_background": 1
+      },
+      "by_source": {
+        "runnext": 1768,
+        "regular_local": 629,
+        "fair_global": 10
+      },
+      "other_forced_choices": 0,
+      "other_forced_selected": [],
+      "final_source": "global_batch",
+      "final_pending": false,
+      "final_forced": false
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 504,
+      "g": 1768,
+      "outcome": "success",
+      "wait_ms": 4219.91965,
+      "dispatches_ahead": 2314,
+      "by_role": {
+        "http": 1173,
+        "http_background_reader": 572,
+        "worker": 568,
+        "runtime_background": 1
+      },
+      "by_source": {
+        "runnext": 1700,
+        "regular_local": 603,
+        "fair_global": 10,
+        "global_batch": 1
+      },
+      "other_forced_choices": 0,
+      "other_forced_selected": [],
+      "final_source": "regular_local",
+      "final_pending": false,
+      "final_forced": false
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 471,
+      "g": 1731,
+      "outcome": "success",
+      "wait_ms": 4210.560705,
+      "dispatches_ahead": 2271,
+      "by_role": {
+        "http": 1145,
+        "http_background_reader": 562,
+        "worker": 563,
+        "runtime_background": 1
+      },
+      "by_source": {
+        "runnext": 1679,
+        "regular_local": 583,
+        "fair_global": 9
+      },
+      "other_forced_choices": 0,
+      "other_forced_selected": [],
+      "final_source": "fair_global",
+      "final_pending": false,
+      "final_forced": false
+    }
+  ],
+  "selection_sources": {
+    "runnext": 29094,
+    "netpoll_blocking": 2013,
+    "steal_or_timer": 2075,
+    "netpoll_nonblocking": 57,
+    "regular_local": 9492,
+    "global_batch": 815,
+    "fair_global": 316,
+    "gc_worker": 24
+  },
+  "selections": 43886,
+  "runnext_fraction": 0.6629449027024563,
+  "forced_choices": 181,
+  "forced_fraction": 0.0041243221072779475,
+  "forced_roles": {
+    "http": 66,
+    "worker": 99,
+    "runtime_background": 12,
+    "http_background_reader": 4
+  },
+  "observer_screens": {
+    "treatment": "observed_candidate",
+    "reference": "control_candidate",
+    "ratios": {
+      "cpu_usec_per_completed_work": 1.002956982046845,
+      "client_cpu_usec_per_scheduled": 1.006540817180229,
+      "p99_e2e_ms": 1.0486067158466448,
+      "successful_rps": 1.0011175681716584
+    },
+    "max_rejection_plus_timeout": {
+      "patched_off": 0.02428256070640177,
+      "stock_off": 0.025607064017660046
+    },
+    "checks": {
+      "cpu_usec_per_completed_work_ratio_at_most_1_10": true,
+      "client_cpu_usec_per_scheduled_ratio_at_most_1_10": true,
+      "p99_e2e_ms_ratio_at_most_1_10": true,
+      "failure_rate_difference_at_most_0_001": true,
+      "client_trace_coverage_at_least_0_99": true,
+      "all_diagnostic_timing_observed": true,
+      "all_enabled_traces_complete": true
+    },
+    "original_numeric_screens_passed": true,
+    "throughput_review_required": true,
+    "eligible_for_full": false
+  },
+  "own_final_selection_corrections": [
+    {
+      "run_id": "decisions_b1_observed",
+      "request_id": 310,
+      "recorded_forced_ahead": 1,
+      "other_forced_choices": 0
+    },
+    {
+      "run_id": "decisions_b1_observed",
+      "request_id": 1430,
+      "recorded_forced_ahead": 1,
+      "other_forced_choices": 0
+    },
+    {
+      "run_id": "decisions_b1_observed",
+      "request_id": 1447,
+      "recorded_forced_ahead": 1,
+      "other_forced_choices": 0
+    },
+    {
+      "run_id": "decisions_b1_observed",
+      "request_id": 1613,
+      "recorded_forced_ahead": 3,
+      "other_forced_choices": 2
+    },
+    {
+      "run_id": "decisions_b2_observed",
+      "request_id": 1430,
+      "recorded_forced_ahead": 1,
+      "other_forced_choices": 0
+    },
+    {
+      "run_id": "decisions_b2_observed",
+      "request_id": 1447,
+      "recorded_forced_ahead": 1,
+      "other_forced_choices": 0
+    },
+    {
+      "run_id": "decisions_b2_observed",
+      "request_id": 1596,
+      "recorded_forced_ahead": 4,
+      "other_forced_choices": 3
+    },
+    {
+      "run_id": "decisions_b2_observed",
+      "request_id": 2109,
+      "recorded_forced_ahead": 4,
+      "other_forced_choices": 3
+    },
+    {
+      "run_id": "decisions_b2_observed",
+      "request_id": 2108,
+      "recorded_forced_ahead": 5,
+      "other_forced_choices": 4
+    },
+    {
+      "run_id": "decisions_b2_observed",
+      "request_id": 2126,
+      "recorded_forced_ahead": 7,
+      "other_forced_choices": 6
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 1442,
+      "recorded_forced_ahead": 1,
+      "other_forced_choices": 0
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 1459,
+      "recorded_forced_ahead": 1,
+      "other_forced_choices": 0
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 1475,
+      "recorded_forced_ahead": 1,
+      "other_forced_choices": 0
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 1559,
+      "recorded_forced_ahead": 1,
+      "other_forced_choices": 0
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 1554,
+      "recorded_forced_ahead": 4,
+      "other_forced_choices": 3
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 1577,
+      "recorded_forced_ahead": 6,
+      "other_forced_choices": 5
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 2155,
+      "recorded_forced_ahead": 4,
+      "other_forced_choices": 3
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 2158,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 2171,
+      "recorded_forced_ahead": 4,
+      "other_forced_choices": 3
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 2189,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 2191,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 2193,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 2208,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 2223,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 2226,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 2241,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 2257,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b3_observed",
+      "request_id": 2260,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 1456,
+      "recorded_forced_ahead": 1,
+      "other_forced_choices": 0
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 1591,
+      "recorded_forced_ahead": 1,
+      "other_forced_choices": 0
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 1590,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 1609,
+      "recorded_forced_ahead": 4,
+      "other_forced_choices": 3
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 2152,
+      "recorded_forced_ahead": 4,
+      "other_forced_choices": 3
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 2169,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 2167,
+      "recorded_forced_ahead": 4,
+      "other_forced_choices": 3
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 2171,
+      "recorded_forced_ahead": 3,
+      "other_forced_choices": 2
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 2170,
+      "recorded_forced_ahead": 4,
+      "other_forced_choices": 3
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 2189,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 2203,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 2201,
+      "recorded_forced_ahead": 4,
+      "other_forced_choices": 3
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 2222,
+      "recorded_forced_ahead": 4,
+      "other_forced_choices": 3
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 2241,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 2254,
+      "recorded_forced_ahead": 4,
+      "other_forced_choices": 3
+    },
+    {
+      "run_id": "decisions_b4_observed",
+      "request_id": 2264,
+      "recorded_forced_ahead": 2,
+      "other_forced_choices": 1
+    }
+  ],
+  "eligible_for_full": false
+}

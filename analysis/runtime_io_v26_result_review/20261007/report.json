@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "decision": "verified_both_low_rates_qualified",
+  "session": "analysis/runtime_io_v26/generation-01",
+  "analysis_path": "analysis/runtime_io_v26/generation-01/analysis/1791394434069058442",
+  "independent_completion_replay_passed": true,
+  "analysis_seal_sha256": "02153d973eea003bcb3830696874b1d8c3ac2cfedf6d5739d091da29398a4157",
+  "source_report_sha256": "9e76d496ddaddc82caae9f32fac9694147366071e6a896172613d24c0fbd6376",
+  "preparation_seal_sha256": "d3c9a48fadcc9acf3cda0cbb57684f0b89b2a55b554255ae5c4b7dca84695d2f",
+  "collection_receipt_sha256": "3cb0664015aac1e813899d056710329709f2708f0d735ff4404488fa67a93878",
+  "completed_trials": 4,
+  "planned_trials": 4,
+  "technical_failures": [],
+  "all_owned_cleanups_verified": true,
+  "total_measurement_offers": 2700,
+  "all_trial_500ms_misses_zero": true,
+  "native_capture": {
+    "total_samples": 10233,
+    "max_wall_ms": 0.057227,
+    "skipped_deadlines": 0,
+    "all_measurement_quality_budgets_passed": true
+  },
+  "by_rate": {
+    "15": {
+      "recordings": 2,
+      "qualified_windows": 2,
+      "maximum_waiting_queue": 1,
+      "throttled_period_bounds": [
+        0,
+        0
+      ],
+      "cpu_usec_per_completion_envelope": [
+        4518.916666666667,
+        4604.116666666667
+      ],
+      "maximum_relative_cost_bound_width": 0.006714173158904829,
+      "whole_cpu_usec_per_job_mean": 4579.167777777779
+    },
+    "30": {
+      "recordings": 2,
+      "qualified_windows": 2,
+      "maximum_waiting_queue": 1,
+      "throttled_period_bounds": [
+        0,
+        0
+      ],
+      "cpu_usec_per_completion_envelope": [
+        4546.191666666667,
+        4577.286666666667
+      ],
+      "maximum_relative_cost_bound_width": 0.00344691768684567,
+      "whole_cpu_usec_per_job_mean": 4562.8116666666665
+    }
+  },
+  "collection_duration_min": 19.219429265666623,
+  "limits": "Steady sampler-on fixed windows only; no busy arm, sampler-off comparison, causal attribution, statistical equivalence or novelty. Mixed-schedule low states must qualify again."
+}

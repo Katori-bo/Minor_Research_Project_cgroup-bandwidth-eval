@@ -1,0 +1,30 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  54.78kB
+Step 1/9 : ARG COMPILER_IMAGE
+Step 2/9 : FROM ${COMPILER_IMAGE} AS build
+ ---> 2389ebfa5b7f
+Step 3/9 : WORKDIR /src
+ ---> Using cache
+ ---> c31f012bdebd
+Step 4/9 : COPY go.mod *.go ./
+ ---> Using cache
+ ---> f661893d37b8
+Step 5/9 : RUN go version && go test -count=1 -v ./... && CGO_ENABLED=0 go build -trimpath -o /server .
+ ---> Using cache
+ ---> a381b55677c2
+Step 6/9 : FROM scratch
+ ---> 
+Step 7/9 : LABEL research.runtime.variant="stock" research.study="bursty-parallelism-v1"
+ ---> Using cache
+ ---> f59cfcdbf967
+Step 8/9 : COPY --from=build /server /server
+ ---> Using cache
+ ---> c80460427c03
+Step 9/9 : ENTRYPOINT ["/server"]
+ ---> Using cache
+ ---> 9d4e51d8a227
+Successfully built 9d4e51d8a227
+Successfully tagged quota-bursty-parallelism-service:12

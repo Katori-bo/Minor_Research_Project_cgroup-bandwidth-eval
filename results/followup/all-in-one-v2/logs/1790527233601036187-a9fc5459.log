@@ -1,0 +1,334 @@
+
+[2026-09-27T22:10:33.720705+05:30] python-regression-tests: /usr/bin/python3 -m unittest discover -s /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup -p 'test_*.py' -v
+test_constant_environment_does_not_crash_analysis (test_followup.MechanismAndControlTests.test_constant_environment_does_not_crash_analysis) ... ok
+test_drain_waits_for_both_jobs_and_handlers (test_followup.MechanismAndControlTests.test_drain_waits_for_both_jobs_and_handlers) ... ok
+test_full_analysis_keeps_studies_and_traffic_patterns_separate (test_followup.MechanismAndControlTests.test_full_analysis_keeps_studies_and_traffic_patterns_separate) ... ok
+test_known_interaction_and_bootstrap (test_followup.MechanismAndControlTests.test_known_interaction_and_bootstrap) ... ok
+test_matrix_retains_extension_and_loads_replication (test_followup.MechanismAndControlTests.test_matrix_retains_extension_and_loads_replication) ... ok
+test_pilot_overhead_gate (test_followup.MechanismAndControlTests.test_pilot_overhead_gate) ... ok
+test_changed_file_is_not_silently_reused (test_followup.SavedTrialTests.test_changed_file_is_not_silently_reused) ... ok
+test_failed_attempt_never_counts_as_success (test_followup.SavedTrialTests.test_failed_attempt_never_counts_as_success) ... ok
+test_interrupt_retains_evidence_and_uses_a_new_attempt (test_followup.SavedTrialTests.test_interrupt_retains_evidence_and_uses_a_new_attempt) ... ok
+test_missing_completion_marker_is_incomplete (test_followup.SavedTrialTests.test_missing_completion_marker_is_incomplete) ... ok
+test_power_change_is_found_even_when_saved_flags_are_empty (test_followup.SavedTrialTests.test_power_change_is_found_even_when_saved_flags_are_empty) ... ok
+test_server_timestamps_are_checked (test_followup.SavedTrialTests.test_server_timestamps_are_checked) ... ok
+test_throughput_window_excludes_late_responses_but_cohort_retains_them (test_followup.SavedTrialTests.test_throughput_window_excludes_late_responses_but_cohort_retains_them) ... ok
+test_valid_trial_can_be_reused (test_followup.SavedTrialTests.test_valid_trial_can_be_reused) ... ok
+test_validation_recomputes_counts_even_with_new_hashes (test_followup.SavedTrialTests.test_validation_recomputes_counts_even_with_new_hashes) ... ok
+test_child_shares_coordinator_lock_while_unrelated_process_is_excluded (test_pipeline.LockInheritanceTests.test_child_shares_coordinator_lock_while_unrelated_process_is_excluded) ... ok
+test_empty_session_directory_is_not_reused_as_new (test_pipeline.PipelineTests.test_empty_session_directory_is_not_reused_as_new) ... ok
+test_failed_pilot_analysis_never_starts_full_collection (test_pipeline.PipelineTests.test_failed_pilot_analysis_never_starts_full_collection) ... ok
+test_repeat_command_does_not_launch_duplicate_or_completed_job (test_pipeline.PipelineTests.test_repeat_command_does_not_launch_duplicate_or_completed_job) ... ok
+test_resume_does_not_rebuild_or_overwrite_existing_sessions (test_pipeline.PipelineTests.test_resume_does_not_rebuild_or_overwrite_existing_sessions) ... ok
+test_stage_failure_has_nonzero_status_and_no_success_event (test_pipeline.PipelineTests.test_stage_failure_has_nonzero_status_and_no_success_event) ... ok
+test_successful_pipeline_runs_every_stage_and_writes_completion (test_pipeline.PipelineTests.test_successful_pipeline_runs_every_stage_and_writes_completion) ... ok
+test_worker_records_failure_and_closes_lock (test_pipeline.PipelineTests.test_worker_records_failure_and_closes_lock) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 2.542s
+
+OK
+
+[2026-09-27T22:10:36.361668+05:30] pilot-collection: /usr/bin/python3 -u /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py resume --session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/pilot
+SESSION: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/pilot
+Settling: at least 600s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 82.75}
+Settling 60s: {'k10temp:Tctl': 50.125}
+Settling 120s: {'k10temp:Tctl': 48.375}
+Settling 180s: {'k10temp:Tctl': 56.5}
+Settling 240s: {'k10temp:Tctl': 47.625}
+Settling 301s: {'k10temp:Tctl': 46.875}
+Settling 361s: {'k10temp:Tctl': 46.25}
+Settling 421s: {'k10temp:Tctl': 45.75}
+Settling 481s: {'k10temp:Tctl': 45.375}
+Settling 541s: {'k10temp:Tctl': 44.875}
+RUN 1/8 pilot_overhead_1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 46.75}
+Settling 60s: {'k10temp:Tctl': 44.125}
+RUN 2/8 pilot_overhead_2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 56.375}
+Settling 60s: {'k10temp:Tctl': 44.25}
+RUN 3/8 pilot_overhead_3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 56.0}
+Settling 60s: {'k10temp:Tctl': 43.75}
+RUN 4/8 pilot_overhead_4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 55.375}
+Settling 60s: {'k10temp:Tctl': 43.375}
+RUN 5/8 pilot_w1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 55.125}
+Settling 60s: {'k10temp:Tctl': 43.125}
+RUN 6/8 pilot_p250
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 60.125}
+Settling 60s: {'k10temp:Tctl': 42.875}
+RUN 7/8 pilot_A_g1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 57.75}
+Settling 60s: {'k10temp:Tctl': 42.625}
+RUN 8/8 pilot_A_g2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 61.125}
+Settling 60s: {'k10temp:Tctl': 42.375}
+
+[2026-09-27T22:36:45.194157+05:30] pilot-analysis: /usr/bin/python3 /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/analyze.py /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/pilot
+Pilot validation and coarse overhead/saturation checks passed. See analysis/report.md and pilot_gate.json.
+
+[2026-09-27T22:36:45.590202+05:30] full-collection: /usr/bin/python3 -u /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py new --session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/full --pilot-session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/pilot
+SESSION: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/full
+Settling: at least 600s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 63.375}
+Settling 60s: {'k10temp:Tctl': 42.125}
+Settling 120s: {'k10temp:Tctl': 41.5}
+Settling 180s: {'k10temp:Tctl': 41.375}
+Settling 240s: {'k10temp:Tctl': 41.0}
+Settling 301s: {'k10temp:Tctl': 40.625}
+Settling 361s: {'k10temp:Tctl': 40.5}
+Settling 421s: {'k10temp:Tctl': 40.375}
+Settling 481s: {'k10temp:Tctl': 40.125}
+Settling 541s: {'k10temp:Tctl': 40.0}
+Settling 601s: {'k10temp:Tctl': 39.75}
+RUN 1/50 B_p100000_w4_g2_steady_r1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 42.75}
+Settling 60s: {'k10temp:Tctl': 39.5}
+RUN 2/50 B_p100000_w1_g2_bursty_r3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 51.0}
+Settling 60s: {'k10temp:Tctl': 40.375}
+RUN 3/50 B_p250000_w1_g2_bursty_r4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 59.125}
+Settling 60s: {'k10temp:Tctl': 40.75}
+RUN 4/50 B_p250000_w1_g2_steady_r1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 60.625}
+Settling 60s: {'k10temp:Tctl': 40.875}
+RUN 5/50 A_p100000_w4_g2_steady_r5
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 51.625}
+Settling 60s: {'k10temp:Tctl': 40.625}
+RUN 6/50 B_p250000_w1_g2_bursty_r5
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 55.25}
+Settling 60s: {'k10temp:Tctl': 40.875}
+RUN 7/50 B_p250000_w4_g2_bursty_r2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 60.75}
+Settling 60s: {'k10temp:Tctl': 40.875}
+RUN 8/50 B_p100000_w4_g2_bursty_r4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 57.25}
+Settling 60s: {'k10temp:Tctl': 40.75}
+RUN 9/50 B_p250000_w4_g2_steady_r2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 54.125}
+Settling 60s: {'k10temp:Tctl': 40.75}
+Settling 120s: {'k10temp:Tctl': 40.25}
+RUN 10/50 B_p250000_w4_g2_bursty_r3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 51.125}
+Settling 60s: {'k10temp:Tctl': 40.375}
+RUN 11/50 B_p250000_w1_g2_steady_r5
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 56.625}
+Settling 60s: {'k10temp:Tctl': 40.25}
+RUN 12/50 B_p250000_w4_g2_bursty_r5
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 50.875}
+Settling 60s: {'k10temp:Tctl': 40.25}
+RUN 13/50 B_p100000_w4_g2_bursty_r5
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 56.625}
+Settling 60s: {'k10temp:Tctl': 40.375}
+Settling 120s: {'k10temp:Tctl': 40.5}
+RUN 14/50 B_p100000_w4_g2_bursty_r1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 52.75}
+Settling 60s: {'k10temp:Tctl': 40.375}
+Settling 120s: {'k10temp:Tctl': 40.0}
+RUN 15/50 B_p100000_w4_g2_bursty_r3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 53.75}
+Settling 60s: {'k10temp:Tctl': 40.625}
+RUN 16/50 B_p100000_w1_g2_steady_r4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 54.125}
+Settling 60s: {'k10temp:Tctl': 41.125}
+RUN 17/50 A_p100000_w4_g1_steady_r1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 51.375}
+Settling 60s: {'k10temp:Tctl': 41.0}
+RUN 18/50 B_p100000_w4_g2_steady_r2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 61.875}
+Settling 60s: {'k10temp:Tctl': 41.625}
+RUN 19/50 B_p250000_w4_g2_steady_r3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 52.25}
+Settling 60s: {'k10temp:Tctl': 41.5}
+Settling 120s: {'k10temp:Tctl': 41.25}
+Settling 180s: {'k10temp:Tctl': 40.75}
+RUN 20/50 B_p250000_w1_g2_bursty_r1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 51.875}
+Settling 60s: {'k10temp:Tctl': 41.25}
+RUN 21/50 B_p250000_w4_g2_steady_r4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 61.375}
+Settling 60s: {'k10temp:Tctl': 41.625}
+Settling 120s: {'k10temp:Tctl': 41.25}
+Settling 180s: {'k10temp:Tctl': 40.875}
+RUN 22/50 B_p100000_w1_g2_steady_r1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 52.75}
+Settling 60s: {'k10temp:Tctl': 41.5}
+RUN 23/50 B_p100000_w1_g2_bursty_r2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 52.125}
+Settling 60s: {'k10temp:Tctl': 41.625}
+RUN 24/50 B_p250000_w1_g2_steady_r4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 60.125}
+Settling 60s: {'k10temp:Tctl': 43.25}
+Settling 120s: {'k10temp:Tctl': 41.5}
+RUN 25/50 A_p100000_w4_g2_steady_r2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 52.125}
+Settling 60s: {'k10temp:Tctl': 42.125}
+Settling 120s: {'k10temp:Tctl': 41.5}
+RUN 26/50 A_p100000_w4_g2_steady_r1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 56.625}
+Settling 60s: {'k10temp:Tctl': 42.125}
+RUN 27/50 B_p100000_w4_g2_steady_r3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 56.625}
+Settling 60s: {'k10temp:Tctl': 46.5}
+Settling 120s: {'k10temp:Tctl': 41.875}
+RUN 28/50 B_p250000_w1_g2_bursty_r2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 52.875}
+Settling 60s: {'k10temp:Tctl': 42.25}
+RUN 29/50 B_p100000_w4_g2_steady_r5
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 62.25}
+Settling 60s: {'k10temp:Tctl': 42.75}
+Settling 120s: {'k10temp:Tctl': 41.875}
+RUN 30/50 B_p250000_w4_g2_steady_r5
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 52.875}
+Settling 60s: {'k10temp:Tctl': 42.375}
+Settling 120s: {'k10temp:Tctl': 41.875}
+Settling 180s: {'k10temp:Tctl': 41.5}
+RUN 31/50 B_p100000_w1_g2_bursty_r4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 52.875}
+Settling 60s: {'k10temp:Tctl': 42.125}
+RUN 32/50 B_p100000_w1_g2_steady_r3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 60.75}
+Settling 60s: {'k10temp:Tctl': 42.375}
+RUN 33/50 B_p100000_w1_g2_bursty_r5
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 53.125}
+Settling 60s: {'k10temp:Tctl': 42.5}
+RUN 34/50 A_p100000_w4_g1_steady_r4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 61.0}
+Settling 60s: {'k10temp:Tctl': 42.75}
+Settling 120s: {'k10temp:Tctl': 42.125}
+RUN 35/50 B_p100000_w4_g2_bursty_r2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 63.25}
+Settling 60s: {'k10temp:Tctl': 42.875}
+Settling 120s: {'k10temp:Tctl': 42.25}
+RUN 36/50 A_p100000_w4_g2_steady_r4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 55.875}
+Settling 60s: {'k10temp:Tctl': 42.625}
+RUN 37/50 B_p250000_w4_g2_bursty_r1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 56.875}
+Settling 60s: {'k10temp:Tctl': 42.75}
+Settling 120s: {'k10temp:Tctl': 42.5}
+Settling 180s: {'k10temp:Tctl': 41.875}
+Settling 240s: {'k10temp:Tctl': 41.75}
+RUN 38/50 B_p100000_w1_g2_bursty_r1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 58.625}
+Settling 60s: {'k10temp:Tctl': 42.375}
+Settling 120s: {'k10temp:Tctl': 41.875}
+Settling 180s: {'k10temp:Tctl': 41.5}
+Settling 241s: {'k10temp:Tctl': 41.375}
+RUN 39/50 B_p250000_w1_g2_steady_r2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 60.25}
+Settling 60s: {'k10temp:Tctl': 42.375}
+RUN 40/50 B_p100000_w4_g2_steady_r4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 53.0}
+Settling 60s: {'k10temp:Tctl': 42.25}
+RUN 41/50 A_p100000_w4_g2_steady_r3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 53.125}
+Settling 60s: {'k10temp:Tctl': 42.625}
+RUN 42/50 B_p250000_w4_g2_bursty_r4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 57.375}
+Settling 60s: {'k10temp:Tctl': 43.5}
+Settling 120s: {'k10temp:Tctl': 42.25}
+Settling 180s: {'k10temp:Tctl': 42.25}
+Settling 240s: {'k10temp:Tctl': 41.625}
+Settling 301s: {'k10temp:Tctl': 41.375}
+RUN 43/50 B_p250000_w4_g2_steady_r1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 58.25}
+Settling 60s: {'k10temp:Tctl': 42.25}
+RUN 44/50 B_p100000_w1_g2_steady_r2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 52.875}
+Settling 60s: {'k10temp:Tctl': 43.625}
+Settling 120s: {'k10temp:Tctl': 42.125}
+RUN 45/50 B_p250000_w1_g2_steady_r3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 53.25}
+Settling 60s: {'k10temp:Tctl': 42.375}
+RUN 46/50 B_p100000_w1_g2_steady_r5
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 53.0}
+Settling 60s: {'k10temp:Tctl': 42.625}
+Settling 120s: {'k10temp:Tctl': 42.25}
+Settling 180s: {'k10temp:Tctl': 41.75}
+Settling 240s: {'k10temp:Tctl': 41.625}
+Settling 301s: {'k10temp:Tctl': 41.5}
+RUN 47/50 B_p250000_w1_g2_bursty_r3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 52.25}
+Settling 60s: {'k10temp:Tctl': 42.125}
+RUN 48/50 A_p100000_w4_g1_steady_r2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 62.5}
+Settling 60s: {'k10temp:Tctl': 42.75}
+Settling 120s: {'k10temp:Tctl': 42.0}
+RUN 49/50 A_p100000_w4_g1_steady_r3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 63.375}
+Settling 60s: {'k10temp:Tctl': 43.0}
+Settling 120s: {'k10temp:Tctl': 42.5}
+RUN 50/50 A_p100000_w4_g1_steady_r5
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 63.25}
+Settling 60s: {'k10temp:Tctl': 43.25}
+Settling 120s: {'k10temp:Tctl': 42.625}
+Settling 180s: {'k10temp:Tctl': 42.125}
+Settling 241s: {'k10temp:Tctl': 41.875}
+
+[2026-09-28T01:41:04.318516+05:30] full-analysis: /usr/bin/python3 /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/analyze.py /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/full
+All 50 trials validated. Results: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/full/analysis
+
+COMPLETE: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/COMPLETED.md

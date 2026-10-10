@@ -1,0 +1,265 @@
+{
+  "decision": "close_unresolved_period_effect_not_consistent",
+  "observer_qualified": true,
+  "observer_checks": [
+    {
+      "block": 1,
+      "period_ms": 100,
+      "changes": {
+        "cpu_usec_per_completed_work": -0.00032440499979669024,
+        "capacity": -0.00249836823577676,
+        "cpu_cores": -0.002821962752426632
+      },
+      "passed": true
+    },
+    {
+      "block": 1,
+      "period_ms": 20,
+      "changes": {
+        "cpu_usec_per_completed_work": 0.000159998102146508,
+        "capacity": -0.00022063837002639364,
+        "cpu_cores": -6.0675569600099344e-05
+      },
+      "passed": true
+    },
+    {
+      "block": 2,
+      "period_ms": 100,
+      "changes": {
+        "cpu_usec_per_completed_work": -0.0015771209963630906,
+        "capacity": 0.0009088863611437237,
+        "cpu_cores": -0.0006696680589826087
+      },
+      "passed": true
+    },
+    {
+      "block": 2,
+      "period_ms": 20,
+      "changes": {
+        "cpu_usec_per_completed_work": -0.006776447458402557,
+        "capacity": 0.0072668507549662475,
+        "cpu_cores": 0.0004411598642346526
+      },
+      "passed": true
+    }
+  ],
+  "period_contrasts": [
+    {
+      "block": 1,
+      "counters": false,
+      "changes": {
+        "cpu_usec_per_completed_work": -0.006247229652937114,
+        "capacity": 0.003569197345222319,
+        "cpu_cores": -0.0027003299032072325
+      }
+    },
+    {
+      "block": 1,
+      "counters": true,
+      "changes": {
+        "cpu_usec_per_completed_work": -0.005765696516659258,
+        "capacity": 0.0058607821009257766,
+        "cpu_cores": 6.129409332267244e-05,
+        "instructions_per_job": 7.983613447226645e-06,
+        "cycles_per_instruction": 0.0019338038749634467,
+        "cycles_per_user_cpu_sec": 0.007051724787642266
+      }
+    },
+    {
+      "block": 2,
+      "counters": false,
+      "changes": {
+        "cpu_usec_per_completed_work": -0.005267733230799543,
+        "capacity": 0.0032393865031614677,
+        "cpu_cores": -0.002045410951568183
+      }
+    },
+    {
+      "block": 2,
+      "counters": true,
+      "changes": {
+        "cpu_usec_per_completed_work": -0.010447840684285503,
+        "capacity": 0.009612154678951157,
+        "cpu_cores": -0.0009361122660529464,
+        "instructions_per_job": 4.73158169511656e-06,
+        "cycles_per_instruction": 0.0002044160267968831,
+        "cycles_per_user_cpu_sec": 0.00990926142265347
+      }
+    }
+  ],
+  "reproduced_without_counters": false,
+  "execution_hints": [],
+  "historical_reversal_cause_established": false,
+  "novelty_established": false,
+  "automatic_followup_authorized": false,
+  "limitation": "Eight short cells are a closing screen, not equivalence or historical causal proof. User counts cover all Go threads, not just SHA instructions. Similar counts are a 1% practical screen. Cycles/user CPU second is an effective execution metric, not a direct frequency measurement. CPI changes do not uniquely identify caches, migration, preemption or interrupts. No counter-based causal interpretation when observer qualification fails. Close this branch after this attempt.",
+  "rows": [
+    {
+      "trial": "b1_A",
+      "block": 1,
+      "arm": "A",
+      "order": 1,
+      "kind": "minimal",
+      "period_ms": 100,
+      "counters": false,
+      "cpu_usec_per_completed_work": 3315.934552666373,
+      "native_cpu_usec_per_job": 3315.877029308065,
+      "capacity": 151.25742373389733,
+      "cpu_cores": 0.5015597177065289,
+      "completed": 4538,
+      "cgroup_native_cpu_relative_difference": 1.7347856328564504e-05,
+      "wall_sec": 30.001833219,
+      "memory_peak_bytes": 7790592
+    },
+    {
+      "trial": "b1_B",
+      "block": 1,
+      "arm": "B",
+      "order": 2,
+      "kind": "minimal",
+      "period_ms": 20,
+      "counters": false,
+      "cpu_usec_per_completed_work": 3295.219148001757,
+      "native_cpu_usec_per_job": 3295.1876280193237,
+      "capacity": 151.79729132913351,
+      "cpu_cores": 0.5002053410025618,
+      "completed": 4554,
+      "cgroup_native_cpu_relative_difference": 9.565459084814876e-06,
+      "wall_sec": 30.00053532,
+      "memory_peak_bytes": 8077312
+    },
+    {
+      "trial": "b1_C",
+      "block": 1,
+      "arm": "C",
+      "order": 3,
+      "kind": "minimal",
+      "period_ms": 100,
+      "counters": true,
+      "cpu_usec_per_completed_work": 3314.8588469184892,
+      "native_cpu_usec_per_job": 3314.819635520212,
+      "capacity": 150.87952699101513,
+      "cpu_cores": 0.5001443348650434,
+      "completed": 4527,
+      "cgroup_native_cpu_relative_difference": 1.182911970731837e-05,
+      "wall_sec": 30.004070733,
+      "memory_peak_bytes": 7749632,
+      "instructions_per_job": 26709336.541418158,
+      "cycles_per_instruction": 0.44630610139330823,
+      "cycles_per_user_cpu_sec": 3607174576.464693,
+      "cycles_per_user_cpu_sec_lower": 3607174576.464693,
+      "cycles_per_user_cpu_sec_upper": 3607174576.464693
+    },
+    {
+      "trial": "b1_D",
+      "block": 1,
+      "arm": "D",
+      "order": 4,
+      "kind": "minimal",
+      "period_ms": 20,
+      "counters": true,
+      "cpu_usec_per_completed_work": 3295.746376811594,
+      "native_cpu_usec_per_job": 3295.6932274923147,
+      "capacity": 151.76379902220023,
+      "cpu_cores": 0.5001749907585794,
+      "completed": 4554,
+      "cgroup_native_cpu_relative_difference": 1.6126901265067772e-05,
+      "wall_sec": 30.00715605,
+      "memory_peak_bytes": 9875456,
+      "instructions_per_job": 26709549.778436538,
+      "cycles_per_instruction": 0.44716916986160243,
+      "cycles_per_user_cpu_sec": 3632611378.8389025,
+      "cycles_per_user_cpu_sec_lower": 3632611378.8389025,
+      "cycles_per_user_cpu_sec_upper": 3632611378.8389025
+    },
+    {
+      "trial": "b2_D",
+      "block": 2,
+      "arm": "D",
+      "order": 5,
+      "kind": "minimal",
+      "period_ms": 20,
+      "counters": true,
+      "cpu_usec_per_completed_work": 3275.2428540257474,
+      "native_cpu_usec_per_job": 3275.1973678813006,
+      "capacity": 152.75702559539653,
+      "cpu_cores": 0.5003163564835507,
+      "completed": 4583,
+      "cgroup_native_cpu_relative_difference": 1.3888062103672993e-05,
+      "wall_sec": 30.001893413,
+      "memory_peak_bytes": 7786496,
+      "instructions_per_job": 26709451.582369626,
+      "cycles_per_instruction": 0.4463354888671803,
+      "cycles_per_user_cpu_sec": 3645381824.382079,
+      "cycles_per_user_cpu_sec_lower": 3645381824.382079,
+      "cycles_per_user_cpu_sec_upper": 3645381824.382079
+    },
+    {
+      "trial": "b2_C",
+      "block": 2,
+      "arm": "C",
+      "order": 6,
+      "kind": "minimal",
+      "period_ms": 100,
+      "counters": true,
+      "cpu_usec_per_completed_work": 3309.8233611966566,
+      "native_cpu_usec_per_job": 3309.7658717553895,
+      "capacity": 151.3026808239765,
+      "cpu_cores": 0.5007851476028788,
+      "completed": 4546,
+      "cgroup_native_cpu_relative_difference": 1.7369639876196885e-05,
+      "wall_sec": 30.045733329,
+      "memory_peak_bytes": 7872512,
+      "instructions_per_job": 26709325.2050154,
+      "cycles_per_instruction": 0.4462442693866514,
+      "cycles_per_user_cpu_sec": 3609613223.3175583,
+      "cycles_per_user_cpu_sec_lower": 3609613223.3175583,
+      "cycles_per_user_cpu_sec_upper": 3609613223.3175583
+    },
+    {
+      "trial": "b2_B",
+      "block": 2,
+      "arm": "B",
+      "order": 7,
+      "kind": "minimal",
+      "period_ms": 20,
+      "counters": false,
+      "cpu_usec_per_completed_work": 3297.588791208791,
+      "native_cpu_usec_per_job": 3297.541567032967,
+      "capacity": 151.65497155088758,
+      "cpu_cores": 0.5000957343172949,
+      "completed": 4550,
+      "cgroup_native_cpu_relative_difference": 1.4321025183061664e-05,
+      "wall_sec": 30.002313498,
+      "memory_peak_bytes": 9879552
+    },
+    {
+      "trial": "b2_A",
+      "block": 2,
+      "arm": "A",
+      "order": 8,
+      "kind": "minimal",
+      "period_ms": 100,
+      "counters": false,
+      "cpu_usec_per_completed_work": 3315.051598676957,
+      "native_cpu_usec_per_job": 3315.0220074972435,
+      "capacity": 151.16528875474893,
+      "cpu_cores": 0.5011207321508943,
+      "completed": 4535,
+      "cgroup_native_cpu_relative_difference": 8.926390125507666e-06,
+      "wall_sec": 30.000273458,
+      "memory_peak_bytes": 7536640
+    }
+  ],
+  "preparation_seal": "9b74cd47d0d5cef4851ade9f74aebbac5d06f477d098cab990b310782c745d6a",
+  "trial_seals": {
+    "b1_A": "789fe78e5dba6c20e60fb6a4dfe003b1722438d0aff3e8a6b7b8bdcc54a90951",
+    "b1_B": "107e6fee5705f9e2c358a7c110a9f512ed1d0cc3905f77b2cde4ad14ccc16fb6",
+    "b1_C": "09c2665698392fea3be074448b99c6c912ea5f9dedb0331fe85411ebf91c190d",
+    "b1_D": "e7bc78c66c7d46daa185643b28a60a3380e93719bd5d7cd7b9727ad0f5001482",
+    "b2_D": "f1303dfddec6d0a28132e0a02fcb65ac3bc3a4715e3936b27c565987f1a66374",
+    "b2_C": "afa5b35c020006d4754d26d17f73a64d799269d88a64c3c0d668d3487aad7f2e",
+    "b2_B": "f8da4b8492fb9c2ac00a4cbba011d3fa90cab0afd1ac4f4202e77faced890db4",
+    "b2_A": "b00f9ac20152446cdcef82605e4c55d32be62a07be8fa1789b2fa5af3228837e"
+  }
+}

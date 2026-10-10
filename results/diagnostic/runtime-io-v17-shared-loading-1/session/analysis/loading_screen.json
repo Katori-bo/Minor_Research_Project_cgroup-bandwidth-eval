@@ -1,0 +1,387 @@
+{
+  "margins": {
+    "timely_fraction": 0.01,
+    "failure_fraction": 0.001,
+    "cpu_ratio": 0.05,
+    "p99_ratio": 0.1
+  },
+  "contrasts": {
+    "packaged_image_gap": {
+      "base": "legacy_packaged",
+      "arm": "rebuilt_packaged",
+      "pairs": [
+        {
+          "block": 1,
+          "timely_fraction_delta": 0.01884292654202857,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9937466806979387,
+          "p99_ratio": 0.9680673522475463,
+          "within_screen": false
+        },
+        {
+          "block": 2,
+          "timely_fraction_delta": 0.020462240541734067,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9963741247944603,
+          "p99_ratio": 0.9777303005308675,
+          "within_screen": false
+        },
+        {
+          "block": 3,
+          "timely_fraction_delta": 0.022670395995878057,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9953202698011774,
+          "p99_ratio": 0.9681829627943968,
+          "within_screen": false
+        },
+        {
+          "block": 4,
+          "timely_fraction_delta": 0.014573825997350243,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9946119016193674,
+          "p99_ratio": 0.9793943171058007,
+          "within_screen": false
+        }
+      ],
+      "block_summary": {
+        "timely_fraction_delta": {
+          "median": 0.01965258354188132,
+          "minimum": 0.014573825997350243,
+          "maximum": 0.022670395995878057,
+          "sample_sd": 0.0034229707103577366
+        },
+        "timely_1000_fraction_delta": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "sample_sd": 0.0
+        },
+        "failure_fraction_delta": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "sample_sd": 0.0
+        },
+        "cpu_ratio": {
+          "median": 0.9949660857102725,
+          "minimum": 0.9937466806979387,
+          "maximum": 0.9963741247944603,
+          "sample_sd": 0.0011122828902666154
+        },
+        "p99_ratio": {
+          "median": 0.9729566316626321,
+          "minimum": 0.9680673522475463,
+          "maximum": 0.9793943171058007,
+          "sample_sd": 0.0060642472927845935
+        }
+      },
+      "within_screen": false
+    },
+    "shared_image_gap": {
+      "base": "legacy_shared",
+      "arm": "rebuilt_shared",
+      "pairs": [
+        {
+          "block": 1,
+          "timely_fraction_delta": 0.005299573089945553,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9996985264851285,
+          "p99_ratio": 1.0032095124159321,
+          "within_screen": true
+        },
+        {
+          "block": 2,
+          "timely_fraction_delta": -0.0070660974532607,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9999404310683941,
+          "p99_ratio": 1.0011204127851578,
+          "within_screen": true
+        },
+        {
+          "block": 3,
+          "timely_fraction_delta": -0.007654938907699083,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 1.0000015740981265,
+          "p99_ratio": 1.0149307411373862,
+          "within_screen": true
+        },
+        {
+          "block": 4,
+          "timely_fraction_delta": 0.012954511997644635,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9995519167639807,
+          "p99_ratio": 0.9958442236787786,
+          "within_screen": false
+        }
+      ],
+      "block_summary": {
+        "timely_fraction_delta": {
+          "median": -0.0008832621816575736,
+          "minimum": -0.007654938907699083,
+          "maximum": 0.012954511997644635,
+          "sample_sd": 0.010021843985451483
+        },
+        "timely_1000_fraction_delta": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "sample_sd": 0.0
+        },
+        "failure_fraction_delta": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "sample_sd": 0.0
+        },
+        "cpu_ratio": {
+          "median": 0.9998194787767614,
+          "minimum": 0.9995519167639807,
+          "maximum": 1.0000015740981265,
+          "sample_sd": 0.00020990546412881812
+        },
+        "p99_ratio": {
+          "median": 1.002164962600545,
+          "minimum": 0.9958442236787786,
+          "maximum": 1.0149307411373862,
+          "sample_sd": 0.008056351053516504
+        }
+      },
+      "within_screen": false
+    },
+    "mount_in_legacy": {
+      "base": "legacy_packaged",
+      "arm": "legacy_shared",
+      "pairs": [
+        {
+          "block": 1,
+          "timely_fraction_delta": 0.01148240836154868,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9941595933472509,
+          "p99_ratio": 0.9702844206453405,
+          "within_screen": false
+        },
+        {
+          "block": 2,
+          "timely_fraction_delta": 0.022375975268658865,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9958433275629012,
+          "p99_ratio": 0.974822566876656,
+          "within_screen": false
+        },
+        {
+          "block": 3,
+          "timely_fraction_delta": 0.02370086854114528,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9951969953324405,
+          "p99_ratio": 0.962894385940047,
+          "within_screen": false
+        },
+        {
+          "block": 4,
+          "timely_fraction_delta": 0.002796996908582372,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9963312637753945,
+          "p99_ratio": 0.9873198642584126,
+          "within_screen": true
+        }
+      ],
+      "block_summary": {
+        "timely_fraction_delta": {
+          "median": 0.016929191815103772,
+          "minimum": 0.002796996908582372,
+          "maximum": 0.02370086854114528,
+          "sample_sd": 0.009855034780362624
+        },
+        "timely_1000_fraction_delta": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "sample_sd": 0.0
+        },
+        "failure_fraction_delta": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "sample_sd": 0.0
+        },
+        "cpu_ratio": {
+          "median": 0.9955201614476709,
+          "minimum": 0.9941595933472509,
+          "maximum": 0.9963312637753945,
+          "sample_sd": 0.0009385142618600203
+        },
+        "p99_ratio": {
+          "median": 0.9725534937609983,
+          "minimum": 0.962894385940047,
+          "maximum": 0.9873198642584126,
+          "sample_sd": 0.010248909115290824
+        }
+      },
+      "within_screen": false
+    },
+    "mount_in_rebuilt": {
+      "base": "rebuilt_packaged",
+      "arm": "rebuilt_shared",
+      "pairs": [
+        {
+          "block": 1,
+          "timely_fraction_delta": -0.0020609450905343385,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 1.0001139121916693,
+          "p99_ratio": 1.0055070634088255,
+          "within_screen": true
+        },
+        {
+          "block": 2,
+          "timely_fraction_delta": -0.005152362726335902,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9994077339626312,
+          "p99_ratio": 0.9981431178045348,
+          "within_screen": true
+        },
+        {
+          "block": 3,
+          "timely_fraction_delta": -0.006624466362431858,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9998777198307885,
+          "p99_ratio": 1.0093868104624906,
+          "within_screen": true
+        },
+        {
+          "block": 4,
+          "timely_fraction_delta": 0.0011776829088767649,
+          "timely_1000_fraction_delta": 0.0,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 1.0012798186077754,
+          "p99_ratio": 1.0039028883183139,
+          "within_screen": true
+        }
+      ],
+      "block_summary": {
+        "timely_fraction_delta": {
+          "median": -0.00360665390843512,
+          "minimum": -0.006624466362431858,
+          "maximum": 0.0011776829088767649,
+          "sample_sd": 0.0034638778946391763
+        },
+        "timely_1000_fraction_delta": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "sample_sd": 0.0
+        },
+        "failure_fraction_delta": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "sample_sd": 0.0
+        },
+        "cpu_ratio": {
+          "median": 0.999995816011229,
+          "minimum": 0.9994077339626312,
+          "maximum": 1.0012798186077754,
+          "sample_sd": 0.0007960988689071798
+        },
+        "p99_ratio": {
+          "median": 1.0047049758635698,
+          "minimum": 0.9981431178045348,
+          "maximum": 1.0093868104624906,
+          "sample_sd": 0.004668355285195487
+        }
+      },
+      "within_screen": true
+    }
+  },
+  "loading_interaction": {
+    "pairs": [
+      {
+        "block": 1,
+        "timely_fraction_delta": -0.013543353452083018,
+        "timely_1000_fraction_delta": 0.0,
+        "failure_fraction_delta": 0.0,
+        "cpu_ratio": 1.005989298784887,
+        "p99_ratio": 1.0363013586676557
+      },
+      {
+        "block": 2,
+        "timely_fraction_delta": -0.027528337994994767,
+        "timely_1000_fraction_delta": 0.0,
+        "failure_fraction_delta": 0.0,
+        "cpu_ratio": 1.003579284312175,
+        "p99_ratio": 1.0239228673199454
+      },
+      {
+        "block": 3,
+        "timely_fraction_delta": -0.03032533490357714,
+        "timely_1000_fraction_delta": 0.0,
+        "failure_fraction_delta": 0.0,
+        "cpu_ratio": 1.0047033145400368,
+        "p99_ratio": 1.048284033224531
+      },
+      {
+        "block": 4,
+        "timely_fraction_delta": -0.0016193139997056072,
+        "timely_1000_fraction_delta": 0.0,
+        "failure_fraction_delta": 0.0,
+        "cpu_ratio": 1.0049667766257073,
+        "p99_ratio": 1.0167959996149343
+      }
+    ],
+    "block_summary": {
+      "timely_fraction_delta": {
+        "median": -0.020535845723538892,
+        "minimum": -0.03032533490357714,
+        "maximum": -0.0016193139997056072,
+        "sample_sd": 0.013299541856752762
+      },
+      "timely_1000_fraction_delta": {
+        "median": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0,
+        "sample_sd": 0.0
+      },
+      "failure_fraction_delta": {
+        "median": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0,
+        "sample_sd": 0.0
+      },
+      "cpu_ratio": {
+        "median": 1.004835045582872,
+        "minimum": 1.003579284312175,
+        "maximum": 1.005989298784887,
+        "sample_sd": 0.0009901796110867744
+      },
+      "p99_ratio": {
+        "median": 1.0301121129938005,
+        "minimum": 1.0167959996149343,
+        "maximum": 1.048284033224531,
+        "sample_sd": 0.013883519839097781
+      }
+    },
+    "definition": "shared image contrast minus packaged image contrast; ratios are ratios of ratios"
+  },
+  "packaged_v16_direction_reproduced": true,
+  "shared_image_within_screen": false,
+  "decision": "shared_file_did_not_establish_neutrality",
+  "eligible_for_controls": false,
+  "eligible_for_persistent_recording": false,
+  "limitation": "Four discovery blocks cannot establish equivalence or a filesystem/cache/scheduler cause. Shared loading changes the backing file and mount setup together. Startup qualification is common to all arms. A missing packaged gap prevents claiming the common file removed it. No automatic next study.",
+  "shared_executable_sha256": "b7d249454d5477ffa0ade7cf1d90ba0eee8157ee166bb6e3f71d4cf912400efd",
+  "startup_loading_verified": true
+}

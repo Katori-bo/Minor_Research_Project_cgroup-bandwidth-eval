@@ -1,0 +1,426 @@
+{
+  "summary": {
+    "trial": "b1_20_off",
+    "block": 1,
+    "arm": "C",
+    "order": 3,
+    "workers": 1,
+    "worker_yield": false,
+    "quota_us": 10000,
+    "period_us": 20000,
+    "offered": 6793,
+    "completed_computations": 6793,
+    "timely_500_fraction": 0.8663329898424849,
+    "timely_1000_fraction": 1.0,
+    "failure_fraction": 0.0,
+    "cpu_usec_per_completed_work": 3577.4183718533786,
+    "p99_e2e_ms": 620.759283,
+    "cohort_successes": 6793,
+    "successes_during_arrivals": 6702,
+    "successful_rps_arrival_window": 111.7,
+    "successful_rps_including_drain": 112.12216578213038,
+    "counter_window": {
+      "before_ns": 151536683949981,
+      "after_ns": 151598086988919,
+      "delta": {
+        "usage_usec": 24301403,
+        "user_usec": 23743790,
+        "system_usec": 557612,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 3038,
+        "nr_throttled": 1766,
+        "throttled_usec": 17185325,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    "missing_worker_count": 0,
+    "missing_handler_count": 0,
+    "gap_observed_count": 6793,
+    "gap_gt50ms_fraction": 0.0,
+    "crossover_fraction": 0.01884292654202856,
+    "crossover_count": 128,
+    "crossovers_with50ms_margin": 0,
+    "crossovers_with_other_work": 128,
+    "deadline_classes": {
+      "timely": 5885,
+      "computed_before_handler_resumed_after": 128,
+      "computation_after_deadline": 779,
+      "computation_boundary_ambiguous": 1
+    },
+    "outcome_counts": {
+      "success": 6793
+    },
+    "clock_uncertainty_ns": 137838,
+    "logical_backlogs": {
+      "admitted_not_started": {
+        "peak": 94,
+        "request_seconds": 1467.725049677
+      },
+      "computed_not_resumed": {
+        "peak": 6,
+        "request_seconds": 70.628296098
+      },
+      "computed_missing_handler_count": 0
+    },
+    "client_dropped": 0,
+    "missed_arrivals": 0,
+    "client_cpu_usec": 1365105,
+    "valid_evidence": true,
+    "e2e_ns": {
+      "n": 6793,
+      "mean": 244242669.97968498,
+      "p50": 231234570,
+      "p90": 524430299,
+      "p99": 620759283,
+      "maximum": 661822535
+    },
+    "queue_ns": {
+      "n": 6793,
+      "mean": 216064338.24186662,
+      "p50": 199740410,
+      "p90": 487353633,
+      "p99": 585614712,
+      "maximum": 610104811
+    },
+    "processing_wall_ns": {
+      "n": 6793,
+      "mean": 6109014.423229795,
+      "p50": 3510999,
+      "p90": 13609392,
+      "p99": 14419719,
+      "maximum": 17319423
+    },
+    "completion_to_resume_ns": {
+      "n": 6793,
+      "mean": 10397217.14971294,
+      "p50": 12691185,
+      "p90": 18744810,
+      "p99": 31359892,
+      "maximum": 39503308
+    },
+    "scheduled_to_entry_upper_ns": {
+      "n": 6793,
+      "mean": 11602907.257470926,
+      "p50": 10511955,
+      "p90": 22150721,
+      "p99": 34483846,
+      "maximum": 479515055
+    },
+    "resume_to_client_upper_ns": {
+      "n": 6793,
+      "mean": 204034.06330045636,
+      "p50": 185788,
+      "p90": 237846,
+      "p99": 408305,
+      "maximum": 9687466
+    },
+    "gap_mean_all_offers_ns": 10397217.14971294,
+    "gap_p99_all_offers_ns": 31359892,
+    "gap_coverage_fraction": 1.0,
+    "gap_unobserved_count": 0,
+    "gap_fraction_interpretation": "observed >50 ms count / all offers; lower bound when gap coverage is incomplete",
+    "publication_bound_status_counts": {
+      "handler_resumed_before_or_at_bound": 1752,
+      "informative": 5040,
+      "no_next_job": 1
+    },
+    "post_publication_wait_lower_bound_observed": {
+      "n": 5040,
+      "mean": 14006938.087698413,
+      "p50": 14608201,
+      "p90": 19192338,
+      "p99": 33171041,
+      "maximum": 39501214
+    },
+    "available_result_crossing_count": 128,
+    "available_result_crossing_fraction": 0.01884292654202856,
+    "crossover_publication_bound_unknown_count": 0,
+    "period_ms": 20,
+    "counters": false,
+    "legacy_cpu_usec_per_completed_work": 3577.4183718533786,
+    "cpu_usec_per_completed_work_lower": 3577.4183718533786,
+    "cpu_usec_per_completed_work_upper": 3577.4183718533786,
+    "user_usec_per_completed_work": 3495.33195936994,
+    "cpu_alignment_width": 0.0,
+    "rejected_fraction": 0.0,
+    "busy_capacity": 152.12466105033448,
+    "busy_cpu_cores": 0.499989223420524,
+    "busy_capacity_lower": 152.02883096232796,
+    "busy_cpu_cores_lower": 0.4999470803950458,
+    "busy_capacity_upper": 152.22050729569233,
+    "busy_cpu_cores_upper": 0.5000313735514915
+  },
+  "busy": {
+    "intervals": [
+      {
+        "wall_sec": 1.0033843915,
+        "wall_lower_sec": 1.0033061,
+        "wall_upper_sec": 1.003462683,
+        "cpu_usec": 502863,
+        "completed_lower": 155,
+        "completed_upper": 156,
+        "host_before_ns": 151542766485812,
+        "host_after_ns": 151543769948495
+      },
+      {
+        "wall_sec": 1.003359405,
+        "wall_lower_sec": 1.003267268,
+        "wall_upper_sec": 1.003451542,
+        "cpu_usec": 502449,
+        "completed_lower": 153,
+        "completed_upper": 154,
+        "host_before_ns": 151543769867213,
+        "host_after_ns": 151544773318755
+      },
+      {
+        "wall_sec": 1.003678598,
+        "wall_lower_sec": 1.003578571,
+        "wall_upper_sec": 1.003778625,
+        "cpu_usec": 499849,
+        "completed_lower": 155,
+        "completed_upper": 155,
+        "host_before_ns": 151544773215763,
+        "host_after_ns": 151545776994388
+      },
+      {
+        "wall_sec": 1.0033890765,
+        "wall_lower_sec": 1.003309768,
+        "wall_upper_sec": 1.003468385,
+        "cpu_usec": 500737,
+        "completed_lower": 153,
+        "completed_upper": 153,
+        "host_before_ns": 151545776897326,
+        "host_after_ns": 151546780365711
+      },
+      {
+        "wall_sec": 1.0038898475,
+        "wall_lower_sec": 1.003820808,
+        "wall_upper_sec": 1.003958887,
+        "cpu_usec": 502689,
+        "completed_lower": 154,
+        "completed_upper": 154,
+        "host_before_ns": 151552803838653,
+        "host_after_ns": 151553807797540
+      },
+      {
+        "wall_sec": 1.003594064,
+        "wall_lower_sec": 1.003508694,
+        "wall_upper_sec": 1.003679434,
+        "cpu_usec": 504282,
+        "completed_lower": 155,
+        "completed_upper": 155,
+        "host_before_ns": 151553807720245,
+        "host_after_ns": 151554811399679
+      },
+      {
+        "wall_sec": 1.0037160035,
+        "wall_lower_sec": 1.003633469,
+        "wall_upper_sec": 1.003798538,
+        "cpu_usec": 500880,
+        "completed_lower": 155,
+        "completed_upper": 155,
+        "host_before_ns": 151554811306234,
+        "host_after_ns": 151555815104772
+      },
+      {
+        "wall_sec": 1.0034153105,
+        "wall_lower_sec": 1.00335082,
+        "wall_upper_sec": 1.003479801,
+        "cpu_usec": 500064,
+        "completed_lower": 152,
+        "completed_upper": 152,
+        "host_before_ns": 151555815033148,
+        "host_after_ns": 151556818512949
+      },
+      {
+        "wall_sec": 1.0034726315,
+        "wall_lower_sec": 1.003388484,
+        "wall_upper_sec": 1.003556779,
+        "cpu_usec": 504008,
+        "completed_lower": 152,
+        "completed_upper": 152,
+        "host_before_ns": 151562842105146,
+        "host_after_ns": 151563845661925
+      },
+      {
+        "wall_sec": 1.0036395245,
+        "wall_lower_sec": 1.003560527,
+        "wall_upper_sec": 1.003718522,
+        "cpu_usec": 503783,
+        "completed_lower": 153,
+        "completed_upper": 153,
+        "host_before_ns": 151563845575243,
+        "host_after_ns": 151564849293765
+      },
+      {
+        "wall_sec": 1.0038918475,
+        "wall_lower_sec": 1.00381841,
+        "wall_upper_sec": 1.003965285,
+        "cpu_usec": 501792,
+        "completed_lower": 152,
+        "completed_upper": 152,
+        "host_before_ns": 151564849222452,
+        "host_after_ns": 151565853187737
+      },
+      {
+        "wall_sec": 1.003604605,
+        "wall_lower_sec": 1.003533316,
+        "wall_upper_sec": 1.003675894,
+        "cpu_usec": 500112,
+        "completed_lower": 153,
+        "completed_upper": 153,
+        "host_before_ns": 151565853112175,
+        "host_after_ns": 151566856788069
+      },
+      {
+        "wall_sec": 1.0038467165,
+        "wall_lower_sec": 1.003775934,
+        "wall_upper_sec": 1.003917499,
+        "cpu_usec": 503969,
+        "completed_lower": 152,
+        "completed_upper": 153,
+        "host_before_ns": 151572883195794,
+        "host_after_ns": 151573887113293
+      },
+      {
+        "wall_sec": 1.00383481,
+        "wall_lower_sec": 1.00375735,
+        "wall_upper_sec": 1.00391227,
+        "cpu_usec": 502500,
+        "completed_lower": 151,
+        "completed_upper": 152,
+        "host_before_ns": 151573887035978,
+        "host_after_ns": 151574890948248
+      },
+      {
+        "wall_sec": 1.0038695455,
+        "wall_lower_sec": 1.003767339,
+        "wall_upper_sec": 1.003971752,
+        "cpu_usec": 501613,
+        "completed_lower": 150,
+        "completed_upper": 150,
+        "host_before_ns": 151574890870643,
+        "host_after_ns": 151575894842395
+      },
+      {
+        "wall_sec": 1.004354383,
+        "wall_lower_sec": 1.004256645,
+        "wall_upper_sec": 1.004452121,
+        "cpu_usec": 500844,
+        "completed_lower": 152,
+        "completed_upper": 152,
+        "host_before_ns": 151575894715587,
+        "host_after_ns": 151576899167708
+      },
+      {
+        "wall_sec": 1.0039434075,
+        "wall_lower_sec": 1.003854696,
+        "wall_upper_sec": 1.004032119,
+        "cpu_usec": 504720,
+        "completed_lower": 153,
+        "completed_upper": 153,
+        "host_before_ns": 151582925042897,
+        "host_after_ns": 151583929075016
+      },
+      {
+        "wall_sec": 1.004008329,
+        "wall_lower_sec": 1.003917083,
+        "wall_upper_sec": 1.004099575,
+        "cpu_usec": 501570,
+        "completed_lower": 151,
+        "completed_upper": 151,
+        "host_before_ns": 151583928985498,
+        "host_after_ns": 151584933085073
+      },
+      {
+        "wall_sec": 1.004165414,
+        "wall_lower_sec": 1.004089056,
+        "wall_upper_sec": 1.004241772,
+        "cpu_usec": 499547,
+        "completed_lower": 151,
+        "completed_upper": 151,
+        "host_before_ns": 151584932992099,
+        "host_after_ns": 151585937233871
+      },
+      {
+        "wall_sec": 1.0039285215,
+        "wall_lower_sec": 1.003869987,
+        "wall_upper_sec": 1.003987056,
+        "cpu_usec": 500440,
+        "completed_lower": 151,
+        "completed_upper": 151,
+        "host_before_ns": 151585937174129,
+        "host_after_ns": 151586941161185
+      },
+      {
+        "wall_sec": 1.0044577995,
+        "wall_lower_sec": 1.004384302,
+        "wall_upper_sec": 1.004531297,
+        "cpu_usec": 503624,
+        "completed_lower": 153,
+        "completed_upper": 153,
+        "host_before_ns": 151592968229967,
+        "host_after_ns": 151593972761264
+      },
+      {
+        "wall_sec": 1.0039282545,
+        "wall_lower_sec": 1.003867265,
+        "wall_upper_sec": 1.003989244,
+        "cpu_usec": 500621,
+        "completed_lower": 153,
+        "completed_upper": 153,
+        "host_before_ns": 151593972698336,
+        "host_after_ns": 151594976687580
+      },
+      {
+        "wall_sec": 1.0044868805,
+        "wall_lower_sec": 1.00435023,
+        "wall_upper_sec": 1.004623531,
+        "cpu_usec": 499802,
+        "completed_lower": 151,
+        "completed_upper": 151,
+        "host_before_ns": 151594976628529,
+        "host_after_ns": 151595981252060
+      },
+      {
+        "wall_sec": 1.004223894,
+        "wall_lower_sec": 1.004086297,
+        "wall_upper_sec": 1.004361491,
+        "cpu_usec": 503024,
+        "completed_lower": 153,
+        "completed_upper": 153,
+        "host_before_ns": 151595981037810,
+        "host_after_ns": 151596985399301
+      }
+    ],
+    "seconds": 24.0920832605,
+    "capacity_lower": 152.02883096232796,
+    "capacity_upper": 152.22050729569233,
+    "capacity": 152.12466105033448,
+    "cpu_cores": 0.499989223420524,
+    "cpu_cores_lower": 0.4999470803950458,
+    "cpu_cores_upper": 0.5000313735514915
+  },
+  "counters": null,
+  "cpu_bounds": {
+    "usage_usec": {
+      "lower": 24301403,
+      "upper": 24301403,
+      "midpoint": 24301403.0
+    },
+    "user_usec": {
+      "lower": 23743790,
+      "upper": 23743790,
+      "midpoint": 23743790.0
+    },
+    "system_usec": {
+      "lower": 557612,
+      "upper": 557612,
+      "midpoint": 557612.0
+    },
+    "relative_alignment_width": 0.0,
+    "wall_sec": 61.352919039
+  }
+}

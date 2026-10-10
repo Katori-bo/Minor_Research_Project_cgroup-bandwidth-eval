@@ -1,0 +1,36 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  66.05kB
+Step 1/11 : ARG COMPILER_IMAGE
+Step 2/11 : FROM ${COMPILER_IMAGE} AS build
+ ---> 2389ebfa5b7f
+Step 3/11 : WORKDIR /src
+ ---> Using cache
+ ---> c31f012bdebd
+Step 4/11 : COPY go.mod *.go ./
+ ---> Using cache
+ ---> 60192ad9150c
+Step 5/11 : RUN go version && go test -count=1 -v ./...
+ ---> Using cache
+ ---> bc61ae8cb663
+Step 6/11 : ARG MODE=passive
+ ---> Using cache
+ ---> e9dd09d73332
+Step 7/11 : RUN CGO_ENABLED=0 go build -trimpath -ldflags="-X main.defaultAblationMode=${MODE}" -o /server .
+ ---> Using cache
+ ---> 42a14cd06141
+Step 8/11 : FROM scratch
+ ---> 
+Step 9/11 : LABEL research.runtime.variant="stock" research.study="observer-ablation-v1"
+ ---> Using cache
+ ---> 15bf0d1a245f
+Step 10/11 : COPY --from=build /server /server
+ ---> Using cache
+ ---> c19dfc36b40e
+Step 11/11 : ENTRYPOINT ["/server"]
+ ---> Using cache
+ ---> 4187e7c14a3b
+Successfully built 4187e7c14a3b
+Successfully tagged quota-observer-ablation-passive:14

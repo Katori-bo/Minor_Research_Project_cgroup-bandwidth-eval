@@ -1,0 +1,29 @@
+{
+  "id": "9b3f1fa8e0aad2ddb35aa756bc967528b5839425f09f8ed2b52354c3044aaa8a",
+  "name": "quota-diagnostic-25072094e1001aca",
+  "command": [
+    "docker",
+    "create",
+    "--name",
+    "quota-diagnostic-25072094e1001aca",
+    "--label",
+    "quota.diagnostic.session=/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v12-bursty-parallelism-1/session",
+    "--cpuset-cpus=2,4",
+    "--cpu-period=100000",
+    "--cpu-quota=50000",
+    "-e",
+    "WORKERS=4",
+    "-e",
+    "QUEUE_SIZE=128",
+    "-e",
+    "GOMAXPROCS=1",
+    "-e",
+    "INSTRUMENT=1",
+    "-e",
+    "WORKER_YIELD=0",
+    "-p",
+    "127.0.0.1:18080:8080",
+    "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5"
+  ],
+  "image_id": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5"
+}

@@ -1,0 +1,64 @@
+{
+  "loading_mode": "shared",
+  "image_id": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+  "expected_image_id": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v17-shared-loading-1/session/loading_build/runtime_assets",
+      "Destination": "/qualification",
+      "Mode": "",
+      "RW": false,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v17-shared-loading-1/session/loading_build/runtime_assets/shared.server",
+      "Destination": "/server",
+      "Mode": "",
+      "RW": false,
+      "Propagation": "rprivate"
+    }
+  ],
+  "probe": {
+    "target_executable": {
+      "sha256": "b7d249454d5477ffa0ade7cf1d90ba0eee8157ee166bb6e3f71d4cf912400efd",
+      "device": 66307,
+      "inode": 27928901,
+      "size": 8797132,
+      "mode": 33261,
+      "uid": 1000,
+      "gid": 1000
+    },
+    "probe_executable": {
+      "sha256": "46e66c6dd670debe25962bb13d66c2d7bc1f157f20a776faa32620711e824a6f",
+      "device": 66307,
+      "inode": 27928900,
+      "size": 3206673,
+      "mode": 33261,
+      "uid": 1000,
+      "gid": 1000
+    },
+    "target_link": "/server"
+  },
+  "host_shared_identity": {
+    "sha256": "b7d249454d5477ffa0ade7cf1d90ba0eee8157ee166bb6e3f71d4cf912400efd",
+    "device": 66307,
+    "inode": 27928901,
+    "size": 8797132,
+    "mode": 33261,
+    "uid": 1000,
+    "gid": 1000
+  },
+  "host_probe_identity": {
+    "sha256": "46e66c6dd670debe25962bb13d66c2d7bc1f157f20a776faa32620711e824a6f",
+    "device": 66307,
+    "inode": 27928900,
+    "size": 3206673,
+    "mode": 33261,
+    "uid": 1000,
+    "gid": 1000
+  },
+  "collection": "startup_before_warmup",
+  "limitation": "Startup executable provenance only; no runnable-readiness or request-level kernel observation."
+}

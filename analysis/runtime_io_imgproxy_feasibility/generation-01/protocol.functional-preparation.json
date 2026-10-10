@@ -1,0 +1,48 @@
+{
+  "status": "engineering qualification only",
+  "functional_created_cap": 6,
+  "pilot_created_cap": 12,
+  "pilot_total_sec": 1200,
+  "cleanup_reserve_sec": 30,
+  "active_trial_sec": 120,
+  "retries": 0,
+  "settling_sec": 10,
+  "pairs": 6,
+  "pair_orders": [
+    "stock,observed",
+    "observed,stock",
+    "stock,observed",
+    "observed,stock",
+    "stock,observed",
+    "observed,stock"
+  ],
+  "rate": 5,
+  "interval_ns": 200000000,
+  "warmup_offers": 25,
+  "measurement_offers": 200,
+  "measurement_sec": 40,
+  "limits": {
+    "cpu.max": "25000 100000",
+    "cpu.max.burst": "0",
+    "cpuset.cpus.effective": "2,4",
+    "memory.max": "536870912",
+    "pids.max": "128"
+  },
+  "gomaxprocs": 1,
+  "application_workers": 1,
+  "queue_capacity": 128,
+  "recorded_events_capacity": 1024,
+  "observer_gates": {
+    "cpu_per_offer_upper_relative": 0.05,
+    "median_latency_upper_relative": 0.05,
+    "t_multiplier": 2.571,
+    "df": 5,
+    "dispatch_p99_ns": 2000000,
+    "dispatch_max_ns": 10000000,
+    "required_success_fraction": 1,
+    "required_queue_le_100us_fraction": 0.99,
+    "recorded_measurement_throttled_periods": 0
+  },
+  "execution_model_gate": "pending separate concurrency review; this pilot cannot prove serial native CPU execution",
+  "scientific_collection": false
+}

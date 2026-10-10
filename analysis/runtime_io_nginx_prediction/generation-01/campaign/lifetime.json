@@ -1,0 +1,56 @@
+{
+  "protocol": {
+    "version": "nginx-full-response-prediction-v1",
+    "calibration_cohorts": 4,
+    "calibration_interval_ns": 200000000,
+    "calibration_offers": 400,
+    "validation_intervals_ns": {
+      "A": 250000000,
+      "B": 166666667,
+      "C": 125000000
+    },
+    "validation_offers": 300,
+    "block_orders": [
+      "ABC",
+      "BCA",
+      "CAB",
+      "ACB",
+      "CBA",
+      "BAC"
+    ],
+    "preparation_offers": 20,
+    "pilot_offers": 100,
+    "warmup_offers": 25,
+    "settling_sec": 10,
+    "service_active_sec": 120,
+    "campaign_total_sec": 2700,
+    "cleanup_reserve_sec": 120,
+    "retries": 0,
+    "primary_deadline": "lower pooled calibration median in integer nanoseconds",
+    "miss_rule": "unsuccessful OR BodyDoneNs - ScheduledNs > deadline_ns",
+    "predictor": "fresh full-response empirical CDF, constant across held-out rates",
+    "primary_accuracy_upper_bound_pp": 5,
+    "block_t_multiplier": 2.571,
+    "block_t_df": 5,
+    "secondary_deadlines_ns": [
+      10000000,
+      25000000,
+      50000000
+    ],
+    "queue_observed": false,
+    "queue_subtraction": false,
+    "comparator": null,
+    "input_sha256": "befb815ea245bd525f5e686b3507deab15819b7a43b5751a17d6e19396ae5625",
+    "source_sha256": "6c20565aa2325cb82216ae804f4a4ff1875179014759a381c42ddc8e11c4906d",
+    "limits": {
+      "cpu.max": "25000 100000",
+      "cpu.max.burst": "0",
+      "cpuset.cpus.effective": "2",
+      "memory.max": "536870912",
+      "pids.max": "128"
+    },
+    "historical_pilot_is_calibration": false,
+    "independent_host_replication": false
+  },
+  "started_monotonic": 105371.275340532
+}

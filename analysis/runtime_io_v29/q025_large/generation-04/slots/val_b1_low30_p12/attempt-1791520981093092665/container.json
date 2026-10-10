@@ -1,0 +1,269 @@
+{
+  "argv": [
+    "docker",
+    "create",
+    "--label",
+    "research.v29.owner=919e1a976ad242baa0e07fe31b3c00a9",
+    "--name",
+    "quota-v29-45c6ba6aec1b4bb2a8dc98fa0387b4ad",
+    "--cpuset-cpus",
+    "2,4",
+    "--cpu-period",
+    "100000",
+    "--cpu-quota",
+    "25000",
+    "--mount",
+    "type=bind,src=/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v29/q025_large/generation-04/slots/val_b1_low30_p12/attempt-1791520981093092665/qualification,dst=/qualification,readonly",
+    "--entrypoint",
+    "/qualification/gate",
+    "-e",
+    "GOMAXPROCS=1",
+    "-e",
+    "WORKERS=1",
+    "-e",
+    "QUEUE_SIZE=128",
+    "-e",
+    "INSTRUMENT=1",
+    "-e",
+    "WORKER_YIELD=0",
+    "-p",
+    "127.0.0.1::8080",
+    "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+    "--server"
+  ],
+  "inspect": {
+    "Id": "3f284e78387de254a8f86a7f210f5517110aea8e23cc3b76dd7c804e0907bad6",
+    "Created": "2026-10-09T04:44:37.21502243Z",
+    "Path": "/qualification/gate",
+    "Args": [
+      "--server"
+    ],
+    "State": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 240065,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-09T04:44:37.26158566Z",
+      "FinishedAt": "0001-01-01T00:00:00Z"
+    },
+    "Image": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+    "ResolvConfPath": "/var/lib/docker/containers/3f284e78387de254a8f86a7f210f5517110aea8e23cc3b76dd7c804e0907bad6/resolv.conf",
+    "HostnamePath": "/var/lib/docker/containers/3f284e78387de254a8f86a7f210f5517110aea8e23cc3b76dd7c804e0907bad6/hostname",
+    "HostsPath": "/var/lib/docker/containers/3f284e78387de254a8f86a7f210f5517110aea8e23cc3b76dd7c804e0907bad6/hosts",
+    "LogPath": "/var/lib/docker/containers/3f284e78387de254a8f86a7f210f5517110aea8e23cc3b76dd7c804e0907bad6/3f284e78387de254a8f86a7f210f5517110aea8e23cc3b76dd7c804e0907bad6-json.log",
+    "Name": "/quota-v29-45c6ba6aec1b4bb2a8dc98fa0387b4ad",
+    "RestartCount": 0,
+    "Driver": "overlayfs",
+    "Platform": "linux",
+    "MountLabel": "",
+    "ProcessLabel": "",
+    "AppArmorProfile": "",
+    "ExecIDs": null,
+    "HostConfig": {
+      "Binds": null,
+      "ContainerIDFile": "",
+      "LogConfig": {
+        "Type": "json-file",
+        "Config": {}
+      },
+      "NetworkMode": "bridge",
+      "PortBindings": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": ""
+          }
+        ]
+      },
+      "RestartPolicy": {
+        "Name": "no",
+        "MaximumRetryCount": 0
+      },
+      "AutoRemove": false,
+      "VolumeDriver": "",
+      "VolumesFrom": null,
+      "ConsoleSize": [
+        0,
+        0
+      ],
+      "CapAdd": null,
+      "CapDrop": null,
+      "CgroupnsMode": "private",
+      "Dns": null,
+      "DnsOptions": [],
+      "DnsSearch": [],
+      "ExtraHosts": null,
+      "GroupAdd": null,
+      "IpcMode": "private",
+      "Cgroup": "",
+      "Links": null,
+      "OomScoreAdj": 0,
+      "PidMode": "",
+      "Privileged": false,
+      "PublishAllPorts": false,
+      "ReadonlyRootfs": false,
+      "SecurityOpt": null,
+      "UTSMode": "",
+      "UsernsMode": "",
+      "ShmSize": 67108864,
+      "Runtime": "runc",
+      "Isolation": "",
+      "CpuShares": 0,
+      "Memory": 0,
+      "NanoCpus": 0,
+      "CgroupParent": "",
+      "BlkioWeight": 0,
+      "BlkioWeightDevice": [],
+      "BlkioDeviceReadBps": [],
+      "BlkioDeviceWriteBps": [],
+      "BlkioDeviceReadIOps": [],
+      "BlkioDeviceWriteIOps": [],
+      "CpuPeriod": 100000,
+      "CpuQuota": 25000,
+      "CpuRealtimePeriod": 0,
+      "CpuRealtimeRuntime": 0,
+      "CpusetCpus": "2,4",
+      "CpusetMems": "",
+      "Devices": [],
+      "DeviceCgroupRules": null,
+      "DeviceRequests": null,
+      "MemoryReservation": 0,
+      "MemorySwap": 0,
+      "MemorySwappiness": null,
+      "OomKillDisable": null,
+      "PidsLimit": null,
+      "Ulimits": null,
+      "CpuCount": 0,
+      "CpuPercent": 0,
+      "IOMaximumIOps": 0,
+      "IOMaximumBandwidth": 0,
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v29/q025_large/generation-04/slots/val_b1_low30_p12/attempt-1791520981093092665/qualification",
+          "Target": "/qualification",
+          "ReadOnly": true
+        }
+      ],
+      "MaskedPaths": [
+        "/proc/acpi",
+        "/proc/asound",
+        "/proc/interrupts",
+        "/proc/kcore",
+        "/proc/keys",
+        "/proc/latency_stats",
+        "/proc/sched_debug",
+        "/proc/scsi",
+        "/proc/timer_list",
+        "/proc/timer_stats",
+        "/sys/devices/virtual/powercap",
+        "/sys/firmware"
+      ],
+      "ReadonlyPaths": [
+        "/proc/bus",
+        "/proc/fs",
+        "/proc/irq",
+        "/proc/sys",
+        "/proc/sysrq-trigger"
+      ]
+    },
+    "Storage": {
+      "RootFS": {
+        "Snapshot": {
+          "Name": "overlayfs"
+        }
+      }
+    },
+    "Mounts": [
+      {
+        "Type": "bind",
+        "Source": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v29/q025_large/generation-04/slots/val_b1_low30_p12/attempt-1791520981093092665/qualification",
+        "Destination": "/qualification",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      }
+    ],
+    "Config": {
+      "Hostname": "3f284e78387d",
+      "Domainname": "",
+      "User": "",
+      "AttachStdin": false,
+      "AttachStdout": true,
+      "AttachStderr": true,
+      "ExposedPorts": {
+        "8080/tcp": {}
+      },
+      "Tty": false,
+      "OpenStdin": false,
+      "StdinOnce": false,
+      "Env": [
+        "QUEUE_SIZE=128",
+        "INSTRUMENT=1",
+        "WORKER_YIELD=0",
+        "GOMAXPROCS=1",
+        "WORKERS=1",
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      ],
+      "Cmd": [
+        "--server"
+      ],
+      "Image": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+      "Volumes": null,
+      "WorkingDir": "",
+      "Entrypoint": [
+        "/qualification/gate"
+      ],
+      "Labels": {
+        "research.runtime.variant": "stock",
+        "research.study": "bursty-parallelism-v1",
+        "research.v29.owner": "919e1a976ad242baa0e07fe31b3c00a9"
+      }
+    },
+    "NetworkSettings": {
+      "SandboxID": "a59f93f31646fed11341667607b9d160b1b2906e1936284ca7a726f869368e9a",
+      "SandboxKey": "/var/run/docker/netns/a59f93f31646",
+      "Ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "32975"
+          }
+        ]
+      },
+      "Networks": {
+        "bridge": {
+          "IPAMConfig": null,
+          "Links": null,
+          "Aliases": null,
+          "DriverOpts": null,
+          "GwPriority": 0,
+          "NetworkID": "4833a806bd1ccb659b775af4965ac4c5ccdf2234d9a752851a7f9983d969335e",
+          "EndpointID": "dd7ba35c8c5431b59d3b86e3b946cd2556eaf679c05bac3b76eb65f6e8324aed",
+          "Gateway": "172.17.0.1",
+          "IPAddress": "172.17.0.2",
+          "MacAddress": "2a:4d:58:79:9d:09",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "DNSNames": null
+        }
+      }
+    },
+    "ImageManifestDescriptor": {
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "digest": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+      "size": 536,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      }
+    }
+  }
+}

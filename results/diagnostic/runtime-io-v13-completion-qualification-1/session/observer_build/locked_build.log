@@ -1,0 +1,91 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  65.02kB
+Step 1/10 : ARG COMPILER_IMAGE
+Step 2/10 : FROM ${COMPILER_IMAGE} AS build
+ ---> 2389ebfa5b7f
+Step 3/10 : ARG RECORDER=locked
+ ---> Running in 989fdaab7740
+ ---> Removed intermediate container 989fdaab7740
+ ---> 316ec1c68ec1
+Step 4/10 : WORKDIR /src
+ ---> Running in 2e34f03c6366
+ ---> Removed intermediate container 2e34f03c6366
+ ---> 64b5b367c43e
+Step 5/10 : COPY go.mod *.go ./
+ ---> 0c489755a592
+Step 6/10 : RUN go version && go test -count=1 -v ./... && CGO_ENABLED=0 go build -ldflags="-X main.defaultCompletionRecorder=${RECORDER}" -trimpath -o /server .
+ ---> Running in e8632a6436ae
+go version go1.26.1 linux/amd64
+=== RUN   TestCompletionRecordersConserveAndBracket
+--- PASS: TestCompletionRecordersConserveAndBracket (0.00s)
+=== RUN   TestCompletionCancellationRejectionAndIDErrors
+--- PASS: TestCompletionCancellationRejectionAndIDErrors (0.01s)
+=== RUN   TestTimedOutQueuedWorkCompletesAndResetWaits
+--- PASS: TestTimedOutQueuedWorkCompletesAndResetWaits (0.00s)
+=== RUN   TestSnapshotsDoNotPublishCompletionBeforeEvents
+--- PASS: TestSnapshotsDoNotPublishCompletionBeforeEvents (0.16s)
+=== RUN   TestTimingHeadersMatchAndOffMeansOff
+--- PASS: TestTimingHeadersMatchAndOffMeansOff (0.00s)
+=== RUN   TestWorkMatchesOriginalSHAWork
+--- PASS: TestWorkMatchesOriginalSHAWork (0.00s)
+=== RUN   TestExitMarkerIncludesFinalLockWait
+--- PASS: TestExitMarkerIncludesFinalLockWait (0.02s)
+=== RUN   TestWriteFailureIsRetained
+--- PASS: TestWriteFailureIsRetained (0.00s)
+=== RUN   TestRealHTTPResponseUnchangedAndEventsDrained
+--- PASS: TestRealHTTPResponseUnchangedAndEventsDrained (0.00s)
+=== RUN   TestTraceConnectionReuseAndFinalFlush
+--- PASS: TestTraceConnectionReuseAndFinalFlush (0.01s)
+=== RUN   TestParallelismEntryRetainsRejectionAndCancellation
+--- PASS: TestParallelismEntryRetainsRejectionAndCancellation (0.00s)
+=== RUN   TestParallelismClockGenerationAndReset
+--- PASS: TestParallelismClockGenerationAndReset (0.00s)
+=== RUN   TestTraceOutcomeFixture
+--- PASS: TestTraceOutcomeFixture (0.11s)
+=== RUN   TestFileTraceOutcomeFixture
+--- PASS: TestFileTraceOutcomeFixture (0.11s)
+=== RUN   TestComponentOutcomeFixtures
+=== RUN   TestComponentOutcomeFixtures/runtime
+=== RUN   TestComponentOutcomeFixtures/custom
+--- PASS: TestComponentOutcomeFixtures (0.22s)
+    --- PASS: TestComponentOutcomeFixtures/runtime (0.12s)
+    --- PASS: TestComponentOutcomeFixtures/custom (0.10s)
+=== RUN   TestYieldOutcomeFixtures
+=== RUN   TestYieldOutcomeFixtures/combined
+=== RUN   TestYieldOutcomeFixtures/custom
+--- PASS: TestYieldOutcomeFixtures (0.22s)
+    --- PASS: TestYieldOutcomeFixtures/combined (0.12s)
+    --- PASS: TestYieldOutcomeFixtures/custom (0.10s)
+=== RUN   TestMemoryTraceDeferredPersistenceAndOverflow
+--- PASS: TestMemoryTraceDeferredPersistenceAndOverflow (0.00s)
+=== RUN   TestMemoryTracePersistenceFailureInvalidatesStatus
+--- PASS: TestMemoryTracePersistenceFailureInvalidatesStatus (0.00s)
+=== RUN   TestTraceWriteErrorAndDisabledMode
+--- PASS: TestTraceWriteErrorAndDisabledMode (0.00s)
+=== RUN   TestTraceStopRejectsUndrainedResponse
+--- PASS: TestTraceStopRejectsUndrainedResponse (0.00s)
+=== RUN   TestWorkerYieldCompletesIdenticalWork
+--- PASS: TestWorkerYieldCompletesIdenticalWork (0.00s)
+=== RUN   TestWorkerYieldEnvironmentIsExplicit
+--- PASS: TestWorkerYieldEnvironmentIsExplicit (0.00s)
+PASS
+ok  	research-service	0.859s
+ ---> Removed intermediate container e8632a6436ae
+ ---> 7e60ccb312a7
+Step 7/10 : FROM scratch
+ ---> 
+Step 8/10 : LABEL research.runtime.variant="stock" research.study="completion-qualification-v1"
+ ---> Running in e4b36bd3f32b
+ ---> Removed intermediate container e4b36bd3f32b
+ ---> 6728a9a168f9
+Step 9/10 : COPY --from=build /server /server
+ ---> 7bbf26997efe
+Step 10/10 : ENTRYPOINT ["/server"]
+ ---> Running in e5832ec46f93
+ ---> Removed intermediate container e5832ec46f93
+ ---> 7a890946152e
+Successfully built 7a890946152e
+Successfully tagged quota-completion-locked:13

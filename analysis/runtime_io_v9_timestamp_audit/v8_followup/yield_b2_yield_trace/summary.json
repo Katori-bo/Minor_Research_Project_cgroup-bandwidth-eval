@@ -1,0 +1,178 @@
+{
+  "attempt": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v8-yield-1/attempts/yield_b2_yield_trace/001",
+  "output_matches_pinned": true,
+  "original_time_chain_valid": true,
+  "issues": [],
+  "adjusted_events": 411,
+  "adjustments_over_1ms": 170,
+  "maximum_adjustment_ns": 81979713,
+  "dropped": {
+    "same_state_census": 3072
+  },
+  "clock_mapping": {
+    "offset_low_ns": 10971584640370,
+    "offset_high_ns": 10971584641247,
+    "uncertainty_ns": 877,
+    "anchor_count": 2
+  },
+  "adjustments_by_kind": {
+    "Log": 32,
+    "StateTransition": 283,
+    "Sync": 21,
+    "Metric": 24,
+    "RegionEnd": 28,
+    "TaskEnd": 4,
+    "RegionBegin": 11,
+    "TaskBegin": 8
+  },
+  "largest_adjustments": [
+    {
+      "event_index": 78144,
+      "raw_ns": 10989674617536,
+      "decoded_ns": 10989756597249,
+      "adjustment_ns": 81979713,
+      "header": "M=-1 P=-1 G=-1 Sync Time=10989756597249 N=19 Trace=10989751041920 Mono=10989751041936 Wall=2026-10-02T21:31:09.512800854+05:30"
+    },
+    {
+      "event_index": 78145,
+      "raw_ns": 10989751042752,
+      "decoded_ns": 10989756597250,
+      "adjustment_ns": 5554498,
+      "header": "M=8 P=0 G=1304 StateTransition Time=10989756597250 ProcID=0 Running->Running Reason=\"\""
+    },
+    {
+      "event_index": 78146,
+      "raw_ns": 10989751042880,
+      "decoded_ns": 10989756597251,
+      "adjustment_ns": 5554371,
+      "header": "M=8 P=0 G=1304 StateTransition Time=10989756597251 GoID=1304 Running->Running Reason=\"\""
+    },
+    {
+      "event_index": 78147,
+      "raw_ns": 10989751060992,
+      "decoded_ns": 10989756597252,
+      "adjustment_ns": 5536260,
+      "header": "M=8 P=0 G=1304 Metric Time=10989756597252 Name=\"/sched/gomaxprocs:threads\" Value=Value{Uint64(2)}"
+    },
+    {
+      "event_index": 78148,
+      "raw_ns": 10989751061760,
+      "decoded_ns": 10989756597253,
+      "adjustment_ns": 5535493,
+      "header": "M=8 P=0 G=1304 StateTransition Time=10989756597253 GoID=1304 Running->Runnable Reason=\"preempted\""
+    },
+    {
+      "event_index": 78149,
+      "raw_ns": 10989751062720,
+      "decoded_ns": 10989756597254,
+      "adjustment_ns": 5534534,
+      "header": "M=8 P=0 G=-1 StateTransition Time=10989756597254 GoID=1305 Waiting->Waiting Reason=\"\""
+    },
+    {
+      "event_index": 78150,
+      "raw_ns": 10989751062848,
+      "decoded_ns": 10989756597255,
+      "adjustment_ns": 5534407,
+      "header": "M=8 P=0 G=-1 StateTransition Time=10989756597255 GoID=1305 Waiting->Runnable Reason=\"\""
+    },
+    {
+      "event_index": 78151,
+      "raw_ns": 10989751063424,
+      "decoded_ns": 10989756597256,
+      "adjustment_ns": 5533832,
+      "header": "M=8 P=0 G=-1 StateTransition Time=10989756597256 GoID=1305 Runnable->Running Reason=\"\""
+    },
+    {
+      "event_index": 78152,
+      "raw_ns": 10989751064704,
+      "decoded_ns": 10989756597257,
+      "adjustment_ns": 5532553,
+      "header": "M=8 P=0 G=1305 StateTransition Time=10989756597257 GoID=1305 Running->Waiting Reason=\"system goroutine wait\""
+    },
+    {
+      "event_index": 78153,
+      "raw_ns": 10989751065600,
+      "decoded_ns": 10989756597258,
+      "adjustment_ns": 5531658,
+      "header": "M=8 P=0 G=-1 StateTransition Time=10989756597258 GoID=2267 Runnable->Runnable Reason=\"\""
+    },
+    {
+      "event_index": 78154,
+      "raw_ns": 10989751065664,
+      "decoded_ns": 10989756597259,
+      "adjustment_ns": 5531595,
+      "header": "M=8 P=0 G=-1 StateTransition Time=10989756597259 GoID=2267 Runnable->Running Reason=\"\""
+    },
+    {
+      "event_index": 78155,
+      "raw_ns": 10989751078912,
+      "decoded_ns": 10989756597260,
+      "adjustment_ns": 5518348,
+      "header": "M=8 P=0 G=2267 RegionEnd Time=10989756597260 Task=1822 Type=\"handler\""
+    },
+    {
+      "event_index": 78156,
+      "raw_ns": 10989751079232,
+      "decoded_ns": 10989756597261,
+      "adjustment_ns": 5518029,
+      "header": "M=8 P=0 G=2267 TaskEnd Time=10989756597261 ID=1822 Parent=18446744073709551615 Type=\"http_request\""
+    },
+    {
+      "event_index": 78157,
+      "raw_ns": 10989751092544,
+      "decoded_ns": 10989756597262,
+      "adjustment_ns": 5504718,
+      "header": "M=8 P=0 G=2267 StateTransition Time=10989756597262 GoID=2267 Running->Syscall Reason=\"\""
+    },
+    {
+      "event_index": 78158,
+      "raw_ns": 10989751133120,
+      "decoded_ns": 10989756597263,
+      "adjustment_ns": 5464143,
+      "header": "M=8 P=0 G=2267 StateTransition Time=10989756597263 GoID=2267 Syscall->Running Reason=\"\""
+    },
+    {
+      "event_index": 78159,
+      "raw_ns": 10989751136000,
+      "decoded_ns": 10989756597264,
+      "adjustment_ns": 5461264,
+      "header": "M=8 P=0 G=2267 StateTransition Time=10989756597264 GoID=3257 Waiting->Waiting Reason=\"\""
+    },
+    {
+      "event_index": 78160,
+      "raw_ns": 10989751136896,
+      "decoded_ns": 10989756597265,
+      "adjustment_ns": 5460369,
+      "header": "M=8 P=0 G=2267 StateTransition Time=10989756597265 GoID=3257 Waiting->Runnable Reason=\"\""
+    },
+    {
+      "event_index": 78161,
+      "raw_ns": 10989751138432,
+      "decoded_ns": 10989756597266,
+      "adjustment_ns": 5458834,
+      "header": "M=8 P=0 G=2267 StateTransition Time=10989756597266 GoID=2267 Running->Waiting Reason=\"sync.(*Cond).Wait\""
+    },
+    {
+      "event_index": 78162,
+      "raw_ns": 10989751139328,
+      "decoded_ns": 10989756597267,
+      "adjustment_ns": 5457939,
+      "header": "M=8 P=0 G=-1 StateTransition Time=10989756597267 GoID=3257 Runnable->Running Reason=\"\""
+    },
+    {
+      "event_index": 78163,
+      "raw_ns": 10989751145472,
+      "decoded_ns": 10989756597268,
+      "adjustment_ns": 5451796,
+      "header": "M=8 P=0 G=3257 StateTransition Time=10989756597268 GoID=2267 Waiting->Runnable Reason=\"\""
+    }
+  ],
+  "source_sha256": {
+    "runtime_trace": "b19709215ed30d393c9dab232aef4108223ce1cc21fcbd7e9f15f823af9fc9f0",
+    "baseline": "358dcacaecd20d5a42d3e20e5181913e1663daf5f1db33d2694abf3d3834264c",
+    "audit_decoder": "3b3b9c0431f14d97ea3a6bdc4bb999d2435d7f3681786dd8571f163a733528e4",
+    "ledger": "3a7b3f6e3bdb32c4a72c57cd18b875eed09049bff04322b1aaf8a7a0106b9588",
+    "restored": "b0cd74808c2da78d3711783da8f3da7a8897e4c4aa4f8df50843cd11537f8e71"
+  },
+  "eligible_for_full": false
+}

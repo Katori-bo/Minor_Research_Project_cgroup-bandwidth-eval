@@ -1,0 +1,117 @@
+{
+  "enabled": true,
+  "returncode": 0,
+  "controls": [
+    {
+      "op": "disable",
+      "before_ns": 230890570656255,
+      "after_ns": 230890580616900,
+      "cpu_before": {
+        "usage_usec": 0,
+        "user_usec": 0,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 0,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "cpu_after": {
+        "usage_usec": 0,
+        "user_usec": 0,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 0,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "op": "enable",
+      "before_ns": 230890580629393,
+      "after_ns": 230890580796486,
+      "cpu_before": {
+        "usage_usec": 0,
+        "user_usec": 0,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 0,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "cpu_after": {
+        "usage_usec": 0,
+        "user_usec": 0,
+        "system_usec": 0,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 0,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "op": "disable",
+      "before_ns": 230890964242341,
+      "after_ns": 230890964534066,
+      "cpu_before": {
+        "usage_usec": 721285,
+        "user_usec": 718280,
+        "system_usec": 3004,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 0,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "cpu_after": {
+        "usage_usec": 721285,
+        "user_usec": 718280,
+        "system_usec": 3004,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 0,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    }
+  ],
+  "cgroup": "/sys/fs/cgroup/quota-period-cost-fixture-7643333ac2174953b3785514a91c1d23",
+  "argv": [
+    "/usr/bin/perf",
+    "stat",
+    "-a",
+    "-C",
+    "2,4",
+    "-A",
+    "-j",
+    "-D",
+    "-1",
+    "--timeout",
+    "300000",
+    "--control",
+    "fd:3,9",
+    "-o",
+    "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_execution_state_pilot/generation-01/counter_fixtures/compute_2/perf.jsonl",
+    "-e",
+    "{cycles:u,instructions:u}",
+    "-G",
+    "quota-period-cost-fixture-7643333ac2174953b3785514a91c1d23",
+    "--",
+    "/usr/bin/cat"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "decision": "feasibility_passed_continue_reverse_block",
+  "feasibility_passed": true,
+  "observer_qualified": true,
+  "execution_conditions_distinguished": true,
+  "observer_checks": [
+    {
+      "block": 1,
+      "condition": "automatic",
+      "period_ms": 100,
+      "changes": {
+        "cpu_usec_per_completed_work": -3.1558117118857254e-05,
+        "capacity": -0.0005574475673909562,
+        "cpu_cores": -0.0005889880925142865
+      },
+      "passed": true
+    },
+    {
+      "block": 1,
+      "condition": "automatic",
+      "period_ms": 20,
+      "changes": {
+        "cpu_usec_per_completed_work": -0.0048254864708346945,
+        "capacity": 0.004848661279437172,
+        "cpu_cores": -2.223408035462171e-07
+      },
+      "passed": true
+    },
+    {
+      "block": 1,
+      "condition": "constrained",
+      "period_ms": 20,
+      "changes": {
+        "cpu_usec_per_completed_work": 0.0019091338105095002,
+        "capacity": -0.0018678464873692624,
+        "cpu_cores": 3.772135425839096e-05
+      },
+      "passed": true
+    },
+    {
+      "block": 1,
+      "condition": "constrained",
+      "period_ms": 100,
+      "changes": {
+        "cpu_usec_per_completed_work": -0.003051670164062492,
+        "capacity": 0.004623274102377062,
+        "cpu_cores": 0.0015574952306758316
+      },
+      "passed": true
+    }
+  ],
+  "period_contrasts": [
+    {
+      "block": 1,
+      "condition": "automatic",
+      "counters": false,
+      "changes": {
+        "cpu_usec_per_completed_work": -0.0019622790418627467,
+        "capacity": 0.0008779425458500523,
+        "cpu_cores": -0.0010860592642703004
+      }
+    },
+    {
+      "block": 1,
+      "condition": "constrained",
+      "counters": false,
+      "changes": {
+        "cpu_usec_per_completed_work": -0.010106786865887951,
+        "capacity": 0.01041351911444921,
+        "cpu_cores": 0.00020148503034755905
+      }
+    },
+    {
+      "block": 1,
+      "condition": "automatic",
+      "counters": true,
+      "changes": {
+        "cpu_usec_per_completed_work": -0.006746951365691478,
+        "capacity": 0.006291815596004113,
+        "cpu_cores": -0.0004975863435154881,
+        "instructions_per_job": 8.139872510026791e-06,
+        "cycles_per_instruction": 0.003833768051879405,
+        "cycles_per_user_cpu_sec": 0.012927137268135658
+      }
+    },
+    {
+      "block": 1,
+      "condition": "constrained",
+      "counters": true,
+      "changes": {
+        "cpu_usec_per_completed_work": -0.005181089074783984,
+        "capacity": 0.0038849863129948314,
+        "cpu_cores": -0.0013162312219311412,
+        "instructions_per_job": 9.455258409563072e-06,
+        "cycles_per_instruction": 0.0012902365690112827,
+        "cycles_per_user_cpu_sec": 0.006145765367655098
+      }
+    }
+  ],
+  "speed_separation": [
+    {
+      "block": 1,
+      "period_ms": 100,
+      "effective_cycle_rate_change": -0.23633506964249262,
+      "passed": true
+    },
+    {
+      "block": 1,
+      "period_ms": 20,
+      "effective_cycle_rate_change": -0.24144767420166735,
+      "passed": true
+    }
+  ],
+  "interactions": [
+    {
+      "block": 1,
+      "counters": false,
+      "cpu_job_ratio_interaction": -0.00816052104343945
+    },
+    {
+      "block": 1,
+      "counters": true,
+      "cpu_job_ratio_interaction": 0.0015764988519899603
+    }
+  ],
+  "historical_cause_established": false,
+  "novelty_established": false,
+  "automatic_followup_authorized": false,
+  "limitation": "Two blocks are a bounded screen, not equivalence or historical causal proof. Cycles/user CPU second is an effective metric, not direct clock measurement. Bound changes may change stalls, heat and other activity. Neither generic slower execution nor a control interaction proves the historical cause or novelty."
+}

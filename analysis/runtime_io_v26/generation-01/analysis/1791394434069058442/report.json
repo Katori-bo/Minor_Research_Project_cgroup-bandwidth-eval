@@ -1,0 +1,687 @@
+{
+  "result": {
+    "decision": "both_low_rates_qualified",
+    "complete": true,
+    "both_low_rates_qualified": true,
+    "recording_quality_pass": true,
+    "accepted_trials": 4,
+    "planned_trials": 4,
+    "busy_delivery_check": "inapplicable_no_busy_phase",
+    "scientific_explanation_established": false,
+    "equivalence_established": false,
+    "novelty_established": false,
+    "by_rate": {
+      "15": {
+        "planned": 2,
+        "recorded": 2,
+        "qualified": 2,
+        "trials": [
+          "low15_r1",
+          "low15_r2"
+        ],
+        "whole_cpu_usec_per_job_mean": 4579.167777777779,
+        "descriptive_miss_pct_mean": 0.0
+      },
+      "30": {
+        "planned": 2,
+        "recorded": 2,
+        "qualified": 2,
+        "trials": [
+          "low30_r1",
+          "low30_r2"
+        ],
+        "whole_cpu_usec_per_job_mean": 4562.8116666666665,
+        "descriptive_miss_pct_mean": 0.0
+      }
+    },
+    "limits": "Two on recordings per rate qualify only fixed steady windows. They do not establish future mixed-state eligibility, deadline equivalence, causality or statistical uncertainty. No follow-on collection is launched."
+  },
+  "trial_refs": {
+    "low15_r1": {
+      "path": "slots/low15_r1/attempt-1791393881328214812",
+      "seal": "f51f64d692c766a3d3523b5c1ec67b6e01e53ee2e8c8f8c6e7cf0dd1cfca6a81"
+    },
+    "low30_r1": {
+      "path": "slots/low30_r1/attempt-1791394010365277214",
+      "seal": "c92b5e7a16eaa0b26b33e8cb3dd0ba778a2ecca69143bc2bc28843f339f58584"
+    },
+    "low30_r2": {
+      "path": "slots/low30_r2/attempt-1791394154629540759",
+      "seal": "6342ae65d309b399b7baf375fde2d1a0ed2b8136c51f7c69cfd3e957fa27b502"
+    },
+    "low15_r2": {
+      "path": "slots/low15_r2/attempt-1791394293848557976",
+      "seal": "9a61176faf7efa8a277cfa9e2dc84d2a7af4e5b99bb218525260573cb87bf71f"
+    }
+  },
+  "trial_accounting": [
+    {
+      "trial": "low15_r1",
+      "size": "small",
+      "block": 1,
+      "order": 1,
+      "repeat": 1,
+      "rate": 15,
+      "counter_probe": true,
+      "recording_quality_pass": true,
+      "whole_cpu_usec_per_job": 4562.248888888889,
+      "miss_pct": 0.0,
+      "measurement_quality": {
+        "cost_relative_bound_width": 0.005945377763844606,
+        "pass_budget": true,
+        "busy_delivery_check": "inapplicable_no_busy_phase"
+      },
+      "acquisition_diagnostics": {
+        "samples": 2558,
+        "max_wall_ms": 0.036258,
+        "max_thread_cpu_ms": 0.034014,
+        "reads_over_2ms": 0,
+        "skipped_deadlines": 0,
+        "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+      },
+      "phases": {
+        "low": {
+          "windows_sec": [
+            [
+              5,
+              25
+            ]
+          ],
+          "clock_bounded_completions": [
+            300,
+            300
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              1355675,
+              1363735
+            ],
+            "user_usec": [
+              1290728,
+              1298788
+            ],
+            "system_usec": [
+              64947,
+              64947
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              200,
+              200
+            ],
+            "nr_throttled": [
+              0,
+              0
+            ],
+            "throttled_usec": [
+              0,
+              0
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                5,
+                25
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1355675,
+                  1363735
+                ],
+                "user_usec": [
+                  1290728,
+                  1298788
+                ],
+                "system_usec": [
+                  64947,
+                  64947
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  200,
+                  200
+                ],
+                "nr_throttled": [
+                  0,
+                  0
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            0
+          ],
+          "queue_maxima": [
+            1
+          ],
+          "state_eligible": true,
+          "duration_sec": 20,
+          "worker_processing_wall_ms": {
+            "n": 300,
+            "mean": 4.289628226666666,
+            "p50": 4.480404500000001,
+            "p99": 4.764988,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            4518.916666666667,
+            4545.783333333334
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.06778375,
+            0.06818675
+          ],
+          "state_definition": "at_most_one_waiting_job_and_no_throttled_periods"
+        }
+      },
+      "sampler_own_cpu_ms": 46.352809
+    },
+    {
+      "trial": "low30_r1",
+      "size": "small",
+      "block": 1,
+      "order": 2,
+      "repeat": 1,
+      "rate": 30,
+      "counter_probe": true,
+      "recording_quality_pass": true,
+      "whole_cpu_usec_per_job": 4564.392222222222,
+      "miss_pct": 0.0,
+      "measurement_quality": {
+        "cost_relative_bound_width": 0.00344691768684567,
+        "pass_budget": true,
+        "busy_delivery_check": "inapplicable_no_busy_phase"
+      },
+      "acquisition_diagnostics": {
+        "samples": 2559,
+        "max_wall_ms": 0.040706,
+        "max_thread_cpu_ms": 0.03731,
+        "reads_over_2ms": 0,
+        "skipped_deadlines": 0,
+        "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+      },
+      "phases": {
+        "low": {
+          "windows_sec": [
+            [
+              5,
+              25
+            ]
+          ],
+          "clock_bounded_completions": [
+            600,
+            600
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              2736938,
+              2746372
+            ],
+            "user_usec": [
+              2558272,
+              2565924
+            ],
+            "system_usec": [
+              178665,
+              180448
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              200,
+              200
+            ],
+            "nr_throttled": [
+              0,
+              0
+            ],
+            "throttled_usec": [
+              0,
+              0
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                5,
+                25
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  2736938,
+                  2746372
+                ],
+                "user_usec": [
+                  2558272,
+                  2565924
+                ],
+                "system_usec": [
+                  178665,
+                  180448
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  200,
+                  200
+                ],
+                "nr_throttled": [
+                  0,
+                  0
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            0
+          ],
+          "queue_maxima": [
+            1
+          ],
+          "state_eligible": true,
+          "duration_sec": 20,
+          "worker_processing_wall_ms": {
+            "n": 600,
+            "mean": 4.343042388333333,
+            "p50": 4.525174,
+            "p99": 4.848063,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            4561.5633333333335,
+            4577.286666666667
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.1368469,
+            0.1373186
+          ],
+          "state_definition": "at_most_one_waiting_job_and_no_throttled_periods"
+        }
+      },
+      "sampler_own_cpu_ms": 46.863084
+    },
+    {
+      "trial": "low30_r2",
+      "size": "small",
+      "block": 2,
+      "order": 3,
+      "repeat": 2,
+      "rate": 30,
+      "counter_probe": true,
+      "recording_quality_pass": true,
+      "whole_cpu_usec_per_job": 4561.231111111111,
+      "miss_pct": 0.0,
+      "measurement_quality": {
+        "cost_relative_bound_width": 0.003429977105379392,
+        "pass_budget": true,
+        "busy_delivery_check": "inapplicable_no_busy_phase"
+      },
+      "acquisition_diagnostics": {
+        "samples": 2559,
+        "max_wall_ms": 0.037681,
+        "max_thread_cpu_ms": 0.035146,
+        "reads_over_2ms": 0,
+        "skipped_deadlines": 0,
+        "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+      },
+      "phases": {
+        "low": {
+          "windows_sec": [
+            [
+              5,
+              25
+            ]
+          ],
+          "clock_bounded_completions": [
+            600,
+            600
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              2727715,
+              2737071
+            ],
+            "user_usec": [
+              2586509,
+              2595812
+            ],
+            "system_usec": [
+              141206,
+              141259
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              200,
+              200
+            ],
+            "nr_throttled": [
+              0,
+              0
+            ],
+            "throttled_usec": [
+              0,
+              0
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                5,
+                25
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  2727715,
+                  2737071
+                ],
+                "user_usec": [
+                  2586509,
+                  2595812
+                ],
+                "system_usec": [
+                  141206,
+                  141259
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  200,
+                  200
+                ],
+                "nr_throttled": [
+                  0,
+                  0
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            0
+          ],
+          "queue_maxima": [
+            1
+          ],
+          "state_eligible": true,
+          "duration_sec": 20,
+          "worker_processing_wall_ms": {
+            "n": 600,
+            "mean": 4.322974221666667,
+            "p50": 4.508217,
+            "p99": 4.74515,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            4546.191666666667,
+            4561.785
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.13638575,
+            0.13685355
+          ],
+          "state_definition": "at_most_one_waiting_job_and_no_throttled_periods"
+        }
+      },
+      "sampler_own_cpu_ms": 47.170166
+    },
+    {
+      "trial": "low15_r2",
+      "size": "small",
+      "block": 2,
+      "order": 4,
+      "repeat": 2,
+      "rate": 15,
+      "counter_probe": true,
+      "recording_quality_pass": true,
+      "whole_cpu_usec_per_job": 4596.086666666667,
+      "miss_pct": 0.0,
+      "measurement_quality": {
+        "cost_relative_bound_width": 0.006714173158904829,
+        "pass_budget": true,
+        "busy_delivery_check": "inapplicable_no_busy_phase"
+      },
+      "acquisition_diagnostics": {
+        "samples": 2557,
+        "max_wall_ms": 0.057227,
+        "max_thread_cpu_ms": 0.039545,
+        "reads_over_2ms": 0,
+        "skipped_deadlines": 0,
+        "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+      },
+      "phases": {
+        "low": {
+          "windows_sec": [
+            [
+              5,
+              25
+            ]
+          ],
+          "clock_bounded_completions": [
+            300,
+            300
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              1372023,
+              1381235
+            ],
+            "user_usec": [
+              1284397,
+              1293580
+            ],
+            "system_usec": [
+              87626,
+              87655
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              200,
+              200
+            ],
+            "nr_throttled": [
+              0,
+              0
+            ],
+            "throttled_usec": [
+              0,
+              0
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                5,
+                25
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1372023,
+                  1381235
+                ],
+                "user_usec": [
+                  1284397,
+                  1293580
+                ],
+                "system_usec": [
+                  87626,
+                  87655
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  200,
+                  200
+                ],
+                "nr_throttled": [
+                  0,
+                  0
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            0
+          ],
+          "queue_maxima": [
+            1
+          ],
+          "state_eligible": true,
+          "duration_sec": 20,
+          "worker_processing_wall_ms": {
+            "n": 300,
+            "mean": 4.341317826666667,
+            "p50": 4.5166735,
+            "p99": 4.819109,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            4573.41,
+            4604.116666666667
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.06860115,
+            0.06906175
+          ],
+          "state_definition": "at_most_one_waiting_job_and_no_throttled_periods"
+        }
+      },
+      "sampler_own_cpu_ms": 45.605588
+    }
+  ],
+  "preparation_seal": "d3c9a48fadcc9acf3cda0cbb57684f0b89b2a55b554255ae5c4b7dca84695d2f",
+  "collection_receipt_sha256": "3cb0664015aac1e813899d056710329709f2708f0d735ff4404488fa67a93878",
+  "measurement_lifetime_sha256": "bae7e8e0118530915223a9cdcd693388797fc982f80c6cf1034af661e40ae315",
+  "technical_failures": []
+}

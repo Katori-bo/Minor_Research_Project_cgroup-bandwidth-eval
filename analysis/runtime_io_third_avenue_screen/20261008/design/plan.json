@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-08",
+  "script_sha256": "dbcfeb2f8689f11f236df7435ca461116a4d7d184240d1f1f4901287ff427256",
+  "cases": [
+    {
+      "id": "unlimited_control",
+      "n": 10,
+      "work_ms": 50,
+      "saving_ms": 30,
+      "quota_ms": 1000,
+      "period_ms": 1000,
+      "deadline_ms": 500
+    },
+    {
+      "id": "quota_nonbinding_control",
+      "n": 2,
+      "work_ms": 5,
+      "saving_ms": 3,
+      "quota_ms": 50,
+      "period_ms": 100,
+      "deadline_ms": 500
+    },
+    {
+      "id": "quota_same_final_period_control",
+      "n": 2,
+      "work_ms": 50,
+      "saving_ms": 10,
+      "quota_ms": 50,
+      "period_ms": 100,
+      "deadline_ms": 500
+    },
+    {
+      "id": "quota_crossing_witness",
+      "n": 10,
+      "work_ms": 50,
+      "saving_ms": 30,
+      "quota_ms": 50,
+      "period_ms": 100,
+      "deadline_ms": 500
+    }
+  ],
+  "question": "Can optimization-benefit causal profiling retain its timing equivalence under fixed periodic CPU budgets?",
+  "scope": "Synthetic exact integer-ms periodic-server assumption check only. All jobs available at time zero. No admission rejection, uncertainty solver, Linux collector, profiler sampler, or Go scheduler model.",
+  "rule_under_test": "Subtract accumulated CPU savings from original completion times without recomputing budget depletion/refills.",
+  "comparator": "Direct execution with genuinely reduced CPU work under identical quota/period.",
+  "inference": "A failure motivates checking source profiler semantics; it is not evidence of failure of actual Coz/BCOZ output, not a novel theorem, and not empirical deadline evidence.",
+  "collection": false
+}

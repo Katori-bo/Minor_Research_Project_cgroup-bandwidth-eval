@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "synthetic_only": true,
+  "sizes": [
+    8,
+    16,
+    32,
+    64
+  ],
+  "families": [
+    "jittered",
+    "clustered",
+    "mixed_gaps"
+  ],
+  "configurations": {
+    "small_buffer": {
+      "system_slots": 2,
+      "relative_deadline": "5/4",
+      "service_min": "9/20",
+      "service_max": "23/20"
+    },
+    "larger_buffer": {
+      "system_slots": 5,
+      "relative_deadline": "21/10",
+      "service_min": "11/20",
+      "service_max": "27/20"
+    }
+  },
+  "pool_trials_per_stratum": 50,
+  "seed_formula": "810202640 + 100000*family_index + 10000*config_index + 100*N + trial",
+  "selection": "first trial per stratum with shortcut undetermined and at least one rejection at its five probe values; all 50 candidates logged",
+  "prohibited_selection_information": "no exact solver, region count, runtime or true extremum used for selection",
+  "methods": [
+    "candidate",
+    "reachable",
+    "compact_smt"
+  ],
+  "repeats": 3,
+  "order_seed": 810202641,
+  "fresh_process": true,
+  "serial": true,
+  "hard_worker_timeout_seconds": 6,
+  "admission_limits": {
+    "max_offers": 512,
+    "max_states": 10000,
+    "max_terms": 50000000
+  },
+  "reachable_limits": {
+    "max_states": 10000,
+    "max_transitions": 10000000
+  },
+  "smt_limits": {
+    "max_offers": 512,
+    "per_check_ms": 750,
+    "total_check_ms": 2000,
+    "resource_limit": 0
+  },
+  "timing": "method call including output and witnesses; excludes imports/startup/JSON and independent replay",
+  "outputs_differ": "candidate admission-region extrema; reachable constant-outcome cells; compact SMT extrema with witnesses",
+  "practical_gate": "candidate completes no fewer runs than reachable, at least 2x faster on >=2/3 of paired all-three-exact cases, and >=1/2 in each family; requires >=12 paired cases",
+  "gate_interpretation": "exploratory engineering threshold only; passing does not establish originality or publication readiness",
+  "reference_check": "all selected 8-offer cases independently compared with complete breakpoint reference outside timing",
+  "shortcuts": "selection status and five-probe extrema retained; undetermined is never an exact result",
+  "limitations": [
+    "selected unresolved subset, not workload prevalence",
+    "small synthetic cases",
+    "three repeats",
+    "desktop host not controlled",
+    "generic baselines written here, no published tool reproduction",
+    "timeouts reflect these limits",
+    "common constant service parameter only"
+  ],
+  "source_sha256": {
+    "compare_finite_fifo_step4.py": "bc789933d49d724c634bf3629b621bacc651a3d28c81e85b9709221461ab278f",
+    "compare_finite_fifo_step3.py": "461364d298d1bb020e7fd15851f1ac827d0449db053a9ea5dfec52cabaca4f18",
+    "finite_fifo_deadline_reference.py": "945f4f8c057878467cf25453d3cae1ab36313cf45814b08bf48b22acf3511fab",
+    "finite_fifo_deadline_symbolic_check.py": "013598120ba62af333caec1beb98a08393f7c7c341aa234732e4149b4f0d612f",
+    "finite_fifo_deadline_admission.py": "4ee3b9acea9dbad06ba6729dd9df7c573e4e7b6a524791db88d4f2dac0f479ee",
+    "finite_fifo_deadline_compact_smt.py": "f42849cb4453b8af33d443181fb6eb0dd96603291382ece7cc627d4146998c4e",
+    "finite_fifo_deadline_smt.py": "6e173fef05e96e325114151e98a25c900df81961b8ad0eb3e262d13ec6998c8d",
+    "finite_fifo_deadline_shortcut.py": "0e72c9b102f5f197b2d64692b6fa299a54c750b0b4d8d2a8c3b2f72c56eec443"
+  }
+}

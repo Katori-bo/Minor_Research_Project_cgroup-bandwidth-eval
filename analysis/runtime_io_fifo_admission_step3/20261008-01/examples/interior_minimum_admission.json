@@ -1,0 +1,164 @@
+{
+  "schema": 1,
+  "status": "exact",
+  "method": "admission intervals with deferred deadline counts",
+  "problem": {
+    "arrivals": [
+      "0",
+      "0",
+      "21/20",
+      "21/10"
+    ],
+    "system_slots": 2,
+    "relative_deadline": "13/10",
+    "service_interval": [
+      "1",
+      "6/5"
+    ],
+    "time_unit": "seconds"
+  },
+  "scope": "one common constant service time; finite FIFO tail-drop; late jobs finish",
+  "novelty_established": false,
+  "real_system_coverage_established": false,
+  "limits": {
+    "max_offers": 2048,
+    "max_states": 10000,
+    "max_terms": 10000000
+  },
+  "stats": {
+    "terms": 34,
+    "admission_splits": 1,
+    "state_visits": 5,
+    "peak_states": 2,
+    "peak_hull_lines": 2,
+    "regions": 2,
+    "deadline_splits": 0,
+    "idle_splits": 0,
+    "hull_enabled": true
+  },
+  "regions": [
+    {
+      "domain": {
+        "low": "1",
+        "high": "21/20",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "admitted": 4,
+      "rejected": 0,
+      "minimum_late": 3,
+      "maximum_late": 3,
+      "minimum_failures": 3,
+      "maximum_failures": 3,
+      "minimum_witness_service_time": "1",
+      "maximum_witness_service_time": "21/20"
+    },
+    {
+      "domain": {
+        "low": "21/20",
+        "high": "6/5",
+        "left_closed": false,
+        "right_closed": true
+      },
+      "admitted": 3,
+      "rejected": 1,
+      "minimum_late": 1,
+      "maximum_late": 2,
+      "minimum_failures": 2,
+      "maximum_failures": 3,
+      "minimum_witness_service_time": "131/120",
+      "maximum_witness_service_time": "6/5"
+    }
+  ],
+  "minimum": {
+    "failures": 2,
+    "failure_fraction": "1/2",
+    "attaining_region_indices": [
+      1
+    ],
+    "witness_service_time": "131/120",
+    "witness_replay": {
+      "offered": 4,
+      "rejected": 1,
+      "late": 1,
+      "failures": 2,
+      "timely": 2,
+      "offers": [
+        {
+          "index": 0,
+          "arrival": "0",
+          "completion": "131/120",
+          "latency": "131/120",
+          "outcome": "timely"
+        },
+        {
+          "index": 1,
+          "arrival": "0",
+          "completion": "131/60",
+          "latency": "131/60",
+          "outcome": "late"
+        },
+        {
+          "index": 2,
+          "arrival": "21/20",
+          "completion": null,
+          "latency": null,
+          "outcome": "rejected"
+        },
+        {
+          "index": 3,
+          "arrival": "21/10",
+          "completion": "131/40",
+          "latency": "47/40",
+          "outcome": "timely"
+        }
+      ]
+    }
+  },
+  "maximum": {
+    "failures": 3,
+    "failure_fraction": "3/4",
+    "attaining_region_indices": [
+      0,
+      1
+    ],
+    "witness_service_time": "21/20",
+    "witness_replay": {
+      "offered": 4,
+      "rejected": 0,
+      "late": 3,
+      "failures": 3,
+      "timely": 1,
+      "offers": [
+        {
+          "index": 0,
+          "arrival": "0",
+          "completion": "21/20",
+          "latency": "21/20",
+          "outcome": "timely"
+        },
+        {
+          "index": 1,
+          "arrival": "0",
+          "completion": "21/10",
+          "latency": "21/10",
+          "outcome": "late"
+        },
+        {
+          "index": 2,
+          "arrival": "21/20",
+          "completion": "63/20",
+          "latency": "21/10",
+          "outcome": "late"
+        },
+        {
+          "index": 3,
+          "arrival": "21/10",
+          "completion": "21/5",
+          "latency": "21/10",
+          "outcome": "late"
+        }
+      ]
+    }
+  }
+}

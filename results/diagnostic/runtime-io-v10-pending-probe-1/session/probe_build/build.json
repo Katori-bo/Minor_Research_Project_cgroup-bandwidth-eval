@@ -1,0 +1,79 @@
+{
+  "prepared": {
+    "compiler_image": "sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039",
+    "base_candidate": {
+      "candidate": "pending-preemption-fairness-v1",
+      "status": "experimental_unqualified",
+      "compiler_image_id": "sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039",
+      "original_sha256": {
+        "proc.go": "b0ea864c1dd251cd9146644863ae9126ca57761dff05862dc80ab0799925fec6",
+        "export_test.go": "2d1c20d71fea179ee4a673c567d06c53fe93307310479d7f5e20604ef4f06b2a",
+        "proc_test.go": "8afb6d8304993fcc9301314a02c5d0bf18459005f95f1ebcdd6e44e579e21a61"
+      },
+      "patched_sha256": {
+        "proc.go": "9cb7e86295c75f7328324c144714a5f37c338d62a1b64a1835dcb2c611e7aee1",
+        "export_test.go": "c80bfa9e977b71ecc3cce7bdb318c120722d50d5783cda47233c909732251af9",
+        "proc_test.go": "b15ec3d2279dfb88177b6ab0f1bd340e515ce57cf1a5f71a3f6448af5a53e8ef"
+      },
+      "generator_sha256": "ea7e9c167d439a66ce925d99b32db736de2695db82c5a1b851d7c1a73e4c4952",
+      "performance_run": false,
+      "eligible_for_full": false,
+      "limitations": "Saved traces do not record pending preemption flags or queue positions; this candidate tests a source-supported causal hypothesis."
+    },
+    "counter_names": [
+      "pending_seen",
+      "trace_reader_before_ordinary",
+      "gc_worker_before_ordinary",
+      "ordinary_fairness_reached",
+      "global_selected",
+      "regular_local_selected",
+      "sole_runnext_selected"
+    ],
+    "generator_sha256": "b12ab1323d14dd842d8a572ef95bed1834e812d4d78492c96e0031fe155b7a02",
+    "eligible_for_full": false,
+    "sources": {
+      "Dockerfile": "bd8a98066f8b2df03fbb9c9abc3ea34d8722aec46a498e82b12dd491f1323741",
+      "control_runtime/proc_test.go": "8e1c2035bcf6d55510d34db9809f52bac25bec219f626aab98679ac52121799b",
+      "control_runtime/proc.go": "da60782aeaeb89347c9f1b093b38bbacd21acfa76ce450f111f09edac1af967c",
+      "control_runtime/export_test.go": "d234e06071861b315bafbc207f43f1781a62211e21197c24821edbef3fb1bfb2",
+      "observed_runtime/proc_test.go": "8e1c2035bcf6d55510d34db9809f52bac25bec219f626aab98679ac52121799b",
+      "observed_runtime/proc.go": "570e42bcb934b8392c4e804d5dd89e25890c608f1069cb9a92893e6e556da18e",
+      "observed_runtime/export_test.go": "d234e06071861b315bafbc207f43f1781a62211e21197c24821edbef3fb1bfb2",
+      "service/go.mod": "03add46220d8804f97c5b9966c66b6da037ab94403a5570707ba5b3e558dafba",
+      "service/main_test.go": "2357765adc8255b34af937fe2d9371c30abddfbc6e162a5df70d03d5a895564d",
+      "service/yield_test.go": "c7a96bfdab0cb3577c64173c2c2485ff96cd4cd969758fa514ea28131873ff81",
+      "service/main.go": "db22553dbe671bfbf4e5077818336685a92caab3930e1b338bfff403358caba3",
+      "service/trace_diag.go": "ad4dc8b64b1233c9dcf44ed087e57dd98d7f2bd89a7c69f9287a23e474b5866c",
+      "service/Dockerfile": "d8a51f67f21bce0e74d774f3d4b55916f27dc34a92b6502a001326a6e0bb01bd",
+      "service/trace_diag_test.go": "1f0a378fe5c16fd485bfb62c4193ea09a5c0840589d03994e4dada2d88c2b3d4"
+    }
+  },
+  "images": {
+    "control": "sha256:69e7b5e014d9d7cdb420ee2658e179dd769c1d44232f3e49df16201fa4aecbfa",
+    "observed": "sha256:00d138636bbc47757baf387d1506422bcde3dccca2658c548a47c4d4a22b668f"
+  },
+  "base_build": {
+    "schema": 9,
+    "sources": {
+      "diagnostic/loadgen/Dockerfile": "7a36cc4f98c225751a2bf4cffd8cbac6f523502776ef44948fd3bc1f30942c65",
+      "diagnostic/loadgen/go.mod": "bc8481bc762a2d9150e6dba23c42e074e42ecfee5e5ab42c50ec8cad27629481",
+      "diagnostic/loadgen/main.go": "141e77c1a3eaa22eb4dee86f88f50fded7c07888bbb390ecfcfbe63a27cb1ca7",
+      "diagnostic/loadgen/main_test.go": "430e80b06219d76d72f564ce561016ac03636be8dd1cf2388e32c68eae843dc3",
+      "diagnostic/service/Dockerfile": "d8a51f67f21bce0e74d774f3d4b55916f27dc34a92b6502a001326a6e0bb01bd",
+      "diagnostic/service/go.mod": "03add46220d8804f97c5b9966c66b6da037ab94403a5570707ba5b3e558dafba",
+      "diagnostic/service/main.go": "111fae37f0a4b634f9f0a5a0d4aafed0da265b2aa492d7986f63f122fc566fd9",
+      "diagnostic/service/main_test.go": "2357765adc8255b34af937fe2d9371c30abddfbc6e162a5df70d03d5a895564d",
+      "diagnostic/service/trace_diag.go": "ad4dc8b64b1233c9dcf44ed087e57dd98d7f2bd89a7c69f9287a23e474b5866c",
+      "diagnostic/service/trace_diag_test.go": "1f0a378fe5c16fd485bfb62c4193ea09a5c0840589d03994e4dada2d88c2b3d4",
+      "diagnostic/service/yield_test.go": "c7a96bfdab0cb3577c64173c2c2485ff96cd4cd969758fa514ea28131873ff81"
+    },
+    "loadgen_sha256": "10a0b90dff713d120e21a092b112af2a397181d80ff6401aa2776b0f961c62cc",
+    "image_id": "sha256:e70ca5b9070342ea1ed7b0f787fa76a73fe37f4a8e0fb1e1150ae4a66b057f2f",
+    "client_image_id": "sha256:87b456713ae7aadc98743513639ff7cee21953d620324dd52a72b0e28a36ac66",
+    "built_at": "2026-10-02T20:53:31.705746+05:30",
+    "compiler_image_id": "sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039"
+  },
+  "producer_sha256": "95ce8e672433b7eec2e8bcba294b614f23a3f487907cbaa79956deb2f400d4c6",
+  "eligible_for_full": false,
+  "performance_run": false
+}

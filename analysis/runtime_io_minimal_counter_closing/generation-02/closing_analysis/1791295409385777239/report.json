@@ -1,0 +1,128 @@
+{
+  "status": "closed_unresolved_final_attempt_failed_settling",
+  "completed_performance_cells": 0,
+  "expected_performance_cells": 8,
+  "counter_fixtures_replay_verified": true,
+  "observer_qualified": false,
+  "initial_baseline_c": {
+    "k10temp:Tctl": 63.68269230769231
+  },
+  "final_window": {
+    "stable": false,
+    "sensors": {
+      "k10temp:Tctl": {
+        "mean_c": 58.78846153846154,
+        "range_c": 1.125,
+        "slope_c_per_min": -1.0366901162452178,
+        "near_baseline": false
+      }
+    }
+  },
+  "host_phases": [
+    {
+      "phase": "initial_idle",
+      "samples": 583,
+      "covered_sec": 601.2811082399858,
+      "top_process_cpu_pct_one_core": [
+        {
+          "comm": "plasmashell",
+          "pct": 13.116992853951624
+        },
+        {
+          "comm": "kwin_wayland",
+          "pct": 8.295620686637603
+        },
+        {
+          "comm": "python3",
+          "pct": 1.960813309852764
+        },
+        {
+          "comm": "baloo_file",
+          "pct": 0.5421756904257922
+        },
+        {
+          "comm": "kworker/u48:5-gfx",
+          "pct": 0.15965909902109238
+        },
+        {
+          "comm": "kworker/u48:10-gfx",
+          "pct": 0.1530066365618802
+        },
+        {
+          "comm": "rcu_preempt",
+          "pct": 0.13637548041384975
+        },
+        {
+          "comm": "kworker/u48:10-events_unbound",
+          "pct": 0.11974432426581928
+        },
+        {
+          "comm": "kworker/u48:5-events_unbound",
+          "pct": 0.10311316811778883
+        },
+        {
+          "comm": "dbus-broker",
+          "pct": 0.09978693688818273
+        }
+      ]
+    },
+    {
+      "phase": "pre_trial_settling",
+      "samples": 175,
+      "covered_sec": 180.40403804302332,
+      "top_process_cpu_pct_one_core": [
+        {
+          "comm": "plasmashell",
+          "pct": 13.026315959954099
+        },
+        {
+          "comm": "kwin_wayland",
+          "pct": 8.176091932311616
+        },
+        {
+          "comm": "python3",
+          "pct": 2.350279985966179
+        },
+        {
+          "comm": "baloo_file",
+          "pct": 0.5764837701426494
+        },
+        {
+          "comm": "rcu_preempt",
+          "pct": 0.13303471618676524
+        },
+        {
+          "comm": "kworker/u48:10-gfx",
+          "pct": 0.11640537666341957
+        },
+        {
+          "comm": "kworker/u48:10-events_unbound",
+          "pct": 0.11086226348897105
+        },
+        {
+          "comm": "dbus-broker",
+          "pct": 0.09423292396562535
+        },
+        {
+          "comm": "kworker/u48:0-gfx",
+          "pct": 0.0886898107911768
+        },
+        {
+          "comm": "kded6",
+          "pct": 0.08314669761672826
+        }
+      ]
+    }
+  ],
+  "historical_reversal_cause_established": false,
+  "automatic_followup_authorized": false,
+  "interruption": {
+    "error": "Temperature did not stabilize within the protocol timeout; inspect settling log.",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/minimal_counter_closing.py\", line 360, in run\n    collect(session,session/'trials'/spec['trial'],spec,helper)\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/minimal_counter_closing.py\", line 119, in collect\n    gc.run.old.settle(directory/'settling.json',env['baseline_c'],expected_power=env['power_settings'])\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/scripts/experiment.py\", line 124, in settle\n    raise RuntimeError('Temperature did not stabilize within the protocol timeout; inspect settling log.')\nRuntimeError: Temperature did not stabilize within the protocol timeout; inspect settling log.\n",
+    "closing_decision": "close_unresolved_incomplete_final_attempt",
+    "automatic_followup_authorized": false
+  },
+  "preparation_seal_sha256": "dd6c9b4f4db1e491c7f880c0a80fac417066253701dfd62e4d44178da6e115b9",
+  "host_monitor_sha256": "e708345e892c55196eac6d78bcfe2aec258730a305abff4165a0be38f2b50f11",
+  "fixture_seal_sha256": "8b9b30737196fce8970db815420e06986ebafff936325b24cd97310ce8cf310a"
+}

@@ -1,0 +1,26 @@
+Settling [initial idle]: at least 600s; checking a stable 60s temperature window.
+Settling [initial idle] t=0s: k10temp:Tctl=82.8°C
+Settling [initial idle] t=60s: k10temp:Tctl=51.6°C
+Settling [initial idle] t=120s: k10temp:Tctl=52.0°C
+Settling [initial idle] t=180s: k10temp:Tctl=59.9°C
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/ablation_study.py", line 263, in foreground
+    run.require_quiet_host();pipeline.update_status(directory,'running','collect-48-trials');collect(directory)
+                                                                                             ~~~~~~~^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/ablation_study.py", line 140, in collect
+    if pending: run.require_quiet_host();run.old.prepare_environment(session)
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/scripts/experiment.py", line 134, in prepare_environment
+    settle(session / f'resume-settling-{time.time_ns()}.json', env['baseline_c'],
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           initial_idle=True, expected_power=env['power_settings'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/scripts/experiment.py", line 125, in settle
+    time.sleep(POLICY['sample_sec'])
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/ablation_study.py", line 260, in <lambda>
+    signal.signal(signal.SIGTERM,lambda *a: (_ for _ in ()).throw(KeyboardInterrupt('signal TERM')))
+                                            ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/ablation_study.py", line 260, in <genexpr>
+    signal.signal(signal.SIGTERM,lambda *a: (_ for _ in ()).throw(KeyboardInterrupt('signal TERM')))
+KeyboardInterrupt: signal TERM

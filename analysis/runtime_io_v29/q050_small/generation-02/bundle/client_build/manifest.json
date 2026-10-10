@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "sources": {
+    "parallelism_clock_test.go": "8ffab6fe90a696d0ad05855b3a19d6fc92efca93095cabab54f02cc5acff0ed4",
+    "go.mod": "bc8481bc762a2d9150e6dba23c42e074e42ecfee5e5ab42c50ec8cad27629481",
+    "main_test.go": "9f25911c527edab78ac41970d0c91a8df3f8a02a09e4dac954932628c9f02f9d",
+    "parallelism_clock.go": "10717b9456b1483224f3ec529bdb66875d92e8c304b8e131f143138200699afa",
+    "main.go": "175fc29df8789d9c48f0f6c62aad83b877efc8c092a910689ca63151dff7fe8f"
+  },
+  "binary_sha256": "3a4d34eeb77f2529452a557ee690a4e669e4f74c954499d27f8583f8e5a52aca",
+  "compiler": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_software_audit/audit-01/toolchain/bin/go",
+  "compiler_sha256": "548e61b2d08ae52043be2f1924ed3c1d2b2c41967e360f3e317667f6fa912fc2",
+  "compiler_version": "go version go1.26.1 linux/amd64",
+  "environment_overrides": {
+    "GOTOOLCHAIN": "local",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOCACHE": "/tmp/v27r2-go-cache",
+    "GOMODCACHE": "/tmp/v27r2-go-modcache"
+  },
+  "checks": {
+    "test": {
+      "argv": [
+        "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_software_audit/audit-01/toolchain/bin/go",
+        "test",
+        "-count=1",
+        "-v",
+        "./..."
+      ],
+      "exit_code": 0
+    },
+    "vet": {
+      "argv": [
+        "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_software_audit/audit-01/toolchain/bin/go",
+        "vet",
+        "./..."
+      ],
+      "exit_code": 0
+    },
+    "race": {
+      "argv": [
+        "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_software_audit/audit-01/toolchain/bin/go",
+        "test",
+        "-race",
+        "-count=1",
+        "./..."
+      ],
+      "exit_code": 0
+    },
+    "build": {
+      "argv": [
+        "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_software_audit/audit-01/toolchain/bin/go",
+        "build",
+        "-trimpath",
+        "-o",
+        "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v27_client_build/revision-02/loadgen",
+        "."
+      ],
+      "exit_code": 0
+    }
+  },
+  "test_passed": true,
+  "vet_passed": true,
+  "race_passed": true,
+  "all_frozen_vectors_match_binary": true,
+  "compiled_client_report_replay_passed": true,
+  "clock_instrumentation_source": "retained build_parallelism.client_source plus V12 prepared parallelism_clock.go",
+  "build_cgo_enabled": "0",
+  "original_client_source_hashes": {
+    "main.go": "141e77c1a3eaa22eb4dee86f88f50fded7c07888bbb390ecfcfbe63a27cb1ca7",
+    "main_test.go": "430e80b06219d76d72f564ce561016ac03636be8dd1cf2388e32c68eae843dc3",
+    "go.mod": "bc8481bc762a2d9150e6dba23c42e074e42ecfee5e5ab42c50ec8cad27629481"
+  },
+  "historical_client_binary_sha256": "03a3876212b87508c64489c79c612e1c757b3916c488fc2bda393ad957f9ac5e",
+  "runtime_qualified": false,
+  "performance_run": false,
+  "prerequisite_decision": "both_low_rates_qualified"
+}

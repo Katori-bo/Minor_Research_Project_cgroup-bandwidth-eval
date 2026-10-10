@@ -1,0 +1,362 @@
+{
+  "schema": 1,
+  "method": "exact critical-point reference",
+  "problem": {
+    "arrivals": [
+      "0",
+      "0",
+      "19/20",
+      "39/20"
+    ],
+    "system_slots": 2,
+    "relative_deadline": "11/10",
+    "service_interval": [
+      "1/2",
+      "1"
+    ],
+    "time_unit": "seconds"
+  },
+  "scope": "shared constant service time; finite known trace; tail-drop FIFO; late jobs finish",
+  "real_system_coverage_established": false,
+  "novelty_established": false,
+  "limits": {
+    "max_root_expressions": 100000,
+    "max_replays": 20000,
+    "max_replay_offers": 200000
+  },
+  "stats": {
+    "root_expressions": 40,
+    "distinct_breakpoints": 8,
+    "cells": 15,
+    "fixed_parameter_replays": 17,
+    "offer_evaluations": 68
+  },
+  "cells": [
+    {
+      "domain": {
+        "low": "1/2",
+        "high": "1/2",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "1/2",
+      "rejected": 0,
+      "late": 0,
+      "timely": 4,
+      "failures": 0,
+      "failure_fraction": "0",
+      "failure_percentage": "0"
+    },
+    {
+      "domain": {
+        "low": "1/2",
+        "high": "11/20",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "21/40",
+      "rejected": 0,
+      "late": 0,
+      "timely": 4,
+      "failures": 0,
+      "failure_fraction": "0",
+      "failure_percentage": "0"
+    },
+    {
+      "domain": {
+        "low": "11/20",
+        "high": "11/20",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "11/20",
+      "rejected": 0,
+      "late": 0,
+      "timely": 4,
+      "failures": 0,
+      "failure_fraction": "0",
+      "failure_percentage": "0"
+    },
+    {
+      "domain": {
+        "low": "11/20",
+        "high": "13/20",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "3/5",
+      "rejected": 0,
+      "late": 1,
+      "timely": 3,
+      "failures": 1,
+      "failure_fraction": "1/4",
+      "failure_percentage": "25"
+    },
+    {
+      "domain": {
+        "low": "13/20",
+        "high": "13/20",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "13/20",
+      "rejected": 0,
+      "late": 1,
+      "timely": 3,
+      "failures": 1,
+      "failure_fraction": "1/4",
+      "failure_percentage": "25"
+    },
+    {
+      "domain": {
+        "low": "13/20",
+        "high": "41/60",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "2/3",
+      "rejected": 0,
+      "late": 1,
+      "timely": 3,
+      "failures": 1,
+      "failure_fraction": "1/4",
+      "failure_percentage": "25"
+    },
+    {
+      "domain": {
+        "low": "41/60",
+        "high": "41/60",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "41/60",
+      "rejected": 0,
+      "late": 1,
+      "timely": 3,
+      "failures": 1,
+      "failure_fraction": "1/4",
+      "failure_percentage": "25"
+    },
+    {
+      "domain": {
+        "low": "41/60",
+        "high": "61/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "347/480",
+      "rejected": 0,
+      "late": 2,
+      "timely": 2,
+      "failures": 2,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "61/80",
+        "high": "61/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "61/80",
+      "rejected": 0,
+      "late": 2,
+      "timely": 2,
+      "failures": 2,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "61/80",
+        "high": "19/20",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "137/160",
+      "rejected": 0,
+      "late": 3,
+      "timely": 1,
+      "failures": 3,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "19/20",
+        "high": "19/20",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "19/20",
+      "rejected": 0,
+      "late": 3,
+      "timely": 1,
+      "failures": 3,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "19/20",
+        "high": "39/40",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "77/80",
+      "rejected": 1,
+      "late": 1,
+      "timely": 2,
+      "failures": 2,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "39/40",
+        "high": "39/40",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "39/40",
+      "rejected": 1,
+      "late": 1,
+      "timely": 2,
+      "failures": 2,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "39/40",
+        "high": "1",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "79/80",
+      "rejected": 1,
+      "late": 1,
+      "timely": 2,
+      "failures": 2,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "1",
+        "high": "1",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "1",
+      "rejected": 1,
+      "late": 1,
+      "timely": 2,
+      "failures": 2,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    }
+  ],
+  "minimum": {
+    "failures": 0,
+    "failure_fraction": "0",
+    "failure_percentage": "0",
+    "attaining_cell_indices": [
+      0,
+      1,
+      2
+    ],
+    "witness_service_time": "1/2",
+    "witness_replay": {
+      "offered": 4,
+      "rejected": 0,
+      "late": 0,
+      "timely": 4,
+      "failures": 0,
+      "failure_fraction": "0",
+      "failure_percentage": "0",
+      "system_peak": 2,
+      "offers": [
+        {
+          "index": 0,
+          "arrival": "0",
+          "completion": "1/2",
+          "latency": "1/2",
+          "outcome": "timely"
+        },
+        {
+          "index": 1,
+          "arrival": "0",
+          "completion": "1",
+          "latency": "1",
+          "outcome": "timely"
+        },
+        {
+          "index": 2,
+          "arrival": "19/20",
+          "completion": "3/2",
+          "latency": "11/20",
+          "outcome": "timely"
+        },
+        {
+          "index": 3,
+          "arrival": "39/20",
+          "completion": "49/20",
+          "latency": "1/2",
+          "outcome": "timely"
+        }
+      ]
+    }
+  },
+  "maximum": {
+    "failures": 3,
+    "failure_fraction": "3/4",
+    "failure_percentage": "75",
+    "attaining_cell_indices": [
+      9,
+      10
+    ],
+    "witness_service_time": "137/160",
+    "witness_replay": {
+      "offered": 4,
+      "rejected": 0,
+      "late": 3,
+      "timely": 1,
+      "failures": 3,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75",
+      "system_peak": 2,
+      "offers": [
+        {
+          "index": 0,
+          "arrival": "0",
+          "completion": "137/160",
+          "latency": "137/160",
+          "outcome": "timely"
+        },
+        {
+          "index": 1,
+          "arrival": "0",
+          "completion": "137/80",
+          "latency": "137/80",
+          "outcome": "late"
+        },
+        {
+          "index": 2,
+          "arrival": "19/20",
+          "completion": "411/160",
+          "latency": "259/160",
+          "outcome": "late"
+        },
+        {
+          "index": 3,
+          "arrival": "39/20",
+          "completion": "137/40",
+          "latency": "59/40",
+          "outcome": "late"
+        }
+      ]
+    }
+  }
+}

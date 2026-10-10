@@ -1,0 +1,64 @@
+{
+  "loading_mode": "shared",
+  "image_id": "sha256:27556b25b0ee24f9ff2ec33953283c1c0a91051f1355e6c1265e0cf1d4d70eba",
+  "expected_image_id": "sha256:27556b25b0ee24f9ff2ec33953283c1c0a91051f1355e6c1265e0cf1d4d70eba",
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v17_loading_build/runtime_assets",
+      "Destination": "/qualification",
+      "Mode": "",
+      "RW": false,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v17_loading_build/runtime_assets/shared.server",
+      "Destination": "/server",
+      "Mode": "",
+      "RW": false,
+      "Propagation": "rprivate"
+    }
+  ],
+  "probe": {
+    "target_executable": {
+      "sha256": "b7d249454d5477ffa0ade7cf1d90ba0eee8157ee166bb6e3f71d4cf912400efd",
+      "device": 66307,
+      "inode": 27553707,
+      "size": 8797132,
+      "mode": 33261,
+      "uid": 1000,
+      "gid": 1000
+    },
+    "probe_executable": {
+      "sha256": "46e66c6dd670debe25962bb13d66c2d7bc1f157f20a776faa32620711e824a6f",
+      "device": 66307,
+      "inode": 27553737,
+      "size": 3206673,
+      "mode": 33261,
+      "uid": 0,
+      "gid": 0
+    },
+    "target_link": "/server"
+  },
+  "host_shared_identity": {
+    "sha256": "b7d249454d5477ffa0ade7cf1d90ba0eee8157ee166bb6e3f71d4cf912400efd",
+    "device": 66307,
+    "inode": 27553707,
+    "size": 8797132,
+    "mode": 33261,
+    "uid": 1000,
+    "gid": 1000
+  },
+  "host_probe_identity": {
+    "sha256": "46e66c6dd670debe25962bb13d66c2d7bc1f157f20a776faa32620711e824a6f",
+    "device": 66307,
+    "inode": 27553737,
+    "size": 3206673,
+    "mode": 33261,
+    "uid": 0,
+    "gid": 0
+  },
+  "collection": "startup_before_warmup",
+  "limitation": "Startup executable provenance only; no runnable-readiness or request-level kernel observation."
+}

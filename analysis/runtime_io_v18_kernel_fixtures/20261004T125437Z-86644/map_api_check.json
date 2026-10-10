@@ -1,0 +1,6 @@
+{
+  "program": "config = { print_maps_on_exit=false; }\nbegin {\n  @seen[123]=1;\n  printf(\"MAP_API %d %d %d\\n\", has_key(@seen,123), has_key(@seen,456), delete(@seen,123));\n  exit();\n}",
+  "returncode": 0,
+  "stdout": "MAP_API 1 0 1\n\n\n",
+  "stderr": ""
+}

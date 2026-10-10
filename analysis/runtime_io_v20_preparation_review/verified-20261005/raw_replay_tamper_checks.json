@@ -1,0 +1,37 @@
+{
+  "checks": [
+    "relocated actual V20 functional raw data replay exactly",
+    {
+      "check": "resealed raw client latency modification",
+      "rejected": "saved derivation differs from raw replay"
+    },
+    {
+      "check": "resealed whole-cohort primary modification",
+      "rejected": "saved derivation differs from raw replay"
+    },
+    {
+      "check": "resealed wrong yield environment",
+      "rejected": "service environment differs"
+    },
+    {
+      "check": "resealed wrong resource contract",
+      "rejected": "V20 CPU contract or historical memory/PID defaults differ"
+    },
+    {
+      "check": "extra unsealed file",
+      "rejected": "evidence seal mismatch: /tmp/v20-final-review-ixw43ela/session/preparation/functional/A"
+    },
+    {
+      "check": "modified actual executable",
+      "rejected": "evidence seal mismatch: /tmp/v20-final-review-ixw43ela/session/preparation/functional/A"
+    },
+    {
+      "check": "copied full-duration V19 A fixture replays through V20 warmup/measurement parser",
+      "offers": 6793,
+      "available_result_crossings": 192,
+      "is_new_v20_measurement": false
+    }
+  ],
+  "all_checks_passed": true,
+  "benchmark_launched": false
+}

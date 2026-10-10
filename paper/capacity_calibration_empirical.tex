@@ -1,0 +1,1206 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,booktabs,graphicx,microtype}
+\usepackage{xcolor}
+\usepackage[hidelinks,breaklinks]{hyperref}
+\usepackage{url}
+\setlength{\emergencystretch}{3em}
+\title{Capacity Calibration and Deadline Forecasts Under a Fractional CPU Quota}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+
+Can whole-run CPU per completed job be substituted for busy service capacity
+when forecasting deadline misses in a quota-limited service? We compare five
+independently calibrated capacity inputs within one finite FIFO forecasting
+model for a Go HTTP service limited to 50 ms of CPU per 100 ms. Predictions
+are frozen before sixteen fresh validation trials, and the endpoint is the
+fraction of all offered requests that fail a 500 ms deadline. Mean absolute
+forecast error is 13.494 percentage points for nominal allowance divided by
+whole-run CPU/job and 13.471 after direct idle correction, compared with 0.453
+for backlogged-window throughput. A quadratic utilization–throughput benchmark
+achieves 1.169 points, substantially narrowing the advantage of busy
+calibration; a linear fit achieves 31.314. Busy calibration passes all declared
+accuracy checks, but its advantage over quadratic does not meet the predefined
+minimum-effect screen. Earlier prospective validation covers two SHA work
+sizes and two burst timescales. The contribution is a reproducible case showing
+how capacity calibration affects deadline forecasts, including a
+nonlinear alternative that approaches busy accuracy. The study establishes
+neither a new estimator nor general superiority over CPU-based methods.
+
+\end{abstract}
+\section{Research question and contribution}
+
+We ask one question: **in this quota-limited service, how accurately do
+independently calibrated whole-run, busy-window and nonlinear CPU-based
+capacity estimates forecast all-offer 500 ms deadline misses?**
+
+The tested whole-run substitution divides the configured CPU allowance by
+aggregate CPU per completed job. Its measurement cohort spans varying load
+and final drain. Busy calibration instead measures completion throughput in
+fixed windows while work is queued. These measurements need not represent
+the same operating condition. Their disagreement matters when a capacity
+estimate is used to forecast queues near sustained overload.
+
+Our empirical contribution is the prospective comparison of these inputs
+within a shared forecasting model. The declared whole-run substitution
+underestimates busy capacity and substantially overpredicts deadline misses.
+Direct zero-request CPU correction barely changes the result. Crucially, a
+nonlinear CPU-based benchmark predicts nearly the same capacity as busy
+calibration. This bounds the lesson: the demonstrated failure concerns the
+particular aggregate substitution, rather than CPU-based estimation as a class.
+
+The FIFO model, busy calibration and load-dependent estimation are established
+building blocks. We do not establish that practitioners universally use the
+tested substitution, identify the mechanism of its error, or propose a new
+estimator. The principal comparison is the final independently calibrated
+study, identified as V28 in the artifact; earlier prospective studies support
+its context. Technical qualification and unsuccessful investigations are
+documented separately rather than counted as additional contributions.
+
+\section{Prospective comparison}
+
+\subsection{Service, resource contract and endpoint}
+
+The containerized Go service uses one worker, \texttt{GOMAXPROCS=1}, a waiting queue
+of 128 jobs and yielding disabled. CPU allowance is 50 ms per 100 ms with
+zero burst credit (\texttt{cpu.max=50000 100000}, \texttt{cpu.max.burst=0}). The Linux
+CPU controller defines a bandwidth ceiling \cite{linux}. The recorded service uses
+stock Go 1.26.1 on Linux 7.2.8-arch1-2; the host records \texttt{amd-pstate-epp}
+with the \texttt{powersave} governor and \texttt{balance\_performance} preference. Frequency
+is not fixed, and these settings do not isolate a frequency-related cause. The service uses CPUs 2 and 4; the client/controller uses
+CPUs 0 and 1. Host power, resource limits, schedules, application identities,
+kernel and boot identities are retained and checked. Affinity and checks do
+not establish exclusive CPU service or absence of host interference.
+
+Work is repeated SHA computation: 44,000 iterations per small job and 88,000
+per large job. Earlier work-size validation uses both sizes; the final
+comparison uses the small-job service. All studies use one application, one
+host and one quota. Work-size transfer is not independent application transfer.
+
+Every calibrated capacity feeds the same initially empty constant-service
+FIFO model with one active job, 128 waiting slots and exact offered timestamps.
+The model omits entry delays, runtime/HTTP effects and quota pulses. The
+deadline starts at the scheduled offer; unsuccessful offers count as misses
+in the full offered cohort. Thus the comparison concerns capacity inputs
+within a fixed model, rather than successful-request latency alone or a new
+queueing method.
+
+\subsection{Capacity inputs and calibration data}
+
+Let \texttt{q = 0.5} CPU-seconds per wall-second, \texttt{C} be cgroup CPU use, \texttt{N} the
+completed-job count and \texttt{T} the enclosing measurement-through-drain duration.
+The two direct estimates are:
+
+\begin{align*}c_{\mathrm{whole}} &= C/N, & \mu_{\mathrm{whole}} &= q/\operatorname{mean}(c_{\mathrm{whole}}),\\\mu_{\mathrm{busy}} &= \operatorname{mean}(N_{\mathrm{window}}/T_{\mathrm{window}}).\end{align*}
+
+Means use the declared independent calibration trials. CPU/job is computed
+separately per mixed run before averaging; the estimator is not a pooled
+CPU/count ratio. Warm-up CPU is excluded. Each slot has 20 s warm-up at its
+low rate, then full drain and a metrics reset before measurement. Idle and
+steady measurement lasts 30 s. The four mixed calibration runs last 60 s:
+four 15 s cycles with 10 s at 15 or 30 jobs/s and 5 s at 169.8 jobs/s.
+Whole-run CPU and wall time include measurement startup, terminal control
+and final drain. Mixed busy windows are [11.5,14.5) s plus 15 s per cycle. Busy eligibility
+requires a guaranteed positive waiting queue throughout clock-expanded fixed
+windows in the final comparison. Accounting brackets bound counts and
+durations; they are distinct from statistical intervals. Earlier studies
+use their own frozen eligibility definitions, retained in the supplement.
+
+V28 uses four mixed calibration trials for the whole and busy estimates,
+plus twelve idle/steady observations: two balanced blocks at zero requests
+and steady offered rates 15/30/60/90/120 jobs/s. The idle/steady observations
+provide data for CPU-based regression; dedicated zero-request observations
+measure background rate \texttt{b\_idle} for the additive correction.
+
+\begin{align*}\mu_{\mathrm{idle}}&=(q-b_{\mathrm{idle}})/\operatorname{mean}((C-b_{\mathrm{idle}}T)/N),\\ U&=C/T,\qquad X=N/T,\\ U_{\mathrm{linear}}(X)&=b+dX,\\U_{\mathrm{quadratic}}(X)&=b+dX+eX^2,\\ \mu_{\mathrm{regression}}&=\text{admissible positive root of }U(X)=q.\end{align*}
+
+The regressions minimize equal-run CPU-utilization residuals with a
+nonnegative intercept, positive initial slope, bounded extrapolation and
+declared monotonicity checks. The capacity root must not exceed twice the
+maximum measured calibration throughput. The linear fit has intercept
+0.0158658 CPU and slope 0.00384378 CPU-seconds/job. The selected quadratic
+fit is \texttt{U(X)=0.005276096 X - 0.000012853378 X$^2$}, with CPU/wall-second units.
+Its root is 1.269 times the maximum measured throughput of 117.029 jobs/s;
+the result involves extrapolation. Quadratic fitting compares a finite candidate
+family including free and zero intercept and the linear boundary. The selected
+quadratic intercept is zero. This is a declared nonlinear benchmark, not a
+reproduction of a published queueing-constrained estimator. Loaded-background
+additivity is an assumption of the idle correction.
+
+\begin{figure}[htbp]
+\centering
+{\footnotesize\setlength{\unitlength}{1mm}\begin{picture}(155,110)
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,15.00000)(18.00000,47.50000)(18.00000,80.00000)}
+\put(18.00000,12.00000){\makebox(0,0){0}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(50.50000,15.00000)(50.50000,47.50000)(50.50000,80.00000)}
+\put(50.50000,12.00000){\makebox(0,0){40}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(83.00000,15.00000)(83.00000,47.50000)(83.00000,80.00000)}
+\put(83.00000,12.00000){\makebox(0,0){80}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(115.50000,15.00000)(115.50000,47.50000)(115.50000,80.00000)}
+\put(115.50000,12.00000){\makebox(0,0){120}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(148.00000,15.00000)(148.00000,47.50000)(148.00000,80.00000)}
+\put(148.00000,12.00000){\makebox(0,0){160}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,15.00000)(83.00000,15.00000)(148.00000,15.00000)}
+\put(15.00000,15.00000){\makebox(0,0)[r]{0.0}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,25.00000)(83.00000,25.00000)(148.00000,25.00000)}
+\put(15.00000,25.00000){\makebox(0,0)[r]{0.1}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,35.00000)(83.00000,35.00000)(148.00000,35.00000)}
+\put(15.00000,35.00000){\makebox(0,0)[r]{0.2}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,45.00000)(83.00000,45.00000)(148.00000,45.00000)}
+\put(15.00000,45.00000){\makebox(0,0)[r]{0.3}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,55.00000)(83.00000,55.00000)(148.00000,55.00000)}
+\put(15.00000,55.00000){\makebox(0,0)[r]{0.4}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,65.00000)(83.00000,65.00000)(148.00000,65.00000)}
+\put(15.00000,65.00000){\makebox(0,0)[r]{0.5}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,75.00000)(83.00000,75.00000)(148.00000,75.00000)}
+\put(15.00000,75.00000){\makebox(0,0)[r]{0.6}}
+{\color{black}\linethickness{.20mm}\qbezier(18.00000,15.00000)(83.00000,15.00000)(148.00000,15.00000)}
+{\color{black}\linethickness{.20mm}\qbezier(18.00000,15.00000)(18.00000,47.50000)(18.00000,80.00000)}
+\put(83,3){\makebox(0,0){Completion throughput (jobs/s)}}
+\put(1,47.5){\makebox(0,0){\rotatebox{90}{CPU-seconds / wall-second}}}
+\put(29.88040,21.61424){\color{black}\circle*{1.7}}
+\put(113.08596,58.19004){\color{black}\circle*{1.7}}
+\put(18.00000,15.02547){\color{black}\circle*{1.7}}
+\put(65.52012,41.13333){\color{black}\circle*{1.7}}
+\put(89.22516,53.46699){\color{black}\circle*{1.7}}
+\put(41.69039,28.21938){\color{black}\circle*{1.7}}
+\put(41.70697,28.12757){\color{black}\circle*{1.7}}
+\put(89.16100,53.59711){\color{black}\circle*{1.7}}
+\put(65.43742,40.89742){\color{black}\circle*{1.7}}
+\put(18.00000,15.02675){\color{black}\circle*{1.7}}
+\put(112.99305,58.01074){\color{black}\circle*{1.7}}
+\put(29.88131,21.59955){\color{black}\circle*{1.7}}
+{\color{gray}\linethickness{.30mm}\qbezier(18.00000,16.58658)(18.39619,16.77401)(18.79238,16.96144)}
+{\color{gray}\linethickness{.30mm}\qbezier(18.79238,16.96144)(19.18857,17.14887)(19.58477,17.33630)}
+{\color{gray}\linethickness{.30mm}\qbezier(19.58477,17.33630)(19.98096,17.52374)(20.37715,17.71117)}
+{\color{gray}\linethickness{.30mm}\qbezier(20.37715,17.71117)(20.77334,17.89860)(21.16953,18.08603)}
+{\color{gray}\linethickness{.30mm}\qbezier(21.16953,18.08603)(21.56572,18.27346)(21.96191,18.46089)}
+{\color{gray}\linethickness{.30mm}\qbezier(21.96191,18.46089)(22.35811,18.64832)(22.75430,18.83575)}
+{\color{gray}\linethickness{.30mm}\qbezier(22.75430,18.83575)(23.15049,19.02318)(23.54668,19.21061)}
+{\color{gray}\linethickness{.30mm}\qbezier(23.54668,19.21061)(23.94287,19.39804)(24.33906,19.58547)}
+{\color{gray}\linethickness{.30mm}\qbezier(24.33906,19.58547)(24.73526,19.77290)(25.13145,19.96033)}
+{\color{gray}\linethickness{.30mm}\qbezier(25.13145,19.96033)(25.52764,20.14776)(25.92383,20.33520)}
+{\color{gray}\linethickness{.30mm}\qbezier(25.92383,20.33520)(26.32002,20.52263)(26.71621,20.71006)}
+{\color{gray}\linethickness{.30mm}\qbezier(26.71621,20.71006)(27.11240,20.89749)(27.50860,21.08492)}
+{\color{gray}\linethickness{.30mm}\qbezier(27.50860,21.08492)(27.90479,21.27235)(28.30098,21.45978)}
+{\color{gray}\linethickness{.30mm}\qbezier(28.30098,21.45978)(28.69717,21.64721)(29.09336,21.83464)}
+{\color{gray}\linethickness{.30mm}\qbezier(29.09336,21.83464)(29.48955,22.02207)(29.88574,22.20950)}
+{\color{gray}\linethickness{.30mm}\qbezier(29.88574,22.20950)(30.28194,22.39693)(30.67813,22.58436)}
+{\color{gray}\linethickness{.30mm}\qbezier(30.67813,22.58436)(31.07432,22.77179)(31.47051,22.95923)}
+{\color{gray}\linethickness{.30mm}\qbezier(31.47051,22.95923)(31.86670,23.14666)(32.26289,23.33409)}
+{\color{gray}\linethickness{.30mm}\qbezier(32.26289,23.33409)(32.65909,23.52152)(33.05528,23.70895)}
+{\color{gray}\linethickness{.30mm}\qbezier(33.05528,23.70895)(33.45147,23.89638)(33.84766,24.08381)}
+{\color{gray}\linethickness{.30mm}\qbezier(33.84766,24.08381)(34.24385,24.27124)(34.64004,24.45867)}
+{\color{gray}\linethickness{.30mm}\qbezier(34.64004,24.45867)(35.03623,24.64610)(35.43243,24.83353)}
+{\color{gray}\linethickness{.30mm}\qbezier(35.43243,24.83353)(35.82862,25.02096)(36.22481,25.20839)}
+{\color{gray}\linethickness{.30mm}\qbezier(36.22481,25.20839)(36.62100,25.39582)(37.01719,25.58326)}
+{\color{gray}\linethickness{.30mm}\qbezier(37.01719,25.58326)(37.41338,25.77069)(37.80957,25.95812)}
+{\color{gray}\linethickness{.30mm}\qbezier(37.80957,25.95812)(38.20577,26.14555)(38.60196,26.33298)}
+{\color{gray}\linethickness{.30mm}\qbezier(38.60196,26.33298)(38.99815,26.52041)(39.39434,26.70784)}
+{\color{gray}\linethickness{.30mm}\qbezier(39.39434,26.70784)(39.79053,26.89527)(40.18672,27.08270)}
+{\color{gray}\linethickness{.30mm}\qbezier(40.18672,27.08270)(40.58292,27.27013)(40.97911,27.45756)}
+{\color{gray}\linethickness{.30mm}\qbezier(40.97911,27.45756)(41.37530,27.64499)(41.77149,27.83242)}
+{\color{gray}\linethickness{.30mm}\qbezier(41.77149,27.83242)(42.16768,28.01985)(42.56387,28.20728)}
+{\color{gray}\linethickness{.30mm}\qbezier(42.56387,28.20728)(42.96006,28.39472)(43.35626,28.58215)}
+{\color{gray}\linethickness{.30mm}\qbezier(43.35626,28.58215)(43.75245,28.76958)(44.14864,28.95701)}
+{\color{gray}\linethickness{.30mm}\qbezier(44.14864,28.95701)(44.54483,29.14444)(44.94102,29.33187)}
+{\color{gray}\linethickness{.30mm}\qbezier(44.94102,29.33187)(45.33721,29.51930)(45.73340,29.70673)}
+{\color{gray}\linethickness{.30mm}\qbezier(45.73340,29.70673)(46.12960,29.89416)(46.52579,30.08159)}
+{\color{gray}\linethickness{.30mm}\qbezier(46.52579,30.08159)(46.92198,30.26902)(47.31817,30.45645)}
+{\color{gray}\linethickness{.30mm}\qbezier(47.31817,30.45645)(47.71436,30.64388)(48.11055,30.83131)}
+{\color{gray}\linethickness{.30mm}\qbezier(48.11055,30.83131)(48.50675,31.01875)(48.90294,31.20618)}
+{\color{gray}\linethickness{.30mm}\qbezier(48.90294,31.20618)(49.29913,31.39361)(49.69532,31.58104)}
+{\color{gray}\linethickness{.30mm}\qbezier(49.69532,31.58104)(50.09151,31.76847)(50.48770,31.95590)}
+{\color{gray}\linethickness{.30mm}\qbezier(50.48770,31.95590)(50.88389,32.14333)(51.28009,32.33076)}
+{\color{gray}\linethickness{.30mm}\qbezier(51.28009,32.33076)(51.67628,32.51819)(52.07247,32.70562)}
+{\color{gray}\linethickness{.30mm}\qbezier(52.07247,32.70562)(52.46866,32.89305)(52.86485,33.08048)}
+{\color{gray}\linethickness{.30mm}\qbezier(52.86485,33.08048)(53.26104,33.26791)(53.65723,33.45534)}
+{\color{gray}\linethickness{.30mm}\qbezier(53.65723,33.45534)(54.05343,33.64278)(54.44962,33.83021)}
+{\color{gray}\linethickness{.30mm}\qbezier(54.44962,33.83021)(54.84581,34.01764)(55.24200,34.20507)}
+{\color{gray}\linethickness{.30mm}\qbezier(55.24200,34.20507)(55.63819,34.39250)(56.03438,34.57993)}
+{\color{gray}\linethickness{.30mm}\qbezier(56.03438,34.57993)(56.43058,34.76736)(56.82677,34.95479)}
+{\color{gray}\linethickness{.30mm}\qbezier(56.82677,34.95479)(57.22296,35.14222)(57.61915,35.32965)}
+{\color{gray}\linethickness{.30mm}\qbezier(57.61915,35.32965)(58.01534,35.51708)(58.41153,35.70451)}
+{\color{gray}\linethickness{.30mm}\qbezier(58.41153,35.70451)(58.80772,35.89194)(59.20392,36.07937)}
+{\color{gray}\linethickness{.30mm}\qbezier(59.20392,36.07937)(59.60011,36.26680)(59.99630,36.45424)}
+{\color{gray}\linethickness{.30mm}\qbezier(59.99630,36.45424)(60.39249,36.64167)(60.78868,36.82910)}
+{\color{gray}\linethickness{.30mm}\qbezier(60.78868,36.82910)(61.18487,37.01653)(61.58106,37.20396)}
+{\color{gray}\linethickness{.30mm}\qbezier(61.58106,37.20396)(61.97726,37.39139)(62.37345,37.57882)}
+{\color{gray}\linethickness{.30mm}\qbezier(62.37345,37.57882)(62.76964,37.76625)(63.16583,37.95368)}
+{\color{gray}\linethickness{.30mm}\qbezier(63.16583,37.95368)(63.56202,38.14111)(63.95821,38.32854)}
+{\color{gray}\linethickness{.30mm}\qbezier(63.95821,38.32854)(64.35441,38.51597)(64.75060,38.70340)}
+{\color{gray}\linethickness{.30mm}\qbezier(64.75060,38.70340)(65.14679,38.89083)(65.54298,39.07827)}
+{\color{gray}\linethickness{.30mm}\qbezier(65.54298,39.07827)(65.93917,39.26570)(66.33536,39.45313)}
+{\color{gray}\linethickness{.30mm}\qbezier(66.33536,39.45313)(66.73155,39.64056)(67.12775,39.82799)}
+{\color{gray}\linethickness{.30mm}\qbezier(67.12775,39.82799)(67.52394,40.01542)(67.92013,40.20285)}
+{\color{gray}\linethickness{.30mm}\qbezier(67.92013,40.20285)(68.31632,40.39028)(68.71251,40.57771)}
+{\color{gray}\linethickness{.30mm}\qbezier(68.71251,40.57771)(69.10870,40.76514)(69.50489,40.95257)}
+{\color{gray}\linethickness{.30mm}\qbezier(69.50489,40.95257)(69.90109,41.14000)(70.29728,41.32743)}
+{\color{gray}\linethickness{.30mm}\qbezier(70.29728,41.32743)(70.69347,41.51486)(71.08966,41.70230)}
+{\color{gray}\linethickness{.30mm}\qbezier(71.08966,41.70230)(71.48585,41.88973)(71.88204,42.07716)}
+{\color{gray}\linethickness{.30mm}\qbezier(71.88204,42.07716)(72.27824,42.26459)(72.67443,42.45202)}
+{\color{gray}\linethickness{.30mm}\qbezier(72.67443,42.45202)(73.07062,42.63945)(73.46681,42.82688)}
+{\color{gray}\linethickness{.30mm}\qbezier(73.46681,42.82688)(73.86300,43.01431)(74.25919,43.20174)}
+{\color{gray}\linethickness{.30mm}\qbezier(74.25919,43.20174)(74.65538,43.38917)(75.05158,43.57660)}
+{\color{gray}\linethickness{.30mm}\qbezier(75.05158,43.57660)(75.44777,43.76403)(75.84396,43.95146)}
+{\color{gray}\linethickness{.30mm}\qbezier(75.84396,43.95146)(76.24015,44.13889)(76.63634,44.32632)}
+{\color{gray}\linethickness{.30mm}\qbezier(76.63634,44.32632)(77.03253,44.51376)(77.42872,44.70119)}
+{\color{gray}\linethickness{.30mm}\qbezier(77.42872,44.70119)(77.82492,44.88862)(78.22111,45.07605)}
+{\color{gray}\linethickness{.30mm}\qbezier(78.22111,45.07605)(78.61730,45.26348)(79.01349,45.45091)}
+{\color{gray}\linethickness{.30mm}\qbezier(79.01349,45.45091)(79.40968,45.63834)(79.80587,45.82577)}
+{\color{gray}\linethickness{.30mm}\qbezier(79.80587,45.82577)(80.20206,46.01320)(80.59826,46.20063)}
+{\color{gray}\linethickness{.30mm}\qbezier(80.59826,46.20063)(80.99445,46.38806)(81.39064,46.57549)}
+{\color{gray}\linethickness{.30mm}\qbezier(81.39064,46.57549)(81.78683,46.76292)(82.18302,46.95035)}
+{\color{gray}\linethickness{.30mm}\qbezier(82.18302,46.95035)(82.57921,47.13779)(82.97541,47.32522)}
+{\color{gray}\linethickness{.30mm}\qbezier(82.97541,47.32522)(83.37160,47.51265)(83.76779,47.70008)}
+{\color{gray}\linethickness{.30mm}\qbezier(83.76779,47.70008)(84.16398,47.88751)(84.56017,48.07494)}
+{\color{gray}\linethickness{.30mm}\qbezier(84.56017,48.07494)(84.95636,48.26237)(85.35255,48.44980)}
+{\color{gray}\linethickness{.30mm}\qbezier(85.35255,48.44980)(85.74875,48.63723)(86.14494,48.82466)}
+{\color{gray}\linethickness{.30mm}\qbezier(86.14494,48.82466)(86.54113,49.01209)(86.93732,49.19952)}
+{\color{gray}\linethickness{.30mm}\qbezier(86.93732,49.19952)(87.33351,49.38695)(87.72970,49.57438)}
+{\color{gray}\linethickness{.30mm}\qbezier(87.72970,49.57438)(88.12589,49.76182)(88.52209,49.94925)}
+{\color{gray}\linethickness{.30mm}\qbezier(88.52209,49.94925)(88.91828,50.13668)(89.31447,50.32411)}
+{\color{gray}\linethickness{.30mm}\qbezier(89.31447,50.32411)(89.71066,50.51154)(90.10685,50.69897)}
+{\color{gray}\linethickness{.30mm}\qbezier(90.10685,50.69897)(90.50304,50.88640)(90.89924,51.07383)}
+{\color{gray}\linethickness{.30mm}\qbezier(90.89924,51.07383)(91.29543,51.26126)(91.69162,51.44869)}
+{\color{gray}\linethickness{.30mm}\qbezier(91.69162,51.44869)(92.08781,51.63612)(92.48400,51.82355)}
+{\color{gray}\linethickness{.30mm}\qbezier(92.48400,51.82355)(92.88019,52.01098)(93.27638,52.19841)}
+{\color{gray}\linethickness{.30mm}\qbezier(93.27638,52.19841)(93.67258,52.38585)(94.06877,52.57328)}
+{\color{gray}\linethickness{.30mm}\qbezier(94.06877,52.57328)(94.46496,52.76071)(94.86115,52.94814)}
+{\color{gray}\linethickness{.30mm}\qbezier(94.86115,52.94814)(95.25734,53.13557)(95.65353,53.32300)}
+{\color{gray}\linethickness{.30mm}\qbezier(95.65353,53.32300)(96.04972,53.51043)(96.44592,53.69786)}
+{\color{gray}\linethickness{.30mm}\qbezier(96.44592,53.69786)(96.84211,53.88529)(97.23830,54.07272)}
+{\color{gray}\linethickness{.30mm}\qbezier(97.23830,54.07272)(97.63449,54.26015)(98.03068,54.44758)}
+{\color{gray}\linethickness{.30mm}\qbezier(98.03068,54.44758)(98.42687,54.63501)(98.82307,54.82244)}
+{\color{gray}\linethickness{.30mm}\qbezier(98.82307,54.82244)(99.21926,55.00987)(99.61545,55.19731)}
+{\color{gray}\linethickness{.30mm}\qbezier(99.61545,55.19731)(100.01164,55.38474)(100.40783,55.57217)}
+{\color{gray}\linethickness{.30mm}\qbezier(100.40783,55.57217)(100.80402,55.75960)(101.20021,55.94703)}
+{\color{gray}\linethickness{.30mm}\qbezier(101.20021,55.94703)(101.59641,56.13446)(101.99260,56.32189)}
+{\color{gray}\linethickness{.30mm}\qbezier(101.99260,56.32189)(102.38879,56.50932)(102.78498,56.69675)}
+{\color{gray}\linethickness{.30mm}\qbezier(102.78498,56.69675)(103.18117,56.88418)(103.57736,57.07161)}
+{\color{gray}\linethickness{.30mm}\qbezier(103.57736,57.07161)(103.97355,57.25904)(104.36975,57.44647)}
+{\color{gray}\linethickness{.30mm}\qbezier(104.36975,57.44647)(104.76594,57.63390)(105.16213,57.82134)}
+{\color{gray}\linethickness{.30mm}\qbezier(105.16213,57.82134)(105.55832,58.00877)(105.95451,58.19620)}
+{\color{gray}\linethickness{.30mm}\qbezier(105.95451,58.19620)(106.35070,58.38363)(106.74690,58.57106)}
+{\color{gray}\linethickness{.30mm}\qbezier(106.74690,58.57106)(107.14309,58.75849)(107.53928,58.94592)}
+{\color{gray}\linethickness{.30mm}\qbezier(107.53928,58.94592)(107.93547,59.13335)(108.33166,59.32078)}
+{\color{gray}\linethickness{.30mm}\qbezier(108.33166,59.32078)(108.72785,59.50821)(109.12404,59.69564)}
+{\color{gray}\linethickness{.30mm}\qbezier(109.12404,59.69564)(109.52024,59.88307)(109.91643,60.07050)}
+{\color{gray}\linethickness{.30mm}\qbezier(109.91643,60.07050)(110.31262,60.25793)(110.70881,60.44537)}
+{\color{gray}\linethickness{.30mm}\qbezier(110.70881,60.44537)(111.10500,60.63280)(111.50119,60.82023)}
+{\color{gray}\linethickness{.30mm}\qbezier(111.50119,60.82023)(111.89738,61.00766)(112.29358,61.19509)}
+{\color{gray}\linethickness{.30mm}\qbezier(112.29358,61.19509)(112.68977,61.38252)(113.08596,61.56995)}
+{\color{gray}\linethickness{.30mm}\qbezier(113.08596,61.56995)(113.23143,61.63877)(113.37691,61.70759)}
+{\color{gray}\linethickness{.30mm}\qbezier(113.66786,61.84524)(113.81334,61.91406)(113.95881,61.98288)}
+{\color{gray}\linethickness{.30mm}\qbezier(114.24976,62.12052)(114.39524,62.18934)(114.54071,62.25816)}
+{\color{gray}\linethickness{.30mm}\qbezier(114.83166,62.39581)(114.97714,62.46463)(115.12261,62.53345)}
+{\color{gray}\linethickness{.30mm}\qbezier(115.41356,62.67109)(115.55904,62.73992)(115.70451,62.80874)}
+{\color{gray}\linethickness{.30mm}\qbezier(115.99546,62.94638)(116.14094,63.01520)(116.28641,63.08402)}
+{\color{gray}\linethickness{.30mm}\qbezier(116.57736,63.22167)(116.72284,63.29049)(116.86831,63.35931)}
+{\color{gray}\linethickness{.30mm}\qbezier(117.15926,63.49695)(117.30474,63.56577)(117.45021,63.63460)}
+{\color{gray}\linethickness{.30mm}\qbezier(117.74116,63.77224)(117.88664,63.84106)(118.03211,63.90988)}
+{\color{gray}\linethickness{.30mm}\qbezier(118.32307,64.04753)(118.46854,64.11635)(118.61402,64.18517)}
+{\color{gray}\linethickness{.30mm}\qbezier(118.90497,64.32281)(119.05044,64.39163)(119.19592,64.46045)}
+{\color{gray}\linethickness{.30mm}\qbezier(119.48687,64.59810)(119.63234,64.66692)(119.77782,64.73574)}
+{\color{gray}\linethickness{.30mm}\qbezier(120.06877,64.87338)(120.21424,64.94221)(120.35972,65.01103)}
+{\color{gray}\linethickness{.30mm}\qbezier(120.65067,65.14867)(120.79614,65.21749)(120.94162,65.28631)}
+{\color{gray}\linethickness{.30mm}\qbezier(121.23257,65.42396)(121.37804,65.49278)(121.52352,65.56160)}
+{\color{gray}\linethickness{.30mm}\qbezier(121.81447,65.69924)(121.95994,65.76806)(122.10542,65.83689)}
+{\color{gray}\linethickness{.30mm}\qbezier(122.39637,65.97453)(122.54185,66.04335)(122.68732,66.11217)}
+{\color{gray}\linethickness{.30mm}\qbezier(122.97827,66.24981)(123.12375,66.31864)(123.26922,66.38746)}
+{\color{gray}\linethickness{.30mm}\qbezier(123.56017,66.52510)(123.70565,66.59392)(123.85112,66.66274)}
+{\color{gray}\linethickness{.30mm}\qbezier(124.14207,66.80039)(124.28755,66.86921)(124.43302,66.93803)}
+{\color{gray}\linethickness{.30mm}\qbezier(124.72397,67.07567)(124.86945,67.14449)(125.01492,67.21332)}
+{\color{gray}\linethickness{.30mm}\qbezier(125.30587,67.35096)(125.45135,67.41978)(125.59682,67.48860)}
+{\color{gray}\linethickness{.30mm}\qbezier(125.88777,67.62625)(126.03325,67.69507)(126.17872,67.76389)}
+{\color{gray}\linethickness{.30mm}\qbezier(126.46967,67.90153)(126.61515,67.97035)(126.76063,68.03917)}
+{\color{gray}\linethickness{.30mm}\qbezier(127.05158,68.17682)(127.19705,68.24564)(127.34253,68.31446)}
+{\color{gray}\linethickness{.30mm}\qbezier(127.63348,68.45210)(127.77895,68.52093)(127.92443,68.58975)}
+{\color{gray}\linethickness{.30mm}\qbezier(128.21538,68.72739)(128.36085,68.79621)(128.50633,68.86503)}
+{\color{gray}\linethickness{.30mm}\qbezier(128.79728,69.00268)(128.94275,69.07150)(129.08823,69.14032)}
+{\color{gray}\linethickness{.30mm}\qbezier(129.37918,69.27796)(129.52465,69.34678)(129.67013,69.41561)}
+{\color{gray}\linethickness{.30mm}\qbezier(129.96108,69.55325)(130.10655,69.62207)(130.25203,69.69089)}
+{\color{gray}\linethickness{.30mm}\qbezier(130.54298,69.82854)(130.68845,69.89736)(130.83393,69.96618)}
+{\color{gray}\linethickness{.30mm}\qbezier(131.12488,70.10382)(131.27036,70.17264)(131.41583,70.24146)}
+{\color{gray}\linethickness{.30mm}\qbezier(131.70678,70.37911)(131.85226,70.44793)(131.99773,70.51675)}
+{\color{gray}\linethickness{.30mm}\qbezier(132.28868,70.65439)(132.43416,70.72322)(132.57963,70.79204)}
+{\color{gray}\linethickness{.30mm}\qbezier(132.87058,70.92968)(133.01606,70.99850)(133.16153,71.06732)}
+{\color{gray}\linethickness{.30mm}\qbezier(133.45248,71.20497)(133.59796,71.27379)(133.74343,71.34261)}
+{\color{gray}\linethickness{.30mm}\qbezier(134.03438,71.48025)(134.17986,71.54907)(134.32533,71.61790)}
+{\color{gray}\linethickness{.30mm}\qbezier(134.61628,71.75554)(134.76176,71.82436)(134.90723,71.89318)}
+{\color{gray}\linethickness{.30mm}\qbezier(135.19819,72.03082)(135.34366,72.09965)(135.48914,72.16847)}
+{\color{gray}\linethickness{.30mm}\qbezier(135.78009,72.30611)(135.92556,72.37493)(136.07104,72.44375)}
+{\color{gray}\linethickness{.30mm}\qbezier(136.36199,72.58140)(136.50746,72.65022)(136.65294,72.71904)}
+{\color{gray}\linethickness{.30mm}\qbezier(136.94389,72.85668)(137.08936,72.92551)(137.23484,72.99433)}
+{\color{gray}\linethickness{.30mm}\qbezier(137.52579,73.13197)(137.67126,73.20079)(137.81674,73.26961)}
+{\color{gray}\linethickness{.30mm}\qbezier(138.10769,73.40726)(138.25316,73.47608)(138.39864,73.54490)}
+{\color{gray}\linethickness{.30mm}\qbezier(138.68959,73.68254)(138.83506,73.75136)(138.98054,73.82019)}
+{\color{gray}\linethickness{.30mm}\qbezier(139.27149,73.95783)(139.41696,74.02665)(139.56244,74.09547)}
+{\color{gray}\linethickness{.30mm}\qbezier(139.85339,74.23311)(139.99887,74.30194)(140.14434,74.37076)}
+{\color{gray}\linethickness{.30mm}\qbezier(140.43529,74.50840)(140.58077,74.57722)(140.72624,74.64604)}
+{\color{gray}\linethickness{.30mm}\qbezier(141.01719,74.78369)(141.16267,74.85251)(141.30814,74.92133)}
+{\color{gray}\linethickness{.30mm}\qbezier(141.59909,75.05897)(141.74457,75.12779)(141.89004,75.19662)}
+{\color{gray}\linethickness{.30mm}\qbezier(142.18099,75.33426)(142.32647,75.40308)(142.47194,75.47190)}
+{\color{gray}\linethickness{.30mm}\qbezier(142.76289,75.60955)(142.90837,75.67837)(143.05384,75.74719)}
+{\color{gray}\linethickness{.30mm}\qbezier(143.34479,75.88483)(143.49027,75.95365)(143.63574,76.02247)}
+{\color{gray}\linethickness{.30mm}\qbezier(143.92670,76.16012)(144.07217,76.22894)(144.21765,76.29776)}
+{\color{gray}\linethickness{.30mm}\qbezier(144.50860,76.43540)(144.65407,76.50423)(144.79955,76.57305)}
+{\color{gray}\linethickness{.30mm}\qbezier(145.09050,76.71069)(145.23597,76.77951)(145.38145,76.84833)}
+{\color{gray}\linethickness{.30mm}\qbezier(145.67240,76.98598)(145.81787,77.05480)(145.96335,77.12362)}
+{\color{gray}\linethickness{.30mm}\qbezier(146.25430,77.26126)(146.39977,77.33008)(146.54525,77.39891)}
+{\color{gray}\linethickness{.30mm}\qbezier(146.83620,77.53655)(146.98167,77.60537)(147.12715,77.67419)}
+{\color{gray}\linethickness{.30mm}\qbezier(147.41810,77.81184)(147.56357,77.88066)(147.70905,77.94948)}
+\put(120.33641,65.00000){\color{gray}\makebox(0,0){$\diamond$}}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(18.00000,15.00000)(18.39619,15.25666)(18.79238,15.51332)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(18.79238,15.51332)(19.18857,15.76876)(19.58477,16.02420)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(19.58477,16.02420)(19.98096,16.27842)(20.37715,16.53264)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(20.37715,16.53264)(20.77334,16.78563)(21.16953,17.03863)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(21.16953,17.03863)(21.56572,17.29040)(21.96191,17.54217)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(21.96191,17.54217)(22.35811,17.79272)(22.75430,18.04327)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(22.75430,18.04327)(23.15049,18.29260)(23.54668,18.54192)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(23.54668,18.54192)(23.94287,18.79003)(24.33906,19.03813)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(24.33906,19.03813)(24.73526,19.28501)(25.13145,19.53190)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(25.13145,19.53190)(25.52764,19.77756)(25.92383,20.02322)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(25.92383,20.02322)(26.32002,20.26765)(26.71621,20.51209)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(26.71621,20.51209)(27.11240,20.75530)(27.50860,20.99852)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(27.50860,20.99852)(27.90479,21.24051)(28.30098,21.48250)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(28.30098,21.48250)(28.69717,21.72327)(29.09336,21.96404)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(29.09336,21.96404)(29.48955,22.20359)(29.88574,22.44314)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(29.88574,22.44314)(30.28194,22.68146)(30.67813,22.91979)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(30.67813,22.91979)(31.07432,23.15689)(31.47051,23.39399)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(31.47051,23.39399)(31.86670,23.62987)(32.26289,23.86575)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(32.26289,23.86575)(32.65909,24.10041)(33.05528,24.33507)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(33.05528,24.33507)(33.45147,24.56850)(33.84766,24.80193)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(33.84766,24.80193)(34.24385,25.03415)(34.64004,25.26636)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(34.64004,25.26636)(35.03623,25.49735)(35.43243,25.72834)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(35.43243,25.72834)(35.82862,25.95811)(36.22481,26.18787)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(36.22481,26.18787)(36.62100,26.41642)(37.01719,26.64496)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(37.01719,26.64496)(37.41338,26.87229)(37.80957,27.09961)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(37.80957,27.09961)(38.20577,27.32571)(38.60196,27.55181)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(38.60196,27.55181)(38.99815,27.77669)(39.39434,28.00156)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(39.39434,28.00156)(39.79053,28.22522)(40.18672,28.44887)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(40.18672,28.44887)(40.58292,28.67131)(40.97911,28.89374)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(40.97911,28.89374)(41.37530,29.11495)(41.77149,29.33616)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(41.77149,29.33616)(42.16768,29.55615)(42.56387,29.77613)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(42.56387,29.77613)(42.96006,29.99490)(43.35626,30.21366)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(43.35626,30.21366)(43.75245,30.43121)(44.14864,30.64875)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(44.14864,30.64875)(44.54483,30.86507)(44.94102,31.08139)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(44.94102,31.08139)(45.33721,31.29649)(45.73340,31.51159)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(45.73340,31.51159)(46.12960,31.72546)(46.52579,31.93934)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(46.52579,31.93934)(46.92198,32.15199)(47.31817,32.36464)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(47.31817,32.36464)(47.71436,32.57607)(48.11055,32.78750)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(48.11055,32.78750)(48.50675,32.99771)(48.90294,33.20792)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(48.90294,33.20792)(49.29913,33.41690)(49.69532,33.62589)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(49.69532,33.62589)(50.09151,33.83365)(50.48770,34.04141)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(50.48770,34.04141)(50.88389,34.24795)(51.28009,34.45449)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(51.28009,34.45449)(51.67628,34.65981)(52.07247,34.86513)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(52.07247,34.86513)(52.46866,35.06923)(52.86485,35.27332)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(52.86485,35.27332)(53.26104,35.47619)(53.65723,35.67907)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(53.65723,35.67907)(54.05343,35.88072)(54.44962,36.08237)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(54.44962,36.08237)(54.84581,36.28280)(55.24200,36.48322)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(55.24200,36.48322)(55.63819,36.68243)(56.03438,36.88163)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(56.03438,36.88163)(56.43058,37.07962)(56.82677,37.27760)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(56.82677,37.27760)(57.22296,37.47436)(57.61915,37.67112)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(57.61915,37.67112)(58.01534,37.86666)(58.41153,38.06220)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(58.41153,38.06220)(58.80772,38.25651)(59.20392,38.45083)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(59.20392,38.45083)(59.60011,38.64392)(59.99630,38.83701)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(59.99630,38.83701)(60.39249,39.02889)(60.78868,39.22076)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(60.78868,39.22076)(61.18487,39.41140)(61.58106,39.60205)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(61.58106,39.60205)(61.97726,39.79148)(62.37345,39.98090)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(62.37345,39.98090)(62.76964,40.16911)(63.16583,40.35731)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(63.16583,40.35731)(63.56202,40.54429)(63.95821,40.73127)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(63.95821,40.73127)(64.35441,40.91703)(64.75060,41.10279)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(64.75060,41.10279)(65.14679,41.28732)(65.54298,41.47186)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(65.54298,41.47186)(65.93917,41.65517)(66.33536,41.83849)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(66.33536,41.83849)(66.73155,42.02058)(67.12775,42.20267)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(67.12775,42.20267)(67.52394,42.38354)(67.92013,42.56440)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(67.92013,42.56440)(68.31632,42.74405)(68.71251,42.92370)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(68.71251,42.92370)(69.10870,43.10212)(69.50489,43.28054)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(69.50489,43.28054)(69.90109,43.45774)(70.29728,43.63494)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(70.29728,43.63494)(70.69347,43.81092)(71.08966,43.98690)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(71.08966,43.98690)(71.48585,44.16166)(71.88204,44.33641)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(71.88204,44.33641)(72.27824,44.50995)(72.67443,44.68348)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(72.67443,44.68348)(73.07062,44.85579)(73.46681,45.02810)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(73.46681,45.02810)(73.86300,45.19919)(74.25919,45.37028)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(74.25919,45.37028)(74.65538,45.54014)(75.05158,45.71001)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(75.05158,45.71001)(75.44777,45.87865)(75.84396,46.04730)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(75.84396,46.04730)(76.24015,46.21472)(76.63634,46.38214)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(76.63634,46.38214)(77.03253,46.54834)(77.42872,46.71454)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(77.42872,46.71454)(77.82492,46.87951)(78.22111,47.04449)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(78.22111,47.04449)(78.61730,47.20824)(79.01349,47.37200)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(79.01349,47.37200)(79.40968,47.53453)(79.80587,47.69706)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(79.80587,47.69706)(80.20206,47.85837)(80.59826,48.01968)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(80.59826,48.01968)(80.99445,48.17976)(81.39064,48.33985)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(81.39064,48.33985)(81.78683,48.49871)(82.18302,48.65758)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(82.18302,48.65758)(82.57921,48.81522)(82.97541,48.97286)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(82.97541,48.97286)(83.37160,49.12928)(83.76779,49.28570)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(83.76779,49.28570)(84.16398,49.44089)(84.56017,49.59609)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(84.56017,49.59609)(84.95636,49.75006)(85.35255,49.90404)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(85.35255,49.90404)(85.74875,50.05679)(86.14494,50.20954)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(86.14494,50.20954)(86.54113,50.36107)(86.93732,50.51260)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(86.93732,50.51260)(87.33351,50.66290)(87.72970,50.81321)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(87.72970,50.81321)(88.12589,50.96229)(88.52209,51.11138)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(88.52209,51.11138)(88.91828,51.25924)(89.31447,51.40710)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(89.31447,51.40710)(89.71066,51.55374)(90.10685,51.70038)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(90.10685,51.70038)(90.50304,51.84579)(90.89924,51.99121)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(90.89924,51.99121)(91.29543,52.13540)(91.69162,52.27960)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(91.69162,52.27960)(92.08781,52.42257)(92.48400,52.56554)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(92.48400,52.56554)(92.88019,52.70729)(93.27638,52.84904)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(93.27638,52.84904)(93.67258,52.98957)(94.06877,53.13009)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(94.06877,53.13009)(94.46496,53.26940)(94.86115,53.40870)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(94.86115,53.40870)(95.25734,53.54678)(95.65353,53.68486)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(95.65353,53.68486)(96.04972,53.82172)(96.44592,53.95858)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(96.44592,53.95858)(96.84211,54.09422)(97.23830,54.22986)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(97.23830,54.22986)(97.63449,54.36427)(98.03068,54.49868)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(98.03068,54.49868)(98.42687,54.63188)(98.82307,54.76507)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(98.82307,54.76507)(99.21926,54.89704)(99.61545,55.02901)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(99.61545,55.02901)(100.01164,55.15975)(100.40783,55.29050)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(100.40783,55.29050)(100.80402,55.42002)(101.20021,55.54955)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(101.20021,55.54955)(101.59641,55.67785)(101.99260,55.80615)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(101.99260,55.80615)(102.38879,55.93323)(102.78498,56.06031)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(102.78498,56.06031)(103.18117,56.18617)(103.57736,56.31202)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(103.57736,56.31202)(103.97355,56.43666)(104.36975,56.56129)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(104.36975,56.56129)(104.76594,56.68470)(105.16213,56.80812)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(105.16213,56.80812)(105.55832,56.93031)(105.95451,57.05250)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(105.95451,57.05250)(106.35070,57.17346)(106.74690,57.29443)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(106.74690,57.29443)(107.14309,57.41417)(107.53928,57.53392)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(107.53928,57.53392)(107.93547,57.65244)(108.33166,57.77096)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(108.33166,57.77096)(108.72785,57.88826)(109.12404,58.00556)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(109.12404,58.00556)(109.52024,58.12164)(109.91643,58.23772)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(109.91643,58.23772)(110.31262,58.35257)(110.70881,58.46742)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(110.70881,58.46742)(111.10500,58.58106)(111.50119,58.69469)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(111.50119,58.69469)(111.89738,58.80710)(112.29358,58.91951)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(112.29358,58.91951)(112.68977,59.03069)(113.08596,59.14188)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(113.08596,59.14188)(113.23143,59.18240)(113.37691,59.22292)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(113.66786,59.30363)(113.81334,59.34382)(113.95881,59.38401)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(114.24976,59.46406)(114.39524,59.50392)(114.54071,59.54378)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(114.83166,59.62317)(114.97714,59.66270)(115.12261,59.70223)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(115.41356,59.78096)(115.55904,59.82016)(115.70451,59.85936)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(115.99546,59.93743)(116.14094,59.97630)(116.28641,60.01518)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(116.57736,60.09259)(116.72284,60.13113)(116.86831,60.16967)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(117.15926,60.24642)(117.30474,60.28464)(117.45021,60.32285)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(117.74116,60.39894)(117.88664,60.43682)(118.03211,60.47471)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(118.32307,60.55014)(118.46854,60.58769)(118.61402,60.62525)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(118.90497,60.70002)(119.05044,60.73724)(119.19592,60.77447)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(119.48687,60.84858)(119.63234,60.88548)(119.77782,60.92237)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(120.06877,60.99583)(120.21424,61.03239)(120.35972,61.06895)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(120.65067,61.14175)(120.79614,61.17799)(120.94162,61.21422)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(121.23257,61.28636)(121.37804,61.32226)(121.52352,61.35817)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(121.81447,61.42965)(121.95994,61.46522)(122.10542,61.50079)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(122.39637,61.57161)(122.54185,61.60686)(122.68732,61.64210)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(122.97827,61.71227)(123.12375,61.74718)(123.26922,61.78210)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(123.56017,61.85160)(123.70565,61.88618)(123.85112,61.92077)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(124.14207,61.98961)(124.28755,62.02387)(124.43302,62.05812)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(124.72397,62.12631)(124.86945,62.16023)(125.01492,62.19416)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(125.30587,62.26168)(125.45135,62.29528)(125.59682,62.32888)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(125.88777,62.39574)(126.03325,62.42901)(126.17872,62.46227)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(126.46967,62.52848)(126.61515,62.56142)(126.76063,62.59435)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(127.05158,62.65990)(127.19705,62.69251)(127.34253,62.72512)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(127.63348,62.79000)(127.77895,62.82228)(127.92443,62.85456)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(128.21538,62.91879)(128.36085,62.95073)(128.50633,62.98268)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(128.79728,63.04625)(128.94275,63.07787)(129.08823,63.10949)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(129.37918,63.17240)(129.52465,63.20369)(129.67013,63.23498)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(129.96108,63.29722)(130.10655,63.32818)(130.25203,63.35914)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(130.54298,63.42073)(130.68845,63.45136)(130.83393,63.48199)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(131.12488,63.54292)(131.27036,63.57323)(131.41583,63.60353)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(131.70678,63.66380)(131.85226,63.69377)(131.99773,63.72374)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(132.28868,63.78335)(132.43416,63.81299)(132.57963,63.84263)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(132.87058,63.90159)(133.01606,63.93090)(133.16153,63.96021)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(133.45248,64.01850)(133.59796,64.04748)(133.74343,64.07647)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(134.03438,64.13410)(134.17986,64.16275)(134.32533,64.19141)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(134.61628,64.24838)(134.76176,64.27670)(134.90723,64.30503)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(135.19819,64.36134)(135.34366,64.38933)(135.48914,64.41733)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(135.78009,64.47298)(135.92556,64.50065)(136.07104,64.52831)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(136.36199,64.58331)(136.50746,64.61064)(136.65294,64.63797)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(136.94389,64.69231)(137.08936,64.71932)(137.23484,64.74632)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(137.52579,64.80000)(137.67126,64.82667)(137.81674,64.85335)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(138.10769,64.90637)(138.25316,64.93271)(138.39864,64.95906)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(138.68959,65.01142)(138.83506,65.03743)(138.98054,65.06345)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(139.27149,65.11515)(139.41696,65.14083)(139.56244,65.16652)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(139.85339,65.21756)(139.99887,65.24292)(140.14434,65.26827)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(140.43529,65.31865)(140.58077,65.34368)(140.72624,65.36871)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(141.01719,65.41843)(141.16267,65.44313)(141.30814,65.46782)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(141.59909,65.51689)(141.74457,65.54125)(141.89004,65.56562)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(142.18099,65.61403)(142.32647,65.63806)(142.47194,65.66210)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(142.76289,65.70984)(142.90837,65.73355)(143.05384,65.75726)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(143.34479,65.80435)(143.49027,65.82772)(143.63574,65.85110)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(143.92670,65.89753)(144.07217,65.92058)(144.21765,65.94363)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(144.50860,65.98939)(144.65407,66.01211)(144.79955,66.03483)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(145.09050,66.07994)(145.23597,66.10233)(145.38145,66.12472)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(145.67240,66.16917)(145.81787,66.19122)(145.96335,66.21328)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(146.25430,66.25707)(146.39977,66.27880)(146.54525,66.30053)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(146.83620,66.34366)(146.98167,66.36506)(147.12715,66.38646)}
+{\color{orange!85!black}\linethickness{.30mm}\qbezier(147.41810,66.42893)(147.56357,66.45001)(147.70905,66.47108)}
+\put(138.62599,65.00000){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+{\color{black}\linethickness{.15mm}\qbezier(18.00000,65.00000)(83.00000,65.00000)(148.00000,65.00000)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,15.00000)(139.40104,15.40625)(139.40104,15.81250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,16.62500)(139.40104,17.03125)(139.40104,17.43750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,18.25000)(139.40104,18.65625)(139.40104,19.06250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,19.87500)(139.40104,20.28125)(139.40104,20.68750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,21.50000)(139.40104,21.90625)(139.40104,22.31250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,23.12500)(139.40104,23.53125)(139.40104,23.93750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,24.75000)(139.40104,25.15625)(139.40104,25.56250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,26.37500)(139.40104,26.78125)(139.40104,27.18750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,28.00000)(139.40104,28.40625)(139.40104,28.81250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,29.62500)(139.40104,30.03125)(139.40104,30.43750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,31.25000)(139.40104,31.65625)(139.40104,32.06250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,32.87500)(139.40104,33.28125)(139.40104,33.68750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,34.50000)(139.40104,34.90625)(139.40104,35.31250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,36.12500)(139.40104,36.53125)(139.40104,36.93750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,37.75000)(139.40104,38.15625)(139.40104,38.56250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,39.37500)(139.40104,39.78125)(139.40104,40.18750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,41.00000)(139.40104,41.40625)(139.40104,41.81250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,42.62500)(139.40104,43.03125)(139.40104,43.43750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,44.25000)(139.40104,44.65625)(139.40104,45.06250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,45.87500)(139.40104,46.28125)(139.40104,46.68750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,47.50000)(139.40104,47.90625)(139.40104,48.31250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,49.12500)(139.40104,49.53125)(139.40104,49.93750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,50.75000)(139.40104,51.15625)(139.40104,51.56250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,52.37500)(139.40104,52.78125)(139.40104,53.18750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,54.00000)(139.40104,54.40625)(139.40104,54.81250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,55.62500)(139.40104,56.03125)(139.40104,56.43750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,57.25000)(139.40104,57.65625)(139.40104,58.06250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,58.87500)(139.40104,59.28125)(139.40104,59.68750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,60.50000)(139.40104,60.90625)(139.40104,61.31250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,62.12500)(139.40104,62.53125)(139.40104,62.93750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,63.75000)(139.40104,64.15625)(139.40104,64.56250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,65.37500)(139.40104,65.78125)(139.40104,66.18750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,67.00000)(139.40104,67.40625)(139.40104,67.81250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,68.62500)(139.40104,69.03125)(139.40104,69.43750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,70.25000)(139.40104,70.65625)(139.40104,71.06250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,71.87500)(139.40104,72.28125)(139.40104,72.68750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,73.50000)(139.40104,73.90625)(139.40104,74.31250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,75.12500)(139.40104,75.53125)(139.40104,75.93750)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,76.75000)(139.40104,77.15625)(139.40104,77.56250)}
+{\color{blue!65!black}\linethickness{.30mm}\qbezier(139.40104,78.37500)(139.40104,78.78125)(139.40104,79.18750)}
+\put(20,105){\color{black}\rule{4mm}{.3mm}}\put(26,105){\makebox(0,0)[l]{Idle/steady observations}}
+\put(88,105){\color{gray}\rule{4mm}{.3mm}}\put(94,105){\makebox(0,0)[l]{Linear fit}}
+\put(20,99){\color{orange!85!black}\rule{4mm}{.3mm}}\put(26,99){\makebox(0,0)[l]{Quadratic fit}}
+\put(88,99){\color{black}\rule{4mm}{.3mm}}\put(94,99){\makebox(0,0)[l]{Configured allowance}}
+\put(20,93){\color{blue!65!black}\rule{4mm}{.3mm}}\put(26,93){\makebox(0,0)[l]{Separate busy estimate}}
+\end{picture}}
+\caption{Twelve idle/steady calibration observations and retained fits. Dashed curves extend beyond the measured throughput range; diamonds mark capacity roots. Busy capacity is measured separately and does not constrain the fits. No uncertainty band is inferred.}\label{fig:calibration}
+\end{figure}
+
+
+The calibration budgets differ: the direct estimates use four mixed runs,
+whereas regression uses twelve idle/steady observations. The study does not
+establish an advantage at equal calibration cost, a minimum measurement budget
+or accuracy from unmeasured workloads.
+
+\subsection{Fresh validation and frozen criteria}
+
+The final study contains sixteen calibration slots, a forecast freeze, then
+sixteen fresh sampler-off validation trials in four balanced blocks crossing
+low offered rates of 15/30 jobs/s with 6/12 s burst cycles. High offered rate
+is 180 jobs/s. Each validation measurement lasts 60 s; low/high phases occupy
+two-thirds and one-third of each cycle. Calibration and all predictions seal
+before validation; validation outcomes never fit or select a method. Warm-up and full-drain
+rules also apply to validation. Busy validation windows are [4.8,5.8) s
+plus 6 s per cycle, or [10,11.8) s plus 12 s per cycle; eligibility requires
+a positive waiting queue throughout the clock-expanded interval. Validation
+changes both the mixed calibration cycle length and its high offered rate.
+
+The frozen per-trial accuracy tolerances are at most 3 percentage points of
+deadline-miss error and 5\% capacity error, the latter assessed against measured
+busy-capacity bounds. The stronger advantage screen requires positive error
+improvement in every block and a four-block 95\% interval lower bound of at
+least 1 percentage point. All sixteen trials, including zero-miss cases,
+contribute. Intervals assume independent, approximately normal block
+contrasts; there are four statistical blocks, not thousands of independent
+request-level replicates. Deadline accuracy is the application outcome;
+agreement with busy-capacity bounds is a supporting check that naturally
+uses the busy measurement definition.
+
+\section{Prospective evidence}
+
+\subsection{Main result: busy calibration and the nonlinear comparator}
+
+V28 completes all 32 slots without retries; all 108,084 measurement offers
+and 21,600 warmup offers succeed. Every scientific run uses the native sampler
+off. Forecasts seal 13.912 s before the first validation attempt. Observed
+validation busy-capacity bounds span 148.667–150.500 jobs/s. This outcome
+tests late successful requests; rejection handling is defined but not exercised
+by failures in this final validation cohort.
+
+\begin{table}[htbp]\centering\small\setlength{\tabcolsep}{5pt}\resizebox{\linewidth}{!}{\begin{tabular}{lrrrrrr}\toprule
+Input & \shortstack{Capacity\\jobs/s} & \shortstack{Deadline\\MAE pp} & \shortstack{Max. deadline\\error pp} & \shortstack{Max. capacity\\error \%} & \shortstack{Deadline\\passes /16} & \shortstack{Capacity\\passes /16} \\
+\midrule
+Whole-run CPU/job & 139.669 & 13.494 & 16.905 & 7.197 & 0 & 0 \\
+Idle-corrected CPU/job & 139.743 & 13.471 & 16.810 & 7.148 & 0 & 0 \\
+Busy capacity & 149.417 & 0.453 & 1.714 & 0.720 & 16 & 16 \\
+Linear CPU-based fit & 125.953 & 31.314 & 37.929 & 16.311 & 0 & 0 \\
+Quadratic CPU-based fit & 148.463 & 1.169 & 3.619 & 1.354 & 13 & 16 \\
+\bottomrule\end{tabular}}\caption{Frozen capacity inputs and validation errors in the final prospective comparison. pp denotes percentage points.}\end{table}
+
+\begin{figure}[htbp]
+\centering
+{\footnotesize\setlength{\unitlength}{1mm}\begin{picture}(155,110)
+\put(18.00000,15.00000){\color{gray!15}\rule{.51mm}{3.00000mm}}
+\put(18.50000,15.00000){\color{gray!15}\rule{.51mm}{3.15385mm}}
+\put(19.00000,15.00000){\color{gray!15}\rule{.51mm}{3.30769mm}}
+\put(19.50000,15.00000){\color{gray!15}\rule{.51mm}{3.46154mm}}
+\put(20.00000,15.00000){\color{gray!15}\rule{.51mm}{3.61538mm}}
+\put(20.50000,15.00000){\color{gray!15}\rule{.51mm}{3.76923mm}}
+\put(21.00000,15.00000){\color{gray!15}\rule{.51mm}{3.92308mm}}
+\put(21.50000,15.00000){\color{gray!15}\rule{.51mm}{4.07692mm}}
+\put(22.00000,15.00000){\color{gray!15}\rule{.51mm}{4.23077mm}}
+\put(22.50000,15.00000){\color{gray!15}\rule{.51mm}{4.38462mm}}
+\put(23.00000,15.00000){\color{gray!15}\rule{.51mm}{4.53846mm}}
+\put(23.50000,15.00000){\color{gray!15}\rule{.51mm}{4.69231mm}}
+\put(24.00000,15.00000){\color{gray!15}\rule{.51mm}{4.84615mm}}
+\put(24.50000,15.00000){\color{gray!15}\rule{.51mm}{5.00000mm}}
+\put(25.00000,15.00000){\color{gray!15}\rule{.51mm}{5.15385mm}}
+\put(25.50000,15.00000){\color{gray!15}\rule{.51mm}{5.30769mm}}
+\put(26.00000,15.00000){\color{gray!15}\rule{.51mm}{5.46154mm}}
+\put(26.50000,15.00000){\color{gray!15}\rule{.51mm}{5.61538mm}}
+\put(27.00000,15.00000){\color{gray!15}\rule{.51mm}{5.76923mm}}
+\put(27.50000,15.00000){\color{gray!15}\rule{.51mm}{5.92308mm}}
+\put(28.00000,15.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(28.50000,15.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(29.00000,15.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(29.50000,15.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(30.00000,15.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(30.50000,15.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(31.00000,16.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(31.50000,16.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(32.00000,16.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(32.50000,16.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(33.00000,16.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(33.50000,16.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(34.00000,16.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(34.50000,17.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(35.00000,17.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(35.50000,17.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(36.00000,17.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(36.50000,17.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(37.00000,17.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(37.50000,18.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(38.00000,18.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(38.50000,18.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(39.00000,18.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(39.50000,18.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(40.00000,18.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(40.50000,18.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(41.00000,19.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(41.50000,19.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(42.00000,19.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(42.50000,19.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(43.00000,19.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(43.50000,19.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(44.00000,20.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(44.50000,20.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(45.00000,20.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(45.50000,20.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(46.00000,20.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(46.50000,20.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(47.00000,20.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(47.50000,21.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(48.00000,21.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(48.50000,21.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(49.00000,21.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(49.50000,21.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(50.00000,21.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(50.50000,22.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(51.00000,22.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(51.50000,22.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(52.00000,22.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(52.50000,22.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(53.00000,22.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(53.50000,22.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(54.00000,23.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(54.50000,23.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(55.00000,23.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(55.50000,23.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(56.00000,23.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(56.50000,23.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(57.00000,24.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(57.50000,24.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(58.00000,24.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(58.50000,24.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(59.00000,24.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(59.50000,24.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(60.00000,24.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(60.50000,25.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(61.00000,25.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(61.50000,25.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(62.00000,25.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(62.50000,25.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(63.00000,25.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(63.50000,26.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(64.00000,26.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(64.50000,26.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(65.00000,26.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(65.50000,26.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(66.00000,26.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(66.50000,26.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(67.00000,27.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(67.50000,27.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(68.00000,27.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(68.50000,27.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(69.00000,27.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(69.50000,27.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(70.00000,28.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(70.50000,28.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(71.00000,28.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(71.50000,28.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(72.00000,28.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(72.50000,28.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(73.00000,28.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(73.50000,29.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(74.00000,29.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(74.50000,29.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(75.00000,29.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(75.50000,29.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(76.00000,29.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(76.50000,30.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(77.00000,30.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(77.50000,30.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(78.00000,30.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(78.50000,30.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(79.00000,30.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(79.50000,30.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(80.00000,31.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(80.50000,31.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(81.00000,31.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(81.50000,31.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(82.00000,31.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(82.50000,31.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(83.00000,32.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(83.50000,32.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(84.00000,32.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(84.50000,32.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(85.00000,32.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(85.50000,32.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(86.00000,32.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(86.50000,33.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(87.00000,33.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(87.50000,33.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(88.00000,33.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(88.50000,33.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(89.00000,33.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(89.50000,34.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(90.00000,34.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(90.50000,34.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(91.00000,34.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(91.50000,34.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(92.00000,34.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(92.50000,34.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(93.00000,35.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(93.50000,35.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(94.00000,35.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(94.50000,35.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(95.00000,35.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(95.50000,35.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(96.00000,36.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(96.50000,36.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(97.00000,36.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(97.50000,36.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(98.00000,36.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(98.50000,36.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(99.00000,36.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(99.50000,37.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(100.00000,37.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(100.50000,37.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(101.00000,37.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(101.50000,37.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(102.00000,37.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(102.50000,38.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(103.00000,38.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(103.50000,38.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(104.00000,38.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(104.50000,38.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(105.00000,38.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(105.50000,38.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(106.00000,39.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(106.50000,39.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(107.00000,39.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(107.50000,39.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(108.00000,39.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(108.50000,39.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(109.00000,40.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(109.50000,40.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(110.00000,40.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(110.50000,40.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(111.00000,40.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(111.50000,40.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(112.00000,40.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(112.50000,41.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(113.00000,41.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(113.50000,41.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(114.00000,41.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(114.50000,41.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(115.00000,41.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(115.50000,42.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(116.00000,42.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(116.50000,42.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(117.00000,42.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(117.50000,42.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(118.00000,42.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(118.50000,42.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(119.00000,43.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(119.50000,43.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(120.00000,43.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(120.50000,43.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(121.00000,43.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(121.50000,43.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(122.00000,44.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(122.50000,44.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(123.00000,44.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(123.50000,44.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(124.00000,44.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(124.50000,44.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(125.00000,44.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(125.50000,45.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(126.00000,45.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(126.50000,45.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(127.00000,45.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(127.50000,45.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(128.00000,45.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(128.50000,46.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(129.00000,46.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(129.50000,46.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(130.00000,46.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(130.50000,46.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(131.00000,46.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(131.50000,46.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(132.00000,47.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(132.50000,47.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(133.00000,47.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(133.50000,47.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(134.00000,47.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(134.50000,47.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(135.00000,48.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(135.50000,48.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(136.00000,48.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(136.50000,48.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(137.00000,48.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(137.50000,48.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(138.00000,48.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(138.50000,49.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(139.00000,49.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(139.50000,49.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(140.00000,49.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(140.50000,49.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(141.00000,49.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(141.50000,50.00000){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(142.00000,50.15385){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(142.50000,50.30769){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(143.00000,50.46154){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(143.50000,50.61538){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(144.00000,50.76923){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(144.50000,50.92308){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(145.00000,51.07692){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(145.50000,51.23077){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(146.00000,51.38462){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(146.50000,51.53846){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(147.00000,51.69231){\color{gray!15}\rule{.51mm}{6.00000mm}}
+\put(147.50000,51.84615){\color{gray!15}\rule{.51mm}{6.00000mm}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,15.00000)(18.00000,47.50000)(18.00000,80.00000)}
+\put(18.00000,12.00000){\makebox(0,0){0}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(50.50000,15.00000)(50.50000,47.50000)(50.50000,80.00000)}
+\put(50.50000,12.00000){\makebox(0,0){10}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(83.00000,15.00000)(83.00000,47.50000)(83.00000,80.00000)}
+\put(83.00000,12.00000){\makebox(0,0){20}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(115.50000,15.00000)(115.50000,47.50000)(115.50000,80.00000)}
+\put(115.50000,12.00000){\makebox(0,0){30}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(148.00000,15.00000)(148.00000,47.50000)(148.00000,80.00000)}
+\put(148.00000,12.00000){\makebox(0,0){40}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,15.00000)(83.00000,15.00000)(148.00000,15.00000)}
+\put(15.00000,15.00000){\makebox(0,0)[r]{0}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,25.00000)(83.00000,25.00000)(148.00000,25.00000)}
+\put(15.00000,25.00000){\makebox(0,0)[r]{10}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,35.00000)(83.00000,35.00000)(148.00000,35.00000)}
+\put(15.00000,35.00000){\makebox(0,0)[r]{20}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,45.00000)(83.00000,45.00000)(148.00000,45.00000)}
+\put(15.00000,45.00000){\makebox(0,0)[r]{30}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,55.00000)(83.00000,55.00000)(148.00000,55.00000)}
+\put(15.00000,55.00000){\makebox(0,0)[r]{40}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,65.00000)(83.00000,65.00000)(148.00000,65.00000)}
+\put(15.00000,65.00000){\makebox(0,0)[r]{50}}
+{\color{gray!25}\linethickness{.10mm}\qbezier(18.00000,75.00000)(83.00000,75.00000)(148.00000,75.00000)}
+\put(15.00000,75.00000){\makebox(0,0)[r]{60}}
+{\color{black}\linethickness{.20mm}\qbezier(18.00000,15.00000)(83.00000,15.00000)(148.00000,15.00000)}
+{\color{black}\linethickness{.20mm}\qbezier(18.00000,15.00000)(18.00000,47.50000)(18.00000,80.00000)}
+\put(83,3){\makebox(0,0){Observed deadline misses (\%)}}
+\put(1,47.5){\makebox(0,0){\rotatebox{90}{Frozen forecast misses (\%)}}}
+{\color{black}\linethickness{.15mm}\qbezier(18.00000,15.00000)(18.81250,15.25000)(19.62500,15.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(21.25000,16.00000)(22.06250,16.25000)(22.87500,16.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(24.50000,17.00000)(25.31250,17.25000)(26.12500,17.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(27.75000,18.00000)(28.56250,18.25000)(29.37500,18.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(31.00000,19.00000)(31.81250,19.25000)(32.62500,19.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(34.25000,20.00000)(35.06250,20.25000)(35.87500,20.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(37.50000,21.00000)(38.31250,21.25000)(39.12500,21.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(40.75000,22.00000)(41.56250,22.25000)(42.37500,22.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(44.00000,23.00000)(44.81250,23.25000)(45.62500,23.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(47.25000,24.00000)(48.06250,24.25000)(48.87500,24.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(50.50000,25.00000)(51.31250,25.25000)(52.12500,25.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(53.75000,26.00000)(54.56250,26.25000)(55.37500,26.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(57.00000,27.00000)(57.81250,27.25000)(58.62500,27.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(60.25000,28.00000)(61.06250,28.25000)(61.87500,28.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(63.50000,29.00000)(64.31250,29.25000)(65.12500,29.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(66.75000,30.00000)(67.56250,30.25000)(68.37500,30.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(70.00000,31.00000)(70.81250,31.25000)(71.62500,31.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(73.25000,32.00000)(74.06250,32.25000)(74.87500,32.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(76.50000,33.00000)(77.31250,33.25000)(78.12500,33.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(79.75000,34.00000)(80.56250,34.25000)(81.37500,34.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(83.00000,35.00000)(83.81250,35.25000)(84.62500,35.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(86.25000,36.00000)(87.06250,36.25000)(87.87500,36.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(89.50000,37.00000)(90.31250,37.25000)(91.12500,37.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(92.75000,38.00000)(93.56250,38.25000)(94.37500,38.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(96.00000,39.00000)(96.81250,39.25000)(97.62500,39.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(99.25000,40.00000)(100.06250,40.25000)(100.87500,40.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(102.50000,41.00000)(103.31250,41.25000)(104.12500,41.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(105.75000,42.00000)(106.56250,42.25000)(107.37500,42.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(109.00000,43.00000)(109.81250,43.25000)(110.62500,43.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(112.25000,44.00000)(113.06250,44.25000)(113.87500,44.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(115.50000,45.00000)(116.31250,45.25000)(117.12500,45.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(118.75000,46.00000)(119.56250,46.25000)(120.37500,46.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(122.00000,47.00000)(122.81250,47.25000)(123.62500,47.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(125.25000,48.00000)(126.06250,48.25000)(126.87500,48.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(128.50000,49.00000)(129.31250,49.25000)(130.12500,49.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(131.75000,50.00000)(132.56250,50.25000)(133.37500,50.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(135.00000,51.00000)(135.81250,51.25000)(136.62500,51.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(138.25000,52.00000)(139.06250,52.25000)(139.87500,52.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(141.50000,53.00000)(142.31250,53.25000)(143.12500,53.50000)}
+{\color{black}\linethickness{.15mm}\qbezier(144.75000,54.00000)(145.56250,54.25000)(146.37500,54.50000)}
+\put(18.00000,26.58333){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(117.93750,59.25000){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(18.00000,27.80952){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(129.11905,64.80952){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(117.66667,59.25000){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(124.94048,64.80952){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(18.00000,26.58333){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(18.00000,27.80952){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(134.84524,64.80952){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(18.00000,27.80952){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(119.15625,59.25000){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(18.00000,26.58333){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(18.00000,27.80952){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(18.00000,26.58333){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(125.71429,64.80952){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(112.79167,59.25000){\color{brown}\makebox(0,0){\rule{1.7mm}{1.7mm}}}
+\put(18.00000,26.58333){\color{violet}\makebox(0,0){$\times$}}
+\put(117.93750,59.25000){\color{violet}\makebox(0,0){$\times$}}
+\put(18.00000,27.80952){\color{violet}\makebox(0,0){$\times$}}
+\put(129.11905,64.71429){\color{violet}\makebox(0,0){$\times$}}
+\put(117.66667,59.25000){\color{violet}\makebox(0,0){$\times$}}
+\put(124.94048,64.71429){\color{violet}\makebox(0,0){$\times$}}
+\put(18.00000,26.58333){\color{violet}\makebox(0,0){$\times$}}
+\put(18.00000,27.80952){\color{violet}\makebox(0,0){$\times$}}
+\put(134.84524,64.71429){\color{violet}\makebox(0,0){$\times$}}
+\put(18.00000,27.80952){\color{violet}\makebox(0,0){$\times$}}
+\put(119.15625,59.25000){\color{violet}\makebox(0,0){$\times$}}
+\put(18.00000,26.58333){\color{violet}\makebox(0,0){$\times$}}
+\put(18.00000,27.80952){\color{violet}\makebox(0,0){$\times$}}
+\put(18.00000,26.58333){\color{violet}\makebox(0,0){$\times$}}
+\put(125.71429,64.71429){\color{violet}\makebox(0,0){$\times$}}
+\put(112.79167,59.25000){\color{violet}\makebox(0,0){$\times$}}
+\put(18.00000,15.00000){\color{blue!65!black}\circle*{1.7}}
+\put(117.93750,45.87500){\color{blue!65!black}\circle*{1.7}}
+\put(18.00000,15.00000){\color{blue!65!black}\circle*{1.7}}
+\put(129.11905,49.61905){\color{blue!65!black}\circle*{1.7}}
+\put(117.66667,45.87500){\color{blue!65!black}\circle*{1.7}}
+\put(124.94048,49.61905){\color{blue!65!black}\circle*{1.7}}
+\put(18.00000,15.00000){\color{blue!65!black}\circle*{1.7}}
+\put(18.00000,15.00000){\color{blue!65!black}\circle*{1.7}}
+\put(134.84524,49.61905){\color{blue!65!black}\circle*{1.7}}
+\put(18.00000,15.00000){\color{blue!65!black}\circle*{1.7}}
+\put(119.15625,45.87500){\color{blue!65!black}\circle*{1.7}}
+\put(18.00000,15.00000){\color{blue!65!black}\circle*{1.7}}
+\put(18.00000,15.00000){\color{blue!65!black}\circle*{1.7}}
+\put(18.00000,15.00000){\color{blue!65!black}\circle*{1.7}}
+\put(125.71429,49.61905){\color{blue!65!black}\circle*{1.7}}
+\put(112.79167,45.87500){\color{blue!65!black}\circle*{1.7}}
+\put(18.00000,49.68750){\color{gray}\makebox(0,0){$\triangle$}}
+\put(117.93750,70.18750){\color{gray}\makebox(0,0){$\triangle$}}
+\put(18.00000,52.92857){\color{gray}\makebox(0,0){$\triangle$}}
+\put(129.11905,76.92857){\color{gray}\makebox(0,0){$\triangle$}}
+\put(117.66667,70.18750){\color{gray}\makebox(0,0){$\triangle$}}
+\put(124.94048,76.92857){\color{gray}\makebox(0,0){$\triangle$}}
+\put(18.00000,49.68750){\color{gray}\makebox(0,0){$\triangle$}}
+\put(18.00000,52.92857){\color{gray}\makebox(0,0){$\triangle$}}
+\put(134.84524,76.92857){\color{gray}\makebox(0,0){$\triangle$}}
+\put(18.00000,52.92857){\color{gray}\makebox(0,0){$\triangle$}}
+\put(119.15625,70.18750){\color{gray}\makebox(0,0){$\triangle$}}
+\put(18.00000,49.68750){\color{gray}\makebox(0,0){$\triangle$}}
+\put(18.00000,52.92857){\color{gray}\makebox(0,0){$\triangle$}}
+\put(18.00000,49.68750){\color{gray}\makebox(0,0){$\triangle$}}
+\put(125.71429,76.92857){\color{gray}\makebox(0,0){$\triangle$}}
+\put(112.79167,70.18750){\color{gray}\makebox(0,0){$\triangle$}}
+\put(18.00000,15.00000){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(117.93750,47.62500){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(18.00000,15.00000){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(129.11905,51.52381){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(117.66667,47.62500){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(124.94048,51.52381){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(18.00000,15.00000){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(18.00000,15.00000){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(134.84524,51.52381){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(18.00000,15.00000){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(119.15625,47.62500){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(18.00000,15.00000){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(18.00000,15.00000){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(18.00000,15.00000){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(125.71429,51.52381){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(112.79167,47.62500){\color{orange!85!black}\makebox(0,0){$\diamond$}}
+\put(20,105){\color{brown}\rule{4mm}{.3mm}}\put(26,105){\makebox(0,0)[l]{Whole-run}}
+\put(88,105){\color{violet}\rule{4mm}{.3mm}}\put(94,105){\makebox(0,0)[l]{Idle-corrected}}
+\put(20,99){\color{blue!65!black}\rule{4mm}{.3mm}}\put(26,99){\makebox(0,0)[l]{Busy}}
+\put(88,99){\color{gray}\rule{4mm}{.3mm}}\put(94,99){\makebox(0,0)[l]{Linear}}
+\put(20,93){\color{orange!85!black}\rule{4mm}{.3mm}}\put(26,93){\makebox(0,0)[l]{Quadratic}}
+\end{picture}}
+\caption{Frozen forecasts and all-offer outcomes in all sixteen validation trials. The diagonal denotes agreement; the gray band is the declared $\pm3$ percentage-point tolerance, not a confidence interval. Repeated points overlap, including eight zero-miss trials. Idle-corrected and whole-run points nearly overlap.}\label{fig:forecasts}
+\end{figure}
+
+
+Here MAE is mean absolute error across the sixteen trial miss fractions;
+pp denotes percentage points. Busy meets every accuracy tolerance. Quadratic
+meets all capacity tolerances and thirteen deadline tolerances. Whole,
+idle-corrected and linear inputs substantially overpredict misses and fail
+every accuracy check. Their errors characterize these declared fits and the
+shared FIFO model, rather than CPU-based methods generally.
+
+Busy reduces quadratic's deadline error by a mean 0.716 percentage points,
+with model-based 95\% interval [0.086, 1.346]. All four block improvements are
+positive, but the lower endpoint fails the required 1-point minimum. Retain
+\texttt{predictive\_advantage\_inconclusive}. The interval includes 1 point, so it
+also does not establish that the true improvement is below the target.
+Advantages over the other three inputs pass their frozen screens.
+
+Both busy and quadratic predict zero misses in all eight 6 s trials. For
+the eight 12 s trials, descriptive MAEs are 0.906 and 2.337 points,
+respectively. That subset helps interpret the aggregate errors and does not
+replace the frozen all-trial comparison. The quadratic comparator's near
+agreement is a central result: a nonlinear CPU-based fit recovers most of
+the forecasting accuracy lost by the tested whole-run substitution.
+
+The additive idle correction changes estimated capacity only from 139.669
+to 139.743 jobs/s. Its measured background rate is approximately 0.000261
+CPU. This rejects the declared zero-request additive correction as an
+adequate repair in this case, without identifying loaded overhead or its cause.
+
+\subsection{Earlier prospective validation}
+
+An earlier small-job study, V22, uses two calibration runs followed by eight
+fresh bursty/even validation trials and four paired contrasts. Busy capacity
+is 152.47 jobs/s; it predicts 10.38\% burst misses against 10.97–11.92\%
+observed, while whole-run accounting predicts 44.05\%. Even arrivals have
+zero 500 ms misses despite approximately 14.8\% higher whole-run CPU/job.
+All twelve primary checks pass, with maximum error 1.55 percentage points.
+
+V23 independently calibrates each work size and validates sixteen trials
+in four balanced blocks crossing size and burst timescale:
+
+\begin{table}[htbp]\centering\small\setlength{\tabcolsep}{5pt}\resizebox{\linewidth}{!}{\begin{tabular}{lrrrr}\toprule
+V23 job size & Burst cycle & Mean observed misses & Busy forecast & Whole-run forecast \\
+\midrule
+Small & 3 s & 0.00\% & 0.00\% & 0.00\% \\
+Small & 12 s & 22.56\% & 22.76\% & 49.23\% \\
+Large & 3 s & 0.00\% & 0.00\% & 0.00\% \\
+Large & 12 s & 16.13\% & 17.26\% & 46.85\% \\
+\bottomrule\end{tabular}}\caption{Earlier prospective validation across work sizes and burst timescales. Each row summarizes four trials.}\end{table}
+
+Each row summarizes four trials. All sixteen trial checks and eight paired
+contrasts pass; maximum error is 1.83 percentage points. All 81,504 validation
+offers succeed, with no responses exceeding one second. These observations
+extend the prospective case across tested work sizes and burst timescales;
+they do not validate a new estimator or tighter deadlines.
+
+\subsection{Supporting controls and retained limitations}
+
+Separate accounting studies show whole-run capacity underprediction while
+eligible busy windows deliver approximately 0.5 CPU. A composition study
+finds directional CPU/job changes with stable busy capacity, but its frozen
+minimum-effect screen remains \texttt{composition\_inconclusive}. Earlier native
+sampler comparisons do not establish deadline neutrality; the main comparison
+therefore uses sampler-off validation. Detailed controls, unsuccessful
+qualifications and both inconclusive outcomes are retained in the supplement.
+They support interpretation rather than establish an isolated causal mechanism.
+
+\section{Interpretation and closest methods}
+
+The case demonstrates a substantial forecast consequence of substituting a
+whole-cohort CPU cost for backlogged service capacity. It also demonstrates
+that nonlinear CPU-based calibration can approach direct busy accuracy.
+Accordingly, the result supports attention to measurement scope and
+load-dependent fits, rather than a rule to discard CPU accounting or always
+choose busy throughput.
+
+Load-dependent inference is established prior work. Kumar, Zhang and Tantawi
+jointly estimate workload-dependent demand and overhead from utilization and
+mean response using queueing constraints. Zhang, Li and Zhou estimate demand
+as a polynomial of CPU utilization with utilization-law and soft response
+constraints. Neither algorithm is reproduced here. Our quadratic fits
+utilization as a function of completion throughput and supplies a capacity
+root to the shared FIFO model; it uses different observations and constraints.
+\cite{kumar,zhang}.
+
+Burst-aware sizing and controlled bursty benchmark construction have
+precedents \cite{mi,casale}. Aggregate utilization accounting is also established in
+load-dependent inference \cite{kumar,zhang}. Reservation-based container analysis uses a CPU-service
+contract different from an ordinary bandwidth ceiling. These precedents
+prevent interpreting this case as a new queueing model or CPU-to-latency law.
+\cite{mi,casale,cucinotta}.
+
+Published load-dependent methods remain relevant competitors. Applying their
+full algorithms requires explicit mappings for CPU units, scheduling and
+response scope; the quota ratio cannot silently stand for a continuously
+available processor. That adaptation requirement does not establish their
+inapplicability. Their performance here is untested. The
+closest-method assessment
+records the comparison and its source limitations.
+
+\section{Scope and reproducibility}
+
+The evidence is restricted to one host, one application, one quota, two SHA
+sizes and the tested deterministic schedules. Other workloads, mixed sizes,
+quotas, stochastic traffic and machines are untested. The 500 ms endpoint
+does not establish accuracy at other deadlines or for rare latency tails.
+Aggregate CPU includes runtime, HTTP and kernel work, and phase boundaries
+can contain in-flight requests. Clock/counter brackets do not prove zero
+accounting lag. Frequency, cache, scheduling and loaded-overhead causes remain
+unidentified. Good predictions do not independently validate the FIFO model
+outside these conditions.
+
+The study is a reproducible prospective empirical case, with a strong
+nonlinear comparator and retained adverse outcomes. A new estimation method,
+a general diagnostic rule and superiority over applicable published methods
+remain unestablished. Further research would need a specific additional
+capability and an adequate comparison; editorial restructuring supplies no
+new scientific result.
+
+Saved offers, raw events, clock/counter brackets, source/binary identities,
+forecast seals and result reviews are indexed in the
+supporting material. The
+V28 protocol and
+result review
+retain the frozen design and checked results. These saved records support independent reproduction without performance recollection.
+
+\section{Conclusion}
+
+In the tested service, substituting whole-run CPU/job for busy capacity causes
+substantial deadline-forecast error. A dedicated additive idle correction does
+not repair that substitution. Busy calibration is accurate across the declared
+prospective validation conditions, while a nonlinear CPU-only benchmark recovers
+most of its accuracy. The busy-versus-quadratic advantage remains inconclusive
+under the frozen minimum-effect criterion. These results support a bounded
+empirical lesson: capacity calibration should be assessed against fresh deadline
+outcomes and credible load-dependent alternatives. The responsible choice of
+calibration outside the measured conditions remains open.
+
+\begin{thebibliography}{9}
+\bibitem{linux} Linux Kernel Contributors. Control Group v2: CPU controller. Linux kernel documentation. Accessed 8 October 2026. \url{https://docs.kernel.org/admin-guide/cgroup-v2.html}.
+\bibitem{kumar} D. Kumar, L. Zhang and A. Tantawi. Enhanced Inferencing: Estimation of a Workload Dependent Performance Model. VALUETOOLS, 2009. DOI: 10.4108/ICST.VALUETOOLS2009.7799. \url{https://eudl.eu/pdf/10.4108/ICST.VALUETOOLS2009.7799}.
+\bibitem{zhang} Z. Zhang, S. Li and J. Zhou. Estimate Load-dependent Service Demand for Modern CPU. Information Technology Journal 12(4), 632–639, 2013. DOI: 10.3923/itj.2013.632.639. \url{https://scialert.net/fulltext/amp.php?doi=itj.2013.632.639}.
+\bibitem{mi} N. Mi, G. Casale, L. Cherkasova and E. Smirni. Sizing multi-tier systems with temporal dependence: benchmarks and analytic models. Journal of Internet Services and Applications 1, 117–134, 2010. DOI: 10.1007/s13174-010-0012-9. \url{https://link.springer.com/article/10.1007/s13174-010-0012-9}.
+\bibitem{casale} G. Casale, A. Kalbasi, D. Krishnamurthy and J. Rolia. Automatic Stress Testing of Multi-Tier Systems by Dynamic Bottleneck Switch Generation. Middleware, 2009. \url{https://dl.ifip.org/db/conf/middleware/middleware2009/CasaleKKR09.pdf}.
+\bibitem{cucinotta} T. Cucinotta, L. Abeni, M. Marinoni, R. Mancini and C. Vitucci. Strong Temporal Isolation Among Containers in OpenStack for NFV Services. IEEE Transactions on Cloud Computing 11(1), 763–778, 2023. DOI: 10.1109/TCC.2021.3116183. \url{https://retis.santannapisa.it/people/nino/publication/TCC23.pdf}.
+\end{thebibliography}
+\end{document}

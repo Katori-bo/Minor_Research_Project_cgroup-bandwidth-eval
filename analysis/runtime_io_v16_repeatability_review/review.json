@@ -1,0 +1,581 @@
+{
+  "at": "2026-10-04T15:38:40.225629+05:30",
+  "completed_evidence_verified": true,
+  "performance_collection_started": false,
+  "checks": {
+    "launch_arguments_equal_except_name_and_declared_image": true,
+    "runtime_configuration_equal": true,
+    "actual_own_cgroup_settings_equal": true,
+    "power_settings_equal_to_baseline": true,
+    "all_offered_schedules_identical": true,
+    "no_quality_flags": true
+  },
+  "arm_summary": {
+    "legacy_a": {
+      "idle_mean_c": {
+        "median": 45.317708333333336,
+        "minimum": 45.177083333333336,
+        "maximum": 45.385416666666664
+      },
+      "sampled_load_mean_c": {
+        "median": 60.41313559322034,
+        "minimum": 60.13559322033898,
+        "maximum": 60.853813559322035
+      },
+      "cpu_usec_per_job": {
+        "median": 3655.524584130723,
+        "minimum": 3653.9655527749155,
+        "maximum": 3661.24142499632
+      },
+      "user_cpu_usec_per_job": {
+        "median": 3569.682982481967,
+        "minimum": 3566.994111585456,
+        "maximum": 3573.2894155748563
+      },
+      "system_cpu_usec_per_job": {
+        "median": 86.49057853672899,
+        "minimum": 80.67598998969527,
+        "maximum": 92.9493596349183
+      },
+      "queue_p99_ms": {
+        "median": 505.73639849999995,
+        "minimum": 496.069973,
+        "maximum": 508.198644
+      },
+      "post_work_p99_ms": {
+        "median": 161.423019,
+        "minimum": 160.834211,
+        "maximum": 161.693434
+      }
+    },
+    "legacy_b": {
+      "idle_mean_c": {
+        "median": 45.40104166666667,
+        "minimum": 45.0625,
+        "maximum": 45.5625
+      },
+      "sampled_load_mean_c": {
+        "median": 60.54025423728814,
+        "minimum": 60.04661016949152,
+        "maximum": 60.82415254237288
+      },
+      "cpu_usec_per_job": {
+        "median": 3658.893198881201,
+        "minimum": 3656.5156779037243,
+        "maximum": 3662.323568379214
+      },
+      "user_cpu_usec_per_job": {
+        "median": 3567.6132783747976,
+        "minimum": 3563.896363904019,
+        "maximum": 3576.975563079641
+      },
+      "system_cpu_usec_per_job": {
+        "median": 91.80634476667157,
+        "minimum": 80.81760635948771,
+        "maximum": 96.09701162961872
+      },
+      "queue_p99_ms": {
+        "median": 505.649011,
+        "minimum": 499.792975,
+        "maximum": 508.338759
+      },
+      "post_work_p99_ms": {
+        "median": 161.2649735,
+        "minimum": 160.337896,
+        "maximum": 161.643865
+      }
+    },
+    "exact_rebuild": {
+      "idle_mean_c": {
+        "median": 45.48958333333333,
+        "minimum": 44.958333333333336,
+        "maximum": 45.541666666666664
+      },
+      "sampled_load_mean_c": {
+        "median": 60.39830508474576,
+        "minimum": 59.984913793103445,
+        "maximum": 60.66101694915254
+      },
+      "cpu_usec_per_job": {
+        "median": 3643.444060061828,
+        "minimum": 3640.8682467245694,
+        "maximum": 3646.4799057853675
+      },
+      "user_cpu_usec_per_job": {
+        "median": 3555.838068600029,
+        "minimum": 3548.567937582806,
+        "maximum": 3559.0892094803476
+      },
+      "system_cpu_usec_per_job": {
+        "median": 86.93007507728544,
+        "minimum": 85.24274988959223,
+        "maximum": 95.79994111585455
+      },
+      "queue_p99_ms": {
+        "median": 474.7251415,
+        "minimum": 468.055945,
+        "maximum": 479.53271
+      },
+      "post_work_p99_ms": {
+        "median": 160.5882985,
+        "minimum": 160.189085,
+        "maximum": 161.70051
+      }
+    }
+  },
+  "trials": [
+    {
+      "run_id": "repeatability_b1_legacy_a",
+      "block": 1,
+      "arm": "legacy_a",
+      "image_id": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+      "idle_mean_c": 45.385416666666664,
+      "sampled_load_mean_c": 60.853813559322035,
+      "sampled_freq_mean_mhz": {
+        "cpu2": 2201.273406779661,
+        "cpu4": 2918.8936440677967
+      },
+      "user_cpu_usec_per_job": 3573.2894155748563,
+      "system_cpu_usec_per_job": 80.67598998969527,
+      "cpu_usec_per_job": 3653.9655527749155,
+      "queue_p99_ms": 508.198644,
+      "post_work_p99_ms": 161.534485,
+      "sampled_process_seconds_by_last_cpu": {
+        "2": 3.87,
+        "4": 20.930000000000003
+      },
+      "background_process_sample_seconds": {
+        "docker-proxy": 0.7500000000000004,
+        "kwin_wayland": 0.13999999999999999,
+        "kded6": 0.12,
+        "containerd": 0.04,
+        "plasmashell": 0.04,
+        "baloo_file": 0.03,
+        "org_kde_powerde": 0.02,
+        "dbus-broker": 0.01,
+        "rcu_preempt": 0.01,
+        "NetworkManager": 0.01
+      },
+      "quality_flags": []
+    },
+    {
+      "run_id": "repeatability_b1_legacy_b",
+      "block": 1,
+      "arm": "legacy_b",
+      "image_id": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+      "idle_mean_c": 45.427083333333336,
+      "sampled_load_mean_c": 60.82415254237288,
+      "sampled_freq_mean_mhz": {
+        "cpu2": 2103.785762711864,
+        "cpu4": 3045.571440677966
+      },
+      "user_cpu_usec_per_job": 3576.975563079641,
+      "system_cpu_usec_per_job": 80.81760635948771,
+      "cpu_usec_per_job": 3657.793022228765,
+      "queue_p99_ms": 508.338759,
+      "post_work_p99_ms": 161.059804,
+      "sampled_process_seconds_by_last_cpu": {
+        "4": 24.84
+      },
+      "background_process_sample_seconds": {
+        "docker-proxy": 0.7600000000000005,
+        "kwin_wayland": 0.11999999999999997,
+        "baloo_file": 0.04,
+        "containerd": 0.04,
+        "plasmashell": 0.04,
+        "NetworkManager": 0.02,
+        "dbus-broker": 0.01,
+        "rcu_preempt": 0.01,
+        "migration/4": 0.01,
+        "upowerd": 0.01
+      },
+      "quality_flags": []
+    },
+    {
+      "run_id": "repeatability_b1_exact_rebuild",
+      "block": 1,
+      "arm": "exact_rebuild",
+      "image_id": "sha256:27556b25b0ee24f9ff2ec33953283c1c0a91051f1355e6c1265e0cf1d4d70eba",
+      "idle_mean_c": 45.541666666666664,
+      "sampled_load_mean_c": 60.66101694915254,
+      "sampled_freq_mean_mhz": {
+        "cpu2": 2143.3256440677965,
+        "cpu4": 2971.0240847457626
+      },
+      "user_cpu_usec_per_job": 3555.6253496246136,
+      "system_cpu_usec_per_job": 85.24274988959223,
+      "cpu_usec_per_job": 3640.8682467245694,
+      "queue_p99_ms": 479.53271,
+      "post_work_p99_ms": 160.884242,
+      "sampled_process_seconds_by_last_cpu": {
+        "2": 24.710000000000004
+      },
+      "background_process_sample_seconds": {
+        "docker-proxy": 0.7400000000000004,
+        "kwin_wayland": 0.12999999999999998,
+        "plasmashell": 0.05,
+        "baloo_file": 0.03,
+        "containerd": 0.03,
+        "kded6": 0.02,
+        "kitty": 0.02,
+        "kworker/2:0-events": 0.01,
+        "systemd-journal": 0.01,
+        "dbus-broker": 0.01
+      },
+      "quality_flags": []
+    },
+    {
+      "run_id": "repeatability_b2_exact_rebuild",
+      "block": 2,
+      "arm": "exact_rebuild",
+      "image_id": "sha256:27556b25b0ee24f9ff2ec33953283c1c0a91051f1355e6c1265e0cf1d4d70eba",
+      "idle_mean_c": 45.53125,
+      "sampled_load_mean_c": 60.608050847457626,
+      "sampled_freq_mean_mhz": {
+        "cpu2": 2193.74913559322,
+        "cpu4": 3060.7959830508476
+      },
+      "user_cpu_usec_per_job": 3556.050787575445,
+      "system_cpu_usec_per_job": 86.46960105991462,
+      "cpu_usec_per_job": 3642.5203886353597,
+      "queue_p99_ms": 473.067244,
+      "post_work_p99_ms": 160.292355,
+      "sampled_process_seconds_by_last_cpu": {
+        "2": 3.0200000000000005,
+        "4": 21.72
+      },
+      "background_process_sample_seconds": {
+        "docker-proxy": 0.7600000000000005,
+        "kwin_wayland": 0.12999999999999998,
+        "plasmashell": 0.04,
+        "baloo_file": 0.03,
+        "containerd": 0.03,
+        "dbus-broker": 0.02,
+        "NetworkManager": 0.02,
+        "org_kde_powerde": 0.02,
+        "at-spi-bus-laun": 0.01,
+        "migration/6": 0.01
+      },
+      "quality_flags": []
+    },
+    {
+      "run_id": "repeatability_b2_legacy_b",
+      "block": 2,
+      "arm": "legacy_b",
+      "image_id": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+      "idle_mean_c": 45.5625,
+      "sampled_load_mean_c": 60.58898305084746,
+      "sampled_freq_mean_mhz": {
+        "cpu2": 2145.279186440678,
+        "cpu4": 3032.9362881355933
+      },
+      "user_cpu_usec_per_job": 3565.377889003386,
+      "system_cpu_usec_per_job": 91.13764168997497,
+      "cpu_usec_per_job": 3656.5156779037243,
+      "queue_p99_ms": 506.206341,
+      "post_work_p99_ms": 160.337896,
+      "sampled_process_seconds_by_last_cpu": {
+        "4": 23.06,
+        "2": 1.77
+      },
+      "background_process_sample_seconds": {
+        "docker-proxy": 0.7700000000000005,
+        "kwin_wayland": 0.11999999999999998,
+        "containerd": 0.04,
+        "plasmashell": 0.04,
+        "baloo_file": 0.03,
+        "NetworkManager": 0.02,
+        "org_kde_powerde": 0.02,
+        "kitty": 0.01,
+        "systemd": 0.01,
+        "rcu_preempt": 0.01
+      },
+      "quality_flags": []
+    },
+    {
+      "run_id": "repeatability_b2_legacy_a",
+      "block": 2,
+      "arm": "legacy_a",
+      "image_id": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+      "idle_mean_c": 45.364583333333336,
+      "sampled_load_mean_c": 60.567796610169495,
+      "sampled_freq_mean_mhz": {
+        "cpu2": 2216.8672711864406,
+        "cpu4": 2934.03993220339
+      },
+      "user_cpu_usec_per_job": 3568.2920653614015,
+      "system_cpu_usec_per_job": 92.9493596349183,
+      "cpu_usec_per_job": 3661.24142499632,
+      "queue_p99_ms": 504.798439,
+      "post_work_p99_ms": 161.693434,
+      "sampled_process_seconds_by_last_cpu": {
+        "2": 2.52,
+        "4": 22.340000000000003
+      },
+      "background_process_sample_seconds": {
+        "docker-proxy": 0.7600000000000005,
+        "kwin_wayland": 0.10999999999999999,
+        "plasmashell": 0.04,
+        "baloo_file": 0.03,
+        "dbus-broker": 0.03,
+        "containerd": 0.03,
+        "systemd-journal": 0.01,
+        "rcu_preempt": 0.01,
+        "migration/2": 0.01,
+        "NetworkManager": 0.01
+      },
+      "quality_flags": []
+    },
+    {
+      "run_id": "repeatability_b3_legacy_b",
+      "block": 3,
+      "arm": "legacy_b",
+      "image_id": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+      "idle_mean_c": 45.375,
+      "sampled_load_mean_c": 60.49152542372882,
+      "sampled_freq_mean_mhz": {
+        "cpu2": 2381.2367627118642,
+        "cpu4": 3067.052694915254
+      },
+      "user_cpu_usec_per_job": 3563.896363904019,
+      "system_cpu_usec_per_job": 96.09701162961872,
+      "cpu_usec_per_job": 3659.9933755336374,
+      "queue_p99_ms": 499.792975,
+      "post_work_p99_ms": 161.643865,
+      "sampled_process_seconds_by_last_cpu": {
+        "4": 24.290000000000006,
+        "2": 0.5700000000000001
+      },
+      "background_process_sample_seconds": {
+        "docker-proxy": 0.7600000000000005,
+        "kwin_wayland": 0.11999999999999998,
+        "plasmashell": 0.04,
+        "baloo_file": 0.03,
+        "containerd": 0.03,
+        "dbus-broker": 0.02,
+        "dockerd": 0.02,
+        "kworker/1:2-rcu_gp": 0.01,
+        "kioworker": 0.01,
+        "ksoftirqd/0": 0.01
+      },
+      "quality_flags": []
+    },
+    {
+      "run_id": "repeatability_b3_exact_rebuild",
+      "block": 3,
+      "arm": "exact_rebuild",
+      "image_id": "sha256:27556b25b0ee24f9ff2ec33953283c1c0a91051f1355e6c1265e0cf1d4d70eba",
+      "idle_mean_c": 44.958333333333336,
+      "sampled_load_mean_c": 60.188559322033896,
+      "sampled_freq_mean_mhz": {
+        "cpu2": 2124.39493220339,
+        "cpu4": 2947.006186440678
+      },
+      "user_cpu_usec_per_job": 3548.567937582806,
+      "system_cpu_usec_per_job": 95.79994111585455,
+      "cpu_usec_per_job": 3644.3677314882966,
+      "queue_p99_ms": 476.383039,
+      "post_work_p99_ms": 160.189085,
+      "sampled_process_seconds_by_last_cpu": {
+        "2": 1.54,
+        "4": 23.220000000000006
+      },
+      "background_process_sample_seconds": {
+        "docker-proxy": 0.7500000000000004,
+        "kwin_wayland": 0.12999999999999998,
+        "containerd": 0.04,
+        "plasmashell": 0.04,
+        "dbus-broker": 0.02,
+        "baloo_file": 0.02,
+        "org_kde_powerde": 0.02,
+        "udisksd": 0.01,
+        "rcu_preempt": 0.01,
+        "migration/2": 0.01
+      },
+      "quality_flags": []
+    },
+    {
+      "run_id": "repeatability_b3_legacy_a",
+      "block": 3,
+      "arm": "legacy_a",
+      "image_id": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+      "idle_mean_c": 45.177083333333336,
+      "sampled_load_mean_c": 60.25847457627118,
+      "sampled_freq_mean_mhz": {
+        "cpu2": 2179.4736949152543,
+        "cpu4": 3020.041372881356
+      },
+      "user_cpu_usec_per_job": 3571.073899602532,
+      "system_cpu_usec_per_job": 83.5857500368026,
+      "cpu_usec_per_job": 3654.6596496393345,
+      "queue_p99_ms": 496.069973,
+      "post_work_p99_ms": 161.311553,
+      "sampled_process_seconds_by_last_cpu": {
+        "4": 23.29,
+        "2": 1.53
+      },
+      "background_process_sample_seconds": {
+        "docker-proxy": 0.7800000000000005,
+        "kwin_wayland": 0.12999999999999998,
+        "containerd": 0.03,
+        "plasmashell": 0.03,
+        "baloo_file": 0.02,
+        "upowerd": 0.02,
+        "dockerd": 0.02,
+        "kitty": 0.02,
+        "dbus-broker": 0.01,
+        "rcu_preempt": 0.01
+      },
+      "quality_flags": []
+    },
+    {
+      "run_id": "repeatability_b4_legacy_a",
+      "block": 4,
+      "arm": "legacy_a",
+      "image_id": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+      "idle_mean_c": 45.270833333333336,
+      "sampled_load_mean_c": 60.13559322033898,
+      "sampled_freq_mean_mhz": {
+        "cpu2": 2281.3702372881357,
+        "cpu4": 2987.0263898305084
+      },
+      "user_cpu_usec_per_job": 3566.994111585456,
+      "system_cpu_usec_per_job": 89.39540703665539,
+      "cpu_usec_per_job": 3656.389518622111,
+      "queue_p99_ms": 506.674358,
+      "post_work_p99_ms": 160.834211,
+      "sampled_process_seconds_by_last_cpu": {
+        "4": 21.91,
+        "2": 2.92
+      },
+      "background_process_sample_seconds": {
+        "docker-proxy": 0.7600000000000005,
+        "kwin_wayland": 0.12999999999999998,
+        "plasmashell": 0.04,
+        "baloo_file": 0.03,
+        "containerd": 0.03,
+        "systemd-journal": 0.01,
+        "xdg-desktop-por": 0.01,
+        "rcu_preempt": 0.01,
+        "migration/7": 0.01,
+        "NetworkManager": 0.01
+      },
+      "quality_flags": []
+    },
+    {
+      "run_id": "repeatability_b4_exact_rebuild",
+      "block": 4,
+      "arm": "exact_rebuild",
+      "image_id": "sha256:27556b25b0ee24f9ff2ec33953283c1c0a91051f1355e6c1265e0cf1d4d70eba",
+      "idle_mean_c": 45.447916666666664,
+      "sampled_load_mean_c": 59.984913793103445,
+      "sampled_freq_mean_mhz": {
+        "cpu2": 2160.9781896551726,
+        "cpu4": 2919.563672413793
+      },
+      "user_cpu_usec_per_job": 3559.0892094803476,
+      "system_cpu_usec_per_job": 87.39054909465627,
+      "cpu_usec_per_job": 3646.4799057853675,
+      "queue_p99_ms": 468.055945,
+      "post_work_p99_ms": 161.70051,
+      "sampled_process_seconds_by_last_cpu": {
+        "4": 21.150000000000002,
+        "2": 3.15
+      },
+      "background_process_sample_seconds": {
+        "docker-proxy": 0.7300000000000004,
+        "kwin_wayland": 0.12999999999999998,
+        "plasmashell": 0.04,
+        "containerd": 0.03,
+        "baloo_file": 0.02,
+        "udisksd": 0.02,
+        "org_kde_powerde": 0.02,
+        "rcu_preempt": 0.01,
+        "xdg-desktop-por": 0.01,
+        "dbus-broker": 0.01
+      },
+      "quality_flags": []
+    },
+    {
+      "run_id": "repeatability_b4_legacy_b",
+      "block": 4,
+      "arm": "legacy_b",
+      "image_id": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+      "idle_mean_c": 45.0625,
+      "sampled_load_mean_c": 60.04661016949152,
+      "sampled_freq_mean_mhz": {
+        "cpu2": 2187.554847457627,
+        "cpu4": 2801.996593220339
+      },
+      "user_cpu_usec_per_job": 3569.8486677462092,
+      "system_cpu_usec_per_job": 92.47504784336817,
+      "cpu_usec_per_job": 3662.323568379214,
+      "queue_p99_ms": 505.091681,
+      "post_work_p99_ms": 161.470143,
+      "sampled_process_seconds_by_last_cpu": {
+        "4": 21.319999999999997,
+        "2": 3.55
+      },
+      "background_process_sample_seconds": {
+        "docker-proxy": 0.7600000000000005,
+        "kwin_wayland": 0.12999999999999998,
+        "plasmashell": 0.04,
+        "containerd": 0.04,
+        "baloo_file": 0.02,
+        "upowerd": 0.02,
+        "xdg-desktop-por": 0.02,
+        "migration/6": 0.01,
+        "dbus-broker": 0.01,
+        "systemd": 0.01
+      },
+      "quality_flags": []
+    }
+  ],
+  "deadline_500_classes": {
+    "legacy_a": {
+      "timely": 19885,
+      "work_before_resume_after": 2339,
+      "work_after": 4935,
+      "work_ambiguous": 8,
+      "work_before_resume_before": 1,
+      "work_before_resume_ambiguous": 4
+    },
+    "legacy_b": {
+      "timely": 19775,
+      "work_after": 5084,
+      "work_before_resume_after": 2303,
+      "work_before_resume_before": 5,
+      "work_before_resume_ambiguous": 3,
+      "work_ambiguous": 2
+    },
+    "exact_rebuild": {
+      "timely": 20599,
+      "work_before_resume_after": 2371,
+      "work_after": 4182,
+      "work_before_resume_ambiguous": 6,
+      "work_ambiguous": 10,
+      "work_before_resume_before": 4
+    }
+  },
+  "image_inspect_differing_keys": [
+    "Created",
+    "Descriptor",
+    "Id",
+    "Metadata",
+    "Parent",
+    "RepoDigests",
+    "RepoTags",
+    "RootFS",
+    "Size"
+  ],
+  "image_config_identical": true,
+  "limitation": "Sampled frequency, temperature and process last_cpu do not establish instantaneous execution frequency, exclusive CPU occupancy or request-level throttling. Four blocks cannot establish equivalence. No causal container, thermal, scheduler or filesystem mechanism is identified.",
+  "input_sha256": {
+    "results/diagnostic/runtime-io-v16-repeatability-1/completion.json": "a5c06118a38f937cdaae8ed2668c1e46586a44b974dff24e957390081f09fb72",
+    "results/diagnostic/runtime-io-v16-repeatability-1/session/metadata.json": "205b438584a530cf0e9c0c932ffa6183b1b71f8ba248d876663007bbd9ca5c16",
+    "results/diagnostic/runtime-io-v16-repeatability-1/session/analysis/trials.csv": "b3b9f655a4c081ef6b5159a546196fbfa8b7a4bc8e067512393d3d9c750be97c",
+    "results/diagnostic/runtime-io-v16-repeatability-1/session/analysis/requests.csv": "bc899c018924e27a132b9471eeca0ff6b30d430f6553402edc5275161df37eaf",
+    "results/diagnostic/runtime-io-v16-repeatability-1/session/analysis/repeatability_screen.json": "64a1a006e9f4e55f8215044fb438bb15928164ff87edd742f0b2dc111c9cbf69",
+    "analysis/review_v16_repeatability.py": "a5a8290c5f2f79985d5c34960b35bc7bfc380d992c0b1f5049d22186127d1c09"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "status": "repaired_preparation_and_real_thread_checks_passed",
+  "tests_passed": true,
+  "tests_count": 30,
+  "tests_log_sha256": "50e3b449a8dccd3a81dbdc12009654240cd447bc9b20533c878937d6314e0265",
+  "functional_pass": true,
+  "functional_created": 2,
+  "functional_offers_per_arm": 8,
+  "image_checks_per_arm": 1,
+  "real_before_and_after_thread_snapshots": {
+    "stock": {
+      "threads-before": {
+        "before_ns": 96644886356612,
+        "after_ns": 96644886924585,
+        "tids": [
+          409428,
+          409508,
+          409509,
+          409510,
+          409511,
+          409512,
+          409513,
+          409514,
+          409515,
+          409516
+        ],
+        "vanished_during_enumeration": [],
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-2d0dce830ee8b05aa768340541d66969951cf8d502df880f01ad03cc09a30fb1.scope",
+        "affinity": [
+          2
+        ]
+      },
+      "threads-after": {
+        "before_ns": 96646392595289,
+        "after_ns": 96646393377534,
+        "tids": [
+          409428,
+          409508,
+          409509,
+          409510,
+          409511,
+          409512,
+          409513,
+          409514,
+          409515,
+          409516
+        ],
+        "vanished_during_enumeration": [],
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-2d0dce830ee8b05aa768340541d66969951cf8d502df880f01ad03cc09a30fb1.scope",
+        "affinity": [
+          2
+        ]
+      }
+    },
+    "observed": {
+      "threads-before": {
+        "before_ns": 96647510241993,
+        "after_ns": 96647510749664,
+        "tids": [
+          409649,
+          409709,
+          409710,
+          409711,
+          409712,
+          409713,
+          409714,
+          409715,
+          409716
+        ],
+        "vanished_during_enumeration": [],
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-985b565482d1bd565fbc42a28f20630c84cbcead5139c7cc619499a5de5df60d.scope",
+        "affinity": [
+          2
+        ]
+      },
+      "threads-after": {
+        "before_ns": 96649015826221,
+        "after_ns": 96649016560747,
+        "tids": [
+          409649,
+          409709,
+          409710,
+          409711,
+          409712,
+          409713,
+          409714,
+          409715,
+          409716,
+          409721
+        ],
+        "vanished_during_enumeration": [],
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-985b565482d1bd565fbc42a28f20630c84cbcead5139c7cc619499a5de5df60d.scope",
+        "affinity": [
+          2
+        ]
+      }
+    }
+  },
+  "actual_packaged_binaries_verified": true,
+  "all_offer_joins_verified": true,
+  "nonce_and_immutable_cleanup_verified": true,
+  "all_prior_seals_verified": true,
+  "earlier_one_cpu_attempt": "pre-measurement technical abort, retained",
+  "performance_pilot_started": false,
+  "observer_cost_qualified": false,
+  "scientific_collection": false,
+  "original_pilot_replaced": false,
+  "repair": "Local strict CPU-2 snapshot; unchanged shared helper; actual snapshots now exercised in preparation.",
+  "limitation": "Codex-open preparation is not cost evidence; original throttle cause remains unknown.",
+  "implementation_diff": "--- generation-01-frozen-runner\n+++ generation-02-runner\n@@ -12,18 +12,22 @@\n import traceback\n \n import imgproxy_qualify as q\n+import imgproxy_one_cpu_qualify as archived\n import leftover_observer_review as observer\n \n ROOT = q.ROOT\n-BASE = ROOT / 'analysis/runtime_io_imgproxy_one_cpu_qualification/generation-01'\n+BASE = ROOT / 'analysis/runtime_io_imgproxy_one_cpu_qualification/generation-02'\n LIMITS = dict(q.LIMITS, **{'cpuset.cpus.effective': '2'})\n-FILES = ('diagnostic/imgproxy_one_cpu_qualify.py',\n-         'diagnostic/test_imgproxy_one_cpu_qualification.py',\n-         'diagnostic/start_imgproxy_one_cpu_qualification.sh',\n-         'docs/runtime_io_imgproxy_one_cpu_qualification_20261009.md')\n-PROTOCOL = dict(candidate='imgproxy-one-cpu-generation-01',\n+FILES = ('diagnostic/imgproxy_one_cpu_qualify_v2.py',\n+         'diagnostic/test_imgproxy_one_cpu_qualification_v2.py',\n+         'diagnostic/start_imgproxy_one_cpu_qualification_v2.sh',\n+         'docs/runtime_io_imgproxy_one_cpu_qualification_v2_20261009.md')\n+PROTOCOL = dict(candidate='imgproxy-one-cpu-generation-02',\n     role='prospective engineering qualification; no scientific replication',\n     reason='Enforce a single granted logical CPU despite native worker threads; cause of prior throttle remains unknown.',\n+    repair='Generation 01 aborted before measurement because its reused snapshot required CPUs 2,4. Use a local strict CPU-2 snapshot and exercise it in functional preparation.',\n+    previous_attempt='generation-01: retained pre-measurement technical abort; zero measurement offers',\n+    functional_exercises_pilot_snapshot=True,\n     resource_change={'old_cpuset': '2,4', 'new_cpuset': '2'},\n     functional_created_cap=2, pilot_created_cap=12, retries=0,\n     pilot_total_sec=1200, cleanup_reserve_sec=120, active_trial_sec=120,\n@@ -45,11 +49,44 @@\n \n def historical_inputs():\n     q.verify()\n+    preserved_abort()\n     for relative in ('runtime_io_imgproxy_feasibility_review/20261009-generation01',\n-                     'runtime_io_imgproxy_throttle_probe_review/20261009-generation01'):\n+                     'runtime_io_imgproxy_throttle_probe_review/20261009-generation01',\n+                     'runtime_io_imgproxy_one_cpu_abort_review/20261009-generation01'):\n         seal = ROOT / 'analysis' / relative / 'evidence-seal.json'\n         for name, digest in q.read(seal)['files_sha256'].items():\n             require(q.prep.sha(ROOT / name) == digest, 'Historical evidence changed: ' + name)\n+\n+\n+def preserved_abort():\n+    archived.verify(check_boot=False)\n+    pilot = archived.BASE / 'pilot'\n+    seal = q.read(pilot / 'evidence-seal.json')['files_sha256']\n+    actual = {str(p.relative_to(pilot)) for p in pilot.rglob('*')\n+              if p.is_file() and p != pilot / 'evidence-seal.json'}\n+    require(actual == set(seal), 'Aborted pilot file set changed')\n+    for name, digest in seal.items():\n+        require(q.prep.sha(pilot / name) == digest, 'Aborted pilot changed: ' + name)\n+\n+\n+def thread_snapshot(pid, expected_group):\n+    before = time.monotonic_ns()\n+    observed, vanished = [], []\n+    tids = sorted(int(p.name) for p in Path(f'/proc/{pid}/task').iterdir())\n+    for tid in tids:\n+        try:\n+            group = q.bridge.cgroup(tid)\n+            affinity = os.sched_getaffinity(tid)\n+            require(group == expected_group and affinity == {2},\n+                f'Live service thread cgroup/CPU affinity mismatch: tid={tid}, '\n+                f'cgroup={group}, expected_cgroup={expected_group}, '\n+                f'affinity={sorted(affinity)}, expected_affinity=[2]')\n+            observed.append(tid)\n+        except (FileNotFoundError, ProcessLookupError):\n+            vanished.append(tid)\n+    require(pid in observed, 'Main service thread unavailable during snapshot')\n+    return dict(before_ns=before, after_ns=time.monotonic_ns(), tids=observed,\n+                vanished_during_enumeration=vanished, cgroup=str(expected_group), affinity=[2])\n \n \n def source_hashes():\n@@ -194,7 +231,7 @@\n         require(image.format == 'JPEG' and image.size == (300, 300), 'Decoded image differs')\n         if performance:\n             service.collect('warmup', 25)\n-            q.save(directory / 'threads-before.json', q.bridge.snapshot(service.pid, service.group))\n+            q.save(directory / 'threads-before.json', thread_snapshot(service.pid, service.group))\n             before = q.fixtures.stat(service.group)\n             q.save(directory / 'measurement-before.json', before)\n             try:\n@@ -207,9 +244,11 @@\n                 except Exception as counter_error:\n                     q.save(directory / 'counter-failure.json', dict(error=str(counter_error)))\n                     raise\n-            q.save(directory / 'threads-after.json', q.bridge.snapshot(service.pid, service.group))\n+            q.save(directory / 'threads-after.json', thread_snapshot(service.pid, service.group))\n         else:\n+            q.save(directory / 'threads-before.json', thread_snapshot(service.pid, service.group))\n             service.collect('functional', 8)\n+            q.save(directory / 'threads-after.json', thread_snapshot(service.pid, service.group))\n         if arm == 'observed':\n             export_preserved(service, directory / 'events.json', 226 if performance else 9)\n         result = classify_case(directory, arm, performance)\n@@ -241,6 +280,12 @@\n     require(q.read(case / 'executable.json')['sha256'] ==\n             q.read(q.SOFTWARE / 'manifest.json')['binaries'][arm], 'Executable differs')\n     require(q.read(case / 'sources-at-start.json') == source_hashes(), 'New runner sources changed')\n+    for name in ('threads-before.json', 'threads-after.json'):\n+        snapshot = q.read(case / name)\n+        initial = q.read(case / 'initial.json')\n+        require(snapshot['affinity'] == [2] and snapshot['cgroup'] == initial['cgroup'] and\n+                initial['pid'] in snapshot['tids'] and snapshot['before_ns'] <= snapshot['after_ns'],\n+                'Thread snapshot contract differs')\n \n \n def prepare():\n@@ -282,7 +327,9 @@\n               q.BASE / 'bundle-seal.json']\n     paths += [ROOT / 'analysis' / name / 'evidence-seal.json' for name in\n               ('runtime_io_imgproxy_feasibility_review/20261009-generation01',\n-               'runtime_io_imgproxy_throttle_probe_review/20261009-generation01')]\n+               'runtime_io_imgproxy_throttle_probe_review/20261009-generation01',\n+               'runtime_io_imgproxy_one_cpu_abort_review/20261009-generation01')]\n+    paths += [archived.BASE / 'bundle-seal.json', archived.BASE / 'pilot/evidence-seal.json']\n     paths += [p for p in (BASE / 'functional').rglob('*') if p.is_file()]\n     with (BASE / 'bundle-seal.json').open('x') as f:\n         json.dump(dict(protocol=PROTOCOL, baseline=q.common.baseline(),\n@@ -298,6 +345,7 @@\n     else:\n         for name, digest in q.read(q.BASE / 'bundle-seal.json')['files_sha256'].items():\n             require(q.prep.sha(ROOT / name) == digest, 'Original sealed input changed: ' + name)\n+        preserved_abort()\n     seal = q.read(BASE / 'bundle-seal.json')\n     require(seal['protocol'] == PROTOCOL, 'New protocol differs')\n     if check_boot:\n"
+}

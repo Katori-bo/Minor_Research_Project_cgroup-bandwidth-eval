@@ -1,0 +1,230 @@
+{
+  "schema": 9,
+  "study": "completion_qualification_v1",
+  "created": "2026-10-03T22:49:01.543611+05:30",
+  "source_sha256": {
+    "analysis/runtime_io_prior_art_review/existing_followup_summary.json": "1a60cdee838ee4cec3c945aea3442721c576542927d555eeb3bbb48501338b09",
+    "diagnostic/analyze.py": "3eaec7a32ce8c4490225685c177541a236f6af93344991e9ed6688768e7fb9db",
+    "diagnostic/build_completion.py": "c15982364a5a0adcbfc3192f3e366e1e17650f0c0d26515d3e41f1b72eb4213f",
+    "diagnostic/build_parallelism.py": "88942bd50d27e731615a94a9ab7d100a451d614affacc6e9ff1b00e136f7b092",
+    "diagnostic/completion_analysis.py": "83529778cbcb5eccbc0699e72b667ba5131719da91f816841a36ee00f5693041",
+    "diagnostic/completion_service.go": "c15de7df8e4259cd3e7c5a6a264396b621c37d7d96f304c1ebd90adb6776e0de",
+    "diagnostic/completion_service_test.go": "9af41df198c8e8155a9c91c464c74fdde008d65cb670567f34b300e7c8f14cf0",
+    "diagnostic/completion_study.py": "2fc40e38eeb41aa2984133ad1f7233dc6ad92247619708f1a945c1af276be2fd",
+    "diagnostic/loadgen/Dockerfile": "7a36cc4f98c225751a2bf4cffd8cbac6f523502776ef44948fd3bc1f30942c65",
+    "diagnostic/loadgen/go.mod": "bc8481bc762a2d9150e6dba23c42e074e42ecfee5e5ab42c50ec8cad27629481",
+    "diagnostic/loadgen/main.go": "141e77c1a3eaa22eb4dee86f88f50fded7c07888bbb390ecfcfbe63a27cb1ca7",
+    "diagnostic/loadgen/main_test.go": "430e80b06219d76d72f564ce561016ac03636be8dd1cf2388e32c68eae843dc3",
+    "diagnostic/parallelism_analysis.py": "55eff4cb92756e67441a43c5034cf9086c40d226db730f61c5e87631977fa321",
+    "diagnostic/parallelism_clock.go": "10717b9456b1483224f3ec529bdb66875d92e8c304b8e131f143138200699afa",
+    "diagnostic/parallelism_clock_test.go": "8ffab6fe90a696d0ad05855b3a19d6fc92efca93095cabab54f02cc5acff0ed4",
+    "diagnostic/parallelism_progress.py": "fc585d35884f4a934be62f94f3f2313b3d6a6f89fb6fb4be829d7432e36ccf99",
+    "diagnostic/parallelism_service.go": "b92a2fc2e7949dc7793c3fe6c42c4330449234997533a82a61fa626f9765a507",
+    "diagnostic/parallelism_service_test.go": "880ee84d61962b9f933d11df732d4265ba990eabd3de93279a162093d8b9591a",
+    "diagnostic/parallelism_study.py": "d338aa7f9fb0f86fa889be53c8b58438574da0d045a8c8a782b54eba97956bea",
+    "diagnostic/pipeline.py": "2bfd5a2d997d81bd031a6eb7e7dead5a92069ff2b384c7bae4671ceaa797d7aa",
+    "diagnostic/run.py": "1a0d08b1f559842e271b82ffcc94b231eb18d5f507dfd0f98a24f76b71937bd3",
+    "diagnostic/service/Dockerfile": "d8a51f67f21bce0e74d774f3d4b55916f27dc34a92b6502a001326a6e0bb01bd",
+    "diagnostic/service/go.mod": "03add46220d8804f97c5b9966c66b6da037ab94403a5570707ba5b3e558dafba",
+    "diagnostic/service/main.go": "111fae37f0a4b634f9f0a5a0d4aafed0da265b2aa492d7986f63f122fc566fd9",
+    "diagnostic/service/main_test.go": "2357765adc8255b34af937fe2d9371c30abddfbc6e162a5df70d03d5a895564d",
+    "diagnostic/service/trace_diag.go": "ad4dc8b64b1233c9dcf44ed087e57dd98d7f2bd89a7c69f9287a23e474b5866c",
+    "diagnostic/service/trace_diag_test.go": "1f0a378fe5c16fd485bfb62c4193ea09a5c0840589d03994e4dada2d88c2b3d4",
+    "diagnostic/service/yield_test.go": "c7a96bfdab0cb3577c64173c2c2485ff96cd4cd969758fa514ea28131873ff81",
+    "diagnostic/trace_analysis.py": "f67fe38f7b258b79d58ca6627eaebd78cc9ad4befdeda7c19538e0f943435e55",
+    "docs/current_research_plan.md": "8b6ce5d6f0a554e472987f89d5f7e6adfa145e0bc09a1ed3c1dbc2aff3de1865",
+    "docs/runtime_io_prior_art_review.md": "7e1cef353befb50cbfde25d6e0cedf086a399fe09bdf501ee2acf6dc9b88a4f5",
+    "docs/runtime_io_v12_parallelism_commands.md": "cac2c58c3ee898bcf9f65513f58a66ca159cb27b5a003591cb2a45e2f0723b61",
+    "docs/runtime_io_v13_completion_protocol.md": "92f5daa022844e19be8f3c4e0bc8cfbbb7b3a22018fa03092063ddd6f9b66c27",
+    "scripts/environment_controls.py": "8b46ce9c0016895631455e62422939a1a0b77df3d10fb135c9d01bb157ebb3a2",
+    "scripts/experiment.py": "2ecd5ffefc4e8e824da4e28130ae10c8f82ddcd3fdea824e11df1242cc1bbcd4",
+    "scripts/monitor_host.py": "7bd8d4f697ec2341498a8eca1b5dfb388027bcd6e37de5c5c583b58ed57b24b0"
+  },
+  "build": {
+    "schema": 1,
+    "at": "2026-10-03T22:32:13.353088+05:30",
+    "compiler_image_id": "sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039",
+    "images": {
+      "legacy": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+      "locked": "sha256:7a890946152ed349445874ab89657e8a9e1296ffb962c1d5d364a42bd179b09c",
+      "bounded": "sha256:b8d791c75b93e121938c52e7d2f7441e6b20170707e2b62b4bebea9a22521c62"
+    },
+    "sources": {
+      "diagnostic/build_completion.py": "c15982364a5a0adcbfc3192f3e366e1e17650f0c0d26515d3e41f1b72eb4213f",
+      "diagnostic/build_parallelism.py": "88942bd50d27e731615a94a9ab7d100a451d614affacc6e9ff1b00e136f7b092",
+      "diagnostic/completion_service.go": "c15de7df8e4259cd3e7c5a6a264396b621c37d7d96f304c1ebd90adb6776e0de",
+      "diagnostic/completion_service_test.go": "9af41df198c8e8155a9c91c464c74fdde008d65cb670567f34b300e7c8f14cf0",
+      "diagnostic/loadgen/Dockerfile": "7a36cc4f98c225751a2bf4cffd8cbac6f523502776ef44948fd3bc1f30942c65",
+      "diagnostic/loadgen/go.mod": "bc8481bc762a2d9150e6dba23c42e074e42ecfee5e5ab42c50ec8cad27629481",
+      "diagnostic/loadgen/main.go": "141e77c1a3eaa22eb4dee86f88f50fded7c07888bbb390ecfcfbe63a27cb1ca7",
+      "diagnostic/loadgen/main_test.go": "430e80b06219d76d72f564ce561016ac03636be8dd1cf2388e32c68eae843dc3",
+      "diagnostic/parallelism_clock.go": "10717b9456b1483224f3ec529bdb66875d92e8c304b8e131f143138200699afa",
+      "diagnostic/parallelism_clock_test.go": "8ffab6fe90a696d0ad05855b3a19d6fc92efca93095cabab54f02cc5acff0ed4",
+      "diagnostic/parallelism_service.go": "b92a2fc2e7949dc7793c3fe6c42c4330449234997533a82a61fa626f9765a507",
+      "diagnostic/parallelism_service_test.go": "880ee84d61962b9f933d11df732d4265ba990eabd3de93279a162093d8b9591a",
+      "diagnostic/service/Dockerfile": "d8a51f67f21bce0e74d774f3d4b55916f27dc34a92b6502a001326a6e0bb01bd",
+      "diagnostic/service/go.mod": "03add46220d8804f97c5b9966c66b6da037ab94403a5570707ba5b3e558dafba",
+      "diagnostic/service/main.go": "111fae37f0a4b634f9f0a5a0d4aafed0da265b2aa492d7986f63f122fc566fd9",
+      "diagnostic/service/main_test.go": "2357765adc8255b34af937fe2d9371c30abddfbc6e162a5df70d03d5a895564d",
+      "diagnostic/service/trace_diag.go": "ad4dc8b64b1233c9dcf44ed087e57dd98d7f2bd89a7c69f9287a23e474b5866c",
+      "diagnostic/service/trace_diag_test.go": "1f0a378fe5c16fd485bfb62c4193ea09a5c0840589d03994e4dada2d88c2b3d4",
+      "diagnostic/service/yield_test.go": "c7a96bfdab0cb3577c64173c2c2485ff96cd4cd969758fa514ea28131873ff81"
+    },
+    "prepared_sha256": {
+      "loadgen/Dockerfile": "9b8e5a071b2f9a0d52f104b2fa1319ce2d5f2a561bbde258c78cd662d9098ef6",
+      "loadgen/go.mod": "bc8481bc762a2d9150e6dba23c42e074e42ecfee5e5ab42c50ec8cad27629481",
+      "loadgen/main.go": "4689a8653fa8a1de3c370c09d41e66dbdb06987476359705f5de9d719829dcfc",
+      "loadgen/main_test.go": "430e80b06219d76d72f564ce561016ac03636be8dd1cf2388e32c68eae843dc3",
+      "loadgen/parallelism_clock.go": "10717b9456b1483224f3ec529bdb66875d92e8c304b8e131f143138200699afa",
+      "loadgen/parallelism_clock_test.go": "8ffab6fe90a696d0ad05855b3a19d6fc92efca93095cabab54f02cc5acff0ed4",
+      "service/Dockerfile": "f029925d1eeb5e54cc175d29795421446680995f4817007e3aa62bb77c581435",
+      "service/completion_default.go": "e8a747ff987ac04945ae8fa707397a86016ee25782ca212c5ec009938fffb4a6",
+      "service/completion_service.go": "c15de7df8e4259cd3e7c5a6a264396b621c37d7d96f304c1ebd90adb6776e0de",
+      "service/completion_service_test.go": "9af41df198c8e8155a9c91c464c74fdde008d65cb670567f34b300e7c8f14cf0",
+      "service/go.mod": "03add46220d8804f97c5b9966c66b6da037ab94403a5570707ba5b3e558dafba",
+      "service/main.go": "1eaa3aa50558c1ce595b66dd281aacdab45c5da668e2085a2263eece1022f42d",
+      "service/main_test.go": "2357765adc8255b34af937fe2d9371c30abddfbc6e162a5df70d03d5a895564d",
+      "service/parallelism_service.go": "b92a2fc2e7949dc7793c3fe6c42c4330449234997533a82a61fa626f9765a507",
+      "service/parallelism_service_test.go": "880ee84d61962b9f933d11df732d4265ba990eabd3de93279a162093d8b9591a",
+      "service/trace_diag.go": "ad4dc8b64b1233c9dcf44ed087e57dd98d7f2bd89a7c69f9287a23e474b5866c",
+      "service/trace_diag_test.go": "1f0a378fe5c16fd485bfb62c4193ea09a5c0840589d03994e4dada2d88c2b3d4",
+      "service/yield_test.go": "c7a96bfdab0cb3577c64173c2c2485ff96cd4cd969758fa514ea28131873ff81"
+    },
+    "loadgen_sha256": "03a3876212b87508c64489c79c612e1c757b3916c488fc2bda393ad957f9ac5e",
+    "legacy_build_sha256": "0230be5312d20424a19082f801d944cc3a727e47563140a70bb9028ed84c03b8"
+  },
+  "build_manifest_sha256": "a0ecadec7e1663c6758ff3bd680d9819d8e7b6d951279ba884c373799ff13aaf",
+  "fixture_manifest_sha256": "0a3eb18406defc9c5714f6cad9f66c7346700dce69c9e69ed0ca3da8f3f435a7",
+  "topology": {
+    "0": {
+      "core": "0",
+      "package": "0",
+      "siblings": "0-1"
+    },
+    "1": {
+      "core": "0",
+      "package": "0",
+      "siblings": "0-1"
+    },
+    "2": {
+      "core": "1",
+      "package": "0",
+      "siblings": "2-3"
+    },
+    "3": {
+      "core": "1",
+      "package": "0",
+      "siblings": "2-3"
+    },
+    "4": {
+      "core": "2",
+      "package": "0",
+      "siblings": "4-5"
+    },
+    "5": {
+      "core": "2",
+      "package": "0",
+      "siblings": "4-5"
+    }
+  },
+  "server_cpus": "2,4",
+  "client_cpus": "0,1",
+  "kernel": "Linux archlinux 7.2.8-arch1-2 #1 SMP PREEMPT_DYNAMIC Thu, 01 Oct 2026 17:24:20 +0000 x86_64 GNU/Linux",
+  "python": "3.14.7 (main, Aug 10 2026, 07:46:56) [GCC 16.1.1 20260728]",
+  "power_settings": {
+    "policies": {
+      "policy0": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy1": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy10": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy11": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy2": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy3": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy4": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy5": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy6": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy7": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy8": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      },
+      "policy9": {
+        "scaling_driver": "amd-pstate-epp",
+        "scaling_governor": "powersave",
+        "energy_performance_preference": "balance_performance",
+        "scaling_min_freq": "1108930",
+        "scaling_max_freq": "4280985"
+      }
+    },
+    "platform_profile": "balanced",
+    "external_power": {
+      "ACAD": "1"
+    },
+    "desktop_profile": "balanced"
+  },
+  "source_calibration_sha256": "e1e03788024d5d96714b4f1379efaa0f3c1d35ef6239341606a3f402199d3958",
+  "eligible_for_full": false,
+  "matrix_sha256": "c64a6b766ae9de0d3d73ab435a15c48ed11ea810377a595f8eb5dc8a4229f284"
+}

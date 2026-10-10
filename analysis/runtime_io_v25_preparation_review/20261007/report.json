@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "decision": "offline_repeated_control_package_ready_runtime_unrun",
+  "generation": "analysis/runtime_io_v25/generation-01",
+  "bundle_sources": 185,
+  "bundle_seal_sha256": "3b97e880641d680dbed4ea424457ee8272a325397dd41c717023afa49d515cdd",
+  "design_seal_sha256": "cbc94896d857e4cfb7a874f730694d5c2ea61f829c29cebaaa0cb713e26a46bc",
+  "unchanged_historical_source_counts": {
+    "V22": 126,
+    "V23": 135,
+    "V24 revision1": 148,
+    "V24 revision2": 161,
+    "V24 revision3": 175
+  },
+  "previous_failed_evidence_verified": true,
+  "previous_review_seals": {
+    "runtime_io_v24_failure_review": "246ac04b86e49ba405bf6c50e2daa7566fe2548baa229b800f91f33721001ffc",
+    "runtime_io_v24r2_failure_review": "ca6dbbe0974bb12d7c496ff617b2925b85f0179dd16d9c228d72d07f36833d71",
+    "runtime_io_v24r3_qualification_review": "fbcfe3afed6763bd8e7cf64a951877689a67ce48dac8ba13abf0a89e079fbec6"
+  },
+  "native_counter_binary_identical_to_generation03": true,
+  "counter_sha256": "03234c631bc8eba20ceff8a65a68e7ba46742fd76d10cd479e5e3b70e2ed521f",
+  "software_receipt_reused_without_new_capture": true,
+  "native_software_summary": {
+    "duration_sec": 110.000058912,
+    "own_cpu_ms": 84.864237,
+    "max_adjacent_span_ms": 20.483529,
+    "samples": 5500,
+    "max_wall_ms": 0.034586,
+    "max_thread_cpu_ms": 0.023995,
+    "reads_over_2ms": 0,
+    "skipped_deadlines": 0,
+    "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+  },
+  "software_checks": {
+    "new_control_design_checks": 20,
+    "combined_regressions": 142,
+    "passed": true,
+    "command": "PYTHONPATH=diagnostic python3 -m unittest test_v22 test_v23 test_v24 test_v24r2 test_v24r3 test_v25 -v",
+    "final_combined_stderr_sha256": "bd6a4c696abf798599d5ece8b55ff71fe3808f37b6a40c31ffc1c45e2f88bb24",
+    "bundled_unit_stderr_sha256": "4dbb60b02dab444561a1d1d90cfed63972541a13f71222d500abe24dc9531fce"
+  },
+  "planned_diagnostic_trials": 16,
+  "trials_per_size_condition": 4,
+  "collection_bound_sec": 5400,
+  "validity_separated_from_control_variation_and_workload_states": true,
+  "statistical_equivalence_established": false,
+  "scientific_confirmation_established": false,
+  "runtime": {
+    "preparation": false,
+    "completed_diagnostic_trials": 0,
+    "docker_invoked": false,
+    "sudo_invoked": false,
+    "real_service_invoked": false,
+    "host_settings_changed": false
+  },
+  "external_launch": "bash diagnostic/start_v25.sh run analysis/runtime_io_v25/generation-01",
+  "previous_v24_full_scientific_run_remains_blocked": true,
+  "limits": "Four repeats per condition/size provide a descriptive design diagnostic, not confidence intervals, equivalence, causal attribution or scientific confirmation. No automatic follow-on run."
+}

@@ -1,0 +1,56 @@
+{
+  "original_preparation_seal": "e679169fdbd79fd1aa62e08b23be0f6f31ba43487f1bef9c136cdc182b9e061c",
+  "records": [
+    {
+      "attempt": "preparation/resource_preflight/A",
+      "container": "quota-v20-d4ef01339d444dff8529c8529458148b",
+      "actual_container_absent": true,
+      "cgroup": "/sys/fs/cgroup/system.slice/docker-2f53d5186317c7335290523d81483454e8efa840066a5083c41dc6c667429a16.scope",
+      "actual_cgroup_absent": true,
+      "recovered_startup_identity": null
+    },
+    {
+      "attempt": "preparation/resource_preflight/B",
+      "container": "quota-v20-7b27bc59acff4ae0a3dd513de2bbfb75",
+      "actual_container_absent": true,
+      "cgroup": "/sys/fs/cgroup/system.slice/docker-ea266f813d9c81b5391a273facf92298f5eab5ecb987bf881d47eb10e91bcf4b.scope",
+      "actual_cgroup_absent": true,
+      "recovered_startup_identity": null
+    },
+    {
+      "attempt": "preparation/resource_preflight/C",
+      "container": "quota-v20-8778a2af8d534f278eb9507531c0d3ca",
+      "actual_container_absent": true,
+      "cgroup": "/sys/fs/cgroup/system.slice/docker-e5a637846c63a6fd1dae11cbf54045cb005c7076deb6ed141fa4bccc76b0bee5.scope",
+      "actual_cgroup_absent": true,
+      "recovered_startup_identity": {
+        "container_id": "e5a637846c63a6fd1dae11cbf54045cb005c7076deb6ed141fa4bccc76b0bee5",
+        "create_event_nonce_verified": true,
+        "create_event": {
+          "Type": "container",
+          "Action": "create",
+          "Actor": {
+            "ID": "e5a637846c63a6fd1dae11cbf54045cb005c7076deb6ed141fa4bccc76b0bee5",
+            "Attributes": {
+              "image": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+              "name": "quota-v20-8778a2af8d534f278eb9507531c0d3ca",
+              "research.runtime.variant": "stock",
+              "research.study": "bursty-parallelism-v1",
+              "research.v20.owner": "463bfffe0ac04be18a822f5c5fa3d8fd"
+            }
+          },
+          "scope": "local",
+          "time": 1791207719,
+          "timeNano": 1791207719443625527
+        },
+        "recorded_same_generation_layouts": [
+          "/sys/fs/cgroup/system.slice/docker-ea266f813d9c81b5391a273facf92298f5eab5ecb987bf881d47eb10e91bcf4b.scope",
+          "/sys/fs/cgroup/system.slice/docker-2f53d5186317c7335290523d81483454e8efa840066a5083c41dc6c667429a16.scope"
+        ],
+        "cgroup_path_basis": "owned Docker create event and same-generation systemd scope layout"
+      }
+    }
+  ],
+  "all_absent": true,
+  "historical_failure_preserved": true
+}

@@ -1,0 +1,66 @@
+
+[2026-09-30T23:30:47.245150+05:30] python-regression-tests: /usr/bin/python3 -m unittest discover -s /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic -p 'test_*.py' -v
+test_client_launch_preserves_flags_after_trace_toggle (test_diagnostic.DiagnosticPlanTests.test_client_launch_preserves_flags_after_trace_toggle) ... ok
+test_completed_audit_recomputes_raw_outcomes_and_detects_changed_evidence (test_diagnostic.DiagnosticPlanTests.test_completed_audit_recomputes_raw_outcomes_and_detects_changed_evidence) ... ok
+test_frozen_matrix_and_pilot (test_diagnostic.DiagnosticPlanTests.test_frozen_matrix_and_pilot) ... ok
+test_interaction_uses_trials_as_units (test_diagnostic.DiagnosticPlanTests.test_interaction_uses_trials_as_units) ... ok
+test_offline_usb_power_source_does_not_change_power_record (test_diagnostic.DiagnosticPlanTests.test_offline_usb_power_source_does_not_change_power_record) ... ok
+test_pilot_gate_rejects_missing_timing_and_excess_overhead (test_diagnostic.DiagnosticPlanTests.test_pilot_gate_rejects_missing_timing_and_excess_overhead) ... ok
+test_pipeline_stops_after_pilot_unless_full_requested (test_diagnostic.DiagnosticPlanTests.test_pipeline_stops_after_pilot_unless_full_requested) ... 
+PILOT COMPLETE: /tmp/tmpc7m174rx/PILOT_COMPLETED.md
+
+COMPLETE: /tmp/tmph0ya8yhi/COMPLETED.md
+ok
+test_response_event_validates_ids_order_and_preserves_write_failures (test_diagnostic.DiagnosticPlanTests.test_response_event_validates_ids_order_and_preserves_write_failures) ... ok
+test_signed_difference_retains_overlap_and_uses_matching_request (test_diagnostic.DiagnosticPlanTests.test_signed_difference_retains_overlap_and_uses_matching_request) ... ok
+test_trial_analysis_joins_ids_before_quantiles (test_diagnostic.DiagnosticPlanTests.test_trial_analysis_joins_ids_before_quantiles) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.238s
+
+OK
+
+[2026-09-30T23:30:47.596702+05:30] pilot-collection: /usr/bin/python3 -u /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py resume --session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/response-write-v3/pilot
+SESSION: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/response-write-v3/pilot
+Settling: at least 600s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 66.75}
+Settling 60s: {'k10temp:Tctl': 48.75}
+Settling 120s: {'k10temp:Tctl': 49.875}
+Settling 180s: {'k10temp:Tctl': 48.375}
+Settling 240s: {'k10temp:Tctl': 47.625}
+Settling 301s: {'k10temp:Tctl': 47.25}
+Settling 361s: {'k10temp:Tctl': 46.875}
+Settling 421s: {'k10temp:Tctl': 46.75}
+Settling 481s: {'k10temp:Tctl': 46.5}
+Settling 541s: {'k10temp:Tctl': 47.75}
+Settling 601s: {'k10temp:Tctl': 46.125}
+RUN 1/6 pilot_overhead_1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 49.0}
+Settling 60s: {'k10temp:Tctl': 45.625}
+RUN 2/6 pilot_overhead_2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 58.5}
+Settling 60s: {'k10temp:Tctl': 46.0}
+RUN 3/6 pilot_overhead_3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 58.0}
+Settling 60s: {'k10temp:Tctl': 45.875}
+RUN 4/6 pilot_overhead_4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 58.0}
+Settling 60s: {'k10temp:Tctl': 45.75}
+RUN 5/6 pilot_p100000_w1_on
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 58.125}
+Settling 60s: {'k10temp:Tctl': 46.125}
+Settling 120s: {'k10temp:Tctl': 45.375}
+RUN 6/6 pilot_p100000_w1_off
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 63.75}
+Settling 60s: {'k10temp:Tctl': 45.75}
+
+[2026-09-30T23:53:49.164154+05:30] pilot-analysis: /usr/bin/python3 /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/analyze.py /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/response-write-v3/pilot
+Validated 6 trials: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/response-write-v3/pilot/analysis
+
+PILOT COMPLETE: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/response-write-v3/PILOT_COMPLETED.md

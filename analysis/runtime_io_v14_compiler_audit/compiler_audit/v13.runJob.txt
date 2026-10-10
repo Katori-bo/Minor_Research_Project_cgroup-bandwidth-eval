@@ -1,0 +1,245 @@
+TEXT main.(*service).runJob(SB) research-service/main.go
+  main.go:138		0x643ec0		4c8da42420ffffff	LEAQ 0xffffff20(SP), R12			
+  main.go:138		0x643ec8		4d3b6610		CMPQ R12, 0x10(R14)				
+  main.go:138		0x643ecc		0f86ec040000		JBE 0x6443be					
+  main.go:138		0x643ed2		55			PUSHQ BP					
+  main.go:138		0x643ed3		4889e5			MOVQ SP, BP					
+  main.go:138		0x643ed6		4881ec58010000		SUBQ $0x158, SP					
+  main.go:139		0x643edd		4883785800		CMPQ 0x58(AX), $0x0				
+  main.go:139		0x643ee2		0f858d040000		JNE 0x644375					
+  main.go:139		0x643ee8		48898424b0010000	MOVQ AX, 0x1b0(SP)				
+  main.go:139		0x643ef0		48899c24b8010000	MOVQ BX, 0x1b8(SP)				
+  main.go:141		0x643ef8		80781000		CMPB 0x10(AX), $0x0				
+  main.go:141		0x643efc		7508			JNE 0x643f06					
+  main.go:141		0x643efe		31c9			XORL CX, CX					
+  main.go:141		0x643f00		31d2			XORL DX, DX					
+  main.go:141		0x643f02		31f6			XORL SI, SI					
+  main.go:141		0x643f04		eb0e			JMP 0x643f14					
+  main.go:142		0x643f06		e8b568e6ff		CALL time.Now(SB)				
+  main.go:144		0x643f0b		4889c2			MOVQ AX, DX					
+  main.go:144		0x643f0e		4889ce			MOVQ CX, SI					
+  main.go:144		0x643f11		4889d9			MOVQ BX, CX					
+  main.go:144		0x643f14		4889b424f0000000	MOVQ SI, 0xf0(SP)				
+  main.go:144		0x643f1c		48898c2480000000	MOVQ CX, 0x80(SP)				
+  main.go:144		0x643f24		4889542478		MOVQ DX, 0x78(SP)				
+  main.go:144		0x643f29		488b842470010000	MOVQ 0x170(SP), AX				
+  main.go:144		0x643f31		e84afcffff		CALL main.work(SB)				
+  main.go:144		0x643f36		488d4c2458		LEAQ 0x58(SP), CX				
+  main.go:144		0x643f3b		4889e2			MOVQ SP, DX					
+  main.go:144		0x643f3e		440f1032		MOVUPS 0(DX), X14				
+  main.go:144		0x643f42		440f1131		MOVUPS X14, 0(CX)				
+  main.go:144		0x643f46		440f107210		MOVUPS 0x10(DX), X14				
+  main.go:144		0x643f4b		440f117110		MOVUPS X14, 0x10(CX)				
+  main.go:145		0x643f50		488b8c24b8010000	MOVQ 0x1b8(SP), CX				
+  main.go:145		0x643f58		4885c9			TESTQ CX, CX					
+  main.go:145		0x643f5b		740b			JE 0x643f68					
+  main.go:146		0x643f5d		488b01			MOVQ 0(CX), AX					
+  main.go:146		0x643f60		4889ca			MOVQ CX, DX					
+  main.go:146		0x643f63		ffd0			CALL AX						
+  main.go:151		0x643f65		4889e2			MOVQ SP, DX					
+  main.go:148		0x643f68		488b8c24b0010000	MOVQ 0x1b0(SP), CX				
+  main.go:148		0x643f70		80791000		CMPB 0x10(CX), $0x0				
+  main.go:148		0x643f74		750a			JNE 0x643f80					
+  main.go:148		0x643f76		31db			XORL BX, BX					
+  main.go:148		0x643f78		31c0			XORL AX, AX					
+  main.go:148		0x643f7a		31f6			XORL SI, SI					
+  main.go:148		0x643f7c		eb0d			JMP 0x643f8b					
+  main.go:148		0x643f7e		6690			NOPW						
+  main.go:149		0x643f80		e83b68e6ff		CALL time.Now(SB)				
+  main.go:151		0x643f85		4889e2			MOVQ SP, DX					
+  main.go:151		0x643f88		4889ce			MOVQ CX, SI					
+  main.go:151		0x643f8b		4889b42400010000	MOVQ SI, 0x100(SP)				
+  main.go:151		0x643f93		48899c2490000000	MOVQ BX, 0x90(SP)				
+  main.go:151		0x643f9b		4889842488000000	MOVQ AX, 0x88(SP)				
+  main.go:151		0x643fa3		488b8c2498010000	MOVQ 0x198(SP), CX				
+  main.go:151		0x643fab		488b8424a0010000	MOVQ 0x1a0(SP), AX				
+  main.go:151		0x643fb3		488b4928		MOVQ 0x28(CX), CX				
+  main.go:151		0x643fb7		ffd1			CALL CX						
+  main.go:151		0x643fb9		48898424a8000000	MOVQ AX, 0xa8(SP)				
+  main.go:152		0x643fc1		488d9c2408010000	LEAQ 0x108(SP), BX				
+  main.go:152		0x643fc9		440f113b		MOVUPS X15, 0(BX)				
+  main.go:152		0x643fcd		440f117b10		MOVUPS X15, 0x10(BX)				
+  main.go:152		0x643fd2		440f117b20		MOVUPS X15, 0x20(BX)				
+  main.go:152		0x643fd7		440f117b30		MOVUPS X15, 0x30(BX)				
+  main.go:152		0x643fdc		440f117b40		MOVUPS X15, 0x40(BX)				
+  main.go:152		0x643fe1		488b8c2490010000	MOVQ 0x190(SP), CX				
+  main.go:152		0x643fe9		48898c2430010000	MOVQ CX, 0x130(SP)				
+  main.go:152		0x643ff1		488d8c2438010000	LEAQ 0x138(SP), CX				
+  main.go:152		0x643ff9		488d542458		LEAQ 0x58(SP), DX				
+  main.go:152		0x643ffe		440f1032		MOVUPS 0(DX), X14				
+  main.go:152		0x644002		440f1131		MOVUPS X14, 0(CX)				
+  main.go:152		0x644006		440f107210		MOVUPS 0x10(DX), X14				
+  main.go:152		0x64400b		440f117110		MOVUPS X14, 0x10(CX)				
+  main.go:153		0x644010		488b8c24b0010000	MOVQ 0x1b0(SP), CX				
+  main.go:153		0x644018		80791000		CMPB 0x10(CX), $0x0				
+  main.go:153		0x64401c		751d			JNE 0x64403b					
+  main.go:163		0x64401e		488b942488000000	MOVQ 0x88(SP), DX				
+  main.go:163		0x644026		4c8b8c2490000000	MOVQ 0x90(SP), R9				
+  main.go:163		0x64402e		4c8b942400010000	MOVQ 0x100(SP), R10				
+  main.go:153		0x644036		e9a4000000		JMP 0x6440df					
+  main.go:154		0x64403b		488bbc2478010000	MOVQ 0x178(SP), DI				
+  main.go:154		0x644043		488bb42480010000	MOVQ 0x180(SP), SI				
+  main.go:154		0x64404b		4c8b842488010000	MOVQ 0x188(SP), R8				
+  main.go:154		0x644053		488b442478		MOVQ 0x78(SP), AX				
+  main.go:154		0x644058		488b9c2480000000	MOVQ 0x80(SP), BX				
+  main.go:154		0x644060		488b8c24f0000000	MOVQ 0xf0(SP), CX				
+  main.go:154		0x644068		e8b3f5e5ff		CALL time.Time.Sub(SB)				
+  main.go:154		0x64406d		4889842408010000	MOVQ AX, 0x108(SP)				
+  main.go:155		0x644075		488b842488000000	MOVQ 0x88(SP), AX				
+  main.go:155		0x64407d		488b9c2490000000	MOVQ 0x90(SP), BX				
+  main.go:155		0x644085		488b8c2400010000	MOVQ 0x100(SP), CX				
+  main.go:155		0x64408d		488b7c2478		MOVQ 0x78(SP), DI				
+  main.go:155		0x644092		488bb42480000000	MOVQ 0x80(SP), SI				
+  main.go:155		0x64409a		4c8b8424f0000000	MOVQ 0xf0(SP), R8				
+  main.go:155		0x6440a2		e879f5e5ff		CALL time.Time.Sub(SB)				
+  main.go:155		0x6440a7		4889842410010000	MOVQ AX, 0x110(SP)				
+  main.go:156		0x6440af		488b942488000000	MOVQ 0x88(SP), DX				
+  main.go:156		0x6440b7		4889942418010000	MOVQ DX, 0x118(SP)				
+  main.go:156		0x6440bf		4c8b8c2490000000	MOVQ 0x90(SP), R9				
+  main.go:156		0x6440c7		4c898c2420010000	MOVQ R9, 0x120(SP)				
+  main.go:156		0x6440cf		4c8b942400010000	MOVQ 0x100(SP), R10				
+  main.go:156		0x6440d7		4c89942428010000	MOVQ R10, 0x128(SP)				
+  main.go:159		0x6440df		90			NOPL						
+  mutex.go:46		0x6440e0		4c8b9c24b0010000	MOVQ 0x1b0(SP), R11				
+  mutex.go:46		0x6440e8		4d8d6330		LEAQ 0x30(R11), R12				
+  mutex.go:46		0x6440ec		4c89a424f8000000	MOVQ R12, 0xf8(SP)				
+  mutex.go:63		0x6440f4		31c0			XORL AX, AX					
+  mutex.go:63		0x6440f6		41bd01000000		MOVL $0x1, R13					
+  mutex.go:63		0x6440fc		f0450fb16b30		LOCK CMPXCHGL R13, 0x30(R11)			
+  mutex.go:63		0x644102		410f94c5		SETE R13					
+  mutex.go:63		0x644106		4584ed			TESTL R13, R13					
+  mutex.go:63		0x644109		7530			JNE 0x64413b					
+  mutex.go:70		0x64410b		4c89e0			MOVQ R12, AX					
+  mutex.go:70		0x64410e		e8ada2e4ff		CALL internal/sync.(*Mutex).lockSlow(SB)	
+  main.go:163		0x644113		488b942488000000	MOVQ 0x88(SP), DX				
+  main.go:163		0x64411b		4c8b8c2490000000	MOVQ 0x90(SP), R9				
+  main.go:163		0x644123		4c8b942400010000	MOVQ 0x100(SP), R10				
+  main.go:160		0x64412b		4c8b9c24b0010000	MOVQ 0x1b0(SP), R11				
+  mutex.go:198		0x644133		4c8ba424f8000000	MOVQ 0xf8(SP), R12				
+  main.go:160		0x64413b		41807b1000		CMPB 0x10(R11), $0x0				
+  main.go:160		0x644140		0f84dd010000		JE 0x644323					
+  main.go:162		0x644146		488b842478010000	MOVQ 0x178(SP), AX				
+  main.go:162		0x64414e		488b9c2480010000	MOVQ 0x180(SP), BX				
+  main.go:162		0x644156		488b8c2488010000	MOVQ 0x188(SP), CX				
+  main.go:162		0x64415e		498b7b18		MOVQ 0x18(R11), DI				
+  main.go:162		0x644162		498b7320		MOVQ 0x20(R11), SI				
+  main.go:162		0x644166		4d8b4328		MOVQ 0x28(R11), R8				
+  main.go:162		0x64416a		e8b1f4e5ff		CALL time.Time.Sub(SB)				
+  main.go:162		0x64416f		48898424a0000000	MOVQ AX, 0xa0(SP)				
+  main.go:162		0x644177		488b9424b0010000	MOVQ 0x1b0(SP), DX				
+  main.go:162		0x64417f		488b7220		MOVQ 0x20(DX), SI				
+  main.go:162		0x644183		4c8b4228		MOVQ 0x28(DX), R8				
+  main.go:162		0x644187		488b7a18		MOVQ 0x18(DX), DI				
+  main.go:162		0x64418b		488b442478		MOVQ 0x78(SP), AX				
+  main.go:162		0x644190		488b9c2480000000	MOVQ 0x80(SP), BX				
+  main.go:162		0x644198		488b8c24f0000000	MOVQ 0xf0(SP), CX				
+  main.go:162		0x6441a0		e87bf4e5ff		CALL time.Time.Sub(SB)				
+  main.go:162		0x6441a5		4889842498000000	MOVQ AX, 0x98(SP)				
+  main.go:163		0x6441ad		488b9424b0010000	MOVQ 0x1b0(SP), DX				
+  main.go:163		0x6441b5		488b7220		MOVQ 0x20(DX), SI				
+  main.go:163		0x6441b9		4c8b4228		MOVQ 0x28(DX), R8				
+  main.go:163		0x6441bd		488b7a18		MOVQ 0x18(DX), DI				
+  main.go:163		0x6441c1		488b842488000000	MOVQ 0x88(SP), AX				
+  main.go:163		0x6441c9		488b9c2490000000	MOVQ 0x90(SP), BX				
+  main.go:163		0x6441d1		488b8c2400010000	MOVQ 0x100(SP), CX				
+  main.go:163		0x6441d9		e842f4e5ff		CALL time.Time.Sub(SB)				
+  main.go:164		0x6441de		488d9424b0000000	LEAQ 0xb0(SP), DX				
+  main.go:164		0x6441e6		440f113a		MOVUPS X15, 0(DX)				
+  main.go:164		0x6441ea		440f117a10		MOVUPS X15, 0x10(DX)				
+  main.go:164		0x6441ef		440f117a20		MOVUPS X15, 0x20(DX)				
+  main.go:164		0x6441f4		440f117a30		MOVUPS X15, 0x30(DX)				
+  main.go:161		0x6441f9		4c8b8c2468010000	MOVQ 0x168(SP), R9				
+  main.go:161		0x644201		4c898c24b0000000	MOVQ R9, 0xb0(SP)				
+  main.go:162		0x644209		4c8b8c24a0000000	MOVQ 0xa0(SP), R9				
+  main.go:162		0x644211		4c898c24b8000000	MOVQ R9, 0xb8(SP)				
+  main.go:162		0x644219		4c8b8c2498000000	MOVQ 0x98(SP), R9				
+  main.go:162		0x644221		4c898c24c0000000	MOVQ R9, 0xc0(SP)				
+  main.go:163		0x644229		48898424c8000000	MOVQ AX, 0xc8(SP)				
+  main.go:163		0x644231		4c8b8c2408010000	MOVQ 0x108(SP), R9				
+  main.go:163		0x644239		4c898c24d0000000	MOVQ R9, 0xd0(SP)				
+  main.go:163		0x644241		4c8b8c2410010000	MOVQ 0x110(SP), R9				
+  main.go:163		0x644249		4c898c24d8000000	MOVQ R9, 0xd8(SP)				
+  main.go:164		0x644251		4c8b8c2490010000	MOVQ 0x190(SP), R9				
+  main.go:164		0x644259		4c898c24e0000000	MOVQ R9, 0xe0(SP)				
+  main.go:151		0x644261		4c8b8c24a8000000	MOVQ 0xa8(SP), R9				
+  main.go:151		0x644269		4d85c9			TESTQ R9, R9					
+  main.go:164		0x64426c		0f958424e8000000	SETNE 0xe8(SP)					
+  main.go:161		0x644274		4c8b9424b0010000	MOVQ 0x1b0(SP), R10				
+  main.go:161		0x64427c		498b4a48		MOVQ 0x48(R10), CX				
+  main.go:161		0x644280		498b5a40		MOVQ 0x40(R10), BX				
+  main.go:161		0x644284		48ffc3			INCQ BX						
+  main.go:161		0x644287		498b4238		MOVQ 0x38(R10), AX				
+  main.go:161		0x64428b		4839d9			CMPQ CX, BX					
+  main.go:161		0x64428e		7353			JAE 0x6442e3					
+  main.go:161		0x644290		bf01000000		MOVL $0x1, DI					
+  main.go:161		0x644295		488d35c4cc0d00		LEAQ 0xdccc4(IP), SI				
+  main.go:161		0x64429c		0f1f4000		NOPL 0(AX)					
+  main.go:161		0x6442a0		e83b08e4ff		CALL runtime.growslice(SB)			
+  main.go:161		0x6442a5		488b9424b0010000	MOVQ 0x1b0(SP), DX				
+  main.go:161		0x6442ad		48894a48		MOVQ CX, 0x48(DX)				
+  main.go:161		0x6442b1		833da8f73a0000		CMPL runtime.writeBarrier(SB), $0x0		
+  main.go:161		0x6442b8		7412			JE 0x6442cc					
+  main.go:161		0x6442ba		488b4a38		MOVQ 0x38(DX), CX				
+  main.go:161		0x6442be		6690			NOPW						
+  main.go:161		0x6442c0		e85b5ee4ff		CALL runtime.gcWriteBarrier2(SB)		
+  main.go:161		0x6442c5		498903			MOVQ AX, 0(R11)					
+  main.go:161		0x6442c8		49894b08		MOVQ CX, 0x8(R11)				
+  main.go:161		0x6442cc		48894238		MOVQ AX, 0x38(DX)				
+  main.go:151		0x6442d0		4c8b8c24a8000000	MOVQ 0xa8(SP), R9				
+  main.go:161		0x6442d8		4989d2			MOVQ DX, R10					
+  main.go:164		0x6442db		488d9424b0000000	LEAQ 0xb0(SP), DX				
+  main.go:161		0x6442e3		49895a40		MOVQ BX, 0x40(R10)				
+  main.go:161		0x6442e7		488d4bff		LEAQ -0x1(BX), CX				
+  main.go:161		0x6442eb		48c1e106		SHLQ $0x6, CX					
+  main.go:161		0x6442ef		4801c1			ADDQ AX, CX					
+  main.go:161		0x6442f2		440f1032		MOVUPS 0(DX), X14				
+  main.go:161		0x6442f6		440f1131		MOVUPS X14, 0(CX)				
+  main.go:161		0x6442fa		440f107210		MOVUPS 0x10(DX), X14				
+  main.go:161		0x6442ff		440f117110		MOVUPS X14, 0x10(CX)				
+  main.go:161		0x644304		440f107220		MOVUPS 0x20(DX), X14				
+  main.go:161		0x644309		440f117120		MOVUPS X14, 0x20(CX)				
+  main.go:161		0x64430e		440f107230		MOVUPS 0x30(DX), X14				
+  main.go:161		0x644313		440f117130		MOVUPS X14, 0x30(CX)				
+  main.go:166		0x644318		4d89d3			MOVQ R10, R11					
+  mutex.go:198		0x64431b		4c8ba424f8000000	MOVQ 0xf8(SP), R12				
+  main.go:166		0x644323		49ff83c8000000		INCQ 0xc8(R11)					
+  main.go:151		0x64432a		488b8c24a8000000	MOVQ 0xa8(SP), CX				
+  main.go:151		0x644332		4885c9			TESTQ CX, CX					
+  main.go:167		0x644335		7407			JE 0x64433e					
+  main.go:168		0x644337		49ff83d0000000		INCQ 0xd0(R11)					
+  main.go:170		0x64433e		90			NOPL						
+  mutex.go:65		0x64433f		90			NOPL						
+  mutex.go:194		0x644340		bbffffffff		MOVL $-0x1, BX					
+  mutex.go:194		0x644345		f0410fc15b30		LOCK XADDL BX, 0x30(R11)			
+  mutex.go:194		0x64434b		ffcb			DECL BX						
+  mutex.go:195		0x64434d		7408			JE 0x644357					
+  mutex.go:198		0x64434f		4c89e0			MOVQ R12, AX					
+  mutex.go:198		0x644352		e849a3e4ff		CALL internal/sync.(*Mutex).unlockSlow(SB)	
+  main.go:171		0x644357		488b8424a8010000	MOVQ 0x1a8(SP), AX				
+  main.go:171		0x64435f		488d9c2408010000	LEAQ 0x108(SP), BX				
+  main.go:171		0x644367		e8b416ddff		CALL runtime.chansend1(SB)			
+  main.go:172		0x64436c		4881c458010000		ADDQ $0x158, SP					
+  main.go:172		0x644373		5d			POPQ BP						
+  main.go:172		0x644374		c3			RET						
+  main.go:139		0x644375		4889e1			MOVQ SP, CX					
+  main.go:139		0x644378		488d942468010000	LEAQ 0x168(SP), DX				
+  main.go:139		0x644380		440f1032		MOVUPS 0(DX), X14				
+  main.go:139		0x644384		440f1131		MOVUPS X14, 0(CX)				
+  main.go:139		0x644388		440f107210		MOVUPS 0x10(DX), X14				
+  main.go:139		0x64438d		440f117110		MOVUPS X14, 0x10(CX)				
+  main.go:139		0x644392		440f107220		MOVUPS 0x20(DX), X14				
+  main.go:139		0x644397		440f117120		MOVUPS X14, 0x20(CX)				
+  main.go:139		0x64439c		440f107230		MOVUPS 0x30(DX), X14				
+  main.go:139		0x6443a1		440f117130		MOVUPS X14, 0x30(CX)				
+  main.go:139		0x6443a6		440f107238		MOVUPS 0x38(DX), X14				
+  main.go:139		0x6443ab		440f117138		MOVUPS X14, 0x38(CX)				
+  main.go:139		0x6443b0		e8cbefffff		CALL main.(*service).completionRunJob(SB)	
+  main.go:139		0x6443b5		4881c458010000		ADDQ $0x158, SP					
+  main.go:139		0x6443bc		5d			POPQ BP						
+  main.go:139		0x6443bd		c3			RET						
+  main.go:138		0x6443be		4889442450		MOVQ AX, 0x50(SP)				
+  main.go:138		0x6443c3		48895c2458		MOVQ BX, 0x58(SP)				
+  main.go:138		0x6443c8		e8d343e4ff		CALL runtime.morestack_noctxt.abi0(SB)		
+  main.go:138		0x6443cd		488b442450		MOVQ 0x50(SP), AX				
+  main.go:138		0x6443d2		488b5c2458		MOVQ 0x58(SP), BX				
+  main.go:138		0x6443d7		e9e4faffff		JMP main.(*service).runJob(SB)

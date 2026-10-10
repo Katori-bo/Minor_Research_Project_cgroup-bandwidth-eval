@@ -1,0 +1,65 @@
+{
+  "source_report": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v18_observer_cost/generation-04/analysis/1791136492141213329",
+  "source_report_seal": "3e611c806f8200c87c2dbca90c4edac473a9b1ef60470d419dfb6c10c923519a",
+  "decision": "effects_outside_margins",
+  "failed_pairs": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "paired_statistics": {
+    "timely_500_delta": {
+      "n": 6,
+      "median": -0.0033858383630207545,
+      "minimum": -0.027381127631385227,
+      "maximum": 0.022081554541439785,
+      "sample_sd": 0.01846278552919525
+    },
+    "timely_1000_delta": {
+      "n": 6,
+      "median": 0.0,
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "sample_sd": 0.0
+    },
+    "failure_delta": {
+      "n": 6,
+      "median": 0.0,
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "sample_sd": 0.0
+    },
+    "cpu_ratio": {
+      "n": 6,
+      "median": 1.0010850499491244,
+      "minimum": 1.0008786153680782,
+      "maximum": 1.002204821154535,
+      "sample_sd": 0.0004825130131681548
+    },
+    "p99_ratio": {
+      "n": 6,
+      "median": 1.0097654997411172,
+      "minimum": 0.9815524726720337,
+      "maximum": 1.0397130535769308,
+      "sample_sd": 0.020707507094262362
+    }
+  },
+  "request_boundary_counts": {
+    "off": {
+      "offered": 40758,
+      "missed_500ms": 9729,
+      "completion_to_handler_over50ms": 15928,
+      "certain_work_before500_handler_after500": 3518
+    },
+    "on": {
+      "offered": 40758,
+      "missed_500ms": 9837,
+      "completion_to_handler_over50ms": 16058,
+      "certain_work_before500_handler_after500": 3428
+    }
+  },
+  "method": "Work certainly precedes 500ms when completion upper bound <= scheduled lower bound + 500ms; handler certainly follows when resume lower bound > scheduled upper bound + 500ms. No quota/request causal attribution.",
+  "interpretation": "Five pairs fail only the 500ms timely-success screen. Both directions occur, so consistent observer penalty is not established. Substantial computation-to-handler delays also occur without tracing."
+}

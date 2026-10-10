@@ -1,0 +1,88 @@
+{
+  "method": "simple exact-if-certified witness shortcut",
+  "status": "exact",
+  "mode": "no-rejection monotonic endpoints",
+  "problem": {
+    "arrivals": [
+      "0",
+      "0"
+    ],
+    "system_slots": 2,
+    "relative_deadline": "1",
+    "service_interval": [
+      "1/2",
+      "3/4"
+    ],
+    "time_unit": "seconds"
+  },
+  "proved_lower_count": 0,
+  "proved_upper_count": 1,
+  "sampled_minimum_count": 0,
+  "sampled_maximum_count": 1,
+  "stats": {
+    "fixed_parameter_replays": 2
+  },
+  "novelty_established": false,
+  "minimum": {
+    "failures": 0,
+    "failure_fraction": "0",
+    "witness_service_time": "1/2",
+    "witness_replay": {
+      "offered": 2,
+      "rejected": 0,
+      "late": 0,
+      "timely": 2,
+      "failures": 0,
+      "failure_fraction": "0",
+      "failure_percentage": "0",
+      "system_peak": 2,
+      "offers": [
+        {
+          "index": 0,
+          "arrival": "0",
+          "completion": "1/2",
+          "latency": "1/2",
+          "outcome": "timely"
+        },
+        {
+          "index": 1,
+          "arrival": "0",
+          "completion": "1",
+          "latency": "1",
+          "outcome": "timely"
+        }
+      ]
+    }
+  },
+  "maximum": {
+    "failures": 1,
+    "failure_fraction": "1/2",
+    "witness_service_time": "3/4",
+    "witness_replay": {
+      "offered": 2,
+      "rejected": 0,
+      "late": 1,
+      "timely": 1,
+      "failures": 1,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50",
+      "system_peak": 2,
+      "offers": [
+        {
+          "index": 0,
+          "arrival": "0",
+          "completion": "3/4",
+          "latency": "3/4",
+          "outcome": "timely"
+        },
+        {
+          "index": 1,
+          "arrival": "0",
+          "completion": "3/2",
+          "latency": "3/2",
+          "outcome": "late"
+        }
+      ]
+    }
+  }
+}

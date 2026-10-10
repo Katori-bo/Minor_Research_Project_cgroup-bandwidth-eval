@@ -1,0 +1,1339 @@
+{
+  "status": "timing_boundary_discovery_complete",
+  "parameters": {
+    "busy_capacity_rps": 34.916666666666664,
+    "effective_demand_ms": 7.159904534606206,
+    "worker_wall_ms": {
+      "n": 676,
+      "mean": 8.332187357988166,
+      "p50": 8.854517,
+      "p95": 9.069351,
+      "p99": 9.151906,
+      "maximum": 9.225908
+    },
+    "response_residual_ms": {
+      "n": 676,
+      "mean": 1.3967684926035502,
+      "p50": 1.3761105,
+      "p95": 1.988001,
+      "p99": 2.192586,
+      "maximum": 4.243329
+    },
+    "queue_free_latency_ms": {
+      "n": 676,
+      "mean": 9.728955850591715,
+      "p50": 10.227912,
+      "p95": 10.901858,
+      "p99": 11.130522,
+      "maximum": 11.603022
+    },
+    "implied_worker_wall_budget_ms": 30.917021858333335,
+    "configured_cpu_budget_ms": 25,
+    "pooled_samples": 676,
+    "sample_scope": "four low-rate calibration trials, successful requests with queue <=100us",
+    "stage_correlation_descriptive": 0.3805223934986409
+  },
+  "calibration_trials": {
+    "cal_b1_steady15": {
+      "samples": 113,
+      "worker_wall_ms": {
+        "n": 113,
+        "mean": 8.259050053097345,
+        "p50": 8.856196,
+        "p95": 9.103518,
+        "p99": 9.195871,
+        "maximum": 9.225908
+      },
+      "queue_free_latency_ms": {
+        "n": 113,
+        "mean": 9.611798132743363,
+        "p50": 10.220358,
+        "p95": 10.907999,
+        "p99": 11.146474,
+        "maximum": 11.172604
+      },
+      "miss_10ms_pct": 66.3716814159292,
+      "aggregate_cpu_per_job_ms": 8.598876106194691,
+      "idle_corrected_aggregate_cpu_per_job_ms": 8.514080285446488
+    },
+    "cal_b1_steady30": {
+      "samples": 225,
+      "worker_wall_ms": {
+        "n": 225,
+        "mean": 8.383861022222222,
+        "p50": 8.863946,
+        "p95": 9.081183,
+        "p99": 9.160911,
+        "maximum": 9.209153
+      },
+      "queue_free_latency_ms": {
+        "n": 225,
+        "mean": 9.77598256,
+        "p50": 10.25091,
+        "p95": 10.949028,
+        "p99": 11.115564,
+        "maximum": 11.26846
+      },
+      "miss_10ms_pct": 66.66666666666667,
+      "aggregate_cpu_per_job_ms": 8.712662222222223,
+      "idle_corrected_aggregate_cpu_per_job_ms": 8.670072290969348
+    },
+    "cal_b2_steady30": {
+      "samples": 225,
+      "worker_wall_ms": {
+        "n": 225,
+        "mean": 8.374494764444444,
+        "p50": 8.867252,
+        "p95": 9.058811,
+        "p99": 9.105729,
+        "maximum": 9.147647
+      },
+      "queue_free_latency_ms": {
+        "n": 225,
+        "mean": 9.8094298,
+        "p50": 10.245864,
+        "p95": 10.86245,
+        "p99": 11.12014,
+        "maximum": 11.603022
+      },
+      "miss_10ms_pct": 70.22222222222223,
+      "aggregate_cpu_per_job_ms": 8.719995555555556,
+      "idle_corrected_aggregate_cpu_per_job_ms": 8.67741260258158
+    },
+    "cal_b2_steady15": {
+      "samples": 113,
+      "worker_wall_ms": {
+        "n": 113,
+        "mean": 8.218194212389381,
+        "p50": 8.828648,
+        "p95": 9.050793,
+        "p99": 9.094235,
+        "maximum": 9.132346
+      },
+      "queue_free_latency_ms": {
+        "n": 113,
+        "mean": 9.592240575221238,
+        "p50": 10.155962,
+        "p95": 10.774746,
+        "p99": 11.046711,
+        "maximum": 11.058782
+      },
+      "miss_10ms_pct": 66.3716814159292,
+      "aggregate_cpu_per_job_ms": 8.562106194690266,
+      "idle_corrected_aggregate_cpu_per_job_ms": 8.477276425535104
+    }
+  },
+  "predictions": {
+    "9": {
+      "joint_calibration_cdf": 77.66272189349112,
+      "independent_worker_response_convolution": 78.0612110920486,
+      "median_worker_plus_response": 100.0,
+      "effective_cpu_demand_plus_response": 11.68639053254438
+    },
+    "9.5": {
+      "joint_calibration_cdf": 76.77514792899409,
+      "independent_worker_response_convolution": 74.93675816673085,
+      "median_worker_plus_response": 96.30177514792899,
+      "effective_cpu_demand_plus_response": 0.591715976331361
+    },
+    "10": {
+      "joint_calibration_cdf": 67.75147928994083,
+      "independent_worker_response_convolution": 60.47144707818354,
+      "median_worker_plus_response": 77.07100591715977,
+      "effective_cpu_demand_plus_response": 0.2958579881656805
+    },
+    "10.5": {
+      "joint_calibration_cdf": 25.88757396449704,
+      "independent_worker_response_convolution": 23.038190189419137,
+      "median_worker_plus_response": 25.14792899408284,
+      "effective_cpu_demand_plus_response": 0.14792899408284024
+    },
+    "11": {
+      "joint_calibration_cdf": 3.2544378698224854,
+      "independent_worker_response_convolution": 2.1988025629354713,
+      "median_worker_plus_response": 1.331360946745562,
+      "effective_cpu_demand_plus_response": 0.14792899408284024
+    },
+    "12": {
+      "joint_calibration_cdf": 0.0,
+      "independent_worker_response_convolution": 0.11707398200343125,
+      "median_worker_plus_response": 0.14792899408284024,
+      "effective_cpu_demand_plus_response": 0.0
+    },
+    "20": {
+      "joint_calibration_cdf": 0.0,
+      "independent_worker_response_convolution": 0.0,
+      "median_worker_plus_response": 0.0,
+      "effective_cpu_demand_plus_response": 0.0
+    },
+    "25": {
+      "joint_calibration_cdf": 0.0,
+      "independent_worker_response_convolution": 0.0,
+      "median_worker_plus_response": 0.0,
+      "effective_cpu_demand_plus_response": 0.0
+    },
+    "50": {
+      "joint_calibration_cdf": 0.0,
+      "independent_worker_response_convolution": 0.0,
+      "median_worker_plus_response": 0.0,
+      "effective_cpu_demand_plus_response": 0.0
+    },
+    "100": {
+      "joint_calibration_cdf": 0.0,
+      "independent_worker_response_convolution": 0.0,
+      "median_worker_plus_response": 0.0,
+      "effective_cpu_demand_plus_response": 0.0
+    },
+    "500": {
+      "joint_calibration_cdf": 0.0,
+      "independent_worker_response_convolution": 0.0,
+      "median_worker_plus_response": 0.0,
+      "effective_cpu_demand_plus_response": 0.0
+    }
+  },
+  "steady_comparison_mae_pp": {
+    "joint_calibration_cdf": {
+      "9": 2.3951484768792484,
+      "9.5": 1.967136021623195,
+      "10": 1.0786717437358486,
+      "10.5": 4.169428921031485,
+      "11": 1.5337588574768064,
+      "12": 0.007716049382716049,
+      "20": 0.0,
+      "25": 0.0,
+      "50": 0.0,
+      "100": 0.0,
+      "500": 0.0
+    },
+    "independent_worker_response_convolution": {
+      "9": 1.996659278321778,
+      "9.5": 3.8055257838864285,
+      "10": 6.77778131687819,
+      "10.5": 3.071951451322943,
+      "11": 0.5939547950434005,
+      "12": 0.10935793262071519,
+      "20": 0.0,
+      "25": 0.0,
+      "50": 0.0,
+      "100": 0.0,
+      "500": 0.0
+    },
+    "median_worker_plus_response": {
+      "9": 19.942129629629626,
+      "9.5": 17.55949119731171,
+      "10": 9.821777522098039,
+      "10.5": 3.6672921688947326,
+      "11": 0.6383318723062313,
+      "12": 0.1402129447001242,
+      "20": 0.0,
+      "25": 0.0,
+      "50": 0.0,
+      "100": 0.0,
+      "500": 0.0
+    },
+    "effective_cpu_demand_plus_response": {
+      "9": 68.37147983782599,
+      "9.5": 78.15056797428592,
+      "10": 66.95337040689606,
+      "10.5": 21.769509277522097,
+      "11": 1.5727500182628387,
+      "12": 0.007716049382716049,
+      "20": 0.0,
+      "25": 0.0,
+      "50": 0.0,
+      "100": 0.0,
+      "500": 0.0
+    },
+    "V30_frozen_periodic_plus_delay": {
+      "10": 66.95337040689606,
+      "20": 0.0,
+      "25": 0.0,
+      "50": 0.0,
+      "100": 0.0,
+      "500": 0.0
+    }
+  },
+  "profiles": {
+    "A": {
+      "scope": "applicable steady queue-free discovery comparison",
+      "trials": 6,
+      "throttled_periods": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "stages": {
+        "10": {
+          "misses": 973,
+          "unsuccessful": 0,
+          "computation_certainly_after": 554,
+          "computation_certainly_within_but_client_missed": 211,
+          "boundary_ambiguous": 208
+        },
+        "25": {
+          "misses": 0,
+          "unsuccessful": 0,
+          "computation_certainly_after": 0,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "joint_cdf_mae_pp": {
+        "9": 2.267833662064433,
+        "9.5": 1.8359631821170221,
+        "10": 0.9866042077580582,
+        "10.5": 4.827827087442472,
+        "11": 1.8655489809335966,
+        "12": 0.0,
+        "20": 0.0,
+        "25": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      }
+    },
+    "B": {
+      "scope": "applicable steady queue-free discovery comparison",
+      "trials": 6,
+      "throttled_periods": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "stages": {
+        "10": {
+          "misses": 4337,
+          "unsuccessful": 0,
+          "computation_certainly_after": 2323,
+          "computation_certainly_within_but_client_missed": 1368,
+          "boundary_ambiguous": 646
+        },
+        "25": {
+          "misses": 0,
+          "unsuccessful": 0,
+          "computation_certainly_after": 0,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "joint_cdf_mae_pp": {
+        "9": 2.522463291694064,
+        "9.5": 2.098308861129368,
+        "10": 1.170739279713639,
+        "10.5": 3.5110307546204975,
+        "11": 1.2019687340200162,
+        "12": 0.015432098765432098,
+        "20": 0.0,
+        "25": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      }
+    },
+    "C": {
+      "scope": "outside scope; negative control only",
+      "trials": 6,
+      "throttled_periods": [
+        368,
+        373,
+        352,
+        359,
+        351,
+        381
+      ],
+      "stages": {
+        "10": {
+          "misses": 7644,
+          "unsuccessful": 0,
+          "computation_certainly_after": 7289,
+          "computation_certainly_within_but_client_missed": 214,
+          "boundary_ambiguous": 141
+        },
+        "25": {
+          "misses": 6558,
+          "unsuccessful": 0,
+          "computation_certainly_after": 6529,
+          "computation_certainly_within_but_client_missed": 22,
+          "boundary_ambiguous": 7
+        }
+      },
+      "joint_cdf_mae_pp": {
+        "9": 16.72133607752337,
+        "9.5": 17.355286853614608,
+        "10": 24.567361289769313,
+        "10.5": 60.12691878912615,
+        "11": 80.22382299974274,
+        "12": 82.93478260869566,
+        "20": 80.76086956521739,
+        "25": 79.20289855072464,
+        "50": 73.69565217391305,
+        "100": 62.65700483091788,
+        "500": 0.0
+      }
+    }
+  },
+  "trial_diagnostics": [
+    {
+      "trial": "v30_b1_A",
+      "block": 1,
+      "profile": "A",
+      "offers": 240,
+      "observed_miss_pct": {
+        "9": 79.58333333333333,
+        "9.5": 78.75,
+        "10": 67.5,
+        "10.5": 25.833333333333332,
+        "11": 1.6666666666666667,
+        "12": 0.0,
+        "20": 0.0,
+        "25": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      },
+      "throttled_periods": 0,
+      "queue_ms": {
+        "n": 240,
+        "mean": 0.009560416666666667,
+        "p50": 0.008551,
+        "p95": 0.017352,
+        "p99": 0.022402,
+        "maximum": 0.035156
+      },
+      "worker_wall_ms": {
+        "n": 240,
+        "mean": 8.371296408333333,
+        "p50": 8.843449,
+        "p95": 9.058598,
+        "p99": 9.186156,
+        "maximum": 9.207566
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 162,
+          "unsuccessful": 0,
+          "computation_certainly_after": 98,
+          "computation_certainly_within_but_client_missed": 36,
+          "boundary_ambiguous": 28
+        },
+        "25": {
+          "misses": 0,
+          "unsuccessful": 0,
+          "computation_certainly_after": 0,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 0.4166666666666667
+    },
+    {
+      "trial": "v30_b1_B",
+      "block": 1,
+      "profile": "B",
+      "offers": 1080,
+      "observed_miss_pct": {
+        "9": 80.0925925925926,
+        "9.5": 78.42592592592592,
+        "10": 66.85185185185185,
+        "10.5": 20.37037037037037,
+        "11": 1.7592592592592593,
+        "12": 0.0,
+        "20": 0.0,
+        "25": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      },
+      "throttled_periods": 0,
+      "queue_ms": {
+        "n": 1080,
+        "mean": 0.00964542037037037,
+        "p50": 0.008546,
+        "p95": 0.017422,
+        "p99": 0.025108,
+        "maximum": 0.119785
+      },
+      "worker_wall_ms": {
+        "n": 1080,
+        "mean": 8.335245335185185,
+        "p50": 8.796927499999999,
+        "p95": 9.042279,
+        "p99": 9.144568,
+        "maximum": 9.373739
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 722,
+          "unsuccessful": 0,
+          "computation_certainly_after": 393,
+          "computation_certainly_within_but_client_missed": 231,
+          "boundary_ambiguous": 98
+        },
+        "25": {
+          "misses": 0,
+          "unsuccessful": 0,
+          "computation_certainly_after": 0,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 0.0
+    },
+    {
+      "trial": "v30_b1_C",
+      "block": 1,
+      "profile": "C",
+      "offers": 1380,
+      "observed_miss_pct": {
+        "9": 93.69565217391305,
+        "9.5": 93.33333333333333,
+        "10": 91.23188405797102,
+        "10.5": 85.0,
+        "11": 82.46376811594203,
+        "12": 82.2463768115942,
+        "20": 78.04347826086956,
+        "25": 75.8695652173913,
+        "50": 70.0,
+        "100": 58.84057971014493,
+        "500": 0.0
+      },
+      "throttled_periods": 368,
+      "queue_ms": {
+        "n": 1380,
+        "mean": 43.55411777318841,
+        "p50": 14.8488945,
+        "p95": 119.27215,
+        "p99": 201.776508,
+        "maximum": 209.387146
+      },
+      "worker_wall_ms": {
+        "n": 1380,
+        "mean": 24.111238939130434,
+        "p50": 8.520921,
+        "p95": 83.367939,
+        "p99": 84.178398,
+        "maximum": 85.108359
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 1259,
+          "unsuccessful": 0,
+          "computation_certainly_after": 1197,
+          "computation_certainly_within_but_client_missed": 35,
+          "boundary_ambiguous": 27
+        },
+        "25": {
+          "misses": 1047,
+          "unsuccessful": 0,
+          "computation_certainly_after": 1041,
+          "computation_certainly_within_but_client_missed": 5,
+          "boundary_ambiguous": 1
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 79.20289855072464
+    },
+    {
+      "trial": "v30_b2_B",
+      "block": 2,
+      "profile": "B",
+      "offers": 1080,
+      "observed_miss_pct": {
+        "9": 79.62962962962963,
+        "9.5": 78.14814814814815,
+        "10": 67.4074074074074,
+        "10.5": 22.314814814814813,
+        "11": 2.1296296296296298,
+        "12": 0.0,
+        "20": 0.0,
+        "25": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      },
+      "throttled_periods": 0,
+      "queue_ms": {
+        "n": 1080,
+        "mean": 0.009931166666666666,
+        "p50": 0.008570999999999999,
+        "p95": 0.019537,
+        "p99": 0.030197,
+        "maximum": 0.07463
+      },
+      "worker_wall_ms": {
+        "n": 1080,
+        "mean": 8.364674305555555,
+        "p50": 8.8130555,
+        "p95": 9.066033,
+        "p99": 9.205534,
+        "maximum": 10.510189
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 728,
+          "unsuccessful": 0,
+          "computation_certainly_after": 388,
+          "computation_certainly_within_but_client_missed": 231,
+          "boundary_ambiguous": 109
+        },
+        "25": {
+          "misses": 0,
+          "unsuccessful": 0,
+          "computation_certainly_after": 0,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 0.0
+    },
+    {
+      "trial": "v30_b2_C",
+      "block": 2,
+      "profile": "C",
+      "offers": 1380,
+      "observed_miss_pct": {
+        "9": 95.21739130434783,
+        "9.5": 94.92753623188406,
+        "10": 93.69565217391305,
+        "10.5": 88.98550724637681,
+        "11": 86.59420289855072,
+        "12": 86.15942028985508,
+        "20": 85.3623188405797,
+        "25": 84.27536231884058,
+        "50": 79.4927536231884,
+        "100": 68.69565217391305,
+        "500": 0.0
+      },
+      "throttled_periods": 373,
+      "queue_ms": {
+        "n": 1380,
+        "mean": 53.88418625724638,
+        "p50": 19.1469115,
+        "p95": 185.611717,
+        "p99": 201.824842,
+        "maximum": 217.094899
+      },
+      "worker_wall_ms": {
+        "n": 1380,
+        "mean": 25.753437413768115,
+        "p50": 8.4802265,
+        "p95": 83.538519,
+        "p99": 84.232751,
+        "maximum": 85.371111
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 1293,
+          "unsuccessful": 0,
+          "computation_certainly_after": 1245,
+          "computation_certainly_within_but_client_missed": 36,
+          "boundary_ambiguous": 12
+        },
+        "25": {
+          "misses": 1163,
+          "unsuccessful": 0,
+          "computation_certainly_after": 1156,
+          "computation_certainly_within_but_client_missed": 4,
+          "boundary_ambiguous": 3
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 85.28985507246377
+    },
+    {
+      "trial": "v30_b2_A",
+      "block": 2,
+      "profile": "A",
+      "offers": 240,
+      "observed_miss_pct": {
+        "9": 81.66666666666667,
+        "9.5": 79.58333333333333,
+        "10": 67.08333333333333,
+        "10.5": 15.416666666666666,
+        "11": 1.25,
+        "12": 0.0,
+        "20": 0.0,
+        "25": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      },
+      "throttled_periods": 0,
+      "queue_ms": {
+        "n": 240,
+        "mean": 0.009923979166666666,
+        "p50": 0.0087115,
+        "p95": 0.018565,
+        "p99": 0.022102,
+        "maximum": 0.045555
+      },
+      "worker_wall_ms": {
+        "n": 240,
+        "mean": 8.318434779166667,
+        "p50": 8.7525135,
+        "p95": 8.991065,
+        "p99": 9.171742,
+        "maximum": 9.831228
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 161,
+          "unsuccessful": 0,
+          "computation_certainly_after": 85,
+          "computation_certainly_within_but_client_missed": 28,
+          "boundary_ambiguous": 48
+        },
+        "25": {
+          "misses": 0,
+          "unsuccessful": 0,
+          "computation_certainly_after": 0,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 0.4166666666666667
+    },
+    {
+      "trial": "v30_b3_C",
+      "block": 3,
+      "profile": "C",
+      "offers": 1380,
+      "observed_miss_pct": {
+        "9": 94.20289855072464,
+        "9.5": 93.84057971014492,
+        "10": 91.59420289855072,
+        "10.5": 83.98550724637681,
+        "11": 81.01449275362319,
+        "12": 80.57971014492753,
+        "20": 78.40579710144928,
+        "25": 76.95652173913044,
+        "50": 71.30434782608695,
+        "100": 60.072463768115945,
+        "500": 0.0
+      },
+      "throttled_periods": 352,
+      "queue_ms": {
+        "n": 1380,
+        "mean": 42.9782108115942,
+        "p50": 13.523761499999999,
+        "p95": 118.067619,
+        "p99": 188.246376,
+        "maximum": 206.923579
+      },
+      "worker_wall_ms": {
+        "n": 1380,
+        "mean": 24.422861713043478,
+        "p50": 8.5231105,
+        "p95": 83.21711,
+        "p99": 84.296178,
+        "maximum": 85.043425
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 1264,
+          "unsuccessful": 0,
+          "computation_certainly_after": 1190,
+          "computation_certainly_within_but_client_missed": 44,
+          "boundary_ambiguous": 30
+        },
+        "25": {
+          "misses": 1062,
+          "unsuccessful": 0,
+          "computation_certainly_after": 1056,
+          "computation_certainly_within_but_client_missed": 4,
+          "boundary_ambiguous": 2
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 80.28985507246377
+    },
+    {
+      "trial": "v30_b3_A",
+      "block": 3,
+      "profile": "A",
+      "offers": 240,
+      "observed_miss_pct": {
+        "9": 80.0,
+        "9.5": 78.75,
+        "10": 67.08333333333333,
+        "10.5": 18.333333333333332,
+        "11": 0.8333333333333334,
+        "12": 0.0,
+        "20": 0.0,
+        "25": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      },
+      "throttled_periods": 0,
+      "queue_ms": {
+        "n": 240,
+        "mean": 0.00942415,
+        "p50": 0.008591,
+        "p95": 0.016611,
+        "p99": 0.022111,
+        "maximum": 0.023314
+      },
+      "worker_wall_ms": {
+        "n": 240,
+        "mean": 8.329976470833333,
+        "p50": 8.7747245,
+        "p95": 8.978958,
+        "p99": 9.072662,
+        "maximum": 9.345413
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 161,
+          "unsuccessful": 0,
+          "computation_certainly_after": 83,
+          "computation_certainly_within_but_client_missed": 49,
+          "boundary_ambiguous": 29
+        },
+        "25": {
+          "misses": 0,
+          "unsuccessful": 0,
+          "computation_certainly_after": 0,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 0.0
+    },
+    {
+      "trial": "v30_b3_B",
+      "block": 3,
+      "profile": "B",
+      "offers": 1080,
+      "observed_miss_pct": {
+        "9": 80.0925925925926,
+        "9.5": 78.42592592592592,
+        "10": 66.20370370370371,
+        "10.5": 21.85185185185185,
+        "11": 2.037037037037037,
+        "12": 0.0,
+        "20": 0.0,
+        "25": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      },
+      "throttled_periods": 0,
+      "queue_ms": {
+        "n": 1080,
+        "mean": 0.009877219444444444,
+        "p50": 0.008792,
+        "p95": 0.018926,
+        "p99": 0.028293,
+        "maximum": 0.106179
+      },
+      "worker_wall_ms": {
+        "n": 1080,
+        "mean": 8.374192246296296,
+        "p50": 8.811482,
+        "p95": 9.07151,
+        "p99": 9.177959,
+        "maximum": 9.494472
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 715,
+          "unsuccessful": 0,
+          "computation_certainly_after": 377,
+          "computation_certainly_within_but_client_missed": 229,
+          "boundary_ambiguous": 109
+        },
+        "25": {
+          "misses": 0,
+          "unsuccessful": 0,
+          "computation_certainly_after": 0,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 0.0
+    },
+    {
+      "trial": "v30_b4_A",
+      "block": 4,
+      "profile": "A",
+      "offers": 240,
+      "observed_miss_pct": {
+        "9": 79.16666666666667,
+        "9.5": 77.08333333333333,
+        "10": 65.83333333333333,
+        "10.5": 17.083333333333332,
+        "11": 0.4166666666666667,
+        "12": 0.0,
+        "20": 0.0,
+        "25": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      },
+      "throttled_periods": 0,
+      "queue_ms": {
+        "n": 240,
+        "mean": 0.009886483333333333,
+        "p50": 0.009708,
+        "p95": 0.015729,
+        "p99": 0.02187,
+        "maximum": 0.039284
+      },
+      "worker_wall_ms": {
+        "n": 240,
+        "mean": 8.302317679166666,
+        "p50": 8.774452499999999,
+        "p95": 9.036333,
+        "p99": 9.198627,
+        "maximum": 9.352044
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 158,
+          "unsuccessful": 0,
+          "computation_certainly_after": 85,
+          "computation_certainly_within_but_client_missed": 33,
+          "boundary_ambiguous": 40
+        },
+        "25": {
+          "misses": 0,
+          "unsuccessful": 0,
+          "computation_certainly_after": 0,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 0.4166666666666667
+    },
+    {
+      "trial": "v30_b4_C",
+      "block": 4,
+      "profile": "C",
+      "offers": 1380,
+      "observed_miss_pct": {
+        "9": 93.40579710144928,
+        "9.5": 93.18840579710145,
+        "10": 91.08695652173913,
+        "10.5": 84.42028985507247,
+        "11": 82.68115942028986,
+        "12": 82.2463768115942,
+        "20": 80.43478260869566,
+        "25": 79.34782608695652,
+        "50": 73.98550724637681,
+        "100": 62.971014492753625,
+        "500": 0.0
+      },
+      "throttled_periods": 359,
+      "queue_ms": {
+        "n": 1380,
+        "mean": 46.225122965217395,
+        "p50": 16.8108635,
+        "p95": 121.415714,
+        "p99": 191.251209,
+        "maximum": 205.630239
+      },
+      "worker_wall_ms": {
+        "n": 1380,
+        "mean": 24.894078444202897,
+        "p50": 8.452228999999999,
+        "p95": 83.464131,
+        "p99": 84.480173,
+        "maximum": 85.478442
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 1257,
+          "unsuccessful": 0,
+          "computation_certainly_after": 1193,
+          "computation_certainly_within_but_client_missed": 36,
+          "boundary_ambiguous": 28
+        },
+        "25": {
+          "misses": 1095,
+          "unsuccessful": 0,
+          "computation_certainly_after": 1089,
+          "computation_certainly_within_but_client_missed": 5,
+          "boundary_ambiguous": 1
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 81.95652173913044
+    },
+    {
+      "trial": "v30_b4_B",
+      "block": 4,
+      "profile": "B",
+      "offers": 1080,
+      "observed_miss_pct": {
+        "9": 80.55555555555556,
+        "9.5": 79.35185185185185,
+        "10": 67.5925925925926,
+        "10.5": 24.62962962962963,
+        "11": 2.1296296296296298,
+        "12": 0.0,
+        "20": 0.0,
+        "25": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      },
+      "throttled_periods": 0,
+      "queue_ms": {
+        "n": 1080,
+        "mean": 0.009864934259259259,
+        "p50": 0.008671499999999999,
+        "p95": 0.017753,
+        "p99": 0.024626,
+        "maximum": 0.188773
+      },
+      "worker_wall_ms": {
+        "n": 1080,
+        "mean": 8.384713,
+        "p50": 8.84026,
+        "p95": 9.077319,
+        "p99": 9.2005,
+        "maximum": 9.767769
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 730,
+          "unsuccessful": 0,
+          "computation_certainly_after": 384,
+          "computation_certainly_within_but_client_missed": 210,
+          "boundary_ambiguous": 136
+        },
+        "25": {
+          "misses": 0,
+          "unsuccessful": 0,
+          "computation_certainly_after": 0,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 0.09259259259259259
+    },
+    {
+      "trial": "v30_b5_C",
+      "block": 5,
+      "profile": "C",
+      "offers": 1380,
+      "observed_miss_pct": {
+        "9": 93.84057971014492,
+        "9.5": 93.55072463768116,
+        "10": 91.95652173913044,
+        "10.5": 84.20289855072464,
+        "11": 80.72463768115942,
+        "12": 80.14492753623189,
+        "20": 78.18840579710145,
+        "25": 76.66666666666667,
+        "50": 72.3913043478261,
+        "100": 62.31884057971015,
+        "500": 0.0
+      },
+      "throttled_periods": 351,
+      "queue_ms": {
+        "n": 1380,
+        "mean": 43.86454223188406,
+        "p50": 14.8510165,
+        "p95": 117.948014,
+        "p99": 188.694234,
+        "maximum": 205.054863
+      },
+      "worker_wall_ms": {
+        "n": 1380,
+        "mean": 24.2987878557971,
+        "p50": 8.519346500000001,
+        "p95": 83.239032,
+        "p99": 84.610243,
+        "maximum": 85.063386
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 1269,
+          "unsuccessful": 0,
+          "computation_certainly_after": 1210,
+          "computation_certainly_within_but_client_missed": 38,
+          "boundary_ambiguous": 21
+        },
+        "25": {
+          "misses": 1058,
+          "unsuccessful": 0,
+          "computation_certainly_after": 1058,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 79.92753623188406
+    },
+    {
+      "trial": "v30_b5_B",
+      "block": 5,
+      "profile": "B",
+      "offers": 1080,
+      "observed_miss_pct": {
+        "9": 80.0,
+        "9.5": 79.25925925925925,
+        "10": 68.79629629629629,
+        "10.5": 24.35185185185185,
+        "11": 2.5925925925925926,
+        "12": 0.09259259259259259,
+        "20": 0.0,
+        "25": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      },
+      "throttled_periods": 0,
+      "queue_ms": {
+        "n": 1080,
+        "mean": 0.009518782407407408,
+        "p50": 0.0082855,
+        "p95": 0.017273,
+        "p99": 0.028423,
+        "maximum": 0.105969
+      },
+      "worker_wall_ms": {
+        "n": 1080,
+        "mean": 8.37920493425926,
+        "p50": 8.844412,
+        "p95": 9.072794,
+        "p99": 9.201585,
+        "maximum": 9.629094
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 743,
+          "unsuccessful": 0,
+          "computation_certainly_after": 404,
+          "computation_certainly_within_but_client_missed": 227,
+          "boundary_ambiguous": 112
+        },
+        "25": {
+          "misses": 0,
+          "unsuccessful": 0,
+          "computation_certainly_after": 0,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 0.2777777777777778
+    },
+    {
+      "trial": "v30_b5_A",
+      "block": 5,
+      "profile": "A",
+      "offers": 240,
+      "observed_miss_pct": {
+        "9": 80.0,
+        "9.5": 79.16666666666667,
+        "10": 69.16666666666667,
+        "10.5": 25.0,
+        "11": 2.5,
+        "12": 0.0,
+        "20": 0.0,
+        "25": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      },
+      "throttled_periods": 0,
+      "queue_ms": {
+        "n": 240,
+        "mean": 0.009226166666666667,
+        "p50": 0.008426,
+        "p95": 0.016221,
+        "p99": 0.02173,
+        "maximum": 0.023393
+      },
+      "worker_wall_ms": {
+        "n": 240,
+        "mean": 8.394565854166666,
+        "p50": 8.8676465,
+        "p95": 9.09148,
+        "p99": 9.197809,
+        "maximum": 9.242683
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 166,
+          "unsuccessful": 0,
+          "computation_certainly_after": 99,
+          "computation_certainly_within_but_client_missed": 47,
+          "boundary_ambiguous": 20
+        },
+        "25": {
+          "misses": 0,
+          "unsuccessful": 0,
+          "computation_certainly_after": 0,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 0.0
+    },
+    {
+      "trial": "v30_b6_B",
+      "block": 6,
+      "profile": "B",
+      "offers": 1080,
+      "observed_miss_pct": {
+        "9": 80.74074074074075,
+        "9.5": 79.62962962962963,
+        "10": 64.72222222222223,
+        "10.5": 20.74074074074074,
+        "11": 1.6666666666666667,
+        "12": 0.0,
+        "20": 0.0,
+        "25": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      },
+      "throttled_periods": 0,
+      "queue_ms": {
+        "n": 1080,
+        "mean": 0.009682860185185185,
+        "p50": 0.00839,
+        "p95": 0.018494,
+        "p99": 0.030336,
+        "maximum": 0.150472
+      },
+      "worker_wall_ms": {
+        "n": 1080,
+        "mean": 8.38026954351852,
+        "p50": 8.816738,
+        "p95": 9.065473,
+        "p99": 9.186789,
+        "maximum": 9.75334
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 699,
+          "unsuccessful": 0,
+          "computation_certainly_after": 377,
+          "computation_certainly_within_but_client_missed": 240,
+          "boundary_ambiguous": 82
+        },
+        "25": {
+          "misses": 0,
+          "unsuccessful": 0,
+          "computation_certainly_after": 0,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 0.2777777777777778
+    },
+    {
+      "trial": "v30_b6_A",
+      "block": 6,
+      "profile": "A",
+      "offers": 240,
+      "observed_miss_pct": {
+        "9": 79.16666666666667,
+        "9.5": 78.33333333333333,
+        "10": 68.75,
+        "10.5": 27.083333333333332,
+        "11": 1.6666666666666667,
+        "12": 0.0,
+        "20": 0.0,
+        "25": 0.0,
+        "50": 0.0,
+        "100": 0.0,
+        "500": 0.0
+      },
+      "throttled_periods": 0,
+      "queue_ms": {
+        "n": 240,
+        "mean": 0.009537566666666667,
+        "p50": 0.008506,
+        "p95": 0.018043,
+        "p99": 0.024887,
+        "maximum": 0.030497
+      },
+      "worker_wall_ms": {
+        "n": 240,
+        "mean": 8.356020366666666,
+        "p50": 8.830708999999999,
+        "p95": 9.05805,
+        "p99": 9.131236,
+        "maximum": 9.471974
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 165,
+          "unsuccessful": 0,
+          "computation_certainly_after": 104,
+          "computation_certainly_within_but_client_missed": 18,
+          "boundary_ambiguous": 43
+        },
+        "25": {
+          "misses": 0,
+          "unsuccessful": 0,
+          "computation_certainly_after": 0,
+          "computation_certainly_within_but_client_missed": 0,
+          "boundary_ambiguous": 0
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 0.0
+    },
+    {
+      "trial": "v30_b6_C",
+      "block": 6,
+      "profile": "C",
+      "offers": 1380,
+      "observed_miss_pct": {
+        "9": 95.94202898550725,
+        "9.5": 95.94202898550725,
+        "10": 94.34782608695652,
+        "10.5": 89.4927536231884,
+        "11": 87.3913043478261,
+        "12": 86.23188405797102,
+        "20": 84.1304347826087,
+        "25": 82.10144927536231,
+        "50": 75.0,
+        "100": 63.04347826086956,
+        "500": 0.0
+      },
+      "throttled_periods": 381,
+      "queue_ms": {
+        "n": 1380,
+        "mean": 50.04125253985507,
+        "p50": 17.758301000000003,
+        "p95": 124.083672,
+        "p99": 203.178871,
+        "maximum": 212.610508
+      },
+      "worker_wall_ms": {
+        "n": 1380,
+        "mean": 25.517185448550723,
+        "p50": 8.5153495,
+        "p95": 83.497335,
+        "p99": 84.499389,
+        "maximum": 85.455971
+      },
+      "stage_counts": {
+        "10": {
+          "misses": 1302,
+          "unsuccessful": 0,
+          "computation_certainly_after": 1254,
+          "computation_certainly_within_but_client_missed": 25,
+          "boundary_ambiguous": 23
+        },
+        "25": {
+          "misses": 1133,
+          "unsuccessful": 0,
+          "computation_certainly_after": 1129,
+          "computation_certainly_within_but_client_missed": 4,
+          "boundary_ambiguous": 0
+        }
+      },
+      "arithmetic_replacing_worker_with_effective_demand_10ms_pct": 84.56521739130434
+    }
+  ],
+  "prospective_confirmation": false,
+  "novelty_established": false
+}

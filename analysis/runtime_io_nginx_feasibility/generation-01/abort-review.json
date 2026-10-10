@@ -1,0 +1,14 @@
+{
+  "status": "verified_pre_request_configuration_abort",
+  "original_source_and_evidence_hashes_verified": true,
+  "workload_requests_sent": 0,
+  "cleanup_verified": true,
+  "reproduced_error": "2026/10/09 22:50:03 [emerg] 13#0: unknown directive \"return\" in /tmp/research-nginx-config-vn8ng4bw/nginx.conf:32\nnginx: configuration file /tmp/research-nginx-config-vn8ng4bw/nginx.conf test failed\n",
+  "cause": "The configuration uses return, but the compiled module set excludes the rewrite module providing it.",
+  "sufficient_startup_failure_reproduced": true,
+  "original_container_stderr_retained": false,
+  "limitation": "The original owned container was removed without capturing its startup stderr; the retained exact directive/module incompatibility is reproduced separately.",
+  "original_attempt_replaced": false,
+  "scientific_collection": false,
+  "next_generation": "generation-02 repairs the configuration and diagnostics before any external performance pilot"
+}

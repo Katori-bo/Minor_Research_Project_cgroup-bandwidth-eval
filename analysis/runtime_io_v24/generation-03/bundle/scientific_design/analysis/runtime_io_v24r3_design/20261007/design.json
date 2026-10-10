@@ -1,0 +1,223 @@
+{
+  "schema": 1,
+  "revision": 3,
+  "date": "2026-10-07",
+  "question": "Does whole-cohort CPU/completion mix busy and lightly loaded states?",
+  "sizes": {
+    "small": {
+      "iterations": 44000,
+      "low": 56.6,
+      "high": 169.8,
+      "scale": 1
+    },
+    "large": {
+      "iterations": 88000,
+      "low": 28.3,
+      "high": 84.9,
+      "scale": 2
+    }
+  },
+  "trial_order": [
+    {
+      "id": "b1_small_off",
+      "size": "small",
+      "counter_probe": false,
+      "block": 1,
+      "collection_order": 1
+    },
+    {
+      "id": "b1_small_on",
+      "size": "small",
+      "counter_probe": true,
+      "block": 1,
+      "collection_order": 2
+    },
+    {
+      "id": "b1_large_on",
+      "size": "large",
+      "counter_probe": true,
+      "block": 1,
+      "collection_order": 3
+    },
+    {
+      "id": "b1_large_off",
+      "size": "large",
+      "counter_probe": false,
+      "block": 1,
+      "collection_order": 4
+    },
+    {
+      "id": "b2_large_off",
+      "size": "large",
+      "counter_probe": false,
+      "block": 2,
+      "collection_order": 5
+    },
+    {
+      "id": "b2_large_on",
+      "size": "large",
+      "counter_probe": true,
+      "block": 2,
+      "collection_order": 6
+    },
+    {
+      "id": "b2_small_on",
+      "size": "small",
+      "counter_probe": true,
+      "block": 2,
+      "collection_order": 7
+    },
+    {
+      "id": "b2_small_off",
+      "size": "small",
+      "counter_probe": false,
+      "block": 2,
+      "collection_order": 8
+    },
+    {
+      "id": "b3_small_on",
+      "size": "small",
+      "counter_probe": true,
+      "block": 3,
+      "collection_order": 9
+    },
+    {
+      "id": "b3_small_off",
+      "size": "small",
+      "counter_probe": false,
+      "block": 3,
+      "collection_order": 10
+    },
+    {
+      "id": "b3_large_off",
+      "size": "large",
+      "counter_probe": false,
+      "block": 3,
+      "collection_order": 11
+    },
+    {
+      "id": "b3_large_on",
+      "size": "large",
+      "counter_probe": true,
+      "block": 3,
+      "collection_order": 12
+    }
+  ],
+  "windows": {
+    "busy": [
+      [
+        6.5,
+        9.5
+      ],
+      [
+        16.5,
+        19.5
+      ],
+      [
+        26.5,
+        29.5
+      ],
+      [
+        36.5,
+        39.5
+      ],
+      [
+        46.5,
+        49.5
+      ],
+      [
+        56.5,
+        59.5
+      ]
+    ],
+    "low": [
+      [
+        1,
+        4
+      ],
+      [
+        11,
+        14
+      ],
+      [
+        21,
+        24
+      ],
+      [
+        31,
+        34
+      ],
+      [
+        41,
+        44
+      ],
+      [
+        51,
+        54
+      ]
+    ]
+  },
+  "sampler": {
+    "interval_sec": 0.02,
+    "bound_sec": 110,
+    "read_width_ms": null,
+    "max_gap_ms": 50,
+    "boundary_span_ms": 60,
+    "cadence": "absolute_skip_missed",
+    "record_capacity": 6000,
+    "raw_capacity": 4096
+  },
+  "rules": {
+    "min_cost_ratio": 1.05,
+    "busy_delivery_interval": [
+      0.48,
+      0.52
+    ],
+    "observer_capacity_relative": 0.02,
+    "observer_cost_relative": 0.02,
+    "observer_miss_pp": 1
+  },
+  "measurement_bound_sec": 3600,
+  "runtime_preparation_bound_sec": 600,
+  "analysis_bound_sec": 600,
+  "technical_retries": 1,
+  "novelty_established": false,
+  "selection_evidence": "analysis/runtime_io_capacity_mismatch_review/20261007/report.json",
+  "instrumentation_revision": "v24r3-native",
+  "measurement_quality": {
+    "max_cost_relative_bound_width": 0.04,
+    "max_busy_delivery_bound_width": 0.02
+  },
+  "qualification_order": [
+    {
+      "id": "q_b1_small_off",
+      "size": "small",
+      "counter_probe": false,
+      "block": 1,
+      "collection_order": 1
+    },
+    {
+      "id": "q_b1_small_on",
+      "size": "small",
+      "counter_probe": true,
+      "block": 1,
+      "collection_order": 2
+    },
+    {
+      "id": "q_b1_large_on",
+      "size": "large",
+      "counter_probe": true,
+      "block": 1,
+      "collection_order": 3
+    },
+    {
+      "id": "q_b1_large_off",
+      "size": "large",
+      "counter_probe": false,
+      "block": 1,
+      "collection_order": 4
+    }
+  ],
+  "qualification_bound_sec": 1800,
+  "original_design_seal_sha256": "c6d263872b2ce24071ecb4973794f74ab10414a5832a42f0e5d463970d3fcb59"
+}

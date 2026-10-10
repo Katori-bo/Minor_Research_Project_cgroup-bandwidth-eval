@@ -1,0 +1,80 @@
+{
+  "active_handlers": 0,
+  "admitted": 3,
+  "client_gone_at_completion": 1,
+  "completed": 3,
+  "custom_recording": true,
+  "events": [
+    {
+      "id": 2,
+      "admission_ns": 2099800,
+      "worker_start_ns": 103091203,
+      "completion_ns": 103114487,
+      "queue_wait_ns": 100991403,
+      "processing_ns": 23284,
+      "depth_at_admission": 0,
+      "client_gone_at_completion": true
+    },
+    {
+      "id": 0,
+      "admission_ns": 104273235,
+      "worker_start_ns": 104284657,
+      "completion_ns": 104295227,
+      "queue_wait_ns": 11422,
+      "processing_ns": 10570,
+      "depth_at_admission": 0,
+      "client_gone_at_completion": false
+    },
+    {
+      "id": 4,
+      "admission_ns": 104700295,
+      "worker_start_ns": 104707488,
+      "completion_ns": 104721194,
+      "queue_wait_ns": 7193,
+      "processing_ns": 13706,
+      "depth_at_admission": 0,
+      "client_gone_at_completion": false
+    }
+  ],
+  "go_version": "go1.26.1",
+  "gomaxprocs": 12,
+  "handler_events": [
+    {
+      "id": 0,
+      "entry_ns": 104269258,
+      "admission_ns": 104273235,
+      "resume_ns": 104297200,
+      "pre_admission_ns": 3977,
+      "post_work_wait_ns": 1973,
+      "write_start_ns": 104300246,
+      "write_end_ns": 104301568,
+      "handler_exit_ns": 104301819,
+      "write_calls": 1,
+      "write_bytes": 37,
+      "write_error": ""
+    },
+    {
+      "id": 4,
+      "entry_ns": 104698391,
+      "admission_ns": 104700295,
+      "resume_ns": 104723718,
+      "pre_admission_ns": 1904,
+      "post_work_wait_ns": 2524,
+      "write_start_ns": 104726794,
+      "write_end_ns": 104728447,
+      "handler_exit_ns": 104728938,
+      "write_calls": 1,
+      "write_bytes": 37,
+      "write_error": ""
+    }
+  ],
+  "instrument": true,
+  "queue_cap": 1,
+  "queue_len": 0,
+  "queue_max": 1,
+  "rejected": 1,
+  "runtime_capture": true,
+  "runtime_trace_storage": "memory",
+  "worker_yield": false,
+  "workers": 1
+}

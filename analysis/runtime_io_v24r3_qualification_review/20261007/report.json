@@ -1,0 +1,291 @@
+{
+  "schema": 1,
+  "decision": "native_capture_valid_qualification_screen_failed",
+  "session": "analysis/runtime_io_v24/generation-03",
+  "all_four_qualification_trials_completed": true,
+  "independent_raw_qualification_replay_verified": true,
+  "technical_failures": [],
+  "qualification_result": {
+    "decision": "collector_qualification_failed",
+    "passed": false,
+    "pairs": [
+      {
+        "size": "small",
+        "differences": {
+          "capacity_relative": 0.0010972933430869896,
+          "cost_relative": 0.00011760869799506271,
+          "miss_pp": 0.1619552414605323
+        },
+        "pass_screen": true
+      },
+      {
+        "size": "large",
+        "differences": {
+          "capacity_relative": 0.0007251631617114057,
+          "cost_relative": 0.0012114265298013994,
+          "miss_pp": 1.9729093050647837
+        },
+        "pass_screen": false
+      }
+    ],
+    "scientific_explanation_established": false,
+    "limits": "One engineering off/on pair per size, not equivalence or hypothesis confirmation; full12 trials remain separate."
+  },
+  "trials": [
+    {
+      "trial": "q_b1_small_off",
+      "size": "small",
+      "counter_probe": false,
+      "busy_capacity_rps": 151.88888888888889,
+      "whole_cpu_usec_per_job": 3592.897084805654,
+      "miss_pct": 14.70848056537103,
+      "cleanup_passed": true,
+      "p99_e2e_ms": 609.441524,
+      "mean_queue_ms": 207.0976980435807,
+      "deadline_classes": {
+        "timely": 5793,
+        "computed_before_handler_resumed_after": 216,
+        "computation_after_deadline": 777,
+        "handler_boundary_ambiguous": 1,
+        "computation_boundary_ambiguous": 5
+      }
+    },
+    {
+      "trial": "q_b1_small_on",
+      "size": "small",
+      "counter_probe": true,
+      "busy_capacity_rps": 151.72222222222223,
+      "whole_cpu_usec_per_job": 3593.319640753828,
+      "miss_pct": 14.870435806831562,
+      "cleanup_passed": true,
+      "p99_e2e_ms": 612.071806,
+      "mean_queue_ms": 205.5382597545642,
+      "deadline_classes": {
+        "timely": 5782,
+        "computed_before_handler_resumed_after": 201,
+        "computation_after_deadline": 806,
+        "handler_resumed_before_client_finished_after": 1,
+        "computation_boundary_ambiguous": 1,
+        "handler_boundary_ambiguous": 1
+      },
+      "acquisition_diagnostics": {
+        "samples": 4140,
+        "max_wall_ms": 0.089579,
+        "max_thread_cpu_ms": 0.052799,
+        "reads_over_2ms": 0,
+        "skipped_deadlines": 0,
+        "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+      },
+      "sampler_own_cpu_ms": 105.375801,
+      "measurement_quality": {
+        "cost_relative_bound_width": {
+          "busy": 3.667173551537105e-05,
+          "low": 0.012704095099080416
+        },
+        "busy_delivery_bound_width": 1.8333333333342416e-05,
+        "pass_budget": true
+      },
+      "phase_states": {
+        "busy": {
+          "eligible": true,
+          "queue_minima": [
+            17,
+            20,
+            16,
+            18,
+            17,
+            18
+          ],
+          "queue_maxima": [
+            81,
+            80,
+            81,
+            81,
+            79,
+            82
+          ]
+        },
+        "low": {
+          "eligible": true,
+          "queue_minima": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "queue_maxima": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "trial": "q_b1_large_on",
+      "size": "large",
+      "counter_probe": true,
+      "busy_capacity_rps": 76.55555555555556,
+      "whole_cpu_usec_per_job": 7023.316254416961,
+      "miss_pct": 7.2438162544169575,
+      "cleanup_passed": true,
+      "p99_e2e_ms": 554.744998,
+      "mean_queue_ms": 174.28810158274442,
+      "deadline_classes": {
+        "timely": 3150,
+        "computed_before_handler_resumed_after": 118,
+        "handler_boundary_ambiguous": 2,
+        "computation_after_deadline": 124,
+        "computation_boundary_ambiguous": 2
+      },
+      "acquisition_diagnostics": {
+        "samples": 4130,
+        "max_wall_ms": 0.092133,
+        "max_thread_cpu_ms": 0.05348,
+        "reads_over_2ms": 0,
+        "skipped_deadlines": 0,
+        "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+      },
+      "sampler_own_cpu_ms": 137.574571,
+      "measurement_quality": {
+        "cost_relative_bound_width": {
+          "busy": 0.018904935632642526,
+          "low": 0.023037083199681042
+        },
+        "busy_delivery_bound_width": 0.009364499999999942,
+        "pass_budget": true
+      },
+      "phase_states": {
+        "busy": {
+          "eligible": false,
+          "queue_minima": [
+            7,
+            8,
+            5,
+            7,
+            7,
+            6
+          ],
+          "queue_maxima": [
+            36,
+            36,
+            36,
+            36,
+            38,
+            36
+          ]
+        },
+        "low": {
+          "eligible": true,
+          "queue_minima": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "queue_maxima": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "trial": "q_b1_large_off",
+      "size": "large",
+      "counter_probe": false,
+      "busy_capacity_rps": 76.61111111111111,
+      "whole_cpu_usec_per_job": 7031.834805653711,
+      "miss_pct": 9.216725559481741,
+      "cleanup_passed": true,
+      "p99_e2e_ms": 565.419741,
+      "mean_queue_ms": 183.2654510786219,
+      "deadline_classes": {
+        "timely": 3083,
+        "computed_before_handler_resumed_after": 118,
+        "handler_resumed_before_client_finished_after": 4,
+        "computation_after_deadline": 189,
+        "handler_boundary_ambiguous": 1,
+        "computation_boundary_ambiguous": 1
+      }
+    }
+  ],
+  "failed_checks": [
+    {
+      "trial": "q_b1_large_on",
+      "check": "paired_deadline_miss_difference",
+      "observed_pp": 1.9729093050647837,
+      "maximum_pp": 1
+    },
+    {
+      "trial": "q_b1_large_on",
+      "check": "busy_queue_margin",
+      "window_sec": [
+        26.5,
+        29.5
+      ],
+      "minimum_waiting": 5,
+      "required": "strictly greater than 5 throughout each expanded busy window",
+      "approximate_duration_at_five_ms": 43.973702,
+      "queue_remained_positive": true
+    }
+  ],
+  "recorder_timing_contract_passed": true,
+  "measurement_uncertainty_budgets_passed_both_sizes": true,
+  "scientific_trials_completed": 0,
+  "full_study_blocked": true,
+  "attribution": "One off/on pair per size cannot distinguish sampler effects from ordinary between-trial variation. Similar capacity and CPU/job do not prove deadline-miss equivalence.",
+  "next_step": "Freeze a separate repeated-control qualification design with same-condition controls and balanced off/on order; separately establish a robust busy-state margin before confirmatory phase accounting. Preserve this failure and retain the current full-study block.",
+  "runtime_or_docker_invoked_during_review": false,
+  "evidence_sha256": {
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_off/attempt-1791383919513576285/seal.json": "8c06d52529fc62b2953867a607636628a6fa9b4cbea2848e3f8d43ecfbb96ce8",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_off/attempt-1791383919513576285/phase_accounting.json": "28a7a802cc843b4efabfe9c0b42bc96fc8355e4476b7539b7f632ef2ae0db787",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_off/attempt-1791383919513576285/derived.json": "8b8972325ffdf922626d17e2b18b9d9879a9709b166427cdb1f21f7d2e43d25a",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_off/attempt-1791383919513576285/cleanup.json": "f6e2b25984f1109c9816ee62b393a53a23da3092c6fa485bfa0c1d886467fa35",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_off/attempt-1791383919513576285/complete.json": "7a4539dd9a3d36d604a713c008f3e957b92060d1ee00e888aa47d9bbda4b6ef7",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_off/attempt-1791383919513576285/loadgen.json": "ab55ebcafdb2594a06b9a08a3b8c0ec7a32e30da5155b9891bb54ac321bf3a7c",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_off/attempt-1791383919513576285/server_metrics.json": "c53c63532f8d674deafa107662bc9aa94000430717d3e98435ee34d68ea979d3",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_on/attempt-1791384091302519717/seal.json": "0e43045a65b07edffe3a5d8531a61482ef75791e691d81917854d86f4181bfc0",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_on/attempt-1791384091302519717/phase_accounting.json": "be55ad9a02d7cc1f3425205e74dbb3c2f242e7b00b9b23cc9c3f911cbbcaf895",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_on/attempt-1791384091302519717/derived.json": "931462d45d2aafb526dfc6fb53e0f38080e1094381898287b08238eac0b3377a",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_on/attempt-1791384091302519717/cleanup.json": "ef3e9e42b1d43cc2cf4838aff39ee1a67390eee5b912fc014e36c716ea347add",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_on/attempt-1791384091302519717/complete.json": "620d1936bbff49fbe8e2a10cf7b3d6f9cf5694d60454db2a48fed455d18a1dfd",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_on/attempt-1791384091302519717/loadgen.json": "be077253c804f36f38adc86027ea7ad08f72a931ecc0250cf92ef488e516a674",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_on/attempt-1791384091302519717/server_metrics.json": "9d35536577193ea25bba948656fa28dff1110b18157a5003a597ca1677c2bbff",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_on/attempt-1791384091302519717/counter.json": "3dbca4f6591f7ed36e209a2f410f01eeca283af800229432d919ee02cc383abe",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_small_on/attempt-1791384091302519717/counter.raw.json": "1e9623db71cc257ab87b26b0415e928f42cb5cc9d3fff066bf21b625b17ea676",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_on/attempt-1791384283664033119/seal.json": "5ad2d473d260c892882a1da8a02faa858e0b41228735db64af53964b4c47f498",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_on/attempt-1791384283664033119/phase_accounting.json": "21305c7f15e5405e808c0e8e4f8ba095ec041f281f1deb7911c5089774cdaf78",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_on/attempt-1791384283664033119/derived.json": "8be77125722f95877c3d71193f502c1514f9de01b07bb5e27bb8eb904d0a7543",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_on/attempt-1791384283664033119/cleanup.json": "eec1d93a75200225c9e9b4e2d749f0ee7fa88de480097f6c1f00b9e7369f763a",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_on/attempt-1791384283664033119/complete.json": "5e7c73084979ba9c411c5d72475d53d3876ef858d7d10807ece0c8c27d7ff67f",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_on/attempt-1791384283664033119/loadgen.json": "f2157fc95a76d27fb6fd8261441e6caabe8e7861f782aee14858f05104f30020",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_on/attempt-1791384283664033119/server_metrics.json": "0b61b46482361a0779522a8f32d39a98f457a0dd425d05b762b3e5ce12c8aaac",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_on/attempt-1791384283664033119/counter.json": "f69ba5241405efd17b308802d539b5c97e47dfe53471a13b03e5e0b3e9b2d92b",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_on/attempt-1791384283664033119/counter.raw.json": "ed25005b5f8cf7083e807c9223fc16d2e27d9fe7d6e406a280c2f4ac565c20f5",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_off/attempt-1791384475300342377/seal.json": "414d689821e9a39bc10baf674ebdc4af9b9a22b369ebdd490f34da46f96b7142",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_off/attempt-1791384475300342377/phase_accounting.json": "ab32298752a620d4fe42e176ad389c26e87eb44b7b8b7dc76682c04e3444db92",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_off/attempt-1791384475300342377/derived.json": "1946b77a9f8dd79239d0483eafe2a9f7c2e02f147e0ff4325e5d2947500c25a1",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_off/attempt-1791384475300342377/cleanup.json": "676926814cbc9ccb9bf9a46f50eebe005f8ca793d6c8676f92148eb35427b30f",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_off/attempt-1791384475300342377/complete.json": "a3ea42e027a6d301d5eef22c1f551808a58f664dfdf075213f1102053fea737f",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_off/attempt-1791384475300342377/loadgen.json": "1c3bdb1804a8c7910ac4975c241d2d41bdfb500cad462ca5afeb837de260528b",
+    "analysis/runtime_io_v24/generation-03/slots/q_b1_large_off/attempt-1791384475300342377/server_metrics.json": "a2fa888c2cab252fa47456fce289962cb3000029cadb959764c49b824c3073bc",
+    "analysis/runtime_io_v24/generation-03/collector_qualification/report.json": "42dbd57cfb72f7e4d77e86c83c60040d1e563b98a0a61a6479be6091cff387ca",
+    "analysis/runtime_io_v24/generation-03/collector_qualification/seal.json": "8ce183ca5a7468133eeb9dbebe99ca6b2873c1163645e7b47963a9744a4540bd",
+    "analysis/runtime_io_v24/generation-03/preparation/seal.json": "3e1410ae27934d6d681fb3a5d803c6c261dbe3b3cc065a7d29d9364b45db9e8b",
+    "analysis/runtime_io_v24/generation-03/bundle/seal.json": "df6bd5289af6d5c6aae30c838a1387636e31316a835067ae0365f29906834b18",
+    "analysis/runtime_io_v24/generation-03/qualification_collection_receipt.json": "60d1f115f915991a0f0e7ded6edb7e75193dae33693acf92656bceced0a0bc4a",
+    "analysis/runtime_io_v24/generation-03/qualification_lifetime.json": "a8a9effe6359a1eb89529bfebb48b3340afc3a90b9220693cc6524b20c4815f2"
+  }
+}

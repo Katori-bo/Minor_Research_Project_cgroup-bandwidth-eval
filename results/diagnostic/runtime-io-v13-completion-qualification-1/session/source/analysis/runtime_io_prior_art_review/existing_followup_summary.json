@@ -1,0 +1,133 @@
+{
+  "review_date": "2026-10-03",
+  "historical_validation_passed": true,
+  "input_sha256": {
+    "results/followup/all-in-one-v2/full/analysis/trials.csv": "be28b625637abecfb5400c2a8b94c9e31e6ce5b1340062f1e4b012a73c98c89b",
+    "results/followup/all-in-one-v2/full/analysis/validation.json": "87db755d6939e208105ccd7234f036194bc3863b229a943c547ff4fa9171010a",
+    "results/followup/all-in-one-v2/full/matrix.json": "4b2579f75327509fbbdf821f9d6a1e71b9da36de5ee8396e3011a9ce024d1855",
+    "results/followup/all-in-one-v2/full/build.json": "2de303d9d52a0985d34c48b599c4a0357e770aa60fd995f982f09aa6b6de00c8",
+    "results/followup/all-in-one-v2/full/metadata.json": "11cf0a8ab357e38a23e5cdf1e5a4b7249cd572913fafcf9bde18d5dd32e15a2f",
+    "results/followup/all-in-one-v2/full/source/followup/service/Dockerfile": "d8a51f67f21bce0e74d774f3d4b55916f27dc34a92b6502a001326a6e0bb01bd"
+  },
+  "inputs_unchanged": true,
+  "total_trials": 50,
+  "groups_by_gomaxprocs": {
+    "1": {
+      "trials": [
+        "A_p100000_w4_g1_steady_r1",
+        "A_p100000_w4_g1_steady_r4",
+        "A_p100000_w4_g1_steady_r2",
+        "A_p100000_w4_g1_steady_r3",
+        "A_p100000_w4_g1_steady_r5"
+      ],
+      "metrics": {
+        "p99_e2e_ms": {
+          "median": 1181.660529,
+          "min": 1180.281467,
+          "max": 1183.797002
+        },
+        "successful_rps": {
+          "median": 152.33333333333334,
+          "min": 152.1,
+          "max": 152.41666666666666
+        },
+        "rejection_fraction": {
+          "median": 0.12205951818611242,
+          "min": 0.12073689182805858,
+          "max": 0.12262635805384979
+        },
+        "timeout_fraction": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "other_error_fraction": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "cpu_usec_per_completed_work": {
+          "median": 3280.3025933498334,
+          "min": 3275.5090791877083,
+          "max": 3282.0851728222246
+        },
+        "cpu_cores": {
+          "median": 0.49965769532673837,
+          "min": 0.49954250479370904,
+          "max": 0.4999341167539262
+        },
+        "throttled_period_fraction": {
+          "median": 0.9983606557377049,
+          "min": 0.9967266775777414,
+          "max": 1.0
+        }
+      }
+    },
+    "2": {
+      "trials": [
+        "A_p100000_w4_g2_steady_r5",
+        "A_p100000_w4_g2_steady_r2",
+        "A_p100000_w4_g2_steady_r1",
+        "A_p100000_w4_g2_steady_r4",
+        "A_p100000_w4_g2_steady_r3"
+      ],
+      "metrics": {
+        "p99_e2e_ms": {
+          "median": 2429.972232,
+          "min": 1511.269397,
+          "max": 3830.656744
+        },
+        "successful_rps": {
+          "median": 134.4,
+          "min": 134.2,
+          "max": 134.55
+        },
+        "rejection_fraction": {
+          "median": 0.22541332073689183,
+          "min": 0.2235238545111006,
+          "max": 0.22560226735947095
+        },
+        "timeout_fraction": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0003778932451582428
+        },
+        "other_error_fraction": {
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "cpu_usec_per_completed_work": {
+          "median": 3722.975844821276,
+          "min": 3714.495315731841,
+          "max": 3726.032816884226
+        },
+        "cpu_cores": {
+          "median": 0.500073318321395,
+          "min": 0.4995983232583019,
+          "max": 0.5002647618045172
+        },
+        "throttled_period_fraction": {
+          "median": 0.9983606557377049,
+          "min": 0.9983606557377049,
+          "max": 0.9983633387888707
+        }
+      }
+    }
+  },
+  "gomaxprocs_1_over_2_ratio_of_trial_medians": {
+    "p99_e2e_ms": 0.4862856099501305,
+    "successful_rps": 1.1334325396825398,
+    "rejection_fraction": 0.5414920368818106,
+    "cpu_usec_per_completed_work": 0.8810969316152806,
+    "cpu_cores": 0.9991688758839369,
+    "throttled_period_fraction": 1.0
+  },
+  "bursty_gomaxprocs_1_trials_in_this_matrix": [],
+  "limitations": [
+    "Descriptive trial summaries, not paired causal estimates.",
+    "Historical steady overload differs from the diagnostic bursty workload.",
+    "Lower CPU cost changes effective capacity; not a fairness-only intervention.",
+    "No new benchmark or runtime change was performed."
+  ]
+}

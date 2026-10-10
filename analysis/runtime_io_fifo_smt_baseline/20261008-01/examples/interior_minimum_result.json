@@ -1,0 +1,183 @@
+{
+  "schema": 1,
+  "method": "generic Z3 finite-trace SMT baseline",
+  "status": "exact",
+  "problem": {
+    "arrivals": [
+      "0",
+      "0",
+      "21/20",
+      "21/10"
+    ],
+    "system_slots": 2,
+    "relative_deadline": "13/10",
+    "service_interval": [
+      "1",
+      "6/5"
+    ],
+    "time_unit": "seconds"
+  },
+  "z3_version": "4.15.4",
+  "scope": "one shared constant service time; finite tail-drop FIFO; late jobs finish",
+  "novelty_established": false,
+  "real_system_coverage_established": false,
+  "limits": {
+    "max_offers": 128,
+    "per_check_ms": 2000,
+    "total_check_ms": 10000,
+    "resource_limit": 0
+  },
+  "stats": {
+    "occupancy_terms": 6,
+    "solver_checks": 9,
+    "solver_check_seconds": 0.0025609760000406823
+  },
+  "queries": [
+    {
+      "label": "minimum threshold 2",
+      "constraint": "failure_count <= 2",
+      "result": "sat",
+      "seconds": 0.0005723149999994348
+    },
+    {
+      "label": "minimum threshold 1",
+      "constraint": "failure_count <= 1",
+      "result": "unsat",
+      "seconds": 0.00037377900002866227
+    },
+    {
+      "label": "minimum attainment",
+      "constraint": "failure_count == 2",
+      "result": "sat",
+      "seconds": 0.00028389799990691245
+    },
+    {
+      "label": "minimum strict improvement excluded",
+      "constraint": "failure_count < 2",
+      "result": "unsat",
+      "seconds": 0.00021496800002296368
+    },
+    {
+      "label": "maximum threshold 2",
+      "constraint": "failure_count >= 2",
+      "result": "sat",
+      "seconds": 0.0001717559999860896
+    },
+    {
+      "label": "maximum threshold 3",
+      "constraint": "failure_count >= 3",
+      "result": "sat",
+      "seconds": 0.00019873600001574232
+    },
+    {
+      "label": "maximum threshold 4",
+      "constraint": "failure_count >= 4",
+      "result": "unsat",
+      "seconds": 0.00021742199999152945
+    },
+    {
+      "label": "maximum attainment",
+      "constraint": "failure_count == 3",
+      "result": "sat",
+      "seconds": 0.0003269200000204364
+    },
+    {
+      "label": "maximum strict improvement excluded",
+      "constraint": "failure_count > 3",
+      "result": "unsat",
+      "seconds": 0.0002011820000689113
+    }
+  ],
+  "minimum": {
+    "failures": 2,
+    "failure_fraction": "1/2",
+    "witness_service_time": "17/15",
+    "witness": {
+      "witness_service_time": "17/15",
+      "offered": 4,
+      "failures": 2,
+      "rejected": 1,
+      "late": 1,
+      "timely": 2,
+      "failure_fraction": "1/2",
+      "offers": [
+        {
+          "index": 0,
+          "arrival": "0",
+          "completion": "17/15",
+          "latency": "17/15",
+          "outcome": "timely"
+        },
+        {
+          "index": 1,
+          "arrival": "0",
+          "completion": "34/15",
+          "latency": "34/15",
+          "outcome": "late"
+        },
+        {
+          "index": 2,
+          "arrival": "21/20",
+          "completion": null,
+          "latency": null,
+          "outcome": "rejected"
+        },
+        {
+          "index": 3,
+          "arrival": "21/10",
+          "completion": "17/5",
+          "latency": "13/10",
+          "outcome": "timely"
+        }
+      ]
+    },
+    "strict_improvement_query": "failure_count < 2",
+    "strict_improvement_result": "unsat"
+  },
+  "maximum": {
+    "failures": 3,
+    "failure_fraction": "3/4",
+    "witness_service_time": "47/40",
+    "witness": {
+      "witness_service_time": "47/40",
+      "offered": 4,
+      "failures": 3,
+      "rejected": 1,
+      "late": 2,
+      "timely": 1,
+      "failure_fraction": "3/4",
+      "offers": [
+        {
+          "index": 0,
+          "arrival": "0",
+          "completion": "47/40",
+          "latency": "47/40",
+          "outcome": "timely"
+        },
+        {
+          "index": 1,
+          "arrival": "0",
+          "completion": "47/20",
+          "latency": "47/20",
+          "outcome": "late"
+        },
+        {
+          "index": 2,
+          "arrival": "21/20",
+          "completion": null,
+          "latency": null,
+          "outcome": "rejected"
+        },
+        {
+          "index": 3,
+          "arrival": "21/10",
+          "completion": "141/40",
+          "latency": "57/40",
+          "outcome": "late"
+        }
+      ]
+    },
+    "strict_improvement_query": "failure_count > 3",
+    "strict_improvement_result": "unsat"
+  }
+}

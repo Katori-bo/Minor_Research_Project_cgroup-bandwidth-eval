@@ -1,0 +1,29 @@
+{
+  "id": "3ca08ea8ad10ec4ef7a70691db754d0c3c2bcf1cb5d1a70dabadf827a07212df",
+  "name": "quota-diagnostic-71f564a51ecc27d3",
+  "command": [
+    "docker",
+    "create",
+    "--name",
+    "quota-diagnostic-71f564a51ecc27d3",
+    "--label",
+    "quota.diagnostic.session=/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v14-observer-ablation-1/session",
+    "--cpuset-cpus=2,4",
+    "--cpu-period=100000",
+    "--cpu-quota=50000",
+    "-e",
+    "WORKERS=4",
+    "-e",
+    "QUEUE_SIZE=128",
+    "-e",
+    "GOMAXPROCS=1",
+    "-e",
+    "INSTRUMENT=1",
+    "-e",
+    "WORKER_YIELD=0",
+    "-p",
+    "127.0.0.1:18080:8080",
+    "sha256:8aeb52ad0a767f6b837fbe10bef474548ac5d9e3d01d73630645259f3ec15eb9"
+  ],
+  "image_id": "sha256:8aeb52ad0a767f6b837fbe10bef474548ac5d9e3d01d73630645259f3ec15eb9"
+}

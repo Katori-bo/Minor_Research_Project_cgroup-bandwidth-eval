@@ -1,0 +1,45 @@
+{
+  "purpose": "post-pilot sensitivity; not part of frozen comparison",
+  "selection": "the two cases incomplete under 500 ms per query",
+  "jobs": [
+    {
+      "case": "regular_32",
+      "limits": {
+        "max_offers": 128,
+        "per_check_ms": 2000,
+        "total_check_ms": 10000,
+        "resource_limit": 0
+      }
+    },
+    {
+      "case": "regular_32",
+      "limits": {
+        "max_offers": 128,
+        "per_check_ms": 5000,
+        "total_check_ms": 30000,
+        "resource_limit": 0
+      }
+    },
+    {
+      "case": "irregular_32",
+      "limits": {
+        "max_offers": 128,
+        "per_check_ms": 2000,
+        "total_check_ms": 10000,
+        "resource_limit": 0
+      }
+    },
+    {
+      "case": "irregular_32",
+      "limits": {
+        "max_offers": 128,
+        "per_check_ms": 5000,
+        "total_check_ms": 30000,
+        "resource_limit": 0
+      }
+    }
+  ],
+  "repeats": 1,
+  "hard_worker_timeout_seconds": 35,
+  "conclusions": "budget sensitivity only"
+}

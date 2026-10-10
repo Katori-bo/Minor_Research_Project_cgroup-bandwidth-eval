@@ -1,0 +1,107 @@
+{
+  "limits": "Midpoint phase selection; approximate rounded-epoch monitor alignment with assumed wall-clock constancy; no per-job CPU, cycles/instructions, executed frequency or runtime activity attribution.",
+  "v25": {
+    "all_busy_states_eligible": true,
+    "busy_consumed_cpu_fraction_envelope": [
+      0.49327794444444445,
+      0.5067125
+    ],
+    "conditional_accounting": {
+      "large": {
+        "all_edge_cpu_insufficient_for_reference_excess": true,
+        "edge_cpu_share_max_upper": 0.28176117766168834,
+        "qualified_low_states": 0,
+        "system_difference_share_max_upper": 0.14549167717498449,
+        "trials": 4,
+        "user_cost_difference_min_lower_usec": 1563.6316680693144
+      },
+      "small": {
+        "all_edge_cpu_insufficient_for_reference_excess": true,
+        "edge_cpu_share_max_upper": 0.2610952348662921,
+        "qualified_low_states": 0,
+        "system_difference_share_max_upper": 0.25500273414044095,
+        "trials": 4,
+        "user_cost_difference_min_lower_usec": 770.3325838372884
+      }
+    },
+    "sampler_on_trials": 8
+  },
+  "v27": {
+    "all_busy_states_eligible": true,
+    "busy_consumed_cpu_fraction_envelope": [
+      0.4933283333333333,
+      0.50679325
+    ],
+    "original_decision": "composition_inconclusive",
+    "sampler_contrasts": {
+      "off": {
+        "busy_capacity_rps": {
+          "midpoint_mean": 0.042107733044792484,
+          "model_based_95_interval": [
+            -0.4752612313523844,
+            0.5594766974419694
+          ],
+          "screen_pass": true
+        },
+        "whole_cpu_usec_per_job": {
+          "midpoint_mean": 3.194193372333942,
+          "model_based_95_interval": [
+            2.71950214190209,
+            3.6688846027657944
+          ],
+          "screen_pass": false
+        }
+      },
+      "on": {
+        "busy_capacity_rps": {
+          "midpoint_mean": 0.00032483892470069886,
+          "model_based_95_interval": [
+            -0.661815103282175,
+            0.6624647811315764
+          ],
+          "screen_pass": true
+        },
+        "whole_cpu_usec_per_job": {
+          "midpoint_mean": 3.419239129714058,
+          "model_based_95_interval": [
+            2.988995287700047,
+            3.8494829717280687
+          ],
+          "screen_pass": false
+        }
+      }
+    },
+    "sampler_on_trials": 8
+  },
+  "v28": {
+    "idle_consumed_cpu_fraction": 0.00026109207201197395,
+    "methods": {
+      "busy": {
+        "capacity_rps": 149.41666666666666,
+        "deadline_mae_pp": 0.4527529761904774,
+        "original_accuracy_pass": true
+      },
+      "idle_corrected": {
+        "capacity_rps": 139.74279052857142,
+        "deadline_mae_pp": 13.47061011904762,
+        "original_accuracy_pass": false
+      },
+      "quadratic": {
+        "capacity_rps": 148.46275808875967,
+        "deadline_mae_pp": 1.1685267857142863,
+        "original_accuracy_pass": false
+      },
+      "regression": {
+        "capacity_rps": 125.95250364668553,
+        "deadline_mae_pp": 31.31436011904762,
+        "original_accuracy_pass": false
+      },
+      "whole": {
+        "capacity_rps": 139.66892145293704,
+        "deadline_mae_pp": 13.494419642857144,
+        "original_accuracy_pass": false
+      }
+    },
+    "original_decision": "predictive_advantage_inconclusive"
+  }
+}

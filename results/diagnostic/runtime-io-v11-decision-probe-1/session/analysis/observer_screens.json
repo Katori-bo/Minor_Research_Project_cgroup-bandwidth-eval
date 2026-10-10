@@ -1,0 +1,26 @@
+{
+  "treatment": "observed_candidate",
+  "reference": "control_candidate",
+  "ratios": {
+    "cpu_usec_per_completed_work": 1.002956982046845,
+    "client_cpu_usec_per_scheduled": 1.006540817180229,
+    "p99_e2e_ms": 1.0486067158466448,
+    "successful_rps": 1.0011175681716584
+  },
+  "max_rejection_plus_timeout": {
+    "patched_off": 0.02428256070640177,
+    "stock_off": 0.025607064017660046
+  },
+  "checks": {
+    "cpu_usec_per_completed_work_ratio_at_most_1_10": true,
+    "client_cpu_usec_per_scheduled_ratio_at_most_1_10": true,
+    "p99_e2e_ms_ratio_at_most_1_10": true,
+    "failure_rate_difference_at_most_0_001": true,
+    "client_trace_coverage_at_least_0_99": true,
+    "all_diagnostic_timing_observed": true,
+    "all_enabled_traces_complete": true
+  },
+  "original_numeric_screens_passed": true,
+  "throughput_review_required": true,
+  "eligible_for_full": false
+}

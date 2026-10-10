@@ -1,0 +1,111 @@
+
+[2026-10-03T00:08:26.289106+05:30] verify-build: /usr/bin/python3 /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/fairness_study.py verify-build
+Stock/patched images, decoder and sources verified.
+
+[2026-10-03T00:08:26.539343+05:30] collect-16-trials: /usr/bin/python3 /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/fairness_study.py collect --directory /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v9-fairness-1
+Settling [initial idle]: at least 600s; checking a stable 60s temperature window.
+Settling [initial idle] t=0s: k10temp:Tctl=65.9°C
+Settling [initial idle] t=60s: k10temp:Tctl=46.1°C
+Settling [initial idle] t=120s: k10temp:Tctl=45.1°C
+Settling [initial idle] t=180s: k10temp:Tctl=44.4°C
+Settling [initial idle] t=241s: k10temp:Tctl=43.9°C
+Settling [initial idle] t=301s: k10temp:Tctl=43.4°C
+Settling [initial idle] t=361s: k10temp:Tctl=43.1°C
+Settling [initial idle] t=421s: k10temp:Tctl=42.6°C
+Settling [initial idle] t=481s: k10temp:Tctl=42.4°C
+Settling [initial idle] t=541s: k10temp:Tctl=42.2°C
+Settling [initial idle] t=601s: k10temp:Tctl=42.0°C
+RUN 1/16 fairness_b1_stock_off
+Settling [fairness_b1_stock_off / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b1_stock_off / attempt 001] t=0s: k10temp:Tctl=44.6°C
+Settling [fairness_b1_stock_off / attempt 001] t=60s: k10temp:Tctl=41.9°C
+RUN 2/16 fairness_b1_stock_on
+Settling [fairness_b1_stock_on / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b1_stock_on / attempt 001] t=0s: k10temp:Tctl=57.6°C
+Settling [fairness_b1_stock_on / attempt 001] t=60s: k10temp:Tctl=42.2°C
+RUN 3/16 fairness_b1_patched_on
+Settling [fairness_b1_patched_on / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b1_patched_on / attempt 001] t=0s: k10temp:Tctl=83.4°C
+Settling [fairness_b1_patched_on / attempt 001] t=60s: k10temp:Tctl=42.6°C
+RUN 4/16 fairness_b1_patched_off
+Settling [fairness_b1_patched_off / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b1_patched_off / attempt 001] t=0s: k10temp:Tctl=85.4°C
+Settling [fairness_b1_patched_off / attempt 001] t=60s: k10temp:Tctl=43.0°C
+RUN 5/16 fairness_b2_stock_on
+Settling [fairness_b2_stock_on / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b2_stock_on / attempt 001] t=0s: k10temp:Tctl=58.1°C
+Settling [fairness_b2_stock_on / attempt 001] t=60s: k10temp:Tctl=42.6°C
+RUN 6/16 fairness_b2_patched_off
+Settling [fairness_b2_patched_off / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b2_patched_off / attempt 001] t=0s: k10temp:Tctl=84.0°C
+Settling [fairness_b2_patched_off / attempt 001] t=60s: k10temp:Tctl=43.2°C
+RUN 7/16 fairness_b2_stock_off
+Settling [fairness_b2_stock_off / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b2_stock_off / attempt 001] t=0s: k10temp:Tctl=58.5°C
+Settling [fairness_b2_stock_off / attempt 001] t=60s: k10temp:Tctl=42.9°C
+RUN 8/16 fairness_b2_patched_on
+Settling [fairness_b2_patched_on / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b2_patched_on / attempt 001] t=0s: k10temp:Tctl=58.1°C
+Settling [fairness_b2_patched_on / attempt 001] t=60s: k10temp:Tctl=42.6°C
+RUN 9/16 fairness_b3_patched_off
+Settling [fairness_b3_patched_off / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b3_patched_off / attempt 001] t=0s: k10temp:Tctl=83.9°C
+Settling [fairness_b3_patched_off / attempt 001] t=60s: k10temp:Tctl=43.1°C
+RUN 10/16 fairness_b3_patched_on
+Settling [fairness_b3_patched_on / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b3_patched_on / attempt 001] t=0s: k10temp:Tctl=58.6°C
+Settling [fairness_b3_patched_on / attempt 001] t=60s: k10temp:Tctl=43.0°C
+RUN 11/16 fairness_b3_stock_on
+Settling [fairness_b3_stock_on / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b3_stock_on / attempt 001] t=0s: k10temp:Tctl=84.2°C
+Settling [fairness_b3_stock_on / attempt 001] t=60s: k10temp:Tctl=43.2°C
+RUN 12/16 fairness_b3_stock_off
+Settling [fairness_b3_stock_off / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b3_stock_off / attempt 001] t=0s: k10temp:Tctl=84.1°C
+Settling [fairness_b3_stock_off / attempt 001] t=60s: k10temp:Tctl=43.5°C
+RUN 13/16 fairness_b4_patched_on
+Settling [fairness_b4_patched_on / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b4_patched_on / attempt 001] t=0s: k10temp:Tctl=58.4°C
+Settling [fairness_b4_patched_on / attempt 001] t=60s: k10temp:Tctl=43.2°C
+RUN 14/16 fairness_b4_stock_off
+Settling [fairness_b4_stock_off / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b4_stock_off / attempt 001] t=0s: k10temp:Tctl=88.4°C
+Settling [fairness_b4_stock_off / attempt 001] t=60s: k10temp:Tctl=43.4°C
+RUN 15/16 fairness_b4_patched_off
+Settling [fairness_b4_patched_off / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b4_patched_off / attempt 001] t=0s: k10temp:Tctl=58.8°C
+Settling [fairness_b4_patched_off / attempt 001] t=60s: k10temp:Tctl=43.1°C
+RUN 16/16 fairness_b4_stock_on
+Settling [fairness_b4_stock_on / attempt 001]: at least 60s; checking a stable 60s temperature window.
+Settling [fairness_b4_stock_on / attempt 001] t=0s: k10temp:Tctl=58.6°C
+Settling [fairness_b4_stock_on / attempt 001] t=60s: k10temp:Tctl=42.9°C
+
+[2026-10-03T00:53:38.819534+05:30] analyze-results: /usr/bin/python3 /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/fairness_analysis.py /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v9-fairness-1/session
+SCHEDULER ANALYSIS: fairness_b1_stock_on
+SCHEDULER ANALYSIS: fairness_b1_patched_on
+SCHEDULER ANALYSIS: fairness_b2_stock_on
+SCHEDULER ANALYSIS: fairness_b2_patched_on
+SCHEDULER ANALYSIS: fairness_b3_patched_on
+SCHEDULER ANALYSIS: fairness_b3_stock_on
+SCHEDULER ANALYSIS: fairness_b4_patched_on
+SCHEDULER ANALYSIS: fairness_b4_stock_on
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/fairness_analysis.py", line 202, in <module>
+    analyze_session(parser.parse_args().session.resolve())
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/fairness_analysis.py", line 151, in analyze_session
+    raise RuntimeError('; '.join(issues))
+RuntimeError: fairness_b1_stock_on: scheduler analysis: cleanup wake follows final connection boundary; fairness_b2_stock_on: scheduler analysis: cleanup wake follows final connection boundary
+STOPPED: analyze-results exited with code 1; see this launch log for the reason. Saved evidence remains in /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v9-fairness-1.
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/fairness_study.py", line 160, in foreground
+    execute(directory,lock)
+    ~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/fairness_study.py", line 128, in execute
+    pipeline.stage_command(directory,'analyze-results',
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        [sys.executable,run.HERE/'fairness_analysis.py',session],lock)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 42, in stage_command
+    raise RuntimeError(f'{stage} exited with code {code}; see this launch log for the reason')
+RuntimeError: analyze-results exited with code 1; see this launch log for the reason

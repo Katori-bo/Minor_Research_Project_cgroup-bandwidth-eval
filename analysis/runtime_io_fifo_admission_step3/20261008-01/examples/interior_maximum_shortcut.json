@@ -1,0 +1,118 @@
+{
+  "method": "simple exact-if-certified witness shortcut",
+  "status": "exact",
+  "mode": "five witnesses with independent global count bounds",
+  "problem": {
+    "arrivals": [
+      "0",
+      "0",
+      "19/20",
+      "39/20"
+    ],
+    "system_slots": 2,
+    "relative_deadline": "11/10",
+    "service_interval": [
+      "1/2",
+      "1"
+    ],
+    "time_unit": "seconds"
+  },
+  "proved_lower_count": 0,
+  "proved_upper_count": 3,
+  "sampled_minimum_count": 0,
+  "sampled_maximum_count": 3,
+  "stats": {
+    "fixed_parameter_replays": 5
+  },
+  "novelty_established": false,
+  "minimum": {
+    "failures": 0,
+    "failure_fraction": "0",
+    "witness_service_time": "1/2",
+    "witness_replay": {
+      "offered": 4,
+      "rejected": 0,
+      "late": 0,
+      "timely": 4,
+      "failures": 0,
+      "failure_fraction": "0",
+      "failure_percentage": "0",
+      "system_peak": 2,
+      "offers": [
+        {
+          "index": 0,
+          "arrival": "0",
+          "completion": "1/2",
+          "latency": "1/2",
+          "outcome": "timely"
+        },
+        {
+          "index": 1,
+          "arrival": "0",
+          "completion": "1",
+          "latency": "1",
+          "outcome": "timely"
+        },
+        {
+          "index": 2,
+          "arrival": "19/20",
+          "completion": "3/2",
+          "latency": "11/20",
+          "outcome": "timely"
+        },
+        {
+          "index": 3,
+          "arrival": "39/20",
+          "completion": "49/20",
+          "latency": "1/2",
+          "outcome": "timely"
+        }
+      ]
+    }
+  },
+  "maximum": {
+    "failures": 3,
+    "failure_fraction": "3/4",
+    "witness_service_time": "7/8",
+    "witness_replay": {
+      "offered": 4,
+      "rejected": 0,
+      "late": 3,
+      "timely": 1,
+      "failures": 3,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75",
+      "system_peak": 2,
+      "offers": [
+        {
+          "index": 0,
+          "arrival": "0",
+          "completion": "7/8",
+          "latency": "7/8",
+          "outcome": "timely"
+        },
+        {
+          "index": 1,
+          "arrival": "0",
+          "completion": "7/4",
+          "latency": "7/4",
+          "outcome": "late"
+        },
+        {
+          "index": 2,
+          "arrival": "19/20",
+          "completion": "21/8",
+          "latency": "67/40",
+          "outcome": "late"
+        },
+        {
+          "index": 3,
+          "arrival": "39/20",
+          "completion": "7/2",
+          "latency": "31/20",
+          "outcome": "late"
+        }
+      ]
+    }
+  }
+}

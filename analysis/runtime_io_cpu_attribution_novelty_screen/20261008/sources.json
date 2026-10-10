@@ -1,0 +1,69 @@
+{
+  "author_survey_abstract_url": "https://se.informatik.uni-wuerzburg.de/staff/samuel-kounev/publications/",
+  "published_algorithms_executed": false,
+  "retrieval_date": "2026-10-08",
+  "scope": "Bounded capability/assumption screen; nonexhaustive literature search, no novelty priority proof.",
+  "searches": [
+    "CPU demand estimation background noise workload dependent overhead request profiling quota cgroup attribution",
+    "Evaluating approaches to resource demand estimation Spinner background work"
+  ],
+  "sources": [
+    {
+      "id": "linux",
+      "inspection": "Full current documentation inspected: usage/user/system, bandwidth counters, cpu.max, cpu.pressure, temporal/frequency distinction.",
+      "limitation": "Mutable current documentation; recorded-kernel interface availability not assumed.",
+      "title": "Linux cgroup v2 CPU controller",
+      "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html#cpu"
+    },
+    {
+      "id": "go_profiles",
+      "inspection": "Official API text inspected: Do, SetGoroutineLabels, Labels, CPU/block profiles.",
+      "limitation": "No profiler run; labels require coverage/ownership and sampling precision.",
+      "title": "Go runtime/pprof",
+      "url": "https://pkg.go.dev/runtime/pprof"
+    },
+    {
+      "id": "go_metrics",
+      "inspection": "Official CPU-class descriptions inspected, including incompatibility with system CPU measurements.",
+      "limitation": "Current metric list; recorded-version support not qualified.",
+      "title": "Go runtime/metrics",
+      "url": "https://pkg.go.dev/runtime/metrics"
+    },
+    {
+      "id": "cockroach_rfc",
+      "inspection": "RFC text and displayed patch inspected: per-goroutine running-state wall clock, scoped attribution and profiling alternative.",
+      "limitation": "Mutable master; RFC/prototype, not a universal exact CPU counter; OS-descheduled time explicitly counted.",
+      "title": "Fine-grained CPU attribution RFC",
+      "url": "https://github.com/cockroachdb/cockroach/blob/master/docs/RFCS/20220602_fine_grained_cpu_attribution.md"
+    },
+    {
+      "id": "pacifici",
+      "inspection": "Primary publisher/author abstract inspected: CPU utilization/throughput regression and background/collinearity handling.",
+      "limitation": "Full algorithm not audited or reproduced.",
+      "title": "Dynamic estimation of CPU demand of Web traffic, ValueTools 2006",
+      "url": "https://research.ibm.com/publications/dynamic-estimation-of-cpu-demand-of-web-traffic"
+    },
+    {
+      "id": "spinner",
+      "inspection": "Publisher indexed text and author-hosted publication abstract inspected; seven-method comparison and model-mismatch scope.",
+      "limitation": "Publisher full-page fetch returned 403; author PDF link redirected to publication list. Full PDF not retrieved.",
+      "title": "Evaluating approaches to resource demand estimation, Performance Evaluation 92 (2015), 51\u201371",
+      "url": "https://doi.org/10.1016/j.peva.2015.07.005"
+    },
+    {
+      "id": "perez",
+      "inspection": "Author-hosted full parsed paper, abstract and \u00a7\u00a73\u20137 inspected: response/pool inputs, PS scheduling, cleaned external waits and mean demands.",
+      "limitation": "No implementation reproduction; periodic quota and shared runtime mapping unestablished.",
+      "title": "Estimating Computational Requirements in Multi-Threaded Applications",
+      "url": "https://juanfperez.com/data/2015_02_des_TSE.pdf"
+    },
+    {
+      "id": "schedblame",
+      "inspection": "Full parsed primary preprint; scheduler/cgroup/runnable model and \u00a79 planned attribution/detection evaluation inspected.",
+      "limitation": "Preliminary results; not an evaluated quota-specific request-attribution comparator.",
+      "title": "SchedBlame v1, submitted 2 September 2026",
+      "url": "https://arxiv.org/html/2609.02052v1"
+    }
+  ],
+  "sources_archived_verbatim": false
+}

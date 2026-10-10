@@ -1,0 +1,171 @@
+{
+  "date": "2026-10-08",
+  "scope": "Targeted originality screen; not systematic review",
+  "primary_sources": [
+    {
+      "id": "enhanced_inferencing",
+      "title": "Enhanced Inferencing: Estimation of a Workload Dependent Performance Model",
+      "year": 2009,
+      "url": "https://eudl.eu/pdf/10.4108/ICST.VALUETOOLS2009.7799",
+      "access": "Full primary text, selected methods; prior assessment retained",
+      "sections": "Sections 2–3, equations 10–20",
+      "overlap": "Load-dependent demand/overhead; joint utilization and mean-response inference",
+      "limitation": "Not reproduced; not refuted by CPU-only quadratic benchmark",
+      "implemented_here": false
+    },
+    {
+      "id": "load_dependent_modern_cpu",
+      "title": "Estimate Load-dependent Service Demand for Modern CPU",
+      "year": 2013,
+      "url": "https://scialert.net/fulltext/amp.php?doi=itj.2013.632.639",
+      "access": "Primary HTML reviewed in retained assessment; equation-image limits",
+      "sections": "Load-dependent estimation, equations 1–5",
+      "overlap": "Polynomial demand in utilization and constrained response-aware inference",
+      "limitation": "Exact image coefficients unresolved; no faithful fit",
+      "implemented_here": false
+    },
+    {
+      "id": "sarde",
+      "title": "SARDE: A Framework for Continuous and Self-Adaptive Resource Demand Estimation",
+      "year": 2021,
+      "url": "https://se.informatik.uni-wuerzburg.de/publications/?cHash=c7300d8a02e65b7dcd8870de230e3338&tx_extbibsonomycsl_publicationlist%5Baction%5D=download&tx_extbibsonomycsl_publicationlist%5Bcontroller%5D=Document&tx_extbibsonomycsl_publicationlist%5BfileName%5D=SARDE_TaaS2020.pdf&tx_extbibsonomycsl_publicationlist%5BintraHash%5D=fc3fb3694ee15b680f1466a5acc7bc64&tx_extbibsonomycsl_publicationlist%5BuserName%5D=se-group",
+      "access": "Full author preprint, selected methods and evaluation",
+      "sections": "Sections 5.2–5.3, 6.3, 9.1",
+      "overlap": "Estimator/window tuning and ensemble selection; utilization and mean-response validation",
+      "limitation": "Different evaluated loss is not proof of new selection method; no code reproduction",
+      "implemented_here": false
+    },
+    {
+      "id": "transient_service",
+      "title": "A Non-stationary Service Curve Model for Performance Analysis of Transient Phases",
+      "year": 2015,
+      "url": "https://arxiv.org/html/1506.04657",
+      "access": "Full author preprint, model and measurement methods",
+      "sections": "Sections II–III, particularly III-D",
+      "overlap": "Transient service curves, delay/backlog bounds and minimal probes with accuracy assessment",
+      "limitation": "Need justified treatment of load dependence/loss; generic timescale/probing route overlaps",
+      "implemented_here": false
+    },
+    {
+      "id": "robust_queue",
+      "title": "Robust queueing theory: an initial study using imprecise probabilities",
+      "year": 2016,
+      "url": "https://users.ugent.be/~jdbock/documents/SL-2016-QUES-paper.pdf",
+      "access": "Primary author PDF, abstract/introduction and model description",
+      "sections": "Abstract, introduction, finite-capacity discrete-time queue model",
+      "overlap": "Performance bounds with imprecise arrival/departure probabilities",
+      "limitation": "Not a reproduced exact fixed-trace deadline-fraction solver",
+      "implemented_here": false
+    },
+    {
+      "id": "queue_perturbation",
+      "title": "Error Bounds for Perturbing Nonexponential Queues",
+      "year": 2004,
+      "url": "https://www.rs.tus.ac.jp/miyazawa/pdf-file/EB-NESQ.pdf",
+      "access": "Author PDF available; abstract/introduction screened; publisher abstract verified",
+      "sections": "Abstract/introduction; GI/G/1/N, M/G/c/N and GI/M/c/N scope",
+      "overlap": "Finite/infinite-buffer queue perturbation bounds",
+      "limitation": "No detailed theorem reproduction; absence of a deadline keyword is not absence of applicability",
+      "implemented_here": false
+    },
+    {
+      "id": "fifo_parametric",
+      "title": "High-Level Modelling, Analysis, and Verification on FPGA-Based Hardware Design",
+      "year": 2005,
+      "url": "https://dl.ifip.org/db/conf/charme/charme2005/MatousekSV05.pdf",
+      "access": "Full four-page conference paper, selected sections",
+      "sections": "Sections 3–4; timed lossy/delayed FIFO and parametric cases",
+      "overlap": "Queue size, timing and overflow analysis using Uppaal/TReX",
+      "limitation": "Must compare equivalent formulation; cannot claim first uncertain finite-buffer analysis",
+      "implemented_here": false
+    },
+    {
+      "id": "schedulability_uncertainty",
+      "title": "A unified formalism for monoprocessor schedulability analysis under uncertainty",
+      "year": 2017,
+      "url": "https://lipn.univ-paris13.fr/~andre/documents/a-unified-formalism-for-monoprocessor-schedulability-analysis-under-uncertainty.pdf",
+      "access": "Full author manuscript, selected methods",
+      "sections": "Sections 3–5; scheduler/queue encoding and IMITATOR synthesis",
+      "overlap": "Uncertain timing and robust schedulability via parametric automata",
+      "limitation": "Miss-count observer could be straightforward extension; no artifact benchmark",
+      "implemented_here": false
+    },
+    {
+      "id": "mpora",
+      "title": "Uncertainty-Aware Resource Allocation for Multi-Path Programs with In-Kernel Predictions",
+      "year": 2026,
+      "url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol375-ecrts2026/html/LIPIcs.ECRTS.2026.17/LIPIcs.ECRTS.2026.17.html",
+      "access": "Indexed primary abstract/introduction; repeated live HTML/PDF timeout",
+      "sections": "Abstract/introduction only relied on in this decision",
+      "overlap": "Prediction uncertainty, weighted conformal prediction, deadline-constrained allocation",
+      "limitation": "Cannot claim full algorithm audit or FIFO competitor; implementation not reproduced",
+      "implemented_here": false
+    },
+    {
+      "id": "kscaler",
+      "title": "CPU Autoscaling With a Kernel of Truth",
+      "year": 2025,
+      "url": "https://tianyin.github.io/pub/kscaler.pdf",
+      "access": "Full author paper, selected method and discussion",
+      "sections": "Sections 3–4; Passing Application SLOs Into the Kernel",
+      "overlap": "Runtime/idle-informed quota and period control; SLO future-work statement",
+      "limitation": "Future work is local to paper, not a global novelty certificate",
+      "implemented_here": false
+    },
+    {
+      "id": "autothrottle",
+      "title": "Autothrottle: A Practical Bi-Level Approach to Resource Management for SLO-Targeted Microservices",
+      "year": 2024,
+      "url": "https://www.usenix.org/system/files/nsdi24-wang-zibo.pdf",
+      "access": "Full official paper, selected method",
+      "sections": "Sections 2–3, especially 3.2; NSDI 2024",
+      "overlap": "Application SLO control and per-service throttle target CPU allocation",
+      "limitation": "Generic SLO-aware CPU management already covered; no implementation comparison",
+      "implemented_here": false
+    },
+    {
+      "id": "periodic_resource",
+      "title": "Periodic resource model for compositional real-time guarantees",
+      "year": 2003,
+      "url": "https://pure.kaist.ac.kr/en/publications/periodic-resource-model-for-compositional-real-time-guarantees/",
+      "access": "Primary institutional abstract; attempted full-text access failed",
+      "sections": "Abstract only",
+      "overlap": "Periodic allocation resource model and exact EDF/RM schedulability conditions",
+      "limitation": "Do not invent full source equations; not a CFS ceiling guarantee",
+      "implemented_here": false
+    },
+    {
+      "id": "container_reservation",
+      "title": "Strong Temporal Isolation Among Containers in OpenStack for NFV Services",
+      "year": 2023,
+      "url": "https://retis.santannapisa.it/people/nino/publication/TCC23.pdf",
+      "access": "Author PDF, selected model sections",
+      "sections": "Section 4.2",
+      "overlap": "Guaranteed reservation and isolated demand-based response approximations",
+      "limitation": "Different resource guarantee; cannot directly substitute fractional CFS quota",
+      "implemented_here": false
+    }
+  ],
+  "review_start_utc": "2026-10-08 07:03:19 UTC",
+  "scientific_collection_launched": false,
+  "novelty_confirmed": false,
+  "decision": "Hold experimental gate; bounded offline feasibility only",
+  "candidate": "Efficient sound finite-trace all-offer deadline bounds across continuous service uncertainty with tail-drop rejection",
+  "search_families": [
+    "load-dependent service demand and CPU quota inference",
+    "self-adaptive estimator selection and measurement windows",
+    "nonstationary service curves and minimal probing",
+    "uncertainty-aware deadline constraints and conformal prediction",
+    "CPU quota/period control with latency SLOs",
+    "finite-buffer uncertainty and perturbation bounds",
+    "FIFO rejection, service-rate nonmonotonicity and deadline fraction",
+    "parametric timed automata and quantitative deadline synthesis"
+  ],
+  "limitations": [
+    "No exhaustive citation closure",
+    "No competitor implementation or performance claim",
+    "Selected sections read; access level recorded per source",
+    "Synthetic counterexample does not establish real-system prevalence or discovery priority",
+    "No guarantee that an eventual successful experiment establishes originality"
+  ]
+}

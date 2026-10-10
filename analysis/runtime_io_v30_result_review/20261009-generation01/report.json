@@ -1,0 +1,225 @@
+{
+  "status": "independent_completion_replay_passed",
+  "decision": "short_deadline_prediction_confirmed",
+  "verification_command": "python3 -B diagnostic/v30_study.py verify-completion --directory /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v30/generation-01",
+  "verification_exit_code": 0,
+  "calibration_trials": 16,
+  "validation_trials": 18,
+  "calibration_offers": 9022,
+  "validation_offers": 16200,
+  "technical_failures": [],
+  "campaign_minutes": 115.44007004626656,
+  "profiles": {
+    "A": {
+      "trials": 6,
+      "offers": 1440,
+      "misses_25ms": 0,
+      "observed_mean_miss_pct": 0.0,
+      "observed_miss_range_pct": [
+        0.0,
+        0.0
+      ],
+      "predicted_miss_pct": 0.0,
+      "mae_pp": 0.0,
+      "maximum_error_pp": 0.0,
+      "pooled_10ms_miss_pct": 67.56944444444444,
+      "observed_failure_count": 0,
+      "worker_processing_p50_ms": 8.802213,
+      "client_e2e_p50_ms": 10.2080965
+    },
+    "B": {
+      "trials": 6,
+      "offers": 6480,
+      "misses_25ms": 0,
+      "observed_mean_miss_pct": 0.0,
+      "observed_miss_range_pct": [
+        0.0,
+        0.0
+      ],
+      "predicted_miss_pct": 0.0,
+      "mae_pp": 0.0,
+      "maximum_error_pp": 0.0,
+      "pooled_10ms_miss_pct": 66.92901234567901,
+      "observed_failure_count": 0,
+      "worker_processing_p50_ms": 8.819085999999999,
+      "client_e2e_p50_ms": 10.194190500000001
+    },
+    "C": {
+      "trials": 6,
+      "offers": 8280,
+      "misses_25ms": 6558,
+      "observed_mean_miss_pct": 79.20289855072464,
+      "observed_miss_range_pct": [
+        75.8695652173913,
+        84.27536231884058
+      ],
+      "predicted_miss_pct": 72.1785009861933,
+      "mae_pp": 7.024397564531337,
+      "maximum_error_pp": 12.09686133264728,
+      "pooled_10ms_miss_pct": 92.31884057971014,
+      "observed_failure_count": 0,
+      "worker_processing_p50_ms": 8.5159495,
+      "client_e2e_p50_ms": 138.44636400000002
+    }
+  },
+  "primary_equal_profile_mae_pp": 2.341465854843779,
+  "secondary_offer_weighted_mae_pp": 3.5902476440937945,
+  "primary_gates": {
+    "complete_qualified_trials": true,
+    "periodic_mean_block_mae_le_3": true,
+    "every_block_positive": true,
+    "improvement_95_lower_ge_5": true,
+    "all_trial_slo_decisions_match": true,
+    "some_profile_meets_slo_every_block": true
+  },
+  "paired_block_improvement": {
+    "mean_pp": 71.25756796158134,
+    "model_based_95_interval": [
+      68.90032913723064,
+      73.61480678593205
+    ],
+    "t_multiplier": 2.571,
+    "df": 5
+  },
+  "blocks": [
+    {
+      "block": 1,
+      "periodic_mae_pp": 1.230354743732666,
+      "fluid_mae_pp": 74.71014492753623,
+      "improvement_pp": 73.47979018380357,
+      "some_profile_slo_pass": true
+    },
+    {
+      "block": 2,
+      "periodic_mae_pp": 4.032287110882426,
+      "fluid_mae_pp": 71.90821256038647,
+      "improvement_pp": 67.87592544950405,
+      "some_profile_slo_pass": true
+    },
+    {
+      "block": 3,
+      "periodic_mae_pp": 1.5926735843123794,
+      "fluid_mae_pp": 74.34782608695652,
+      "improvement_pp": 72.75515250264414,
+      "some_profile_slo_pass": true
+    },
+    {
+      "block": 4,
+      "periodic_mae_pp": 2.389775033587739,
+      "fluid_mae_pp": 73.55072463768116,
+      "improvement_pp": 71.16094960409342,
+      "some_profile_slo_pass": true
+    },
+    {
+      "block": 5,
+      "periodic_mae_pp": 1.4960552268244574,
+      "fluid_mae_pp": 74.44444444444444,
+      "improvement_pp": 72.94838921761999,
+      "some_profile_slo_pass": true
+    },
+    {
+      "block": 6,
+      "periodic_mae_pp": 3.307649429723005,
+      "fluid_mae_pp": 72.6328502415459,
+      "improvement_pp": 69.3252008118229,
+      "some_profile_slo_pass": true
+    }
+  ],
+  "stages_25ms": {
+    "misses": 6558,
+    "unsuccessful": 0,
+    "computation_certainly_after": 6529,
+    "computation_certainly_within_but_client_missed": 22,
+    "computation_boundary_ambiguous": 7
+  },
+  "secondary_deadline_mae_pp": {
+    "10": {
+      "fluid_busy": 24.394234210055465,
+      "fluid_busy_calibrated_delay": 24.394234210055465,
+      "fluid_quadratic": 24.394234210055465,
+      "periodic_zero_phase_full_budget": 48.09368849525854,
+      "periodic_uniform_phase": 49.94151458221506,
+      "periodic_uniform_phase_calibrated_delay": 49.62188433323699,
+      "discovery_switch": 49.62188433323699
+    },
+    "20": {
+      "fluid_busy": 73.07971014492753,
+      "fluid_busy_calibrated_delay": 73.07971014492753,
+      "fluid_quadratic": 73.07971014492753,
+      "periodic_zero_phase_full_budget": 0.8494363929146537,
+      "periodic_uniform_phase": 2.4661835748792296,
+      "periodic_uniform_phase_calibrated_delay": 2.3180187519652415,
+      "discovery_switch": 2.3180187519652415
+    },
+    "25": {
+      "fluid_busy": 73.59903381642512,
+      "fluid_busy_calibrated_delay": 73.59903381642512,
+      "fluid_quadratic": 73.59903381642512,
+      "periodic_zero_phase_full_budget": 0.9017713365539445,
+      "periodic_uniform_phase": 2.729468599033816,
+      "periodic_uniform_phase_calibrated_delay": 2.341465854843779,
+      "discovery_switch": 2.341465854843779
+    },
+    "35": {
+      "fluid_busy": 4.017713365539453,
+      "fluid_busy_calibrated_delay": 4.278197029033149,
+      "fluid_quadratic": 5.442834138486312,
+      "periodic_zero_phase_full_budget": 1.1191626409017716,
+      "periodic_uniform_phase": 3.446054750402579,
+      "periodic_uniform_phase_calibrated_delay": 3.3059831441938434,
+      "discovery_switch": 4.017713365539453
+    },
+    "50": {
+      "fluid_busy": 2.9468599033816414,
+      "fluid_busy_calibrated_delay": 2.97365863419375,
+      "fluid_quadratic": 5.821256038647345,
+      "periodic_zero_phase_full_budget": 2.1256038647342965,
+      "periodic_uniform_phase": 4.603864734299517,
+      "periodic_uniform_phase_calibrated_delay": 4.121637652574107,
+      "discovery_switch": 2.9468599033816414
+    },
+    "75": {
+      "fluid_busy": 1.3848631239935598,
+      "fluid_busy_calibrated_delay": 1.3855777568152148,
+      "fluid_quadratic": 5.426731078904989,
+      "periodic_zero_phase_full_budget": 4.694041867954912,
+      "periodic_uniform_phase": 6.650563607085345,
+      "periodic_uniform_phase_calibrated_delay": 6.1805138686409595,
+      "discovery_switch": 1.3848631239935598
+    },
+    "100": {
+      "fluid_busy": 0.917874396135266,
+      "fluid_busy_calibrated_delay": 0.9175170797244377,
+      "fluid_quadratic": 5.877616747181963,
+      "periodic_zero_phase_full_budget": 6.417069243156201,
+      "periodic_uniform_phase": 8.59098228663446,
+      "periodic_uniform_phase_calibrated_delay": 8.173232951242987,
+      "discovery_switch": 0.917874396135266
+    },
+    "150": {
+      "fluid_busy": 2.7375201288244773,
+      "fluid_busy_calibrated_delay": 2.035393381547227,
+      "fluid_quadratic": 7.383252818035427,
+      "periodic_zero_phase_full_budget": 7.809983896940419,
+      "periodic_uniform_phase": 10.098148148148148,
+      "periodic_uniform_phase_calibrated_delay": 9.691274095036638,
+      "discovery_switch": 2.7375201288244773
+    },
+    "500": {
+      "fluid_busy": 0.0,
+      "fluid_busy_calibrated_delay": 0.0,
+      "fluid_quadratic": 0.0,
+      "periodic_zero_phase_full_budget": 0.0,
+      "periodic_uniform_phase": 0.0,
+      "periodic_uniform_phase_calibrated_delay": 0.0,
+      "discovery_switch": 0.0
+    }
+  },
+  "validation_clock_max_uncertainty_ns": 234518,
+  "validation_monitor_min_records": 80,
+  "nonmonotone_model_switch_trials": 6,
+  "novelty_established": false,
+  "causal_mechanism_established": false,
+  "multi_application_transfer_established": false,
+  "source_report_path": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v30/generation-01/analysis/1791534266682067738/report.json"
+}

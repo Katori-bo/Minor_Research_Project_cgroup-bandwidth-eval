@@ -1,0 +1,22 @@
+{
+  "archive_matches_published_sha256": true,
+  "source_files_sha256": {
+    "gzip.c": "ef66e740783ebb90da93f1b38fa75d205cfa635e0ac0b01869be170f64767c17",
+    "zip.c": "4bb48a7afa2ba124736a48ac7f2479fa192e5765012f30a195cd95d6f951b67c",
+    "deflate.c": "fb8c30c20792a78b61418f16db7bae9ea9121618a7474b5ac7d43a508f47adcc",
+    "COPYING": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  "path": [
+    "gzip.c:361 default work=zip",
+    "gzip.c:1047 selected file work call",
+    "zip.c:95 gzip_deflate",
+    "zip.c:113-118 checksum/size trailer and flush"
+  ],
+  "finding": "Inspected normal file compression path invokes deflate synchronously in the C source. No direct thread creation was found in gzip.c, zip.c or deflate.c.",
+  "limitation": "Source inspection is not a runtime concurrency proof or a reproducible-build verification of the retained Arch binary. Parent/child job and affinity checks remain required.",
+  "host_loader_libc_sha256": {
+    "/usr/lib/libc.so.6": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524",
+    "/usr/lib64/ld-linux-x86-64.so.2": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757"
+  },
+  "container_runtime_frozen": false
+}

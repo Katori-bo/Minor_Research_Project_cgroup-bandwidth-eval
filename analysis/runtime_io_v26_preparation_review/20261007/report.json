@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "decision": "offline_pilot_preparation_pass_runtime_unrun",
+  "generation": "analysis/runtime_io_v26/generation-01",
+  "bundle_seal_sha256": "c7e649f94d51e908b976ff06ada089f0dd2e7e31c490becde99b76f06d0b3c10",
+  "design_seal_sha256": "ddbf96b910308fca0ff5acba91d02e02c4b4ea2d98cb7978f70b8dc93b091920",
+  "source_files": 195,
+  "pilot_tests": 28,
+  "combined_regressions": {
+    "modules": [
+      "test_v22",
+      "test_v23",
+      "test_v24r3",
+      "test_v25",
+      "test_v26"
+    ],
+    "tests_run": 122,
+    "failures": 0,
+    "errors": 0,
+    "passed": true,
+    "duration_sec": 31.23259139060974
+  },
+  "historical_independent_completion_replays": {
+    "V22": {
+      "independent_completion_replay_passed": true,
+      "decision": "primary_transfer_pass",
+      "duration_sec": 13.173646926879883
+    },
+    "V23": {
+      "independent_completion_replay_passed": true,
+      "decision": "primary_transfer_pass",
+      "duration_sec": 24.477805614471436
+    },
+    "V25": {
+      "independent_completion_replay_passed": true,
+      "decision": "control_design_screen_complete",
+      "duration_sec": 11.864997386932373
+    }
+  },
+  "resealed_matrix_tamper_rejected": true,
+  "tamper_rejection": "offline bundle incomplete",
+  "planned_pilot_trials": 4,
+  "collected_pilot_trials": 0,
+  "runtime_resource_preflight_run": false,
+  "runtime_functional_cases_run": 0,
+  "docker_used": false,
+  "sudo_used": false,
+  "host_settings_changed": false,
+  "collector_binary_rebuilt": false,
+  "application_binaries_rebuilt": false,
+  "scientific_qualification_established": false,
+  "execution_guide": "docs/runtime_io_v26_execution.md"
+}

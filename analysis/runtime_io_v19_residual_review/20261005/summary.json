@@ -1,0 +1,583 @@
+{
+  "schema": 1,
+  "analysis": "exploratory offline V19 residual review",
+  "measurement_launched": false,
+  "v19_verified_decision": "useful_worker_control_without_gap_signal",
+  "trials": [
+    {
+      "trial": "b1_four_a",
+      "block": 1,
+      "arm": "four_a",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 87.77979503886354,
+        "queue_ns": 152.38268590519652,
+        "processing_wall_ns": 19.389656055498307,
+        "completion_to_resume_ns": 39.55010078153982,
+        "resume_to_client_upper_ns": 0.2137856734874135,
+        "e2e_ns": 299.1906454915354
+      },
+      "deadline_counts": {
+        "timely": 4993,
+        "computation_after_deadline": 1242,
+        "computed_before_handler_resumed_after": 554,
+        "handler_boundary_ambiguous": 2,
+        "handler_resumed_before_client_finished_after": 1,
+        "computation_boundary_ambiguous": 1
+      },
+      "phase_timely": {
+        "low": 0.9493819894055326,
+        "high": 0.6635257165292501
+      }
+    },
+    {
+      "trial": "b1_four_b",
+      "block": 1,
+      "arm": "four_b",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 88.28082816090092,
+        "queue_ns": 150.72309342234652,
+        "processing_wall_ns": 19.196132758722214,
+        "completion_to_resume_ns": 38.04017608258501,
+        "resume_to_client_upper_ns": 0.27359470764021787,
+        "e2e_ns": 296.4080356196084
+      },
+      "deadline_counts": {
+        "timely": 4939,
+        "computation_after_deadline": 1236,
+        "computed_before_handler_resumed_after": 612,
+        "handler_resumed_before_client_finished_after": 4,
+        "computation_boundary_ambiguous": 2
+      },
+      "phase_timely": {
+        "low": 0.9470276633313714,
+        "high": 0.6537102473498233
+      }
+    },
+    {
+      "trial": "b1_one",
+      "block": 1,
+      "arm": "one",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 19.79053459178566,
+        "queue_ns": 220.39768280082438,
+        "processing_wall_ns": 6.100457235978213,
+        "completion_to_resume_ns": 17.31975541263065,
+        "resume_to_client_upper_ns": 0.25309308567643163,
+        "e2e_ns": 263.6797961589872
+      },
+      "deadline_counts": {
+        "timely": 5513,
+        "computed_before_handler_resumed_after": 192,
+        "computation_after_deadline": 1084,
+        "handler_boundary_ambiguous": 2,
+        "computation_boundary_ambiguous": 2
+      },
+      "phase_timely": {
+        "low": 0.9611536197763391,
+        "high": 0.7616804083235179
+      },
+      "residual_crossings": {
+        "n": 192,
+        "publication_before_deadline_certain": 192,
+        "post_publication_lower_bound_median_ms": 54.3678685,
+        "post_publication_lower_bound_p99_ms": 67.581619
+      }
+    },
+    {
+      "trial": "b2_four_b",
+      "block": 2,
+      "arm": "four_b",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 86.49150439467098,
+        "queue_ns": 151.05731794553216,
+        "processing_wall_ns": 19.325136513911378,
+        "completion_to_resume_ns": 38.990056749595176,
+        "resume_to_client_upper_ns": 0.22724663771529516,
+        "e2e_ns": 295.9774100565288
+      },
+      "deadline_counts": {
+        "timely": 5027,
+        "computed_before_handler_resumed_after": 573,
+        "computation_after_deadline": 1190,
+        "computation_boundary_ambiguous": 2,
+        "handler_resumed_before_client_finished_after": 1
+      },
+      "phase_timely": {
+        "low": 0.9529134785167745,
+        "high": 0.6690223792697291
+      }
+    },
+    {
+      "trial": "b2_one",
+      "block": 2,
+      "arm": "one",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 19.731419082143383,
+        "queue_ns": 212.00206268791405,
+        "processing_wall_ns": 6.074522253349036,
+        "completion_to_resume_ns": 17.49143809598116,
+        "resume_to_client_upper_ns": 0.24707168305608715,
+        "e2e_ns": 255.38931584984545
+      },
+      "deadline_counts": {
+        "timely": 5679,
+        "computed_before_handler_resumed_after": 193,
+        "computation_after_deadline": 917,
+        "computation_boundary_ambiguous": 4
+      },
+      "phase_timely": {
+        "low": 0.9676280164802825,
+        "high": 0.7921083627797408
+      },
+      "residual_crossings": {
+        "n": 193,
+        "publication_before_deadline_certain": 193,
+        "post_publication_lower_bound_median_ms": 55.097271,
+        "post_publication_lower_bound_p99_ms": 67.542584
+      }
+    },
+    {
+      "trial": "b2_four_a",
+      "block": 2,
+      "arm": "four_a",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 87.5354481165906,
+        "queue_ns": 153.58395354865303,
+        "processing_wall_ns": 19.403047742529075,
+        "completion_to_resume_ns": 39.51954895524805,
+        "resume_to_client_upper_ns": 0.38700376299131456,
+        "e2e_ns": 300.55187435831004
+      },
+      "deadline_counts": {
+        "timely": 4979,
+        "computation_after_deadline": 1249,
+        "computed_before_handler_resumed_after": 558,
+        "handler_resumed_before_client_finished_after": 6,
+        "handler_boundary_ambiguous": 1
+      },
+      "phase_timely": {
+        "low": 0.9476162448499117,
+        "high": 0.6613663133097762
+      }
+    },
+    {
+      "trial": "b3_one",
+      "block": 3,
+      "arm": "one",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 19.33049882158104,
+        "queue_ns": 213.7895293933461,
+        "processing_wall_ns": 6.054366835418814,
+        "completion_to_resume_ns": 17.247103936257915,
+        "resume_to_client_upper_ns": 0.21532663830413662,
+        "e2e_ns": 256.5194496210805
+      },
+      "deadline_counts": {
+        "timely": 5620,
+        "computed_before_handler_resumed_after": 198,
+        "computation_after_deadline": 970,
+        "computation_boundary_ambiguous": 4,
+        "handler_boundary_ambiguous": 1
+      },
+      "phase_timely": {
+        "low": 0.9670394349617422,
+        "high": 0.7807224185316058
+      },
+      "residual_crossings": {
+        "n": 198,
+        "publication_before_deadline_certain": 198,
+        "post_publication_lower_bound_median_ms": 53.5145305,
+        "post_publication_lower_bound_p99_ms": 67.505754
+      }
+    },
+    {
+      "trial": "b3_four_a",
+      "block": 3,
+      "arm": "four_a",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 87.33014285853083,
+        "queue_ns": 148.37721351096715,
+        "processing_wall_ns": 19.1536598053879,
+        "completion_to_resume_ns": 38.91492217120565,
+        "resume_to_client_upper_ns": 0.24125354629765933,
+        "e2e_ns": 293.8553763728839
+      },
+      "deadline_counts": {
+        "timely": 5024,
+        "computation_after_deadline": 1165,
+        "computed_before_handler_resumed_after": 600,
+        "computation_boundary_ambiguous": 3,
+        "handler_resumed_before_client_finished_after": 1
+      },
+      "phase_timely": {
+        "low": 0.9511477339611536,
+        "high": 0.6690223792697291
+      }
+    },
+    {
+      "trial": "b3_four_b",
+      "block": 3,
+      "arm": "four_b",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 87.2193027810982,
+        "queue_ns": 150.90737059885177,
+        "processing_wall_ns": 19.27320117679965,
+        "completion_to_resume_ns": 38.841827900338586,
+        "resume_to_client_upper_ns": 0.2124338798763433,
+        "e2e_ns": 296.3473790136906
+      },
+      "deadline_counts": {
+        "timely": 5007,
+        "computed_before_handler_resumed_after": 561,
+        "computation_after_deadline": 1222,
+        "handler_resumed_before_client_finished_after": 2,
+        "handler_boundary_ambiguous": 1
+      },
+      "phase_timely": {
+        "low": 0.9505591524426134,
+        "high": 0.6658814291323125
+      }
+    },
+    {
+      "trial": "b4_four_a",
+      "block": 4,
+      "arm": "four_a",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 87.00746364684233,
+        "queue_ns": 149.54884514706316,
+        "processing_wall_ns": 19.023952410716912,
+        "completion_to_resume_ns": 38.231822764463416,
+        "resume_to_client_upper_ns": 0.36859445090534376,
+        "e2e_ns": 294.1453535795672
+      },
+      "deadline_counts": {
+        "timely": 5018,
+        "computation_after_deadline": 1204,
+        "computed_before_handler_resumed_after": 569,
+        "handler_resumed_before_client_finished_after": 1,
+        "handler_boundary_ambiguous": 1
+      },
+      "phase_timely": {
+        "low": 0.951736315479694,
+        "high": 0.6676482135846094
+      }
+    },
+    {
+      "trial": "b4_one",
+      "block": 4,
+      "arm": "one",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 19.674463844693065,
+        "queue_ns": 215.81484617370822,
+        "processing_wall_ns": 6.077583468128956,
+        "completion_to_resume_ns": 17.41267296717209,
+        "resume_to_client_upper_ns": 0.22922483762696894,
+        "e2e_ns": 259.08544589813044
+      },
+      "deadline_counts": {
+        "timely": 5607,
+        "computed_before_handler_resumed_after": 203,
+        "computation_after_deadline": 979,
+        "handler_boundary_ambiguous": 2,
+        "handler_resumed_before_client_finished_after": 1,
+        "computation_boundary_ambiguous": 1
+      },
+      "phase_timely": {
+        "low": 0.9676280164802825,
+        "high": 0.7779740871613663
+      },
+      "residual_crossings": {
+        "n": 203,
+        "publication_before_deadline_certain": 203,
+        "post_publication_lower_bound_median_ms": 54.441429,
+        "post_publication_lower_bound_p99_ms": 66.42612
+      }
+    },
+    {
+      "trial": "b4_four_b",
+      "block": 4,
+      "arm": "four_b",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 86.46535838451346,
+        "queue_ns": 148.09592239275725,
+        "processing_wall_ns": 19.196773835124393,
+        "completion_to_resume_ns": 38.77829075356985,
+        "resume_to_client_upper_ns": 0.23277545237744737,
+        "e2e_ns": 292.65207297571027
+      },
+      "deadline_counts": {
+        "timely": 5053,
+        "computation_after_deadline": 1154,
+        "computed_before_handler_resumed_after": 586
+      },
+      "phase_timely": {
+        "low": 0.9535020600353149,
+        "high": 0.6739301138594425
+      }
+    },
+    {
+      "trial": "b5_one",
+      "block": 5,
+      "arm": "one",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 19.646703702340645,
+        "queue_ns": 215.59660022640952,
+        "processing_wall_ns": 6.0668891715000735,
+        "completion_to_resume_ns": 17.167185191962314,
+        "resume_to_client_upper_ns": 0.23265349815987044,
+        "e2e_ns": 258.5864623543353
+      },
+      "deadline_counts": {
+        "timely": 5573,
+        "computed_before_handler_resumed_after": 208,
+        "computation_after_deadline": 1011,
+        "handler_boundary_ambiguous": 1
+      },
+      "phase_timely": {
+        "low": 0.9658622719246616,
+        "high": 0.7718884962701217
+      },
+      "residual_crossings": {
+        "n": 208,
+        "publication_before_deadline_certain": 208,
+        "post_publication_lower_bound_median_ms": 54.2087925,
+        "post_publication_lower_bound_p99_ms": 66.108527
+      }
+    },
+    {
+      "trial": "b5_four_b",
+      "block": 5,
+      "arm": "four_b",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 87.80886484042396,
+        "queue_ns": 148.31302250787573,
+        "processing_wall_ns": 19.29621883821581,
+        "completion_to_resume_ns": 38.954632194906516,
+        "resume_to_client_upper_ns": 0.21679921757691742,
+        "e2e_ns": 294.46639970955397
+      },
+      "deadline_counts": {
+        "timely": 5059,
+        "computed_before_handler_resumed_after": 571,
+        "computation_after_deadline": 1157,
+        "handler_boundary_ambiguous": 3,
+        "computation_boundary_ambiguous": 2,
+        "handler_resumed_before_client_finished_after": 1
+      },
+      "phase_timely": {
+        "low": 0.9523248969982343,
+        "high": 0.6755005889281508
+      }
+    },
+    {
+      "trial": "b5_four_a",
+      "block": 5,
+      "arm": "four_a",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 86.9865821662005,
+        "queue_ns": 146.72351256867364,
+        "processing_wall_ns": 18.997013196378624,
+        "completion_to_resume_ns": 38.00298003842191,
+        "resume_to_client_upper_ns": 0.22955541999116738,
+        "e2e_ns": 290.8205028741351
+      },
+      "deadline_counts": {
+        "timely": 5041,
+        "computed_before_handler_resumed_after": 582,
+        "computation_after_deadline": 1166,
+        "handler_boundary_ambiguous": 2,
+        "handler_resumed_before_client_finished_after": 2
+      },
+      "phase_timely": {
+        "low": 0.949970570924073,
+        "high": 0.6727522575579112
+      }
+    },
+    {
+      "trial": "b6_four_b",
+      "block": 6,
+      "arm": "four_b",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 86.9817565838363,
+        "queue_ns": 152.36594807463567,
+        "processing_wall_ns": 19.396052088915063,
+        "completion_to_resume_ns": 39.64729205873694,
+        "resume_to_client_upper_ns": 0.2179733114971294,
+        "e2e_ns": 298.4519352181658
+      },
+      "deadline_counts": {
+        "timely": 5008,
+        "computation_after_deadline": 1219,
+        "computed_before_handler_resumed_after": 561,
+        "handler_boundary_ambiguous": 4,
+        "computation_boundary_ambiguous": 1
+      },
+      "phase_timely": {
+        "low": 0.948204826368452,
+        "high": 0.6668629760502552
+      }
+    },
+    {
+      "trial": "b6_four_a",
+      "block": 6,
+      "arm": "four_a",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 86.95835016413956,
+        "queue_ns": 150.15974277918446,
+        "processing_wall_ns": 19.27057277255999,
+        "completion_to_resume_ns": 39.45404448520536,
+        "resume_to_client_upper_ns": 0.30253149521566314,
+        "e2e_ns": 296.0257657538643
+      },
+      "deadline_counts": {
+        "timely": 5012,
+        "computation_after_deadline": 1185,
+        "handler_resumed_before_client_finished_after": 2,
+        "computed_before_handler_resumed_after": 594
+      },
+      "phase_timely": {
+        "low": 0.951736315479694,
+        "high": 0.6664703572830781
+      }
+    },
+    {
+      "trial": "b6_one",
+      "block": 6,
+      "arm": "one",
+      "offered": 6793,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 19.648508321507435,
+        "queue_ns": 215.66234178198144,
+        "processing_wall_ns": 6.058264491093773,
+        "completion_to_resume_ns": 17.1615014843221,
+        "resume_to_client_upper_ns": 0.2300332844104225,
+        "e2e_ns": 258.66449496246133
+      },
+      "deadline_counts": {
+        "timely": 5602,
+        "computed_before_handler_resumed_after": 188,
+        "computation_after_deadline": 998,
+        "handler_boundary_ambiguous": 1,
+        "handler_resumed_before_client_finished_after": 2,
+        "computation_boundary_ambiguous": 2
+      },
+      "phase_timely": {
+        "low": 0.9658622719246616,
+        "high": 0.7775814683941893
+      },
+      "residual_crossings": {
+        "n": 188,
+        "publication_before_deadline_certain": 188,
+        "post_publication_lower_bound_median_ms": 54.2676165,
+        "post_publication_lower_bound_p99_ms": 67.655397
+      }
+    }
+  ],
+  "arms": {
+    "four_a": {
+      "n_trials": 6,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 87.26629699852789,
+        "queue_ns": 150.129325576623,
+        "processing_wall_ns": 19.20631699717847,
+        "completion_to_resume_ns": 38.94556986601403,
+        "resume_to_client_upper_ns": 0.2904540581480936,
+        "e2e_ns": 295.7649197383827
+      },
+      "deadline_counts": {
+        "timely": 30067,
+        "computation_after_deadline": 7211,
+        "computed_before_handler_resumed_after": 3457,
+        "handler_boundary_ambiguous": 6,
+        "handler_resumed_before_client_finished_after": 13,
+        "computation_boundary_ambiguous": 4
+      },
+      "phase_timely": {
+        "low": 0.9502648616833431,
+        "high": 0.6667975395890591
+      }
+    },
+    "four_b": {
+      "n_trials": 6,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 87.20793585757397,
+        "queue_ns": 150.24377915699984,
+        "processing_wall_ns": 19.28058586861475,
+        "completion_to_resume_ns": 38.87537928995535,
+        "resume_to_client_upper_ns": 0.23013720111389174,
+        "e2e_ns": 295.71720543220965
+      },
+      "deadline_counts": {
+        "timely": 30093,
+        "computation_after_deadline": 7178,
+        "computed_before_handler_resumed_after": 3464,
+        "handler_resumed_before_client_finished_after": 8,
+        "computation_boundary_ambiguous": 7,
+        "handler_boundary_ambiguous": 8
+      },
+      "phase_timely": {
+        "low": 0.9507553462821268,
+        "high": 0.6674846224316189
+      }
+    },
+    "one": {
+      "n_trials": 6,
+      "stage_mean_ms": {
+        "scheduled_to_entry_upper_ns": 19.63702139400854,
+        "queue_ns": 215.54384384403062,
+        "processing_wall_ns": 6.072013909244811,
+        "completion_to_resume_ns": 17.29994284805437,
+        "resume_to_client_upper_ns": 0.23456717120565287,
+        "e2e_ns": 258.6541608074734
+      },
+      "deadline_counts": {
+        "timely": 33594,
+        "computed_before_handler_resumed_after": 1182,
+        "computation_after_deadline": 5959,
+        "handler_boundary_ambiguous": 7,
+        "computation_boundary_ambiguous": 13,
+        "handler_resumed_before_client_finished_after": 3
+      },
+      "phase_timely": {
+        "low": 0.9658622719246616,
+        "high": 0.7769925402434237
+      }
+    }
+  },
+  "one_worker_crossings": 1182,
+  "one_worker_publication_before_deadline_certain": 1182,
+  "block_median_post_publication_lower_bound_ms": 54.3177425,
+  "source_proof": "With exactly one worker, its buffered reply send returns before its next job starts. The next job start is an upper bound on previous publication, not an observed send or runnable-readiness timestamp.",
+  "limitations": [
+    "No inference of exact runnable readiness, CPU availability, runqueue residence or scheduler defect.",
+    "Inferences apply only to the conserved single-worker sequence; never apply this bound to four-worker events.",
+    "Uninformative next-start bounds and final jobs remain unknown, not zero.",
+    "Stage upper bounds share clock uncertainty and must not be added as exact durations.",
+    "Arm distributions do not identify individual requests causally recovered by the intervention."
+  ],
+  "provenance": {
+    "v19_report_sha256": "d8d1b04b2d7fa4751b76f7668704c664375680d83d77900867c3a954a6abfa4f",
+    "preparation_seal_sha256": "68a0b9cd749580c4ad657ccfcf1e6f8f5a90f323441529b398c3ff4c833eb163",
+    "original_image": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+    "original_server_sha256": "b7d249454d5477ffa0ade7cf1d90ba0eee8157ee166bb6e3f71d4cf912400efd",
+    "original_build_manifest_sha256": "0230be5312d20424a19082f801d944cc3a727e47563140a70bb9028ed84c03b8",
+    "original_prepared_main_sha256": "a0b1750755a94df7c94ed492f2b35492195632b1975519566309d52d2386720d"
+  }
+}

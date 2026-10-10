@@ -1,0 +1,387 @@
+{
+  "schema": 1,
+  "design_id": "runtime_io_v22_r1",
+  "created_utc": "2026-10-07T04:31:57.733665+00:00",
+  "status": "scientific_design_frozen; launcher_unimplemented; performance_uncollected",
+  "question": "Can independently calibrated busy capacity predict all-offer 500 ms miss rates and paired even-minus-burst contrasts within 3 pp in every validation trial/block under the retained half-CPU contract?",
+  "scope": "Queue-account transfer for one retained stock-Go service, host, boot and two arrival patterns; no prospective yielding interaction or novelty certification.",
+  "question_document": "docs/runtime_io_v22_frozen_question.md",
+  "assets": {
+    "v20_preparation_manifest": "analysis/runtime_io_v20_execution_delay/generation-03/preparation/manifest.json",
+    "image": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+    "retained_binaries": {
+      "image.server": {
+        "path": "analysis/runtime_io_v20_execution_delay/generation-03/preparation/image.server",
+        "sha256": "b7d249454d5477ffa0ade7cf1d90ba0eee8157ee166bb6e3f71d4cf912400efd"
+      },
+      "loadgen": {
+        "path": "analysis/runtime_io_v20_execution_delay/generation-03/preparation/loadgen",
+        "sha256": "03a3876212b87508c64489c79c612e1c757b3916c488fc2bda393ad957f9ac5e"
+      },
+      "gate": {
+        "path": "analysis/runtime_io_v20_execution_delay/generation-03/preparation/gate",
+        "sha256": "8e23791687088fa33d5cd3db56fd7decac7abc1edce4250a324f7bf0487aa679"
+      }
+    },
+    "schedule_source": "analysis/runtime_io_v12_parallelism_build/prepared/loadgen/main.go"
+  },
+  "service": {
+    "go_version": "go1.26.1",
+    "gomaxprocs": 1,
+    "workers": 1,
+    "queue_capacity": 128,
+    "sha_iterations": 44000,
+    "worker_yield": false,
+    "service_cpus": [
+      2,
+      4
+    ],
+    "client_controller_cpus": [
+      0,
+      1
+    ],
+    "cpu_max": "50000 100000",
+    "cpu_max_burst": 0,
+    "historical_resource_baseline": {
+      "limits": {
+        "cpu.max": "50000 100000",
+        "cpu.max.burst": "0",
+        "cpuset.cpus.effective": "2,4",
+        "memory.max": "max",
+        "pids.max": "18088"
+      },
+      "host_config": {
+        "Memory": 0,
+        "MemorySwap": 0,
+        "PidsLimit": null
+      }
+    },
+    "new_runtime_trace": false,
+    "new_kernel_attachment": false
+  },
+  "workload": {
+    "measurement_sec": 60,
+    "warmup_sec": 20,
+    "warmup_pattern_for_all_slots": "canonical_burst",
+    "cohort_offers": 6793,
+    "mean_offer_rps_numerator": 6793,
+    "mean_offer_rps_denominator": 60,
+    "client_concurrency": 512,
+    "http_timeout_sec": 5,
+    "client_trace_enabled": true,
+    "full_drain_after_warmup_and_measurement": true,
+    "reset_to_empty_before_measurement": true
+  },
+  "patterns": {
+    "A": {
+      "client_pattern": "bursty",
+      "burst_low_rps": 56.605,
+      "burst_high_rps": 169.815,
+      "burst_period_sec": 10,
+      "offsets_file": "A_offsets_ns.json",
+      "source_vector": "analysis/runtime_io_v20_execution_delay/generation-03/preparation/arrivals.json"
+    },
+    "B": {
+      "client_pattern": "steady",
+      "rate_cli_decimal": "113.21666666666667",
+      "offsets_file": "B_offsets_ns.json",
+      "integer_round_half_up": "(2*i*60000000000 + 6793) // (2*6793), i=0..6792"
+    },
+    "warmup": {
+      "offsets_file": "warmup_offsets_ns.json",
+      "offers": 2265
+    }
+  },
+  "trial_order": [
+    {
+      "id": "q_A",
+      "role": "qualification",
+      "pattern": "A",
+      "collection_order": 1
+    },
+    {
+      "id": "q_B",
+      "role": "qualification",
+      "pattern": "B",
+      "collection_order": 2
+    },
+    {
+      "id": "cal_1",
+      "role": "calibration",
+      "pattern": "A",
+      "collection_order": 3
+    },
+    {
+      "id": "cal_2",
+      "role": "calibration",
+      "pattern": "A",
+      "collection_order": 4
+    },
+    {
+      "id": "b1_A",
+      "role": "validation",
+      "block": 1,
+      "pattern": "A",
+      "collection_order": 5
+    },
+    {
+      "id": "b1_B",
+      "role": "validation",
+      "block": 1,
+      "pattern": "B",
+      "collection_order": 6
+    },
+    {
+      "id": "b2_B",
+      "role": "validation",
+      "block": 2,
+      "pattern": "B",
+      "collection_order": 7
+    },
+    {
+      "id": "b2_A",
+      "role": "validation",
+      "block": 2,
+      "pattern": "A",
+      "collection_order": 8
+    },
+    {
+      "id": "b3_B",
+      "role": "validation",
+      "block": 3,
+      "pattern": "B",
+      "collection_order": 9
+    },
+    {
+      "id": "b3_A",
+      "role": "validation",
+      "block": 3,
+      "pattern": "A",
+      "collection_order": 10
+    },
+    {
+      "id": "b4_A",
+      "role": "validation",
+      "block": 4,
+      "pattern": "A",
+      "collection_order": 11
+    },
+    {
+      "id": "b4_B",
+      "role": "validation",
+      "block": 4,
+      "pattern": "B",
+      "collection_order": 12
+    }
+  ],
+  "validation_blocks": 4,
+  "validation_trials": 8,
+  "qualification_trials": 2,
+  "calibration_trials": 2,
+  "calibration": {
+    "trial_ids": [
+      "cal_1",
+      "cal_2"
+    ],
+    "fixed_half_open_windows_sec": [
+      [
+        6.5,
+        9.5
+      ],
+      [
+        16.5,
+        19.5
+      ],
+      [
+        26.5,
+        29.5
+      ],
+      [
+        36.5,
+        39.5
+      ],
+      [
+        46.5,
+        49.5
+      ],
+      [
+        56.5,
+        59.5
+      ]
+    ],
+    "window_total_sec_per_trial": 18,
+    "required_queue_strictly_above": 5,
+    "backlog_requirement": "All windows throughout, for all clock-bracket placements; otherwise inadequate calibration, no alternate-window selection.",
+    "point_capacity": "(C_1 + C_2) / 36; C_j counted at clock-bracket midpoint",
+    "max_relative_trial_capacity_disagreement": 0.05,
+    "count_bounds": "certainly-in-window-union and possibly-in-window-union completion counts under shared clock bracket",
+    "sensitivity_lower": "0.95 * min(C_j_low/18)",
+    "sensitivity_upper": "1.05 * max(C_j_high/18)",
+    "sensitivity_padding_fraction": 0.05,
+    "sensitivity_grid_count": 101,
+    "also_include_point_capacity": true,
+    "range_is_confidence_interval": false,
+    "inadequate_or_unstable_action": "Stop before validation; preserve both calibration records; no valid-performance replacement."
+  },
+  "models": {
+    "M_busy": {
+      "model": "initially_empty_constant_service_fifo",
+      "capacity_source": "fixed calibration busy windows"
+    },
+    "M_cpu": {
+      "model": "initially_empty_constant_service_fifo",
+      "capacity": "0.5 / arithmetic_mean(c_1,c_2)",
+      "c_j": "post-reset-through-drain cgroup usage seconds / calibration completed jobs",
+      "zero_completed_jobs": "unassessable"
+    },
+    "shared": {
+      "max_in_system": 129,
+      "max_waiting": 128,
+      "complete_before_admit_at_equal_timestamp": true,
+      "service_time_sec": "1 / capacity_jobs_per_sec",
+      "client_response_approximation": "service completion",
+      "rejections_count_as_misses": true,
+      "omissions": [
+        "entry delay",
+        "HTTP/handler/publication delay",
+        "cancellation",
+        "pulsed quota supply"
+      ]
+    }
+  },
+  "prediction_gate": {
+    "must_seal_before_first_validation": true,
+    "allowed_fit_inputs": [
+      "cal_1",
+      "cal_2"
+    ],
+    "excluded_fit_inputs": [
+      "qualification results",
+      "validation results",
+      "actual validation dispatch",
+      "old-session fitted capacity"
+    ],
+    "sealed_products": [
+      "scientific design",
+      "implemented source/asset hashes",
+      "calibration evidence hashes",
+      "both capacities and sensitivity range",
+      "exact arrival vectors",
+      "per-ID predictions",
+      "summary predictions",
+      "decision thresholds",
+      "prediction creation time"
+    ],
+    "postvalidation_refit_label": "exploratory only; never a frozen-prediction pass",
+    "sensitivity_output": "Sampled-capacity summaries; per-ID predictions required for point M_busy and M_cpu."
+  },
+  "decision": {
+    "primary_model": "M_busy",
+    "deadline_ms": 500,
+    "denominator": "all 6793 scheduled offers",
+    "trial_abs_miss_error_pp_max": 3.0,
+    "require_all_validation_trials": true,
+    "contrast": "miss_B - miss_A",
+    "paired_contrast_abs_error_pp_max": 3.0,
+    "require_all_validation_blocks": true,
+    "primary_check_count": 12,
+    "queue_peak_abs_error_jobs_max": 10,
+    "rejected_fraction_abs_error_pp_max": 0.5,
+    "ordinary_recovery_mean_abs_error_ms_max": 250,
+    "ordinary_recovery_switches_sec": [
+      10,
+      20,
+      30,
+      40,
+      50
+    ],
+    "recovery_queue_threshold_inclusive": 5,
+    "recovery_horizon_sec": 5,
+    "censored_recovery_can_pass": false,
+    "final_drain_separate": true,
+    "recovery_clock_acceptance": "worst absolute admissible error within250 ms, using shared-bracket/event-boundary ranges",
+    "even_prediction_screen": {
+      "enabled_if": "sensitivity_lower_capacity > 6793/60",
+      "min_all_offer_500ms_success_pct": 99.0,
+      "max_rejections": 0,
+      "max_queue_peak": 10,
+      "require_every_B_trial": true,
+      "otherwise": "safely-below-capacity comparison unestablished; test frozen primary predictions without forcing zero misses"
+    },
+    "baseline_advantage": {
+      "score_per_block": "mean of two absolute trial miss errors",
+      "busy_score_strictly_lower_in_every_block": true,
+      "minimum_mean_block_score_improvement_pp": 1.0,
+      "supporting_only": true
+    },
+    "additional_reported": [
+      "queue on100ms grid",
+      "stage residuals and coverage",
+      "successful p99",
+      "all-offer1s misses",
+      "successful responses after1s",
+      "CPU/job",
+      "delivered CPU",
+      "cancellation",
+      "final drain"
+    ],
+    "requests_are_independent_replications": false,
+    "posthoc_significance_or_equivalence_gate": false,
+    "stop_for_valid_scientific_failure": false,
+    "precedence": [
+      "incomplete/invalid evidence",
+      "inadequate/unstable calibration",
+      "primary transfer fail/pass",
+      "supporting queue/even/baseline labels"
+    ]
+  },
+  "technical_acceptance": {
+    "all_ids_and_offsets_exact": true,
+    "raw_counter_and_join_conservation": true,
+    "max_client_drops": 0,
+    "max_missed_arrivals": 0,
+    "dispatch_lag_p99_ms_max": 2,
+    "clock_bracket_width_ms_max": 1,
+    "host_server_anchors_verified": true,
+    "actual_assets_resources_power_health_verified": true,
+    "full_drain_and_empty_reset_verified": true,
+    "monitor_and_quiet_coverage_verified": true,
+    "ownership_cleanup_verified": true,
+    "service_rejections_timeouts_are_valid_adverse_outcomes_when_accounted": true,
+    "minimum_monitor_samples": 80,
+    "monitor_sample_period_sec": 1
+  },
+  "environment_policy": {
+    "initial_idle_sec": 600,
+    "sample_sec": 5,
+    "window_sec": 60,
+    "max_range_c": 2.0,
+    "max_abs_slope_c_per_min": 1.0,
+    "baseline_tolerance_c": 3.0,
+    "settling_timeout_sec": 1200,
+    "desktop_app_absent_during_performance_collection": true,
+    "new_boot_qualification_required": true,
+    "power_settings_and_sensor_inventory_fixed": true
+  },
+  "bounds_and_retries": {
+    "session_wall_clock_sec": 5400,
+    "session_includes": [
+      "qualification",
+      "calibration",
+      "prediction seal",
+      "initial idle",
+      "settling",
+      "validation"
+    ],
+    "cleanup_grace_sec": 120,
+    "client_allowance_sec": "duration+30",
+    "service_drain_sec_max": 100,
+    "max_total_technical_retries": 1,
+    "retry_only_failed_slot": true,
+    "accepted_trials_never_replaced": true,
+    "unstable_valid_calibration_never_retried": true,
+    "reboot_asset_source_or_protocol_change_stops_generation": true,
+    "incomplete_collection_can_primary_pass": false
+  },
+  "next_step": "Implement and seal preparation against revision1; no benchmark launcher supplied at Step3."
+}

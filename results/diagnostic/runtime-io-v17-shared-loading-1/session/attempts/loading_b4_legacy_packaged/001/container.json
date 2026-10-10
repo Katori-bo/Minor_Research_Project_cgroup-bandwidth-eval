@@ -1,0 +1,31 @@
+{
+  "id": "6fc07443b17ffbfd0bf1d456fcd3f62a9681fafd44385c593b34a3208f185dbb",
+  "name": "quota-diagnostic-890cf69c4bb50ee1",
+  "command": [
+    "docker",
+    "create",
+    "--name",
+    "quota-diagnostic-890cf69c4bb50ee1",
+    "--label",
+    "quota.diagnostic.session=/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v17-shared-loading-1/session",
+    "--cpuset-cpus=2,4",
+    "--cpu-period=100000",
+    "--cpu-quota=50000",
+    "-e",
+    "WORKERS=4",
+    "-e",
+    "QUEUE_SIZE=128",
+    "-e",
+    "GOMAXPROCS=1",
+    "-e",
+    "INSTRUMENT=1",
+    "-e",
+    "WORKER_YIELD=0",
+    "-p",
+    "127.0.0.1:18080:8080",
+    "--mount",
+    "type=bind,src=/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v17-shared-loading-1/session/loading_build/runtime_assets,dst=/qualification,readonly",
+    "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5"
+  ],
+  "image_id": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5"
+}

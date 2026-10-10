@@ -1,0 +1,29 @@
+{
+  "id": "3b23da83f495fc8065178a90cc1e82bfc9fea1331969e722b1bfd7b9a74a7da1",
+  "name": "quota-diagnostic-f5a488462b222efe",
+  "command": [
+    "docker",
+    "create",
+    "--name",
+    "quota-diagnostic-f5a488462b222efe",
+    "--label",
+    "quota.diagnostic.session=/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v16-repeatability-1/session",
+    "--cpuset-cpus=2,4",
+    "--cpu-period=100000",
+    "--cpu-quota=50000",
+    "-e",
+    "WORKERS=4",
+    "-e",
+    "QUEUE_SIZE=128",
+    "-e",
+    "GOMAXPROCS=1",
+    "-e",
+    "INSTRUMENT=1",
+    "-e",
+    "WORKER_YIELD=0",
+    "-p",
+    "127.0.0.1:18080:8080",
+    "sha256:27556b25b0ee24f9ff2ec33953283c1c0a91051f1355e6c1265e0cf1d4d70eba"
+  ],
+  "image_id": "sha256:27556b25b0ee24f9ff2ec33953283c1c0a91051f1355e6c1265e0cf1d4d70eba"
+}

@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-08T08:37:19.216395+00:00",
+  "step": 2,
+  "status": "independent exact SMT baseline and bounded comparison completed",
+  "novelty_established": false,
+  "real_system_coverage_established": false,
+  "scientific_collection_launched": false,
+  "source_files_sha256": {
+    "analysis/finite_fifo_deadline_reference.py": "945f4f8c057878467cf25453d3cae1ab36313cf45814b08bf48b22acf3511fab",
+    "analysis/finite_fifo_deadline_symbolic_check.py": "013598120ba62af333caec1beb98a08393f7c7c341aa234732e4149b4f0d612f",
+    "analysis/finite_fifo_deadline_smt.py": "6e173fef05e96e325114151e98a25c900df81961b8ad0eb3e262d13ec6998c8d",
+    "analysis/test_finite_fifo_deadline_smt.py": "13478143ccdc28f88b238b58cbd1a1bf6c37c769b061f1dfe7b1b903a82e2362",
+    "analysis/compare_finite_fifo_solvers.py": "74680ef16ae350ac42b323b26e75888f0f8b81a1818b7b2dc49fafc3df35d891",
+    "analysis/check_finite_fifo_smt_time_limits.py": "4e3a4d5a3833b0aaf47c87ef7c1734a0d1cef9c3f31a9c4f6fc1e5106da0a039",
+    "analysis/finite_fifo_smt_requirements.txt": "2bc40e2fcd7a609ec720d16ae245d16061a265276184c9c9bb7460cc5a0e6d56",
+    "docs/runtime_io_fifo_smt_step2_20261008.md": "c0f2b2009bb9721c4a14f39fb5631ef31e40f4236503c3d19f2209119ad89fc2"
+  },
+  "tests": {
+    "date_utc": "2026-10-08T08:32:56.452936+00:00",
+    "command": "/tmp/fifo-step2-venv/bin/python3 -m unittest discover -s analysis -p test_finite_fifo_deadline_smt.py -v",
+    "exit_code": 0,
+    "tests_passed": 6,
+    "reported_seconds": 8.056,
+    "provenance": "completed terminal session 65273; packaging does not rerun tests",
+    "comparisons": {
+      "exhaustive": 90,
+      "seeded_rational": 100,
+      "directed": 12,
+      "scale_origin": 1,
+      "total": 203,
+      "whole_cell_checks": "all cells in 12 directed and first 20 seeded rational problems"
+    },
+    "seed": 810202602
+  },
+  "comparison": {
+    "design_sha256": "0695942d8e7e33d5317f614b7eae004a2943f02bc97eb4a7193e7ebad051fa2e",
+    "cases": 16,
+    "runs": 144,
+    "exact_runs": 138,
+    "incomplete_runs": 6,
+    "all_completed_extrema_agree": true,
+    "verified_witnesses": true,
+    "hard_timeouts": 0
+  },
+  "sensitivity": {
+    "post_pilot": true,
+    "runs": 4,
+    "exact_runs": 4,
+    "resolves_both_initially_incomplete_cases": true
+  },
+  "preservation": {
+    "protected_files_checked": 1911,
+    "mismatches": [],
+    "prior_seals": [
+      {
+        "directory": "analysis/runtime_io_deadline_guard_exploration/20261008-review",
+        "checked": 8,
+        "mismatches": []
+      },
+      {
+        "directory": "analysis/runtime_io_originality_review/20261008-01",
+        "checked": 5,
+        "mismatches": []
+      },
+      {
+        "directory": "analysis/runtime_io_fifo_reference/20261008-01",
+        "checked": 15,
+        "mismatches": []
+      }
+    ],
+    "documents_unchanged": {
+      "docs/runtime_io_short_working_draft_v4.md": true,
+      "docs/runtime_io_load_dependent_baseline_assessment_20261008.md": true
+    },
+    "scientific_collection_launched": false
+  },
+  "dependency": {
+    "package": "z3-solver",
+    "package_version": "4.15.4.0",
+    "z3_version": "4.15.4",
+    "installed_path": "/tmp/fifo-step2-venv/lib/python3.12/site-packages/z3",
+    "selected_installed_files_sha256": {
+      "z3/lib/libz3.so": "56d9977b9276bcb8cda9973a14058fcaa9f3bfee14ed57408b9faacd76d4d8f3",
+      "z3/z3.py": "928428b680721433616cd2ca6662c1ada979f4f322ccdd3825b09b5237dc7f26",
+      "z3_solver-4.15.4.0.dist-info/METADATA": "f71f14e601ac0a1142e70c872cfe192b072eac897fceaf5def8de04b3e710f58"
+    }
+  },
+  "sources": [
+    {
+      "title": "Z3Py guide",
+      "url": "https://ericpony.github.io/z3py-tutorial/guide-examples.htm",
+      "retrieved_date": "2026-10-08",
+      "role": "Primary solver API, exact rationals, sat/unsat/unknown semantics; not novelty evidence"
+    }
+  ],
+  "interpretation": "Reachable symbolic analysis is a promising efficiency baseline; no new algorithm principle or published competitor advantage established.",
+  "next_offline_gate": "Identify, prove and compare a specific structural improvement against the existing reachable baseline and relevant optimized generic encodings; audit closest prior methods.",
+  "limitations": [
+    "small synthetic traces",
+    "three repeats",
+    "uncontrolled desktop host",
+    "outputs differ",
+    "one unoptimized generic SMT encoding",
+    "peak RSS includes runtime/imports/verification",
+    "not a published algorithm reproduction",
+    "Only a common constant service parameter",
+    "No checked UNSAT proof objects",
+    "Citation audit remains open"
+  ]
+}

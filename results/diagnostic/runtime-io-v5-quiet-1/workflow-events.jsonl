@@ -1,0 +1,10 @@
+{"at": "2026-10-02T11:30:18.333918+05:30", "state": "starting", "stage": "launch", "error": null, "sleep_inhibitor": true}
+{"at": "2026-10-02T11:30:18.410727+05:30", "state": "running", "stage": "acquire-experiment-lock", "worker_pid": 350278, "error": null}
+{"at": "2026-10-02T11:30:18.411119+05:30", "state": "running", "stage": "build-and-go-tests", "command": ["/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/build.sh"]}
+{"at": "2026-10-02T11:30:18.913635+05:30", "stage": "build-and-go-tests", "state": "stage_complete"}
+{"at": "2026-10-02T11:30:18.954614+05:30", "state": "running", "stage": "python-regression-tests", "command": ["/usr/bin/python3", "-m", "unittest", "discover", "-s", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic", "-p", "test_*.py", "-v"]}
+{"at": "2026-10-02T11:30:19.295942+05:30", "stage": "python-regression-tests", "state": "stage_complete"}
+{"at": "2026-10-02T11:30:19.296142+05:30", "state": "running", "stage": "pilot-collection", "command": ["/usr/bin/python3", "-u", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py", "new", "--session", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v5-quiet-1/pilot", "--pilot"]}
+{"at": "2026-10-02T11:54:23.804941+05:30", "stage": "pilot-collection", "state": "stage_complete"}
+{"at": "2026-10-02T11:54:23.805123+05:30", "state": "running", "stage": "pilot-analysis", "command": ["/usr/bin/python3", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/analyze.py", "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v5-quiet-1/pilot"]}
+{"at": "2026-10-02T11:54:37.176086+05:30", "state": "failed", "stage": "pilot-analysis", "error": "pilot-analysis exited with code 1; see this launch log for the reason"}

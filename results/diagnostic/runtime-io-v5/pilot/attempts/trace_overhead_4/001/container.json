@@ -1,0 +1,28 @@
+{
+  "id": "61b69bc51cdcfc2df89529e998e35d4d89c613df9e46d85b38546300e5bd349e",
+  "name": "quota-diagnostic-a7fd1d11a6c66aad",
+  "command": [
+    "docker",
+    "create",
+    "--name",
+    "quota-diagnostic-a7fd1d11a6c66aad",
+    "--label",
+    "quota.diagnostic.session=/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v5/pilot",
+    "--cpuset-cpus=2,4",
+    "--cpu-period=100000",
+    "--cpu-quota=50000",
+    "-e",
+    "WORKERS=4",
+    "-e",
+    "QUEUE_SIZE=128",
+    "-e",
+    "GOMAXPROCS=2",
+    "-e",
+    "INSTRUMENT=1",
+    "-e",
+    "TRACE_DIAGNOSTIC=1",
+    "-p",
+    "127.0.0.1:18080:8080",
+    "quota-diagnostic-service:4"
+  ]
+}

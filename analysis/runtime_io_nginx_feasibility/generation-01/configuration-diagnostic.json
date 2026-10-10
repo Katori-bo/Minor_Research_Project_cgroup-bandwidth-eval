@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_nginx_feasibility/generation-01/software/nginx",
+    "-t",
+    "-p",
+    "/tmp/research-nginx-config-vn8ng4bw/",
+    "-c",
+    "/tmp/research-nginx-config-vn8ng4bw/nginx.conf",
+    "-e",
+    "stderr"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "2026/10/09 22:50:03 [emerg] 13#0: unknown directive \"return\" in /tmp/research-nginx-config-vn8ng4bw/nginx.conf:32\nnginx: configuration file /tmp/research-nginx-config-vn8ng4bw/nginx.conf test failed\n",
+  "config": "daemon off;\nmaster_process on;\nworker_processes 1;\npid /tmp/research-nginx-config-vn8ng4bw/nginx.pid;\nerror_log stderr notice;\nevents { worker_connections 128; use epoll; multi_accept off; accept_mutex off; }\nhttp {\nclient_body_temp_path /tmp/research-nginx-config-vn8ng4bw/client;\nproxy_temp_path /tmp/research-nginx-config-vn8ng4bw/proxy;\nfastcgi_temp_path /tmp/research-nginx-config-vn8ng4bw/fastcgi;\nuwsgi_temp_path /tmp/research-nginx-config-vn8ng4bw/uwsgi;\nscgi_temp_path /tmp/research-nginx-config-vn8ng4bw/scgi;\n    access_log off;\n    sendfile off;\n    aio off;\n    keepalive_timeout 0;\n    client_header_timeout 10s;\n    client_body_timeout 10s;\n    send_timeout 10s;\n    server {\n        listen 8080;\n        location = /health { stub_status; gzip off; }\n        location = /compress {\n            alias /input/corpus.ndjson;\n            default_type application/x-ndjson;\n            gzip on;\n            gzip_comp_level 6;\n            gzip_min_length 20;\n            gzip_types application/x-ndjson;\n            add_header X-Request-ID $http_x_request_id always;\n        }\n        location / { return 404; }\n    }\n}\n",
+  "service_started": false,
+  "workload_offers": 0
+}

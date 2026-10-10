@@ -1,0 +1,23 @@
+[
+  "/usr/bin/perf",
+  "stat",
+  "-a",
+  "-C",
+  "2,4",
+  "-A",
+  "-j",
+  "-D",
+  "-1",
+  "--timeout",
+  "300000",
+  "--control",
+  "fd:3,9",
+  "-o",
+  "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_minimal_counter_closing/generation-02/counter_fixtures/compute_2/perf.jsonl",
+  "-e",
+  "{cycles:u,instructions:u}",
+  "-G",
+  "quota-period-cost-fixture-3cc5ba30ff924f80aab27a49fab23fc7",
+  "--",
+  "/usr/bin/cat"
+]

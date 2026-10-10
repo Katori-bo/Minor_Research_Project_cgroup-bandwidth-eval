@@ -1,0 +1,58 @@
+
+[2026-09-30T01:24:55.825369+05:30] python-regression-tests: /usr/bin/python3 -m unittest discover -s /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic -p 'test_*.py' -v
+test_client_launch_preserves_flags_after_trace_toggle (test_diagnostic.DiagnosticPlanTests.test_client_launch_preserves_flags_after_trace_toggle) ... ok
+test_frozen_matrix_and_pilot (test_diagnostic.DiagnosticPlanTests.test_frozen_matrix_and_pilot) ... ok
+test_interaction_uses_trials_as_units (test_diagnostic.DiagnosticPlanTests.test_interaction_uses_trials_as_units) ... ok
+test_offline_usb_power_source_does_not_change_power_record (test_diagnostic.DiagnosticPlanTests.test_offline_usb_power_source_does_not_change_power_record) ... ok
+test_pilot_gate_rejects_missing_timing_and_excess_overhead (test_diagnostic.DiagnosticPlanTests.test_pilot_gate_rejects_missing_timing_and_excess_overhead) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.227s
+
+OK
+
+[2026-09-30T01:24:56.143967+05:30] pilot-collection: /usr/bin/python3 -u /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py resume --session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix/pilot
+SESSION: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix/pilot
+Settling: at least 600s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 55.25}
+Settling 60s: {'k10temp:Tctl': 63.125}
+Settling 120s: {'k10temp:Tctl': 67.0}
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py", line 560, in <module>
+    main()
+    ~~~~^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py", line 546, in main
+    old.prepare_environment(session)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/scripts/experiment.py", line 135, in prepare_environment
+    summary = settle(session / 'initial-settling.json', initial_idle=True, expected_power=settings)
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/scripts/experiment.py", line 118, in settle
+    time.sleep(POLICY['sample_sec'])
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py", line 513, in stop
+    raise KeyboardInterrupt(f'signal {signum}')
+KeyboardInterrupt: signal 15
+
+STOPPED (interrupted): signal 15
+Evidence preserved in /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix.
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 141, in run_worker
+    execute(directory, lock)
+    ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 112, in execute
+    stage_command(directory, 'pilot-collection', collection_command(pilot, pilot=True), lock)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 40, in stage_command
+    code = process.wait()
+  File "/usr/lib/python3.14/subprocess.py", line 1279, in wait
+    return self._wait(timeout=timeout)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 2084, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.14/subprocess.py", line 2042, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 135, in stop
+    raise KeyboardInterrupt(f'signal {signum}')
+KeyboardInterrupt: signal 15

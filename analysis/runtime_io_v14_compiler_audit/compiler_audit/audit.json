@@ -1,0 +1,219 @@
+{
+  "passed": true,
+  "compiler_image_id": "sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039",
+  "records": {
+    "legacy": {
+      "image": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+      "binary_sha256": "b7d249454d5477ffa0ade7cf1d90ba0eee8157ee166bb6e3f71d4cf912400efd",
+      "functions": {
+        "work": {
+          "normalized_sha256": "50aeba0aad0438ffa72724e3bad439bcc52ea5fcbba709a8c6b8bf70a41dce9a",
+          "instruction_lines": 47,
+          "time_since_calls": 0,
+          "calls": [
+            "crypto/sha256.Sum256(SB)",
+            "runtime.morestack_noctxt.abi0(SB)"
+          ]
+        },
+        "worker": {
+          "normalized_sha256": "b2cf54b1ff74f2a61dde8b8717b88987e0f9afcba6e676a47a8c50face13f73a",
+          "instruction_lines": 120,
+          "time_since_calls": 0,
+          "calls": [
+            "runtime.chanrecv2(SB)",
+            "runtime.convT64(SB)",
+            "runtime/trace.Logf(SB)",
+            "runtime/trace.StartRegion(SB)",
+            "main.(*service).runJob(SB)",
+            "main.(*service).runJob(SB)",
+            "runtime.mcall(SB)",
+            "runtime.morestack_noctxt.abi0(SB)"
+          ]
+        },
+        "runJob": {
+          "normalized_sha256": "001036058fb45ed92edd9f9c39066325c04b489aaa331ea733b07073f13824eb",
+          "instruction_lines": 227,
+          "time_since_calls": 0,
+          "calls": [
+            "time.Now(SB)",
+            "main.work(SB)",
+            "AX",
+            "time.Now(SB)",
+            "CX",
+            "time.Time.Sub(SB)",
+            "time.Time.Sub(SB)",
+            "internal/sync.(*Mutex).lockSlow(SB)",
+            "time.Time.Sub(SB)",
+            "time.Time.Sub(SB)",
+            "time.Time.Sub(SB)",
+            "runtime.growslice(SB)",
+            "runtime.gcWriteBarrier2(SB)",
+            "internal/sync.(*Mutex).unlockSlow(SB)",
+            "runtime.chansend1(SB)",
+            "runtime.morestack_noctxt.abi0(SB)"
+          ]
+        },
+        "ablationRunJob": {
+          "normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "instruction_lines": 0,
+          "time_since_calls": 0,
+          "calls": []
+        }
+      }
+    },
+    "v14_clocks": {
+      "image": "sha256:8cb81b5a6a2b2a5788dd6e33e105c60785e37d0d01c961a1b031f74aa2951516",
+      "binary_sha256": "0d114df836b8043b654b175dd2ad7485b005edb1995a105914e75abe6c4af058",
+      "functions": {
+        "work": {
+          "normalized_sha256": "50aeba0aad0438ffa72724e3bad439bcc52ea5fcbba709a8c6b8bf70a41dce9a",
+          "instruction_lines": 47,
+          "time_since_calls": 0,
+          "calls": [
+            "crypto/sha256.Sum256(SB)",
+            "runtime.morestack_noctxt.abi0(SB)"
+          ]
+        },
+        "worker": {
+          "normalized_sha256": "a9f6f73e040dade402956454af4faf6c5744233ae24228022aa6bdd44d18420e",
+          "instruction_lines": 130,
+          "time_since_calls": 0,
+          "calls": [
+            "main.(*service).ablationWorker(SB)",
+            "runtime.chanrecv2(SB)",
+            "runtime.convT64(SB)",
+            "runtime/trace.Logf(SB)",
+            "runtime/trace.StartRegion(SB)",
+            "main.(*service).runJob(SB)",
+            "main.(*service).runJob(SB)",
+            "runtime.mcall(SB)",
+            "runtime.morestack_noctxt.abi0(SB)"
+          ]
+        },
+        "runJob": {
+          "normalized_sha256": "dfe6077f9d9c1615ee9f8065879b2f226db24e8c47fd8ba3cbb292b19326c047",
+          "instruction_lines": 227,
+          "time_since_calls": 0,
+          "calls": [
+            "time.Now(SB)",
+            "main.work(SB)",
+            "AX",
+            "time.Now(SB)",
+            "CX",
+            "time.Time.Sub(SB)",
+            "time.Time.Sub(SB)",
+            "internal/sync.(*Mutex).lockSlow(SB)",
+            "time.Time.Sub(SB)",
+            "time.Time.Sub(SB)",
+            "time.Time.Sub(SB)",
+            "runtime.growslice(SB)",
+            "runtime.gcWriteBarrier2(SB)",
+            "internal/sync.(*Mutex).unlockSlow(SB)",
+            "runtime.chansend1(SB)",
+            "runtime.morestack_noctxt.abi0(SB)"
+          ]
+        },
+        "ablationRunJob": {
+          "normalized_sha256": "613117be6a5f0d16b512d7d7e3df75b38e00a00ade1edefb7f684562971fffcc",
+          "instruction_lines": 395,
+          "time_since_calls": 5,
+          "calls": [
+            "time.Now(SB)",
+            "main.work(SB)",
+            "time.Now(SB)",
+            "CX",
+            "time.Time.Sub(SB)",
+            "time.Time.Sub(SB)",
+            "time.Since(SB)",
+            "internal/sync.(*Mutex).lockSlow(SB)",
+            "time.Since(SB)",
+            "time.Time.Sub(SB)",
+            "time.Time.Sub(SB)",
+            "time.Time.Sub(SB)",
+            "runtime.growslice(SB)",
+            "runtime.gcWriteBarrier2(SB)",
+            "internal/sync.(*Mutex).unlockSlow(SB)",
+            "time.Since(SB)",
+            "time.Since(SB)",
+            "runtime.chansend1(SB)",
+            "time.Since(SB)",
+            "internal/sync.(*Mutex).lockSlow(SB)",
+            "internal/sync.(*Mutex).unlockSlow(SB)",
+            "runtime.gopanic(SB)",
+            "runtime.morestack_noctxt.abi0(SB)"
+          ]
+        }
+      }
+    },
+    "v13": {
+      "image": "sha256:7a890946152ed349445874ab89657e8a9e1296ffb962c1d5d364a42bd179b09c",
+      "binary_sha256": "e246f66e560f1e88e5e708bb3420ca267ab2e92cfeebafa195d378442a718369",
+      "functions": {
+        "work": {
+          "normalized_sha256": "50aeba0aad0438ffa72724e3bad439bcc52ea5fcbba709a8c6b8bf70a41dce9a",
+          "instruction_lines": 47,
+          "time_since_calls": 0,
+          "calls": [
+            "crypto/sha256.Sum256(SB)",
+            "runtime.morestack_noctxt.abi0(SB)"
+          ]
+        },
+        "worker": {
+          "normalized_sha256": "4c1508b943e582d0ebe243d90ea3b90f9e7e4b7c679f3c0d2d1773f1b7fda322",
+          "instruction_lines": 120,
+          "time_since_calls": 0,
+          "calls": [
+            "runtime.chanrecv2(SB)",
+            "runtime.convT64(SB)",
+            "runtime/trace.Logf(SB)",
+            "runtime/trace.StartRegion(SB)",
+            "main.(*service).runJob(SB)",
+            "main.(*service).runJob(SB)",
+            "runtime.mcall(SB)",
+            "runtime.morestack_noctxt.abi0(SB)"
+          ]
+        },
+        "runJob": {
+          "normalized_sha256": "b88f42e01ac05718bd0b385e1875096bf6cd05d127e0f829a43c4027607000e7",
+          "instruction_lines": 244,
+          "time_since_calls": 0,
+          "calls": [
+            "time.Now(SB)",
+            "main.work(SB)",
+            "AX",
+            "time.Now(SB)",
+            "CX",
+            "time.Time.Sub(SB)",
+            "time.Time.Sub(SB)",
+            "internal/sync.(*Mutex).lockSlow(SB)",
+            "time.Time.Sub(SB)",
+            "time.Time.Sub(SB)",
+            "time.Time.Sub(SB)",
+            "runtime.growslice(SB)",
+            "runtime.gcWriteBarrier2(SB)",
+            "internal/sync.(*Mutex).unlockSlow(SB)",
+            "runtime.chansend1(SB)",
+            "main.(*service).completionRunJob(SB)",
+            "runtime.morestack_noctxt.abi0(SB)"
+          ]
+        },
+        "ablationRunJob": {
+          "normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "instruction_lines": 0,
+          "time_since_calls": 0,
+          "calls": []
+        }
+      }
+    }
+  },
+  "checks": {
+    "work_code_matches_legacy": {
+      "legacy": true,
+      "v14_clocks": true,
+      "v13": true
+    },
+    "zero_runJob_matches_legacy": null,
+    "zero_worker_matches_legacy": null
+  },
+  "limitation": "Normalized instructions omit code addresses and source lines. Static identity does not prove identical timing, cache alignment, scheduling or host state."
+}

@@ -1,0 +1,25 @@
+{
+  "attempt": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v6-components-1/attempts/component_b3_combined/001",
+  "runtime_sha256": "4dab519ddfe15ddb638c749266f3fdab1d4995f9e4aab60c8cc46f2577cf89b9",
+  "mapping_uncertainty_ns": 671,
+  "scope": "Waiting states intersecting handler_exit_to_connection_done; midpoint clock mapping",
+  "waits": [
+    {
+      "stack": "sync.(*Cond).Wait @ 0x48e5d2\nsync/cond.go:71\nnet/http.(*connReader).abortPendingRead @ 0x628555\nnet/http/server.go:750\nnet/http.(*response).finishRequest @ 0x62d9e6\nnet/http/server.go:1676\nnet/http.(*conn).serve @ 0x62e6f4\nnet/http/server.go:2080",
+      "overlap_ns": 50447235917,
+      "transition_count": 2264
+    },
+    {
+      "stack": "sync.(*Mutex).Lock @ 0x6469bb\nsync/mutex.go:46\nmain.(*diagnostic).record @ 0x6469ba\nresearch-service/trace_diag.go:166\nmain.(*diagnostic).mark @ 0x646c44\nresearch-service/trace_diag.go:184\nmain.(*service).workHandler.func2 @ 0x644607\nresearch-service/main.go:209\nmain.(*service).workHandler @ 0x643f8c\nresearch-service/main.go:271\nnet/http.HandlerFunc.ServeHTTP @ 0x630248\nnet/http/server.go:2286\nnet/http.(*ServeMux).ServeHTTP @ 0x631fe6\nnet/http/server.go:2828\nnet/http.serverHandler.ServeHTTP @ 0x63834d\nnet/http/server.go:3311\nnet/http.(*conn).serve @ 0x62e6af\nnet/http/server.go:2073",
+      "overlap_ns": 2060416,
+      "transition_count": 5
+    },
+    {
+      "stack": "(no transition stack)",
+      "overlap_ns": 13188,
+      "transition_count": 50
+    }
+  ],
+  "events_with_capped_writer_stack": 176,
+  "limits": "Overlapping waits across goroutines are summed, not elapsed wall time. Stack occurrence counts are not CPU cost. Go Running does not prove OS CPU execution."
+}

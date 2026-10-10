@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "performance_run": false,
+  "prior_report_sha256": "f9a5c2532a7d1239bb4f01465a6dde573bed1101eabe44d6f63bdc915d939cdc",
+  "receipts": [
+    {
+      "label": "compile_race",
+      "argv": [
+        "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_software_audit/audit-01/toolchain/bin/go",
+        "test",
+        "-race",
+        "-c",
+        "-ldflags",
+        "-linkmode=external -extldflags=-static",
+        "-o",
+        "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_software_audit/audit-01/container_followup/service.race.test"
+      ],
+      "returncode": 0
+    },
+    {
+      "label": "container_race",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--pull=never",
+        "--network",
+        "none",
+        "--cpuset-cpus",
+        "0,1",
+        "-e",
+        "GOMAXPROCS=2",
+        "-v",
+        "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_software_audit/audit-01/container_followup:/audit:ro",
+        "sha256:2389ebfa5b7f43eeafbd6be0c3700cc46690ef842ad962f6c5bd6be49ed82039",
+        "/audit/service.race.test",
+        "-test.count=2",
+        "-test.timeout=120s",
+        "-test.v"
+      ],
+      "returncode": 0
+    }
+  ],
+  "historical_environment_checks": {
+    "full_environment_matches_except_yield": true,
+    "images_match": true,
+    "go_versions_match": true,
+    "godebug_values": [
+      ""
+    ]
+  },
+  "source_sha256": {
+    "go.mod": "03add46220d8804f97c5b9966c66b6da037ab94403a5570707ba5b3e558dafba",
+    "main_test.go": "2357765adc8255b34af937fe2d9371c30abddfbc6e162a5df70d03d5a895564d",
+    "audit_vectors_test.go": "648a22e504f7b98b4c65cd4b10a7ed1d83c7d5434f44bccf2f34f1d45ed84bea",
+    "yield_test.go": "c7a96bfdab0cb3577c64173c2c2485ff96cd4cd969758fa514ea28131873ff81",
+    "parallelism_service_test.go": "880ee84d61962b9f933d11df732d4265ba990eabd3de93279a162093d8b9591a",
+    "parallelism_service.go": "b92a2fc2e7949dc7793c3fe6c42c4330449234997533a82a61fa626f9765a507",
+    "main.go": "a0b1750755a94df7c94ed492f2b35492195632b1975519566309d52d2386720d",
+    "runtime_software_audit_test.go": "a1b40d8e4e163e52628fc7fc62e4527c4c630347c7ad4f91e9da2c59b155104c",
+    "trace_diag.go": "ad4dc8b64b1233c9dcf44ed087e57dd98d7f2bd89a7c69f9287a23e474b5866c",
+    "Dockerfile": "b45255c9a8cdbaa33565d188151cffd3591dd09aaec58e2db3b8788eab014a81",
+    "trace_diag_test.go": "1f0a378fe5c16fd485bfb62c4193ea09a5c0840589d03994e4dada2d88c2b3d4"
+  },
+  "vectors": {
+    "1": "630dcd2966c4336691125448bbb25b4ff412a49c732db2c8abc1b8581bd710dd",
+    "10": "ecb807a1906b5e5268b738f97d957a382e6e318fe30d404a46492494473761a0",
+    "44000": "6ce92f369a35e15408a64ba0300ad8f4ee2d2a49a11517f9e47de8325c70771c"
+  },
+  "race_binary_sha256": "fb4863494d5d9793aa1a4b85df92f8f8f95a68b6c04436466a1b8a848a64a131",
+  "audit_source_sha256": "110efa9513a906a491c67d8178db6d9f2f26b44174593b68e24fea42957998a1",
+  "host_trace_test_failure_preserved": true,
+  "limitation": "Every retained test plus added correctness/concurrency checks is run with the race detector in a container supporting /runtime.trace. Passing only covers exercised paths and does not exclude runtime effects or identify the period-reversal cause."
+}

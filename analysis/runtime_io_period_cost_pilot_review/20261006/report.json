@@ -1,0 +1,483 @@
+{
+  "review": "2026-10-06",
+  "decision_recomputed": "effect_not_reproduced",
+  "pilot_raw_replays_verified": 16,
+  "prior_trial_seals_verified": 16,
+  "offers": 108688,
+  "completed": 108688,
+  "fixtures_passed": true,
+  "cells": {
+    "100_off": {
+      "cpu_usec_per_completed_work": 3643.3633151773884,
+      "busy_capacity": 148.1145221196043,
+      "busy_cpu_cores": 0.4998206180230786,
+      "timely_500_fraction": 0.7342852936846753,
+      "timely_1000_fraction": 1.0,
+      "failure_fraction": 0.0,
+      "p99_e2e_ms": 746.020185
+    },
+    "100_on": {
+      "cpu_usec_per_completed_work": 3684.494737229501,
+      "busy_capacity": 148.08287940994055,
+      "busy_cpu_cores": 0.4998527891616087,
+      "timely_500_fraction": 0.723833357868394,
+      "timely_1000_fraction": 1.0,
+      "failure_fraction": 0.0,
+      "p99_e2e_ms": 757.69142275
+    },
+    "20_off": {
+      "cpu_usec_per_completed_work": 3591.0866701015752,
+      "busy_capacity": 151.3269995873858,
+      "busy_cpu_cores": 0.5000954094701123,
+      "timely_500_fraction": 0.8357868393934933,
+      "timely_1000_fraction": 1.0,
+      "failure_fraction": 0.0,
+      "p99_e2e_ms": 635.428311
+    },
+    "20_on": {
+      "cpu_usec_per_completed_work": 3642.037612247902,
+      "busy_capacity": 150.55440784226903,
+      "busy_cpu_cores": 0.5000934353863716,
+      "timely_500_fraction": 0.8066759899896953,
+      "timely_1000_fraction": 1.0,
+      "failure_fraction": 0.0,
+      "p99_e2e_ms": 660.1182615
+    }
+  },
+  "contrasts": {
+    "decision": "effect_not_reproduced",
+    "effect_reproduced": false,
+    "observer_screen_passed": false,
+    "decomposition_precision_passed": true,
+    "observer": {
+      "100": {
+        "cpu": {
+          "values": [
+            0.011777000918020692,
+            0.009428953212313147,
+            0.01381386948862217,
+            0.009882559670078036
+          ],
+          "mean": 0.011288839249884402,
+          "lower": 0.008070923571522393,
+          "upper": 0.014517027004417758,
+          "halfwidth": 0.0032230517164476826,
+          "scale": "relative change",
+          "measurement_bounds_included": true,
+          "margin": 0.01,
+          "passed": false
+        },
+        "busy_capacity": {
+          "values": [
+            -0.0004900107356685204,
+            0.0015796943143145472,
+            -0.002204542240814552,
+            0.0002546486733677906
+          ],
+          "mean": -0.000215029375069428,
+          "lower": -0.0039039188051694465,
+          "upper": 0.0034878181947139214,
+          "halfwidth": 0.003695868499941684,
+          "scale": "relative change",
+          "measurement_bounds_included": true,
+          "margin": 0.01,
+          "passed": true
+        },
+        "timely_500": {
+          "values": [
+            -0.009127042543795039,
+            -0.008685411452966307,
+            -0.029147651994700374,
+            0.005152362726335902
+          ],
+          "mean": -0.010451935816281455,
+          "lower": -0.03291581204221766,
+          "upper": 0.01201194040965475,
+          "halfwidth": 0.022463876225936208,
+          "scale": "fraction-point change",
+          "margin": 0.01,
+          "passed": false
+        },
+        "timely_1000": {
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 0.0,
+          "halfwidth": 0.0,
+          "scale": "fraction-point change",
+          "margin": 0.01,
+          "passed": true
+        },
+        "failure": {
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 0.0,
+          "halfwidth": 0.0,
+          "scale": "fraction-point change",
+          "margin": 0.001,
+          "passed": true
+        },
+        "p99": {
+          "values": [
+            0.009583579666957734,
+            0.019284044054371383,
+            0.050012182234854416,
+            -0.0165711209155998
+          ],
+          "mean": 0.015699127815562184,
+          "lower": -0.02778991640398566,
+          "upper": 0.06113353034710598,
+          "halfwidth": 0.04446172337554582,
+          "scale": "relative change",
+          "measurement_bounds_included": true,
+          "margin": 0.1,
+          "passed": true
+        }
+      },
+      "20": {
+        "cpu": {
+          "values": [
+            0.017866020317396474,
+            0.011127736663918525,
+            0.01683151986440453,
+            0.010544502288847435
+          ],
+          "mean": 0.014192211384515863,
+          "lower": 0.008092352911474426,
+          "upper": 0.020328979445536688,
+          "halfwidth": 0.006118313267031131,
+          "scale": "relative change",
+          "measurement_bounds_included": true,
+          "margin": 0.01,
+          "passed": false
+        },
+        "busy_capacity": {
+          "values": [
+            -0.010911070836878384,
+            0.0009675368741273382,
+            -0.00891272333311748,
+            -0.001581134111806269
+          ],
+          "mean": -0.00509631733610794,
+          "lower": -0.015071220570038216,
+          "upper": 0.00497944372555893,
+          "halfwidth": 0.010025332147798573,
+          "scale": "relative change",
+          "measurement_bounds_included": true,
+          "margin": 0.01,
+          "passed": false
+        },
+        "timely_500": {
+          "values": [
+            -0.06595024289709994,
+            0.003974679817459137,
+            -0.05284852053584577,
+            -0.0016193139997054962
+          ],
+          "mean": -0.029110849403798017,
+          "lower": -0.08552679583577041,
+          "upper": 0.02730509702817438,
+          "halfwidth": 0.0564159464319724,
+          "scale": "fraction-point change",
+          "margin": 0.01,
+          "passed": false
+        },
+        "timely_1000": {
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 0.0,
+          "halfwidth": 0.0,
+          "scale": "fraction-point change",
+          "margin": 0.01,
+          "passed": true
+        },
+        "failure": {
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 0.0,
+          "halfwidth": 0.0,
+          "scale": "fraction-point change",
+          "margin": 0.001,
+          "passed": true
+        },
+        "p99": {
+          "values": [
+            0.07523531499285427,
+            -0.005799684153841125,
+            0.09196714262218711,
+            -0.007248590457942902
+          ],
+          "mean": 0.039290787829649176,
+          "lower": -0.043978323920903756,
+          "upper": 0.1298126064436733,
+          "halfwidth": 0.08689546518228852,
+          "scale": "relative change",
+          "measurement_bounds_included": true,
+          "margin": 0.1,
+          "passed": false
+        }
+      }
+    },
+    "unobserved_period_effect": {
+      "cpu": {
+        "values": [
+          -0.0196958715280167,
+          -0.011558759266346155,
+          -0.014643307672496268,
+          -0.01192613726249622
+        ],
+        "mean": -0.01435203237093561,
+        "lower": -0.02022275651864859,
+        "upper": -0.008446131449881702,
+        "halfwidth": 0.005888312534383444,
+        "scale": "relative change",
+        "measurement_bounds_included": true
+      },
+      "busy_capacity": {
+        "values": [
+          0.028773334090511866,
+          0.01459436984040167,
+          0.024029890914485666,
+          0.018395737618376755
+        ],
+        "mean": 0.021680001951484857,
+        "lower": 0.010424353796963007,
+        "upper": 0.03306135105577073,
+        "halfwidth": 0.011318498629403862,
+        "scale": "relative change",
+        "measurement_bounds_included": true
+      }
+    },
+    "decomposition": {
+      "instructions_per_job": {
+        "values": [
+          -7.361638337814751e-05,
+          -1.371368640684321e-05,
+          -6.659548922740183e-05,
+          -4.157922975676121e-05
+        ],
+        "mean": -4.887500277042213e-05,
+        "lower": -9.211594311867407e-05,
+        "upper": -5.632192470995681e-06,
+        "halfwidth": 4.324187532383919e-05,
+        "scale": "relative change",
+        "measurement_bounds_included": true
+      },
+      "cycles_per_instruction": {
+        "values": [
+          0.0022111388866279053,
+          0.0017357865791180753,
+          0.0005274783758851099,
+          0.002875842167017143
+        ],
+        "mean": 0.0018392508529026612,
+        "lower": 0.0002612235035916989,
+        "upper": 0.003419767722207662,
+        "halfwidth": 0.0015792721093079816,
+        "scale": "relative change",
+        "measurement_bounds_included": true
+      },
+      "effective_cycles_per_user_sec": {
+        "values": [
+          0.01469976531637749,
+          0.0029677254441519176,
+          0.002984397053204733,
+          0.0048977950141521655
+        ],
+        "mean": 0.006407863781610062,
+        "lower": -0.00254425676814322,
+        "upper": 0.015440329211706258,
+        "halfwidth": 0.008992292989924738,
+        "scale": "relative change",
+        "measurement_bounds_included": true
+      },
+      "busy_cpu_cores": {
+        "values": [
+          0.001134272624388269,
+          -0.001102735631798486,
+          0.0008096644533026759,
+          0.0010845916551140526
+        ],
+        "mean": 0.00048156419007408334,
+        "lower": -0.0013904173870370302,
+        "upper": 0.00235705363440954,
+        "halfwidth": 0.0018737355107232851,
+        "scale": "relative change",
+        "measurement_bounds_included": true
+      }
+    },
+    "detectable_aggregate_signals": [],
+    "rejection_work_present": false,
+    "causal_mechanism_established": false,
+    "novelty_established": false,
+    "limitation": "Four blocks are a capped feasibility pilot, not a powered equivalence study. Aggregate user counters cover the whole service, not individual SHA calculations. Rejected-offer and runtime work remain included. Cycles/user-CPU is an effective aggregate clock proxy, not a verified worker frequency. No kernel scheduler trace, causal mechanism, generalization or novelty is established by a passing screen."
+  },
+  "matched_contract": {
+    "baseline": true,
+    "image": true,
+    "server_sha256": true,
+    "loadgen_sha256": true,
+    "gate_sha256": true,
+    "arrivals": true,
+    "power_settings": true
+  },
+  "matched_fixed_busy_window_rps": {
+    "pilot": {
+      "100": {
+        "values": [
+          147.94444444444446,
+          148.16666666666666,
+          148.16666666666666,
+          148.11111111111111
+        ],
+        "mean": 148.09722222222223
+      },
+      "20": {
+        "values": [
+          152.22222222222223,
+          150.5,
+          151.61111111111111,
+          150.44444444444446
+        ],
+        "mean": 151.19444444444446
+      }
+    },
+    "V20": {
+      "100": {
+        "values": [
+          150.66666666666666,
+          151.0,
+          151.11111111111111,
+          151.38888888888889
+        ],
+        "mean": 151.04166666666666
+      },
+      "20": {
+        "values": [
+          137.61111111111111,
+          139.27777777777777,
+          138.72222222222223,
+          139.05555555555554
+        ],
+        "mean": 138.66666666666666
+      }
+    }
+  },
+  "host": {
+    "pilot": {
+      "samples": 1280,
+      "scope": "all 80 saved warmup/arrival samples per trial",
+      "temperature_mean_c": 69.5064453125,
+      "temperature_min_c": 61.0,
+      "temperature_max_c": 74.875,
+      "desktop_pct_one_core": {
+        "plasmashell": 12.054723260850464,
+        "kwin_wayland": 7.52073286153137,
+        "baloo_file": 1.9592909139818606
+      },
+      "chatgpt_present": false,
+      "cpu_util_pct": {
+        "cpu": 6.662,
+        "cpu2": 7.6813046875,
+        "cpu3": 1.0864218749999999,
+        "cpu4": 37.822359375,
+        "cpu5": 4.3606718749999995
+      }
+    },
+    "V20": {
+      "samples": 1280,
+      "scope": "all 80 saved warmup/arrival samples per trial",
+      "temperature_mean_c": 61.5734375,
+      "temperature_min_c": 55.125,
+      "temperature_max_c": 67.875,
+      "desktop_pct_one_core": {
+        "baloo_file": 2.0040438622880075,
+        "kwin_wayland": 0.5012011025608253,
+        "plasmashell": 0.19546082451917027
+      },
+      "chatgpt_present": false,
+      "cpu_util_pct": {
+        "cpu": 5.036875,
+        "cpu2": 6.555640625,
+        "cpu3": 0.3499140625,
+        "cpu4": 37.829015625,
+        "cpu5": 1.918859375
+      }
+    }
+  },
+  "idle_baseline_c": {
+    "pilot": {
+      "k10temp:Tctl": 57.06730769230769
+    },
+    "V20": {
+      "k10temp:Tctl": 48.5
+    }
+  },
+  "causal_explanation_established": false,
+  "limits": [
+    "Host comparisons are descriptive, across sessions, not randomized interventions.",
+    "Host monitor summaries include warmup and arrivals; snapshot frequencies are not worker clocks.",
+    "Original V20 yielding arms are not repeated by this cost pilot.",
+    "The frozen decision and original evidence are unchanged."
+  ],
+  "source_seals": {
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b1_100_off/seal.json": "722bface3b206b9c01f580794a86fda632dd79a6a26f5123d9c85f09a861f470",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b1_100_on/seal.json": "695849cc62c92bda5c51be177896a8bffa16175ea29d97df99cc006a34d173b1",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b1_20_off/seal.json": "58a08d7889b54eb1de2e0a4c23b4aaeb572e8f56ed7bcaefc718cd642f771f5c",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b1_20_on/seal.json": "03dd8ff2a11aac9918c5ed86d4c84b82d852dd3f41f1ff73c7a9ff3fe9a0dd63",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b2_100_on/seal.json": "a60263be86fc69d229aba93a29645bc4b08556826a600ce9828e57264bce21ec",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b2_100_off/seal.json": "4471e4c0fafcedb1a93219536090ebd0a622435ab5a13c82052d86acd52358a1",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b2_20_on/seal.json": "39ded815264ab55bbf09c44370ebe810c8395b1e65fedb6870fa4b3934eb4559",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b2_20_off/seal.json": "fb4015819e22f4d888e2bede4bdd8bf11d027c07f72f2c16c6122c6d8379b9dc",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b3_20_off/seal.json": "8f9e562c8b043681b1ac002ea80d435f47bb4e4cc373bf29bb62753a558c7531",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b3_20_on/seal.json": "0d1c484a41a75b60a07ccf87c3294961c7a7526783715d3ee4f5985bff2d6d95",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b3_100_off/seal.json": "9ff955a49e70df746774d5c02e57460a05e108d0681b284d9433b53f110623e6",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b3_100_on/seal.json": "57ee60771b28e94bb8fad3f531ee2d4a55a72d4b235ecbeb305744643451fbcb",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b4_20_on/seal.json": "f928512a70b6d3a85710f67f911a41aad8b9ba08578967099e59451835f76e23",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b4_20_off/seal.json": "ad6ec02aa41fa8ba33aad4d1447cfbfb96f9af59334f055581cf7da0f16ea78d",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b4_100_on/seal.json": "fb800dab24ac4c215b2d1e31be3782e73246a98f0229788fe068b58877bf3efb",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b4_100_off/seal.json": "a05a3680684454965e693bd6a6b6969b30860fb2e2f83452c6be810acdc02e39",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b1_A/attempt-1791211963673189587/seal.json": "dd4654bd0212a230c323349890beafd7c0cad0af6b9c7b44278e7036a62f1361",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b1_B/attempt-1791212154015154060/seal.json": "3e096e8703150a1095f92d61ab8e4713b2e2545640b1a6ff0cbce950aa613db4",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b1_C/attempt-1791212349406005492/seal.json": "0b1f781664c9b5c1fad891acf79d6ef0503e73ed6d7788c0052518e4246ed550",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b1_D/attempt-1791212544770980204/seal.json": "60eec6aa0080f4359a1a9e8168468a680b4361eb0dd0aeb6a5aeba3f5aa1e56f",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b2_A/attempt-1791212930442338678/seal.json": "72027a080085b8b6fc4aba3df44c4dfd422ec4bee7a267b79f3c2314eaf39f8a",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b2_B/attempt-1791212735002531491/seal.json": "2ca2e00c65853e1c09595afa8d2cc03f10a4194d6b68a39cf94061d46490b5c2",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b2_C/attempt-1791213311146917500/seal.json": "9c460893862f95fa76e6b86f4ba0da2f0a009802ee9158c8cb2f88c511428879",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b2_D/attempt-1791213120825965432/seal.json": "99f4e74be1f88ec916c6ad77bac5d1022b9bf36f37932d0a873d47d7d9c04002",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b3_A/attempt-1791213892218043223/seal.json": "c15c12e4b2fba7b3321472fb350a6ce8e5a055769f45f8c418b575b3b346ef35",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b3_B/attempt-1791214087644740532/seal.json": "cfc50f15f14fc145af882de937cc3f3c3783e560ef1b24f3eac33caf7b558501",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b3_C/attempt-1791213506508047781/seal.json": "6efdf593850217c7e48bb7974a47bc28352359edbc5bd8faac9885a109f59e2a",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b3_D/attempt-1791213691829015681/seal.json": "3acfe0ee57c051e4c3d04b0d5bbabeb0fc3ebc3dcbd4c53ed13848723ab3533b",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b4_A/attempt-1791214858948326171/seal.json": "06018ef5ff9f6d4e55751a1163d0fdc86b5ed2bb618ec5d0da62781196f48dc6",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b4_B/attempt-1791214668616531124/seal.json": "f3eae8daf53a9d41c7f3b20f5642ab8973fd04f79649c397d4db388e66a39fb1",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b4_C/attempt-1791214478328360650/seal.json": "890f336286658746e588e042044eb4c667c58884e2f4f16556eb24256b61bd09",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b4_D/attempt-1791214282988796616/seal.json": "9e47a1b8da12baca20d168045182ff8caa38c7704e5bf3da90d6fb9bf4f340ee",
+    "analysis/runtime_io_period_cost_pilot/generation-02/analysis/1791227322172383591/seal.json": "38eac374f1a23769293b0bdd2e98de22840b5eb5e1f0bc57f0c7c5fa243221ea",
+    "analysis/runtime_io_period_cost_pilot/generation-02/counter_fixtures/seal.json": "49cec2cba1b861bd549c251ae08d659a0e699ff07d9ed60c03f1a65c2e62b0e2",
+    "analysis/runtime_io_period_cost_pilot/generation-02/preparation/seal.json": "0a04308d4d916c27ae4f012e5a8a9f16b3a1796f17a155660767033d8c7ef92b"
+  }
+}

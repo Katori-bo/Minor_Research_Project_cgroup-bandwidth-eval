@@ -1,0 +1,6 @@
+config = { print_maps_on_exit=false; }
+begin {
+  @seen[123]=1;
+  printf("MAP_API %d %d %d\n", has_key(@seen,123), has_key(@seen,456), delete(@seen,123));
+  exit();
+}

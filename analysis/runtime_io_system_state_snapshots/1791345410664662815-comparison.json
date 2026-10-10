@@ -1,0 +1,691 @@
+{
+  "schema": 1,
+  "before_label": "pre-restart",
+  "after_label": "post-restart",
+  "before_boot": {
+    "ok": true,
+    "text": "4dd475b5-ebf2-4155-be33-81effdc05269"
+  },
+  "after_boot": {
+    "ok": true,
+    "text": "5018cd1c-36bc-47cf-99eb-fc6936ef6a52"
+  },
+  "recorded_configuration_changes": [
+    {
+      "field": "/configuration//sys/fs/cgroup/cgroup.subtree_control",
+      "before": "cpuset cpu io memory hugetlb pids rdma misc dmem",
+      "after": "cpuset cpu io memory pids"
+    },
+    {
+      "field": "/cpu_inventory/lscpu",
+      "before": [
+        {
+          "field": "Architecture:",
+          "data": "x86_64"
+        },
+        {
+          "field": "CPU op-mode(s):",
+          "data": "32-bit, 64-bit"
+        },
+        {
+          "field": "Address sizes:",
+          "data": "48 bits physical, 48 bits virtual"
+        },
+        {
+          "field": "Byte Order:",
+          "data": "Little Endian"
+        },
+        {
+          "field": "CPU(s):",
+          "data": "12"
+        },
+        {
+          "field": "On-line CPU(s) list:",
+          "data": "0-11"
+        },
+        {
+          "field": "Vendor ID:",
+          "data": "AuthenticAMD"
+        },
+        {
+          "field": "Model name:",
+          "data": "AMD Ryzen 5 5600H with Radeon Graphics"
+        },
+        {
+          "field": "CPU family:",
+          "data": "25"
+        },
+        {
+          "field": "Model:",
+          "data": "80"
+        },
+        {
+          "field": "Thread(s) per core:",
+          "data": "2"
+        },
+        {
+          "field": "Core(s) per socket:",
+          "data": "6"
+        },
+        {
+          "field": "Socket(s):",
+          "data": "1"
+        },
+        {
+          "field": "Stepping:",
+          "data": "0"
+        },
+        {
+          "field": "Microcode version:",
+          "data": "0xa500014"
+        },
+        {
+          "field": "Frequency boost:",
+          "data": "enabled"
+        },
+        {
+          "field": "CPU max MHz:",
+          "data": "4280.9849"
+        },
+        {
+          "field": "CPU min MHz:",
+          "data": "412.6250"
+        },
+        {
+          "field": "BogoMIPS:",
+          "data": "6587.56"
+        },
+        {
+          "field": "Flags:",
+          "data": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif v_spec_ctrl umip pku ospke vaes vpclmulqdq rdpid overflow_recov succor smca fsrm debug_swap"
+        },
+        {
+          "field": "Virtualization:",
+          "data": "AMD-V"
+        },
+        {
+          "field": "L1d cache:",
+          "data": "192 KiB (6 instances)"
+        },
+        {
+          "field": "L1i cache:",
+          "data": "192 KiB (6 instances)"
+        },
+        {
+          "field": "L2 cache:",
+          "data": "3 MiB (6 instances)"
+        },
+        {
+          "field": "L3 cache:",
+          "data": "16 MiB (1 instance)"
+        },
+        {
+          "field": "NUMA node(s):",
+          "data": "1"
+        },
+        {
+          "field": "NUMA node0 CPU(s):",
+          "data": "0-11"
+        },
+        {
+          "field": "Vulnerability Gather data sampling:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Ghostwrite:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Indirect target selection:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Itlb multihit:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability L1tf:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Mds:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Meltdown:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Mmio stale data:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Old microcode:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Reg file data sampling:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Retbleed:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Spec rstack overflow:",
+          "data": "Mitigation; Safe RET"
+        },
+        {
+          "field": "Vulnerability Spec store bypass:",
+          "data": "Mitigation; Speculative Store Bypass disabled via prctl"
+        },
+        {
+          "field": "Vulnerability Spectre v1:",
+          "data": "Mitigation; usercopy/swapgs barriers and __user pointer sanitization"
+        },
+        {
+          "field": "Vulnerability Spectre v2:",
+          "data": "Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP always-on; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected"
+        },
+        {
+          "field": "Vulnerability Srbds:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Tsa:",
+          "data": "Mitigation; Clear CPU buffers"
+        },
+        {
+          "field": "Vulnerability Tsx async abort:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Vmscape:",
+          "data": "Mitigation; IBPB before exit to userspace"
+        }
+      ],
+      "after": [
+        {
+          "field": "Architecture:",
+          "data": "x86_64"
+        },
+        {
+          "field": "CPU op-mode(s):",
+          "data": "32-bit, 64-bit"
+        },
+        {
+          "field": "Address sizes:",
+          "data": "48 bits physical, 48 bits virtual"
+        },
+        {
+          "field": "Byte Order:",
+          "data": "Little Endian"
+        },
+        {
+          "field": "CPU(s):",
+          "data": "12"
+        },
+        {
+          "field": "On-line CPU(s) list:",
+          "data": "0-11"
+        },
+        {
+          "field": "Vendor ID:",
+          "data": "AuthenticAMD"
+        },
+        {
+          "field": "Model name:",
+          "data": "AMD Ryzen 5 5600H with Radeon Graphics"
+        },
+        {
+          "field": "CPU family:",
+          "data": "25"
+        },
+        {
+          "field": "Model:",
+          "data": "80"
+        },
+        {
+          "field": "Thread(s) per core:",
+          "data": "2"
+        },
+        {
+          "field": "Core(s) per socket:",
+          "data": "6"
+        },
+        {
+          "field": "Socket(s):",
+          "data": "1"
+        },
+        {
+          "field": "Stepping:",
+          "data": "0"
+        },
+        {
+          "field": "Microcode version:",
+          "data": "0xa500014"
+        },
+        {
+          "field": "Frequency boost:",
+          "data": "enabled"
+        },
+        {
+          "field": "CPU max MHz:",
+          "data": "4280.9849"
+        },
+        {
+          "field": "CPU min MHz:",
+          "data": "412.6250"
+        },
+        {
+          "field": "BogoMIPS:",
+          "data": "6587.82"
+        },
+        {
+          "field": "Flags:",
+          "data": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif v_spec_ctrl umip pku ospke vaes vpclmulqdq rdpid overflow_recov succor smca fsrm debug_swap"
+        },
+        {
+          "field": "Virtualization:",
+          "data": "AMD-V"
+        },
+        {
+          "field": "L1d cache:",
+          "data": "192 KiB (6 instances)"
+        },
+        {
+          "field": "L1i cache:",
+          "data": "192 KiB (6 instances)"
+        },
+        {
+          "field": "L2 cache:",
+          "data": "3 MiB (6 instances)"
+        },
+        {
+          "field": "L3 cache:",
+          "data": "16 MiB (1 instance)"
+        },
+        {
+          "field": "NUMA node(s):",
+          "data": "1"
+        },
+        {
+          "field": "NUMA node0 CPU(s):",
+          "data": "0-11"
+        },
+        {
+          "field": "Vulnerability Gather data sampling:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Ghostwrite:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Indirect target selection:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Itlb multihit:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability L1tf:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Mds:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Meltdown:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Mmio stale data:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Old microcode:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Reg file data sampling:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Retbleed:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Spec rstack overflow:",
+          "data": "Mitigation; Safe RET"
+        },
+        {
+          "field": "Vulnerability Spec store bypass:",
+          "data": "Mitigation; Speculative Store Bypass disabled via prctl"
+        },
+        {
+          "field": "Vulnerability Spectre v1:",
+          "data": "Mitigation; usercopy/swapgs barriers and __user pointer sanitization"
+        },
+        {
+          "field": "Vulnerability Spectre v2:",
+          "data": "Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP always-on; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected"
+        },
+        {
+          "field": "Vulnerability Srbds:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Tsa:",
+          "data": "Mitigation; Clear CPU buffers"
+        },
+        {
+          "field": "Vulnerability Tsx async abort:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Vmscape:",
+          "data": "Mitigation; IBPB before exit to userspace"
+        }
+      ]
+    },
+    {
+      "field": "/enabled_services",
+      "before": "ModemManager.service                         disabled        disabled\nNetworkManager-config-initrd.service         masked-runtime  disabled\nNetworkManager-dispatcher.service            enabled         disabled\nNetworkManager-initrd.service                masked-runtime  disabled\nNetworkManager-wait-online-initrd.service    masked-runtime  disabled\nNetworkManager-wait-online.service           enabled         disabled\nNetworkManager.service                       enabled         disabled\naccounts-daemon.service                      disabled        disabled\nalsa-card-wait@.service                      static          -\nalsa-restore.service                         static          -\nalsa-state.service                           static          -\narchlinux-keyring-wkd-sync.service           static          -\narptables.service                            disabled        disabled\naudit-rules.service                          disabled        disabled\nauditd.service                               disabled        disabled\nautovt@.service                              alias           -\navahi-daemon.service                         disabled        disabled\navahi-dnsconfd.service                       disabled        disabled\nblueman-mechanism.service                    disabled        disabled\nbluetooth.service                            enabled         disabled\nbolt.service                                 static          -\nbreakpoint-pre-basic.service                 static          -\nbreakpoint-pre-mount.service                 static          -\nbreakpoint-pre-switch-root.service           static          -\nbreakpoint-pre-udev.service                  static          -\ncanberra-system-bootup.service               disabled        disabled\ncanberra-system-shutdown-reboot.service      disabled        disabled\ncanberra-system-shutdown.service             disabled        disabled\ncapsule@.service                             static          -\nconsole-getty.service                        disabled        disabled\ncontainer-getty@.service                     static          -\ncontainerd.service                           disabled        disabled\ncronie.service                               disabled        disabled\ndbus-broker.service                          disabled        disabled\ndbus-org.bluez.service                       alias           -\ndbus-org.freedesktop.hostname1.service       alias           -\ndbus-org.freedesktop.import1.service         alias           -\ndbus-org.freedesktop.locale1.service         alias           -\ndbus-org.freedesktop.login1.service          alias           -\ndbus-org.freedesktop.machine1.service        alias           -\ndbus-org.freedesktop.nm-dispatcher.service   alias           -\ndbus-org.freedesktop.portable1.service       alias           -\ndbus-org.freedesktop.sysupdate1.service      alias           -\ndbus-org.freedesktop.timedate1.service       alias           -\ndbus-org.freedesktop.timesync1.service       alias           -\ndbus.service                                 alias           -\ndebug-shell.service                          disabled        disabled\ndirmngr@.service                             static          -\ndisplay-manager.service                      alias           -\ndm-event.service                             static          -\ndnsmasq.service                              disabled        disabled\ndocker.service                               enabled         disabled\ndrkonqi-coredump-processor@.service          disabled        disabled\ne2scrub@.service                             static          -\ne2scrub_all.service                          static          -\ne2scrub_fail@.service                        static          -\ne2scrub_reap.service                         disabled        disabled\nead.service                                  disabled        disabled\nebtables.service                             disabled        disabled\nemergency.service                            static          -\nfancontrol.service                           disabled        disabled\nflatpak-system-helper.service                static          -\nfstrim.service                               static          -\ngetty@.service                               enabled         enabled\ngit-daemon@.service                          static          -\ngpg-agent@.service                           static          -\ngpm.service                                  disabled        disabled\nhealthd.service                              disabled        disabled\niio-sensor-proxy.service                     static          -\ninitrd-cleanup.service                       static          -\ninitrd-parse-etc.service                     static          -\ninitrd-switch-root.service                   static          -\ninitrd-udevadm-cleanup-db.service            static          -\nip6tables.service                            disabled        disabled\niptables.service                             disabled        disabled\niwd.service                                  disabled        disabled\nkeyboxd@.service                             static          -\nkmod-static-nodes.service                    static          -\nkrb5-kadmind.service                         disabled        disabled\nkrb5-kdc.service                             disabled        disabled\nkrb5-kpropd.service                          disabled        disabled\nkrb5-kpropd@.service                         static          -\nlastlog2-import.service                      disabled        disabled\nldconfig.service                             static          -\nlm_sensors.service                           disabled        disabled\nman-db.service                               static          -\nmdadm-grow-continue@.service                 static          -\nmdadm-last-resort@.service                   static          -\nmdcheck_continue.service                     static          -\nmdcheck_start.service                        static          -\nmdmon@.service                               static          -\nmdmonitor-oneshot.service                    static          -\nmdmonitor.service                            static          -\nmkinitcpio-generate-shutdown-ramfs.service   static          -\nmodprobe@.service                            static          -\nnftables.service                             disabled        disabled\nnm-priv-helper.service                       static          -\nnvidia-hibernate.service                     disabled        disabled\nnvidia-persistenced.service                  disabled        disabled\nnvidia-powerd.service                        disabled        disabled\nnvidia-resume.service                        disabled        disabled\nnvidia-suspend-then-hibernate.service        disabled        disabled\nnvidia-suspend.service                       disabled        disabled\nostree-boot-complete.service                 static          -\nostree-finalize-staged-hold.service          static          -\nostree-finalize-staged.service               static          -\nostree-prepare-root.service                  static          -\nostree-remount.service                       disabled        disabled\nostree-state-overlay@.service                disabled        disabled\npaccache.service                             static          -\npacman-filesdb-refresh.service               static          -\npam_namespace.service                        static          -\npcscd.service                                indirect        disabled\nplymouth-halt.service                        static          -\nplymouth-kexec.service                       static          -\nplymouth-poweroff.service                    static          -\nplymouth-quit-wait.service                   static          -\nplymouth-quit.service                        static          -\nplymouth-read-write.service                  static          -\nplymouth-reboot.service                      static          -\nplymouth-start.service                       static          -\nplymouth-switch-root-initramfs.service       static          -\nplymouth-switch-root.service                 static          -\npolkit-agent-helper@.service                 static          -\npolkit.service                               static          -\npower-profiles-daemon.service                enabled         disabled\nppp@.service                                 disabled        disabled\nquotaon-root.service                         static          -\nquotaon@.service                             static          -\nrescue.service                               static          -\nrfkill-block@.service                        disabled        disabled\nrfkill-unblock@.service                      disabled        disabled\nrtkit-daemon.service                         disabled        disabled\nsddm.service                                 enabled         disabled\nsensord.service                              disabled        disabled\nserial-getty@.service                        disabled        disabled\nshadow.service                               static          -\nsmartd.service                               disabled        disabled\nsndiod.service                               disabled        disabled\nsudo_logsrvd.service                         disabled        disabled\nsystem-update-cleanup.service                static          -\nsystemd-ask-password-console.service         static          -\nsystemd-ask-password-plymouth.service        static          -\nsystemd-ask-password-wall.service            static          -\nsystemd-ask-password@.service                static          -\nsystemd-backlight@.service                   static          -\nsystemd-battery-check.service                static          -\nsystemd-binfmt.service                       static          -\nsystemd-bless-boot.service                   static          -\nsystemd-boot-check-no-failures.service       disabled        disabled\nsystemd-boot-clear-sysfail.service           disabled        enabled\nsystemd-boot-random-seed.service             static          -\nsystemd-boot-update.service                  disabled        enabled\nsystemd-bootctl@.service                     static          -\nsystemd-bsod.service                         static          -\nsystemd-confext-initrd.service               static          -\nsystemd-confext-sysroot.service              disabled        disabled\nsystemd-confext.service                      disabled        enabled\nsystemd-coredump-register.service            static          -\nsystemd-coredump@.service                    static          -\nsystemd-coredumpd.service                    disabled        enabled\nsystemd-creds@.service                       static          -\nsystemd-cryptenroll-firstboot.service        static          -\nsystemd-cryptenroll@.service                 static          -\nsystemd-exit.service                         static          -\nsystemd-factory-reset-complete.service       static          -\nsystemd-factory-reset-reboot.service         static          -\nsystemd-factory-reset-request.service        static          -\nsystemd-factory-reset@.service               static          -\nsystemd-firstboot.service                    static          -\nsystemd-fsck-root.service                    enabled-runtime disabled\nsystemd-fsck@.service                        static          -\nsystemd-growfs-root.service                  static          -\nsystemd-growfs@.service                      static          -\nsystemd-halt.service                         static          -\nsystemd-hibernate-clear.service              static          -\nsystemd-hibernate-resume.service             static          -\nsystemd-hibernate.service                    static          -\nsystemd-homed-activate.service               disabled        enabled\nsystemd-homed-firstboot.service              disabled        disabled\nsystemd-homed.service                        disabled        enabled\nsystemd-hostnamed.service                    static          -\nsystemd-hwdb-update.service                  static          -\nsystemd-hybrid-sleep.service                 static          -\nsystemd-imds-early-network.service           static          -\nsystemd-imds-import.service                  static          -\nsystemd-imds-metrics@.service                static          -\nsystemd-imdsd@.service                       static          -\nsystemd-importd.service                      static          -\nsystemd-journal-catalog-update.service       static          -\nsystemd-journal-flush.service                static          -\nsystemd-journal-gatewayd.service             indirect        disabled\nsystemd-journal-remote.service               indirect        disabled\nsystemd-journal-upload.service               disabled        disabled\nsystemd-journalctl-metrics@.service          static          -\nsystemd-journalctl@.service                  static          -\nsystemd-journald-sync@.service               static          -\nsystemd-journald.service                     static          -\nsystemd-journald@.service                    static          -\nsystemd-kexec.service                        static          -\nsystemd-localed.service                      static          -\nsystemd-logind.service                       static          -\nsystemd-loop@.service                        static          -\nsystemd-machine-id-commit.service            static          -\nsystemd-machine-tag@.service                 static          -\nsystemd-machined.service                     static          -\nsystemd-modules-load.service                 static          -\nsystemd-mountfsd.service                     indirect        disabled\nsystemd-mute-console@.service                static          -\nsystemd-network-generator.service            disabled        enabled\nsystemd-networkd-persistent-storage.service  static          -\nsystemd-networkd-wait-online.service         disabled        enabled\nsystemd-networkd-wait-online@.service        disabled        disabled\nsystemd-networkd.service                     disabled        enabled\nsystemd-nspawn@.service                      disabled        disabled\nsystemd-nsresourced.service                  indirect        disabled\nsystemd-oomd.service                         disabled        disabled\nsystemd-pcrextend@.service                   static          -\nsystemd-pcrfs-root.service                   static          -\nsystemd-pcrfs@.service                       static          -\nsystemd-pcrlock-file-system.service          disabled        disabled\nsystemd-pcrlock-firmware-code.service        disabled        disabled\nsystemd-pcrlock-firmware-config.service      disabled        disabled\nsystemd-pcrlock-machine-id.service           disabled        disabled\nsystemd-pcrlock-make-policy.service          disabled        disabled\nsystemd-pcrlock-secureboot-authority.service disabled        disabled\nsystemd-pcrlock-secureboot-policy.service    disabled        disabled\nsystemd-pcrlock@.service                     static          -\nsystemd-pcrlogin@.service                    static          -\nsystemd-pcrmachine.service                   static          -\nsystemd-pcrnvdone.service                    static          -\nsystemd-pcrosseparator.service               static          -\nsystemd-pcrphase-factory-reset.service       static          -\nsystemd-pcrphase-initrd.service              static          -\nsystemd-pcrphase-storage-target-mode.service static          -\nsystemd-pcrphase-sysinit.service             static          -\nsystemd-pcrphase.service                     static          -\nsystemd-pcrproduct.service                   static          -\nsystemd-portabled.service                    static          -\nsystemd-poweroff.service                     static          -\nsystemd-pstore.service                       disabled        enabled\nsystemd-quotacheck-root.service              static          -\nsystemd-quotacheck@.service                  static          -\nsystemd-random-seed.service                  static          -\nsystemd-reboot.service                       static          -\nsystemd-remount-fs.service                   enabled-runtime disabled\nsystemd-repart.service                       static          -\nsystemd-repart@.service                      static          -\nsystemd-report-basic@.service                static          -\nsystemd-report-cgroup@.service               static          -\nsystemd-report-files@.service                static          -\nsystemd-report-sign-plain@.service           static          -\nsystemd-report-sign-tpm2@.service            static          -\nsystemd-report-sign-tsm@.service             static          -\nsystemd-report@.service                      static          -\nsystemd-resolved.service                     disabled        enabled\nsystemd-rfkill.service                       static          -\nsystemd-soft-reboot.service                  static          -\nsystemd-storage-block@.service               static          -\nsystemd-storage-fs@.service                  static          -\nsystemd-storagetm.service                    static          -\nsystemd-suspend-then-hibernate.service       static          -\nsystemd-suspend.service                      static          -\nsystemd-sysctl.service                       static          -\nsystemd-sysext-initrd.service                static          -\nsystemd-sysext-sysroot.service               disabled        disabled\nsystemd-sysext.service                       disabled        enabled\nsystemd-sysext@.service                      static          -\nsystemd-sysinstall.service                   static          -\nsystemd-sysinstall@.service                  static          -\nsystemd-sysupdate-auto-enable.service        disabled        disabled\nsystemd-sysupdate-notify-bootctl@.service    static          -\nsystemd-sysupdate-notify-pcrlock@.service    static          -\nsystemd-sysupdate-notify-sysext@.service     static          -\nsystemd-sysupdate-reboot.service             indirect        disabled\nsystemd-sysupdate-update.service             indirect        disabled\nsystemd-sysupdate.service                    alias           -\nsystemd-sysupdate@.service                   static          -\nsystemd-sysupdated.service                   static          -\nsystemd-sysusers.service                     static          -\nsystemd-time-wait-sync.service               disabled        disabled\nsystemd-timedated.service                    static          -\nsystemd-timesyncd.service                    enabled         enabled\nsystemd-tmpfiles-clean.service               static          -\nsystemd-tmpfiles-setup-dev-early.service     static          -\nsystemd-tmpfiles-setup-dev.service           static          -\nsystemd-tmpfiles-setup.service               static          -\nsystemd-tpm2-clear.service                   disabled        enabled\nsystemd-tpm2-setup-early.service             static          -\nsystemd-tpm2-setup.service                   static          -\nsystemd-tpm2-swtpm.service                   static          -\nsystemd-udev-load-credentials.service        disabled        disabled\nsystemd-udev-settle.service                  static          -\nsystemd-udev-trigger.service                 static          -\nsystemd-udevd.service                        static          -\nsystemd-update-done.service                  static          -\nsystemd-update-utmp.service                  static          -\nsystemd-user-sessions.service                static          -\nsystemd-userdb-load-credentials.service      disabled        disabled\nsystemd-userdbd.service                      indirect        disabled\nsystemd-validatefs@.service                  static          -\nsystemd-vconsole-setup.service               static          -\nsystemd-vmspawn@.service                     disabled        disabled\nsystemd-volatile-root.service                static          -\nteamd@.service                               static          -\nudisks2.service                              disabled        disabled\nupower.service                               disabled        disabled\nuser-runtime-dir@.service                    static          -\nuser@.service                                static          -\nuuidd.service                                indirect        disabled\nwacom-inputattach@.service                   static          -\nwpa_supplicant-nl80211@.service              disabled        disabled\nwpa_supplicant-wired@.service                disabled        disabled\nwpa_supplicant.service                       disabled        disabled\nwpa_supplicant@.service                      disabled        disabled",
+      "after": "ModemManager.service                            disabled        disabled\nNetworkManager-config-initrd.service            masked-runtime  disabled\nNetworkManager-dispatcher.service               enabled         disabled\nNetworkManager-initrd.service                   masked-runtime  disabled\nNetworkManager-wait-online-initrd.service       masked-runtime  disabled\nNetworkManager-wait-online.service              enabled         disabled\nNetworkManager.service                          enabled         disabled\naccounts-daemon.service                         disabled        disabled\nalsa-card-wait@.service                         static          -\nalsa-restore.service                            static          -\nalsa-state.service                              static          -\narchlinux-keyring-wkd-sync.service              static          -\narptables.service                               disabled        disabled\naudit-rules.service                             disabled        disabled\nauditd.service                                  disabled        disabled\nautovt@.service                                 alias           -\navahi-daemon.service                            disabled        disabled\navahi-dnsconfd.service                          disabled        disabled\nblueman-mechanism.service                       disabled        disabled\nbluetooth.service                               enabled         disabled\nbolt.service                                    static          -\nbreakpoint-pre-basic.service                    static          -\nbreakpoint-pre-mount.service                    static          -\nbreakpoint-pre-switch-root.service              static          -\nbreakpoint-pre-udev.service                     static          -\ncanberra-system-bootup.service                  disabled        disabled\ncanberra-system-shutdown-reboot.service         disabled        disabled\ncanberra-system-shutdown.service                disabled        disabled\ncapsule@.service                                static          -\nconsole-getty.service                           disabled        disabled\ncontainer-getty@.service                        static          -\ncontainerd.service                              disabled        disabled\ncronie.service                                  disabled        disabled\ndbus-:1.2-org.kde.kameleon.qmk.helper@0.service transient       -\ndbus-broker.service                             disabled        disabled\ndbus-org.bluez.service                          alias           -\ndbus-org.freedesktop.hostname1.service          alias           -\ndbus-org.freedesktop.import1.service            alias           -\ndbus-org.freedesktop.locale1.service            alias           -\ndbus-org.freedesktop.login1.service             alias           -\ndbus-org.freedesktop.machine1.service           alias           -\ndbus-org.freedesktop.nm-dispatcher.service      alias           -\ndbus-org.freedesktop.portable1.service          alias           -\ndbus-org.freedesktop.sysupdate1.service         alias           -\ndbus-org.freedesktop.timedate1.service          alias           -\ndbus-org.freedesktop.timesync1.service          alias           -\ndbus.service                                    alias           -\ndebug-shell.service                             disabled        disabled\ndirmngr@.service                                static          -\ndisplay-manager.service                         alias           -\ndm-event.service                                static          -\ndnsmasq.service                                 disabled        disabled\ndocker.service                                  enabled         disabled\ndrkonqi-coredump-processor@.service             disabled        disabled\ne2scrub@.service                                static          -\ne2scrub_all.service                             static          -\ne2scrub_fail@.service                           static          -\ne2scrub_reap.service                            disabled        disabled\nead.service                                     disabled        disabled\nebtables.service                                disabled        disabled\nemergency.service                               static          -\nfancontrol.service                              disabled        disabled\nflatpak-system-helper.service                   static          -\nfstrim.service                                  static          -\ngetty@.service                                  enabled         enabled\ngit-daemon@.service                             static          -\ngpg-agent@.service                              static          -\ngpm.service                                     disabled        disabled\nhealthd.service                                 disabled        disabled\niio-sensor-proxy.service                        static          -\ninitrd-cleanup.service                          static          -\ninitrd-parse-etc.service                        static          -\ninitrd-switch-root.service                      static          -\ninitrd-udevadm-cleanup-db.service               static          -\nip6tables.service                               disabled        disabled\niptables.service                                disabled        disabled\niwd.service                                     disabled        disabled\nkeyboxd@.service                                static          -\nkmod-static-nodes.service                       static          -\nkrb5-kadmind.service                            disabled        disabled\nkrb5-kdc.service                                disabled        disabled\nkrb5-kpropd.service                             disabled        disabled\nkrb5-kpropd@.service                            static          -\nlastlog2-import.service                         disabled        disabled\nldconfig.service                                static          -\nlm_sensors.service                              disabled        disabled\nman-db.service                                  static          -\nmdadm-grow-continue@.service                    static          -\nmdadm-last-resort@.service                      static          -\nmdcheck_continue.service                        static          -\nmdcheck_start.service                           static          -\nmdmon@.service                                  static          -\nmdmonitor-oneshot.service                       static          -\nmdmonitor.service                               static          -\nmkinitcpio-generate-shutdown-ramfs.service      static          -\nmodprobe@.service                               static          -\nnftables.service                                disabled        disabled\nnm-priv-helper.service                          static          -\nnvidia-hibernate.service                        disabled        disabled\nnvidia-persistenced.service                     disabled        disabled\nnvidia-powerd.service                           disabled        disabled\nnvidia-resume.service                           disabled        disabled\nnvidia-suspend-then-hibernate.service           disabled        disabled\nnvidia-suspend.service                          disabled        disabled\nostree-boot-complete.service                    static          -\nostree-finalize-staged-hold.service             static          -\nostree-finalize-staged.service                  static          -\nostree-prepare-root.service                     static          -\nostree-remount.service                          disabled        disabled\nostree-state-overlay@.service                   disabled        disabled\npaccache.service                                static          -\npacman-filesdb-refresh.service                  static          -\npam_namespace.service                           static          -\npcscd.service                                   indirect        disabled\nplymouth-halt.service                           static          -\nplymouth-kexec.service                          static          -\nplymouth-poweroff.service                       static          -\nplymouth-quit-wait.service                      static          -\nplymouth-quit.service                           static          -\nplymouth-read-write.service                     static          -\nplymouth-reboot.service                         static          -\nplymouth-start.service                          static          -\nplymouth-switch-root-initramfs.service          static          -\nplymouth-switch-root.service                    static          -\npolkit-agent-helper@.service                    static          -\npolkit.service                                  static          -\npower-profiles-daemon.service                   enabled         disabled\nppp@.service                                    disabled        disabled\nquotaon-root.service                            static          -\nquotaon@.service                                static          -\nrescue.service                                  static          -\nrfkill-block@.service                           disabled        disabled\nrfkill-unblock@.service                         disabled        disabled\nrtkit-daemon.service                            disabled        disabled\nsddm.service                                    enabled         disabled\nsensord.service                                 disabled        disabled\nserial-getty@.service                           disabled        disabled\nshadow.service                                  static          -\nsmartd.service                                  disabled        disabled\nsndiod.service                                  disabled        disabled\nsudo_logsrvd.service                            disabled        disabled\nsystem-update-cleanup.service                   static          -\nsystemd-ask-password-console.service            static          -\nsystemd-ask-password-plymouth.service           static          -\nsystemd-ask-password-wall.service               static          -\nsystemd-ask-password@.service                   static          -\nsystemd-backlight@.service                      static          -\nsystemd-battery-check.service                   static          -\nsystemd-binfmt.service                          static          -\nsystemd-bless-boot.service                      static          -\nsystemd-boot-check-no-failures.service          disabled        disabled\nsystemd-boot-clear-sysfail.service              disabled        enabled\nsystemd-boot-random-seed.service                static          -\nsystemd-boot-update.service                     disabled        enabled\nsystemd-bootctl@.service                        static          -\nsystemd-bsod.service                            static          -\nsystemd-confext-initrd.service                  static          -\nsystemd-confext-sysroot.service                 disabled        disabled\nsystemd-confext.service                         disabled        enabled\nsystemd-coredump-register.service               static          -\nsystemd-coredump@.service                       static          -\nsystemd-coredumpd.service                       disabled        enabled\nsystemd-creds@.service                          static          -\nsystemd-cryptenroll-firstboot.service           static          -\nsystemd-cryptenroll@.service                    static          -\nsystemd-exit.service                            static          -\nsystemd-factory-reset-complete.service          static          -\nsystemd-factory-reset-reboot.service            static          -\nsystemd-factory-reset-request.service           static          -\nsystemd-factory-reset@.service                  static          -\nsystemd-firstboot.service                       static          -\nsystemd-fsck-root.service                       enabled-runtime disabled\nsystemd-fsck@.service                           static          -\nsystemd-growfs-root.service                     static          -\nsystemd-growfs@.service                         static          -\nsystemd-halt.service                            static          -\nsystemd-hibernate-clear.service                 static          -\nsystemd-hibernate-resume.service                static          -\nsystemd-hibernate.service                       static          -\nsystemd-homed-activate.service                  disabled        enabled\nsystemd-homed-firstboot.service                 disabled        disabled\nsystemd-homed.service                           disabled        enabled\nsystemd-hostnamed.service                       static          -\nsystemd-hwdb-update.service                     static          -\nsystemd-hybrid-sleep.service                    static          -\nsystemd-imds-early-network.service              static          -\nsystemd-imds-import.service                     static          -\nsystemd-imds-metrics@.service                   static          -\nsystemd-imdsd@.service                          static          -\nsystemd-importd.service                         static          -\nsystemd-journal-catalog-update.service          static          -\nsystemd-journal-flush.service                   static          -\nsystemd-journal-gatewayd.service                indirect        disabled\nsystemd-journal-remote.service                  indirect        disabled\nsystemd-journal-upload.service                  disabled        disabled\nsystemd-journalctl-metrics@.service             static          -\nsystemd-journalctl@.service                     static          -\nsystemd-journald-sync@.service                  static          -\nsystemd-journald.service                        static          -\nsystemd-journald@.service                       static          -\nsystemd-kexec.service                           static          -\nsystemd-localed.service                         static          -\nsystemd-logind.service                          static          -\nsystemd-loop@.service                           static          -\nsystemd-machine-id-commit.service               static          -\nsystemd-machine-tag@.service                    static          -\nsystemd-machined.service                        static          -\nsystemd-modules-load.service                    static          -\nsystemd-mountfsd.service                        indirect        disabled\nsystemd-mute-console@.service                   static          -\nsystemd-network-generator.service               disabled        enabled\nsystemd-networkd-persistent-storage.service     static          -\nsystemd-networkd-wait-online.service            disabled        enabled\nsystemd-networkd-wait-online@.service           disabled        disabled\nsystemd-networkd.service                        disabled        enabled\nsystemd-nspawn@.service                         disabled        disabled\nsystemd-nsresourced.service                     indirect        disabled\nsystemd-oomd.service                            disabled        disabled\nsystemd-pcrextend@.service                      static          -\nsystemd-pcrfs-root.service                      static          -\nsystemd-pcrfs@.service                          static          -\nsystemd-pcrlock-file-system.service             disabled        disabled\nsystemd-pcrlock-firmware-code.service           disabled        disabled\nsystemd-pcrlock-firmware-config.service         disabled        disabled\nsystemd-pcrlock-machine-id.service              disabled        disabled\nsystemd-pcrlock-make-policy.service             disabled        disabled\nsystemd-pcrlock-secureboot-authority.service    disabled        disabled\nsystemd-pcrlock-secureboot-policy.service       disabled        disabled\nsystemd-pcrlock@.service                        static          -\nsystemd-pcrlogin@.service                       static          -\nsystemd-pcrmachine.service                      static          -\nsystemd-pcrnvdone.service                       static          -\nsystemd-pcrosseparator.service                  static          -\nsystemd-pcrphase-factory-reset.service          static          -\nsystemd-pcrphase-initrd.service                 static          -\nsystemd-pcrphase-storage-target-mode.service    static          -\nsystemd-pcrphase-sysinit.service                static          -\nsystemd-pcrphase.service                        static          -\nsystemd-pcrproduct.service                      static          -\nsystemd-portabled.service                       static          -\nsystemd-poweroff.service                        static          -\nsystemd-pstore.service                          disabled        enabled\nsystemd-quotacheck-root.service                 static          -\nsystemd-quotacheck@.service                     static          -\nsystemd-random-seed.service                     static          -\nsystemd-reboot.service                          static          -\nsystemd-remount-fs.service                      enabled-runtime disabled\nsystemd-repart.service                          static          -\nsystemd-repart@.service                         static          -\nsystemd-report-basic@.service                   static          -\nsystemd-report-cgroup@.service                  static          -\nsystemd-report-files@.service                   static          -\nsystemd-report-sign-plain@.service              static          -\nsystemd-report-sign-tpm2@.service               static          -\nsystemd-report-sign-tsm@.service                static          -\nsystemd-report@.service                         static          -\nsystemd-resolved.service                        disabled        enabled\nsystemd-rfkill.service                          static          -\nsystemd-soft-reboot.service                     static          -\nsystemd-storage-block@.service                  static          -\nsystemd-storage-fs@.service                     static          -\nsystemd-storagetm.service                       static          -\nsystemd-suspend-then-hibernate.service          static          -\nsystemd-suspend.service                         static          -\nsystemd-sysctl.service                          static          -\nsystemd-sysext-initrd.service                   static          -\nsystemd-sysext-sysroot.service                  disabled        disabled\nsystemd-sysext.service                          disabled        enabled\nsystemd-sysext@.service                         static          -\nsystemd-sysinstall.service                      static          -\nsystemd-sysinstall@.service                     static          -\nsystemd-sysupdate-auto-enable.service           disabled        disabled\nsystemd-sysupdate-notify-bootctl@.service       static          -\nsystemd-sysupdate-notify-pcrlock@.service       static          -\nsystemd-sysupdate-notify-sysext@.service        static          -\nsystemd-sysupdate-reboot.service                indirect        disabled\nsystemd-sysupdate-update.service                indirect        disabled\nsystemd-sysupdate.service                       alias           -\nsystemd-sysupdate@.service                      static          -\nsystemd-sysupdated.service                      static          -\nsystemd-sysusers.service                        static          -\nsystemd-time-wait-sync.service                  disabled        disabled\nsystemd-timedated.service                       static          -\nsystemd-timesyncd.service                       enabled         enabled\nsystemd-tmpfiles-clean.service                  static          -\nsystemd-tmpfiles-setup-dev-early.service        static          -\nsystemd-tmpfiles-setup-dev.service              static          -\nsystemd-tmpfiles-setup.service                  static          -\nsystemd-tpm2-clear.service                      disabled        enabled\nsystemd-tpm2-setup-early.service                static          -\nsystemd-tpm2-setup.service                      static          -\nsystemd-tpm2-swtpm.service                      static          -\nsystemd-udev-load-credentials.service           disabled        disabled\nsystemd-udev-settle.service                     static          -\nsystemd-udev-trigger.service                    static          -\nsystemd-udevd.service                           static          -\nsystemd-update-done.service                     static          -\nsystemd-update-utmp.service                     static          -\nsystemd-user-sessions.service                   static          -\nsystemd-userdb-load-credentials.service         disabled        disabled\nsystemd-userdbd.service                         indirect        disabled\nsystemd-validatefs@.service                     static          -\nsystemd-vconsole-setup.service                  static          -\nsystemd-vmspawn@.service                        disabled        disabled\nsystemd-volatile-root.service                   static          -\nteamd@.service                                  static          -\nudisks2.service                                 disabled        disabled\nupower.service                                  disabled        disabled\nuser-runtime-dir@.service                       static          -\nuser@.service                                   static          -\nuuidd.service                                   indirect        disabled\nwacom-inputattach@.service                      static          -\nwpa_supplicant-nl80211@.service                 disabled        disabled\nwpa_supplicant-wired@.service                   disabled        disabled\nwpa_supplicant.service                          disabled        disabled\nwpa_supplicant@.service                         disabled        disabled"
+    }
+  ],
+  "coverage_gaps": [],
+  "before_activity": [
+    {
+      "pid": 403930,
+      "comm": "ChatGPT",
+      "uid": 1000,
+      "one_core_cpu_percent": 18.479889138202854,
+      "rss_bytes": 847597568
+    },
+    {
+      "pid": 1261,
+      "comm": "plasmashell",
+      "uid": 1000,
+      "one_core_cpu_percent": 15.562011905855035,
+      "rss_bytes": 464158720
+    },
+    {
+      "pid": 1088,
+      "comm": "kwin_wayland",
+      "uid": 1000,
+      "one_core_cpu_percent": 11.087933482921713,
+      "rss_bytes": 323829760
+    },
+    {
+      "pid": 403458,
+      "comm": "ChatGPT",
+      "uid": 1000,
+      "one_core_cpu_percent": 7.975531101750706,
+      "rss_bytes": 679550976
+    },
+    {
+      "pid": 403514,
+      "comm": "ChatGPT",
+      "uid": 1000,
+      "one_core_cpu_percent": 5.835754464695638,
+      "rss_bytes": 390250496
+    },
+    {
+      "pid": 407388,
+      "comm": "python3",
+      "uid": 1000,
+      "one_core_cpu_percent": 0.7781005952927518,
+      "rss_bytes": 27873280
+    },
+    {
+      "pid": 393244,
+      "comm": "kworker/u48:5-gfx",
+      "uid": 0,
+      "one_core_cpu_percent": 0.5835754464695638,
+      "rss_bytes": 0
+    },
+    {
+      "pid": 403963,
+      "comm": "codex",
+      "uid": 1000,
+      "one_core_cpu_percent": 0.5835754464695638,
+      "rss_bytes": 461549568
+    },
+    {
+      "pid": 406066,
+      "comm": "kworker/u48:1-gfx",
+      "uid": 0,
+      "one_core_cpu_percent": 0.5835754464695638,
+      "rss_bytes": 0
+    },
+    {
+      "pid": 16,
+      "comm": "rcu_preempt",
+      "uid": 0,
+      "one_core_cpu_percent": 0.19452514882318794,
+      "rss_bytes": 0
+    },
+    {
+      "pid": 20,
+      "comm": "migration/0",
+      "uid": 0,
+      "one_core_cpu_percent": 0.19452514882318794,
+      "rss_bytes": 0
+    },
+    {
+      "pid": 38,
+      "comm": "migration/6",
+      "uid": 0,
+      "one_core_cpu_percent": 0.19452514882318794,
+      "rss_bytes": 0
+    },
+    {
+      "pid": 44,
+      "comm": "migration/8",
+      "uid": 0,
+      "one_core_cpu_percent": 0.19452514882318794,
+      "rss_bytes": 0
+    },
+    {
+      "pid": 542,
+      "comm": "NetworkManager",
+      "uid": 0,
+      "one_core_cpu_percent": 0.19452514882318794,
+      "rss_bytes": 23965696
+    },
+    {
+      "pid": 403929,
+      "comm": "ChatGPT",
+      "uid": 1000,
+      "one_core_cpu_percent": 0.19452514882318794,
+      "rss_bytes": 240177152
+    },
+    {
+      "pid": 404923,
+      "comm": "ChatGPT",
+      "uid": 1000,
+      "one_core_cpu_percent": 0.19452514882318794,
+      "rss_bytes": 363929600
+    },
+    {
+      "pid": 405677,
+      "comm": "codex-code-mode",
+      "uid": 1000,
+      "one_core_cpu_percent": 0.19452514882318794,
+      "rss_bytes": 25460736
+    },
+    {
+      "pid": 406312,
+      "comm": "kworker/u48:3-comp_1.3.1",
+      "uid": 0,
+      "one_core_cpu_percent": 0.19452514882318794,
+      "rss_bytes": 0
+    },
+    {
+      "pid": 1,
+      "comm": "systemd",
+      "uid": 0,
+      "one_core_cpu_percent": 0.0,
+      "rss_bytes": 13344768
+    },
+    {
+      "pid": 2,
+      "comm": "kthreadd",
+      "uid": 0,
+      "one_core_cpu_percent": 0.0,
+      "rss_bytes": 0
+    }
+  ],
+  "after_activity": [
+    {
+      "pid": 2710,
+      "comm": "ChatGPT",
+      "uid": 1000,
+      "one_core_cpu_percent": 36.19789557656775,
+      "rss_bytes": 555151360
+    },
+    {
+      "pid": 2731,
+      "comm": "baloo_file_extr",
+      "uid": 1000,
+      "one_core_cpu_percent": 24.715767409807015,
+      "rss_bytes": 1168723968
+    },
+    {
+      "pid": 1522,
+      "comm": "ChatGPT",
+      "uid": 1000,
+      "one_core_cpu_percent": 21.407357599045444,
+      "rss_bytes": 672731136
+    },
+    {
+      "pid": 3238,
+      "comm": "ChatGPT",
+      "uid": 1000,
+      "one_core_cpu_percent": 14.012088610284291,
+      "rss_bytes": 249786368
+    },
+    {
+      "pid": 2355,
+      "comm": "ChatGPT",
+      "uid": 1000,
+      "one_core_cpu_percent": 8.17371835599917,
+      "rss_bytes": 804163584
+    },
+    {
+      "pid": 2389,
+      "comm": "codex",
+      "uid": 1000,
+      "one_core_cpu_percent": 6.811431963332642,
+      "rss_bytes": 505126912
+    },
+    {
+      "pid": 1869,
+      "comm": "ChatGPT",
+      "uid": 1000,
+      "one_core_cpu_percent": 5.25453322885661,
+      "rss_bytes": 146780160
+    },
+    {
+      "pid": 955,
+      "comm": "kwin_wayland",
+      "uid": 1000,
+      "one_core_cpu_percent": 4.8653085452376015,
+      "rss_bytes": 341639168
+    },
+    {
+      "pid": 1244,
+      "comm": "plasmashell",
+      "uid": 1000,
+      "one_core_cpu_percent": 4.8653085452376015,
+      "rss_bytes": 458715136
+    },
+    {
+      "pid": 1482,
+      "comm": "DiscoverNotifie",
+      "uid": 1000,
+      "one_core_cpu_percent": 4.670696203428097,
+      "rss_bytes": 69963776
+    },
+    {
+      "pid": 1866,
+      "comm": "ChatGPT",
+      "uid": 1000,
+      "one_core_cpu_percent": 1.9461234180950404,
+      "rss_bytes": 207122432
+    },
+    {
+      "pid": 3438,
+      "comm": "python3",
+      "uid": 1000,
+      "one_core_cpu_percent": 0.7784493672380162,
+      "rss_bytes": 25460736
+    },
+    {
+      "pid": 12,
+      "comm": "kworker/u48:0-events_unbound",
+      "uid": 0,
+      "one_core_cpu_percent": 0.5838370254285121,
+      "rss_bytes": 0
+    },
+    {
+      "pid": 557,
+      "comm": "NetworkManager",
+      "uid": 0,
+      "one_core_cpu_percent": 0.3892246836190081,
+      "rss_bytes": 26234880
+    },
+    {
+      "pid": 952,
+      "comm": "baloo_file",
+      "uid": 1000,
+      "one_core_cpu_percent": 0.3892246836190081,
+      "rss_bytes": 87838720
+    },
+    {
+      "pid": 1,
+      "comm": "systemd",
+      "uid": 0,
+      "one_core_cpu_percent": 0.19461234180950404,
+      "rss_bytes": 14798848
+    },
+    {
+      "pid": 44,
+      "comm": "migration/8",
+      "uid": 0,
+      "one_core_cpu_percent": 0.19461234180950404,
+      "rss_bytes": 0
+    },
+    {
+      "pid": 80,
+      "comm": "migration/9",
+      "uid": 0,
+      "one_core_cpu_percent": 0.19461234180950404,
+      "rss_bytes": 0
+    },
+    {
+      "pid": 97,
+      "comm": "kworker/u48:2-gfx",
+      "uid": 0,
+      "one_core_cpu_percent": 0.19461234180950404,
+      "rss_bytes": 0
+    },
+    {
+      "pid": 102,
+      "comm": "khugepaged",
+      "uid": 0,
+      "one_core_cpu_percent": 0.19461234180950404,
+      "rss_bytes": 0
+    }
+  ],
+  "limitations": [
+    "Activity is descriptive and expected to vary across boots.",
+    "Missing/new readable entries may reflect coverage rather than a changed setting.",
+    "Snapshot differences are candidate explanations, not causal findings."
+  ],
+  "historical_cause_established": false
+}

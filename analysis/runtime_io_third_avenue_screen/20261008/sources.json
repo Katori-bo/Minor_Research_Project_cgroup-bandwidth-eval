@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-08",
+  "sources": [
+    {
+      "name": "Coz",
+      "url": "https://arxiv.org/pdf/1608.03676",
+      "inspection_scope": "paper sections 3.3 and 3.4; synchronization, sampling and phase correction"
+    },
+    {
+      "name": "Coz source",
+      "url": "https://raw.githubusercontent.com/plasma-umass/coz/master/libcoz/profiler.cpp",
+      "inspection_scope": "current mutable master; elapsed/global delay and sample handling inspected; full reporting pipeline not reproduced"
+    },
+    {
+      "name": "Coz repository",
+      "url": "https://github.com/plasma-umass/coz",
+      "inspection_scope": "README includes Go wrappers; no new-port claim"
+    },
+    {
+      "name": "BCOZ",
+      "url": "https://www.usenix.org/system/files/osdi24-ahn.pdf",
+      "inspection_scope": "paper sections 3.3, 4.2 and 4.3; CPU contention and optimization side effects"
+    },
+    {
+      "name": "BCOZ artifacts",
+      "url": "https://github.com/s3yonsei/blocked_samples",
+      "inspection_scope": "README inspected; bcoz directory and raw profiler retrieval failed, source semantics incomplete"
+    },
+    {
+      "name": "COZ+",
+      "url": "https://doi.org/10.1145/3341617.3326142",
+      "inspection_scope": "primary abstract and indexed author introduction; complete paper not retrieved"
+    },
+    {
+      "name": "SchedCoz",
+      "url": "https://eunomia.dev/others/ideas/",
+      "inspection_scope": "container/multiprocess scheduler causal-profiler proposal, not evaluated publication"
+    },
+    {
+      "name": "wPerf",
+      "url": "https://www.usenix.org/system/files/osdi18-zhou.pdf",
+      "inspection_scope": "primary introductory description, waiting graphs and throughput bottleneck analysis"
+    },
+    {
+      "name": "SchedBlame",
+      "url": "https://arxiv.org/html/2609.02052v1",
+      "inspection_scope": "2026-09-02 preprint; CPU/cgroup attribution; accuracy evaluation planned"
+    },
+    {
+      "name": "Go trace",
+      "url": "https://pkg.go.dev/runtime/trace",
+      "inspection_scope": "official runtime tracing documentation"
+    },
+    {
+      "name": "Go tracing development",
+      "url": "https://go.googlesource.com/proposal/+/master/design/60773-execution-tracer-overhaul.md",
+      "inspection_scope": "alignment of Go with external tracing already discussed"
+    },
+    {
+      "name": "Breakwater",
+      "url": "https://www.usenix.org/conference/osdi20/presentation/cho",
+      "inspection_scope": "official abstract; overload-control alternative"
+    },
+    {
+      "name": "RAJOMON",
+      "url": "https://www.usenix.org/system/files/nsdi25-xing.pdf",
+      "inspection_scope": "primary timeout/wasted-compute discussion"
+    },
+    {
+      "name": "Kscaler",
+      "url": "https://tianyin.github.io/pub/kscaler.pdf",
+      "inspection_scope": "existing quota and period controller; period route remains held"
+    },
+    {
+      "name": "CFS bandwidth",
+      "url": "https://docs.kernel.org/scheduler/sched-bwc.html",
+      "inspection_scope": "periodic quota and runtime slice mechanics; toy omits Linux details"
+    }
+  ],
+  "search_queries": [
+    "causal profiling quota cgroups rate limiting resource constraints",
+    "Coz BCOZ causal profiling CPU contention fixed quota",
+    "Coz+ page load time SIGMETRICS 2019",
+    "deadline cancellation wasted CPU Breakwater RAJOMON",
+    "Go Linux cross layer request scheduling attribution SchedBlame wPerf"
+  ],
+  "failed_retrievals": [
+    "BCOZ bcoz source tree and raw profiler.cpp",
+    "COZ+ direct author PDF and DOI open; primary search abstract accessible"
+  ],
+  "not_established": [
+    "firstness",
+    "actual Coz/BCOZ failure",
+    "new optimization ranking capability",
+    "Linux periodic quota counterexample",
+    "adequacy defeat of simple replay"
+  ],
+  "version_limitation": "Coz current master not pinned. BCOZ reporting code uninspected. A source-faithful gate must precede development.",
+  "collection": false
+}

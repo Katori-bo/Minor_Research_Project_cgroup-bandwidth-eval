@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "review_date": "2026-10-08",
+  "literature_scope_through": "2026-10-08",
+  "review_kind": "targeted assistant desk assessment and independent-review packet preparation",
+  "independent_expert_review_received": false,
+  "external_message_sent": false,
+  "exact_published_match_established": false,
+  "firstness_established": false,
+  "substantial_novelty_established": false,
+  "exhaustive_backward_forward_citation_audit": false,
+  "published_algorithms_reproduced": false,
+  "sources": [
+    {
+      "id": "bandi2015",
+      "title": "Robust Queueing Theory",
+      "authors": "Chaithanya Bandi, Dimitris Bertsimas, Nataly Youssef",
+      "year": 2015,
+      "doi": "10.1287/opre.2015.1367",
+      "primary_text": "https://www.mit.edu/~dbertsim/papers/Robust%20Optimization/Robust%20Queueing%20Theory.pdf",
+      "publication_record": "https://pubsonline.informs.org/doi/10.1287/opre.2015.1367",
+      "access": "author manuscript full text; publisher abstract and metadata",
+      "inspected": "Section 2, Equation (2), manuscript page 7 (PDF page index 6), introductory model and reference attribution to Lindley",
+      "relevance": "The reviewed FCFS system-time expression yields the completion envelope by adding the admitted arrival time and making service times equal.",
+      "assessment_is_inference": true,
+      "limit": "This direct derivation concerns a fixed admitted subsequence; it does not establish the full tail-drop partition theorem as a stated result in this source."
+    },
+    {
+      "id": "baccelli1992",
+      "title": "Synchronization and Linearity: An Algebra for Discrete Event Systems",
+      "authors": "Francois Baccelli, Guy Cohen, Geert Jan Olsder, Jean-Pierre Quadrat",
+      "year": 1992,
+      "primary_text": "https://www.rocq.inria.fr/metalau/cohen/documents/BCOQ-book.pdf",
+      "access": "author-hosted full book",
+      "inspected": "Section 7.2.1, printed pages 306-307, Equation (7.3) and Remark 7.1",
+      "relevance": "Max-plus event recurrence is connected to an infinite-buffer single-server FIFO queue.",
+      "limit": "The inspected example supplies a building block, not a stated finite tail-drop loss/deadline extremum theorem."
+    },
+    {
+      "id": "cimatti2008",
+      "title": "Symbolic Computation of Schedulability Regions Using Parametric Timed Automata",
+      "authors": "Alessandro Cimatti, Luigi Palopoli, Yusi Ramadian",
+      "year": 2008,
+      "doi": "10.1109/RTSS.2008.36",
+      "publication_record": "https://doi.org/10.1109/RTSS.2008.36",
+      "primary_text": "https://www.researchgate.net/publication/221298325_Symbolic_Computation_of_Schedulability_Regions_Using_Parametric_Timed_Automata",
+      "access": "full author-uploaded text on ResearchGate",
+      "inspected": "Sections 4.1-4.2, Figure 3, and the stated decidable periodic-task special case",
+      "relevance": "Symbolic traces yield compatible timing-parameter regions, which are excluded iteratively to construct schedulability regions.",
+      "limit": "The reviewed objective is schedulability. General termination is not promised; its special-case result must not be generalized to arbitrary timed systems."
+    },
+    {
+      "id": "matousek2004",
+      "title": "Tools for Parametric Verification. A Comparison on a Case Study",
+      "authors": "Petr Matousek",
+      "year": 2004,
+      "journal": "Journal of Universal Computer Science 10(10), 1469-1494",
+      "primary_text": "https://www.jucs.org/jucs_10_10/tools_for_parametric_verification/Matousek_P.pdf",
+      "access": "publisher full text",
+      "inspected": "Sections 2.3-2.4 and 5.1-5.2, including the def_lost counter and TReX model/output",
+      "relevance": "Parametric counter/timed systems, symbolic configurations and FIFO channels support PGM loss-recovery analysis.",
+      "limit": "Loss counts are represented, but the reviewed synthesis target is recovery classification rather than our finite-trace combined failure extrema. Its FIFO communication model is not assumed identical to our tail-drop policy."
+    },
+    {
+      "id": "lindley1952",
+      "title": "The theory of queues with a single server",
+      "authors": "D. V. Lindley",
+      "year": 1952,
+      "doi": "10.1017/S0305004100027638",
+      "publication_record": "https://www.cambridge.org/core/journals/mathematical-proceedings-of-the-cambridge-philosophical-society/article/abs/theory-of-queues-with-a-single-server/53E80E039A02BCCC909E5C1D3BBC1AD1",
+      "access": "publisher metadata and extract only",
+      "inspected": "metadata, publication date and extract; attribution also appears in Bandi Equation (2)",
+      "limit": "Original full paper not read. Precise formula evidence is Bandi's accessible manuscript, not an invented passage in this paper."
+    },
+    {
+      "id": "matousek2005_access_gap",
+      "title": "High-Level Modelling, Analysis, and Verification on FPGA-Based Hardware Design",
+      "authors": "Petr Matousek, Adam Smrcka, Tomas Vojnar",
+      "year": 2005,
+      "publication_record": "https://www.fit.vut.cz/person/matousp/publication-results/.cs",
+      "publisher_pdf_attempted": "https://dl.ifip.org/db/conf/charme/charme2005/MatousekSV05.pdf",
+      "longer_report_indexed": "https://www.researchgate.net/publication/221104824_High-Level_Modelling_Analysis_and_Verification_on_FPGA-Based_Hardware_Design",
+      "access": "publisher PDF retrieval failed; institution bibliography and indexed excerpts from a longer report available",
+      "inspected": "bibliographic distinction between CHARME conference paper and CESNET report; indexed queue/observer excerpts only",
+      "limit": "Not treated as a new full-text verification. Longer-report passages must not be attributed without qualification to the short conference version; lossy FIFO abstraction is not assumed to mean tail-drop."
+    },
+    {
+      "id": "le2013_followup",
+      "title": "Timed-automata based schedulability analysis for distributed firm real-time systems: a case study",
+      "authors": "Huy Le, Luigi Palopoli, Roberto Passerone, Yusi Ramadian",
+      "year": 2013,
+      "doi": "10.1007/s10009-012-0245-y",
+      "primary_text_attempted": "https://dit.unitn.it/~roby/pdfs/LePalopoliPasseroneRamadian13STTT.pdf",
+      "access": "indexed author first-page abstract; direct full PDF retrieval failed",
+      "limit": "A selected follow-up lead only. No detailed abstraction claim or exact-match exclusion is based on this access."
+    }
+  ],
+  "earlier_assessments_retained": [
+    "analysis/runtime_io_fifo_admission_step3/20261008-01/sources.json",
+    "analysis/runtime_io_fifo_hardcases_step4/20261008-01/sources.json"
+  ],
+  "focused_additional_searches": [
+    "\"finite buffer\" \"parametric\" \"deterministic\" queue service time",
+    "\"FIFO\" \"admission\" \"piecewise\" \"service time\"",
+    "\"loss queue\" \"sample path\" \"service\" monotonicity",
+    "\"finite buffer\" \"deadline\" \"breakpoints\""
+  ],
+  "search_interpretation": "These focused queries returned mostly adjacent stochastic or policy-optimization work, not an exact theorem match. Negative search results cannot establish absence. The closest positive evidence is the directly inspected standard recurrence and symbolic-region machinery.",
+  "remaining_review_question": "Does the admission-only projection and capacity-dependent bound add a substantial theorem, or is it a routine corollary of the established building blocks?",
+  "assistant_desk_verdict": "likely routine specialization; correctness supported, substantial novelty unestablished",
+  "decision": "keep speedup route shelved and collection stopped; seek an independent expert assessment of the precise packet before further investment"
+}

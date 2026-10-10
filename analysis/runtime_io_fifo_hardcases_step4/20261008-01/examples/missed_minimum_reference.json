@@ -1,0 +1,7943 @@
+{
+  "schema": 1,
+  "method": "exact critical-point reference",
+  "problem": {
+    "arrivals": [
+      "0",
+      "1/20",
+      "1/20",
+      "3/20",
+      "27/20",
+      "3/2",
+      "3/2",
+      "33/20",
+      "67/20",
+      "71/20",
+      "71/20",
+      "15/4",
+      "6",
+      "123/20",
+      "31/5",
+      "127/20"
+    ],
+    "system_slots": 5,
+    "relative_deadline": "21/10",
+    "service_interval": [
+      "11/20",
+      "27/20"
+    ],
+    "time_unit": "seconds"
+  },
+  "scope": "shared constant service time; finite known trace; tail-drop FIFO; late jobs finish",
+  "real_system_coverage_established": false,
+  "novelty_established": false,
+  "limits": {
+    "max_root_expressions": 100000,
+    "max_replays": 20000,
+    "max_replay_offers": 200000
+  },
+  "stats": {
+    "root_expressions": 1632,
+    "distinct_breakpoints": 251,
+    "cells": 501,
+    "fixed_parameter_replays": 503,
+    "offer_evaluations": 8048
+  },
+  "cells": [
+    {
+      "domain": {
+        "low": "11/20",
+        "high": "11/20",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "11/20",
+      "rejected": 1,
+      "late": 3,
+      "timely": 12,
+      "failures": 4,
+      "failure_fraction": "1/4",
+      "failure_percentage": "25"
+    },
+    {
+      "domain": {
+        "low": "11/20",
+        "high": "83/150",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "331/600",
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4"
+    },
+    {
+      "domain": {
+        "low": "83/150",
+        "high": "83/150",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "83/150",
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4"
+    },
+    {
+      "domain": {
+        "low": "83/150",
+        "high": "61/110",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "457/825",
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4"
+    },
+    {
+      "domain": {
+        "low": "61/110",
+        "high": "61/110",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "61/110",
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4"
+    },
+    {
+      "domain": {
+        "low": "61/110",
+        "high": "5/9",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1099/1980",
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4"
+    },
+    {
+      "domain": {
+        "low": "5/9",
+        "high": "5/9",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "5/9",
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4"
+    },
+    {
+      "domain": {
+        "low": "5/9",
+        "high": "67/120",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "401/720",
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4"
+    },
+    {
+      "domain": {
+        "low": "67/120",
+        "high": "67/120",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "67/120",
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4"
+    },
+    {
+      "domain": {
+        "low": "67/120",
+        "high": "123/220",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "295/528",
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4"
+    },
+    {
+      "domain": {
+        "low": "123/220",
+        "high": "123/220",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "123/220",
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4"
+    },
+    {
+      "domain": {
+        "low": "123/220",
+        "high": "14/25",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1231/2200",
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4"
+    },
+    {
+      "domain": {
+        "low": "14/25",
+        "high": "14/25",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "14/25",
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4"
+    },
+    {
+      "domain": {
+        "low": "14/25",
+        "high": "9/16",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "449/800",
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4"
+    },
+    {
+      "domain": {
+        "low": "9/16",
+        "high": "9/16",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "9/16",
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4"
+    },
+    {
+      "domain": {
+        "low": "9/16",
+        "high": "169/300",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1351/2400",
+      "rejected": 1,
+      "late": 3,
+      "timely": 12,
+      "failures": 4,
+      "failure_fraction": "1/4",
+      "failure_percentage": "25"
+    },
+    {
+      "domain": {
+        "low": "169/300",
+        "high": "169/300",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "169/300",
+      "rejected": 1,
+      "late": 3,
+      "timely": 12,
+      "failures": 4,
+      "failure_fraction": "1/4",
+      "failure_percentage": "25"
+    },
+    {
+      "domain": {
+        "low": "169/300",
+        "high": "31/55",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "3719/6600",
+      "rejected": 1,
+      "late": 4,
+      "timely": 11,
+      "failures": 5,
+      "failure_fraction": "5/16",
+      "failure_percentage": "125/4"
+    },
+    {
+      "domain": {
+        "low": "31/55",
+        "high": "31/55",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "31/55",
+      "rejected": 1,
+      "late": 4,
+      "timely": 11,
+      "failures": 5,
+      "failure_fraction": "5/16",
+      "failure_percentage": "125/4"
+    },
+    {
+      "domain": {
+        "low": "31/55",
+        "high": "113/200",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "2483/4400",
+      "rejected": 1,
+      "late": 4,
+      "timely": 11,
+      "failures": 5,
+      "failure_fraction": "5/16",
+      "failure_percentage": "125/4"
+    },
+    {
+      "domain": {
+        "low": "113/200",
+        "high": "113/200",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "113/200",
+      "rejected": 1,
+      "late": 4,
+      "timely": 11,
+      "failures": 5,
+      "failure_fraction": "5/16",
+      "failure_percentage": "125/4"
+    },
+    {
+      "domain": {
+        "low": "113/200",
+        "high": "17/30",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "679/1200",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "17/30",
+        "high": "17/30",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "17/30",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "17/30",
+        "high": "91/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "109/192",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "91/160",
+        "high": "91/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "91/160",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "91/160",
+        "high": "57/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "911/1600",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "57/100",
+        "high": "57/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "57/100",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "57/100",
+        "high": "63/110",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1257/2200",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "63/110",
+        "high": "63/110",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "63/110",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "63/110",
+        "high": "127/220",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "23/40",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "127/220",
+        "high": "127/220",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "127/220",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "127/220",
+        "high": "29/50",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1273/2200",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "29/50",
+        "high": "29/50",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "29/50",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "29/50",
+        "high": "93/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "929/1600",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "93/160",
+        "high": "93/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "93/160",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "93/160",
+        "high": "7/12",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "559/960",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "7/12",
+        "high": "7/12",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "7/12",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "7/12",
+        "high": "117/200",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "701/1200",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "117/200",
+        "high": "117/200",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "117/200",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "117/200",
+        "high": "47/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "469/800",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "47/80",
+        "high": "47/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "47/80",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "47/80",
+        "high": "33/56",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "659/1120",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "33/56",
+        "high": "33/56",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "33/56",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "33/56",
+        "high": "71/120",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "62/105",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "71/120",
+        "high": "71/120",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "71/120",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "71/120",
+        "high": "83/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "199/336",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "83/140",
+        "high": "83/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "83/140",
+      "rejected": 1,
+      "late": 5,
+      "timely": 10,
+      "failures": 6,
+      "failure_fraction": "3/8",
+      "failure_percentage": "75/2"
+    },
+    {
+      "domain": {
+        "low": "83/140",
+        "high": "119/200",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1663/2800",
+      "rejected": 1,
+      "late": 6,
+      "timely": 9,
+      "failures": 7,
+      "failure_fraction": "7/16",
+      "failure_percentage": "175/4"
+    },
+    {
+      "domain": {
+        "low": "119/200",
+        "high": "119/200",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "119/200",
+      "rejected": 1,
+      "late": 6,
+      "timely": 9,
+      "failures": 7,
+      "failure_fraction": "7/16",
+      "failure_percentage": "175/4"
+    },
+    {
+      "domain": {
+        "low": "119/200",
+        "high": "3/5",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "239/400",
+      "rejected": 1,
+      "late": 6,
+      "timely": 9,
+      "failures": 7,
+      "failure_fraction": "7/16",
+      "failure_percentage": "175/4"
+    },
+    {
+      "domain": {
+        "low": "3/5",
+        "high": "3/5",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "3/5",
+      "rejected": 1,
+      "late": 6,
+      "timely": 9,
+      "failures": 7,
+      "failure_fraction": "7/16",
+      "failure_percentage": "175/4"
+    },
+    {
+      "domain": {
+        "low": "3/5",
+        "high": "169/280",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "337/560",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "169/280",
+        "high": "169/280",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "169/280",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "169/280",
+        "high": "121/200",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "423/700",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "121/200",
+        "high": "121/200",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "121/200",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "121/200",
+        "high": "109/180",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "2179/3600",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "109/180",
+        "high": "109/180",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "109/180",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "109/180",
+        "high": "97/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "349/576",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "97/160",
+        "high": "97/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "97/160",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "97/160",
+        "high": "61/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "973/1600",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "61/100",
+        "high": "61/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "61/100",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "61/100",
+        "high": "49/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "489/800",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "49/80",
+        "high": "49/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "49/80",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "49/80",
+        "high": "43/70",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "687/1120",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "43/70",
+        "high": "43/70",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "43/70",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "43/70",
+        "high": "123/200",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1721/2800",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "123/200",
+        "high": "123/200",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "123/200",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "123/200",
+        "high": "37/60",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "739/1200",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "37/60",
+        "high": "37/60",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "37/60",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "37/60",
+        "high": "31/50",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "371/600",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "31/50",
+        "high": "31/50",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "31/50",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "31/50",
+        "high": "87/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "869/1400",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "87/140",
+        "high": "87/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "87/140",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "87/140",
+        "high": "28/45",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1567/2520",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "28/45",
+        "high": "28/45",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "28/45",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "28/45",
+        "high": "81/130",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1457/2340",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "81/130",
+        "high": "81/130",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "81/130",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "81/130",
+        "high": "5/8",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "649/1040",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "5/8",
+        "high": "5/8",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "5/8",
+      "rejected": 1,
+      "late": 7,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "5/8",
+        "high": "113/180",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "451/720",
+      "rejected": 2,
+      "late": 5,
+      "timely": 9,
+      "failures": 7,
+      "failure_fraction": "7/16",
+      "failure_percentage": "175/4"
+    },
+    {
+      "domain": {
+        "low": "113/180",
+        "high": "113/180",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "113/180",
+      "rejected": 2,
+      "late": 5,
+      "timely": 9,
+      "failures": 7,
+      "failure_fraction": "7/16",
+      "failure_percentage": "175/4"
+    },
+    {
+      "domain": {
+        "low": "113/180",
+        "high": "63/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "283/450",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "63/100",
+        "high": "63/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "63/100",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "63/100",
+        "high": "41/65",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1639/2600",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "41/65",
+        "high": "41/65",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "41/65",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "41/65",
+        "high": "139/220",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "3611/5720",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "139/220",
+        "high": "139/220",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "139/220",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "139/220",
+        "high": "19/30",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "167/264",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "19/30",
+        "high": "19/30",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "19/30",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "19/30",
+        "high": "33/52",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "989/1560",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "33/52",
+        "high": "33/52",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "33/52",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "33/52",
+        "high": "127/200",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "3301/5200",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "127/200",
+        "high": "127/200",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "127/200",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "127/200",
+        "high": "51/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "509/800",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "51/80",
+        "high": "51/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "51/80",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "51/80",
+        "high": "83/130",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1327/2080",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "83/130",
+        "high": "83/130",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "83/130",
+      "rejected": 2,
+      "late": 6,
+      "timely": 8,
+      "failures": 8,
+      "failure_fraction": "1/2",
+      "failure_percentage": "50"
+    },
+    {
+      "domain": {
+        "low": "83/130",
+        "high": "16/25",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "831/1300",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "16/25",
+        "high": "16/25",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "16/25",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "16/25",
+        "high": "9/14",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "449/700",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "9/14",
+        "high": "9/14",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "9/14",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "9/14",
+        "high": "29/45",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "811/1260",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "29/45",
+        "high": "29/45",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "29/45",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "29/45",
+        "high": "71/110",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1277/1980",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "71/110",
+        "high": "71/110",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "71/110",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "71/110",
+        "high": "42/65",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1847/2860",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "42/65",
+        "high": "42/65",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "42/65",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "42/65",
+        "high": "13/20",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "337/520",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "13/20",
+        "high": "13/20",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "13/20",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "13/20",
+        "high": "33/50",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "131/200",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "33/50",
+        "high": "33/50",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "33/50",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "33/50",
+        "high": "119/180",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1189/1800",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "119/180",
+        "high": "119/180",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "119/180",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "119/180",
+        "high": "53/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "953/1440",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "53/80",
+        "high": "53/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "53/80",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "53/80",
+        "high": "93/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "743/1120",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "93/140",
+        "high": "93/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "93/140",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "93/140",
+        "high": "2/3",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "559/840",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "2/3",
+        "high": "2/3",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "2/3",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "2/3",
+        "high": "67/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "401/600",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "67/100",
+        "high": "67/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "67/100",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "67/100",
+        "high": "161/240",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1609/2400",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "161/240",
+        "high": "161/240",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "161/240",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "161/240",
+        "high": "47/70",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "451/672",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "47/70",
+        "high": "47/70",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "47/70",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "47/70",
+        "high": "121/180",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1693/2520",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "121/180",
+        "high": "121/180",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "121/180",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "121/180",
+        "high": "27/40",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "97/144",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "27/40",
+        "high": "27/40",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "27/40",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "27/40",
+        "high": "61/90",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "487/720",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "61/90",
+        "high": "61/90",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "61/90",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "61/90",
+        "high": "163/240",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "977/1440",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "163/240",
+        "high": "163/240",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "163/240",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "163/240",
+        "high": "17/25",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1631/2400",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "17/25",
+        "high": "17/25",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "17/25",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "17/25",
+        "high": "109/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1089/1600",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "109/160",
+        "high": "109/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "109/160",
+      "rejected": 2,
+      "late": 7,
+      "timely": 7,
+      "failures": 9,
+      "failure_fraction": "9/16",
+      "failure_percentage": "225/4"
+    },
+    {
+      "domain": {
+        "low": "109/160",
+        "high": "41/60",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "131/192",
+      "rejected": 2,
+      "late": 8,
+      "timely": 6,
+      "failures": 10,
+      "failure_fraction": "5/8",
+      "failure_percentage": "125/2"
+    },
+    {
+      "domain": {
+        "low": "41/60",
+        "high": "41/60",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "41/60",
+      "rejected": 2,
+      "late": 8,
+      "timely": 6,
+      "failures": 10,
+      "failure_fraction": "5/8",
+      "failure_percentage": "125/2"
+    },
+    {
+      "domain": {
+        "low": "41/60",
+        "high": "24/35",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "115/168",
+      "rejected": 2,
+      "late": 8,
+      "timely": 6,
+      "failures": 10,
+      "failure_fraction": "5/8",
+      "failure_percentage": "125/2"
+    },
+    {
+      "domain": {
+        "low": "24/35",
+        "high": "24/35",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "24/35",
+      "rejected": 2,
+      "late": 8,
+      "timely": 6,
+      "failures": 10,
+      "failure_fraction": "5/8",
+      "failure_percentage": "125/2"
+    },
+    {
+      "domain": {
+        "low": "24/35",
+        "high": "11/16",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "769/1120",
+      "rejected": 2,
+      "late": 8,
+      "timely": 6,
+      "failures": 10,
+      "failure_fraction": "5/8",
+      "failure_percentage": "125/2"
+    },
+    {
+      "domain": {
+        "low": "11/16",
+        "high": "11/16",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "11/16",
+      "rejected": 2,
+      "late": 8,
+      "timely": 6,
+      "failures": 10,
+      "failure_fraction": "5/8",
+      "failure_percentage": "125/2"
+    },
+    {
+      "domain": {
+        "low": "11/16",
+        "high": "31/45",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "991/1440",
+      "rejected": 2,
+      "late": 9,
+      "timely": 5,
+      "failures": 11,
+      "failure_fraction": "11/16",
+      "failure_percentage": "275/4"
+    },
+    {
+      "domain": {
+        "low": "31/45",
+        "high": "31/45",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "31/45",
+      "rejected": 2,
+      "late": 9,
+      "timely": 5,
+      "failures": 11,
+      "failure_fraction": "11/16",
+      "failure_percentage": "275/4"
+    },
+    {
+      "domain": {
+        "low": "31/45",
+        "high": "69/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1241/1800",
+      "rejected": 2,
+      "late": 9,
+      "timely": 5,
+      "failures": 11,
+      "failure_fraction": "11/16",
+      "failure_percentage": "275/4"
+    },
+    {
+      "domain": {
+        "low": "69/100",
+        "high": "69/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "69/100",
+      "rejected": 2,
+      "late": 9,
+      "timely": 5,
+      "failures": 11,
+      "failure_fraction": "11/16",
+      "failure_percentage": "275/4"
+    },
+    {
+      "domain": {
+        "low": "69/100",
+        "high": "83/120",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "829/1200",
+      "rejected": 2,
+      "late": 10,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "83/120",
+        "high": "83/120",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "83/120",
+      "rejected": 2,
+      "late": 10,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "83/120",
+        "high": "97/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1163/1680",
+      "rejected": 2,
+      "late": 10,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "97/140",
+        "high": "97/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "97/140",
+      "rejected": 2,
+      "late": 10,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "97/140",
+        "high": "139/200",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1943/2800",
+      "rejected": 2,
+      "late": 10,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "139/200",
+        "high": "139/200",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "139/200",
+      "rejected": 2,
+      "late": 10,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "139/200",
+        "high": "7/10",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "279/400",
+      "rejected": 2,
+      "late": 10,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "7/10",
+        "high": "7/10",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "7/10",
+      "rejected": 2,
+      "late": 10,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "7/10",
+        "high": "169/240",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "337/480",
+      "rejected": 2,
+      "late": 10,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "169/240",
+        "high": "169/240",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "169/240",
+      "rejected": 2,
+      "late": 10,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "169/240",
+        "high": "127/180",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "203/288",
+      "rejected": 2,
+      "late": 10,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "127/180",
+        "high": "127/180",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "127/180",
+      "rejected": 2,
+      "late": 10,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "127/180",
+        "high": "113/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "2033/2880",
+      "rejected": 3,
+      "late": 9,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "113/160",
+        "high": "113/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "113/160",
+      "rejected": 3,
+      "late": 9,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "113/160",
+        "high": "99/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1583/2240",
+      "rejected": 3,
+      "late": 9,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "99/140",
+        "high": "99/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "99/140",
+      "rejected": 3,
+      "late": 9,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "99/140",
+        "high": "71/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "124/175",
+      "rejected": 3,
+      "late": 9,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "71/100",
+        "high": "71/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "71/100",
+      "rejected": 3,
+      "late": 9,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "71/100",
+        "high": "57/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "569/800",
+      "rejected": 3,
+      "late": 9,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "57/80",
+        "high": "57/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "57/80",
+      "rejected": 3,
+      "late": 9,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "57/80",
+        "high": "5/7",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "799/1120",
+      "rejected": 3,
+      "late": 9,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "5/7",
+        "high": "5/7",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "5/7",
+      "rejected": 3,
+      "late": 9,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "5/7",
+        "high": "43/60",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "601/840",
+      "rejected": 3,
+      "late": 9,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "43/60",
+        "high": "43/60",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "43/60",
+      "rejected": 3,
+      "late": 9,
+      "timely": 4,
+      "failures": 12,
+      "failure_fraction": "3/4",
+      "failure_percentage": "75"
+    },
+    {
+      "domain": {
+        "low": "43/60",
+        "high": "18/25",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "431/600",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "18/25",
+        "high": "18/25",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "18/25",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "18/25",
+        "high": "29/40",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "289/400",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "29/40",
+        "high": "29/40",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "29/40",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "29/40",
+        "high": "51/70",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "407/560",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "51/70",
+        "high": "51/70",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "51/70",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "51/70",
+        "high": "117/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "327/448",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "117/160",
+        "high": "117/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "117/160",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "117/160",
+        "high": "161/220",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "515/704",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "161/220",
+        "high": "161/220",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "161/220",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "161/220",
+        "high": "11/15",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "967/1320",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "11/15",
+        "high": "11/15",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "11/15",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "11/15",
+        "high": "81/110",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "97/132",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "81/110",
+        "high": "81/110",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "81/110",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "81/110",
+        "high": "37/50",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "203/275",
+      "rejected": 3,
+      "late": 11,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "37/50",
+        "high": "37/50",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "37/50",
+      "rejected": 3,
+      "late": 11,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "37/50",
+        "high": "163/220",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1629/2200",
+      "rejected": 3,
+      "late": 11,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "163/220",
+        "high": "163/220",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "163/220",
+      "rejected": 3,
+      "late": 11,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "163/220",
+        "high": "119/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "2613/3520",
+      "rejected": 3,
+      "late": 11,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "119/160",
+        "high": "119/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "119/160",
+      "rejected": 3,
+      "late": 11,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "119/160",
+        "high": "41/55",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "2621/3520",
+      "rejected": 3,
+      "late": 11,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "41/55",
+        "high": "41/55",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "41/55",
+      "rejected": 3,
+      "late": 11,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "41/55",
+        "high": "3/4",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "329/440",
+      "rejected": 3,
+      "late": 11,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "3/4",
+        "high": "3/4",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "3/4",
+      "rejected": 3,
+      "late": 11,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "3/4",
+        "high": "83/110",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "331/440",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "83/110",
+        "high": "83/110",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "83/110",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "83/110",
+        "high": "34/45",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "299/396",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "34/45",
+        "high": "34/45",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "34/45",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "34/45",
+        "high": "121/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "2177/2880",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "121/160",
+        "high": "121/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "121/160",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "121/160",
+        "high": "91/120",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "727/960",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "91/120",
+        "high": "91/120",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "91/120",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "91/120",
+        "high": "61/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "73/96",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "61/80",
+        "high": "61/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "61/80",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "61/80",
+        "high": "42/55",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1343/1760",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "42/55",
+        "high": "42/55",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "42/55",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "42/55",
+        "high": "23/30",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "101/132",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "23/30",
+        "high": "23/30",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "23/30",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "23/30",
+        "high": "169/220",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1013/1320",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "169/220",
+        "high": "169/220",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "169/220",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "169/220",
+        "high": "123/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "541/704",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "123/160",
+        "high": "123/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "123/160",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "123/160",
+        "high": "27/35",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "345/448",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "27/35",
+        "high": "27/35",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "27/35",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "27/35",
+        "high": "139/180",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "389/504",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "139/180",
+        "high": "139/180",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "139/180",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "139/180",
+        "high": "31/40",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "557/720",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "31/40",
+        "high": "31/40",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "31/40",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "31/40",
+        "high": "109/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "87/112",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "109/140",
+        "high": "109/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "109/140",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "109/140",
+        "high": "47/60",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "82/105",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "47/60",
+        "high": "47/60",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "47/60",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "47/60",
+        "high": "11/14",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "659/840",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "11/14",
+        "high": "11/14",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "11/14",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "11/14",
+        "high": "63/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "881/1120",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "63/80",
+        "high": "63/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "63/80",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "63/80",
+        "high": "71/90",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "227/288",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "71/90",
+        "high": "71/90",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "71/90",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "71/90",
+        "high": "19/24",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "569/720",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "19/24",
+        "high": "19/24",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "19/24",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "19/24",
+        "high": "127/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "761/960",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "127/160",
+        "high": "127/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "127/160",
+      "rejected": 3,
+      "late": 10,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "127/160",
+        "high": "159/200",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1271/1600",
+      "rejected": 4,
+      "late": 9,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "159/200",
+        "high": "159/200",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "159/200",
+      "rejected": 4,
+      "late": 9,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "159/200",
+        "high": "4/5",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "319/400",
+      "rejected": 4,
+      "late": 9,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "4/5",
+        "high": "4/5",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "4/5",
+      "rejected": 4,
+      "late": 9,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "4/5",
+        "high": "161/200",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "321/400",
+      "rejected": 4,
+      "late": 9,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "161/200",
+        "high": "161/200",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "161/200",
+      "rejected": 4,
+      "late": 9,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "161/200",
+        "high": "113/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "2257/2800",
+      "rejected": 4,
+      "late": 9,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "113/140",
+        "high": "113/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "113/140",
+      "rejected": 4,
+      "late": 9,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "113/140",
+        "high": "97/120",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1357/1680",
+      "rejected": 4,
+      "late": 9,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "97/120",
+        "high": "97/120",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "97/120",
+      "rejected": 4,
+      "late": 9,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "97/120",
+        "high": "81/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "971/1200",
+      "rejected": 4,
+      "late": 9,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "81/100",
+        "high": "81/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "81/100",
+      "rejected": 4,
+      "late": 9,
+      "timely": 3,
+      "failures": 13,
+      "failure_fraction": "13/16",
+      "failure_percentage": "325/4"
+    },
+    {
+      "domain": {
+        "low": "81/100",
+        "high": "57/70",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1137/1400",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "57/70",
+        "high": "57/70",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "57/70",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "57/70",
+        "high": "163/200",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "2281/2800",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "163/200",
+        "high": "163/200",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "163/200",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "163/200",
+        "high": "49/60",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "979/1200",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "49/60",
+        "high": "49/60",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "49/60",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "49/60",
+        "high": "41/50",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "491/600",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "41/50",
+        "high": "41/50",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "41/50",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "41/50",
+        "high": "33/40",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "329/400",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "33/40",
+        "high": "33/40",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "33/40",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "33/40",
+        "high": "29/35",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "463/560",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "29/35",
+        "high": "29/35",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "29/35",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "29/35",
+        "high": "83/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1161/1400",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "83/100",
+        "high": "83/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "83/100",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "83/100",
+        "high": "133/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1329/1600",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "133/160",
+        "high": "133/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "133/160",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "133/160",
+        "high": "5/6",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "799/960",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "5/6",
+        "high": "5/6",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "5/6",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "5/6",
+        "high": "117/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "701/840",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "117/140",
+        "high": "117/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "117/140",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "117/140",
+        "high": "67/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "937/1120",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "67/80",
+        "high": "67/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "67/80",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "67/80",
+        "high": "21/25",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "671/800",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "21/25",
+        "high": "21/25",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "21/25",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "21/25",
+        "high": "27/32",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1347/1600",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "27/32",
+        "high": "27/32",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "27/32",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "27/32",
+        "high": "169/200",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1351/1600",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "169/200",
+        "high": "169/200",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "169/200",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "169/200",
+        "high": "17/20",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "339/400",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "17/20",
+        "high": "17/20",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "17/20",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "17/20",
+        "high": "6/7",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "239/280",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "6/7",
+        "high": "6/7",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "6/7",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "6/7",
+        "high": "43/50",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "601/700",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "43/50",
+        "high": "43/50",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "43/50",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "43/50",
+        "high": "69/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "689/800",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "69/80",
+        "high": "69/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "69/80",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "69/80",
+        "high": "121/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "967/1120",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "121/140",
+        "high": "121/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "121/140",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "121/140",
+        "high": "13/15",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "727/840",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "13/15",
+        "high": "13/15",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "13/15",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "13/15",
+        "high": "139/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "833/960",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "139/160",
+        "high": "139/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "139/160",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "139/160",
+        "high": "87/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1391/1600",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "87/100",
+        "high": "87/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "87/100",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "87/100",
+        "high": "61/70",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1219/1400",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "61/70",
+        "high": "61/70",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "61/70",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "61/70",
+        "high": "7/8",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "489/560",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "7/8",
+        "high": "7/8",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "7/8",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "7/8",
+        "high": "123/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "491/560",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "123/140",
+        "high": "123/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "123/140",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "123/140",
+        "high": "53/60",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "37/42",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "53/60",
+        "high": "53/60",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "53/60",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "53/60",
+        "high": "31/35",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "743/840",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "31/35",
+        "high": "31/35",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "31/35",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "31/35",
+        "high": "71/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "993/1120",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "71/80",
+        "high": "71/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "71/80",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "71/80",
+        "high": "161/180",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1283/1440",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "161/180",
+        "high": "161/180",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "161/180",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "161/180",
+        "high": "9/10",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "323/360",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "9/10",
+        "high": "9/10",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "9/10",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "9/10",
+        "high": "163/180",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "65/72",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "163/180",
+        "high": "163/180",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "163/180",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "163/180",
+        "high": "127/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "571/630",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "127/140",
+        "high": "127/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "127/140",
+      "rejected": 4,
+      "late": 10,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "127/140",
+        "high": "109/120",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "305/336",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "109/120",
+        "high": "109/120",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "109/120",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "109/120",
+        "high": "91/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1091/1200",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "91/100",
+        "high": "91/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "91/100",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "91/100",
+        "high": "41/45",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1639/1800",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "41/45",
+        "high": "41/45",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "41/45",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "41/45",
+        "high": "11/12",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "329/360",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "11/12",
+        "high": "11/12",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "11/12",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "11/12",
+        "high": "83/90",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "331/360",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "83/90",
+        "high": "83/90",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "83/90",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "83/90",
+        "high": "37/40",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "133/144",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "37/40",
+        "high": "37/40",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "37/40",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "37/40",
+        "high": "93/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "371/400",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "93/100",
+        "high": "93/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "93/100",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "93/100",
+        "high": "14/15",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "559/600",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "14/15",
+        "high": "14/15",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "14/15",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "14/15",
+        "high": "15/16",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "449/480",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "15/16",
+        "high": "15/16",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "15/16",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "15/16",
+        "high": "169/180",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1351/1440",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "169/180",
+        "high": "169/180",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "169/180",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "169/180",
+        "high": "47/50",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1691/1800",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "47/50",
+        "high": "47/50",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "47/50",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "47/50",
+        "high": "113/120",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1129/1200",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "113/120",
+        "high": "113/120",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "113/120",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "113/120",
+        "high": "33/35",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1583/1680",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "33/35",
+        "high": "33/35",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "33/35",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "33/35",
+        "high": "19/20",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "53/56",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "19/20",
+        "high": "19/20",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "19/20",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "19/20",
+        "high": "24/25",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "191/200",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "24/25",
+        "high": "24/25",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "24/25",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "24/25",
+        "high": "27/28",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1347/1400",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "27/28",
+        "high": "27/28",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "27/28",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "27/28",
+        "high": "29/30",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "811/840",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "29/30",
+        "high": "29/30",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "29/30",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "29/30",
+        "high": "97/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "581/600",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "97/100",
+        "high": "97/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "97/100",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "97/100",
+        "high": "34/35",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1359/1400",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "34/35",
+        "high": "34/35",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "34/35",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "34/35",
+        "high": "39/40",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "109/112",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "39/40",
+        "high": "39/40",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "39/40",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "39/40",
+        "high": "49/50",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "391/400",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "49/50",
+        "high": "49/50",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "49/50",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "49/50",
+        "high": "69/70",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "172/175",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "69/70",
+        "high": "69/70",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "69/70",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "69/70",
+        "high": "79/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "221/224",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "79/80",
+        "high": "79/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "79/80",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "79/80",
+        "high": "99/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "791/800",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "99/100",
+        "high": "99/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "99/100",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "99/100",
+        "high": "119/120",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1189/1200",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "119/120",
+        "high": "119/120",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "119/120",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "119/120",
+        "high": "139/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1667/1680",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "139/140",
+        "high": "139/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "139/140",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "139/140",
+        "high": "159/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "445/448",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "159/160",
+        "high": "159/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "159/160",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "159/160",
+        "high": "1",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "319/320",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "1",
+        "high": "1",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "1",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "1",
+        "high": "161/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "321/320",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "161/160",
+        "high": "161/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "161/160",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "161/160",
+        "high": "121/120",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "967/960",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "121/120",
+        "high": "121/120",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "121/120",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "121/120",
+        "high": "81/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "97/96",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "81/80",
+        "high": "81/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "81/80",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "81/80",
+        "high": "71/70",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "227/224",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "71/70",
+        "high": "71/70",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "71/70",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "71/70",
+        "high": "61/60",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "853/840",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "61/60",
+        "high": "61/60",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "61/60",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "61/60",
+        "high": "163/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "977/960",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "163/160",
+        "high": "163/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "163/160",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "163/160",
+        "high": "51/50",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1631/1600",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "51/50",
+        "high": "51/50",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "51/50",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "51/50",
+        "high": "41/40",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "409/400",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "41/40",
+        "high": "41/40",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "41/40",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "41/40",
+        "high": "33/32",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "329/320",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "33/32",
+        "high": "33/32",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "33/32",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "33/32",
+        "high": "31/30",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "991/960",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "31/30",
+        "high": "31/30",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "31/30",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "31/30",
+        "high": "83/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "497/480",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "83/80",
+        "high": "83/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "83/80",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "83/80",
+        "high": "21/20",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "167/160",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "21/20",
+        "high": "21/20",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "21/20",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "21/20",
+        "high": "169/160",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "337/320",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "169/160",
+        "high": "169/160",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "169/160",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "169/160",
+        "high": "127/120",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "203/192",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "127/120",
+        "high": "127/120",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "127/120",
+      "rejected": 5,
+      "late": 9,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "127/120",
+        "high": "53/50",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1271/1200",
+      "rejected": 6,
+      "late": 8,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "53/50",
+        "high": "53/50",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "53/50",
+      "rejected": 6,
+      "late": 8,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "53/50",
+        "high": "16/15",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "319/300",
+      "rejected": 6,
+      "late": 8,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "16/15",
+        "high": "16/15",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "16/15",
+      "rejected": 6,
+      "late": 8,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "16/15",
+        "high": "43/40",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "257/240",
+      "rejected": 6,
+      "late": 8,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "43/40",
+        "high": "43/40",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "43/40",
+      "rejected": 6,
+      "late": 8,
+      "timely": 2,
+      "failures": 14,
+      "failure_fraction": "7/8",
+      "failure_percentage": "175/2"
+    },
+    {
+      "domain": {
+        "low": "43/40",
+        "high": "27/25",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "431/400",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "27/25",
+        "high": "27/25",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "27/25",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "27/25",
+        "high": "87/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "867/800",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "87/80",
+        "high": "87/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "87/80",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "87/80",
+        "high": "109/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "871/800",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "109/100",
+        "high": "109/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "109/100",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "109/100",
+        "high": "11/10",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "219/200",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "11/10",
+        "high": "11/10",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "11/10",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "11/10",
+        "high": "133/120",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "53/48",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "133/120",
+        "high": "133/120",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "133/120",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "133/120",
+        "high": "67/60",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "89/80",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "67/60",
+        "high": "67/60",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "67/60",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "67/60",
+        "high": "28/25",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "671/600",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "28/25",
+        "high": "28/25",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "28/25",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "28/25",
+        "high": "9/8",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "449/400",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "9/8",
+        "high": "9/8",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "9/8",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "9/8",
+        "high": "113/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "451/400",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "113/100",
+        "high": "113/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "113/100",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "113/100",
+        "high": "17/15",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "679/600",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "17/15",
+        "high": "17/15",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "17/15",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "17/15",
+        "high": "159/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "953/840",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "159/140",
+        "high": "159/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "159/140",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "159/140",
+        "high": "91/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1273/1120",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "91/80",
+        "high": "91/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "91/80",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "91/80",
+        "high": "57/50",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "911/800",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "57/50",
+        "high": "57/50",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "57/50",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "57/50",
+        "high": "23/20",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "229/200",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "23/20",
+        "high": "23/20",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "23/20",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "23/20",
+        "high": "81/70",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "323/280",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "81/70",
+        "high": "81/70",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "81/70",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "81/70",
+        "high": "139/120",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "389/336",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "139/120",
+        "high": "139/120",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "139/120",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "139/120",
+        "high": "29/25",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1391/1200",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "29/25",
+        "high": "29/25",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "29/25",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "29/25",
+        "high": "93/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "929/800",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "93/80",
+        "high": "93/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "93/80",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "93/80",
+        "high": "163/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1303/1120",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "163/140",
+        "high": "163/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "163/140",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "163/140",
+        "high": "7/6",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "979/840",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "7/6",
+        "high": "7/6",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "7/6",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "7/6",
+        "high": "117/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "701/600",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "117/100",
+        "high": "117/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "117/100",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "117/100",
+        "high": "41/35",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1639/1400",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "41/35",
+        "high": "41/35",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "41/35",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "41/35",
+        "high": "47/40",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "657/560",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "47/40",
+        "high": "47/40",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "47/40",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "47/40",
+        "high": "33/28",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "659/560",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "33/28",
+        "high": "33/28",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "33/28",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "33/28",
+        "high": "71/60",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "124/105",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "71/60",
+        "high": "71/60",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "71/60",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "71/60",
+        "high": "83/70",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "199/168",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "83/70",
+        "high": "83/70",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "83/70",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "83/70",
+        "high": "19/16",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "1329/1120",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "19/16",
+        "high": "19/16",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "19/16",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "19/16",
+        "high": "119/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "951/800",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "119/100",
+        "high": "119/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "119/100",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "119/100",
+        "high": "6/5",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "239/200",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "6/5",
+        "high": "6/5",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "6/5",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "6/5",
+        "high": "169/140",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "337/280",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "169/140",
+        "high": "169/140",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "169/140",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "169/140",
+        "high": "121/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "423/350",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "121/100",
+        "high": "121/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "121/100",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "121/100",
+        "high": "97/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "969/800",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "97/80",
+        "high": "97/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "97/80",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "97/80",
+        "high": "61/50",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "973/800",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "61/50",
+        "high": "61/50",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "61/50",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "61/50",
+        "high": "49/40",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "489/400",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "49/40",
+        "high": "49/40",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "49/40",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "49/40",
+        "high": "123/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "491/400",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "123/100",
+        "high": "123/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "123/100",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "123/100",
+        "high": "37/30",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "739/600",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "37/30",
+        "high": "37/30",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "37/30",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "37/30",
+        "high": "99/80",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "593/480",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "99/80",
+        "high": "99/80",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "99/80",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "99/80",
+        "high": "31/25",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "991/800",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "31/25",
+        "high": "31/25",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "31/25",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "31/25",
+        "high": "5/4",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "249/200",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "5/4",
+        "high": "5/4",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "5/4",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "5/4",
+        "high": "63/50",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "251/200",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "63/50",
+        "high": "63/50",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "63/50",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "63/50",
+        "high": "127/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "253/200",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "127/100",
+        "high": "127/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "127/100",
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "127/100",
+        "high": "51/40",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "509/400",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "51/40",
+        "high": "51/40",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "51/40",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "51/40",
+        "high": "129/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "513/400",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "129/100",
+        "high": "129/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "129/100",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "129/100",
+        "high": "13/10",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "259/200",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "13/10",
+        "high": "13/10",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "13/10",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "13/10",
+        "high": "79/60",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "157/120",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "79/60",
+        "high": "79/60",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "79/60",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "79/60",
+        "high": "33/25",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "791/600",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "33/25",
+        "high": "33/25",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "33/25",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "33/25",
+        "high": "53/40",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "529/400",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "53/40",
+        "high": "53/40",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "53/40",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "53/40",
+        "high": "133/100",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "531/400",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "133/100",
+        "high": "133/100",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "133/100",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "133/100",
+        "high": "4/3",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "799/600",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "4/3",
+        "high": "4/3",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "4/3",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "4/3",
+        "high": "161/120",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "107/80",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "161/120",
+        "high": "161/120",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "161/120",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "161/120",
+        "high": "27/20",
+        "left_closed": false,
+        "right_closed": false
+      },
+      "witness_service_time": "323/240",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    },
+    {
+      "domain": {
+        "low": "27/20",
+        "high": "27/20",
+        "left_closed": true,
+        "right_closed": true
+      },
+      "witness_service_time": "27/20",
+      "rejected": 7,
+      "late": 8,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4"
+    }
+  ],
+  "minimum": {
+    "failures": 3,
+    "failure_fraction": "3/16",
+    "failure_percentage": "75/4",
+    "attaining_cell_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "witness_service_time": "331/600",
+    "witness_replay": {
+      "offered": 16,
+      "rejected": 1,
+      "late": 2,
+      "timely": 13,
+      "failures": 3,
+      "failure_fraction": "3/16",
+      "failure_percentage": "75/4",
+      "system_peak": 5,
+      "offers": [
+        {
+          "index": 0,
+          "arrival": "0",
+          "completion": "331/600",
+          "latency": "331/600",
+          "outcome": "timely"
+        },
+        {
+          "index": 1,
+          "arrival": "1/20",
+          "completion": "331/300",
+          "latency": "79/75",
+          "outcome": "timely"
+        },
+        {
+          "index": 2,
+          "arrival": "1/20",
+          "completion": "331/200",
+          "latency": "321/200",
+          "outcome": "timely"
+        },
+        {
+          "index": 3,
+          "arrival": "3/20",
+          "completion": "331/150",
+          "latency": "617/300",
+          "outcome": "timely"
+        },
+        {
+          "index": 4,
+          "arrival": "27/20",
+          "completion": "331/120",
+          "latency": "169/120",
+          "outcome": "timely"
+        },
+        {
+          "index": 5,
+          "arrival": "3/2",
+          "completion": "331/100",
+          "latency": "181/100",
+          "outcome": "timely"
+        },
+        {
+          "index": 6,
+          "arrival": "3/2",
+          "completion": "2317/600",
+          "latency": "1417/600",
+          "outcome": "late"
+        },
+        {
+          "index": 7,
+          "arrival": "33/20",
+          "completion": null,
+          "latency": null,
+          "outcome": "rejected"
+        },
+        {
+          "index": 8,
+          "arrival": "67/20",
+          "completion": "331/75",
+          "latency": "319/300",
+          "outcome": "timely"
+        },
+        {
+          "index": 9,
+          "arrival": "71/20",
+          "completion": "993/200",
+          "latency": "283/200",
+          "outcome": "timely"
+        },
+        {
+          "index": 10,
+          "arrival": "71/20",
+          "completion": "331/60",
+          "latency": "59/30",
+          "outcome": "timely"
+        },
+        {
+          "index": 11,
+          "arrival": "15/4",
+          "completion": "3641/600",
+          "latency": "1391/600",
+          "outcome": "late"
+        },
+        {
+          "index": 12,
+          "arrival": "6",
+          "completion": "331/50",
+          "latency": "31/50",
+          "outcome": "timely"
+        },
+        {
+          "index": 13,
+          "arrival": "123/20",
+          "completion": "4303/600",
+          "latency": "613/600",
+          "outcome": "timely"
+        },
+        {
+          "index": 14,
+          "arrival": "31/5",
+          "completion": "2317/300",
+          "latency": "457/300",
+          "outcome": "timely"
+        },
+        {
+          "index": 15,
+          "arrival": "127/20",
+          "completion": "331/40",
+          "latency": "77/40",
+          "outcome": "timely"
+        }
+      ]
+    }
+  },
+  "maximum": {
+    "failures": 15,
+    "failure_fraction": "15/16",
+    "failure_percentage": "375/4",
+    "attaining_cell_indices": [
+      399,
+      400,
+      401,
+      402,
+      403,
+      404,
+      405,
+      406,
+      407,
+      408,
+      409,
+      410,
+      411,
+      412,
+      413,
+      414,
+      415,
+      416,
+      417,
+      418,
+      419,
+      420,
+      421,
+      422,
+      423,
+      424,
+      425,
+      426,
+      427,
+      428,
+      429,
+      430,
+      431,
+      432,
+      433,
+      434,
+      435,
+      436,
+      437,
+      438,
+      439,
+      440,
+      441,
+      442,
+      443,
+      444,
+      445,
+      446,
+      447,
+      448,
+      449,
+      450,
+      451,
+      452,
+      453,
+      454,
+      455,
+      456,
+      457,
+      458,
+      459,
+      460,
+      461,
+      462,
+      463,
+      464,
+      465,
+      466,
+      467,
+      468,
+      469,
+      470,
+      471,
+      472,
+      473,
+      474,
+      475,
+      476,
+      477,
+      478,
+      479,
+      480,
+      481,
+      482,
+      483,
+      484,
+      485,
+      486,
+      487,
+      488,
+      489,
+      490,
+      491,
+      492,
+      493,
+      494,
+      495,
+      496,
+      497,
+      498,
+      499,
+      500
+    ],
+    "witness_service_time": "431/400",
+    "witness_replay": {
+      "offered": 16,
+      "rejected": 6,
+      "late": 9,
+      "timely": 1,
+      "failures": 15,
+      "failure_fraction": "15/16",
+      "failure_percentage": "375/4",
+      "system_peak": 5,
+      "offers": [
+        {
+          "index": 0,
+          "arrival": "0",
+          "completion": "431/400",
+          "latency": "431/400",
+          "outcome": "timely"
+        },
+        {
+          "index": 1,
+          "arrival": "1/20",
+          "completion": "431/200",
+          "latency": "421/200",
+          "outcome": "late"
+        },
+        {
+          "index": 2,
+          "arrival": "1/20",
+          "completion": "1293/400",
+          "latency": "1273/400",
+          "outcome": "late"
+        },
+        {
+          "index": 3,
+          "arrival": "3/20",
+          "completion": "431/100",
+          "latency": "104/25",
+          "outcome": "late"
+        },
+        {
+          "index": 4,
+          "arrival": "27/20",
+          "completion": "431/80",
+          "latency": "323/80",
+          "outcome": "late"
+        },
+        {
+          "index": 5,
+          "arrival": "3/2",
+          "completion": "1293/200",
+          "latency": "993/200",
+          "outcome": "late"
+        },
+        {
+          "index": 6,
+          "arrival": "3/2",
+          "completion": null,
+          "latency": null,
+          "outcome": "rejected"
+        },
+        {
+          "index": 7,
+          "arrival": "33/20",
+          "completion": null,
+          "latency": null,
+          "outcome": "rejected"
+        },
+        {
+          "index": 8,
+          "arrival": "67/20",
+          "completion": "3017/400",
+          "latency": "1677/400",
+          "outcome": "late"
+        },
+        {
+          "index": 9,
+          "arrival": "71/20",
+          "completion": "431/50",
+          "latency": "507/100",
+          "outcome": "late"
+        },
+        {
+          "index": 10,
+          "arrival": "71/20",
+          "completion": null,
+          "latency": null,
+          "outcome": "rejected"
+        },
+        {
+          "index": 11,
+          "arrival": "15/4",
+          "completion": null,
+          "latency": null,
+          "outcome": "rejected"
+        },
+        {
+          "index": 12,
+          "arrival": "6",
+          "completion": "3879/400",
+          "latency": "1479/400",
+          "outcome": "late"
+        },
+        {
+          "index": 13,
+          "arrival": "123/20",
+          "completion": "431/40",
+          "latency": "37/8",
+          "outcome": "late"
+        },
+        {
+          "index": 14,
+          "arrival": "31/5",
+          "completion": null,
+          "latency": null,
+          "outcome": "rejected"
+        },
+        {
+          "index": 15,
+          "arrival": "127/20",
+          "completion": null,
+          "latency": null,
+          "outcome": "rejected"
+        }
+      ]
+    }
+  }
+}

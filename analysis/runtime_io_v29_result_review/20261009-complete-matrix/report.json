@@ -1,0 +1,852 @@
+{
+  "status": "complete_four_condition_robustness_matrix_verified",
+  "contexts": {
+    "q050_small": {
+      "generation": "generation-03",
+      "report_path": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v29/q050_small/generation-03/analysis/1791494554710867073/report.json",
+      "verification": "Full retained raw/provenance replay passed; generation-03 inputs preserved, generation-04 replay passed in this review",
+      "calibration_trials": 16,
+      "validation_trials": 16,
+      "offers": 108084,
+      "decision": "busy_advantage_over_declared_comparators",
+      "methods": {
+        "whole": {
+          "capacity_rps": 141.3686626805711,
+          "mae_pp": 15.658668154761903,
+          "accuracy_pass": false,
+          "maximum_error_pp": 25.47619047619047
+        },
+        "busy": {
+          "capacity_rps": 153.79166666666669,
+          "mae_pp": 0.4786086309523807,
+          "accuracy_pass": true,
+          "maximum_error_pp": 1.7380952380952337
+        },
+        "idle_corrected": {
+          "capacity_rps": 141.45879971732643,
+          "mae_pp": 15.44438244047619,
+          "accuracy_pass": false,
+          "maximum_error_pp": 25.35714285714285
+        },
+        "regression": {
+          "capacity_rps": 120.74686590268301,
+          "mae_pp": 41.208519345238095,
+          "accuracy_pass": false,
+          "maximum_error_pp": 44.54761904761905
+        },
+        "quadratic": {
+          "capacity_rps": 132.30505866731517,
+          "mae_pp": 29.436197916666664,
+          "accuracy_pass": false,
+          "maximum_error_pp": 35.07142857142857
+        }
+      },
+      "advantages": {
+        "whole": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              15.331845238095237,
+              15.331845238095237
+            ],
+            [
+              15.331845238095237,
+              15.331845238095237
+            ],
+            [
+              15.331845238095237,
+              15.331845238095237
+            ],
+            [
+              14.724702380952378,
+              14.724702380952378
+            ]
+          ],
+          "midpoint_mean": 15.180059523809522,
+          "midpoint_sample_sd": 0.3035714285714297,
+          "mean_accounting_bounds": [
+            15.180059523809522,
+            15.180059523809522
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 0.3035714285714297,
+          "model_based_95_interval": [
+            14.697009638186016,
+            15.663109409433028
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        },
+        "idle_corrected": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              15.117559523809524,
+              15.117559523809524
+            ],
+            [
+              15.117559523809524,
+              15.117559523809524
+            ],
+            [
+              15.117559523809524,
+              15.117559523809524
+            ],
+            [
+              14.510416666666664,
+              14.510416666666664
+            ]
+          ],
+          "midpoint_mean": 14.965773809523808,
+          "midpoint_sample_sd": 0.3035714285714297,
+          "mean_accounting_bounds": [
+            14.965773809523808,
+            14.965773809523808
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 0.3035714285714297,
+          "model_based_95_interval": [
+            14.482723923900302,
+            15.448823695147315
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        },
+        "regression": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              40.88169642857143,
+              40.88169642857143
+            ],
+            [
+              40.88169642857143,
+              40.88169642857143
+            ],
+            [
+              40.88169642857143,
+              40.88169642857143
+            ],
+            [
+              40.27455357142857,
+              40.27455357142857
+            ]
+          ],
+          "midpoint_mean": 40.729910714285715,
+          "midpoint_sample_sd": 0.3035714285714306,
+          "mean_accounting_bounds": [
+            40.729910714285715,
+            40.729910714285715
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 0.3035714285714306,
+          "model_based_95_interval": [
+            40.24686082866221,
+            41.21296059990922
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        },
+        "quadratic": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              29.109375,
+              29.109375
+            ],
+            [
+              29.109375,
+              29.109375
+            ],
+            [
+              29.109375,
+              29.109375
+            ],
+            [
+              28.50223214285714,
+              28.50223214285714
+            ]
+          ],
+          "midpoint_mean": 28.957589285714285,
+          "midpoint_sample_sd": 0.3035714285714306,
+          "mean_accounting_bounds": [
+            28.957589285714285,
+            28.957589285714285
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 0.3035714285714306,
+          "model_based_95_interval": [
+            28.474539400090777,
+            29.440639171337793
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        }
+      },
+      "busy_deadline_grid": {
+        "25": {
+          "mae_pp": 3.4510788690476186,
+          "maximum_error_pp": 5.416666666666657
+        },
+        "50": {
+          "mae_pp": 1.5174851190476195,
+          "maximum_error_pp": 2.875
+        },
+        "100": {
+          "mae_pp": 1.0199032738095233,
+          "maximum_error_pp": 3.357142857142854
+        },
+        "200": {
+          "mae_pp": 0.8800223214285694,
+          "maximum_error_pp": 3.214285714285708
+        },
+        "500": {
+          "mae_pp": 0.4786086309523814,
+          "maximum_error_pp": 1.7380952380952372
+        },
+        "1000": {
+          "mae_pp": 0.0,
+          "maximum_error_pp": 0.0
+        }
+      }
+    },
+    "q025_small": {
+      "generation": "generation-03",
+      "report_path": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v29/q025_small/generation-03/analysis/1791500887094427964/report.json",
+      "verification": "Full retained raw/provenance replay passed; generation-03 inputs preserved, generation-04 replay passed in this review",
+      "calibration_trials": 16,
+      "validation_trials": 16,
+      "offers": 54042,
+      "decision": "busy_advantage_over_declared_comparators",
+      "methods": {
+        "whole": {
+          "capacity_rps": 65.61125774929118,
+          "mae_pp": 10.360863095238095,
+          "accuracy_pass": false,
+          "maximum_error_pp": 16.285714285714285
+        },
+        "busy": {
+          "capacity_rps": 69.625,
+          "mae_pp": 1.359374999999999,
+          "accuracy_pass": true,
+          "maximum_error_pp": 2.857142857142856
+        },
+        "idle_corrected": {
+          "capacity_rps": 65.68241438680907,
+          "mae_pp": 10.267113095238095,
+          "accuracy_pass": false,
+          "maximum_error_pp": 16.285714285714285
+        },
+        "regression": {
+          "capacity_rps": 57.37792783147556,
+          "mae_pp": 26.159970238095237,
+          "accuracy_pass": false,
+          "maximum_error_pp": 37.095238095238095
+        },
+        "quadratic": {
+          "capacity_rps": 59.13390389837025,
+          "mae_pp": 23.301339285714285,
+          "accuracy_pass": false,
+          "maximum_error_pp": 33.33333333333333
+        }
+      },
+      "advantages": {
+        "whole": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              9.133928571428575,
+              9.133928571428575
+            ],
+            [
+              9.27380952380952,
+              9.27380952380952
+            ],
+            [
+              7.434523809523808,
+              7.434523809523808
+            ],
+            [
+              10.163690476190482,
+              10.163690476190482
+            ]
+          ],
+          "midpoint_mean": 9.001488095238097,
+          "midpoint_sample_sd": 1.1398524593396906,
+          "mean_accounting_bounds": [
+            9.001488095238097,
+            9.001488095238097
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 1.1398524593396906,
+          "model_based_95_interval": [
+            7.187728471340707,
+            10.815247719135487
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        },
+        "idle_corrected": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              9.040178571428575,
+              9.040178571428575
+            ],
+            [
+              9.18005952380952,
+              9.18005952380952
+            ],
+            [
+              7.340773809523808,
+              7.340773809523808
+            ],
+            [
+              10.069940476190482,
+              10.069940476190482
+            ]
+          ],
+          "midpoint_mean": 8.907738095238097,
+          "midpoint_sample_sd": 1.1398524593396906,
+          "mean_accounting_bounds": [
+            8.907738095238097,
+            8.907738095238097
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 1.1398524593396906,
+          "model_based_95_interval": [
+            7.093978471340707,
+            10.721497719135487
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        },
+        "regression": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              24.933035714285715,
+              24.933035714285715
+            ],
+            [
+              25.072916666666664,
+              25.072916666666664
+            ],
+            [
+              23.23363095238095,
+              23.23363095238095
+            ],
+            [
+              25.962797619047624,
+              25.962797619047624
+            ]
+          ],
+          "midpoint_mean": 24.800595238095237,
+          "midpoint_sample_sd": 1.1398524593396915,
+          "mean_accounting_bounds": [
+            24.800595238095237,
+            24.800595238095237
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 1.1398524593396915,
+          "model_based_95_interval": [
+            22.986835614197847,
+            26.614354861992627
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        },
+        "quadratic": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              22.074404761904766,
+              22.074404761904766
+            ],
+            [
+              22.214285714285708,
+              22.214285714285708
+            ],
+            [
+              20.375,
+              20.375
+            ],
+            [
+              23.10416666666667,
+              23.10416666666667
+            ]
+          ],
+          "midpoint_mean": 21.941964285714285,
+          "midpoint_sample_sd": 1.1398524593396897,
+          "mean_accounting_bounds": [
+            21.941964285714285,
+            21.941964285714285
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 1.1398524593396897,
+          "model_based_95_interval": [
+            20.128204661816895,
+            23.755723909611675
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        }
+      },
+      "busy_deadline_grid": {
+        "25": {
+          "mae_pp": 3.157738095238095,
+          "maximum_error_pp": 5.857142857142847
+        },
+        "50": {
+          "mae_pp": 2.329241071428574,
+          "maximum_error_pp": 4.761904761904759
+        },
+        "100": {
+          "mae_pp": 0.6476934523809517,
+          "maximum_error_pp": 2.285714285714292
+        },
+        "200": {
+          "mae_pp": 1.652529761904761,
+          "maximum_error_pp": 3.5416666666666643
+        },
+        "500": {
+          "mae_pp": 1.3593749999999987,
+          "maximum_error_pp": 2.8571428571428594
+        },
+        "1000": {
+          "mae_pp": 0.5539434523809524,
+          "maximum_error_pp": 2.166666666666666
+        }
+      }
+    },
+    "q050_large": {
+      "generation": "generation-03",
+      "report_path": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v29/q050_large/generation-03/analysis/1791507365583471109/report.json",
+      "verification": "Full retained raw/provenance replay passed; generation-03 inputs preserved, generation-04 replay passed in this review",
+      "calibration_trials": 16,
+      "validation_trials": 16,
+      "offers": 54042,
+      "decision": "busy_advantage_over_declared_comparators",
+      "methods": {
+        "whole": {
+          "capacity_rps": 72.55757752737262,
+          "mae_pp": 11.093377976190476,
+          "accuracy_pass": false,
+          "maximum_error_pp": 24.666666666666664
+        },
+        "busy": {
+          "capacity_rps": 77.64583333333333,
+          "mae_pp": 0.672247023809524,
+          "accuracy_pass": true,
+          "maximum_error_pp": 2.3333333333333286
+        },
+        "idle_corrected": {
+          "capacity_rps": 72.60624530931993,
+          "mae_pp": 11.093377976190476,
+          "accuracy_pass": false,
+          "maximum_error_pp": 24.666666666666664
+        },
+        "regression": {
+          "capacity_rps": 62.32878356017293,
+          "mae_pp": 40.81659226190476,
+          "accuracy_pass": false,
+          "maximum_error_pp": 46.19047619047619
+        },
+        "quadratic": {
+          "capacity_rps": 67.03263931302013,
+          "mae_pp": 29.993675595238095,
+          "accuracy_pass": false,
+          "maximum_error_pp": 38.52380952380952
+        }
+      },
+      "advantages": {
+        "whole": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              10.724702380952381,
+              10.724702380952381
+            ],
+            [
+              10.67708333333333,
+              10.67708333333333
+            ],
+            [
+              10.724702380952381,
+              10.724702380952381
+            ],
+            [
+              9.558035714285717,
+              9.558035714285717
+            ]
+          ],
+          "midpoint_mean": 10.421130952380953,
+          "midpoint_sample_sd": 0.575834535211768,
+          "mean_accounting_bounds": [
+            10.421130952380953,
+            10.421130952380953
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 0.575834535211768,
+          "model_based_95_interval": [
+            9.504849707861066,
+            11.33741219690084
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        },
+        "idle_corrected": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              10.724702380952381,
+              10.724702380952381
+            ],
+            [
+              10.67708333333333,
+              10.67708333333333
+            ],
+            [
+              10.724702380952381,
+              10.724702380952381
+            ],
+            [
+              9.558035714285717,
+              9.558035714285717
+            ]
+          ],
+          "midpoint_mean": 10.421130952380953,
+          "midpoint_sample_sd": 0.575834535211768,
+          "mean_accounting_bounds": [
+            10.421130952380953,
+            10.421130952380953
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 0.575834535211768,
+          "model_based_95_interval": [
+            9.504849707861066,
+            11.33741219690084
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        },
+        "regression": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              40.447916666666664,
+              40.447916666666664
+            ],
+            [
+              40.40029761904761,
+              40.40029761904761
+            ],
+            [
+              40.44791666666667,
+              40.44791666666667
+            ],
+            [
+              39.28125,
+              39.28125
+            ]
+          ],
+          "midpoint_mean": 40.14434523809524,
+          "midpoint_sample_sd": 0.5758345352117692,
+          "mean_accounting_bounds": [
+            40.14434523809524,
+            40.14434523809524
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 0.5758345352117692,
+          "model_based_95_interval": [
+            39.228063993575354,
+            41.06062648261513
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        },
+        "quadratic": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              29.625,
+              29.625
+            ],
+            [
+              29.57738095238095,
+              29.57738095238095
+            ],
+            [
+              29.625,
+              29.625
+            ],
+            [
+              28.458333333333336,
+              28.458333333333336
+            ]
+          ],
+          "midpoint_mean": 29.32142857142857,
+          "midpoint_sample_sd": 0.575834535211768,
+          "mean_accounting_bounds": [
+            29.32142857142857,
+            29.32142857142857
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 0.575834535211768,
+          "model_based_95_interval": [
+            28.405147326908683,
+            30.237709815948456
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        }
+      },
+      "busy_deadline_grid": {
+        "25": {
+          "mae_pp": 5.175967261904763,
+          "maximum_error_pp": 8.19047619047619
+        },
+        "50": {
+          "mae_pp": 3.09263392857143,
+          "maximum_error_pp": 5.857142857142861
+        },
+        "100": {
+          "mae_pp": 0.9520089285714266,
+          "maximum_error_pp": 2.1666666666666643
+        },
+        "200": {
+          "mae_pp": 1.2801339285714282,
+          "maximum_error_pp": 3.142857142857146
+        },
+        "500": {
+          "mae_pp": 0.6722470238095238,
+          "maximum_error_pp": 2.3333333333333357
+        },
+        "1000": {
+          "mae_pp": 0.0,
+          "maximum_error_pp": 0.0
+        }
+      }
+    },
+    "q025_large": {
+      "generation": "generation-04",
+      "report_path": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v29/q025_large/generation-04/analysis/1791524007266803222/report.json",
+      "verification": "Full retained raw/provenance replay passed; generation-03 inputs preserved, generation-04 replay passed in this review",
+      "calibration_trials": 16,
+      "validation_trials": 16,
+      "offers": 27022,
+      "decision": "busy_advantage_over_declared_comparators",
+      "methods": {
+        "whole": {
+          "capacity_rps": 33.372004418433605,
+          "mae_pp": 8.985119047619047,
+          "accuracy_pass": false,
+          "maximum_error_pp": 14.095238095238091
+        },
+        "busy": {
+          "capacity_rps": 34.85416666666667,
+          "mae_pp": 1.294642857142859,
+          "accuracy_pass": true,
+          "maximum_error_pp": 2.6666666666666643
+        },
+        "idle_corrected": {
+          "capacity_rps": 33.41050023696146,
+          "mae_pp": 8.985119047619047,
+          "accuracy_pass": false,
+          "maximum_error_pp": 14.095238095238091
+        },
+        "regression": {
+          "capacity_rps": 29.467316008654628,
+          "mae_pp": 25.086309523809522,
+          "accuracy_pass": false,
+          "maximum_error_pp": 35.80952380952381
+        },
+        "quadratic": {
+          "capacity_rps": 29.810073101551133,
+          "mae_pp": 23.56845238095238,
+          "accuracy_pass": false,
+          "maximum_error_pp": 33.9047619047619
+        }
+      },
+      "advantages": {
+        "whole": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              7.485119047619042,
+              7.485119047619042
+            ],
+            [
+              7.526785714285717,
+              7.526785714285717
+            ],
+            [
+              7.556547619047615,
+              7.556547619047615
+            ],
+            [
+              8.193452380952381,
+              8.193452380952381
+            ]
+          ],
+          "midpoint_mean": 7.690476190476189,
+          "midpoint_sample_sd": 0.33659473087020425,
+          "mean_accounting_bounds": [
+            7.690476190476189,
+            7.690476190476189
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 0.33659473087020425,
+          "model_based_95_interval": [
+            7.154878861658172,
+            8.226073519294205
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        },
+        "idle_corrected": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              7.485119047619042,
+              7.485119047619042
+            ],
+            [
+              7.526785714285717,
+              7.526785714285717
+            ],
+            [
+              7.556547619047615,
+              7.556547619047615
+            ],
+            [
+              8.193452380952381,
+              8.193452380952381
+            ]
+          ],
+          "midpoint_mean": 7.690476190476189,
+          "midpoint_sample_sd": 0.33659473087020425,
+          "mean_accounting_bounds": [
+            7.690476190476189,
+            7.690476190476189
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 0.33659473087020425,
+          "model_based_95_interval": [
+            7.154878861658172,
+            8.226073519294205
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        },
+        "regression": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              23.586309523809515,
+              23.586309523809515
+            ],
+            [
+              23.62797619047619,
+              23.62797619047619
+            ],
+            [
+              23.657738095238088,
+              23.657738095238088
+            ],
+            [
+              24.294642857142854,
+              24.294642857142854
+            ]
+          ],
+          "midpoint_mean": 23.79166666666666,
+          "midpoint_sample_sd": 0.33659473087020425,
+          "mean_accounting_bounds": [
+            23.79166666666666,
+            23.79166666666666
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 0.33659473087020425,
+          "model_based_95_interval": [
+            23.256069337848643,
+            24.327263995484678
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        },
+        "quadratic": {
+          "n_blocks": 4,
+          "block_bounds": [
+            [
+              22.068452380952376,
+              22.068452380952376
+            ],
+            [
+              22.11011904761905,
+              22.11011904761905
+            ],
+            [
+              22.13988095238095,
+              22.13988095238095
+            ],
+            [
+              22.776785714285715,
+              22.776785714285715
+            ]
+          ],
+          "midpoint_mean": 22.273809523809522,
+          "midpoint_sample_sd": 0.33659473087020425,
+          "mean_accounting_bounds": [
+            22.273809523809522,
+            22.273809523809522
+          ],
+          "maximum_sample_sd_over_accounting_bounds": 0.33659473087020425,
+          "model_based_95_interval": [
+            21.738212194991505,
+            22.80940685262754
+          ],
+          "assumptions": "Independent approximately normal block contrasts; four blocks give only three degrees of freedom. No job-level replication or distribution-free guarantee.",
+          "advantage_pass": true
+        }
+      },
+      "busy_deadline_grid": {
+        "25": {
+          "mae_pp": 20.624255952380953,
+          "maximum_error_pp": 27.5
+        },
+        "50": {
+          "mae_pp": 2.979166666666668,
+          "maximum_error_pp": 5.5
+        },
+        "100": {
+          "mae_pp": 0.5550595238095237,
+          "maximum_error_pp": 2.0
+        },
+        "200": {
+          "mae_pp": 0.7626488095238093,
+          "maximum_error_pp": 2.75
+        },
+        "500": {
+          "mae_pp": 1.2946428571428579,
+          "maximum_error_pp": 2.666666666666666
+        },
+        "1000": {
+          "mae_pp": 0.7529761904761904,
+          "maximum_error_pp": 2.3809523809523796
+        }
+      }
+    }
+  },
+  "primary_calibration_trials": 64,
+  "primary_validation_trials": 64,
+  "primary_total_trials": 128,
+  "primary_offered_requests": 243190,
+  "prior_preserved_input_hashes": 12522,
+  "all_primary_busy_accuracy_pass": true,
+  "all_primary_comparator_advantage_pass": true,
+  "interrupted_q025_large_generation03": "Preserved separately, individually verified 16 calibration and 11 validation trials; excluded from complete matrix and all primary aggregates.",
+  "short_deadline_extension_lead": {
+    "capacity_rps": 34.85416666666667,
+    "constant_rate_service_ms": 28.690974297668856,
+    "deadline_ms": 25,
+    "predicted_miss_pct_values": [
+      100.0
+    ],
+    "mean_observed_miss_pct": 79.37574404761905,
+    "mean_observed_meeting_deadline_pct": 20.62425595238095,
+    "mae_pp": 20.624255952380953,
+    "interpretation": "The constant-rate model assigns every job at least 28.69 ms of service and predicts 100% misses at 25 ms, while approximately 20.62% meet that deadline on average across trials. This exposes a timing limitation despite accurate average-capacity calibration; it does not isolate quota phase as the cause.",
+    "secondary_diagnostic_not_new_confirmatory_gate": true
+  },
+  "novelty_established": false,
+  "independent_applications": 1,
+  "independent_hosts": 1,
+  "limits": "Contexts collected sequentially; final context was a separate follow-up. Time and context are confounded. Four within-context balanced blocks; no causal quota/work-size effects or universal superiority established. Secondary six-deadline grid is diagnostic.",
+  "next_step": "Compare the fixed average-capacity FIFO model with an ordinary quota-aware timing baseline, using an explicit prospective held-out protocol before new accuracy or superiority claims. Investigate request timing around short deadlines.",
+  "no_new_performance_collection_launched_in_review": true
+}

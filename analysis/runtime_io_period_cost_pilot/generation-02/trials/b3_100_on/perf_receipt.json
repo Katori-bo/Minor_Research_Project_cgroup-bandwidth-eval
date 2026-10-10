@@ -1,0 +1,117 @@
+{
+  "enabled": true,
+  "returncode": 0,
+  "controls": [
+    {
+      "op": "disable",
+      "before_ns": 153092600288675,
+      "after_ns": 153092619517836,
+      "cpu_before": {
+        "usage_usec": 8332691,
+        "user_usec": 8127170,
+        "system_usec": 205521,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 213,
+        "nr_throttled": 119,
+        "throttled_usec": 5843978,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "cpu_after": {
+        "usage_usec": 8332691,
+        "user_usec": 8127170,
+        "system_usec": 205521,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 213,
+        "nr_throttled": 119,
+        "throttled_usec": 5843978,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "op": "enable",
+      "before_ns": 153092664261356,
+      "after_ns": 153092664435261,
+      "cpu_before": {
+        "usage_usec": 8333250,
+        "user_usec": 8127170,
+        "system_usec": 206080,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 214,
+        "nr_throttled": 119,
+        "throttled_usec": 5843978,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "cpu_after": {
+        "usage_usec": 8333250,
+        "user_usec": 8127170,
+        "system_usec": 206080,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 214,
+        "nr_throttled": 119,
+        "throttled_usec": 5843978,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "op": "disable",
+      "before_ns": 153154018498920,
+      "after_ns": 153154018686912,
+      "cpu_before": {
+        "usage_usec": 33386068,
+        "user_usec": 32480700,
+        "system_usec": 905368,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 824,
+        "nr_throttled": 482,
+        "throttled_usec": 23889929,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "cpu_after": {
+        "usage_usec": 33386068,
+        "user_usec": 32480700,
+        "system_usec": 905368,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 824,
+        "nr_throttled": 482,
+        "throttled_usec": 23889929,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    }
+  ],
+  "cgroup": "/sys/fs/cgroup/system.slice/docker-2eb4a9f371bb7e51ea51d4cec07b45498252cbb49c4eca86a6e955345061c759.scope",
+  "argv": [
+    "/usr/bin/perf",
+    "stat",
+    "-a",
+    "-C",
+    "2,4",
+    "-A",
+    "-j",
+    "-D",
+    "-1",
+    "--timeout",
+    "300000",
+    "--control",
+    "fd:3,6",
+    "-o",
+    "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_period_cost_pilot/generation-02/trials/b3_100_on/perf.jsonl",
+    "-e",
+    "{cycles:u,instructions:u}",
+    "-G",
+    "system.slice/docker-2eb4a9f371bb7e51ea51d4cec07b45498252cbb49c4eca86a6e955345061c759.scope",
+    "--",
+    "/usr/bin/cat"
+  ]
+}

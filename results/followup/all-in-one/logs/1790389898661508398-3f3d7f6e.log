@@ -1,0 +1,86 @@
+
+[2026-09-26T08:01:38.783131+05:30] python-regression-tests: /usr/bin/python3 -m unittest discover -s /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup -p 'test_*.py' -v
+test_constant_environment_does_not_crash_analysis (test_followup.MechanismAndControlTests.test_constant_environment_does_not_crash_analysis) ... ok
+test_drain_waits_for_both_jobs_and_handlers (test_followup.MechanismAndControlTests.test_drain_waits_for_both_jobs_and_handlers) ... ok
+test_full_analysis_keeps_studies_and_traffic_patterns_separate (test_followup.MechanismAndControlTests.test_full_analysis_keeps_studies_and_traffic_patterns_separate) ... ok
+test_known_interaction_and_bootstrap (test_followup.MechanismAndControlTests.test_known_interaction_and_bootstrap) ... ok
+test_matrix_retains_extension_and_loads_replication (test_followup.MechanismAndControlTests.test_matrix_retains_extension_and_loads_replication) ... ok
+test_pilot_overhead_gate (test_followup.MechanismAndControlTests.test_pilot_overhead_gate) ... ok
+test_changed_file_is_not_silently_reused (test_followup.SavedTrialTests.test_changed_file_is_not_silently_reused) ... ok
+test_failed_attempt_never_counts_as_success (test_followup.SavedTrialTests.test_failed_attempt_never_counts_as_success) ... ok
+test_interrupt_retains_evidence_and_uses_a_new_attempt (test_followup.SavedTrialTests.test_interrupt_retains_evidence_and_uses_a_new_attempt) ... ok
+test_missing_completion_marker_is_incomplete (test_followup.SavedTrialTests.test_missing_completion_marker_is_incomplete) ... ok
+test_power_change_is_found_even_when_saved_flags_are_empty (test_followup.SavedTrialTests.test_power_change_is_found_even_when_saved_flags_are_empty) ... ok
+test_server_timestamps_are_checked (test_followup.SavedTrialTests.test_server_timestamps_are_checked) ... ok
+test_throughput_window_excludes_late_responses_but_cohort_retains_them (test_followup.SavedTrialTests.test_throughput_window_excludes_late_responses_but_cohort_retains_them) ... ok
+test_valid_trial_can_be_reused (test_followup.SavedTrialTests.test_valid_trial_can_be_reused) ... ok
+test_validation_recomputes_counts_even_with_new_hashes (test_followup.SavedTrialTests.test_validation_recomputes_counts_even_with_new_hashes) ... ok
+test_child_shares_coordinator_lock_while_unrelated_process_is_excluded (test_pipeline.LockInheritanceTests.test_child_shares_coordinator_lock_while_unrelated_process_is_excluded) ... ok
+test_empty_session_directory_is_not_reused_as_new (test_pipeline.PipelineTests.test_empty_session_directory_is_not_reused_as_new) ... ok
+test_failed_pilot_analysis_never_starts_full_collection (test_pipeline.PipelineTests.test_failed_pilot_analysis_never_starts_full_collection) ... ok
+test_repeat_command_does_not_launch_duplicate_or_completed_job (test_pipeline.PipelineTests.test_repeat_command_does_not_launch_duplicate_or_completed_job) ... ok
+test_resume_does_not_rebuild_or_overwrite_existing_sessions (test_pipeline.PipelineTests.test_resume_does_not_rebuild_or_overwrite_existing_sessions) ... ok
+test_stage_failure_has_nonzero_status_and_no_success_event (test_pipeline.PipelineTests.test_stage_failure_has_nonzero_status_and_no_success_event) ... ok
+test_successful_pipeline_runs_every_stage_and_writes_completion (test_pipeline.PipelineTests.test_successful_pipeline_runs_every_stage_and_writes_completion) ... ok
+test_worker_records_failure_and_closes_lock (test_pipeline.PipelineTests.test_worker_records_failure_and_closes_lock) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 2.551s
+
+OK
+
+[2026-09-26T08:01:41.433138+05:30] pilot-collection: /usr/bin/python3 -u /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py resume --session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one/pilot
+SESSION: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one/pilot
+Settling: at least 600s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 83.5}
+Settling 60s: {'k10temp:Tctl': 54.0}
+Settling 120s: {'k10temp:Tctl': 45.625}
+Settling 180s: {'k10temp:Tctl': 44.375}
+Settling 240s: {'k10temp:Tctl': 43.875}
+Settling 301s: {'k10temp:Tctl': 43.375}
+Settling 361s: {'k10temp:Tctl': 42.75}
+Settling 421s: {'k10temp:Tctl': 42.25}
+Settling 481s: {'k10temp:Tctl': 41.875}
+Settling 541s: {'k10temp:Tctl': 41.5}
+RUN 1/8 pilot_overhead_1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 43.625}
+Settling 60s: {'k10temp:Tctl': 41.125}
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint quota-followup-7eac3133bbbb43dc (84bb18eb5261fe7882262f222cb04feb73f4c2574505ed9a578ceda1e6ec9a71): Unable to enable LOOPBACK FILTERING - DROP rule: Warning: Extension tcp revision 0 not supported, missing kernel module?
+ (<nil>)
+failed to start containers: 1dac2c7f5b89d8b6d903a30b11dfbbb09276ee0793119659e1cf62fd1fb6c7c5
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py", line 538, in <module>
+    main()
+    ~~~~^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py", line 527, in main
+    d = run_attempt(session, config, meta['pilot'], next_attempt(session / 'attempts' / config['run_id']))
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py", line 338, in run_attempt
+    capture(['docker', 'start', container])
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py", line 46, in capture
+    return old.capture(args)
+           ~~~~~~~~~~~^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/scripts/experiment.py", line 36, in capture
+    return command(args, stdout=sp.PIPE).stdout.strip()
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/scripts/experiment.py", line 32, in command
+    return sp.run(list(map(str, args)), check=True, text=True, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['docker', 'start', '1dac2c7f5b89d8b6d903a30b11dfbbb09276ee0793119659e1cf62fd1fb6c7c5']' returned non-zero exit status 1.
+
+STOPPED (failed): pilot-collection exited with code 1; see this launch log for the reason
+Evidence preserved in /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one.
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/pipeline.py", line 144, in run_worker
+    execute(directory, lock)
+    ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/pipeline.py", line 115, in execute
+    stage_command(directory, 'pilot-collection', collection_command(pilot, pilot=True), lock)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/pipeline.py", line 42, in stage_command
+    raise RuntimeError(f'{stage} exited with code {code}; see this launch log for the reason')
+RuntimeError: pilot-collection exited with code 1; see this launch log for the reason

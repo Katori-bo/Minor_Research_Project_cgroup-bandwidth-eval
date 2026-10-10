@@ -1,0 +1,193 @@
+{
+  "status": "no_unexplained_experimental_observer_in_reviewed_snapshot",
+  "performance_eligible": true,
+  "decisions": [
+    {
+      "kind": "prog",
+      "id": 24,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 28,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 29,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 30,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 31,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 32,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 33,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 34,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 35,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 36,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 37,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 38,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 39,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 40,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 42,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 43,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 44,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 45,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 46,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 52,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 53,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 54,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 55,
+      "classification": "systemd_service_policy",
+      "evidence": "known policy program type/name and PID1 systemd descriptor holder"
+    },
+    {
+      "kind": "prog",
+      "id": 386,
+      "classification": "network_filter_associated_with_NetworkManager",
+      "evidence": "observed code tag, socket-filter type and sole map 70 held by verified root NetworkManager",
+      "limit": "Socket owner is inferred from the shared map; its socket descriptor was not independently attributed."
+    },
+    {
+      "kind": "map",
+      "id": 10,
+      "classification": "systemd_filesystem_policy_map"
+    },
+    {
+      "kind": "map",
+      "id": 70,
+      "classification": "NetworkManager_held_filter_map"
+    },
+    {
+      "kind": "map",
+      "id": 80,
+      "classification": "bpftool_libbpf_inventory_infrastructure"
+    },
+    {
+      "kind": "map",
+      "id": 81,
+      "classification": "bpftool_libbpf_inventory_infrastructure"
+    },
+    {
+      "kind": "map",
+      "id": 82,
+      "classification": "bpftool_libbpf_inventory_infrastructure"
+    },
+    {
+      "kind": "link",
+      "id": 1,
+      "classification": "systemd_LSM_filesystem_policy"
+    }
+  ],
+  "counts": {
+    "prog": 24,
+    "map": 5,
+    "link": 1
+  },
+  "historical_cause_established": false,
+  "host_modified": false,
+  "limitation": "Ownership classification applies to this saved snapshot only. System-service filters remain active. This does not establish zero overhead, historical absence or unchanged network state. The socket-filter association uses its NetworkManager-held map, not direct socket ownership. bpftool uses transient BPF infrastructure to enumerate descriptor owners.",
+  "audit_sha256": "b03f5fcf3f1e54f94fa3b227c637cd0d7e2b95a0cd3dc1bcfaf59130fc56b8a4",
+  "reviewer_sha256": "3627c53f54dd8c5478b9360fb1d723ff59e2130a50da92e4ce0d4ab3958aa319",
+  "audit_path": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_leftover_observer_audit/v24r3-launch-1791383151592082481.json",
+  "boot_id": "5018cd1c-36bc-47cf-99eb-fc6936ef6a52"
+}

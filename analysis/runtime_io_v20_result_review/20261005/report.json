@@ -1,0 +1,302 @@
+{
+  "schema": 1,
+  "source_analysis": "analysis/runtime_io_v20_execution_delay/generation-03/analysis/1791215103576116652",
+  "source_analysis_seal_sha256": "eb3ce5a93a7e281351da0bff9a92837e20138bce2f1784aa4466fc20a4637050",
+  "source_report_sha256": "ed13b5fd1c8d525a4bc57204ca296eb4bda76b61d6a750842533160e63436be1",
+  "independent_completion_reverified": true,
+  "decision": "guardrail_tradeoff_requires_review",
+  "arms": {
+    "A": {
+      "trial_count": 4,
+      "offered": 27172,
+      "deadline_classes": {
+        "timely": 22319,
+        "computed_before_handler_resumed_after": 819,
+        "computation_after_deadline": 4019,
+        "handler_resumed_before_client_finished_after": 6,
+        "computation_boundary_ambiguous": 6,
+        "handler_boundary_ambiguous": 3
+      },
+      "outcomes": {
+        "success": 27172
+      },
+      "available_result_crossings": 819,
+      "gap_unobserved_count": 0,
+      "timely_500_fraction_block_mean": 0.8213970263506551,
+      "timely_1000_fraction_block_mean": 1.0,
+      "failure_fraction_block_mean": 0.0,
+      "cpu_usec_per_completed_work_block_mean": 3630.07912557044,
+      "p99_e2e_ms_block_mean": 641.03307325,
+      "gap_coverage_fraction_block_mean": 1.0,
+      "gap_mean_all_offers_ns_block_mean": 17280488.56775357,
+      "gap_p99_all_offers_ns_block_mean": 65360255.25,
+      "queue_ns_observed_mean_block_average": 217723964.84281614,
+      "processing_wall_ns_observed_mean_block_average": 6075092.5417341385,
+      "completion_to_resume_ns_observed_mean_block_average": 17280488.56775357,
+      "e2e_ns_observed_mean_block_average": 260949656.60897246
+    },
+    "B": {
+      "trial_count": 4,
+      "offered": 27172,
+      "deadline_classes": {
+        "timely": 22295,
+        "computation_after_deadline": 4865,
+        "computation_boundary_ambiguous": 7,
+        "handler_resumed_before_client_finished_after": 5
+      },
+      "outcomes": {
+        "success": 27172
+      },
+      "available_result_crossings": 0,
+      "gap_unobserved_count": 0,
+      "timely_500_fraction_block_mean": 0.8205137641689975,
+      "timely_1000_fraction_block_mean": 1.0,
+      "failure_fraction_block_mean": 0.0,
+      "cpu_usec_per_completed_work_block_mean": 3646.761335197998,
+      "p99_e2e_ms_block_mean": 652.767126,
+      "gap_coverage_fraction_block_mean": 1.0,
+      "gap_mean_all_offers_ns_block_mean": 57857.13764168997,
+      "gap_p99_all_offers_ns_block_mean": 308399.5,
+      "queue_ns_observed_mean_block_average": 232801733.33755335,
+      "processing_wall_ns_observed_mean_block_average": 6049324.838694244,
+      "completion_to_resume_ns_observed_mean_block_average": 57857.13764168997,
+      "e2e_ns_observed_mean_block_average": 254420105.90740466
+    },
+    "C": {
+      "trial_count": 4,
+      "offered": 27172,
+      "deadline_classes": {
+        "timely": 14906,
+        "computed_before_handler_resumed_after": 277,
+        "computation_after_deadline": 11349,
+        "handler_boundary_ambiguous": 2,
+        "unsuccessful": 633,
+        "computation_boundary_ambiguous": 3,
+        "handler_resumed_before_client_finished_after": 2
+      },
+      "outcomes": {
+        "success": 26539,
+        "rejected": 633
+      },
+      "available_result_crossings": 277,
+      "gap_unobserved_count": 633,
+      "timely_500_fraction_block_mean": 0.5485794199911673,
+      "timely_1000_fraction_block_mean": 0.9749006330045635,
+      "failure_fraction_block_mean": 0.0232960400412189,
+      "cpu_usec_per_completed_work_block_mean": 3833.223968724722,
+      "p99_e2e_ms_block_mean": 973.83926075,
+      "gap_coverage_fraction_block_mean": 0.9767039599587811,
+      "gap_mean_all_offers_ns_block_mean": null,
+      "gap_p99_all_offers_ns_block_mean": null,
+      "queue_ns_observed_mean_block_average": 406986904.0532737,
+      "processing_wall_ns_observed_mean_block_average": 6662295.018201524,
+      "completion_to_resume_ns_observed_mean_block_average": 10522395.297311539,
+      "e2e_ns_observed_mean_block_average": 425550277.10499775
+    },
+    "D": {
+      "trial_count": 4,
+      "offered": 27172,
+      "deadline_classes": {
+        "timely": 15215,
+        "computation_after_deadline": 11320,
+        "unsuccessful": 633,
+        "computation_boundary_ambiguous": 3,
+        "computed_before_handler_resumed_after": 1
+      },
+      "outcomes": {
+        "success": 26539,
+        "rejected": 633
+      },
+      "available_result_crossings": 1,
+      "gap_unobserved_count": 633,
+      "timely_500_fraction_block_mean": 0.5599514205800088,
+      "timely_1000_fraction_block_mean": 0.9767039599587811,
+      "failure_fraction_block_mean": 0.0232960400412189,
+      "cpu_usec_per_completed_work_block_mean": 3833.8417996477815,
+      "p99_e2e_ms_block_mean": 949.39821775,
+      "gap_coverage_fraction_block_mean": 0.9767039599587811,
+      "gap_mean_all_offers_ns_block_mean": null,
+      "gap_p99_all_offers_ns_block_mean": null,
+      "queue_ns_observed_mean_block_average": 408155027.67785954,
+      "processing_wall_ns_observed_mean_block_average": 6577218.383118143,
+      "completion_to_resume_ns_observed_mean_block_average": 59122.8221921761,
+      "e2e_ns_observed_mean_block_average": 413948501.5151627
+    }
+  },
+  "yield_100_statistics": {
+    "gap_mean_delta_ns": {
+      "n": 4,
+      "median": -17180873.110923007,
+      "mean": -17222631.43011188,
+      "minimum": -17458791.75209775,
+      "maximum": -17069987.746503755,
+      "sample_sd": 170327.10962538878,
+      "mean_ci95": {
+        "lower": -17493659.870470416,
+        "upper": -16951602.989753347,
+        "degrees_of_freedom": 3,
+        "experimental_unit": "block",
+        "method": "Student t exploratory summary; not a confirmation gate"
+      }
+    },
+    "gap_mean_relative_reduction": {
+      "n": 4,
+      "median": 0.9965164544684104,
+      "mean": 0.9966544245988115,
+      "minimum": 0.9957952107290033,
+      "maximum": 0.9977895787294216,
+      "sample_sd": 0.0008303446629555908,
+      "mean_ci95": {
+        "lower": 0.9953331609464438,
+        "upper": 0.9979756882511792,
+        "degrees_of_freedom": 3,
+        "experimental_unit": "block",
+        "method": "Student t exploratory summary; not a confirmation gate"
+      }
+    },
+    "gap_p99_delta_ns": {
+      "n": 4,
+      "median": -64985301.5,
+      "mean": -65051855.75,
+      "minimum": -65366300,
+      "maximum": -64870520,
+      "sample_sd": 233816.97692622038,
+      "mean_ci95": {
+        "lower": -65423910.737165794,
+        "upper": -64679800.762834206,
+        "degrees_of_freedom": 3,
+        "experimental_unit": "block",
+        "method": "Student t exploratory summary; not a confirmation gate"
+      }
+    },
+    "gap_gt50ms_delta": {
+      "n": 4,
+      "median": -0.2101427940527013,
+      "mean": -0.2105476225526277,
+      "minimum": -0.21463271014279406,
+      "maximum": -0.20727219196231414,
+      "sample_sd": 0.0030558710999988334,
+      "mean_ci95": {
+        "lower": -0.21541019539843584,
+        "upper": -0.20568504970681958,
+        "degrees_of_freedom": 3,
+        "experimental_unit": "block",
+        "method": "Student t exploratory summary; not a confirmation gate"
+      }
+    },
+    "available_result_crossing_delta": {
+      "n": 4,
+      "median": -0.029957308994553216,
+      "mean": -0.030141321949065214,
+      "minimum": -0.033122331812159574,
+      "maximum": -0.027528337994994847,
+      "sample_sd": 0.0024230158058000406,
+      "mean_ci95": {
+        "lower": -0.033996880798472066,
+        "upper": -0.026285763099658358,
+        "degrees_of_freedom": 3,
+        "experimental_unit": "block",
+        "method": "Student t exploratory summary; not a confirmation gate"
+      }
+    },
+    "timely_500_delta": {
+      "n": 4,
+      "median": -0.0003680259090240168,
+      "mean": -0.0008832621816576292,
+      "minimum": -0.007066097453260811,
+      "maximum": 0.004269100544678328,
+      "sample_sd": 0.005717879949868439,
+      "mean_ci95": {
+        "lower": -0.009981685141916519,
+        "upper": 0.00821516077860126,
+        "degrees_of_freedom": 3,
+        "experimental_unit": "block",
+        "method": "Student t exploratory summary; not a confirmation gate"
+      }
+    },
+    "timely_1000_delta": {
+      "n": 4,
+      "median": 0.0,
+      "mean": 0.0,
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "sample_sd": 0.0,
+      "mean_ci95": {
+        "lower": 0.0,
+        "upper": 0.0,
+        "degrees_of_freedom": 3,
+        "experimental_unit": "block",
+        "method": "Student t exploratory summary; not a confirmation gate"
+      }
+    },
+    "failure_delta": {
+      "n": 4,
+      "median": 0.0,
+      "mean": 0.0,
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "sample_sd": 0.0,
+      "mean_ci95": {
+        "lower": 0.0,
+        "upper": 0.0,
+        "degrees_of_freedom": 3,
+        "experimental_unit": "block",
+        "method": "Student t exploratory summary; not a confirmation gate"
+      }
+    },
+    "cpu_ratio": {
+      "n": 4,
+      "median": 1.0045748477626435,
+      "mean": 1.0045961037675348,
+      "minimum": 1.0037583059307087,
+      "maximum": 1.0054764136141436,
+      "sample_sd": 0.0007300131109503961,
+      "mean_ci95": {
+        "lower": 1.0034344900036583,
+        "upper": 1.0057577175314114,
+        "degrees_of_freedom": 3,
+        "experimental_unit": "block",
+        "method": "Student t exploratory summary; not a confirmation gate"
+      }
+    },
+    "p99_ratio": {
+      "n": 4,
+      "median": 1.0191796771618267,
+      "mean": 1.018316413740732,
+      "minimum": 1.0010682392590544,
+      "maximum": 1.0338380613802198,
+      "sample_sd": 0.014103166815862118,
+      "mean_ci95": {
+        "lower": 0.9958751281777579,
+        "upper": 1.040757699303706,
+        "degrees_of_freedom": 3,
+        "experimental_unit": "block",
+        "method": "Student t exploratory summary; not a confirmation gate"
+      }
+    }
+  },
+  "guardrails_by_block": {
+    "1": {
+      "B": true,
+      "C": false,
+      "D": false
+    },
+    "2": {
+      "B": true,
+      "C": false,
+      "D": false
+    },
+    "3": {
+      "B": true,
+      "C": false,
+      "D": false
+    },
+    "4": {
+      "B": true,
+      "C": false,
+      "D": false
+    }
+  },
+  "findings_document_sha256": "3b1d4e9e59f0f2cc32427c47788dacc62822051429691909352180895a2536af",
+  "new_measurement_launched": false
+}

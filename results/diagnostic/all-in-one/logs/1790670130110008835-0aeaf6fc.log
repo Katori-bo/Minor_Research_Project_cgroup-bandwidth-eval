@@ -1,0 +1,44 @@
+
+[2026-09-29T13:52:10.295733+05:30] python-regression-tests: /usr/bin/python3 -m unittest discover -s /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic -p 'test_*.py' -v
+test_client_launch_preserves_flags_after_trace_toggle (test_diagnostic.DiagnosticPlanTests.test_client_launch_preserves_flags_after_trace_toggle) ... ok
+test_frozen_matrix_and_pilot (test_diagnostic.DiagnosticPlanTests.test_frozen_matrix_and_pilot) ... ok
+test_interaction_uses_trials_as_units (test_diagnostic.DiagnosticPlanTests.test_interaction_uses_trials_as_units) ... ok
+test_pilot_gate_rejects_missing_timing_and_excess_overhead (test_diagnostic.DiagnosticPlanTests.test_pilot_gate_rejects_missing_timing_and_excess_overhead) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.242s
+
+OK
+
+[2026-09-29T13:52:10.653550+05:30] pilot-collection: /usr/bin/python3 -u /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py resume --session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one/pilot
+SESSION: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one/pilot
+All trials already validate; no workload launched.
+
+[2026-09-29T13:52:10.964485+05:30] pilot-analysis: /usr/bin/python3 /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/analyze.py /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one/pilot
+Validated 7 trials: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one/pilot/analysis
+
+[2026-09-29T13:52:11.453230+05:30] full-collection: /usr/bin/python3 -u /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py resume --session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one/full
+SESSION: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one/full
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py", line 560, in <module>
+    main()
+    ~~~~^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py", line 546, in main
+    old.prepare_environment(session)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/scripts/experiment.py", line 126, in prepare_environment
+    raise RuntimeError('Power profile/settings differ from the original session.')
+RuntimeError: Power profile/settings differ from the original session.
+
+STOPPED (failed): full-collection exited with code 1; see this launch log for the reason
+Evidence preserved in /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one.
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 141, in run_worker
+    execute(directory, lock)
+    ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 119, in execute
+    stage_command(directory, 'full-collection', collection_command(full, pilot_session=pilot), lock)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 42, in stage_command
+    raise RuntimeError(f'{stage} exited with code {code}; see this launch log for the reason')
+RuntimeError: full-collection exited with code 1; see this launch log for the reason

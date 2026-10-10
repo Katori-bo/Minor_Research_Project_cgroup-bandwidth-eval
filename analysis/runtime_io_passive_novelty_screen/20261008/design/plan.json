@@ -1,0 +1,23 @@
+{
+  "status": "retrospective_known_validation",
+  "date": "2026-10-08",
+  "source_analysis_seal": "44f07ecc6bdedd44cfe54b4f4ef0b7050846e3c67f0bd1d5faf8d8868b38b4ef",
+  "allowed_predictor_inputs": "Twelve idle/steady calibration trials, or six strict-low trials at 0/15/30; no mixed/busy trial, validation outcome or historical capacity enters predictors.",
+  "script_sha256": "657da916035aacf1a5dd82b0ac85f11690e612fa1854d06054830c21cfd11620",
+  "root_multipliers": [
+    1.1,
+    1.25,
+    1.5
+  ],
+  "ordinary_baselines": [
+    "quota divided by pooled low-load CPU/job",
+    "quota divided by pooled low-load worker wall/job proxy",
+    "V28 linear on twelve nonbacklogged observations",
+    "V28 quadratic on twelve nonbacklogged observations",
+    "V28 quadratic on six strict-low observations"
+  ],
+  "ambiguity_family": "One common monotone piecewise-linear required-CPU curve through pooled per-rate calibration knots; different positive-slope continuations above largest measured throughput. Conditional illustration only; not real CPU service guarantees.",
+  "validation_reference_pp": 3,
+  "custom_guard": false,
+  "collection": false
+}

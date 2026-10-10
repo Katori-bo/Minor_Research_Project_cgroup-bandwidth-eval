@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "sources": {
+    "go.mod": "bc8481bc762a2d9150e6dba23c42e074e42ecfee5e5ab42c50ec8cad27629481",
+    "main_test.go": "9f25911c527edab78ac41970d0c91a8df3f8a02a09e4dac954932628c9f02f9d",
+    "main.go": "9ce5bb96fd36605e0660e83617f59dca0db462836a8248dcb9d4b6e06026bb79"
+  },
+  "binary_sha256": "c654200c61fd733802fc82361850f761feb7f5c911b119de89f27bc1129b66f8",
+  "compiler": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_software_audit/audit-01/toolchain/bin/go",
+  "compiler_sha256": "548e61b2d08ae52043be2f1924ed3c1d2b2c41967e360f3e317667f6fa912fc2",
+  "compiler_version": "go version go1.26.1 linux/amd64",
+  "environment_overrides": {
+    "GOTOOLCHAIN": "local",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOCACHE": "/tmp/v27-go-cache",
+    "GOMODCACHE": "/tmp/v27-go-modcache"
+  },
+  "checks": {
+    "test": {
+      "argv": [
+        "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_software_audit/audit-01/toolchain/bin/go",
+        "test",
+        "-count=1",
+        "-v",
+        "./..."
+      ],
+      "exit_code": 0
+    },
+    "vet": {
+      "argv": [
+        "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_software_audit/audit-01/toolchain/bin/go",
+        "vet",
+        "./..."
+      ],
+      "exit_code": 0
+    },
+    "race": {
+      "argv": [
+        "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_software_audit/audit-01/toolchain/bin/go",
+        "test",
+        "-race",
+        "-count=1",
+        "./..."
+      ],
+      "exit_code": 0
+    },
+    "build": {
+      "argv": [
+        "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_software_audit/audit-01/toolchain/bin/go",
+        "build",
+        "-trimpath",
+        "-o",
+        "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v27_client_build/revision-01/loadgen",
+        "."
+      ],
+      "exit_code": 0
+    }
+  },
+  "test_passed": true,
+  "vet_passed": true,
+  "race_passed": true,
+  "all_frozen_vectors_match_binary": true,
+  "original_client_source_hashes": {
+    "main.go": "141e77c1a3eaa22eb4dee86f88f50fded7c07888bbb390ecfcfbe63a27cb1ca7",
+    "main_test.go": "430e80b06219d76d72f564ce561016ac03636be8dd1cf2388e32c68eae843dc3",
+    "go.mod": "bc8481bc762a2d9150e6dba23c42e074e42ecfee5e5ab42c50ec8cad27629481"
+  },
+  "historical_client_binary_sha256": "03a3876212b87508c64489c79c612e1c757b3916c488fc2bda393ad957f9ac5e",
+  "runtime_qualified": false,
+  "performance_run": false,
+  "prerequisite_decision": "both_low_rates_qualified"
+}

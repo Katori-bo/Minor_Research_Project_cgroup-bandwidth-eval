@@ -1,0 +1,396 @@
+TEXT main.(*service).ablationRunJob(SB) research-service/ablation_service.go
+  ablation_service.go:63	0x6428c0		4c8da424a8feffff	LEAQ 0xfffffea8(SP), R12			
+  ablation_service.go:63	0x6428c8		4d3b6610		CMPQ R12, 0x10(R14)				
+  ablation_service.go:63	0x6428cc		0f86d4070000		JBE 0x6430a6					
+  ablation_service.go:63	0x6428d2		55			PUSHQ BP					
+  ablation_service.go:63	0x6428d3		4889e5			MOVQ SP, BP					
+  ablation_service.go:63	0x6428d6		4881ecd0010000		SUBQ $0x1d0, SP					
+  ablation_service.go:67	0x6428dd		4889842428020000	MOVQ AX, 0x228(SP)				
+  ablation_service.go:67	0x6428e5		48899c2430020000	MOVQ BX, 0x230(SP)				
+  ablation_service.go:64	0x6428ed		488b4850		MOVQ 0x50(AX), CX				
+  ablation_service.go:64	0x6428f1		48898c24c0010000	MOVQ CX, 0x1c0(SP)				
+  ablation_service.go:65	0x6428f9		488b5018		MOVQ 0x18(AX), DX				
+  ablation_service.go:65	0x6428fd		4889942410010000	MOVQ DX, 0x110(SP)				
+  ablation_service.go:65	0x642905		488b7020		MOVQ 0x20(AX), SI				
+  ablation_service.go:65	0x642909		4889b42408010000	MOVQ SI, 0x108(SP)				
+  ablation_service.go:65	0x642911		488b7828		MOVQ 0x28(AX), DI				
+  ablation_service.go:65	0x642915		4889bc24c8010000	MOVQ DI, 0x1c8(SP)				
+  ablation_service.go:67	0x64291d		80781000		CMPB 0x10(AX), $0x0				
+  ablation_service.go:67	0x642921		750b			JNE 0x64292e					
+  ablation_service.go:67	0x642923		4531c0			XORL R8, R8					
+  ablation_service.go:67	0x642926		4531c9			XORL R9, R9					
+  ablation_service.go:67	0x642929		4531d2			XORL R10, R10					
+  ablation_service.go:67	0x64292c		eb0e			JMP 0x64293c					
+  ablation_service.go:67	0x64292e		e88d7ee6ff		CALL time.Now(SB)				
+  ablation_service.go:68	0x642933		4989d8			MOVQ BX, R8					
+  ablation_service.go:68	0x642936		4989c1			MOVQ AX, R9					
+  ablation_service.go:68	0x642939		4989ca			MOVQ CX, R10					
+  ablation_service.go:68	0x64293c		4c89942458010000	MOVQ R10, 0x158(SP)				
+  ablation_service.go:68	0x642944		4c89442448		MOVQ R8, 0x48(SP)				
+  ablation_service.go:68	0x642949		4c894c2440		MOVQ R9, 0x40(SP)				
+  ablation_service.go:68	0x64294e		488b8424e8010000	MOVQ 0x1e8(SP), AX				
+  ablation_service.go:68	0x642956		e865100000		CALL main.work(SB)				
+  ablation_service.go:68	0x64295b		488d8c24d0000000	LEAQ 0xd0(SP), CX				
+  ablation_service.go:68	0x642963		4889e2			MOVQ SP, DX					
+  ablation_service.go:68	0x642966		440f1032		MOVUPS 0(DX), X14				
+  ablation_service.go:68	0x64296a		440f1131		MOVUPS X14, 0(CX)				
+  ablation_service.go:68	0x64296e		440f107210		MOVUPS 0x10(DX), X14				
+  ablation_service.go:68	0x642973		440f117110		MOVUPS X14, 0x10(CX)				
+  ablation_service.go:69	0x642978		488b8c2428020000	MOVQ 0x228(SP), CX				
+  ablation_service.go:69	0x642980		80791000		CMPB 0x10(CX), $0x0				
+  ablation_service.go:69	0x642984		7508			JNE 0x64298e					
+  ablation_service.go:69	0x642986		31db			XORL BX, BX					
+  ablation_service.go:69	0x642988		31c0			XORL AX, AX					
+  ablation_service.go:69	0x64298a		31f6			XORL SI, SI					
+  ablation_service.go:69	0x64298c		eb0b			JMP 0x642999					
+  ablation_service.go:69	0x64298e		e82d7ee6ff		CALL time.Now(SB)				
+  ablation_service.go:70	0x642993		4889e2			MOVQ SP, DX					
+  ablation_service.go:70	0x642996		4889ce			MOVQ CX, SI					
+  ablation_service.go:70	0x642999		4889b42468010000	MOVQ SI, 0x168(SP)				
+  ablation_service.go:70	0x6429a1		48895c2458		MOVQ BX, 0x58(SP)				
+  ablation_service.go:70	0x6429a6		4889442450		MOVQ AX, 0x50(SP)				
+  ablation_service.go:70	0x6429ab		488b8c2410020000	MOVQ 0x210(SP), CX				
+  ablation_service.go:70	0x6429b3		488b842418020000	MOVQ 0x218(SP), AX				
+  ablation_service.go:70	0x6429bb		488b4928		MOVQ 0x28(CX), CX				
+  ablation_service.go:70	0x6429bf		90			NOPL						
+  ablation_service.go:70	0x6429c0		ffd1			CALL CX						
+  ablation_service.go:70	0x6429c2		4889842400010000	MOVQ AX, 0x100(SP)				
+  ablation_service.go:71	0x6429ca		488d8c2470010000	LEAQ 0x170(SP), CX				
+  ablation_service.go:71	0x6429d2		440f1139		MOVUPS X15, 0(CX)				
+  ablation_service.go:71	0x6429d6		440f117910		MOVUPS X15, 0x10(CX)				
+  ablation_service.go:71	0x6429db		440f117920		MOVUPS X15, 0x20(CX)				
+  ablation_service.go:71	0x6429e0		440f117930		MOVUPS X15, 0x30(CX)				
+  ablation_service.go:71	0x6429e5		440f117940		MOVUPS X15, 0x40(CX)				
+  ablation_service.go:71	0x6429ea		488b8c2408020000	MOVQ 0x208(SP), CX				
+  ablation_service.go:71	0x6429f2		48898c2498010000	MOVQ CX, 0x198(SP)				
+  ablation_service.go:71	0x6429fa		488d8c24a0010000	LEAQ 0x1a0(SP), CX				
+  ablation_service.go:71	0x642a02		488d9424d0000000	LEAQ 0xd0(SP), DX				
+  ablation_service.go:71	0x642a0a		440f1032		MOVUPS 0(DX), X14				
+  ablation_service.go:71	0x642a0e		440f1131		MOVUPS X14, 0(CX)				
+  ablation_service.go:71	0x642a12		440f107210		MOVUPS 0x10(DX), X14				
+  ablation_service.go:71	0x642a17		440f117110		MOVUPS X14, 0x10(CX)				
+  ablation_service.go:72	0x642a1c		488b8c2428020000	MOVQ 0x228(SP), CX				
+  ablation_service.go:72	0x642a24		80791000		CMPB 0x10(CX), $0x0				
+  ablation_service.go:72	0x642a28		0f8492000000		JE 0x642ac0					
+  ablation_service.go:73	0x642a2e		488bbc24f0010000	MOVQ 0x1f0(SP), DI				
+  ablation_service.go:73	0x642a36		488bb424f8010000	MOVQ 0x1f8(SP), SI				
+  ablation_service.go:73	0x642a3e		4c8b842400020000	MOVQ 0x200(SP), R8				
+  ablation_service.go:73	0x642a46		488b442440		MOVQ 0x40(SP), AX				
+  ablation_service.go:73	0x642a4b		488b5c2448		MOVQ 0x48(SP), BX				
+  ablation_service.go:73	0x642a50		488b8c2458010000	MOVQ 0x158(SP), CX				
+  ablation_service.go:73	0x642a58		e8c30be6ff		CALL time.Time.Sub(SB)				
+  ablation_service.go:73	0x642a5d		4889842470010000	MOVQ AX, 0x170(SP)				
+  ablation_service.go:74	0x642a65		488b442450		MOVQ 0x50(SP), AX				
+  ablation_service.go:74	0x642a6a		488b5c2458		MOVQ 0x58(SP), BX				
+  ablation_service.go:74	0x642a6f		488b8c2468010000	MOVQ 0x168(SP), CX				
+  ablation_service.go:74	0x642a77		488b7c2440		MOVQ 0x40(SP), DI				
+  ablation_service.go:74	0x642a7c		488b742448		MOVQ 0x48(SP), SI				
+  ablation_service.go:74	0x642a81		4c8b842458010000	MOVQ 0x158(SP), R8				
+  ablation_service.go:74	0x642a89		e8920be6ff		CALL time.Time.Sub(SB)				
+  ablation_service.go:74	0x642a8e		4889842478010000	MOVQ AX, 0x178(SP)				
+  ablation_service.go:75	0x642a96		488b542450		MOVQ 0x50(SP), DX				
+  ablation_service.go:75	0x642a9b		4889942480010000	MOVQ DX, 0x180(SP)				
+  ablation_service.go:75	0x642aa3		4c8b4c2458		MOVQ 0x58(SP), R9				
+  ablation_service.go:75	0x642aa8		4c898c2488010000	MOVQ R9, 0x188(SP)				
+  ablation_service.go:75	0x642ab0		4c8b942468010000	MOVQ 0x168(SP), R10				
+  ablation_service.go:75	0x642ab8		4c89942490010000	MOVQ R10, 0x190(SP)				
+  ablation_service.go:77	0x642ac0		488b842410010000	MOVQ 0x110(SP), AX				
+  ablation_service.go:77	0x642ac8		488b9c2408010000	MOVQ 0x108(SP), BX				
+  ablation_service.go:77	0x642ad0		488b8c24c8010000	MOVQ 0x1c8(SP), CX				
+  ablation_service.go:77	0x642ad8		e8030de6ff		CALL time.Since(SB)				
+  ablation_service.go:77	0x642add		488d9424d0000000	LEAQ 0xd0(SP), DX				
+  ablation_service.go:77	0x642ae5		440f113a		MOVUPS X15, 0(DX)				
+  ablation_service.go:77	0x642ae9		440f117a10		MOVUPS X15, 0x10(DX)				
+  ablation_service.go:77	0x642aee		440f117a20		MOVUPS X15, 0x20(DX)				
+  ablation_service.go:77	0x642af3		488b9424e0010000	MOVQ 0x1e0(SP), DX				
+  ablation_service.go:77	0x642afb		48899424d0000000	MOVQ DX, 0xd0(SP)				
+  ablation_service.go:77	0x642b03		48898424d8000000	MOVQ AX, 0xd8(SP)				
+  ablation_service.go:78	0x642b0b		90			NOPL						
+  mutex.go:46			0x642b0c		488b942428020000	MOVQ 0x228(SP), DX				
+  mutex.go:46			0x642b14		488d7230		LEAQ 0x30(DX), SI				
+  mutex.go:46			0x642b18		4889b42460010000	MOVQ SI, 0x160(SP)				
+  mutex.go:63			0x642b20		31c0			XORL AX, AX					
+  mutex.go:63			0x642b22		bf01000000		MOVL $0x1, DI					
+  mutex.go:63			0x642b27		f00fb17a30		LOCK CMPXCHGL DI, 0x30(DX)			
+  mutex.go:63			0x642b2c		400f94c7		SETE DI						
+  mutex.go:63			0x642b30		4084ff			TESTL DI, DI					
+  mutex.go:63			0x642b33		7508			JNE 0x642b3d					
+  mutex.go:70			0x642b35		4889f0			MOVQ SI, AX					
+  mutex.go:70			0x642b38		e883b8e4ff		CALL internal/sync.(*Mutex).lockSlow(SB)	
+  ablation_service.go:79	0x642b3d		488b842410010000	MOVQ 0x110(SP), AX				
+  ablation_service.go:79	0x642b45		488b9c2408010000	MOVQ 0x108(SP), BX				
+  ablation_service.go:79	0x642b4d		488b8c24c8010000	MOVQ 0x1c8(SP), CX				
+  ablation_service.go:79	0x642b55		e8860ce6ff		CALL time.Since(SB)				
+  ablation_service.go:79	0x642b5a		48898424e0000000	MOVQ AX, 0xe0(SP)				
+  ablation_service.go:80	0x642b62		488b942428020000	MOVQ 0x228(SP), DX				
+  ablation_service.go:80	0x642b6a		807a1000		CMPB 0x10(DX), $0x0				
+  ablation_service.go:80	0x642b6e		7515			JNE 0x642b85					
+  ablation_service.go:70	0x642b70		4c8b8c2400010000	MOVQ 0x100(SP), R9				
+  ablation_service.go:85	0x642b78		4989d2			MOVQ DX, R10					
+  ablation_service.go:85	0x642b7b		0f1f440000		NOPL 0(AX)(AX*1)				
+  ablation_service.go:80	0x642b80		e9d8010000		JMP 0x642d5d					
+  ablation_service.go:81	0x642b85		488b8424f0010000	MOVQ 0x1f0(SP), AX				
+  ablation_service.go:81	0x642b8d		488b9c24f8010000	MOVQ 0x1f8(SP), BX				
+  ablation_service.go:81	0x642b95		488b8c2400020000	MOVQ 0x200(SP), CX				
+  ablation_service.go:81	0x642b9d		488bbc2410010000	MOVQ 0x110(SP), DI				
+  ablation_service.go:81	0x642ba5		488bb42408010000	MOVQ 0x108(SP), SI				
+  ablation_service.go:81	0x642bad		4c8b8424c8010000	MOVQ 0x1c8(SP), R8				
+  ablation_service.go:81	0x642bb5		e8660ae6ff		CALL time.Time.Sub(SB)				
+  ablation_service.go:81	0x642bba		4889442468		MOVQ AX, 0x68(SP)				
+  ablation_service.go:81	0x642bbf		488b442440		MOVQ 0x40(SP), AX				
+  ablation_service.go:81	0x642bc4		488b5c2448		MOVQ 0x48(SP), BX				
+  ablation_service.go:81	0x642bc9		488b8c2458010000	MOVQ 0x158(SP), CX				
+  ablation_service.go:81	0x642bd1		488bbc2410010000	MOVQ 0x110(SP), DI				
+  ablation_service.go:81	0x642bd9		488bb42408010000	MOVQ 0x108(SP), SI				
+  ablation_service.go:81	0x642be1		4c8b8424c8010000	MOVQ 0x1c8(SP), R8				
+  ablation_service.go:81	0x642be9		e8320ae6ff		CALL time.Time.Sub(SB)				
+  ablation_service.go:81	0x642bee		4889442460		MOVQ AX, 0x60(SP)				
+  ablation_service.go:82	0x642bf3		488b442450		MOVQ 0x50(SP), AX				
+  ablation_service.go:82	0x642bf8		488b5c2458		MOVQ 0x58(SP), BX				
+  ablation_service.go:82	0x642bfd		488b8c2468010000	MOVQ 0x168(SP), CX				
+  ablation_service.go:82	0x642c05		488bbc2410010000	MOVQ 0x110(SP), DI				
+  ablation_service.go:82	0x642c0d		488bb42408010000	MOVQ 0x108(SP), SI				
+  ablation_service.go:82	0x642c15		4c8b8424c8010000	MOVQ 0x1c8(SP), R8				
+  ablation_service.go:82	0x642c1d		0f1f00			NOPL 0(AX)					
+  ablation_service.go:82	0x642c20		e8fb09e6ff		CALL time.Time.Sub(SB)				
+  ablation_service.go:82	0x642c25		488d942418010000	LEAQ 0x118(SP), DX				
+  ablation_service.go:82	0x642c2d		440f113a		MOVUPS X15, 0(DX)				
+  ablation_service.go:82	0x642c31		440f117a10		MOVUPS X15, 0x10(DX)				
+  ablation_service.go:82	0x642c36		440f117a20		MOVUPS X15, 0x20(DX)				
+  ablation_service.go:82	0x642c3b		440f117a30		MOVUPS X15, 0x30(DX)				
+  ablation_service.go:81	0x642c40		4c8b8c24e0010000	MOVQ 0x1e0(SP), R9				
+  ablation_service.go:81	0x642c48		4c898c2418010000	MOVQ R9, 0x118(SP)				
+  ablation_service.go:81	0x642c50		4c8b4c2468		MOVQ 0x68(SP), R9				
+  ablation_service.go:81	0x642c55		4c898c2420010000	MOVQ R9, 0x120(SP)				
+  ablation_service.go:81	0x642c5d		4c8b4c2460		MOVQ 0x60(SP), R9				
+  ablation_service.go:81	0x642c62		4c898c2428010000	MOVQ R9, 0x128(SP)				
+  ablation_service.go:82	0x642c6a		4889842430010000	MOVQ AX, 0x130(SP)				
+  ablation_service.go:82	0x642c72		4c8b8c2470010000	MOVQ 0x170(SP), R9				
+  ablation_service.go:82	0x642c7a		4c898c2438010000	MOVQ R9, 0x138(SP)				
+  ablation_service.go:82	0x642c82		4c8b8c2478010000	MOVQ 0x178(SP), R9				
+  ablation_service.go:82	0x642c8a		4c898c2440010000	MOVQ R9, 0x140(SP)				
+  ablation_service.go:82	0x642c92		4c8b8c2408020000	MOVQ 0x208(SP), R9				
+  ablation_service.go:82	0x642c9a		4c898c2448010000	MOVQ R9, 0x148(SP)				
+  ablation_service.go:70	0x642ca2		4c8b8c2400010000	MOVQ 0x100(SP), R9				
+  ablation_service.go:70	0x642caa		4d85c9			TESTQ R9, R9					
+  ablation_service.go:82	0x642cad		0f95842450010000	SETNE 0x150(SP)					
+  ablation_service.go:81	0x642cb5		4c8b942428020000	MOVQ 0x228(SP), R10				
+  ablation_service.go:81	0x642cbd		498b4a48		MOVQ 0x48(R10), CX				
+  ablation_service.go:81	0x642cc1		498b5a40		MOVQ 0x40(R10), BX				
+  ablation_service.go:81	0x642cc5		48ffc3			INCQ BX						
+  ablation_service.go:81	0x642cc8		498b4238		MOVQ 0x38(R10), AX				
+  ablation_service.go:81	0x642ccc		4839d9			CMPQ CX, BX					
+  ablation_service.go:81	0x642ccf		7357			JAE 0x642d28					
+  ablation_service.go:81	0x642cd1		bf01000000		MOVL $0x1, DI					
+  ablation_service.go:81	0x642cd6		488d3543e30d00		LEAQ 0xde343(IP), SI				
+  ablation_service.go:81	0x642cdd		0f1f00			NOPL 0(AX)					
+  ablation_service.go:81	0x642ce0		e8fb1de4ff		CALL runtime.growslice(SB)			
+  ablation_service.go:81	0x642ce5		488b942428020000	MOVQ 0x228(SP), DX				
+  ablation_service.go:81	0x642ced		48894a48		MOVQ CX, 0x48(DX)				
+  ablation_service.go:81	0x642cf1		833d680d3b0000		CMPL runtime.writeBarrier(SB), $0x0		
+  ablation_service.go:81	0x642cf8		7412			JE 0x642d0c					
+  ablation_service.go:81	0x642cfa		488b7238		MOVQ 0x38(DX), SI				
+  ablation_service.go:81	0x642cfe		6690			NOPW						
+  ablation_service.go:81	0x642d00		e81b74e4ff		CALL runtime.gcWriteBarrier2(SB)		
+  ablation_service.go:81	0x642d05		498903			MOVQ AX, 0(R11)					
+  ablation_service.go:81	0x642d08		49897308		MOVQ SI, 0x8(R11)				
+  ablation_service.go:81	0x642d0c		48894238		MOVQ AX, 0x38(DX)				
+  ablation_service.go:82	0x642d10		488d942418010000	LEAQ 0x118(SP), DX				
+  ablation_service.go:70	0x642d18		4c8b8c2400010000	MOVQ 0x100(SP), R9				
+  ablation_service.go:81	0x642d20		4c8b942428020000	MOVQ 0x228(SP), R10				
+  ablation_service.go:81	0x642d28		49895a40		MOVQ BX, 0x40(R10)				
+  ablation_service.go:81	0x642d2c		488d73ff		LEAQ -0x1(BX), SI				
+  ablation_service.go:81	0x642d30		48c1e606		SHLQ $0x6, SI					
+  ablation_service.go:81	0x642d34		4801c6			ADDQ AX, SI					
+  ablation_service.go:81	0x642d37		440f1032		MOVUPS 0(DX), X14				
+  ablation_service.go:81	0x642d3b		440f1136		MOVUPS X14, 0(SI)				
+  ablation_service.go:81	0x642d3f		440f107210		MOVUPS 0x10(DX), X14				
+  ablation_service.go:81	0x642d44		440f117610		MOVUPS X14, 0x10(SI)				
+  ablation_service.go:81	0x642d49		440f107220		MOVUPS 0x20(DX), X14				
+  ablation_service.go:81	0x642d4e		440f117620		MOVUPS X14, 0x20(SI)				
+  ablation_service.go:81	0x642d53		440f107230		MOVUPS 0x30(DX), X14				
+  ablation_service.go:81	0x642d58		440f117630		MOVUPS X14, 0x30(SI)				
+  ablation_service.go:85	0x642d5d		488b9424c0010000	MOVQ 0x1c0(SP), DX				
+  ablation_service.go:85	0x642d65		48837a080a		CMPQ 0x8(DX), $0xa				
+  ablation_service.go:85	0x642d6a		751a			JNE 0x642d86					
+  ablation_service.go:85	0x642d6c		488b32			MOVQ 0(DX), SI					
+  ablation_service.go:85	0x642d6f		48bf6d757465785f6c61	MOVQ $0x616c5f786574756d, DI			
+  ablation_service.go:85	0x642d79		48393e			CMPQ 0(SI), DI					
+  ablation_service.go:85	0x642d7c		7508			JNE 0x642d86					
+  ablation_service.go:85	0x642d7e		66817e087465		CMPW 0x8(SI), $0x6574				
+  ablation_service.go:85	0x642d84		7413			JE 0x642d99					
+  ablation_service.go:85	0x642d86		49ff82a0000000		INCQ 0xa0(R10)					
+  ablation_service.go:70	0x642d8d		4d85c9			TESTQ R9, R9					
+  ablation_service.go:85	0x642d90		7407			JE 0x642d99					
+  ablation_service.go:85	0x642d92		49ff82a8000000		INCQ 0xa8(R10)					
+  ablation_service.go:86	0x642d99		90			NOPL						
+  mutex.go:65			0x642d9a		90			NOPL						
+  mutex.go:194			0x642d9b		bbffffffff		MOVL $-0x1, BX					
+  mutex.go:194			0x642da0		f0410fc15a30		LOCK XADDL BX, 0x30(R10)			
+  mutex.go:194			0x642da6		ffcb			DECL BX						
+  mutex.go:195			0x642da8		740d			JE 0x642db7					
+  mutex.go:198			0x642daa		488b842460010000	MOVQ 0x160(SP), AX				
+  mutex.go:198			0x642db2		e8e9b8e4ff		CALL internal/sync.(*Mutex).unlockSlow(SB)	
+  ablation_service.go:87	0x642db7		488b842410010000	MOVQ 0x110(SP), AX				
+  ablation_service.go:87	0x642dbf		488b9c2408010000	MOVQ 0x108(SP), BX				
+  ablation_service.go:87	0x642dc7		488b8c24c8010000	MOVQ 0x1c8(SP), CX				
+  ablation_service.go:87	0x642dcf		e80c0ae6ff		CALL time.Since(SB)				
+  ablation_service.go:87	0x642dd4		48898424e8000000	MOVQ AX, 0xe8(SP)				
+  ablation_service.go:88	0x642ddc		488b842410010000	MOVQ 0x110(SP), AX				
+  ablation_service.go:88	0x642de4		488b9c2408010000	MOVQ 0x108(SP), BX				
+  ablation_service.go:88	0x642dec		488b8c24c8010000	MOVQ 0x1c8(SP), CX				
+  ablation_service.go:88	0x642df4		e8e709e6ff		CALL time.Since(SB)				
+  ablation_service.go:88	0x642df9		48898424f0000000	MOVQ AX, 0xf0(SP)				
+  ablation_service.go:89	0x642e01		488b842420020000	MOVQ 0x220(SP), AX				
+  ablation_service.go:89	0x642e09		488d9c2470010000	LEAQ 0x170(SP), BX				
+  ablation_service.go:89	0x642e11		e80a2cddff		CALL runtime.chansend1(SB)			
+  ablation_service.go:90	0x642e16		488b842410010000	MOVQ 0x110(SP), AX				
+  ablation_service.go:90	0x642e1e		488b9c2408010000	MOVQ 0x108(SP), BX				
+  ablation_service.go:90	0x642e26		488b8c24c8010000	MOVQ 0x1c8(SP), CX				
+  ablation_service.go:90	0x642e2e		e8ad09e6ff		CALL time.Since(SB)				
+  ablation_service.go:90	0x642e33		48898424f8000000	MOVQ AX, 0xf8(SP)				
+  ablation_service.go:91	0x642e3b		488b9424c0010000	MOVQ 0x1c0(SP), DX				
+  ablation_service.go:91	0x642e43		488b7208		MOVQ 0x8(DX), SI				
+  ablation_service.go:91	0x642e47		488b3a			MOVQ 0(DX), DI					
+  ablation_service.go:91	0x642e4a		4883fe06		CMPQ SI, $0x6					
+  ablation_service.go:91	0x642e4e		7562			JNE 0x642eb2					
+  ablation_service.go:91	0x642e50		813f636c6f63		CMPL 0(DI), $0x636f6c63				
+  ablation_service.go:91	0x642e56		755a			JNE 0x642eb2					
+  ablation_service.go:91	0x642e58		66817f046b73		CMPW 0x4(DI), $0x736b				
+  ablation_service.go:91	0x642e5e		6690			NOPW						
+  ablation_service.go:91	0x642e60		7550			JNE 0x642eb2					
+  ablation_service.go:93	0x642e62		488b8c24e0000000	MOVQ 0xe0(SP), CX				
+  ablation_service.go:93	0x642e6a		48398c24d8000000	CMPQ 0xd8(SP), CX				
+  ablation_service.go:93	0x642e72		0f8f1a020000		JG 0x643092					
+  ablation_service.go:93	0x642e78		488b9424e8000000	MOVQ 0xe8(SP), DX				
+  ablation_service.go:93	0x642e80		4839ca			CMPQ DX, CX					
+  ablation_service.go:93	0x642e83		0f8c09020000		JL 0x643092					
+  ablation_service.go:93	0x642e89		488b8c24f0000000	MOVQ 0xf0(SP), CX				
+  ablation_service.go:93	0x642e91		4839d1			CMPQ CX, DX					
+  ablation_service.go:93	0x642e94		0f8cf8010000		JL 0x643092					
+  ablation_service.go:93	0x642e9a		660f1f440000		NOPW 0(AX)(AX*1)				
+  ablation_service.go:93	0x642ea0		4839c8			CMPQ AX, CX					
+  ablation_service.go:93	0x642ea3		0f8ce9010000		JL 0x643092					
+  ablation_service.go:94	0x642ea9		4881c4d0010000		ADDQ $0x1d0, SP					
+  ablation_service.go:94	0x642eb0		5d			POPQ BP						
+  ablation_service.go:94	0x642eb1		c3			RET						
+  ablation_service.go:96	0x642eb2		4883fe07		CMPQ SI, $0x7					
+  ablation_service.go:96	0x642eb6		0f85b1000000		JNE 0x642f6d					
+  ablation_service.go:96	0x642ebc		813f70617373		CMPL 0(DI), $0x73736170				
+  ablation_service.go:96	0x642ec2		0f85a5000000		JNE 0x642f6d					
+  ablation_service.go:96	0x642ec8		66817f046976		CMPW 0x4(DI), $0x7669				
+  ablation_service.go:96	0x642ece		0f8599000000		JNE 0x642f6d					
+  ablation_service.go:96	0x642ed4		807f0665		CMPB 0x6(DI), $0x65				
+  ablation_service.go:96	0x642ed8		0f858f000000		JNE 0x642f6d					
+  ablation_service.go:96	0x642ede		488d8424a0000000	LEAQ 0xa0(SP), AX				
+  ablation_service.go:96	0x642ee6		488d8c24d0000000	LEAQ 0xd0(SP), CX				
+  ablation_service.go:96	0x642eee		440f1031		MOVUPS 0(CX), X14				
+  ablation_service.go:96	0x642ef2		440f1130		MOVUPS X14, 0(AX)				
+  ablation_service.go:96	0x642ef6		440f107110		MOVUPS 0x10(CX), X14				
+  ablation_service.go:96	0x642efb		440f117010		MOVUPS X14, 0x10(AX)				
+  ablation_service.go:96	0x642f00		440f107120		MOVUPS 0x20(CX), X14				
+  ablation_service.go:96	0x642f05		440f117020		MOVUPS X14, 0x20(AX)				
+  ablation_service.go:57	0x642f0a		90			NOPL						
+  type.go:181			0x642f0b		488b8c2430020000	MOVQ 0x230(SP), CX				
+  type.go:181			0x642f13		488b5918		MOVQ 0x18(CX), BX				
+  ablation_service.go:58	0x642f17		488b7108		MOVQ 0x8(CX), SI				
+  ablation_service.go:58	0x642f1b		0f1f440000		NOPL 0(AX)(AX*1)				
+  ablation_service.go:58	0x642f20		4839f3			CMPQ BX, SI					
+  ablation_service.go:58	0x642f23		720d			JB 0x642f32					
+  type.go:195			0x642f25		b801000000		MOVL $0x1, AX					
+  type.go:195			0x642f2a		f0480fc14230		LOCK XADDQ AX, 0x30(DX)				
+  ablation_service.go:96	0x642f30		eb32			JMP 0x642f64					
+  ablation_service.go:58	0x642f32		488b11			MOVQ 0(CX), DX					
+  ablation_service.go:59	0x642f35		488d345b		LEAQ 0(BX)(BX*2), SI				
+  ablation_service.go:59	0x642f39		48c1e604		SHLQ $0x4, SI					
+  ablation_service.go:59	0x642f3d		4801f2			ADDQ SI, DX					
+  ablation_service.go:59	0x642f40		440f1030		MOVUPS 0(AX), X14				
+  ablation_service.go:59	0x642f44		440f1132		MOVUPS X14, 0(DX)				
+  ablation_service.go:59	0x642f48		440f107010		MOVUPS 0x10(AX), X14				
+  ablation_service.go:59	0x642f4d		440f117210		MOVUPS X14, 0x10(DX)				
+  ablation_service.go:59	0x642f52		440f107020		MOVUPS 0x20(AX), X14				
+  ablation_service.go:59	0x642f57		440f117220		MOVUPS X14, 0x20(DX)				
+  ablation_service.go:60	0x642f5c		488d4301		LEAQ 0x1(BX), AX				
+  type.go:184			0x642f60		48874118		XCHGQ AX, 0x18(CX)				
+  ablation_service.go:96	0x642f64		4881c4d0010000		ADDQ $0x1d0, SP					
+  ablation_service.go:96	0x642f6b		5d			POPQ BP						
+  ablation_service.go:96	0x642f6c		c3			RET						
+  ablation_service.go:97	0x642f6d		90			NOPL						
+  mutex.go:46			0x642f6e		90			NOPL						
+  mutex.go:63			0x642f6f		31c0			XORL AX, AX					
+  mutex.go:63			0x642f71		488b8c2428020000	MOVQ 0x228(SP), CX				
+  mutex.go:63			0x642f79		be01000000		MOVL $0x1, SI					
+  mutex.go:63			0x642f7e		f00fb17130		LOCK CMPXCHGL SI, 0x30(CX)			
+  mutex.go:63			0x642f83		400f94c6		SETE SI						
+  mutex.go:63			0x642f87		4084f6			TESTL SI, SI					
+  mutex.go:63			0x642f8a		751d			JNE 0x642fa9					
+  mutex.go:70			0x642f8c		488b842460010000	MOVQ 0x160(SP), AX				
+  mutex.go:70			0x642f94		e827b4e4ff		CALL internal/sync.(*Mutex).lockSlow(SB)	
+  ablation_service.go:99	0x642f99		488b8c2428020000	MOVQ 0x228(SP), CX				
+  type.go:195			0x642fa1		488b9424c0010000	MOVQ 0x1c0(SP), DX				
+  ablation_service.go:98	0x642fa9		488d742470		LEAQ 0x70(SP), SI				
+  ablation_service.go:98	0x642fae		488dbc24d0000000	LEAQ 0xd0(SP), DI				
+  ablation_service.go:98	0x642fb6		440f1037		MOVUPS 0(DI), X14				
+  ablation_service.go:98	0x642fba		440f1136		MOVUPS X14, 0(SI)				
+  ablation_service.go:98	0x642fbe		440f107710		MOVUPS 0x10(DI), X14				
+  ablation_service.go:98	0x642fc3		440f117610		MOVUPS X14, 0x10(SI)				
+  ablation_service.go:98	0x642fc8		440f107720		MOVUPS 0x20(DI), X14				
+  ablation_service.go:98	0x642fcd		440f117620		MOVUPS X14, 0x20(SI)				
+  ablation_service.go:57	0x642fd2		90			NOPL						
+  type.go:181			0x642fd3		488bbc2430020000	MOVQ 0x230(SP), DI				
+  type.go:181			0x642fdb		4c8b4718		MOVQ 0x18(DI), R8				
+  ablation_service.go:58	0x642fdf		4c8b4f08		MOVQ 0x8(DI), R9				
+  ablation_service.go:58	0x642fe3		4d39c8			CMPQ R8, R9					
+  ablation_service.go:58	0x642fe6		720d			JB 0x642ff5					
+  type.go:195			0x642fe8		be01000000		MOVL $0x1, SI					
+  type.go:195			0x642fed		f0480fc17230		LOCK XADDQ SI, 0x30(DX)				
+  ablation_service.go:98	0x642ff3		eb32			JMP 0x643027					
+  ablation_service.go:58	0x642ff5		4c8b0f			MOVQ 0(DI), R9					
+  ablation_service.go:59	0x642ff8		4f8d1440		LEAQ 0(R8)(R8*2), R10				
+  ablation_service.go:59	0x642ffc		49c1e204		SHLQ $0x4, R10					
+  ablation_service.go:59	0x643000		4d01d1			ADDQ R10, R9					
+  ablation_service.go:59	0x643003		440f1036		MOVUPS 0(SI), X14				
+  ablation_service.go:59	0x643007		450f1131		MOVUPS X14, 0(R9)				
+  ablation_service.go:59	0x64300b		440f107610		MOVUPS 0x10(SI), X14				
+  ablation_service.go:59	0x643010		450f117110		MOVUPS X14, 0x10(R9)				
+  ablation_service.go:59	0x643015		440f107620		MOVUPS 0x20(SI), X14				
+  ablation_service.go:59	0x64301a		450f117120		MOVUPS X14, 0x20(R9)				
+  ablation_service.go:60	0x64301f		498d7001		LEAQ 0x1(R8), SI				
+  type.go:184			0x643023		48877718		XCHGQ SI, 0x18(DI)				
+  ablation_service.go:99	0x643027		48837a080a		CMPQ 0x8(DX), $0xa				
+  ablation_service.go:99	0x64302c		753e			JNE 0x64306c					
+  ablation_service.go:99	0x64302e		488b12			MOVQ 0(DX), DX					
+  ablation_service.go:99	0x643031		48be6d757465785f6c61	MOVQ $0x616c5f786574756d, SI			
+  ablation_service.go:99	0x64303b		0f1f440000		NOPL 0(AX)(AX*1)				
+  ablation_service.go:99	0x643040		483932			CMPQ 0(DX), SI					
+  ablation_service.go:99	0x643043		7527			JNE 0x64306c					
+  ablation_service.go:99	0x643045		66817a087465		CMPW 0x8(DX), $0x6574				
+  ablation_service.go:99	0x64304b		751f			JNE 0x64306c					
+  ablation_service.go:99	0x64304d		48ff81a0000000		INCQ 0xa0(CX)					
+  ablation_service.go:70	0x643054		488b942400010000	MOVQ 0x100(SP), DX				
+  ablation_service.go:70	0x64305c		0f1f4000		NOPL 0(AX)					
+  ablation_service.go:70	0x643060		4885d2			TESTQ DX, DX					
+  ablation_service.go:99	0x643063		7407			JE 0x64306c					
+  ablation_service.go:99	0x643065		48ff81a8000000		INCQ 0xa8(CX)					
+  ablation_service.go:100	0x64306c		90			NOPL						
+  mutex.go:65			0x64306d		90			NOPL						
+  mutex.go:194			0x64306e		bbffffffff		MOVL $-0x1, BX					
+  mutex.go:194			0x643073		f00fc15930		LOCK XADDL BX, 0x30(CX)				
+  mutex.go:194			0x643078		ffcb			DECL BX						
+  mutex.go:195			0x64307a		740d			JE 0x643089					
+  mutex.go:198			0x64307c		488b842460010000	MOVQ 0x160(SP), AX				
+  mutex.go:198			0x643084		e817b6e4ff		CALL internal/sync.(*Mutex).unlockSlow(SB)	
+  ablation_service.go:101	0x643089		4881c4d0010000		ADDQ $0x1d0, SP					
+  ablation_service.go:101	0x643090		5d			POPQ BP						
+  ablation_service.go:101	0x643091		c3			RET						
+  ablation_service.go:93	0x643092		488d05679b0800		LEAQ 0x89b67(IP), AX				
+  ablation_service.go:93	0x643099		488d1db0421100		LEAQ 0x1142b0(IP), BX				
+  ablation_service.go:93	0x6430a0		e87bf1e3ff		CALL runtime.gopanic(SB)			
+  ablation_service.go:93	0x6430a5		90			NOPL						
+  ablation_service.go:63	0x6430a6		4889442450		MOVQ AX, 0x50(SP)				
+  ablation_service.go:63	0x6430ab		48895c2458		MOVQ BX, 0x58(SP)				
+  ablation_service.go:63	0x6430b0		e8eb56e4ff		CALL runtime.morestack_noctxt.abi0(SB)		
+  ablation_service.go:63	0x6430b5		488b442450		MOVQ 0x50(SP), AX				
+  ablation_service.go:63	0x6430ba		488b5c2458		MOVQ 0x58(SP), BX				
+  ablation_service.go:63	0x6430bf		90			NOPL						
+  ablation_service.go:63	0x6430c0		e9fbf7ffff		JMP main.(*service).ablationRunJob(SB)

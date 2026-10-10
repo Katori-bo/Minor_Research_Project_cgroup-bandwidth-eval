@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-08",
+  "scope": "Targeted passive/low-load forecast, uncertainty and abstention novelty screen; source coverage recorded rather than exhaustive firstness certification",
+  "sources": [
+    {
+      "id": "resource_demand_survey_2015",
+      "title": "Evaluating Approaches to Resource Demand Estimation",
+      "url": "https://se.informatik.uni-wuerzburg.de/staff/samuel-kounev/publications/?cHash=093a29953fb0ac74fd2f314fcdf9bc45&tx_extbibsonomycsl_publicationlist%5Baction%5D=download&tx_extbibsonomycsl_publicationlist%5Bcontroller%5D=Document&tx_extbibsonomycsl_publicationlist%5BfileName%5D=SpCaBrKo2015-PEVA-ResDemEstSurvey.pdf&tx_extbibsonomycsl_publicationlist%5BintraHash%5D=0373ae5cb4f2bbaedd9a5a2ba28a445c&tx_extbibsonomycsl_publicationlist%5BuserName%5D=samuel.kounev",
+      "coverage": "Full author PDF: introduction, section 2.2, sections 2.3.1–2.3.2; prior full-text comparison retained",
+      "relevance": "Sampling interval and observation budget versus accuracy."
+    },
+    {
+      "id": "sarde_2021",
+      "title": "SARDE: A Framework for Continuous and Self-Adaptive Resource Demand Estimation",
+      "url": "https://se.informatik.uni-wuerzburg.de/publications/?cHash=c7300d8a02e65b7dcd8870de230e3338&tx_extbibsonomycsl_publicationlist%5Baction%5D=download&tx_extbibsonomycsl_publicationlist%5Bcontroller%5D=Document&tx_extbibsonomycsl_publicationlist%5BfileName%5D=SARDE_TaaS2020.pdf&tx_extbibsonomycsl_publicationlist%5BintraHash%5D=fc3fb3694ee15b680f1466a5acc7bc64&tx_extbibsonomycsl_publicationlist%5BuserName%5D=se-group",
+      "coverage": "Full author preprint: sections 5.1–5.4 and cross-validation passages inspected",
+      "relevance": "Window/step tuning, estimator selection and internal cross-validation proxies."
+    },
+    {
+      "id": "computational_requirements",
+      "title": "Estimating Computational Requirements in Multi-Threaded Applications",
+      "url": "https://juanfperez.com/data/2015_02_des_TSE.pdf",
+      "coverage": "Full author PDF: sections 3–4 selected single/multi-server model and event-estimation passages inspected",
+      "relevance": "Alternatives using response/resource-queue observations; detailed quota applicability unaudited."
+    },
+    {
+      "id": "moving_horizon_2018",
+      "title": "Moving Horizon Estimation of Service Demands in Queuing Networks",
+      "url": "https://cse.lab.imtlucca.it/~mirco.tribastone/papers/mascots18.pdf",
+      "coverage": "Full author PDF: introduction, related work and sections II–III inspected",
+      "relevance": "Passive transient demand inference from queue traces; known topology/routing, exponential services and fluid approximation."
+    },
+    {
+      "id": "dec_thesis_2010",
+      "title": "DEC: A Technique for Estimating Resource Demands of Software Services",
+      "url": "https://www.collectionscanada.gc.ca/obj/thesescanada/vol2/002/MR69450.PDF?is_thesis=1&oclc_number=806535411",
+      "coverage": "Kalbasi's 2010 primary thesis: title, chapters 3–4 selected passages, benchmark acquisition and chapters 5–6 confidence limitations inspected",
+      "relevance": "Benchmark mixtures, replication-based demand confidence and validation; narrow regression intervals can accompany poor predictions. Not full verification of the 2012 journal revision."
+    },
+    {
+      "id": "selective_regression_2021",
+      "title": "Selective Regression Under Fairness Criteria",
+      "url": "https://arxiv.org/abs/2110.15403",
+      "coverage": "Primary author abstract inspected; no algorithm implementation or proof audit",
+      "relevance": "Abstention and risk/coverage tradeoff already established; generic precedent, not a CPU-quota baseline."
+    },
+    {
+      "id": "mpora_2026",
+      "title": "Uncertainty-Aware Resource Allocation for Multi-Path Programs with In-Kernel Predictions",
+      "url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol375-ecrts2026/html/LIPIcs.ECRTS.2026.17/LIPIcs.ECRTS.2026.17.html",
+      "coverage": "Primary paper: abstract, problem/approach and conformal-calibration/shift passages in sections 4–6 inspected",
+      "relevance": "Offline state/allocation profiles and held-out error calibration; uncertainty-aware deadline constraints; marginal rather than conditional coverage, shift assumptions."
+    },
+    {
+      "id": "safeopt_2015",
+      "title": "Safe Exploration for Optimization with Gaussian Processes",
+      "url": "https://proceedings.mlr.press/v37/sui15.html",
+      "coverage": "Primary proceedings abstract and metadata inspected; no algorithm proof or artifact executed",
+      "relevance": "Constraint-respecting experiment selection under function regularity assumptions is established; does not certify low-load probe safety here."
+    }
+  ],
+  "technical_reference": {
+    "title": "CFS Bandwidth Control — Linux Kernel documentation",
+    "url": "https://docs.kernel.org/scheduler/sched-bwc.html",
+    "coverage": "Overview, hierarchy and quota caveats inspected",
+    "usage": "Quota is an upper CPU-time budget, with replenishment, throttling and per-CPU slices; do not equate it to guaranteed continuous supply."
+  },
+  "unresolved_leads": [
+    {
+      "title": "DEC: Service Demand Estimation with Confidence (2012)",
+      "doi": "10.1109/TSE.2011.23",
+      "status": "Journal full text not retrieved; related 2010 author thesis now inspected. Do not claim exact journal algorithm reproduction."
+    },
+    {
+      "title": "Kumar 2009 and Zhang 2013 load-dependent demand inference",
+      "status": "Preserved prior primary-source assessment remains relevant; Zhang equation-image access gap persists. Neither full quota mapping reproduced."
+    },
+    {
+      "title": "Bayesian Optimization with Formal Safety Guarantees via Online Conformal Prediction",
+      "url": "https://arxiv.org/abs/2306.17815",
+      "status": "Primary search lead only; no detailed algorithm conclusion relied on."
+    },
+    {
+      "title": "UARP: uncertainty-aware runtime prediction for preventing scheduler termination under Wallclock constraints in HPC",
+      "url": "https://link.springer.com/article/10.1007/s11227-026-08422-8",
+      "status": "Publisher abstract/overview search lead only; different HPC runtime task, not a tested passive quota baseline."
+    }
+  ],
+  "search_queries": [
+    "Service Demand Estimation with Confidence Kalbasi pdf",
+    "passive resource demand estimation uncertainty confidence deadline prediction CPU quota low load",
+    "selective prediction queueing performance resource demand uncertainty abstention",
+    "safe Bayesian optimization performance tuning latency constraints production systems SafeOpt",
+    "Safe Exploration for Optimization Gaussian Processes Sui 2015"
+  ],
+  "verdict": {
+    "broad_passive_with_confidence_abstention_claim": "established_prior_art",
+    "specific_quota_forecast_guard": "gap_unestablished",
+    "next": "bounded_offline_published_baseline_mapping_and_guard_contract",
+    "new_data_now": "not_required_for_screen",
+    "collection": "stopped"
+  }
+}

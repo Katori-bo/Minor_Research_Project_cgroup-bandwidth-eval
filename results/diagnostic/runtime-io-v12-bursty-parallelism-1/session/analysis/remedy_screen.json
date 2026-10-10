@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "checks": {
+    "baseline_symptom_present": true,
+    "successful_client_trace_coverage": true,
+    "all_pairs_reduce_long_entry_under_clock_bounds": true,
+    "median_long_entry_reduction_at_least_half": true,
+    "median_successful_p99_reduction_at_least_half": true,
+    "failure_increase_at_most_point_one_percent": true,
+    "throughput_loss_at_most_five_percent": true
+  },
+  "pairs": [
+    {
+      "block": 1,
+      "entry_reduction_robust_to_bounds": true
+    },
+    {
+      "block": 2,
+      "entry_reduction_robust_to_bounds": true
+    },
+    {
+      "block": 3,
+      "entry_reduction_robust_to_bounds": true
+    },
+    {
+      "block": 4,
+      "entry_reduction_robust_to_bounds": true
+    }
+  ],
+  "interpretation": "existing_remedy_passes_diagnostic_screen",
+  "conservative_long_entry_ratio": 0.0,
+  "successful_p99_ratio": 0.21604701459921807,
+  "successful_in_window_throughput_ratio": 1.0166780900159926,
+  "failure_fraction_difference": -0.011335197997939056,
+  "cpu_per_job_ratio": 0.9387658305546831,
+  "limitation": "Four pairs are descriptive; parallelism changes capacity as well as scheduling. No novelty or queue-mechanism claim."
+}

@@ -1,0 +1,180 @@
+{
+  "schema": 1,
+  "date": "2026-10-08",
+  "decision": "composition_inconclusive_verified",
+  "generation": "analysis/runtime_io_v27/generation-03",
+  "analysis": "analysis/runtime_io_v27/generation-03/analysis/1791429220799564493",
+  "analysis_seal": "df191b247e29e63f0e0a86114b4caf0f205465d51c9b229590b129535c76a040",
+  "bundle_seal": "651ad953372298be3a92e2740b7b0bd74e998c87ee51e660f5f6dda925fa6634",
+  "preparation_seal": "822905d477dc9e527ad9327edac21eb5672445a20a6166eb3389cf66a0938893",
+  "full_completion_raw_replay_passed": true,
+  "independent_raw_endpoint_cpu_and_block_interval_recalculation_passed": true,
+  "accepted_trials": 16,
+  "technical_failures": 0,
+  "measurement_offers": 68736,
+  "measurement_successes": 68736,
+  "warmup_offers": 7200,
+  "warmup_successes": 7200,
+  "monitor_record_counts": [
+    81,
+    81,
+    81,
+    81,
+    81,
+    81,
+    81,
+    81,
+    81,
+    81,
+    81,
+    81,
+    81,
+    81,
+    81,
+    81
+  ],
+  "cleanup_all_passed": true,
+  "recorded_cgroups_absent": true,
+  "collection_duration_sec": 3531.1806490939925,
+  "all_required_states_eligible": true,
+  "contrasts": {
+    "off": {
+      "whole_cpu_usec_per_job": {
+        "block_bounds": [
+          [
+            3.5764975846821034,
+            3.5764975846821034
+          ],
+          [
+            3.153756068107172,
+            3.153756068107172
+          ],
+          [
+            2.8489706160816475,
+            2.8489706160816475
+          ],
+          [
+            3.197549220464846,
+            3.197549220464846
+          ]
+        ],
+        "mean": 3.194193372333942,
+        "model_based_95_interval": [
+          2.71950214190209,
+          3.6688846027657944
+        ]
+      },
+      "busy_capacity_rps": {
+        "block_bounds": [
+          [
+            0.3901895206243067,
+            0.3901895206243067
+          ],
+          [
+            -0.33333333333332993,
+            -0.33333333333332993
+          ],
+          [
+            -0.11092623405434265,
+            0.0
+          ],
+          [
+            0.16703786191536452,
+            0.16703786191536452
+          ]
+        ],
+        "mean": 0.042107733044792484,
+        "model_based_95_interval": [
+          -0.4752612313523844,
+          0.5594766974419694
+        ]
+      }
+    },
+    "on": {
+      "whole_cpu_usec_per_job": {
+        "block_bounds": [
+          [
+            3.5547123033178307,
+            3.5547123033178307
+          ],
+          [
+            3.721887846642491,
+            3.721887846642491
+          ],
+          [
+            3.1183230947935403,
+            3.1183230947935403
+          ],
+          [
+            3.2820332741023694,
+            3.2820332741023694
+          ]
+        ],
+        "mean": 3.419239129714058,
+        "model_based_95_interval": [
+          2.988995287700047,
+          3.8494829717280687
+        ]
+      },
+      "busy_capacity_rps": {
+        "block_bounds": [
+          [
+            -0.5555555555555647,
+            -0.5555555555555647
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.11142061281337323,
+            0.11142061281337323
+          ],
+          [
+            0.44543429844099425,
+            0.44543429844099425
+          ]
+        ],
+        "mean": 0.00032483892470069886,
+        "model_based_95_interval": [
+          -0.661815103282175,
+          0.6624647811315764
+        ]
+      }
+    }
+  },
+  "observer_interaction": {
+    "whole_cpu_usec_per_job": {
+      "mean": 0.22504575738011567,
+      "model_based_95_interval_pp": [
+        -0.18617000175664988,
+        0.6362615165168812
+      ]
+    },
+    "busy_capacity_rps": {
+      "mean": -0.041782894120091785,
+      "model_based_95_interval_pp": [
+        -1.0319606204418796,
+        0.9483948322016961
+      ]
+    }
+  },
+  "rules": {
+    "whole_cost_min_increase_pct": 3,
+    "busy_capacity_margin_pct": 2,
+    "observer_interaction_margin_pp": 2,
+    "busy_delivery_min": 0.48,
+    "busy_delivery_max": 0.52
+  },
+  "cost_screen_pass": false,
+  "busy_stability_screen_pass": true,
+  "observer_interaction_screen_pass": true,
+  "positive_whole_cost_block_contrasts": 8,
+  "interpretation": "Whole-run CPU/job increased in every paired block while busy capacity met the bounded stability screen. Both cost intervals cross the frozen 3% minimum; the complete support screen is inconclusive.",
+  "deadline_sampler_neutrality_established": false,
+  "estimator_superiority_established": false,
+  "novelty_established": false,
+  "thresholds_changed": false,
+  "collection_launched": false,
+  "original_evidence_modified": false
+}

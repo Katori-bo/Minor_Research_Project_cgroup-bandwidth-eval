@@ -1,0 +1,168 @@
+{
+  "status": "interrupted_partial_screen",
+  "formal_eight_cell_decision_available": false,
+  "completed_cells": 7,
+  "required_cells": 8,
+  "raw_replay_verified": true,
+  "rows": [
+    {
+      "trial": "b1_A",
+      "block": 1,
+      "arm": "A",
+      "order": 1,
+      "kind": "full",
+      "period_ms": 100,
+      "cpu_usec_per_completed_work": 3609.7625496834976,
+      "capacity": 151.75547429031977,
+      "cpu_cores": 0.4999494905778969,
+      "completed": 6793,
+      "timely_500_fraction": 0.8349771823936405,
+      "failure_fraction": 0.0,
+      "memory_peak_bytes": 31354880
+    },
+    {
+      "trial": "b1_B",
+      "block": 1,
+      "arm": "B",
+      "order": 2,
+      "kind": "full",
+      "period_ms": 20,
+      "cpu_usec_per_completed_work": 3783.04570657875,
+      "capacity": 140.87557790040674,
+      "cpu_cores": 0.4999162218928915,
+      "completed": 6673,
+      "timely_500_fraction": 0.562638009715884,
+      "failure_fraction": 0.017665243633151775,
+      "memory_peak_bytes": 34037760
+    },
+    {
+      "trial": "b1_C",
+      "block": 1,
+      "arm": "C",
+      "order": 3,
+      "kind": "minimal",
+      "period_ms": 100,
+      "cpu_usec_per_completed_work": 3210.1895592640135,
+      "native_cpu_usec_per_job": 3210.169469512195,
+      "capacity": 155.78375647704368,
+      "cpu_cores": 0.5000953885455333,
+      "completed": 9348,
+      "cgroup_native_cpu_relative_difference": 6.258159268357488e-06,
+      "wall_sec": 60.006256181,
+      "memory_peak_bytes": 7811072
+    },
+    {
+      "trial": "b1_D",
+      "block": 1,
+      "arm": "D",
+      "order": 4,
+      "kind": "minimal",
+      "period_ms": 20,
+      "cpu_usec_per_completed_work": 3665.7950409185296,
+      "native_cpu_usec_per_job": 3665.765873335776,
+      "capacity": 136.44365924484504,
+      "cpu_cores": 0.5001744894245306,
+      "completed": 8187,
+      "cgroup_native_cpu_relative_difference": 7.95675003839591e-06,
+      "wall_sec": 60.002788296,
+      "memory_peak_bytes": 8265728
+    },
+    {
+      "trial": "b4_D",
+      "block": 4,
+      "arm": "D",
+      "order": 13,
+      "kind": "minimal",
+      "period_ms": 20,
+      "cpu_usec_per_completed_work": 3588.6307545139302,
+      "native_cpu_usec_per_job": 3588.595121607079,
+      "capacity": 139.37974708779478,
+      "cpu_cores": 0.5001824469556337,
+      "completed": 8363,
+      "cgroup_native_cpu_relative_difference": 9.929486510573682e-06,
+      "wall_sec": 60.001543802,
+      "memory_peak_bytes": 5697536
+    },
+    {
+      "trial": "b4_C",
+      "block": 4,
+      "arm": "C",
+      "order": 14,
+      "kind": "minimal",
+      "period_ms": 100,
+      "cpu_usec_per_completed_work": 3216.1511092058727,
+      "native_cpu_usec_per_job": 3216.1299585253455,
+      "capacity": 155.4920971012502,
+      "cpu_cores": 0.5000860805649332,
+      "completed": 9331,
+      "cgroup_native_cpu_relative_difference": 6.576438390304418e-06,
+      "wall_sec": 60.0094807,
+      "memory_peak_bytes": 8052736
+    },
+    {
+      "trial": "b4_B",
+      "block": 4,
+      "arm": "B",
+      "order": 15,
+      "kind": "full",
+      "period_ms": 20,
+      "cpu_usec_per_completed_work": 3730.442393569515,
+      "capacity": 143.15179939971003,
+      "cpu_cores": 0.4998748650228699,
+      "completed": 6718,
+      "timely_500_fraction": 0.6218165758869424,
+      "failure_fraction": 0.011040777270719858,
+      "memory_peak_bytes": 34099200
+    }
+  ],
+  "paired_effects": [
+    {
+      "block": 1,
+      "kind": "full",
+      "cpu_change_pct": 4.800403198555148,
+      "capacity_change_pct": -7.169360077975806,
+      "cpu_delivery_change_pct": -0.006654409221806823
+    },
+    {
+      "block": 1,
+      "kind": "minimal",
+      "cpu_change_pct": 14.192479080860586,
+      "capacity_change_pct": -12.414707200264875,
+      "cpu_delivery_change_pct": 0.015817158248032648
+    },
+    {
+      "block": 4,
+      "kind": "minimal",
+      "cpu_change_pct": 11.581534345257483,
+      "capacity_change_pct": -10.362166511243142,
+      "cpu_delivery_change_pct": 0.019269960601908664
+    }
+  ],
+  "missing_cells": [
+    {
+      "trial": "b4_A",
+      "block": 4,
+      "arm": "A",
+      "order": 16,
+      "kind": "full",
+      "period_ms": 100
+    }
+  ],
+  "interruption": {
+    "error": "45-minute whole-screen ceiling reached; retain partial evidence",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/minimal_computation_screen.py\", line 478, in run_screen\n    (collect_full if spec['kind']=='full' else collect_minimal)(session,session/'trials'/spec['trial'],spec)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/minimal_computation_screen.py\", line 252, in collect_full\n    with patch.object(gc,'progress',update): gc.collect(session,directory,full_spec(spec,functional),functional)\n                                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/runtime_gc_probe.py\", line 233, in collect\n    run.old.settle(directory/'settling.json',env['baseline_c'],expected_power=env['power_settings'])\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/scripts/experiment.py\", line 125, in settle\n    time.sleep(POLICY['sample_sec'])\n    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/minimal_computation_screen.py\", line 471, in deadline\n    def deadline(_signum,_frame): raise TimeoutError('45-minute whole-screen ceiling reached; retain partial evidence')\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTimeoutError: 45-minute whole-screen ceiling reached; retain partial evidence\n"
+  },
+  "preparation_seal_sha256": "baf5ced2ee5361477ff8064400e7de7410e25c39aba0c62ef28377970239b077",
+  "trial_seal_sha256": {
+    "b1_A": "b6829291464a38c47642960e2950cb290a77f12e1131cb12a4c3a2cb89ae8d5b",
+    "b1_B": "412a0fbff4cd9bbc4ba7bf0447cd0c01f169d173efb9e246fb713bf2bbc0253b",
+    "b1_C": "cc95fb0163a409d55635cacd8909f376f20e6d2d69f439cedcf24fb5c999ca4a",
+    "b1_D": "1b36a052266df08bba597fe066e6315bb13c56ddeb0855498c969ffa687f02d0",
+    "b4_D": "88105b13f9b4b646491404b1f02a9f90f9efd15ef5310350870faa23a643e4b5",
+    "b4_C": "512260a821233f904ff19be3ec26ce15739397387f7699eb3c0ed3fe08ea27b2",
+    "b4_B": "dadc17f66e2f13032488c0155e30090a430fe17751d28e595e8a14a2a3b77566"
+  },
+  "historical_cause_established": false,
+  "novelty_established": false,
+  "automatic_followup_authorized": false
+}

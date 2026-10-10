@@ -1,0 +1,105 @@
+{
+  "scope_date": "2026-10-08",
+  "scope": "Focused originality screen of admission-conditioned monotonicity, symbolic execution-pattern reductions, uncertain max-plus analysis and FIFO schedulability abstraction.",
+  "exhaustive_forward_citation_audit": false,
+  "published_artifacts_reproduced": false,
+  "search_queries": [
+    "FIFO finite buffer parametric service time admission pattern deadline exact trace analysis",
+    "finite FIFO loss queue deterministic service time sensitivity nonmonotonic deadlines",
+    "parametric max plus finite buffer queue performance regions symbolic analysis",
+    "\"parametric\" \"FIFO\" \"loss\" \"deadline\"",
+    "\"admission\" \"regions\" \"service time\" queue exact",
+    "\"Symbolic Computation of the Minimum Buffer Sizes\" dataflow full paper",
+    "\"finite\" \"FIFO\" \"parametric\" \"deadline\" analysis symbolic",
+    "\"FIFO\" \"parametric\" \"monotonicity\" queue",
+    "\"loss queue\" \"deterministic\" \"sample path\" monotonicity service",
+    "\"finite trace\" \"deadline\" \"parametric\" queue",
+    "\"Spotlight Abstraction\" \"Real-Time Task Schedulability\" 2022 2023 2024 2025 2026",
+    "\"An Evaluation of Approaches to Model Checking Real-Time Task Schedulability Analysis\"",
+    "\"Smt-based reachability analysis\" \"Mufid\" \"Adzkiya\"",
+    "\"SMT-Based and Fixed-Point Approaches\" \"2025\""
+  ],
+  "sources": [
+    {
+      "title": "Symbolic Analyses of Dataflow Graphs",
+      "authors": "Bouakaz, Fradet and Girault",
+      "year": 2017,
+      "doi": "https://doi.org/10.1145/3007898",
+      "primary_full_text": "https://pop-art.inrialpes.fr/~fradet/PDFs/TODAES17a.pdf",
+      "access": "Author-hosted manuscript full text and publisher publication metadata inspected. Manuscript has placeholder journal metadata; publication year verified separately.",
+      "passages": "Section 2 finite-buffer backward-channel model; Section 4.1 enabling patterns; Section 4.2 symbolic buffer sizing; conclusion.",
+      "covers": "Symbolic timing/rate performance analysis using execution patterns, exact single-edge buffer/latency formulas and approximate extensions to acyclic graphs.",
+      "difference": "Finite buffer model inhibits producer firing when space is unavailable; it is not our fixed offered trace with tail-drop and a rejected-plus-late all-offer objective.",
+      "claim_implication": "Using execution patterns instead of every timing event is established methodology. The differing model does not prove our specialization original."
+    },
+    {
+      "title": "Spotlight Abstraction in Model Checking Real-Time Task Schedulability",
+      "authors": "Nxumalo, Timm and Gruner",
+      "year": 2021,
+      "doi": "https://doi.org/10.1007/978-3-030-84629-9_4",
+      "primary_full_text": "https://www.researchgate.net/publication/353666911_Spotlight_Abstraction_in_Model_Checking_Real-Time_Task_Schedulability",
+      "access": "Full author manuscript uploaded by coauthor Nils Timm inspected. Direct DOI fetch failed in this session; conference page confirms authors/title.",
+      "passages": "Introduction, Sections 4-6, Algorithms 1-2 and stated schedulability objective.",
+      "covers": "FIFO/EDF task-queue abstraction with spotlight and shade, iterative timed-automata reachability and fewer task clocks per iteration.",
+      "difference": "Verifies whether queued tasks meet deadlines; the reviewed passages do not provide a shared-service-parameter finite tail-drop combined-failure extremum algorithm.",
+      "claim_implication": "FIFO queue state reduction for deadline verification is not new in general."
+    },
+    {
+      "title": "An evaluation of approaches to model checking real-time task schedulability analysis",
+      "authors": "Nxumalo, Timm and Gruner",
+      "year": 2023,
+      "doi": "https://doi.org/10.1007/s10009-022-00693-9",
+      "primary_page": "https://link.springer.com/article/10.1007/s10009-022-00693-9",
+      "access": "Publisher abstract and introduction preview inspected; full publisher text requires subscription. No artifact run.",
+      "passages": "Abstract and introduction; explicit continuation of the 2021 spotlight paper.",
+      "covers": "Separates clock operations from Boolean/integer operations and uses counter abstraction; compares with Timestool and UPPAAL RTLib for FIFO and deadline scheduling.",
+      "difference": "Schedulability objective and task models differ from exact whole-interval loss-plus-late counts on a fixed finite offer trace.",
+      "claim_implication": "A practical published abstraction lineage must be distinguished before claiming a new queue verifier or superior scalability."
+    },
+    {
+      "title": "Max-plus-algebraic hybrid automata: Beyond synchronisation and linearity",
+      "authors": "Abhimanyu Gupta",
+      "year": 2023,
+      "doi": "https://doi.org/10.4233/uuid:4cbf7b91-6045-4624-9078-c8f48bfc8f5c",
+      "primary_full_text": "https://pure.tudelft.nl/ws/portalfiles/portal/141947587/TU_dissertation_Gupta.pdf",
+      "access": "Institution-hosted thesis full text and publication metadata inspected selectively, not every chapter.",
+      "passages": "Chapter 1 motivation/review; Section 2.4 piecewise-affine/max-min-plus-scaling systems; Section 3.4 guard/reset hybrid model; Chapter 5 parametric models and solvability.",
+      "covers": "Existing piecewise-affine theory, choice-dependent max-plus hybrid dynamics and parametric event-time models, with solvability and stability analyses.",
+      "difference": "No ready-made finite tail-drop rejected-plus-late extremum algorithm identified in inspected passages. General modelling machinery could express related transitions; this is an inference, not a proved reduction here.",
+      "claim_implication": "Choice-sensitive max-plus modelling and parameterized event-time reasoning cannot themselves be claimed new."
+    },
+    {
+      "title": "SMT-Based Reachability Analysis of High Dimensional Interval Max-Plus Linear Systems",
+      "authors": "Mufid, Adzkiya and Abate",
+      "year": 2022,
+      "doi": "https://doi.org/10.1109/TAC.2021.3090525",
+      "primary_full_text": "https://www.cs.ox.ac.uk/people/alessandro.abate/publications/MAA22.pdf",
+      "access": "Author-hosted full text; abstract, model definition and interval semantics inspected. Located through Gupta bibliography reference 176.",
+      "passages": "Abstract; Section II.B autonomous interval max-plus matrix model, event-varying uncertainty; SMT reachability formulation.",
+      "covers": "Interval uncertainty in max-plus state matrices and reachability queries encoded in linear real arithmetic for SMT.",
+      "difference": "Our single service parameter persists across all offers and admissions switch through tail-drop guards. The reviewed formulation is a different system class and reachability objective.",
+      "claim_implication": "Exact SMT handling of uncertain max-plus models already exists. Our compact Z3 implementation is not a reproduction of this paper."
+    },
+    {
+      "title": "SMT-based and fixed-point approaches for state estimation in max-plus linear systems",
+      "authors": "Espindola-Winck, Hardouin and Lhommeau",
+      "year": 2025,
+      "doi": "https://doi.org/10.1007/s10626-025-00413-w",
+      "primary_full_text": "https://perso-laris.univ-angers.fr/~hardouin/JDEDS_2025_SMTvsMaxplus.pdf",
+      "primary_metadata": "https://perso-laris.univ-angers.fr/~lhommeau/articles/",
+      "access": "Author-hosted full manuscript, abstract, Sections 2-3 and conclusion inspected selectively; author publication page confirms April 2025. Found via the Mufid paper search and followed the 2024-to-2025 extension.",
+      "passages": "Introduction; max-plus fixed-point equations; comparison objective and conclusion.",
+      "covers": "Bounded-uncertainty state estimation with a concise max-plus fixed-point approach compared with disjunctive SMT; discusses pseudo-polynomial complexity of the fixed-point routine.",
+      "difference": "Computes feasible state estimates compatible with measurements, not global shared-service-parameter loss/deadline count extrema with tail-drop.",
+      "claim_implication": "Replacing explicit disjunctions with specialized max-plus computation is an established contribution pattern; our work needs a specific additional result, not merely that general idea."
+    }
+  ],
+  "prior_screen_retained": "../../runtime_io_fifo_admission_step3/20261008-01/sources.json covers max-plus FIFO recurrence, convex-hull pacing, timing observers, quantitative timed automata, lossy FIFO verification and parametric schedulability. Those source assessments are not newly reproduced here.",
+  "verdict": "No exact ready-made match established in inspected passages; neither an absence proof nor originality established. Practical advantage gate fails against our existing reachable comparator. Broad claims about new uncertainty analysis, FIFO abstraction, max-plus modelling or quantitative optimization are unsupported.",
+  "unresolved": [
+    "Whether admission-pattern-conditioned monotonicity and exact regional combined-failure extrema have an earlier equivalent formulation.",
+    "Complete backward and forward citation audit of parametric schedulability, timed lossy queues, deadline-miss counting and max-plus hybrid reachability.",
+    "Assessment by a knowledgeable researcher of nontriviality and publishable significance of this specialization.",
+    "A matched-model comparison against published tools; no published implementation has been benchmarked."
+  ]
+}

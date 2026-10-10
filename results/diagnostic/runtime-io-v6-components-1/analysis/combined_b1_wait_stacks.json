@@ -1,0 +1,30 @@
+{
+  "attempt": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v6-components-1/attempts/component_b1_combined/001",
+  "runtime_sha256": "7ce7eb51228ac1c3d268b7dbb8f843dcb009bbd40e659cc1f6889d9c6a8de1af",
+  "mapping_uncertainty_ns": 862,
+  "scope": "Waiting states intersecting handler_exit_to_connection_done; midpoint clock mapping",
+  "waits": [
+    {
+      "stack": "sync.(*Cond).Wait @ 0x48e5d2\nsync/cond.go:71\nnet/http.(*connReader).abortPendingRead @ 0x628555\nnet/http/server.go:750\nnet/http.(*response).finishRequest @ 0x62d9e6\nnet/http/server.go:1676\nnet/http.(*conn).serve @ 0x62e6f4\nnet/http/server.go:2080",
+      "overlap_ns": 37680452830,
+      "transition_count": 2265
+    },
+    {
+      "stack": "sync.(*Mutex).Lock @ 0x6469bb\nsync/mutex.go:46\nmain.(*diagnostic).record @ 0x6469ba\nresearch-service/trace_diag.go:166\nmain.(*diagnostic).mark @ 0x646c44\nresearch-service/trace_diag.go:184\nmain.(*service).workHandler.func2 @ 0x644607\nresearch-service/main.go:209\nmain.(*service).workHandler @ 0x643f8c\nresearch-service/main.go:271\nnet/http.HandlerFunc.ServeHTTP @ 0x630248\nnet/http/server.go:2286\nnet/http.(*ServeMux).ServeHTTP @ 0x631fe6\nnet/http/server.go:2828\nnet/http.serverHandler.ServeHTTP @ 0x63834d\nnet/http/server.go:3311\nnet/http.(*conn).serve @ 0x62e6af\nnet/http/server.go:2073",
+      "overlap_ns": 775023174,
+      "transition_count": 33
+    },
+    {
+      "stack": "(no transition stack)",
+      "overlap_ns": 9152,
+      "transition_count": 42
+    },
+    {
+      "stack": "sync.(*Mutex).Lock @ 0x6469bb\nsync/mutex.go:46\nmain.(*diagnostic).record @ 0x6469ba\nresearch-service/trace_diag.go:166\nmain.(*trackedConn).Write @ 0x6465d3\nresearch-service/trace_diag.go:82\nnet/http.checkConnErrorWriter.Write @ 0x6344e5\nnet/http/server.go:4037\nbufio.(*Writer).Flush @ 0x5e5f31\nbufio/bufio.go:642\nnet/http.(*response).finishRequest @ 0x62d9d5\nnet/http/server.go:1674\nnet/http.(*conn).serve @ 0x62e6f4\nnet/http/server.go:2080",
+      "overlap_ns": 2240,
+      "transition_count": 2
+    }
+  ],
+  "events_with_capped_writer_stack": 177,
+  "limits": "Overlapping waits across goroutines are summed, not elapsed wall time. Stack occurrence counts are not CPU cost. Go Running does not prove OS CPU execution."
+}

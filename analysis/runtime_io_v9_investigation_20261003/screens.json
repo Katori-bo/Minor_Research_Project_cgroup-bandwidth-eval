@@ -1,0 +1,115 @@
+{
+  "eligible_for_full": false,
+  "limits": {
+    "cpu_ratio": 1.1,
+    "client_cpu_ratio": 1.1,
+    "p99_ratio": 1.1,
+    "failure_fraction_difference": 0.001,
+    "client_trace_coverage": 0.99
+  },
+  "patch_trace_off": {
+    "treatment": "patched_off",
+    "reference": "stock_off",
+    "ratios": {
+      "cpu_usec_per_completed_work": 1.013226782307742,
+      "client_cpu_usec_per_scheduled": 0.9843691423408941,
+      "p99_e2e_ms": 1.040878107246319,
+      "successful_rps": 0.9937233804079801
+    },
+    "max_rejection_plus_timeout": {
+      "patched_off": 0.02251655629139073,
+      "stock_off": 0.01721854304635762
+    },
+    "checks": {
+      "cpu_usec_per_completed_work_ratio_at_most_1_10": true,
+      "client_cpu_usec_per_scheduled_ratio_at_most_1_10": true,
+      "p99_e2e_ms_ratio_at_most_1_10": true,
+      "failure_rate_difference_at_most_0_001": false,
+      "client_trace_coverage_at_least_0_99": true,
+      "all_diagnostic_timing_observed": true,
+      "all_enabled_traces_complete": true
+    },
+    "original_numeric_screens_passed": false,
+    "throughput_review_required": true,
+    "eligible_for_full": false
+  },
+  "patch_trace_on": {
+    "treatment": "patched_on",
+    "reference": "stock_on",
+    "ratios": {
+      "cpu_usec_per_completed_work": 1.0131104772226731,
+      "client_cpu_usec_per_scheduled": 1.0086035319142987,
+      "p99_e2e_ms": 1.0071074916998535,
+      "successful_rps": 0.9926806953339433
+    },
+    "max_rejection_plus_timeout": {
+      "patched_on": 0.04194260485651214,
+      "stock_on": 0.037969094922737305
+    },
+    "checks": {
+      "cpu_usec_per_completed_work_ratio_at_most_1_10": true,
+      "client_cpu_usec_per_scheduled_ratio_at_most_1_10": true,
+      "p99_e2e_ms_ratio_at_most_1_10": true,
+      "failure_rate_difference_at_most_0_001": false,
+      "client_trace_coverage_at_least_0_99": true,
+      "all_diagnostic_timing_observed": true,
+      "all_enabled_traces_complete": true
+    },
+    "original_numeric_screens_passed": false,
+    "throughput_review_required": true,
+    "eligible_for_full": false
+  },
+  "tracing_stock": {
+    "treatment": "stock_on",
+    "reference": "stock_off",
+    "ratios": {
+      "cpu_usec_per_completed_work": 1.00513711429353,
+      "client_cpu_usec_per_scheduled": 0.9668133267413366,
+      "p99_e2e_ms": 0.6069309380471621,
+      "successful_rps": 0.9800493162967944
+    },
+    "max_rejection_plus_timeout": {
+      "stock_on": 0.037969094922737305,
+      "stock_off": 0.01721854304635762
+    },
+    "checks": {
+      "cpu_usec_per_completed_work_ratio_at_most_1_10": true,
+      "client_cpu_usec_per_scheduled_ratio_at_most_1_10": true,
+      "p99_e2e_ms_ratio_at_most_1_10": true,
+      "failure_rate_difference_at_most_0_001": false,
+      "client_trace_coverage_at_least_0_99": true,
+      "all_diagnostic_timing_observed": true,
+      "all_enabled_traces_complete": true
+    },
+    "original_numeric_screens_passed": false,
+    "throughput_review_required": true,
+    "eligible_for_full": false
+  },
+  "tracing_patched": {
+    "treatment": "patched_on",
+    "reference": "patched_off",
+    "ratios": {
+      "cpu_usec_per_completed_work": 1.0050217377957653,
+      "client_cpu_usec_per_scheduled": 0.9906155060226685,
+      "p99_e2e_ms": 0.587239457143341,
+      "successful_rps": 0.9790209790209792
+    },
+    "max_rejection_plus_timeout": {
+      "patched_on": 0.04194260485651214,
+      "patched_off": 0.02251655629139073
+    },
+    "checks": {
+      "cpu_usec_per_completed_work_ratio_at_most_1_10": true,
+      "client_cpu_usec_per_scheduled_ratio_at_most_1_10": true,
+      "p99_e2e_ms_ratio_at_most_1_10": true,
+      "failure_rate_difference_at_most_0_001": false,
+      "client_trace_coverage_at_least_0_99": true,
+      "all_diagnostic_timing_observed": true,
+      "all_enabled_traces_complete": true
+    },
+    "original_numeric_screens_passed": false,
+    "throughput_review_required": true,
+    "eligible_for_full": false
+  },
+  "interpretation": "Original numeric limits applied descriptively to four balanced repetitions; this is not the existing six-trial qualification pilot. Throughput and errors require review. No gate file or full-collection eligibility is created."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "fa0bce640f9e759501e0b8e6b46d00cce50631fc0f847c35c7d292d2d5aa1705",
+  "name": "quota-followup-3dac7ea188bc8eec",
+  "command": [
+    "docker",
+    "create",
+    "--name",
+    "quota-followup-3dac7ea188bc8eec",
+    "--label",
+    "quota.followup.session=/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/full",
+    "--cpuset-cpus=2,4",
+    "--cpu-period=250000",
+    "--cpu-quota=125000",
+    "-e",
+    "WORKERS=4",
+    "-e",
+    "QUEUE_SIZE=128",
+    "-e",
+    "GOMAXPROCS=2",
+    "-e",
+    "INSTRUMENT=1",
+    "-p",
+    "127.0.0.1:18080:8080",
+    "quota-followup-service:1"
+  ]
+}

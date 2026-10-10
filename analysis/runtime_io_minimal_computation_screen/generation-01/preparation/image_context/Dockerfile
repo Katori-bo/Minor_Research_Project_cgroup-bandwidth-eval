@@ -1,0 +1,2 @@
+FROM sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5
+COPY server /server

@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "decision": "offline_package_ready_live_collector_qualification_pending",
+  "generation": "analysis/runtime_io_v24/generation-03",
+  "bundle_seal_sha256": "df6bd5289af6d5c6aae30c838a1387636e31316a835067ae0365f29906834b18",
+  "bundle_sources": 175,
+  "unchanged_historical_source_counts": {
+    "V22": 126,
+    "V23": 135,
+    "V24 revision1": 148,
+    "V24 revision2": 161
+  },
+  "previous_failed_evidence_hashes_verified": true,
+  "previous_review_seals": {
+    "runtime_io_v24_failure_review": "246ac04b86e49ba405bf6c50e2daa7566fe2548baa229b800f91f33721001ffc",
+    "runtime_io_v24r2_failure_review": "ca6dbbe0974bb12d7c496ff617b2925b85f0179dd16d9c228d72d07f36833d71"
+  },
+  "previous_generations_decision": "incomplete",
+  "science_design_seal_sha256": "e7a84f104ebded017ba9154fcbfeb44d1bdd25e4a2dae709e9354b56350f55ee",
+  "science_matrix_and_schedules_unchanged": true,
+  "software_checks": {
+    "native_unit_checks": 28,
+    "combined_regressions": 122,
+    "combined_command": "PYTHONPATH=diagnostic python3 -m unittest test_v22 test_v23 test_v24 test_v24r2 test_v24r3 -v",
+    "combined_result": "passed, 122 tests in 31.701 seconds; recorded in preparation conversation",
+    "bundled_unit_log_sha256": "3b9ed0aed6f22d98922518ee8648718a0419def55cc8e01ddac98f7e85090f08",
+    "passed": true,
+    "full_duration_synthetic_recording": {
+      "duration_sec": 110.000058912,
+      "own_cpu_ms": 84.864237,
+      "max_adjacent_span_ms": 20.483529,
+      "samples": 5500,
+      "max_wall_ms": 0.034586,
+      "max_thread_cpu_ms": 0.023995,
+      "reads_over_2ms": 0,
+      "skipped_deadlines": 0,
+      "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+    }
+  },
+  "qualification": {
+    "real_service": false,
+    "docker_invoked": false,
+    "sudo_invoked": false,
+    "real_cgroup_sampler_invoked": false,
+    "completed_qualification_trials": 0,
+    "planned_qualification_trials": 4,
+    "performance_trials_completed": 0,
+    "performance_trials_planned": 12,
+    "host_settings_changed": false
+  },
+  "external_launch": "bash diagnostic/start_v24r3.sh qualify analysis/runtime_io_v24/generation-03",
+  "full_run_requires_independently_passed_qualification": true,
+  "limits": "The 110-second regular-file check verifies collector mechanics, not live cgroup timing or sampler effects. Four real-service qualification cells must pass before the twelve-trial scientific collection; qualification alone does not establish the explanation or novelty."
+}

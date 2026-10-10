@@ -1,0 +1,981 @@
+{
+  "schema": 1,
+  "review": "V22 Step3 design consistency and asset/schedule feasibility",
+  "created_utc": "2026-10-07T04:34:03.323996+00:00",
+  "design_id": "runtime_io_v22_r1",
+  "checks": {
+    "json_valid": true,
+    "original_selected_preparation_files_match_seal": true,
+    "retained_three_binary_hashes_match_manifest": true,
+    "retained_client_help_has_steady_and_bursty": true,
+    "A_vector_matches_original_anchor": true,
+    "B_integer_and_retained_source_formula_agree": true,
+    "B_generator_terminates_at6793": true,
+    "warmup_common_canonical2265_offers": true,
+    "vectors_integer_strictly_increasing_and_in_duration": true,
+    "order_and_roles_match_design": true,
+    "calibration_window_total18s": true,
+    "primary12_checks_and_3pp_margins": true,
+    "fit_inputs_calibration_only": true,
+    "all_local_markdown_targets_exist": true,
+    "prior_step2_immutable_artifacts_unchanged": true
+  },
+  "assets": {
+    "v20_preparation_manifest": "analysis/runtime_io_v20_execution_delay/generation-03/preparation/manifest.json",
+    "image": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+    "retained_binaries": {
+      "image.server": {
+        "path": "analysis/runtime_io_v20_execution_delay/generation-03/preparation/image.server",
+        "sha256": "b7d249454d5477ffa0ade7cf1d90ba0eee8157ee166bb6e3f71d4cf912400efd"
+      },
+      "loadgen": {
+        "path": "analysis/runtime_io_v20_execution_delay/generation-03/preparation/loadgen",
+        "sha256": "03a3876212b87508c64489c79c612e1c757b3916c488fc2bda393ad957f9ac5e"
+      },
+      "gate": {
+        "path": "analysis/runtime_io_v20_execution_delay/generation-03/preparation/gate",
+        "sha256": "8e23791687088fa33d5cd3db56fd7decac7abc1edce4250a324f7bf0487aa679"
+      }
+    },
+    "schedule_source": "analysis/runtime_io_v12_parallelism_build/prepared/loadgen/main.go"
+  },
+  "vector_summary": {
+    "A_offers": 6793,
+    "B_offers": 6793,
+    "warmup_offers": 2265,
+    "B_rate_decimal": "113.21666666666667",
+    "A_last_offset_ns": 59996466743,
+    "B_last_offset_ns": 59991167378
+  },
+  "planned_slots": 12,
+  "qualification_slots": 2,
+  "calibration_slots": 2,
+  "validation_slots": 8,
+  "validation_blocks": 4,
+  "planned_warmup_plus_arrival_seconds": 960,
+  "inspected_input_sha256": {
+    "analysis/runtime_io_v20_execution_delay/generation-03/preparation/manifest.json": "41fdedb7092412c08faae9b0f7f206a64e79e61a3921d90393d7c49c7ec646ca",
+    "analysis/runtime_io_v20_execution_delay/generation-03/preparation/seal.json": "75067bc80894755049932ed27e236698e3877294141dfe69ce098209bc913a40",
+    "analysis/runtime_io_v20_execution_delay/generation-03/preparation/arrivals.json": "a354b4ea018e39a2dc5f7072bbd457406e2216814650877348ab4d4fda797caf",
+    "analysis/runtime_io_v12_parallelism_build/prepared/loadgen/main.go": "4689a8653fa8a1de3c370c09d41e66dbdb06987476359705f5de9d719829dcfc",
+    "diagnostic/execution_delay_common.py": "35a30c7d5d24866df3336467b1e01d649dcf84856adf2a385ff094e6e032f568",
+    "diagnostic/execution_delay_study.py": "68e59943d15525f925d0f5f8d82bc48cd28b40b9564aca2e8eae48f2e934ec54",
+    "diagnostic/execution_delay_analysis.py": "06c3cd2444bbb7385db777fe42d22d9d8a0183f48c2204e3695bd0c41829fa65",
+    "analysis/review_v20_backlog.py": "eb782afcf080b3aefb4c3d4dad82cb30c37a5920fd9ca15a6be8848ec56a5a9e",
+    "scripts/environment_controls.py": "8b46ce9c0016895631455e62422939a1a0b77df3d10fb135c9d01bb157ebb3a2",
+    "docs/runtime_io_evidence_map.md": "90e96f7d8299fe583dbdf7829bbc40f701618cea05c130f9424948b229c847ae",
+    "docs/runtime_io_contribution_matrix.md": "eaff62fb9d24159f5ed4c2b46d9eb3a1da9223f8a6e28ae1782d4e6ce2c2279d"
+  },
+  "local_links_checked": 176,
+  "local_links": [
+    {
+      "document": "docs/runtime_io_v22_frozen_question.md",
+      "target": "runtime_io_evidence_map.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_v22_frozen_question.md",
+      "target": "runtime_io_contribution_matrix.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_v22_frozen_question.md",
+      "target": "../analysis/runtime_io_v22_design/20261007/design.json",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_v22_frozen_question.md",
+      "target": "../analysis/runtime_io_v22_design/20261007/review.json",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_v22_frozen_question.md",
+      "target": "../analysis/runtime_io_v22_design/20261007/seal.json",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_v22_frozen_question.md",
+      "target": "../analysis/runtime_io_v20_execution_delay/generation-03/preparation/manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v22_frozen_question.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_contribution_matrix.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_evidence_map.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v22_prospective_queue_plan.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_investigation_catalogue.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_execution_state_continuation_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v20_execution_delay.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v20_preparation_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v19_residual_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v18_kernel_capability_review/20261004T123651Z/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v18_kernel_fixtures.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../results/diagnostic/runtime-io-v12-bursty-parallelism-1/session/analysis/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v12_tradeoff_review/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v12_tradeoff_review/gap_audit_and_completion_deadlines.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_prior_art_review.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v13_completion_protocol.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../diagnostic/completion_study.py",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../diagnostic/build_completion.py",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../diagnostic/completion_analysis.py",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v12_tradeoff_review/research_direction.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v12_queue_history_plan.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../results/diagnostic/runtime-io-v17-shared-loading-1/session/analysis/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v18_kernel_capability_review/20261004T123651Z/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v18_fixture_review/verified-20261004T125437Z-86644/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v18_service_bridge_review/verified-20261004T142940Z-97399/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v13_completion_protocol.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v13_completion_build/functional_verification.json",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v13_preparation_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../results/diagnostic/runtime-io-v13-completion-qualification-1/session/analysis/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v13_observer_review/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v14_ablation_protocol.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v14_preparation_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v13_observer_review/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v14_ablation_protocol.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v14_preparation_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v13_completion_protocol.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v13_preparation_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v12_tradeoff_review/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v12_tradeoff_review/gap_audit_and_completion_deadlines.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v12_tradeoff_review/prior_work_comparison.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v12_tradeoff_review/deadline_after_work.py",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v12_tradeoff_review/deadline_after_work.json",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v12_tradeoff_review/deadline_after_work_requests.csv",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_prior_art_review.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v14_partial_review_17/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v14_compiler_audit/compiler_audit/audit.json",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v15_marker_protocol.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v15_marker_protocol.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v15_preparation_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../results/diagnostic/runtime-io-v15-inline-markers-1/session/analysis/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v15_marker_review/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v16_repeatability_protocol.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v16_preparation_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../results/diagnostic/runtime-io-v16-repeatability-1/session/analysis/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v16_repeatability_review/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v17_loading_protocol.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v17_preparation_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../results/diagnostic/runtime-io-v17-shared-loading-1/session/analysis/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v18_kernel_observation_plan.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v18_kernel_capability_review/20261004T123651Z/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v18_kernel_fixtures.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v18_fixture_review/verified-20261004T125437Z-86644/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v18_service_bridge.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v18_service_bridge_preflight/20261004T133114Z/summary.json",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v18_service_preparation_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v18_service_bridge_review/20261004T135227Z-94326/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v18_service_bridge_preflight/20261004T142224Z/summary.json",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v18_service_bridge_review/verified-20261004T142940Z-97399/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "../analysis/runtime_io_v19_planning/offline-20261004/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/current_research_plan.md",
+      "target": "runtime_io_v19_plan.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_evidence_map.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_contribution_matrix.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v22_frozen_question.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v22_frozen_question.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_v22_design/20261007",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v20_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_v20_execution_delay/generation-03/analysis/1791215103576116652/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v20_backlog_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_v20_backlog_review/20261005/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_period_cost_pilot_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_period_cost_pilot/generation-02/analysis/1791227322172383591/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_period_reversal_audit.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/review_period_reversal.py",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v20_repeat_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_v20_execution_delay/generation-04/analysis/1791263686578222719/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_software_audit_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_software_audit/audit-01/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_software_audit/audit-01/container_followup/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_period_tools_audit.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_gc_screen_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_gc_screen/generation-01/analysis/1791269097990204124/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_leftover_observer_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_leftover_observer_audit/audit-20261006-root-01.json",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_leftover_observer_audit/audit-20261006-root-01.review.json",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_minimal_computation_screen.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_minimal_computation_screen/generation-02/partial_analysis/1791292967721661400/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_period_reversal_closing_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_minimal_counter_closing/generation-03/analysis/1791298178262469654/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_execution_state_partial_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_execution_state_pilot/generation-02/partial_analysis/1791313749375911467/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_execution_state_continuation_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_execution_state_continuation/generation-01/analysis/1791342475330161615/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_contribution_matrix.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_contribution_review/20261007/sources.json",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_period_literature_synthesis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_prior_art_review.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_paper_scope.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_restart_snapshot_and_open_questions.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_system_state_snapshots/1791345410664662815-comparison.json",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_evidence_map.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_v20_execution_delay",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_period_cost_pilot",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_gc_probe.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_gc_probe/generation-01/preparation",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_minimal_computation_screen",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_minimal_computation_screen/generation-02/interruption.json",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_minimal_counter_closing",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_minimal_counter_closing/generation-02/closing_analysis/1791295409385777239/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v20_background_app.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_v20_background_app/generation-01/preparation",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_execution_state_pilot/generation-01/validation_repair_review/1791307508181918908/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_execution_state_pilot/generation-01/interruption.json",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_execution_state_pilot/generation-02/interruption.json",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_execution_state_pilot/generation-02/host_monitor_failure.json",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_period_reversal_next_test.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_period_tools_audit.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_gc_screen_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v20_next_steps.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_boost_screen_plan.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v22_prospective_queue_plan.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v5_delay_review.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v6_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v7_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v8_yield_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v8_queue_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v8_long_wait_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v9_candidate.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v10_pending_probe_commands.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v11_literature_problem_brief.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v12_parallelism_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_v12_tradeoff_review/report.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis/runtime_io_v12_tradeoff_review/gap_audit_and_completion_deadlines.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v13_completion_protocol.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v14_ablation_protocol.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v15_preparation_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v16_repeatability_protocol.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v17_preparation_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v18_kernel_fixtures.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v18_observer_cost.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v18_service_preparation_verification.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v19_residual_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "runtime_io_v19_worker_control.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../results/diagnostic",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_investigation_catalogue.md",
+      "target": "../analysis",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_paper_scope.md",
+      "target": "runtime_io_v22_frozen_question.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_paper_scope.md",
+      "target": "runtime_io_contribution_matrix.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_paper_scope.md",
+      "target": "runtime_io_evidence_map.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_paper_scope.md",
+      "target": "runtime_io_v22_prospective_queue_plan.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_paper_scope.md",
+      "target": "runtime_io_v20_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_paper_scope.md",
+      "target": "runtime_io_v20_backlog_findings.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_paper_scope.md",
+      "target": "runtime_io_prior_art_review.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_paper_scope.md",
+      "target": "runtime_io_period_cost_pilot.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_v22_prospective_queue_plan.md",
+      "target": "runtime_io_v22_frozen_question.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_v22_prospective_queue_plan.md",
+      "target": "runtime_io_contribution_matrix.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_v22_prospective_queue_plan.md",
+      "target": "runtime_io_boost_screen_plan.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_v22_prospective_queue_plan.md",
+      "target": "runtime_io_investigation_catalogue.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_v22_prospective_queue_plan.md",
+      "target": "runtime_io_restart_snapshot_and_open_questions.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_v22_prospective_queue_plan.md",
+      "target": "runtime_io_contribution_matrix.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_v22_prospective_queue_plan.md",
+      "target": "runtime_io_evidence_map.md",
+      "exists": true
+    },
+    {
+      "document": "docs/runtime_io_v22_prospective_queue_plan.md",
+      "target": "runtime_io_contribution_matrix.md",
+      "exists": true
+    }
+  ],
+  "prior_step2_hash_comparison": {
+    "unchanged": [
+      "docs/runtime_io_contribution_matrix.md",
+      "analysis/runtime_io_contribution_review/20261007/sources.json",
+      "docs/runtime_io_evidence_map.md",
+      "analysis/runtime_io_evidence_map/20261007/review.json"
+    ],
+    "updated_mutable_plans": [
+      "docs/current_research_plan.md",
+      "docs/runtime_io_paper_scope.md",
+      "docs/runtime_io_investigation_catalogue.md",
+      "docs/runtime_io_v22_prospective_queue_plan.md"
+    ],
+    "unexpected_changes": []
+  },
+  "native_command_executed": "retained loadgen -h only; no HTTP workload",
+  "new_performance_collection_launched": false,
+  "host_settings_changed": false,
+  "raw_trials_freshly_replayed": false,
+  "runtime_schedule_qualification_completed": false,
+  "prediction_model_implementation_completed": false,
+  "new_calibration_or_validation_collected": false,
+  "novelty_established": false,
+  "limits": [
+    "Schedule comparison is offline/source arithmetic; actual native dispatch qualification remains Step4/new-boot work.",
+    "Only selected preparation files and binaries checked, not a fresh full raw-session replay.",
+    "Frozen practical screens and sensitivity range are design choices, not statistical equivalence/confidence intervals.",
+    "Design seal does not certify a ready launcher or executable preparation."
+  ]
+}

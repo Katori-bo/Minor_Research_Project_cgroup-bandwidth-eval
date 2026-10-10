@@ -1,0 +1,7392 @@
+{
+  "result": {
+    "decision": "control_design_screen_complete",
+    "complete": true,
+    "recording_quality_pass": true,
+    "accepted_trials": 16,
+    "planned_trials": 16,
+    "equivalence_established": false,
+    "scientific_explanation_established": false,
+    "by_size": {
+      "small": {
+        "condition_summaries": {
+          "off": {
+            "busy_capacity_rps": {
+              "n": 4,
+              "mean": 149.04166666666666,
+              "sample_sd": 0.34058470662498824,
+              "minimum": 148.72222222222223,
+              "maximum": 149.38888888888889
+            },
+            "whole_cpu_usec_per_job": {
+              "n": 4,
+              "mean": 3605.1357479387516,
+              "sample_sd": 2.0474876597571967,
+              "minimum": 3602.7190812720846,
+              "maximum": 3607.127944640754
+            },
+            "miss_pct": {
+              "n": 4,
+              "mean": 24.175500588928152,
+              "sample_sd": 0.2986065124691032,
+              "minimum": 23.748527679623088,
+              "maximum": 24.38162544169611
+            }
+          },
+          "on": {
+            "busy_capacity_rps": {
+              "n": 4,
+              "mean": 149.41666666666666,
+              "sample_sd": 0.1727292417238688,
+              "minimum": 149.16666666666666,
+              "maximum": 149.55555555555554
+            },
+            "whole_cpu_usec_per_job": {
+              "n": 4,
+              "mean": 3601.747828327444,
+              "sample_sd": 1.5211118839433546,
+              "minimum": 3599.9356595995287,
+              "maximum": 3603.3105123674914
+            },
+            "miss_pct": {
+              "n": 4,
+              "mean": 22.647968197879855,
+              "sample_sd": 0.4397902541591222,
+              "minimum": 22.055359246171967,
+              "maximum": 23.115429917550056
+            }
+          }
+        },
+        "repeat_groups": [
+          {
+            "block": 1,
+            "counter_probe": false,
+            "trials": [
+              "b1_small_off_r1",
+              "b1_small_off_r2"
+            ],
+            "means": {
+              "busy_capacity_rps": 149.08333333333331,
+              "whole_cpu_usec_per_job": 3605.65945229682,
+              "miss_pct": 24.38162544169611
+            },
+            "signed_repeat_difference": {
+              "capacity_pct": 0.41075429424944204,
+              "cost_pct": -0.08142169429370119,
+              "miss_pp": 0.0
+            }
+          },
+          {
+            "block": 2,
+            "counter_probe": true,
+            "trials": [
+              "b2_small_on_r1",
+              "b2_small_on_r2"
+            ],
+            "means": {
+              "busy_capacity_rps": 149.33333333333331,
+              "whole_cpu_usec_per_job": 3602.9762956419318,
+              "miss_pct": 22.9313898704358
+            },
+            "signed_repeat_difference": {
+              "capacity_pct": -0.22296544035675103,
+              "cost_pct": -0.01855053703601072,
+              "miss_pp": 0.36808009422850674
+            }
+          },
+          {
+            "block": 3,
+            "counter_probe": true,
+            "trials": [
+              "b3_small_on_r1",
+              "b3_small_on_r2"
+            ],
+            "means": {
+              "busy_capacity_rps": 149.5,
+              "whole_cpu_usec_per_job": 3600.5193610129563,
+              "miss_pct": 22.36454652532391
+            },
+            "signed_repeat_difference": {
+              "capacity_pct": 0.07434944237916524,
+              "cost_pct": -0.03241792324790448,
+              "miss_pp": -0.6183745583038807
+            }
+          },
+          {
+            "block": 4,
+            "counter_probe": false,
+            "trials": [
+              "b4_small_off_r1",
+              "b4_small_off_r2"
+            ],
+            "means": {
+              "busy_capacity_rps": 149.0,
+              "whole_cpu_usec_per_job": 3604.6120435806833,
+              "miss_pct": 23.969375736160192
+            },
+            "signed_repeat_difference": {
+              "capacity_pct": 0.37355248412401093,
+              "cost_pct": -0.10497488873617894,
+              "miss_pp": -0.4416961130742081
+            }
+          }
+        ],
+        "order_contrasts": [
+          {
+            "blocks": [
+              1,
+              2
+            ],
+            "order": "off_then_on",
+            "on_trials": [
+              "b2_small_on_r1",
+              "b2_small_on_r2"
+            ],
+            "off_trials": [
+              "b1_small_off_r1",
+              "b1_small_off_r2"
+            ],
+            "signed_difference": {
+              "capacity_pct": 0.16769144773616548,
+              "cost_pct": -0.07441514348169787,
+              "miss_pp": -1.4502355712603077
+            }
+          },
+          {
+            "blocks": [
+              3,
+              4
+            ],
+            "order": "on_then_off",
+            "on_trials": [
+              "b3_small_on_r1",
+              "b3_small_on_r2"
+            ],
+            "off_trials": [
+              "b4_small_off_r1",
+              "b4_small_off_r2"
+            ],
+            "signed_difference": {
+              "capacity_pct": 0.33557046979865773,
+              "cost_pct": -0.11354016793611749,
+              "miss_pp": -1.6048292108362823
+            }
+          }
+        ],
+        "overall_mean_signed_difference": {
+          "capacity_pct": 0.2516074923119933,
+          "cost_pct": -0.09397481393716191,
+          "miss_pp": -1.5275323910482967
+        },
+        "diagnostics": {
+          "capacity_pct": {
+            "observed_maximum_repeat_difference": 0.41075429424944204,
+            "both_order_contrasts_same_sign": true,
+            "both_order_contrasts_exceed_observed_repeat_differences": false,
+            "reference_margin": 2.0,
+            "overall_mean_difference_within_reference": true
+          },
+          "cost_pct": {
+            "observed_maximum_repeat_difference": 0.10497488873617894,
+            "both_order_contrasts_same_sign": true,
+            "both_order_contrasts_exceed_observed_repeat_differences": false,
+            "reference_margin": 2.0,
+            "overall_mean_difference_within_reference": true
+          },
+          "miss_pp": {
+            "observed_maximum_repeat_difference": 0.6183745583038807,
+            "both_order_contrasts_same_sign": true,
+            "both_order_contrasts_exceed_observed_repeat_differences": true,
+            "reference_margin": 1,
+            "overall_mean_difference_within_reference": false
+          }
+        },
+        "workload_state_checks": [
+          {
+            "trial": "b2_small_on_r1",
+            "busy": true,
+            "low": false
+          },
+          {
+            "trial": "b2_small_on_r2",
+            "busy": true,
+            "low": false
+          },
+          {
+            "trial": "b3_small_on_r1",
+            "busy": true,
+            "low": false
+          },
+          {
+            "trial": "b3_small_on_r2",
+            "busy": true,
+            "low": false
+          }
+        ],
+        "eligible_on_trials": 0
+      },
+      "large": {
+        "condition_summaries": {
+          "off": {
+            "busy_capacity_rps": {
+              "n": 4,
+              "mean": 74.95833333333333,
+              "sample_sd": 0.2952818281315157,
+              "minimum": 74.61111111111111,
+              "maximum": 75.27777777777777
+            },
+            "whole_cpu_usec_per_job": {
+              "n": 4,
+              "mean": 7095.813383392226,
+              "sample_sd": 12.150783899679997,
+              "minimum": 7087.306537102473,
+              "maximum": 7113.462897526501
+            },
+            "miss_pct": {
+              "n": 4,
+              "mean": 21.57685512367491,
+              "sample_sd": 2.246611664208917,
+              "minimum": 19.40518256772674,
+              "maximum": 24.676089517078914
+            }
+          },
+          "on": {
+            "busy_capacity_rps": {
+              "n": 4,
+              "mean": 75.05555555555556,
+              "sample_sd": 0.1635511271542176,
+              "minimum": 74.88888888888889,
+              "maximum": 75.27777777777777
+            },
+            "whole_cpu_usec_per_job": {
+              "n": 4,
+              "mean": 7089.172482332155,
+              "sample_sd": 5.008143360584866,
+              "minimum": 7082.5753828032975,
+              "maximum": 7094.386631330977
+            },
+            "miss_pct": {
+              "n": 4,
+              "mean": 20.487338044758538,
+              "sample_sd": 0.9952058077809877,
+              "minimum": 19.40518256772674,
+              "maximum": 21.67255594817432
+            }
+          }
+        },
+        "repeat_groups": [
+          {
+            "block": 1,
+            "counter_probe": true,
+            "trials": [
+              "b1_large_on_r1",
+              "b1_large_on_r2"
+            ],
+            "means": {
+              "busy_capacity_rps": 74.97222222222223,
+              "whole_cpu_usec_per_job": 7089.863957597173,
+              "miss_pct": 20.83333333333333
+            },
+            "signed_repeat_difference": {
+              "capacity_pct": -0.2220577350111092,
+              "cost_pct": 0.03774410238015026,
+              "miss_pp": 1.67844522968198
+            }
+          },
+          {
+            "block": 2,
+            "counter_probe": false,
+            "trials": [
+              "b2_large_off_r1",
+              "b2_large_off_r2"
+            ],
+            "means": {
+              "busy_capacity_rps": 74.72222222222223,
+              "whole_cpu_usec_per_job": 7103.821260306242,
+              "miss_pct": 23.115429917550056
+            },
+            "signed_repeat_difference": {
+              "capacity_pct": -0.2969561989606428,
+              "cost_pct": 0.2718182434761847,
+              "miss_pp": 3.121319199057716
+            }
+          },
+          {
+            "block": 3,
+            "counter_probe": false,
+            "trials": [
+              "b3_large_off_r1",
+              "b3_large_off_r2"
+            ],
+            "means": {
+              "busy_capacity_rps": 75.19444444444444,
+              "whole_cpu_usec_per_job": 7087.805506478209,
+              "miss_pct": 20.03828032979977
+            },
+            "signed_repeat_difference": {
+              "capacity_pct": -0.22140221402212765,
+              "cost_pct": -0.014078666553781516,
+              "miss_pp": -1.2661955241460525
+            }
+          },
+          {
+            "block": 4,
+            "counter_probe": true,
+            "trials": [
+              "b4_large_on_r1",
+              "b4_large_on_r2"
+            ],
+            "means": {
+              "busy_capacity_rps": 75.13888888888889,
+              "whole_cpu_usec_per_job": 7088.481007067137,
+              "miss_pct": 20.141342756183747
+            },
+            "signed_repeat_difference": {
+              "capacity_pct": -0.369003690036892,
+              "cost_pct": 0.16676488267753237,
+              "miss_pp": 1.4723203769140163
+            }
+          }
+        ],
+        "order_contrasts": [
+          {
+            "blocks": [
+              1,
+              2
+            ],
+            "order": "on_then_off",
+            "on_trials": [
+              "b1_large_on_r1",
+              "b1_large_on_r2"
+            ],
+            "off_trials": [
+              "b2_large_off_r1",
+              "b2_large_off_r2"
+            ],
+            "signed_difference": {
+              "capacity_pct": 0.33457249070631967,
+              "cost_pct": -0.1964759838068823,
+              "miss_pp": -2.2820965842167276
+            }
+          },
+          {
+            "blocks": [
+              3,
+              4
+            ],
+            "order": "off_then_on",
+            "on_trials": [
+              "b4_large_on_r1",
+              "b4_large_on_r2"
+            ],
+            "off_trials": [
+              "b3_large_off_r1",
+              "b3_large_off_r2"
+            ],
+            "signed_difference": {
+              "capacity_pct": -0.07388252678241806,
+              "cost_pct": 0.009530461696652275,
+              "miss_pp": 0.10306242638397833
+            }
+          }
+        ],
+        "overall_mean_signed_difference": {
+          "capacity_pct": 0.129701686121928,
+          "cost_pct": -0.09358900384294243,
+          "miss_pp": -1.0895170789163728
+        },
+        "diagnostics": {
+          "capacity_pct": {
+            "observed_maximum_repeat_difference": 0.369003690036892,
+            "both_order_contrasts_same_sign": false,
+            "both_order_contrasts_exceed_observed_repeat_differences": false,
+            "reference_margin": 2.0,
+            "overall_mean_difference_within_reference": true
+          },
+          "cost_pct": {
+            "observed_maximum_repeat_difference": 0.2718182434761847,
+            "both_order_contrasts_same_sign": false,
+            "both_order_contrasts_exceed_observed_repeat_differences": false,
+            "reference_margin": 2.0,
+            "overall_mean_difference_within_reference": true
+          },
+          "miss_pp": {
+            "observed_maximum_repeat_difference": 3.121319199057716,
+            "both_order_contrasts_same_sign": false,
+            "both_order_contrasts_exceed_observed_repeat_differences": false,
+            "reference_margin": 1,
+            "overall_mean_difference_within_reference": false
+          }
+        },
+        "workload_state_checks": [
+          {
+            "trial": "b1_large_on_r1",
+            "busy": true,
+            "low": false
+          },
+          {
+            "trial": "b1_large_on_r2",
+            "busy": true,
+            "low": false
+          },
+          {
+            "trial": "b4_large_on_r1",
+            "busy": true,
+            "low": false
+          },
+          {
+            "trial": "b4_large_on_r2",
+            "busy": true,
+            "low": false
+          }
+        ],
+        "eligible_on_trials": 0
+      }
+    },
+    "limits": "Four trials per condition/size are a bounded diagnostic. Observed repeat differences are not a confidence interval or a universal noise bound. Balanced descriptive contrasts do not establish equivalence or causality. Qualification data are not confirmatory scientific data."
+  },
+  "trial_refs": {
+    "b1_small_off_r1": {
+      "path": "slots/b1_small_off_r1/attempt-1791387095435455664",
+      "seal": "c67961681a63223d0af116232f3ab29dabd069e1195941781f1885d8828c82d7"
+    },
+    "b1_small_off_r2": {
+      "path": "slots/b1_small_off_r2/attempt-1791387262686099307",
+      "seal": "1df3553ae5105fa98967b9ed52def29b89d2da5bc9a823a9f439b8eb8f1456dd"
+    },
+    "b1_large_on_r1": {
+      "path": "slots/b1_large_on_r1/attempt-1791387435044516516",
+      "seal": "385ecbafdd4de3644db662b320a95a3b2a2372d392f4b3a14b3768ec7d5d1010"
+    },
+    "b1_large_on_r2": {
+      "path": "slots/b1_large_on_r2/attempt-1791387606997826718",
+      "seal": "8bd61e0cd6d9371e970a8e75306a13326bc8df027341e1258ceb4eb3f752b9a8"
+    },
+    "b2_large_off_r1": {
+      "path": "slots/b2_large_off_r1/attempt-1791387778926954942",
+      "seal": "246810cdbd7ce91c946a9d11f5a39fd04fe95aa443ec29b89857335e8ebe5a7c"
+    },
+    "b2_large_off_r2": {
+      "path": "slots/b2_large_off_r2/attempt-1791387950517497507",
+      "seal": "4008d8e487fb5740f8446106acd85c42ae7639f8cdb976eb5cc4402f381cbe09"
+    },
+    "b2_small_on_r1": {
+      "path": "slots/b2_small_on_r1/attempt-1791388127110291279",
+      "seal": "980a3211b60101d99a7ee763dfd7cfa2427d23ba5e4e0fb21d784c2f1f5a1cd5"
+    },
+    "b2_small_on_r2": {
+      "path": "slots/b2_small_on_r2/attempt-1791388299798475301",
+      "seal": "b6d82461051c9798f02657f1762e94a7014cf54b8cac6548e73b348d7e9ed74d"
+    },
+    "b3_small_on_r1": {
+      "path": "slots/b3_small_on_r1/attempt-1791388472426292191",
+      "seal": "7780d92b8f347a8871f455aa25425ac56b787ea20fd7406b458c24d310d63d55"
+    },
+    "b3_small_on_r2": {
+      "path": "slots/b3_small_on_r2/attempt-1791388645066899756",
+      "seal": "927244605e9a614599cdb67bd06d3989becf29b3780e25d256437a4c4fd986b5"
+    },
+    "b3_large_off_r1": {
+      "path": "slots/b3_large_off_r1/attempt-1791388817728281574",
+      "seal": "f8fcadda597b80c055508843b7e6f4f453ec68cf7ce0670a6becf72f7f41bb0d"
+    },
+    "b3_large_off_r2": {
+      "path": "slots/b3_large_off_r2/attempt-1791388989355268362",
+      "seal": "83e40b4ec79ca8c6352fd8cacf9ea0fb11dac76345f1b17e9cdd9cb4c4a8b659"
+    },
+    "b4_large_on_r1": {
+      "path": "slots/b4_large_on_r1/attempt-1791389160934680762",
+      "seal": "8258f761296d676f9309212e2f4a220c9d4f18efea5933f6077f1fb0ef64cd48"
+    },
+    "b4_large_on_r2": {
+      "path": "slots/b4_large_on_r2/attempt-1791389337998671425",
+      "seal": "763d1e1820b7ea2f510a73baf61e59f2fafa70f5571b7b265563cc2d5403e565"
+    },
+    "b4_small_off_r1": {
+      "path": "slots/b4_small_off_r1/attempt-1791389510020979228",
+      "seal": "6917187b41ab91b11d4f1af766beca814d9f0526ae2100ad42c9a58228ca6e2f"
+    },
+    "b4_small_off_r2": {
+      "path": "slots/b4_small_off_r2/attempt-1791389682286452249",
+      "seal": "909672df9e425554c499968ccfd5a6d30ec19acf7cf13598eaa95cd9392467ab"
+    }
+  },
+  "trial_accounting": [
+    {
+      "trial": "b1_small_off_r1",
+      "size": "small",
+      "block": 1,
+      "counter_probe": false,
+      "busy_capacity_rps": 148.77777777777777,
+      "busy_capacity_bounds_rps": [
+        148.77777777777777,
+        148.77777777777777
+      ],
+      "whole_cpu_usec_per_job": 3607.127944640754,
+      "miss_pct": 24.38162544169611,
+      "implied_cpu_fraction_from_mixed_estimates": 0.5366604797637743,
+      "order": 1,
+      "repeat": 1,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b1_small_off_r2",
+      "size": "small",
+      "block": 1,
+      "counter_probe": false,
+      "busy_capacity_rps": 149.38888888888889,
+      "busy_capacity_bounds_rps": [
+        149.38888888888889,
+        149.38888888888889
+      ],
+      "whole_cpu_usec_per_job": 3604.190959952886,
+      "miss_pct": 24.38162544169611,
+      "implied_cpu_fraction_from_mixed_estimates": 0.5384260828507395,
+      "order": 2,
+      "repeat": 2,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b1_large_on_r1",
+      "size": "large",
+      "block": 1,
+      "counter_probe": true,
+      "busy_capacity_rps": 75.05555555555556,
+      "busy_capacity_bounds_rps": [
+        75.05555555555556,
+        75.05555555555556
+      ],
+      "whole_cpu_usec_per_job": 7088.526207302709,
+      "miss_pct": 19.99411071849234,
+      "implied_cpu_fraction_from_mixed_estimates": 0.53203327255922,
+      "measurement_quality": {
+        "cost_relative_bound_width": {
+          "busy": 0.02692773041802313,
+          "low": 0.013659247304494943
+        },
+        "busy_delivery_bound_width": 0.013286833333333359,
+        "pass_budget": true
+      },
+      "acquisition_diagnostics": {
+        "samples": 4152,
+        "max_wall_ms": 0.126637,
+        "max_thread_cpu_ms": 0.033313,
+        "reads_over_2ms": 0,
+        "skipped_deadlines": 0,
+        "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+      },
+      "phases": {
+        "busy": {
+          "windows_sec": [
+            [
+              6.5,
+              9.5
+            ],
+            [
+              16.5,
+              19.5
+            ],
+            [
+              26.5,
+              29.5
+            ],
+            [
+              36.5,
+              39.5
+            ],
+            [
+              46.5,
+              49.5
+            ],
+            [
+              56.5,
+              59.5
+            ]
+          ],
+          "clock_bounded_completions": [
+            1351,
+            1351
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              8881662,
+              9120825
+            ],
+            "user_usec": [
+              8859226,
+              9097431
+            ],
+            "system_usec": [
+              22438,
+              23395
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              180,
+              180
+            ],
+            "nr_throttled": [
+              180,
+              180
+            ],
+            "throttled_usec": [
+              9086101,
+              9086101
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                6.5,
+                9.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1480814,
+                  1520661
+                ],
+                "user_usec": [
+                  1477898,
+                  1517746
+                ],
+                "system_usec": [
+                  2916,
+                  2916
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1494590,
+                  1494590
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                16.5,
+                19.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1479933,
+                  1519767
+                ],
+                "user_usec": [
+                  1476024,
+                  1515858
+                ],
+                "system_usec": [
+                  3909,
+                  3909
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1572938,
+                  1572938
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                26.5,
+                29.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1480436,
+                  1520289
+                ],
+                "user_usec": [
+                  1475559,
+                  1514455
+                ],
+                "system_usec": [
+                  4878,
+                  5835
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1493478,
+                  1493478
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                36.5,
+                39.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1480928,
+                  1520783
+                ],
+                "user_usec": [
+                  1477964,
+                  1517818
+                ],
+                "system_usec": [
+                  2964,
+                  2964
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1536069,
+                  1536069
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                46.5,
+                49.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1479381,
+                  1519256
+                ],
+                "user_usec": [
+                  1474546,
+                  1514420
+                ],
+                "system_usec": [
+                  4836,
+                  4836
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1493420,
+                  1493420
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                56.5,
+                59.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1480170,
+                  1520069
+                ],
+                "user_usec": [
+                  1477235,
+                  1517134
+                ],
+                "system_usec": [
+                  2935,
+                  2935
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1495606,
+                  1495606
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            9,
+            9,
+            10,
+            9,
+            10,
+            10
+          ],
+          "queue_maxima": [
+            45,
+            44,
+            44,
+            42,
+            43,
+            42
+          ],
+          "state_eligible": true,
+          "duration_sec": 18.0,
+          "worker_processing_wall_ms": {
+            "n": 1351,
+            "mean": 13.32241223612139,
+            "p50": 6.197849,
+            "p99": 59.038811,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            6574.139156180607,
+            6751.165803108808
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.49342566666666665,
+            0.5067125
+          ],
+          "legacy_v24_state_margin_pass": true,
+          "state_definition": "guaranteed_positive_waiting_queue"
+        },
+        "low": {
+          "windows_sec": [
+            [
+              1,
+              4
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              21,
+              24
+            ],
+            [
+              31,
+              34
+            ],
+            [
+              41,
+              44
+            ],
+            [
+              51,
+              54
+            ]
+          ],
+          "clock_bounded_completions": [
+            511,
+            511
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              4384429,
+              4444317
+            ],
+            "user_usec": [
+              4240013,
+              4299856
+            ],
+            "system_usec": [
+              144417,
+              144461
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              180,
+              180
+            ],
+            "nr_throttled": [
+              3,
+              3
+            ],
+            "throttled_usec": [
+              44869,
+              44869
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                1,
+                4
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  731407,
+                  736813
+                ],
+                "user_usec": [
+                  713092,
+                  718486
+                ],
+                "system_usec": [
+                  18316,
+                  18327
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  0,
+                  0
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                11,
+                14
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  724407,
+                  747571
+                ],
+                "user_usec": [
+                  689736,
+                  712898
+                ],
+                "system_usec": [
+                  34670,
+                  34674
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  40444,
+                  40444
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                21,
+                24
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  733018,
+                  740002
+                ],
+                "user_usec": [
+                  707042,
+                  714025
+                ],
+                "system_usec": [
+                  25976,
+                  25976
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                31,
+                34
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  730838,
+                  737595
+                ],
+                "user_usec": [
+                  705880,
+                  712619
+                ],
+                "system_usec": [
+                  24959,
+                  24976
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  0,
+                  0
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                41,
+                44
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  730864,
+                  741976
+                ],
+                "user_usec": [
+                  705765,
+                  716871
+                ],
+                "system_usec": [
+                  25100,
+                  25105
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  4425,
+                  4425
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                51,
+                54
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  733895,
+                  740360
+                ],
+                "user_usec": [
+                  718498,
+                  724957
+                ],
+                "system_usec": [
+                  15396,
+                  15403
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  0,
+                  0
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "queue_maxima": [
+            1,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "state_eligible": false,
+          "duration_sec": 18,
+          "worker_processing_wall_ms": {
+            "n": 512,
+            "mean": 8.47701750390625,
+            "p50": 8.810528,
+            "p99": 9.265054,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            8580.09589041096,
+            8697.293542074363
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.2435793888888889,
+            0.2469065
+          ],
+          "legacy_v24_state_margin_pass": true,
+          "state_definition": "at_most_one_waiting_job_and_no_throttled_periods"
+        }
+      },
+      "whole_over_busy_cost_bounds": [
+        1.0499706886236673,
+        1.0782440162737514
+      ],
+      "low_over_busy_cost_bounds": [
+        1.270905816956822,
+        1.3229554981198863
+      ],
+      "sampler_own_cpu_ms": 72.91048,
+      "order": 3,
+      "repeat": 1,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b1_large_on_r2",
+      "size": "large",
+      "block": 1,
+      "counter_probe": true,
+      "busy_capacity_rps": 74.88888888888889,
+      "busy_capacity_bounds_rps": [
+        74.88888888888889,
+        74.88888888888889
+      ],
+      "whole_cpu_usec_per_job": 7091.201707891637,
+      "miss_pct": 21.67255594817432,
+      "implied_cpu_fraction_from_mixed_estimates": 0.5310522167909959,
+      "measurement_quality": {
+        "cost_relative_bound_width": {
+          "busy": 0.0021691281450827407,
+          "low": 0.009895152716602995
+        },
+        "busy_delivery_bound_width": 0.0010833333333333806,
+        "pass_budget": true
+      },
+      "acquisition_diagnostics": {
+        "samples": 4154,
+        "max_wall_ms": 0.102112,
+        "max_thread_cpu_ms": 0.041949,
+        "reads_over_2ms": 0,
+        "skipped_deadlines": 0,
+        "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+      },
+      "phases": {
+        "busy": {
+          "windows_sec": [
+            [
+              6.5,
+              9.5
+            ],
+            [
+              16.5,
+              19.5
+            ],
+            [
+              26.5,
+              29.5
+            ],
+            [
+              36.5,
+              39.5
+            ],
+            [
+              46.5,
+              49.5
+            ],
+            [
+              56.5,
+              59.5
+            ]
+          ],
+          "clock_bounded_completions": [
+            1348,
+            1348
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              8989787,
+              9009287
+            ],
+            "user_usec": [
+              8967472,
+              8986976
+            ],
+            "system_usec": [
+              22314,
+              22314
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              174,
+              186
+            ],
+            "nr_throttled": [
+              174,
+              186
+            ],
+            "throttled_usec": [
+              8741156,
+              9400706
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                6.5,
+                9.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1497699,
+                  1500856
+                ],
+                "user_usec": [
+                  1493827,
+                  1496984
+                ],
+                "system_usec": [
+                  3872,
+                  3872
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1479419,
+                  1607393
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                16.5,
+                19.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1499057,
+                  1502172
+                ],
+                "user_usec": [
+                  1497090,
+                  1500205
+                ],
+                "system_usec": [
+                  1966,
+                  1966
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1445660,
+                  1544448
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                26.5,
+                29.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1498261,
+                  1501400
+                ],
+                "user_usec": [
+                  1493383,
+                  1496523
+                ],
+                "system_usec": [
+                  4878,
+                  4878
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1445698,
+                  1544505
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                36.5,
+                39.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1498296,
+                  1501457
+                ],
+                "user_usec": [
+                  1496336,
+                  1499499
+                ],
+                "system_usec": [
+                  1959,
+                  1959
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1446426,
+                  1546225
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                46.5,
+                49.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1498365,
+                  1501862
+                ],
+                "user_usec": [
+                  1495447,
+                  1498945
+                ],
+                "system_usec": [
+                  2918,
+                  2918
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1490177,
+                  1626573
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                56.5,
+                59.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1498109,
+                  1501540
+                ],
+                "user_usec": [
+                  1491389,
+                  1494820
+                ],
+                "system_usec": [
+                  6721,
+                  6721
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1433776,
+                  1531562
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            10,
+            9,
+            10,
+            10,
+            10,
+            8
+          ],
+          "queue_maxima": [
+            45,
+            44,
+            44,
+            42,
+            44,
+            43
+          ],
+          "state_eligible": true,
+          "duration_sec": 18.0,
+          "worker_processing_wall_ms": {
+            "n": 1348,
+            "mean": 13.347152465133531,
+            "p50": 6.218045,
+            "p99": 58.980378,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            6668.981454005935,
+            6683.447329376854
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.4994326111111111,
+            0.5005159444444445
+          ],
+          "legacy_v24_state_margin_pass": true,
+          "state_definition": "guaranteed_positive_waiting_queue"
+        },
+        "low": {
+          "windows_sec": [
+            [
+              1,
+              4
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              21,
+              24
+            ],
+            [
+              31,
+              34
+            ],
+            [
+              41,
+              44
+            ],
+            [
+              51,
+              54
+            ]
+          ],
+          "clock_bounded_completions": [
+            518,
+            519
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              4448691,
+              4484055
+            ],
+            "user_usec": [
+              4339210,
+              4373601
+            ],
+            "system_usec": [
+              109483,
+              110453
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              174,
+              186
+            ],
+            "nr_throttled": [
+              0,
+              5
+            ],
+            "throttled_usec": [
+              0,
+              251004
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                1,
+                4
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  731449,
+                  737947
+                ],
+                "user_usec": [
+                  712099,
+                  718590
+                ],
+                "system_usec": [
+                  19351,
+                  19356
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  0,
+                  0
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                11,
+                14
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  748715,
+                  755412
+                ],
+                "user_usec": [
+                  731292,
+                  737987
+                ],
+                "system_usec": [
+                  17424,
+                  17426
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  0,
+                  1
+                ],
+                "throttled_usec": [
+                  0,
+                  50408
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                21,
+                24
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  744159,
+                  748131
+                ],
+                "user_usec": [
+                  726674,
+                  730646
+                ],
+                "system_usec": [
+                  17485,
+                  17485
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  0,
+                  1
+                ],
+                "throttled_usec": [
+                  0,
+                  49408
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                31,
+                34
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  737481,
+                  742127
+                ],
+                "user_usec": [
+                  722941,
+                  726626
+                ],
+                "system_usec": [
+                  14540,
+                  15502
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  0,
+                  1
+                ],
+                "throttled_usec": [
+                  0,
+                  50405
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                41,
+                44
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  740216,
+                  747056
+                ],
+                "user_usec": [
+                  720826,
+                  727664
+                ],
+                "system_usec": [
+                  19390,
+                  19391
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  0,
+                  1
+                ],
+                "throttled_usec": [
+                  0,
+                  50394
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                51,
+                54
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  746671,
+                  753382
+                ],
+                "user_usec": [
+                  725378,
+                  732088
+                ],
+                "system_usec": [
+                  21293,
+                  21293
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  0,
+                  1
+                ],
+                "throttled_usec": [
+                  0,
+                  50389
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "queue_maxima": [
+            1,
+            3,
+            2,
+            1,
+            1,
+            2
+          ],
+          "state_eligible": false,
+          "duration_sec": 18,
+          "worker_processing_wall_ms": {
+            "n": 519,
+            "mean": 8.390501990366088,
+            "p50": 8.832712,
+            "p99": 9.179452,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            8571.658959537572,
+            8656.476833976834
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.2471495,
+            0.24911416666666666
+          ],
+          "legacy_v24_state_margin_pass": true,
+          "state_definition": "at_most_one_waiting_job_and_no_throttled_periods"
+        }
+      },
+      "whole_over_busy_cost_bounds": [
+        1.0610095895755043,
+        1.0633110553384553
+      ],
+      "low_over_busy_cost_bounds": [
+        1.2825206120591615,
+        1.298020828769444
+      ],
+      "sampler_own_cpu_ms": 72.38147,
+      "order": 4,
+      "repeat": 2,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b2_large_off_r1",
+      "size": "large",
+      "block": 2,
+      "counter_probe": false,
+      "busy_capacity_rps": 74.83333333333333,
+      "busy_capacity_bounds_rps": [
+        74.77777777777777,
+        74.88888888888889
+      ],
+      "whole_cpu_usec_per_job": 7094.179623085984,
+      "miss_pct": 21.5547703180212,
+      "implied_cpu_fraction_from_mixed_estimates": 0.5308811084609344,
+      "order": 5,
+      "repeat": 1,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b2_large_off_r2",
+      "size": "large",
+      "block": 2,
+      "counter_probe": false,
+      "busy_capacity_rps": 74.61111111111111,
+      "busy_capacity_bounds_rps": [
+        74.61111111111111,
+        74.61111111111111
+      ],
+      "whole_cpu_usec_per_job": 7113.462897526501,
+      "miss_pct": 24.676089517078914,
+      "implied_cpu_fraction_from_mixed_estimates": 0.5307433706321162,
+      "order": 6,
+      "repeat": 2,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b2_small_on_r1",
+      "size": "small",
+      "block": 2,
+      "counter_probe": true,
+      "busy_capacity_rps": 149.5,
+      "busy_capacity_bounds_rps": [
+        149.5,
+        149.5
+      ],
+      "whole_cpu_usec_per_job": 3603.3105123674914,
+      "miss_pct": 22.74734982332155,
+      "implied_cpu_fraction_from_mixed_estimates": 0.53869492159894,
+      "measurement_quality": {
+        "cost_relative_bound_width": {
+          "busy": 2.354893830377406e-05,
+          "low": 0.006930731372198081
+        },
+        "busy_delivery_bound_width": 1.1777777777832732e-05,
+        "pass_budget": true
+      },
+      "acquisition_diagnostics": {
+        "samples": 4160,
+        "max_wall_ms": 0.080621,
+        "max_thread_cpu_ms": 0.045986,
+        "reads_over_2ms": 0,
+        "skipped_deadlines": 0,
+        "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+      },
+      "phases": {
+        "busy": {
+          "windows_sec": [
+            [
+              6.5,
+              9.5
+            ],
+            [
+              16.5,
+              19.5
+            ],
+            [
+              26.5,
+              29.5
+            ],
+            [
+              36.5,
+              39.5
+            ],
+            [
+              46.5,
+              49.5
+            ],
+            [
+              56.5,
+              59.5
+            ]
+          ],
+          "clock_bounded_completions": [
+            2691,
+            2691
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              9002529,
+              9002741
+            ],
+            "user_usec": [
+              8908623,
+              8908828
+            ],
+            "system_usec": [
+              93906,
+              93912
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              180,
+              180
+            ],
+            "nr_throttled": [
+              180,
+              180
+            ],
+            "throttled_usec": [
+              9072688,
+              9072688
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                6.5,
+                9.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1499914,
+                  1499948
+                ],
+                "user_usec": [
+                  1489386,
+                  1489418
+                ],
+                "system_usec": [
+                  10528,
+                  10529
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1509597,
+                  1509597
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                16.5,
+                19.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1500763,
+                  1500777
+                ],
+                "user_usec": [
+                  1484747,
+                  1484761
+                ],
+                "system_usec": [
+                  16016,
+                  16016
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1553283,
+                  1553283
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                26.5,
+                29.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1499841,
+                  1499880
+                ],
+                "user_usec": [
+                  1484718,
+                  1484757
+                ],
+                "system_usec": [
+                  15123,
+                  15124
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1532181,
+                  1532181
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                36.5,
+                39.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1500732,
+                  1500775
+                ],
+                "user_usec": [
+                  1484610,
+                  1484651
+                ],
+                "system_usec": [
+                  16123,
+                  16124
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1491880,
+                  1491880
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                46.5,
+                49.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1500088,
+                  1500125
+                ],
+                "user_usec": [
+                  1477421,
+                  1477457
+                ],
+                "system_usec": [
+                  22667,
+                  22668
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1492957,
+                  1492957
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                56.5,
+                59.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1501191,
+                  1501236
+                ],
+                "user_usec": [
+                  1487741,
+                  1487784
+                ],
+                "system_usec": [
+                  13449,
+                  13451
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1492790,
+                  1492790
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            20,
+            20,
+            20,
+            18,
+            21,
+            19
+          ],
+          "queue_maxima": [
+            91,
+            89,
+            88,
+            90,
+            91,
+            91
+          ],
+          "state_eligible": true,
+          "duration_sec": 18.0,
+          "worker_processing_wall_ms": {
+            "n": 2691,
+            "mean": 6.687798826830175,
+            "p50": 3.086339,
+            "p99": 54.601388,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            3345.4214046822744,
+            3345.5001858045334
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.5001405,
+            0.5001522777777778
+          ],
+          "legacy_v24_state_margin_pass": true,
+          "state_definition": "guaranteed_positive_waiting_queue"
+        },
+        "low": {
+          "windows_sec": [
+            [
+              1,
+              4
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              21,
+              24
+            ],
+            [
+              31,
+              34
+            ],
+            [
+              41,
+              44
+            ],
+            [
+              51,
+              54
+            ]
+          ],
+          "clock_bounded_completions": [
+            1057,
+            1057
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              4704554,
+              4737160
+            ],
+            "user_usec": [
+              4446606,
+              4475427
+            ],
+            "system_usec": [
+              257949,
+              261733
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              180,
+              180
+            ],
+            "nr_throttled": [
+              9,
+              9
+            ],
+            "throttled_usec": [
+              280908,
+              280908
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                1,
+                4
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  767861,
+                  777622
+                ],
+                "user_usec": [
+                  729918,
+                  739653
+                ],
+                "system_usec": [
+                  37944,
+                  37969
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  0,
+                  0
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                11,
+                14
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  790452,
+                  795322
+                ],
+                "user_usec": [
+                  763457,
+                  768304
+                ],
+                "system_usec": [
+                  26995,
+                  27018
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  2,
+                  2
+                ],
+                "throttled_usec": [
+                  71506,
+                  71506
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                21,
+                24
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  788731,
+                  793418
+                ],
+                "user_usec": [
+                  733739,
+                  736572
+                ],
+                "system_usec": [
+                  54992,
+                  56845
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  2,
+                  2
+                ],
+                "throttled_usec": [
+                  56328,
+                  56328
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                31,
+                34
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  781756,
+                  785334
+                ],
+                "user_usec": [
+                  746217,
+                  749795
+                ],
+                "system_usec": [
+                  35540,
+                  35540
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  49785,
+                  49785
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                41,
+                44
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  789135,
+                  794010
+                ],
+                "user_usec": [
+                  755650,
+                  758666
+                ],
+                "system_usec": [
+                  33485,
+                  35345
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  2,
+                  2
+                ],
+                "throttled_usec": [
+                  53522,
+                  53522
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                51,
+                54
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  786619,
+                  791454
+                ],
+                "user_usec": [
+                  717625,
+                  722437
+                ],
+                "system_usec": [
+                  68993,
+                  69016
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  2,
+                  2
+                ],
+                "throttled_usec": [
+                  49767,
+                  49767
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "queue_maxima": [
+            1,
+            9,
+            8,
+            6,
+            7,
+            7
+          ],
+          "state_eligible": false,
+          "duration_sec": 18,
+          "worker_processing_wall_ms": {
+            "n": 1052,
+            "mean": 4.2965399096958174,
+            "p50": 4.5151195,
+            "p99": 4.845703,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            4450.855250709556,
+            4481.702932828761
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.26136411111111113,
+            0.26317555555555555
+          ],
+          "legacy_v24_state_margin_pass": false,
+          "state_definition": "at_most_one_waiting_job_and_no_throttled_periods"
+        }
+      },
+      "whole_over_busy_cost_bounds": [
+        1.07706181803752,
+        1.0770871816998222
+      ],
+      "low_over_busy_cost_bounds": [
+        1.3304005390868643,
+        1.3396527344974056
+      ],
+      "sampler_own_cpu_ms": 71.825717,
+      "order": 7,
+      "repeat": 1,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b2_small_on_r2",
+      "size": "small",
+      "block": 2,
+      "counter_probe": true,
+      "busy_capacity_rps": 149.16666666666666,
+      "busy_capacity_bounds_rps": [
+        149.11111111111111,
+        149.22222222222223
+      ],
+      "whole_cpu_usec_per_job": 3602.642078916372,
+      "miss_pct": 23.115429917550056,
+      "implied_cpu_fraction_from_mixed_estimates": 0.5373941101050255,
+      "measurement_quality": {
+        "cost_relative_bound_width": {
+          "busy": 0.027692698185629656,
+          "low": 0.02901890205382
+        },
+        "busy_delivery_bound_width": 0.013284499999999977,
+        "pass_budget": true
+      },
+      "acquisition_diagnostics": {
+        "samples": 4161,
+        "max_wall_ms": 0.067606,
+        "max_thread_cpu_ms": 0.044824,
+        "reads_over_2ms": 0,
+        "skipped_deadlines": 0,
+        "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+      },
+      "phases": {
+        "busy": {
+          "windows_sec": [
+            [
+              6.5,
+              9.5
+            ],
+            [
+              16.5,
+              19.5
+            ],
+            [
+              26.5,
+              29.5
+            ],
+            [
+              36.5,
+              39.5
+            ],
+            [
+              46.5,
+              49.5
+            ],
+            [
+              56.5,
+              59.5
+            ]
+          ],
+          "clock_bounded_completions": [
+            2684,
+            2686
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              8880186,
+              9119307
+            ],
+            "user_usec": [
+              8800149,
+              9039244
+            ],
+            "system_usec": [
+              80034,
+              80060
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              180,
+              180
+            ],
+            "nr_throttled": [
+              180,
+              180
+            ],
+            "throttled_usec": [
+              9098767,
+              9098767
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                6.5,
+                9.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1479748,
+                  1519601
+                ],
+                "user_usec": [
+                  1469204,
+                  1509050
+                ],
+                "system_usec": [
+                  10544,
+                  10552
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1527693,
+                  1527693
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                16.5,
+                19.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1478904,
+                  1518784
+                ],
+                "user_usec": [
+                  1468416,
+                  1508288
+                ],
+                "system_usec": [
+                  10487,
+                  10496
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1533265,
+                  1533265
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                26.5,
+                29.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1479670,
+                  1519513
+                ],
+                "user_usec": [
+                  1467085,
+                  1506928
+                ],
+                "system_usec": [
+                  12584,
+                  12584
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1494001,
+                  1494001
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                36.5,
+                39.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1480107,
+                  1519920
+                ],
+                "user_usec": [
+                  1461314,
+                  1501124
+                ],
+                "system_usec": [
+                  18793,
+                  18795
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1516558,
+                  1516558
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                46.5,
+                49.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1480864,
+                  1520718
+                ],
+                "user_usec": [
+                  1465616,
+                  1505463
+                ],
+                "system_usec": [
+                  15247,
+                  15254
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1525073,
+                  1525073
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                56.5,
+                59.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1480893,
+                  1520771
+                ],
+                "user_usec": [
+                  1468514,
+                  1508391
+                ],
+                "system_usec": [
+                  12379,
+                  12379
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1502177,
+                  1502177
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            22,
+            23,
+            23,
+            22,
+            21,
+            21
+          ],
+          "queue_maxima": [
+            95,
+            94,
+            92,
+            90,
+            92,
+            93
+          ],
+          "state_eligible": true,
+          "duration_sec": 18.0,
+          "worker_processing_wall_ms": {
+            "n": 2684,
+            "mean": 6.6841432272727275,
+            "p50": 3.0877115,
+            "p99": 54.587208,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            3306.1005212211467,
+            3397.6553651266768
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.4933436666666667,
+            0.5066281666666667
+          ],
+          "legacy_v24_state_margin_pass": true,
+          "state_definition": "guaranteed_positive_waiting_queue"
+        },
+        "low": {
+          "windows_sec": [
+            [
+              1,
+              4
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              21,
+              24
+            ],
+            [
+              31,
+              34
+            ],
+            [
+              41,
+              44
+            ],
+            [
+              51,
+              54
+            ]
+          ],
+          "clock_bounded_completions": [
+            1051,
+            1051
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              4620609,
+              4754694
+            ],
+            "user_usec": [
+              4363717,
+              4495845
+            ],
+            "system_usec": [
+              256892,
+              258849
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              180,
+              180
+            ],
+            "nr_throttled": [
+              5,
+              5
+            ],
+            "throttled_usec": [
+              198175,
+              198175
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                1,
+                4
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  770586,
+                  782393
+                ],
+                "user_usec": [
+                  723074,
+                  734882
+                ],
+                "system_usec": [
+                  47512,
+                  47512
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  0,
+                  0
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                11,
+                14
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  772631,
+                  797394
+                ],
+                "user_usec": [
+                  725101,
+                  749857
+                ],
+                "system_usec": [
+                  47531,
+                  47538
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  46643,
+                  46643
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                21,
+                24
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  775128,
+                  799655
+                ],
+                "user_usec": [
+                  741654,
+                  766166
+                ],
+                "system_usec": [
+                  33474,
+                  33488
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  49641,
+                  49641
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                31,
+                34
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  767961,
+                  791565
+                ],
+                "user_usec": [
+                  710071,
+                  733675
+                ],
+                "system_usec": [
+                  57890,
+                  57890
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  45640,
+                  45640
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                41,
+                44
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  764201,
+                  788752
+                ],
+                "user_usec": [
+                  727555,
+                  751155
+                ],
+                "system_usec": [
+                  36646,
+                  37597
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  26624,
+                  26624
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                51,
+                54
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  770102,
+                  794935
+                ],
+                "user_usec": [
+                  736262,
+                  760110
+                ],
+                "system_usec": [
+                  33839,
+                  34824
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  29627,
+                  29627
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "queue_maxima": [
+            1,
+            4,
+            6,
+            4,
+            4,
+            4
+          ],
+          "state_eligible": false,
+          "duration_sec": 18,
+          "worker_processing_wall_ms": {
+            "n": 1046,
+            "mean": 4.46847123040153,
+            "p50": 4.524907499999999,
+            "p99": 4.931674,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            4396.392959086585,
+            4523.971455756422
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.2567005,
+            0.26414966666666667
+          ],
+          "legacy_v24_state_margin_pass": false,
+          "state_definition": "at_most_one_waiting_job_and_no_throttled_periods"
+        }
+      },
+      "whole_over_busy_cost_bounds": [
+        1.0603318146665688,
+        1.089695263586751
+      ],
+      "low_over_busy_cost_bounds": [
+        1.29394905799184,
+        1.3683708122962457
+      ],
+      "sampler_own_cpu_ms": 73.358153,
+      "order": 8,
+      "repeat": 2,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b3_small_on_r1",
+      "size": "small",
+      "block": 3,
+      "counter_probe": true,
+      "busy_capacity_rps": 149.44444444444446,
+      "busy_capacity_bounds_rps": [
+        149.44444444444446,
+        149.5
+      ],
+      "whole_cpu_usec_per_job": 3601.103062426384,
+      "miss_pct": 22.673733804475848,
+      "implied_cpu_fraction_from_mixed_estimates": 0.5381648465514985,
+      "measurement_quality": {
+        "cost_relative_bound_width": {
+          "busy": 0.027323075688083124,
+          "low": 0.02921771687551672
+        },
+        "busy_delivery_bound_width": 0.013289555555555499,
+        "pass_budget": true
+      },
+      "acquisition_diagnostics": {
+        "samples": 4162,
+        "max_wall_ms": 0.058129,
+        "max_thread_cpu_ms": 0.051437,
+        "reads_over_2ms": 0,
+        "skipped_deadlines": 0,
+        "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+      },
+      "phases": {
+        "busy": {
+          "windows_sec": [
+            [
+              6.5,
+              9.5
+            ],
+            [
+              16.5,
+              19.5
+            ],
+            [
+              26.5,
+              29.5
+            ],
+            [
+              36.5,
+              39.5
+            ],
+            [
+              46.5,
+              49.5
+            ],
+            [
+              56.5,
+              59.5
+            ]
+          ],
+          "clock_bounded_completions": [
+            2690,
+            2691
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              8879003,
+              9118215
+            ],
+            "user_usec": [
+              8795838,
+              9034077
+            ],
+            "system_usec": [
+              83165,
+              84139
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              180,
+              180
+            ],
+            "nr_throttled": [
+              180,
+              180
+            ],
+            "throttled_usec": [
+              9024188,
+              9024188
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                6.5,
+                9.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1479599,
+                  1519459
+                ],
+                "user_usec": [
+                  1466989,
+                  1506846
+                ],
+                "system_usec": [
+                  12609,
+                  12612
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1493274,
+                  1493274
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                16.5,
+                19.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1479354,
+                  1519183
+                ],
+                "user_usec": [
+                  1459514,
+                  1498380
+                ],
+                "system_usec": [
+                  19840,
+                  20803
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1523687,
+                  1523687
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                26.5,
+                29.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1480703,
+                  1520576
+                ],
+                "user_usec": [
+                  1470065,
+                  1509938
+                ],
+                "system_usec": [
+                  10637,
+                  10637
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1490903,
+                  1490903
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                36.5,
+                39.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1479578,
+                  1519458
+                ],
+                "user_usec": [
+                  1470006,
+                  1509886
+                ],
+                "system_usec": [
+                  9573,
+                  9573
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1528977,
+                  1528977
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                46.5,
+                49.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1480370,
+                  1520261
+                ],
+                "user_usec": [
+                  1465109,
+                  1505001
+                ],
+                "system_usec": [
+                  15261,
+                  15261
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1493071,
+                  1493071
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                56.5,
+                59.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1479399,
+                  1519278
+                ],
+                "user_usec": [
+                  1464155,
+                  1504026
+                ],
+                "system_usec": [
+                  15245,
+                  15253
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1494276,
+                  1494276
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            23,
+            21,
+            22,
+            20,
+            21,
+            22
+          ],
+          "queue_maxima": [
+            97,
+            93,
+            90,
+            89,
+            89,
+            91
+          ],
+          "state_eligible": true,
+          "duration_sec": 18.0,
+          "worker_processing_wall_ms": {
+            "n": 2690,
+            "mean": 6.690036195910781,
+            "p50": 3.08978,
+            "p99": 54.494502,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            3299.5180230397623,
+            3389.671003717472
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.49327794444444445,
+            0.5065675
+          ],
+          "legacy_v24_state_margin_pass": true,
+          "state_definition": "guaranteed_positive_waiting_queue"
+        },
+        "low": {
+          "windows_sec": [
+            [
+              1,
+              4
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              21,
+              24
+            ],
+            [
+              31,
+              34
+            ],
+            [
+              41,
+              44
+            ],
+            [
+              51,
+              54
+            ]
+          ],
+          "clock_bounded_completions": [
+            1056,
+            1057
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              4652457,
+              4783861
+            ],
+            "user_usec": [
+              4422682,
+              4549364
+            ],
+            "system_usec": [
+              229773,
+              234495
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              180,
+              180
+            ],
+            "nr_throttled": [
+              5,
+              5
+            ],
+            "throttled_usec": [
+              200573,
+              200573
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                1,
+                4
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  763557,
+                  773093
+                ],
+                "user_usec": [
+                  733438,
+                  742022
+                ],
+                "system_usec": [
+                  30118,
+                  31070
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  0,
+                  0
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                11,
+                14
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  783907,
+                  808696
+                ],
+                "user_usec": [
+                  755431,
+                  779285
+                ],
+                "system_usec": [
+                  28475,
+                  29411
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  49681,
+                  49681
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                21,
+                24
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  780100,
+                  804857
+                ],
+                "user_usec": [
+                  735446,
+                  760179
+                ],
+                "system_usec": [
+                  44655,
+                  44678
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  49681,
+                  49681
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                31,
+                34
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  777440,
+                  800873
+                ],
+                "user_usec": [
+                  742488,
+                  765922
+                ],
+                "system_usec": [
+                  34951,
+                  34951
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  47680,
+                  47680
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                41,
+                44
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  771819,
+                  796325
+                ],
+                "user_usec": [
+                  719570,
+                  744075
+                ],
+                "system_usec": [
+                  52249,
+                  52249
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  28661,
+                  28661
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                51,
+                54
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  775634,
+                  800017
+                ],
+                "user_usec": [
+                  736309,
+                  757881
+                ],
+                "system_usec": [
+                  39325,
+                  42136
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  24870,
+                  24870
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "queue_maxima": [
+            1,
+            10,
+            6,
+            6,
+            3,
+            4
+          ],
+          "state_eligible": false,
+          "duration_sec": 18,
+          "worker_processing_wall_ms": {
+            "n": 1051,
+            "mean": 4.440230382492864,
+            "p50": 4.496439,
+            "p99": 4.840643,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            4401.567644276253,
+            4530.171401515152
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.25846983333333334,
+            0.26577005555555555
+          ],
+          "legacy_v24_state_margin_pass": false,
+          "state_definition": "at_most_one_waiting_job_and_no_throttled_periods"
+        }
+      },
+      "whole_over_busy_cost_bounds": [
+        1.0623753923248107,
+        1.0914027555784585
+      ],
+      "low_over_busy_cost_bounds": [
+        1.298523555663375,
+        1.3729797412476685
+      ],
+      "sampler_own_cpu_ms": 76.275668,
+      "order": 9,
+      "repeat": 1,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b3_small_on_r2",
+      "size": "small",
+      "block": 3,
+      "counter_probe": true,
+      "busy_capacity_rps": 149.55555555555554,
+      "busy_capacity_bounds_rps": [
+        149.55555555555554,
+        149.55555555555554
+      ],
+      "whole_cpu_usec_per_job": 3599.9356595995287,
+      "miss_pct": 22.055359246171967,
+      "implied_cpu_fraction_from_mixed_estimates": 0.5383903775356629,
+      "measurement_quality": {
+        "cost_relative_bound_width": {
+          "busy": 0.024800680583672605,
+          "low": 0.02651745542766475
+        },
+        "busy_delivery_bound_width": 0.012243944444444432,
+        "pass_budget": true
+      },
+      "acquisition_diagnostics": {
+        "samples": 4160,
+        "max_wall_ms": 0.113121,
+        "max_thread_cpu_ms": 0.045726,
+        "reads_over_2ms": 0,
+        "skipped_deadlines": 0,
+        "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+      },
+      "phases": {
+        "busy": {
+          "windows_sec": [
+            [
+              6.5,
+              9.5
+            ],
+            [
+              16.5,
+              19.5
+            ],
+            [
+              26.5,
+              29.5
+            ],
+            [
+              36.5,
+              39.5
+            ],
+            [
+              46.5,
+              49.5
+            ],
+            [
+              56.5,
+              59.5
+            ]
+          ],
+          "clock_bounded_completions": [
+            2692,
+            2692
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              8886490,
+              9106881
+            ],
+            "user_usec": [
+              8850912,
+              9066552
+            ],
+            "system_usec": [
+              35578,
+              40329
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              174,
+              186
+            ],
+            "nr_throttled": [
+              174,
+              186
+            ],
+            "throttled_usec": [
+              8711124,
+              9309108
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                6.5,
+                9.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1481392,
+                  1518138
+                ],
+                "user_usec": [
+                  1472720,
+                  1509466
+                ],
+                "system_usec": [
+                  8671,
+                  8671
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1442513,
+                  1543507
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                16.5,
+                19.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1481093,
+                  1517871
+                ],
+                "user_usec": [
+                  1476062,
+                  1511890
+                ],
+                "system_usec": [
+                  5032,
+                  5982
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1472141,
+                  1572125
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                26.5,
+                29.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1480610,
+                  1517345
+                ],
+                "user_usec": [
+                  1471832,
+                  1507631
+                ],
+                "system_usec": [
+                  8778,
+                  9714
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1445558,
+                  1544573
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                36.5,
+                39.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1480936,
+                  1517627
+                ],
+                "user_usec": [
+                  1477832,
+                  1512584
+                ],
+                "system_usec": [
+                  3104,
+                  5043
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1454903,
+                  1554884
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                46.5,
+                49.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1481691,
+                  1518459
+                ],
+                "user_usec": [
+                  1479567,
+                  1516336
+                ],
+                "system_usec": [
+                  2123,
+                  2123
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1452528,
+                  1550538
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                56.5,
+                59.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1480768,
+                  1517441
+                ],
+                "user_usec": [
+                  1472899,
+                  1508645
+                ],
+                "system_usec": [
+                  7870,
+                  8796
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1443481,
+                  1543481
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            21,
+            22,
+            22,
+            21,
+            20,
+            20
+          ],
+          "queue_maxima": [
+            93,
+            91,
+            91,
+            89,
+            88,
+            89
+          ],
+          "state_eligible": true,
+          "duration_sec": 18.0,
+          "worker_processing_wall_ms": {
+            "n": 2692,
+            "mean": 6.686830704309064,
+            "p50": 3.0774480000000004,
+            "p99": 54.587072,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            3301.0735512630013,
+            3382.9424219910848
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.4936938888888889,
+            0.5059378333333333
+          ],
+          "legacy_v24_state_margin_pass": true,
+          "state_definition": "guaranteed_positive_waiting_queue"
+        },
+        "low": {
+          "windows_sec": [
+            [
+              1,
+              4
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              21,
+              24
+            ],
+            [
+              31,
+              34
+            ],
+            [
+              41,
+              44
+            ],
+            [
+              51,
+              54
+            ]
+          ],
+          "clock_bounded_completions": [
+            1058,
+            1058
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              4669264,
+              4793081
+            ],
+            "user_usec": [
+              4378315,
+              4501116
+            ],
+            "system_usec": [
+              290948,
+              291964
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              174,
+              186
+            ],
+            "nr_throttled": [
+              5,
+              10
+            ],
+            "throttled_usec": [
+              112494,
+              362992
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                1,
+                4
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  764983,
+                  774437
+                ],
+                "user_usec": [
+                  724819,
+                  734254
+                ],
+                "system_usec": [
+                  40163,
+                  40182
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  0,
+                  0
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                11,
+                14
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  784735,
+                  807948
+                ],
+                "user_usec": [
+                  740290,
+                  763481
+                ],
+                "system_usec": [
+                  44445,
+                  44467
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  1,
+                  2
+                ],
+                "throttled_usec": [
+                  42485,
+                  92976
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                21,
+                24
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  772466,
+                  795460
+                ],
+                "user_usec": [
+                  716941,
+                  739917
+                ],
+                "system_usec": [
+                  55526,
+                  55543
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  1,
+                  2
+                ],
+                "throttled_usec": [
+                  6490,
+                  56991
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                31,
+                34
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  778113,
+                  800026
+                ],
+                "user_usec": [
+                  735474,
+                  757371
+                ],
+                "system_usec": [
+                  42640,
+                  42655
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  1,
+                  2
+                ],
+                "throttled_usec": [
+                  21506,
+                  72014
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                41,
+                44
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  782045,
+                  805334
+                ],
+                "user_usec": [
+                  725126,
+                  748415
+                ],
+                "system_usec": [
+                  56918,
+                  56918
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  1,
+                  2
+                ],
+                "throttled_usec": [
+                  20507,
+                  70012
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                51,
+                54
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  786922,
+                  809876
+                ],
+                "user_usec": [
+                  735665,
+                  757678
+                ],
+                "system_usec": [
+                  51256,
+                  52199
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  1,
+                  2
+                ],
+                "throttled_usec": [
+                  21506,
+                  70999
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "queue_maxima": [
+            1,
+            9,
+            5,
+            7,
+            6,
+            5
+          ],
+          "state_eligible": false,
+          "duration_sec": 18,
+          "worker_processing_wall_ms": {
+            "n": 1053,
+            "mean": 4.365191228869896,
+            "p50": 4.499542,
+            "p99": 4.861318,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            4413.2930056710775,
+            4530.322306238185
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.25940355555555555,
+            0.2662822777777778
+          ],
+          "legacy_v24_state_margin_pass": false,
+          "state_definition": "at_most_one_waiting_job_and_no_throttled_periods"
+        }
+      },
+      "whole_over_busy_cost_bounds": [
+        1.0641433434390908,
+        1.0905348225949651
+      ],
+      "low_over_busy_cost_bounds": [
+        1.3045723087044336,
+        1.3723784810868176
+      ],
+      "sampler_own_cpu_ms": 72.821256,
+      "order": 10,
+      "repeat": 2,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b3_large_off_r1",
+      "size": "large",
+      "block": 3,
+      "counter_probe": false,
+      "busy_capacity_rps": 75.27777777777777,
+      "busy_capacity_bounds_rps": [
+        75.27777777777777,
+        75.27777777777777
+      ],
+      "whole_cpu_usec_per_job": 7088.304475853945,
+      "miss_pct": 20.671378091872793,
+      "implied_cpu_fraction_from_mixed_estimates": 0.5335918091545608,
+      "order": 11,
+      "repeat": 1,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b3_large_off_r2",
+      "size": "large",
+      "block": 3,
+      "counter_probe": false,
+      "busy_capacity_rps": 75.11111111111111,
+      "busy_capacity_bounds_rps": [
+        75.11111111111111,
+        75.11111111111111
+      ],
+      "whole_cpu_usec_per_job": 7087.306537102473,
+      "miss_pct": 19.40518256772674,
+      "implied_cpu_fraction_from_mixed_estimates": 0.5323354687868079,
+      "order": 12,
+      "repeat": 2,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b4_large_on_r1",
+      "size": "large",
+      "block": 4,
+      "counter_probe": true,
+      "busy_capacity_rps": 75.27777777777777,
+      "busy_capacity_bounds_rps": [
+        75.27777777777777,
+        75.27777777777777
+      ],
+      "whole_cpu_usec_per_job": 7082.5753828032975,
+      "miss_pct": 19.40518256772674,
+      "implied_cpu_fraction_from_mixed_estimates": 0.533160535761026,
+      "measurement_quality": {
+        "cost_relative_bound_width": {
+          "busy": 0.023288096699165,
+          "low": 0.03310414076498812
+        },
+        "busy_delivery_bound_width": 0.011509444444444517,
+        "pass_budget": true
+      },
+      "acquisition_diagnostics": {
+        "samples": 4155,
+        "max_wall_ms": 0.150201,
+        "max_thread_cpu_ms": 0.040536,
+        "reads_over_2ms": 0,
+        "skipped_deadlines": 0,
+        "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+      },
+      "phases": {
+        "busy": {
+          "windows_sec": [
+            [
+              6.5,
+              9.5
+            ],
+            [
+              16.5,
+              19.5
+            ],
+            [
+              26.5,
+              29.5
+            ],
+            [
+              36.5,
+              39.5
+            ],
+            [
+              46.5,
+              49.5
+            ],
+            [
+              56.5,
+              59.5
+            ]
+          ],
+          "clock_bounded_completions": [
+            1355,
+            1355
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              8895961,
+              9103131
+            ],
+            "user_usec": [
+              8857142,
+              9064314
+            ],
+            "system_usec": [
+              38817,
+              38817
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              174,
+              186
+            ],
+            "nr_throttled": [
+              174,
+              186
+            ],
+            "throttled_usec": [
+              8799428,
+              9438136
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                6.5,
+                9.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1483795,
+                  1518358
+                ],
+                "user_usec": [
+                  1476041,
+                  1510604
+                ],
+                "system_usec": [
+                  7754,
+                  7754
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1444560,
+                  1544830
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                16.5,
+                19.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1482216,
+                  1516746
+                ],
+                "user_usec": [
+                  1476382,
+                  1510911
+                ],
+                "system_usec": [
+                  5834,
+                  5834
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1446617,
+                  1585899
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                26.5,
+                29.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1482576,
+                  1517105
+                ],
+                "user_usec": [
+                  1479616,
+                  1514146
+                ],
+                "system_usec": [
+                  2960,
+                  2960
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1438458,
+                  1537733
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                36.5,
+                39.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1482966,
+                  1517478
+                ],
+                "user_usec": [
+                  1479067,
+                  1513580
+                ],
+                "system_usec": [
+                  3898,
+                  3898
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1444702,
+                  1545007
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                46.5,
+                49.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1481473,
+                  1515998
+                ],
+                "user_usec": [
+                  1473752,
+                  1508278
+                ],
+                "system_usec": [
+                  7721,
+                  7721
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1580395,
+                  1680698
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                56.5,
+                59.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1482935,
+                  1517446
+                ],
+                "user_usec": [
+                  1472284,
+                  1506795
+                ],
+                "system_usec": [
+                  10650,
+                  10650
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  29,
+                  31
+                ],
+                "throttled_usec": [
+                  1444696,
+                  1543969
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            9,
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "queue_maxima": [
+            45,
+            43,
+            43,
+            42,
+            43,
+            42
+          ],
+          "state_eligible": true,
+          "duration_sec": 18.0,
+          "worker_processing_wall_ms": {
+            "n": 1355,
+            "mean": 13.28673917785978,
+            "p50": 6.201428,
+            "p99": 58.679982,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            6565.284870848708,
+            6718.177859778598
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.49422005555555554,
+            0.5057295
+          ],
+          "legacy_v24_state_margin_pass": true,
+          "state_definition": "guaranteed_positive_waiting_queue"
+        },
+        "low": {
+          "windows_sec": [
+            [
+              1,
+              4
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              21,
+              24
+            ],
+            [
+              31,
+              34
+            ],
+            [
+              41,
+              44
+            ],
+            [
+              51,
+              54
+            ]
+          ],
+          "clock_bounded_completions": [
+            515,
+            515
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              4385977,
+              4531171
+            ],
+            "user_usec": [
+              4260217,
+              4402547
+            ],
+            "system_usec": [
+              125758,
+              128624
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              174,
+              186
+            ],
+            "nr_throttled": [
+              0,
+              5
+            ],
+            "throttled_usec": [
+              0,
+              250200
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                1,
+                4
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  729172,
+                  747250
+                ],
+                "user_usec": [
+                  709863,
+                  726030
+                ],
+                "system_usec": [
+                  19309,
+                  21220
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  0,
+                  0
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                11,
+                14
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  735905,
+                  762245
+                ],
+                "user_usec": [
+                  712699,
+                  738093
+                ],
+                "system_usec": [
+                  23206,
+                  24152
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  0,
+                  1
+                ],
+                "throttled_usec": [
+                  0,
+                  49637
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                21,
+                24
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  728883,
+                  752805
+                ],
+                "user_usec": [
+                  701804,
+                  725726
+                ],
+                "system_usec": [
+                  27079,
+                  27079
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  0,
+                  1
+                ],
+                "throttled_usec": [
+                  0,
+                  49637
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                31,
+                34
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  728306,
+                  752291
+                ],
+                "user_usec": [
+                  718515,
+                  742500
+                ],
+                "system_usec": [
+                  9791,
+                  9791
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  0,
+                  1
+                ],
+                "throttled_usec": [
+                  0,
+                  49638
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                41,
+                44
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  732828,
+                  759225
+                ],
+                "user_usec": [
+                  715278,
+                  741672
+                ],
+                "system_usec": [
+                  17549,
+                  17553
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  0,
+                  1
+                ],
+                "throttled_usec": [
+                  0,
+                  49653
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                51,
+                54
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  730883,
+                  757355
+                ],
+                "user_usec": [
+                  702058,
+                  728526
+                ],
+                "system_usec": [
+                  28824,
+                  28829
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  29,
+                  31
+                ],
+                "nr_throttled": [
+                  0,
+                  1
+                ],
+                "throttled_usec": [
+                  0,
+                  51635
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "queue_maxima": [
+            1,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "state_eligible": false,
+          "duration_sec": 18,
+          "worker_processing_wall_ms": {
+            "n": 515,
+            "mean": 8.405998980582524,
+            "p50": 8.84438,
+            "p99": 9.189115,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            8516.460194174757,
+            8798.390291262136
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.2436653888888889,
+            0.25173172222222223
+          ],
+          "legacy_v24_state_margin_pass": true,
+          "state_definition": "at_most_one_waiting_job_and_no_throttled_periods"
+        }
+      },
+      "whole_over_busy_cost_bounds": [
+        1.0542405292968395,
+        1.0787917846872832
+      ],
+      "low_over_busy_cost_bounds": [
+        1.2676741181805244,
+        1.3401383891701184
+      ],
+      "sampler_own_cpu_ms": 72.288731,
+      "order": 13,
+      "repeat": 1,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b4_large_on_r2",
+      "size": "large",
+      "block": 4,
+      "counter_probe": true,
+      "busy_capacity_rps": 75.0,
+      "busy_capacity_bounds_rps": [
+        75.0,
+        75.0
+      ],
+      "whole_cpu_usec_per_job": 7094.386631330977,
+      "miss_pct": 20.877502944640757,
+      "implied_cpu_fraction_from_mixed_estimates": 0.5320789973498232,
+      "measurement_quality": {
+        "cost_relative_bound_width": {
+          "busy": 2.578452472842192e-05,
+          "low": 0.011818575146847789
+        },
+        "busy_delivery_bound_width": 1.2888888888895611e-05,
+        "pass_budget": true
+      },
+      "acquisition_diagnostics": {
+        "samples": 4156,
+        "max_wall_ms": 0.274273,
+        "max_thread_cpu_ms": 0.038463,
+        "reads_over_2ms": 0,
+        "skipped_deadlines": 0,
+        "interpretation": "Wall minus thread CPU includes waiting/descheduling; it does not identify a kernel cause."
+      },
+      "phases": {
+        "busy": {
+          "windows_sec": [
+            [
+              6.5,
+              9.5
+            ],
+            [
+              16.5,
+              19.5
+            ],
+            [
+              26.5,
+              29.5
+            ],
+            [
+              36.5,
+              39.5
+            ],
+            [
+              46.5,
+              49.5
+            ],
+            [
+              56.5,
+              59.5
+            ]
+          ],
+          "clock_bounded_completions": [
+            1350,
+            1350
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              8997645,
+              8997877
+            ],
+            "user_usec": [
+              8972757,
+              8972961
+            ],
+            "system_usec": [
+              24889,
+              24918
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              180,
+              180
+            ],
+            "nr_throttled": [
+              180,
+              180
+            ],
+            "throttled_usec": [
+              9088707,
+              9088707
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                6.5,
+                9.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1499733,
+                  1499773
+                ],
+                "user_usec": [
+                  1493773,
+                  1493787
+                ],
+                "system_usec": [
+                  5960,
+                  5986
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1551939,
+                  1551939
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                16.5,
+                19.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1500301,
+                  1500331
+                ],
+                "user_usec": [
+                  1497322,
+                  1497352
+                ],
+                "system_usec": [
+                  2978,
+                  2980
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1530942,
+                  1530942
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                26.5,
+                29.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1499337,
+                  1499370
+                ],
+                "user_usec": [
+                  1496352,
+                  1496385
+                ],
+                "system_usec": [
+                  2986,
+                  2986
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1515078,
+                  1515078
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                36.5,
+                39.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1498876,
+                  1498924
+                ],
+                "user_usec": [
+                  1494902,
+                  1494950
+                ],
+                "system_usec": [
+                  3973,
+                  3974
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1498272,
+                  1498272
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                46.5,
+                49.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1499157,
+                  1499194
+                ],
+                "user_usec": [
+                  1493217,
+                  1493253
+                ],
+                "system_usec": [
+                  5941,
+                  5941
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1496133,
+                  1496133
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                56.5,
+                59.5
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  1500241,
+                  1500285
+                ],
+                "user_usec": [
+                  1497191,
+                  1497234
+                ],
+                "system_usec": [
+                  3051,
+                  3051
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  30,
+                  30
+                ],
+                "throttled_usec": [
+                  1496343,
+                  1496343
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            9,
+            9,
+            9,
+            9,
+            10,
+            10
+          ],
+          "queue_maxima": [
+            45,
+            43,
+            43,
+            43,
+            44,
+            43
+          ],
+          "state_eligible": true,
+          "duration_sec": 18.0,
+          "worker_processing_wall_ms": {
+            "n": 1350,
+            "mean": 13.335466288888888,
+            "p50": 6.201710500000001,
+            "p99": 59.032568,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            6664.922222222222,
+            6665.094074074074
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.49986916666666664,
+            0.49988205555555554
+          ],
+          "legacy_v24_state_margin_pass": true,
+          "state_definition": "guaranteed_positive_waiting_queue"
+        },
+        "low": {
+          "windows_sec": [
+            [
+              1,
+              4
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              21,
+              24
+            ],
+            [
+              31,
+              34
+            ],
+            [
+              41,
+              44
+            ],
+            [
+              51,
+              54
+            ]
+          ],
+          "clock_bounded_completions": [
+            511,
+            511
+          ],
+          "cpu_delta_bounds": {
+            "usage_usec": [
+              4396046,
+              4448001
+            ],
+            "user_usec": [
+              4255426,
+              4304532
+            ],
+            "system_usec": [
+              140617,
+              143471
+            ],
+            "nice_usec": [
+              0,
+              0
+            ],
+            "core_sched.force_idle_usec": [
+              0,
+              0
+            ],
+            "nr_periods": [
+              180,
+              180
+            ],
+            "nr_throttled": [
+              5,
+              5
+            ],
+            "throttled_usec": [
+              207388,
+              207388
+            ],
+            "nr_bursts": [
+              0,
+              0
+            ],
+            "burst_usec": [
+              0,
+              0
+            ]
+          },
+          "counter_windows": [
+            {
+              "window_sec": [
+                1,
+                4
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  730415,
+                  746062
+                ],
+                "user_usec": [
+                  705312,
+                  720956
+                ],
+                "system_usec": [
+                  25103,
+                  25106
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  0,
+                  0
+                ],
+                "throttled_usec": [
+                  0,
+                  0
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                11,
+                14
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  734189,
+                  740799
+                ],
+                "user_usec": [
+                  706395,
+                  713005
+                ],
+                "system_usec": [
+                  27793,
+                  27794
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  50122,
+                  50122
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                21,
+                24
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  734649,
+                  740629
+                ],
+                "user_usec": [
+                  716266,
+                  721308
+                ],
+                "system_usec": [
+                  18383,
+                  19321
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  50111,
+                  50111
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                31,
+                34
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  730227,
+                  740586
+                ],
+                "user_usec": [
+                  708993,
+                  719352
+                ],
+                "system_usec": [
+                  21233,
+                  21234
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  33097,
+                  33097
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                41,
+                44
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  734517,
+                  741952
+                ],
+                "user_usec": [
+                  709551,
+                  715077
+                ],
+                "system_usec": [
+                  24966,
+                  26876
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  36126,
+                  36126
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "window_sec": [
+                51,
+                54
+              ],
+              "cpu_delta_bounds": {
+                "usage_usec": [
+                  732049,
+                  737973
+                ],
+                "user_usec": [
+                  708909,
+                  714834
+                ],
+                "system_usec": [
+                  23139,
+                  23140
+                ],
+                "nice_usec": [
+                  0,
+                  0
+                ],
+                "core_sched.force_idle_usec": [
+                  0,
+                  0
+                ],
+                "nr_periods": [
+                  30,
+                  30
+                ],
+                "nr_throttled": [
+                  1,
+                  1
+                ],
+                "throttled_usec": [
+                  37932,
+                  37932
+                ],
+                "nr_bursts": [
+                  0,
+                  0
+                ],
+                "burst_usec": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ],
+          "queue_minima": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "queue_maxima": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "state_eligible": false,
+          "duration_sec": 18,
+          "worker_processing_wall_ms": {
+            "n": 513,
+            "mean": 8.395104469785576,
+            "p50": 8.797145,
+            "p99": 9.132603,
+            "interpretation": "Processing wall time of jobs certainly started in this phase; includes descheduling/throttling, not per-job CPU time."
+          },
+          "cpu_usec_per_completion_bounds": [
+            8602.82974559687,
+            8704.502935420744
+          ],
+          "delivered_cpu_fraction_bounds": [
+            0.2442247777777778,
+            0.24711116666666666
+          ],
+          "legacy_v24_state_margin_pass": true,
+          "state_definition": "at_most_one_waiting_job_and_no_throttled_periods"
+        }
+      },
+      "whole_over_busy_cost_bounds": [
+        1.0644090769741372,
+        1.0644365222563037
+      ],
+      "low_over_busy_cost_bounds": [
+        1.2907289304527916,
+        1.3060171814755976
+      ],
+      "sampler_own_cpu_ms": 75.469381,
+      "order": 14,
+      "repeat": 2,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b4_small_off_r1",
+      "size": "small",
+      "block": 4,
+      "counter_probe": false,
+      "busy_capacity_rps": 148.72222222222223,
+      "busy_capacity_bounds_rps": [
+        148.72222222222223,
+        148.72222222222223
+      ],
+      "whole_cpu_usec_per_job": 3606.5050058892816,
+      "miss_pct": 24.190223792697296,
+      "implied_cpu_fraction_from_mixed_estimates": 0.5363674389314227,
+      "order": 15,
+      "repeat": 1,
+      "recording_quality_pass": true
+    },
+    {
+      "trial": "b4_small_off_r2",
+      "size": "small",
+      "block": 4,
+      "counter_probe": false,
+      "busy_capacity_rps": 149.27777777777777,
+      "busy_capacity_bounds_rps": [
+        149.27777777777777,
+        149.27777777777777
+      ],
+      "whole_cpu_usec_per_job": 3602.7190812720846,
+      "miss_pct": 23.748527679623088,
+      "implied_cpu_fraction_from_mixed_estimates": 0.537805898409894,
+      "order": 16,
+      "repeat": 2,
+      "recording_quality_pass": true
+    }
+  ],
+  "preparation_seal": "3eb33dc6a36deca5fcd5335d9dd835a8556e2406368282c99c1e87e904e84367",
+  "collection_receipt_sha256": "a08bc995f1420e3c5a0e78b6b758a5915ffe8fbbf6824515369e7390aba43133",
+  "measurement_lifetime_sha256": "fd45ce867ee5308d2fe9e819584c30b0db6dbee9399e931112b02c88201584cf",
+  "technical_failures": []
+}

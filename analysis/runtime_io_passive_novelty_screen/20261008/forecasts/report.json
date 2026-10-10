@@ -1,0 +1,350 @@
+{
+  "fits": {
+    "low_cpu_demand_law": {
+      "status": "available",
+      "capacity_rps": 110.69098643297478,
+      "assumption": "Pooled aggregate low-load CPU/job represents loaded CPU demand; unvalidated transfer."
+    },
+    "low_worker_wall_proxy": {
+      "status": "available",
+      "capacity_rps": 116.90013964866438,
+      "assumption": "Low-load worker wall time approximates CPU demand; off-CPU time and loaded transfer unvalidated."
+    },
+    "nonbacklogged_linear": {
+      "status": "available",
+      "capacity_rps": 125.95250364668553,
+      "intercept": 0.01586581513775731,
+      "demand_sec": 0.0038437837347029408,
+      "quadratic_sec2": 0.0,
+      "residual_sum_squares": 0.005875820944423482,
+      "calibration_max_throughput_rps": 117.02887282956029,
+      "extrapolation_ratio": 1.07625153179183,
+      "fit": "nonnegative_intercept_and_positive_demand_monotonic_capacity_root"
+    },
+    "nonbacklogged_quadratic": {
+      "status": "available",
+      "capacity_rps": 148.46275808875967,
+      "intercept": 0.0,
+      "demand_sec": 0.005276095883442713,
+      "quadratic_sec2": -1.2853377692608807e-05,
+      "residual_sum_squares": 0.0015855250813121065,
+      "calibration_max_throughput_rps": 117.02887282956029,
+      "extrapolation_ratio": 1.2685994020038063,
+      "fit": "nonnegative_intercept_and_positive_demand_monotonic_capacity_root"
+    },
+    "strict_low_quadratic": {
+      "status": "unavailable",
+      "reason": "no admissible monotonic fit/root within 2x calibration throughput"
+    }
+  },
+  "predictions": {
+    "low_cpu_demand_law": {
+      "val_b1_low30_p6": 50.666666666666664,
+      "val_b1_low30_p12": 62.541666666666664,
+      "val_b1_low15_p6": 54.476190476190474,
+      "val_b1_low15_p12": 69.95238095238095,
+      "val_b2_low30_p12": 62.541666666666664,
+      "val_b2_low15_p12": 69.95238095238095,
+      "val_b2_low30_p6": 50.666666666666664,
+      "val_b2_low15_p6": 54.476190476190474,
+      "val_b3_low15_p12": 69.95238095238095,
+      "val_b3_low15_p6": 54.476190476190474,
+      "val_b3_low30_p12": 62.541666666666664,
+      "val_b3_low30_p6": 50.666666666666664,
+      "val_b4_low15_p6": 54.476190476190474,
+      "val_b4_low30_p6": 50.666666666666664,
+      "val_b4_low15_p12": 69.95238095238095,
+      "val_b4_low30_p12": 62.541666666666664
+    },
+    "low_worker_wall_proxy": {
+      "val_b1_low30_p6": 45.333333333333336,
+      "val_b1_low30_p12": 60.0,
+      "val_b1_low15_p6": 49.023809523809526,
+      "val_b1_low15_p12": 67.23809523809524,
+      "val_b2_low30_p12": 60.0,
+      "val_b2_low15_p12": 67.23809523809524,
+      "val_b2_low30_p6": 45.333333333333336,
+      "val_b2_low15_p6": 49.023809523809526,
+      "val_b3_low15_p12": 67.23809523809524,
+      "val_b3_low15_p6": 49.023809523809526,
+      "val_b3_low30_p12": 60.0,
+      "val_b3_low30_p6": 45.333333333333336,
+      "val_b4_low15_p6": 49.023809523809526,
+      "val_b4_low30_p6": 45.333333333333336,
+      "val_b4_low15_p12": 67.23809523809524,
+      "val_b4_low30_p12": 60.0
+    },
+    "nonbacklogged_linear": {
+      "val_b1_low30_p6": 34.6875,
+      "val_b1_low30_p12": 55.1875,
+      "val_b1_low15_p6": 37.92857142857143,
+      "val_b1_low15_p12": 61.92857142857143,
+      "val_b2_low30_p12": 55.1875,
+      "val_b2_low15_p12": 61.92857142857143,
+      "val_b2_low30_p6": 34.6875,
+      "val_b2_low15_p6": 37.92857142857143,
+      "val_b3_low15_p12": 61.92857142857143,
+      "val_b3_low15_p6": 37.92857142857143,
+      "val_b3_low30_p12": 55.1875,
+      "val_b3_low30_p6": 34.6875,
+      "val_b4_low15_p6": 37.92857142857143,
+      "val_b4_low30_p6": 34.6875,
+      "val_b4_low15_p12": 61.92857142857143,
+      "val_b4_low30_p12": 55.1875
+    },
+    "nonbacklogged_quadratic": {
+      "val_b1_low30_p6": 0.0,
+      "val_b1_low30_p12": 32.625,
+      "val_b1_low15_p6": 0.0,
+      "val_b1_low15_p12": 36.523809523809526,
+      "val_b2_low30_p12": 32.625,
+      "val_b2_low15_p12": 36.523809523809526,
+      "val_b2_low30_p6": 0.0,
+      "val_b2_low15_p6": 0.0,
+      "val_b3_low15_p12": 36.523809523809526,
+      "val_b3_low15_p6": 0.0,
+      "val_b3_low30_p12": 32.625,
+      "val_b3_low30_p6": 0.0,
+      "val_b4_low15_p6": 0.0,
+      "val_b4_low30_p6": 0.0,
+      "val_b4_low15_p12": 36.523809523809526,
+      "val_b4_low30_p12": 32.625
+    },
+    "strict_low_quadratic": {}
+  },
+  "block_fits": {
+    "1": {
+      "status": "available",
+      "capacity_rps": 148.36938161491696,
+      "intercept": 0.0,
+      "demand_sec": 0.005285046597157211,
+      "quadratic_sec2": -1.2907508517760886e-05,
+      "residual_sum_squares": 0.0007221270267119858,
+      "calibration_max_throughput_rps": 117.02887282956029,
+      "extrapolation_ratio": 1.2678015093847883,
+      "fit": "nonnegative_intercept_and_positive_demand_monotonic_capacity_root"
+    },
+    "2": {
+      "status": "available",
+      "capacity_rps": 148.55769529824366,
+      "intercept": 0.0,
+      "demand_sec": 0.005267181920174864,
+      "quadratic_sec2": -1.2799647916121564e-05,
+      "residual_sum_squares": 0.0008625891417059006,
+      "calibration_max_throughput_rps": 116.91452506684567,
+      "extrapolation_ratio": 1.270652172715974,
+      "fit": "nonnegative_intercept_and_positive_demand_monotonic_capacity_root"
+    }
+  },
+  "block_predictions": {
+    "1": {
+      "val_b1_low30_p6": 0.0,
+      "val_b1_low30_p12": 32.729166666666664,
+      "val_b1_low15_p6": 0.0,
+      "val_b1_low15_p12": 36.642857142857146,
+      "val_b2_low30_p12": 32.729166666666664,
+      "val_b2_low15_p12": 36.642857142857146,
+      "val_b2_low30_p6": 0.0,
+      "val_b2_low15_p6": 0.0,
+      "val_b3_low15_p12": 36.642857142857146,
+      "val_b3_low15_p6": 0.0,
+      "val_b3_low30_p12": 32.729166666666664,
+      "val_b3_low30_p6": 0.0,
+      "val_b4_low15_p6": 0.0,
+      "val_b4_low30_p6": 0.0,
+      "val_b4_low15_p12": 36.642857142857146,
+      "val_b4_low30_p12": 32.729166666666664
+    },
+    "2": {
+      "val_b1_low30_p6": 0.0,
+      "val_b1_low30_p12": 32.416666666666664,
+      "val_b1_low15_p6": 0.0,
+      "val_b1_low15_p12": 36.285714285714285,
+      "val_b2_low30_p12": 32.416666666666664,
+      "val_b2_low15_p12": 36.285714285714285,
+      "val_b2_low30_p6": 0.0,
+      "val_b2_low15_p6": 0.0,
+      "val_b3_low15_p12": 36.285714285714285,
+      "val_b3_low15_p6": 0.0,
+      "val_b3_low30_p12": 32.416666666666664,
+      "val_b3_low30_p6": 0.0,
+      "val_b4_low15_p6": 0.0,
+      "val_b4_low30_p6": 0.0,
+      "val_b4_low15_p12": 36.285714285714285,
+      "val_b4_low30_p12": 32.416666666666664
+    }
+  },
+  "ambiguity_family": [
+    {
+      "multiplier": 1.1,
+      "capacity_rps": 128.6688688430233,
+      "extension_slope": 0.00589852733977881,
+      "observed_knots": [
+        {
+          "rate": 0,
+          "throughput": 0.0,
+          "utilization": 0.00026109207201197395
+        },
+        {
+          "rate": 15,
+          "throughput": 14.62259089513421,
+          "utilization": 0.06606894081959888
+        },
+        {
+          "rate": 30,
+          "throughput": 29.167605552727412,
+          "utilization": 0.13173473040245726
+        },
+        {
+          "rate": 60,
+          "throughput": 58.43541091028002,
+          "utilization": 0.26015373729888924
+        },
+        {
+          "rate": 90,
+          "throughput": 87.62225302314349,
+          "utilization": 0.385320498295632
+        },
+        {
+          "rate": 120,
+          "throughput": 116.97169894820297,
+          "utilization": 0.4310039235773647
+        }
+      ],
+      "scope": "Identical pooled utilization-throughput knots only; does not establish observational equivalence for all request/CPU traces or actual kernel behavior."
+    },
+    {
+      "multiplier": 1.25,
+      "capacity_rps": 146.2146236852537,
+      "extension_slope": 0.0023594109359115286,
+      "observed_knots": [
+        {
+          "rate": 0,
+          "throughput": 0.0,
+          "utilization": 0.00026109207201197395
+        },
+        {
+          "rate": 15,
+          "throughput": 14.62259089513421,
+          "utilization": 0.06606894081959888
+        },
+        {
+          "rate": 30,
+          "throughput": 29.167605552727412,
+          "utilization": 0.13173473040245726
+        },
+        {
+          "rate": 60,
+          "throughput": 58.43541091028002,
+          "utilization": 0.26015373729888924
+        },
+        {
+          "rate": 90,
+          "throughput": 87.62225302314349,
+          "utilization": 0.385320498295632
+        },
+        {
+          "rate": 120,
+          "throughput": 116.97169894820297,
+          "utilization": 0.4310039235773647
+        }
+      ],
+      "scope": "Identical pooled utilization-throughput knots only; does not establish observational equivalence for all request/CPU traces or actual kernel behavior."
+    },
+    {
+      "multiplier": 1.5,
+      "capacity_rps": 175.45754842230446,
+      "extension_slope": 0.0011797054679557643,
+      "observed_knots": [
+        {
+          "rate": 0,
+          "throughput": 0.0,
+          "utilization": 0.00026109207201197395
+        },
+        {
+          "rate": 15,
+          "throughput": 14.62259089513421,
+          "utilization": 0.06606894081959888
+        },
+        {
+          "rate": 30,
+          "throughput": 29.167605552727412,
+          "utilization": 0.13173473040245726
+        },
+        {
+          "rate": 60,
+          "throughput": 58.43541091028002,
+          "utilization": 0.26015373729888924
+        },
+        {
+          "rate": 90,
+          "throughput": 87.62225302314349,
+          "utilization": 0.385320498295632
+        },
+        {
+          "rate": 120,
+          "throughput": 116.97169894820297,
+          "utilization": 0.4310039235773647
+        }
+      ],
+      "scope": "Identical pooled utilization-throughput knots only; does not establish observational equivalence for all request/CPU traces or actual kernel behavior."
+    }
+  ],
+  "ambiguity_predictions": [
+    {
+      "val_b1_low30_p6": 30.791666666666668,
+      "val_b1_low30_p12": 53.4375,
+      "val_b1_low15_p6": 33.904761904761905,
+      "val_b1_low15_p12": 60.023809523809526,
+      "val_b2_low30_p12": 53.4375,
+      "val_b2_low15_p12": 60.023809523809526,
+      "val_b2_low30_p6": 30.791666666666668,
+      "val_b2_low15_p6": 33.904761904761905,
+      "val_b3_low15_p12": 60.023809523809526,
+      "val_b3_low15_p6": 33.904761904761905,
+      "val_b3_low30_p12": 53.4375,
+      "val_b3_low30_p6": 30.791666666666668,
+      "val_b4_low15_p6": 33.904761904761905,
+      "val_b4_low30_p6": 30.791666666666668,
+      "val_b4_low15_p12": 60.023809523809526,
+      "val_b4_low30_p12": 53.4375
+    },
+    {
+      "val_b1_low30_p6": 0.0,
+      "val_b1_low30_p12": 36.145833333333336,
+      "val_b1_low15_p6": 0.0,
+      "val_b1_low15_p12": 40.54761904761905,
+      "val_b2_low30_p12": 36.145833333333336,
+      "val_b2_low15_p12": 40.54761904761905,
+      "val_b2_low30_p6": 0.0,
+      "val_b2_low15_p6": 0.0,
+      "val_b3_low15_p12": 40.54761904761905,
+      "val_b3_low15_p6": 0.0,
+      "val_b3_low30_p12": 36.145833333333336,
+      "val_b3_low30_p6": 0.0,
+      "val_b4_low15_p6": 0.0,
+      "val_b4_low30_p6": 0.0,
+      "val_b4_low15_p12": 40.54761904761905,
+      "val_b4_low30_p12": 36.145833333333336
+    },
+    {
+      "val_b1_low30_p6": 0.0,
+      "val_b1_low30_p12": 0.0,
+      "val_b1_low15_p6": 0.0,
+      "val_b1_low15_p12": 0.0,
+      "val_b2_low30_p12": 0.0,
+      "val_b2_low15_p12": 0.0,
+      "val_b2_low30_p6": 0.0,
+      "val_b2_low15_p6": 0.0,
+      "val_b3_low15_p12": 0.0,
+      "val_b3_low15_p6": 0.0,
+      "val_b3_low30_p12": 0.0,
+      "val_b3_low30_p6": 0.0,
+      "val_b4_low15_p6": 0.0,
+      "val_b4_low30_p6": 0.0,
+      "val_b4_low15_p12": 0.0,
+      "val_b4_low30_p12": 0.0
+    }
+  ],
+  "status": "retrospective_known_validation_not_a_new_predictor"
+}

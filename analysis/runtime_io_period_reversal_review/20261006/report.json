@@ -1,0 +1,619 @@
+{
+  "review": "2026-10-06",
+  "shared_sources_verified": 115,
+  "prior_completion_verified": "guardrail_tradeoff_requires_review",
+  "pilot_raw_replays_verified": 16,
+  "independent_cpu_and_deadline_checks": 32,
+  "workload_commands_and_resource_limits_match": true,
+  "grouped_records": {
+    "V20": {
+      "A": {
+        "trial_values": [
+          {
+            "cpu_usec_per_completed_work": 3635.9849845429117,
+            "user_usec_per_completed_work": 3556.2833799499485,
+            "timely_500_fraction": 0.8205505667598999,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3651.664459161148,
+            "reset_to_client_start_ms": 14.1385695,
+            "dispatch_mean_ms": 0.5642499129986751,
+            "client_missed": 0,
+            "nr_periods": 609,
+            "nr_throttled": 353
+          },
+          {
+            "cpu_usec_per_completed_work": 3630.0126600912704,
+            "user_usec_per_completed_work": 3554.9040188429267,
+            "timely_500_fraction": 0.8128956278522008,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3661.0256070640175,
+            "reset_to_client_start_ms": 14.3141635,
+            "dispatch_mean_ms": 0.5599256943912851,
+            "client_missed": 0,
+            "nr_periods": 609,
+            "nr_throttled": 357
+          },
+          {
+            "cpu_usec_per_completed_work": 3630.841160017665,
+            "user_usec_per_completed_work": 3547.997350213455,
+            "timely_500_fraction": 0.8277638745767703,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3649.686092715232,
+            "reset_to_client_start_ms": 15.242841,
+            "dispatch_mean_ms": 0.5561872038863537,
+            "client_missed": 0,
+            "nr_periods": 608,
+            "nr_throttled": 351
+          },
+          {
+            "cpu_usec_per_completed_work": 3623.477697629913,
+            "user_usec_per_completed_work": 3540.45841307228,
+            "timely_500_fraction": 0.8243780362137495,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3657.00353200883,
+            "reset_to_client_start_ms": 14.015595,
+            "dispatch_mean_ms": 0.5601640100103047,
+            "client_missed": 0,
+            "nr_periods": 610,
+            "nr_throttled": 356
+          }
+        ],
+        "means": {
+          "cpu_usec_per_completed_work": 3630.07912557044,
+          "user_usec_per_completed_work": 3549.9107905196524,
+          "timely_500_fraction": 0.8213970263506551,
+          "warmup_completed": 2265,
+          "warmup_failures": 0,
+          "startup_to_measurement_cpu_per_warmup_computation_usec": 3654.8449227373067,
+          "reset_to_client_start_ms": 14.42779225,
+          "dispatch_mean_ms": 0.5601317053216547,
+          "client_missed": 0,
+          "nr_periods": 609,
+          "nr_throttled": 354.25
+        }
+      },
+      "B": {
+        "trial_values": [
+          {
+            "cpu_usec_per_completed_work": 3651.72471662005,
+            "user_usec_per_completed_work": 3575.7830119240393,
+            "timely_500_fraction": 0.8161342558516119,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3674.0150110375275,
+            "reset_to_client_start_ms": 13.537987,
+            "dispatch_mean_ms": 0.5499488089209481,
+            "client_missed": 0,
+            "nr_periods": 609,
+            "nr_throttled": 355
+          },
+          {
+            "cpu_usec_per_completed_work": 3647.512292065361,
+            "user_usec_per_completed_work": 3567.0107463565437,
+            "timely_500_fraction": 0.8171647283968791,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3676.451655629139,
+            "reset_to_client_start_ms": 13.635026,
+            "dispatch_mean_ms": 0.5441986834977182,
+            "client_missed": 0,
+            "nr_periods": 609,
+            "nr_throttled": 356
+          },
+          {
+            "cpu_usec_per_completed_work": 3644.4869718828204,
+            "user_usec_per_completed_work": 3563.282055056676,
+            "timely_500_fraction": 0.8206977771235094,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3667.3955849889626,
+            "reset_to_client_start_ms": 14.68786,
+            "dispatch_mean_ms": 0.5453704597379656,
+            "client_missed": 0,
+            "nr_periods": 610,
+            "nr_throttled": 359
+          },
+          {
+            "cpu_usec_per_completed_work": 3643.3213602237597,
+            "user_usec_per_completed_work": 3558.7543059031354,
+            "timely_500_fraction": 0.8280582953039894,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3664.6900662251655,
+            "reset_to_client_start_ms": 14.96188,
+            "dispatch_mean_ms": 0.5433915682320035,
+            "client_missed": 0,
+            "nr_periods": 610,
+            "nr_throttled": 354
+          }
+        ],
+        "means": {
+          "cpu_usec_per_completed_work": 3646.761335197998,
+          "user_usec_per_completed_work": 3566.2075298100985,
+          "timely_500_fraction": 0.8205137641689975,
+          "warmup_completed": 2265,
+          "warmup_failures": 0,
+          "startup_to_measurement_cpu_per_warmup_computation_usec": 3670.6380794701986,
+          "reset_to_client_start_ms": 14.20568825,
+          "dispatch_mean_ms": 0.5457273800971588,
+          "client_missed": 0,
+          "nr_periods": 609.5,
+          "nr_throttled": 356
+        }
+      },
+      "C": {
+        "trial_values": [
+          {
+            "cpu_usec_per_completed_work": 3840.8390804597702,
+            "user_usec_per_completed_work": 3759.2008469449484,
+            "timely_500_fraction": 0.5436478728102458,
+            "warmup_completed": 2208,
+            "warmup_failures": 57,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3866.053894927536,
+            "reset_to_client_start_ms": 14.6936255,
+            "dispatch_mean_ms": 0.5521060515236272,
+            "client_missed": 0,
+            "nr_periods": 3055,
+            "nr_throttled": 1931
+          },
+          {
+            "cpu_usec_per_completed_work": 3828.6058416139717,
+            "user_usec_per_completed_work": 3745.616982836495,
+            "timely_500_fraction": 0.5493890769910201,
+            "warmup_completed": 2221,
+            "warmup_failures": 44,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3843.137325529041,
+            "reset_to_client_start_ms": 13.886103,
+            "dispatch_mean_ms": 0.5542838295303989,
+            "client_missed": 0,
+            "nr_periods": 3055,
+            "nr_throttled": 1936
+          },
+          {
+            "cpu_usec_per_completed_work": 3832.9426031937332,
+            "user_usec_per_completed_work": 3752.166164507382,
+            "timely_500_fraction": 0.5473281319004858,
+            "warmup_completed": 2224,
+            "warmup_failures": 41,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3839.1982913669067,
+            "reset_to_client_start_ms": 14.7438185,
+            "dispatch_mean_ms": 0.5538984520830267,
+            "client_missed": 0,
+            "nr_periods": 3056,
+            "nr_throttled": 1936
+          },
+          {
+            "cpu_usec_per_completed_work": 3830.508349631413,
+            "user_usec_per_completed_work": 3747.2601173461712,
+            "timely_500_fraction": 0.5539525982629178,
+            "warmup_completed": 2214,
+            "warmup_failures": 51,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3845.686088527552,
+            "reset_to_client_start_ms": 13.4758685,
+            "dispatch_mean_ms": 0.551181120270867,
+            "client_missed": 0,
+            "nr_periods": 3056,
+            "nr_throttled": 1937
+          }
+        ],
+        "means": {
+          "cpu_usec_per_completed_work": 3833.223968724722,
+          "user_usec_per_completed_work": 3751.061027908749,
+          "timely_500_fraction": 0.5485794199911673,
+          "warmup_completed": 2216.75,
+          "warmup_failures": 48.25,
+          "startup_to_measurement_cpu_per_warmup_computation_usec": 3848.518900087759,
+          "reset_to_client_start_ms": 14.199853875,
+          "dispatch_mean_ms": 0.55286736335198,
+          "client_missed": 0,
+          "nr_periods": 3055.5,
+          "nr_throttled": 1935
+        }
+      },
+      "D": {
+        "trial_values": [
+          {
+            "cpu_usec_per_completed_work": 3837.1643256305692,
+            "user_usec_per_completed_work": 3758.4959975834468,
+            "timely_500_fraction": 0.5566023848078905,
+            "warmup_completed": 2210,
+            "warmup_failures": 55,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3854.5217194570137,
+            "reset_to_client_start_ms": 18.0764465,
+            "dispatch_mean_ms": 0.5464953499190343,
+            "client_missed": 0,
+            "nr_periods": 3053,
+            "nr_throttled": 1932
+          },
+          {
+            "cpu_usec_per_completed_work": 3825.853621881575,
+            "user_usec_per_completed_work": 3744.0749924857228,
+            "timely_500_fraction": 0.5685264242602679,
+            "warmup_completed": 2222,
+            "warmup_failures": 43,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3845.822682268227,
+            "reset_to_client_start_ms": 13.851057,
+            "dispatch_mean_ms": 0.5402169889592227,
+            "client_missed": 0,
+            "nr_periods": 3055,
+            "nr_throttled": 1939
+          },
+          {
+            "cpu_usec_per_completed_work": 3842.520911973426,
+            "user_usec_per_completed_work": 3757.4716895666616,
+            "timely_500_fraction": 0.5577800677167672,
+            "warmup_completed": 2217,
+            "warmup_failures": 48,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3844.77898060442,
+            "reset_to_client_start_ms": 14.464542,
+            "dispatch_mean_ms": 0.5526047225084646,
+            "client_missed": 0,
+            "nr_periods": 3053,
+            "nr_throttled": 1934
+          },
+          {
+            "cpu_usec_per_completed_work": 3829.8283391055566,
+            "user_usec_per_completed_work": 3743.433669628068,
+            "timely_500_fraction": 0.5568968055351097,
+            "warmup_completed": 2213,
+            "warmup_failures": 52,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3860.2046995029373,
+            "reset_to_client_start_ms": 14.0694665,
+            "dispatch_mean_ms": 0.546190434417783,
+            "client_missed": 0,
+            "nr_periods": 3055,
+            "nr_throttled": 1939
+          }
+        ],
+        "means": {
+          "cpu_usec_per_completed_work": 3833.8417996477815,
+          "user_usec_per_completed_work": 3750.869087315975,
+          "timely_500_fraction": 0.5599514205800088,
+          "warmup_completed": 2215.5,
+          "warmup_failures": 49.5,
+          "startup_to_measurement_cpu_per_warmup_computation_usec": 3851.3320204581496,
+          "reset_to_client_start_ms": 15.115378,
+          "dispatch_mean_ms": 0.5463768739511261,
+          "client_missed": 0,
+          "nr_periods": 3054,
+          "nr_throttled": 1936
+        }
+      }
+    },
+    "pilot": {
+      "100_off": {
+        "trial_values": [
+          {
+            "cpu_usec_per_completed_work": 3648.577211835713,
+            "user_usec_per_completed_work": 3569.3000147210364,
+            "timely_500_fraction": 0.7279552480494627,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3663.38233995585,
+            "reset_to_client_start_ms": 112.081034,
+            "dispatch_mean_ms": 0.5520410235536581,
+            "client_missed": 0,
+            "nr_periods": 611,
+            "nr_throttled": 364
+          },
+          {
+            "cpu_usec_per_completed_work": 3643.9652583541883,
+            "user_usec_per_completed_work": 3544.518916531724,
+            "timely_500_fraction": 0.7332548211394082,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3672.5015452538632,
+            "reset_to_client_start_ms": 110.696507,
+            "dispatch_mean_ms": 0.5571107335492419,
+            "client_missed": 0,
+            "nr_periods": 611,
+            "nr_throttled": 364
+          },
+          {
+            "cpu_usec_per_completed_work": 3637.438686883557,
+            "user_usec_per_completed_work": 3548.9602532018253,
+            "timely_500_fraction": 0.7516561165906079,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3679.268432671082,
+            "reset_to_client_start_ms": 110.613403,
+            "dispatch_mean_ms": 0.5543376762844104,
+            "client_missed": 0,
+            "nr_periods": 610,
+            "nr_throttled": 360
+          },
+          {
+            "cpu_usec_per_completed_work": 3643.472103636096,
+            "user_usec_per_completed_work": 3564.1165906079787,
+            "timely_500_fraction": 0.7242749889592227,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3675.1845474613688,
+            "reset_to_client_start_ms": 110.8183165,
+            "dispatch_mean_ms": 0.558279736051818,
+            "client_missed": 0,
+            "nr_periods": 611,
+            "nr_throttled": 365
+          }
+        ],
+        "means": {
+          "cpu_usec_per_completed_work": 3643.3633151773884,
+          "user_usec_per_completed_work": 3556.723943765641,
+          "timely_500_fraction": 0.7342852936846753,
+          "warmup_completed": 2265,
+          "warmup_failures": 0,
+          "startup_to_measurement_cpu_per_warmup_computation_usec": 3672.584216335541,
+          "reset_to_client_start_ms": 111.052315125,
+          "dispatch_mean_ms": 0.5554422923597822,
+          "client_missed": 0,
+          "nr_periods": 610.75,
+          "nr_throttled": 363.25
+        }
+      },
+      "100_on": {
+        "trial_values": [
+          {
+            "cpu_usec_per_completed_work": 3691.800529957309,
+            "user_usec_per_completed_work": 3607.9764463418223,
+            "timely_500_fraction": 0.7188282055056676,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3682.6472406181015,
+            "reset_to_client_start_ms": 122.8510245,
+            "dispatch_mean_ms": 0.5539320902399529,
+            "client_missed": 0,
+            "nr_periods": 611,
+            "nr_throttled": 366
+          },
+          {
+            "cpu_usec_per_completed_work": 3678.4865302517296,
+            "user_usec_per_completed_work": 3578.570292948624,
+            "timely_500_fraction": 0.7245694096864419,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3675.519646799117,
+            "reset_to_client_start_ms": 122.4854395,
+            "dispatch_mean_ms": 0.5501599527454732,
+            "client_missed": 0,
+            "nr_periods": 611,
+            "nr_throttled": 366
+          },
+          {
+            "cpu_usec_per_completed_work": 3688.0344472250845,
+            "user_usec_per_completed_work": 3585.092006477256,
+            "timely_500_fraction": 0.7225084645959076,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3664.044150110375,
+            "reset_to_client_start_ms": 122.6854025,
+            "dispatch_mean_ms": 0.5568890471073163,
+            "client_missed": 0,
+            "nr_periods": 611,
+            "nr_throttled": 363
+          },
+          {
+            "cpu_usec_per_completed_work": 3679.6574414838806,
+            "user_usec_per_completed_work": 3576.7027822758723,
+            "timely_500_fraction": 0.7294273516855586,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3670.8918322295804,
+            "reset_to_client_start_ms": 125.6482685,
+            "dispatch_mean_ms": 0.5568642532018254,
+            "client_missed": 0,
+            "nr_periods": 611,
+            "nr_throttled": 366
+          }
+        ],
+        "means": {
+          "cpu_usec_per_completed_work": 3684.494737229501,
+          "user_usec_per_completed_work": 3587.0853820108937,
+          "timely_500_fraction": 0.723833357868394,
+          "warmup_completed": 2265,
+          "warmup_failures": 0,
+          "startup_to_measurement_cpu_per_warmup_computation_usec": 3673.2757174392937,
+          "reset_to_client_start_ms": 123.41753374999999,
+          "dispatch_mean_ms": 0.554461335823642,
+          "client_missed": 0,
+          "nr_periods": 611,
+          "nr_throttled": 365.25
+        }
+      },
+      "20_off": {
+        "trial_values": [
+          {
+            "cpu_usec_per_completed_work": 3577.4183718533786,
+            "user_usec_per_completed_work": 3495.33195936994,
+            "timely_500_fraction": 0.8663329898424849,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3621.6061810154524,
+            "reset_to_client_start_ms": 119.6351905,
+            "dispatch_mean_ms": 0.5509996085676432,
+            "client_missed": 0,
+            "nr_periods": 3038,
+            "nr_throttled": 1766
+          },
+          {
+            "cpu_usec_per_completed_work": 3602.0880317974384,
+            "user_usec_per_completed_work": 3513.839393493302,
+            "timely_500_fraction": 0.8086265273075225,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3625.099337748344,
+            "reset_to_client_start_ms": 115.7978525,
+            "dispatch_mean_ms": 0.5486425000736053,
+            "client_missed": 0,
+            "nr_periods": 3038,
+            "nr_throttled": 1793
+          },
+          {
+            "cpu_usec_per_completed_work": 3584.562638009716,
+            "user_usec_per_completed_work": 3512.5228912115413,
+            "timely_500_fraction": 0.8520535845723539,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3631.887858719647,
+            "reset_to_client_start_ms": 115.034761,
+            "dispatch_mean_ms": 0.5503835433534521,
+            "client_missed": 0,
+            "nr_periods": 3038,
+            "nr_throttled": 1768
+          },
+          {
+            "cpu_usec_per_completed_work": 3600.2776387457675,
+            "user_usec_per_completed_work": 3519.835271603121,
+            "timely_500_fraction": 0.8161342558516119,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3599.95761589404,
+            "reset_to_client_start_ms": 125.231307,
+            "dispatch_mean_ms": 0.5541244944796114,
+            "client_missed": 0,
+            "nr_periods": 3039,
+            "nr_throttled": 1785
+          }
+        ],
+        "means": {
+          "cpu_usec_per_completed_work": 3591.0866701015752,
+          "user_usec_per_completed_work": 3510.3823789194757,
+          "timely_500_fraction": 0.8357868393934933,
+          "warmup_completed": 2265,
+          "warmup_failures": 0,
+          "startup_to_measurement_cpu_per_warmup_computation_usec": 3619.6377483443707,
+          "reset_to_client_start_ms": 118.92477775,
+          "dispatch_mean_ms": 0.551037536618578,
+          "client_missed": 0,
+          "nr_periods": 3038.25,
+          "nr_throttled": 1778
+        }
+      },
+      "20_on": {
+        "trial_values": [
+          {
+            "cpu_usec_per_completed_work": 3641.9069630501986,
+            "user_usec_per_completed_work": 3562.9356690711024,
+            "timely_500_fraction": 0.8003827469453849,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3606.1002207505517,
+            "reset_to_client_start_ms": 133.7358025,
+            "dispatch_mean_ms": 0.5462891486824673,
+            "client_missed": 0,
+            "nr_periods": 3039,
+            "nr_throttled": 1796
+          },
+          {
+            "cpu_usec_per_completed_work": 3642.3949654055646,
+            "user_usec_per_completed_work": 3574.11541292507,
+            "timely_500_fraction": 0.8126012071249816,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3609.140838852097,
+            "reset_to_client_start_ms": 133.1937315,
+            "dispatch_mean_ms": 0.551227577359046,
+            "client_missed": 0,
+            "nr_periods": 3039,
+            "nr_throttled": 1791
+          },
+          {
+            "cpu_usec_per_completed_work": 3645.406889445017,
+            "user_usec_per_completed_work": 3576.0563815692626,
+            "timely_500_fraction": 0.7992050640365082,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3597.449889624724,
+            "reset_to_client_start_ms": 133.1407595,
+            "dispatch_mean_ms": 0.5544298351243928,
+            "client_missed": 0,
+            "nr_periods": 3040,
+            "nr_throttled": 1793
+          },
+          {
+            "cpu_usec_per_completed_work": 3638.4416310908287,
+            "user_usec_per_completed_work": 3569.3297512144854,
+            "timely_500_fraction": 0.8145149418519064,
+            "warmup_completed": 2265,
+            "warmup_failures": 0,
+            "startup_to_measurement_cpu_per_warmup_computation_usec": 3609.432229580574,
+            "reset_to_client_start_ms": 127.0749045,
+            "dispatch_mean_ms": 0.5463684529662888,
+            "client_missed": 0,
+            "nr_periods": 3038,
+            "nr_throttled": 1791
+          }
+        ],
+        "means": {
+          "cpu_usec_per_completed_work": 3642.037612247902,
+          "user_usec_per_completed_work": 3570.60930369498,
+          "timely_500_fraction": 0.8066759899896953,
+          "warmup_completed": 2265,
+          "warmup_failures": 0,
+          "startup_to_measurement_cpu_per_warmup_computation_usec": 3605.530794701987,
+          "reset_to_client_start_ms": 131.7862995,
+          "dispatch_mean_ms": 0.5495787535330487,
+          "client_missed": 0,
+          "nr_periods": 3039,
+          "nr_throttled": 1792.75
+        }
+      }
+    }
+  },
+  "frozen_pilot_decision": "effect_not_reproduced",
+  "known_collection_differences": [
+    "Pilot starts a persistent root helper and four counter fixtures before initial idle; V20 does not.",
+    "Counter-off still launches perf stat -n and a blocked cat process; V20 has neither.",
+    "Pilot counter-control IPC extends the idle interval between reset and client start.",
+    "V20 has four full-duration rehearsals and yield-on trial cells; pilot uses counter-on cells instead.",
+    "V20 emits progress and reads temperature roughly every 10 seconds during load; pilot does not.",
+    "Both call the same Service.observe approximately once per second; pilot also retains returned resource samples.",
+    "The user supplied launch block sets Balanced explicitly and kills additional exact process names."
+  ],
+  "causal_explanation_established": false,
+  "conclusions": [
+    "No frozen-source, executable, resource, arrival, raw CPU-denominator or deadline-calculation mismatch explains the reversal.",
+    "The 20 ms warmup rejection/cost difference is already present before per-trial collector attachment.",
+    "This limits measurement-window and attachment-only explanations, not whole-pilot-context explanations.",
+    "Recorded host activity and temperatures differ, but the records cannot attribute causation.",
+    "A faithful original-runner repeat is the next bounded diagnostic; do not repeat the cost pilot until it passes."
+  ],
+  "source_seals": {
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b1_A/attempt-1791211963673189587/seal.json": "dd4654bd0212a230c323349890beafd7c0cad0af6b9c7b44278e7036a62f1361",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b1_B/attempt-1791212154015154060/seal.json": "3e096e8703150a1095f92d61ab8e4713b2e2545640b1a6ff0cbce950aa613db4",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b1_C/attempt-1791212349406005492/seal.json": "0b1f781664c9b5c1fad891acf79d6ef0503e73ed6d7788c0052518e4246ed550",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b1_D/attempt-1791212544770980204/seal.json": "60eec6aa0080f4359a1a9e8168468a680b4361eb0dd0aeb6a5aeba3f5aa1e56f",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b2_A/attempt-1791212930442338678/seal.json": "72027a080085b8b6fc4aba3df44c4dfd422ec4bee7a267b79f3c2314eaf39f8a",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b2_B/attempt-1791212735002531491/seal.json": "2ca2e00c65853e1c09595afa8d2cc03f10a4194d6b68a39cf94061d46490b5c2",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b2_C/attempt-1791213311146917500/seal.json": "9c460893862f95fa76e6b86f4ba0da2f0a009802ee9158c8cb2f88c511428879",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b2_D/attempt-1791213120825965432/seal.json": "99f4e74be1f88ec916c6ad77bac5d1022b9bf36f37932d0a873d47d7d9c04002",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b3_A/attempt-1791213892218043223/seal.json": "c15c12e4b2fba7b3321472fb350a6ce8e5a055769f45f8c418b575b3b346ef35",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b3_B/attempt-1791214087644740532/seal.json": "cfc50f15f14fc145af882de937cc3f3c3783e560ef1b24f3eac33caf7b558501",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b3_C/attempt-1791213506508047781/seal.json": "6efdf593850217c7e48bb7974a47bc28352359edbc5bd8faac9885a109f59e2a",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b3_D/attempt-1791213691829015681/seal.json": "3acfe0ee57c051e4c3d04b0d5bbabeb0fc3ebc3dcbd4c53ed13848723ab3533b",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b4_A/attempt-1791214858948326171/seal.json": "06018ef5ff9f6d4e55751a1163d0fdc86b5ed2bb618ec5d0da62781196f48dc6",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b4_B/attempt-1791214668616531124/seal.json": "f3eae8daf53a9d41c7f3b20f5642ab8973fd04f79649c397d4db388e66a39fb1",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b4_C/attempt-1791214478328360650/seal.json": "890f336286658746e588e042044eb4c667c58884e2f4f16556eb24256b61bd09",
+    "analysis/runtime_io_v20_execution_delay/generation-03/trials/b4_D/attempt-1791214282988796616/seal.json": "9e47a1b8da12baca20d168045182ff8caa38c7704e5bf3da90d6fb9bf4f340ee",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b1_100_off/seal.json": "722bface3b206b9c01f580794a86fda632dd79a6a26f5123d9c85f09a861f470",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b1_100_on/seal.json": "695849cc62c92bda5c51be177896a8bffa16175ea29d97df99cc006a34d173b1",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b1_20_off/seal.json": "58a08d7889b54eb1de2e0a4c23b4aaeb572e8f56ed7bcaefc718cd642f771f5c",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b1_20_on/seal.json": "03dd8ff2a11aac9918c5ed86d4c84b82d852dd3f41f1ff73c7a9ff3fe9a0dd63",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b2_100_off/seal.json": "4471e4c0fafcedb1a93219536090ebd0a622435ab5a13c82052d86acd52358a1",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b2_100_on/seal.json": "a60263be86fc69d229aba93a29645bc4b08556826a600ce9828e57264bce21ec",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b2_20_off/seal.json": "fb4015819e22f4d888e2bede4bdd8bf11d027c07f72f2c16c6122c6d8379b9dc",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b2_20_on/seal.json": "39ded815264ab55bbf09c44370ebe810c8395b1e65fedb6870fa4b3934eb4559",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b3_100_off/seal.json": "9ff955a49e70df746774d5c02e57460a05e108d0681b284d9433b53f110623e6",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b3_100_on/seal.json": "57ee60771b28e94bb8fad3f531ee2d4a55a72d4b235ecbeb305744643451fbcb",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b3_20_off/seal.json": "8f9e562c8b043681b1ac002ea80d435f47bb4e4cc373bf29bb62753a558c7531",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b3_20_on/seal.json": "0d1c484a41a75b60a07ccf87c3294961c7a7526783715d3ee4f5985bff2d6d95",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b4_100_off/seal.json": "a05a3680684454965e693bd6a6b6969b30860fb2e2f83452c6be810acdc02e39",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b4_100_on/seal.json": "fb800dab24ac4c215b2d1e31be3782e73246a98f0229788fe068b58877bf3efb",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b4_20_off/seal.json": "ad6ec02aa41fa8ba33aad4d1447cfbfb96f9af59334f055581cf7da0f16ea78d",
+    "analysis/runtime_io_period_cost_pilot/generation-02/trials/b4_20_on/seal.json": "f928512a70b6d3a85710f67f911a41aad8b9ba08578967099e59451835f76e23"
+  },
+  "reviewer_sha256": "2c851ad6ca6d4c8d0ef59a30205dd7806877fc580be1e0d4a76b65211bb1b18c"
+}

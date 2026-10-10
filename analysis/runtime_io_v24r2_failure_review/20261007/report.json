@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "decision": "incomplete_technical_counter_read_width_failure",
+  "session": "analysis/runtime_io_v24/generation-02",
+  "accepted_trials": 1,
+  "planned_trials": 12,
+  "first_trial_independently_verified": true,
+  "runtime_preparation_verified": true,
+  "failed_attempts": [
+    {
+      "path": "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372629249750836",
+      "samples": 4123,
+      "violations": [
+        {
+          "index_zero_based": 427,
+          "width_ms": 2.096661,
+          "since_sampler_start_sec": 8.624718013,
+          "measurement_relative_sec_bounds": [
+            -12.759089281,
+            -12.756450459
+          ],
+          "used_to_enclose_a_fixed_phase_boundary": false
+        },
+        {
+          "index_zero_based": 1375,
+          "width_ms": 2.384716,
+          "since_sampler_start_sec": 27.771600098,
+          "measurement_relative_sec_bounds": [
+            6.387792804,
+            6.390719681
+          ],
+          "used_to_enclose_a_fixed_phase_boundary": false
+        }
+      ],
+      "gc_collections_during_capture": [
+        0,
+        0,
+        0
+      ],
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false,
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-2aa6451619148f6f5b1fa483d700a688ac9a29c08ebef84412649bbf9ff3f71d.scope",
+        "container_id": "2aa6451619148f6f5b1fa483d700a688ac9a29c08ebef84412649bbf9ff3f71d"
+      },
+      "complete_marker_present": false
+    },
+    {
+      "path": "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372801160730101",
+      "samples": 4125,
+      "violations": [
+        {
+          "index_zero_based": 3059,
+          "width_ms": 2.431941,
+          "since_sampler_start_sec": 61.747064778,
+          "measurement_relative_sec_bounds": [
+            40.380671627,
+            40.38363325
+          ],
+          "used_to_enclose_a_fixed_phase_boundary": false
+        }
+      ],
+      "gc_collections_during_capture": [
+        0,
+        0,
+        0
+      ],
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false,
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-db6ff6f04442eeb9cb9beb2bf509c162744e0805e35082a735cd7e926c5b3ef9.scope",
+        "container_id": "db6ff6f04442eeb9cb9beb2bf509c162744e0805e35082a735cd7e926c5b3ef9"
+      },
+      "complete_marker_present": false
+    }
+  ],
+  "immediate_cause": "Each probe-on attempt breached the frozen global2ms read-bracket rule; the single allowed technical retry was exhausted.",
+  "gc_attribution": "No collections occurred during either recording. Garbage collection is excluded as the cause of this generation\u2019s pauses; the original generation\u2019s GC attribution was only a hypothesis.",
+  "unresolved_pause_source": "The brackets include file opening/reading, text decoding and Python parsing plus any descheduling. Only wall-clock brackets were recorded, so OS scheduling and kernel/file/parser work cannot be distinguished.",
+  "boundary_diagnostic": "None of the three over-width reads enclose a fixed busy/low accounting boundary; one is during warmup. This is descriptive only. The original global-read-width rule remains binding; no failed samples or trials are discarded or reclassified.",
+  "next_step": "Preserve generation-02. Before another complete run, qualify real-cgroup read timing and distinguish acquisition CPU time from wall delay; any revised collector or prospectively justified boundary-quality rule needs new versioned sources/protocol and generation.",
+  "performance_run_during_review": false,
+  "source_changes": false,
+  "evidence_sha256": {
+    "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372629249750836/counter.json": "73a68af73f03547e11fef1f7f8bfcc17f904f4b29da0c190489d1a906fc16c09",
+    "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372629249750836/derived.json": "ff9fd89c61506237f9287625658d19f11088fc45fad0fffd177b813d7b2d97ab",
+    "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372629249750836/host_server_anchors.json": "f7f627b071b25fbf10f42052f4c1af69c3da2708be7d8475245744fc84105606",
+    "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372629249750836/server_metrics.json": "69c0775dce5d09395985a856862673d3f464a38e3a30d6d5ab91746834d8c2be",
+    "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372629249750836/cleanup.json": "8e542c319af3382db3815e9bdcc148a375277dbb0a0377f864dcaf1975f34caa",
+    "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372629249750836/interruption.json": "80abe7aa91dedea550a0c60044dfd81006d04861b239f8e5854020bdce4f4756",
+    "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372629249750836/seal.json": "1960820daab553bdb433b0421da424f735d9fb8cf45bccf5bf8928292eae21a9",
+    "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372801160730101/counter.json": "3b4974303e5bc42ef964333b78ab71ce25f0959052963984d64a0dc5378aed66",
+    "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372801160730101/derived.json": "72ffcaab4b52fe3974fea27978391a865ad9cf91ec0de59002a2bfa8ca2db9aa",
+    "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372801160730101/host_server_anchors.json": "ebc8bc84e74812e7961b2d0eb88015d169ec887c9d6d44af11575fddd832d82a",
+    "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372801160730101/server_metrics.json": "f5494c0a792593a135c95b3f99ed5d6c34bc52ac268dd1bd0ecb8d56f9dd9832",
+    "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372801160730101/cleanup.json": "77e02298682832f77dbe29e1d05be8743057ba4d234d1621c6f687a75678b089",
+    "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372801160730101/interruption.json": "0e8d83eba28650ea534b233ac0162affa950383c7f7b5431a4bb6d3947b23e3a",
+    "analysis/runtime_io_v24/generation-02/slots/b1_small_on/attempt-1791372801160730101/seal.json": "c1ee28a940f09e67e6f06b9ba3ccc27512e26bd699b27cb36c03b611939830d3"
+  }
+}

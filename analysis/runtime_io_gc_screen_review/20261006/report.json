@@ -1,0 +1,504 @@
+{
+  "review": "2026-10-06",
+  "decision_recomputed": "short_screen_inconclusive",
+  "raw_trials_verified": 8,
+  "completed": 54344,
+  "offered": 54344,
+  "failures": 0,
+  "all_1000ms_met": true,
+  "independent_cpu_interactions": [
+    -0.005783245999500197,
+    0.00036882052351394634
+  ],
+  "contrasts": {
+    "cpu_usec_per_completed_work": {
+      "period_default_gc": {
+        "values": [
+          -0.014367692810837966,
+          -0.016989780160713206
+        ],
+        "mean": -0.015556464951979479,
+        "lower": -0.03181987148277646,
+        "upper": 0.0009801328829925377
+      },
+      "period_gc_off": {
+        "values": [
+          -0.020167726533796535,
+          -0.016621027634769855
+        ],
+        "mean": -0.0182262330766114,
+        "lower": -0.040100721505101515,
+        "upper": 0.0041467381143185595
+      },
+      "gc_at_100": {
+        "values": [
+          -0.002876396047850159,
+          4.011270625967474e-05
+        ],
+        "mean": -0.0014171365830710908,
+        "lower": -0.019749394728528658,
+        "upper": 0.01725796418538962
+      },
+      "gc_at_20": {
+        "values": [
+          -0.00867642977080882,
+          0.0004088652322029643
+        ],
+        "mean": -0.0041252499523403785,
+        "lower": -0.05997949626212807,
+        "upper": 0.05504775038294926
+      }
+    },
+    "busy_capacity": {
+      "period_default_gc": {
+        "values": [
+          0.02307340902534542,
+          0.024454769944470364
+        ],
+        "mean": 0.024048705534692322,
+        "lower": 0.015101047939031775,
+        "upper": 0.03307523269374434
+      },
+      "period_gc_off": {
+        "values": [
+          0.028118168366747714,
+          0.028658914992826325
+        ],
+        "mean": 0.028795336643881012,
+        "lower": 0.025267057963318008,
+        "upper": 0.0323357572833132
+      },
+      "gc_at_100": {
+        "values": [
+          0.002167464384758534,
+          -0.003557574497424483
+        ],
+        "mean": -0.000694813561521278,
+        "lower": -0.03638824872559029,
+        "upper": 0.036320752961081566
+      },
+      "gc_at_20": {
+        "values": [
+          0.007212223726160732,
+          0.0006465705509315066
+        ],
+        "mean": 0.003937127341178059,
+        "lower": -0.03707800216533847,
+        "upper": 0.04669927358655735
+      }
+    },
+    "busy_cpu_cores": {
+      "period_default_gc": {
+        "values": [
+          -0.0009392209876172334,
+          -0.0009338822403903141
+        ],
+        "mean": -0.0009361131864216286,
+        "lower": -0.0009699984686953992,
+        "upper": -0.0009022267548206574
+      },
+      "period_gc_off": {
+        "values": [
+          0.00031194324515707977,
+          0.0015115557296379659
+        ],
+        "mean": 0.0009121652573111416,
+        "lower": -0.006687052913519882,
+        "upper": 0.008569520309350924
+      },
+      "gc_at_100": {
+        "values": [
+          -0.0007399730322223906,
+          -0.0013272669033468185
+        ],
+        "mean": -0.0010330859666662891,
+        "lower": -0.00475342459915119,
+        "upper": 0.002701159691356262
+      },
+      "gc_at_20": {
+        "values": [
+          0.0005111912005518102,
+          0.0011181710666814987
+        ],
+        "mean": 0.0008150130764277851,
+        "lower": -0.003036903342845307,
+        "upper": 0.004681811952384395
+      }
+    },
+    "timely_500_fraction": {
+      "period_default_gc": {
+        "values": [
+          0.1226262328867952,
+          0.11865155306933606
+        ],
+        "mean": 0.12063889297806563,
+        "lower": 0.09538734521686545,
+        "upper": 0.1458904407392658
+      },
+      "period_gc_off": {
+        "values": [
+          0.13793611070219347,
+          0.13425585161195353
+        ],
+        "mean": 0.1360959811570735,
+        "lower": 0.11271491841522147,
+        "upper": 0.15947704389892553
+      },
+      "gc_at_100": {
+        "values": [
+          0.023995289268364473,
+          -0.008832621816575958
+        ],
+        "mean": 0.007581333725894257,
+        "lower": -0.20097774593142662,
+        "upper": 0.21614041338321513
+      },
+      "gc_at_20": {
+        "values": [
+          0.03930516708376275,
+          0.006771676726041509
+        ],
+        "mean": 0.02303842190490213,
+        "lower": -0.1836501727330706,
+        "upper": 0.22972701654287486
+      }
+    }
+  },
+  "cells": {
+    "A": {
+      "cpu_usec_per_completed_work": 3664.0125864860884,
+      "busy_capacity": 147.95231397334203,
+      "busy_cpu_cores": 0.5002506420411775,
+      "timely_500_fraction": 0.7202267039599588,
+      "failure_fraction": 0.0,
+      "memory_peak_bytes": 33968128,
+      "p99_e2e_ms": 763.6113035000001,
+      "queue_mean_ms": 265.3796176991756,
+      "fixed_busy_capacity": 147.83333333333331
+    },
+    "B": {
+      "cpu_usec_per_completed_work": 3658.821875460032,
+      "busy_capacity": 147.84959615821194,
+      "busy_cpu_cores": 0.4997339034413665,
+      "timely_500_fraction": 0.7278080376858531,
+      "failure_fraction": 0.0,
+      "memory_peak_bytes": 67215360,
+      "p99_e2e_ms": 763.0644035,
+      "queue_mean_ms": 261.9794527560724,
+      "fixed_busy_capacity": 147.91666666666669
+    },
+    "C": {
+      "cpu_usec_per_completed_work": 3607.0185485058146,
+      "busy_capacity": 151.51054137650902,
+      "busy_cpu_cores": 0.4997823504406599,
+      "timely_500_fraction": 0.8408655969380244,
+      "failure_fraction": 0.0,
+      "memory_peak_bytes": 29990912,
+      "p99_e2e_ms": 622.6530150000001,
+      "queue_mean_ms": 226.5529027286913,
+      "fixed_busy_capacity": 151.66666666666669
+    },
+    "D": {
+      "cpu_usec_per_completed_work": 3592.1476519947005,
+      "busy_capacity": 152.1069138348306,
+      "busy_cpu_cores": 0.5001896598198899,
+      "timely_500_fraction": 0.8639040188429266,
+      "failure_fraction": 0.0,
+      "memory_peak_bytes": 68128768,
+      "p99_e2e_ms": 610.519258,
+      "queue_mean_ms": 215.27689233998234,
+      "fixed_busy_capacity": 152.05555555555554
+    }
+  },
+  "raw_checks": [
+    {
+      "trial": "b1_A",
+      "completed": 6793,
+      "offered": 6793,
+      "failures": 0,
+      "timely_1000": 1.0,
+      "raw_cpu_usec": 24899877,
+      "raw_cpu_usec_per_job": 3665.519947004269,
+      "raw_timely_500_fraction": 0.7067569556896806,
+      "memory_peak_bytes": 32944128,
+      "warmup_completed": 2265
+    },
+    {
+      "trial": "b1_B",
+      "completed": 6793,
+      "offered": 6793,
+      "failures": 0,
+      "timely_1000": 1.0,
+      "raw_cpu_usec": 24828358,
+      "raw_cpu_usec_per_job": 3654.9916090092743,
+      "raw_timely_500_fraction": 0.730752244958045,
+      "memory_peak_bytes": 66293760,
+      "warmup_completed": 2265
+    },
+    {
+      "trial": "b1_C",
+      "completed": 6793,
+      "offered": 6793,
+      "failures": 0,
+      "timely_1000": 1.0,
+      "raw_cpu_usec": 24544681,
+      "raw_cpu_usec_per_job": 3613.231414691594,
+      "raw_timely_500_fraction": 0.8293831885764757,
+      "memory_peak_bytes": 28700672,
+      "warmup_completed": 2265
+    },
+    {
+      "trial": "b1_D",
+      "completed": 6793,
+      "offered": 6793,
+      "failures": 0,
+      "timely_1000": 1.0,
+      "raw_cpu_usec": 24332642,
+      "raw_cpu_usec_per_job": 3582.0170764021786,
+      "raw_timely_500_fraction": 0.8686883556602385,
+      "memory_peak_bytes": 68075520,
+      "warmup_completed": 2265
+    },
+    {
+      "trial": "b4_D",
+      "completed": 6793,
+      "offered": 6793,
+      "failures": 0,
+      "timely_1000": 1.0,
+      "raw_cpu_usec": 24470276,
+      "raw_cpu_usec_per_job": 3602.2782275872223,
+      "raw_timely_500_fraction": 0.8591196820256146,
+      "memory_peak_bytes": 68182016,
+      "warmup_completed": 2265
+    },
+    {
+      "trial": "b4_C",
+      "completed": 6793,
+      "offered": 6793,
+      "failures": 0,
+      "timely_1000": 1.0,
+      "raw_cpu_usec": 24460273,
+      "raw_cpu_usec_per_job": 3600.8056823200354,
+      "raw_timely_500_fraction": 0.8523480052995731,
+      "memory_peak_bytes": 31281152,
+      "warmup_completed": 2265
+    },
+    {
+      "trial": "b4_B",
+      "completed": 6793,
+      "offered": 6793,
+      "failures": 0,
+      "timely_1000": 1.0,
+      "raw_cpu_usec": 24880396,
+      "raw_cpu_usec_per_job": 3662.6521419107903,
+      "raw_timely_500_fraction": 0.7248638304136611,
+      "memory_peak_bytes": 68136960,
+      "warmup_completed": 2265
+    },
+    {
+      "trial": "b4_A",
+      "completed": 6793,
+      "offered": 6793,
+      "failures": 0,
+      "timely_1000": 1.0,
+      "raw_cpu_usec": 24879398,
+      "raw_cpu_usec_per_job": 3662.5052259679082,
+      "raw_timely_500_fraction": 0.733696452230237,
+      "memory_peak_bytes": 34992128,
+      "warmup_completed": 2265
+    }
+  ],
+  "host": {
+    "samples": 640,
+    "scope": "all 80 saved warmup/arrival samples per trial",
+    "temperature_mean_c": 69.9962890625,
+    "temperature_min_c": 61.75,
+    "temperature_max_c": 74.125,
+    "desktop_pct_one_core": {
+      "plasmashell": 11.793450270064588,
+      "kwin_wayland": 7.139818541876924,
+      "baloo_file": 0.0
+    },
+    "chatgpt_present": false,
+    "cpu_util_pct": {
+      "cpu": 5.978921875,
+      "cpu2": 6.8550625,
+      "cpu3": 0.831515625,
+      "cpu4": 37.607109375,
+      "cpu5": 3.590796875
+    }
+  },
+  "per_trial_host": {
+    "b1_A": {
+      "samples": 80,
+      "scope": "all 80 saved warmup/arrival samples per trial",
+      "temperature_mean_c": 70.8234375,
+      "temperature_min_c": 62.625,
+      "temperature_max_c": 74.0,
+      "desktop_pct_one_core": {
+        "plasmashell": 12.229717302478022,
+        "kwin_wayland": 7.954781363578067,
+        "baloo_file": 0.0
+      },
+      "chatgpt_present": false,
+      "cpu_util_pct": {
+        "cpu": 6.045375,
+        "cpu2": 5.92325,
+        "cpu3": 0.765625,
+        "cpu4": 38.414875,
+        "cpu5": 3.3914999999999997
+      }
+    },
+    "b1_B": {
+      "samples": 80,
+      "scope": "all 80 saved warmup/arrival samples per trial",
+      "temperature_mean_c": 70.609375,
+      "temperature_min_c": 62.125,
+      "temperature_max_c": 74.0,
+      "desktop_pct_one_core": {
+        "plasmashell": 12.053321351171686,
+        "kwin_wayland": 7.113037574810283,
+        "baloo_file": 0.0
+      },
+      "chatgpt_present": false,
+      "cpu_util_pct": {
+        "cpu": 5.92075,
+        "cpu2": 6.844,
+        "cpu3": 0.752,
+        "cpu4": 38.744875,
+        "cpu5": 4.67175
+      }
+    },
+    "b1_C": {
+      "samples": 80,
+      "scope": "all 80 saved warmup/arrival samples per trial",
+      "temperature_mean_c": 68.6109375,
+      "temperature_min_c": 61.75,
+      "temperature_max_c": 71.375,
+      "desktop_pct_one_core": {
+        "plasmashell": 11.663139187777626,
+        "kwin_wayland": 6.93713799606357,
+        "baloo_file": 0.0
+      },
+      "chatgpt_present": false,
+      "cpu_util_pct": {
+        "cpu": 6.04425,
+        "cpu2": 6.8605,
+        "cpu3": 0.92275,
+        "cpu4": 38.349625,
+        "cpu5": 2.771625
+      }
+    },
+    "b1_D": {
+      "samples": 80,
+      "scope": "all 80 saved warmup/arrival samples per trial",
+      "temperature_mean_c": 69.684375,
+      "temperature_min_c": 62.625,
+      "temperature_max_c": 72.375,
+      "desktop_pct_one_core": {
+        "plasmashell": 11.746889018003705,
+        "kwin_wayland": 6.989884374349313,
+        "baloo_file": 0.0
+      },
+      "chatgpt_present": false,
+      "cpu_util_pct": {
+        "cpu": 6.055625,
+        "cpu2": 7.166875,
+        "cpu3": 1.271125,
+        "cpu4": 36.664625,
+        "cpu5": 3.09925
+      }
+    },
+    "b4_D": {
+      "samples": 80,
+      "scope": "all 80 saved warmup/arrival samples per trial",
+      "temperature_mean_c": 69.4375,
+      "temperature_min_c": 63.125,
+      "temperature_max_c": 72.125,
+      "desktop_pct_one_core": {
+        "plasmashell": 11.44096453620936,
+        "kwin_wayland": 6.988330405998508,
+        "baloo_file": 0.0
+      },
+      "chatgpt_present": false,
+      "cpu_util_pct": {
+        "cpu": 5.856375,
+        "cpu2": 7.277125,
+        "cpu3": 0.76425,
+        "cpu4": 35.79525,
+        "cpu5": 3.403625
+      }
+    },
+    "b4_C": {
+      "samples": 80,
+      "scope": "all 80 saved warmup/arrival samples per trial",
+      "temperature_mean_c": 69.478125,
+      "temperature_min_c": 62.625,
+      "temperature_max_c": 72.25,
+      "desktop_pct_one_core": {
+        "plasmashell": 11.438117097575962,
+        "kwin_wayland": 6.940664041143337,
+        "baloo_file": 0.0
+      },
+      "chatgpt_present": false,
+      "cpu_util_pct": {
+        "cpu": 5.963625,
+        "cpu2": 6.8585,
+        "cpu3": 0.7763749999999999,
+        "cpu4": 37.01625,
+        "cpu5": 3.583125
+      }
+    },
+    "b4_B": {
+      "samples": 80,
+      "scope": "all 80 saved warmup/arrival samples per trial",
+      "temperature_mean_c": 70.86875,
+      "temperature_min_c": 62.625,
+      "temperature_max_c": 74.125,
+      "desktop_pct_one_core": {
+        "plasmashell": 11.837526480837411,
+        "kwin_wayland": 7.114656941303311,
+        "baloo_file": 0.0
+      },
+      "chatgpt_present": false,
+      "cpu_util_pct": {
+        "cpu": 5.992375,
+        "cpu2": 7.9545,
+        "cpu3": 0.693375,
+        "cpu4": 37.880875,
+        "cpu5": 5.296
+      }
+    },
+    "b4_A": {
+      "samples": 80,
+      "scope": "all 80 saved warmup/arrival samples per trial",
+      "temperature_mean_c": 70.4578125,
+      "temperature_min_c": 61.875,
+      "temperature_max_c": 73.875,
+      "desktop_pct_one_core": {
+        "plasmashell": 11.937805440829333,
+        "kwin_wayland": 7.08010231129553,
+        "baloo_file": 0.0
+      },
+      "chatgpt_present": false,
+      "cpu_util_pct": {
+        "cpu": 5.953,
+        "cpu2": 5.95575,
+        "cpu3": 0.706625,
+        "cpu4": 37.9905,
+        "cpu5": 2.5095
+      }
+    }
+  },
+  "idle_baseline_c": {
+    "k10temp:Tctl": 57.26923076923077
+  },
+  "memory_manipulation": "Functional GC cycling was qualified; performance GC cycle counts were not collected. Memory peaks differ descriptively by policy.",
+  "causal_cause_established": false,
+  "gc_hypothesis_ruled_out": false,
+  "recommendation": "No large consistent GC/period CPU signal appeared. Do not automatically extend this GC screen; test a measured persistent-state intervention before a full mechanism study.",
+  "source_report": "analysis/runtime_io_gc_screen/generation-01/analysis/1791269097990204124",
+  "report_seal": "9524fc734e639f06a5c3b6a992a76c42a3d604ce5e99c8395209f3879c8828fe",
+  "preparation_seal": "f9adfd60b8e98ed92a5b13fb17671bf1f94674baecc235a34e001ec3cce755c9",
+  "reviewer_sha256": "e9123c3fb7c109125f481bad838cf3e122448c7c9e6e1b3300e5a3763ad785f2"
+}

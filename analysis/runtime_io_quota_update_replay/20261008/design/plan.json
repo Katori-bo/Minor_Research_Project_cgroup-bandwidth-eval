@@ -1,0 +1,407 @@
+{
+  "absolute_initial_state": {
+    "burst_us": 0,
+    "global_runtime_us": "initial quota",
+    "local_runtime_us": 0,
+    "slice_us": 5000,
+    "timer": "active throughout"
+  },
+  "arms": [
+    "original_pair",
+    "quota_only",
+    "boundary_setter",
+    "boundary_native"
+  ],
+  "arrivals": "one 5ms-CPU job every 5ms; deliberately backlogged synthetic CPU demand, never a live overload",
+  "calibration_scope": "Ordinary bisection; counts and costs reported; retrospective offline comparator, not a deployable low-information policy",
+  "collection": "stopped",
+  "date": "2026-10-08",
+  "deadlines_us": [
+    100000,
+    300000,
+    500000
+  ],
+  "event_order": "completion before events; pending boundary setter/native recommendation before periodic refill; periodic refill before immediate writes; observation after those events; zero-duration paired writes in primary check",
+  "fifo_theorem": "closed",
+  "fixed_sequences": [
+    {
+      "cadence": "unchanged observation-loop proposals; must be suppressed",
+      "changes": [
+        [
+          100000,
+          50000
+        ],
+        [
+          200000,
+          50000
+        ],
+        [
+          300000,
+          50000
+        ],
+        [
+          400000,
+          50000
+        ],
+        [
+          500000,
+          50000
+        ],
+        [
+          600000,
+          50000
+        ],
+        [
+          700000,
+          50000
+        ],
+        [
+          800000,
+          50000
+        ],
+        [
+          900000,
+          50000
+        ],
+        [
+          1000000,
+          50000
+        ],
+        [
+          1100000,
+          50000
+        ],
+        [
+          1200000,
+          50000
+        ],
+        [
+          1300000,
+          50000
+        ],
+        [
+          1400000,
+          50000
+        ],
+        [
+          1500000,
+          50000
+        ],
+        [
+          1600000,
+          50000
+        ],
+        [
+          1700000,
+          50000
+        ],
+        [
+          1800000,
+          50000
+        ],
+        [
+          1900000,
+          50000
+        ],
+        [
+          2000000,
+          50000
+        ],
+        [
+          2100000,
+          50000
+        ],
+        [
+          2200000,
+          50000
+        ],
+        [
+          2300000,
+          50000
+        ],
+        [
+          2400000,
+          50000
+        ],
+        [
+          2500000,
+          50000
+        ],
+        [
+          2600000,
+          50000
+        ],
+        [
+          2700000,
+          50000
+        ],
+        [
+          2800000,
+          50000
+        ],
+        [
+          2900000,
+          50000
+        ],
+        [
+          3000000,
+          50000
+        ],
+        [
+          3100000,
+          50000
+        ],
+        [
+          3200000,
+          50000
+        ],
+        [
+          3300000,
+          50000
+        ],
+        [
+          3400000,
+          50000
+        ],
+        [
+          3500000,
+          50000
+        ],
+        [
+          3600000,
+          50000
+        ],
+        [
+          3700000,
+          50000
+        ],
+        [
+          3800000,
+          50000
+        ],
+        [
+          3900000,
+          50000
+        ]
+      ],
+      "id": "unchanged_limit_control",
+      "initial": 50000
+    },
+    {
+      "cadence": "one-second genuine-change stress sequence, not captured controller decisions",
+      "changes": [
+        [
+          1000000,
+          40000
+        ],
+        [
+          2000000,
+          60000
+        ],
+        [
+          3000000,
+          40000
+        ]
+      ],
+      "id": "regular_alternation",
+      "initial": 50000
+    },
+    {
+      "cadence": "one-second genuine-change stress sequence",
+      "changes": [
+        [
+          1000000,
+          49000
+        ],
+        [
+          2000000,
+          51000
+        ],
+        [
+          3000000,
+          49000
+        ]
+      ],
+      "id": "regular_small_changes",
+      "initial": 50000
+    },
+    {
+      "cadence": "scale-down then conditional Captain rollback arithmetic; 75ms emergency quota counted in allocation",
+      "changes": [
+        [
+          1000000,
+          25000
+        ],
+        [
+          1100000,
+          75000
+        ],
+        [
+          2000000,
+          50000
+        ]
+      ],
+      "id": "rollback_grant",
+      "initial": 50000
+    },
+    {
+      "cadence": "single-CPU nonbinding genuine changes",
+      "changes": [
+        [
+          1000000,
+          120000
+        ],
+        [
+          2000000,
+          110000
+        ],
+        [
+          3000000,
+          120000
+        ]
+      ],
+      "id": "nonbinding_control",
+      "initial": 100000
+    }
+  ],
+  "interwrite_sensitivity_us": [
+    10,
+    100,
+    1000
+  ],
+  "limitations": [
+    "Not Linux or full Kscaler execution",
+    "No ancestor throttling, multi-core, scheduler interference, runtime debt or timer jitter",
+    "Active timer and persistent demand assumed; no idle timer shutdown/slack returns",
+    "Boundary setter and native boundary arms distinguish clearing local runtime from retaining it",
+    "Synthetic regular/rollback sequences are not actual controller traces",
+    "Fixed-sequence comparisons are actuator-level; native feedback sensitivity is not a published-controller ranking"
+  ],
+  "matching": [
+    "Identical intended allocation across immediate pair/quota-only arms",
+    "Boundary quota offset calibrated within integer-us precision to original nominal allocation integral",
+    "Boundary quota offset calibrated to original saturated CPU consumption within 10us, or report inability"
+  ],
+  "materiality": {
+    "deadline_miss_absolute_pp": 3,
+    "resource_relative_pct": 5
+  },
+  "native_policy": {
+    "class": "CaptainScaler extracted unchanged by AST from pinned source",
+    "initial_limit": 0.5,
+    "observation_interval_us": 100000,
+    "regular_decision_interval_s": 1,
+    "stats": "simulated consumed CPU and count of currently throttled periodic callbacks; not empirical counters",
+    "target": 0.1
+  },
+  "offered_jobs": 800,
+  "period_selection": "on_hold",
+  "period_us": 100000,
+  "phase_interpretation": "100 fixed sensitivity points; no probability distribution or all-continuous-phase guarantee",
+  "phases_first_boundary_us": [
+    1000,
+    2000,
+    3000,
+    4000,
+    5000,
+    6000,
+    7000,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000,
+    15000,
+    16000,
+    17000,
+    18000,
+    19000,
+    20000,
+    21000,
+    22000,
+    23000,
+    24000,
+    25000,
+    26000,
+    27000,
+    28000,
+    29000,
+    30000,
+    31000,
+    32000,
+    33000,
+    34000,
+    35000,
+    36000,
+    37000,
+    38000,
+    39000,
+    40000,
+    41000,
+    42000,
+    43000,
+    44000,
+    45000,
+    46000,
+    47000,
+    48000,
+    49000,
+    50000,
+    51000,
+    52000,
+    53000,
+    54000,
+    55000,
+    56000,
+    57000,
+    58000,
+    59000,
+    60000,
+    61000,
+    62000,
+    63000,
+    64000,
+    65000,
+    66000,
+    67000,
+    68000,
+    69000,
+    70000,
+    71000,
+    72000,
+    73000,
+    74000,
+    75000,
+    76000,
+    77000,
+    78000,
+    79000,
+    80000,
+    81000,
+    82000,
+    83000,
+    84000,
+    85000,
+    86000,
+    87000,
+    88000,
+    89000,
+    90000,
+    91000,
+    92000,
+    93000,
+    94000,
+    95000,
+    96000,
+    97000,
+    98000,
+    99000,
+    100000
+  ],
+  "proceed_rule": "Material effect plus a nonroutine additional capability/finding survives adequate controls and matched contracts; synthetic materiality alone is insufficient.",
+  "resource_window_us": 4000000,
+  "stop_rule": "Known reset/refill or synthetic phase effects explained by ordinary budget replay/accounting, without a concrete additional capability or established real-controller causal finding.",
+  "work_us": 5000
+}

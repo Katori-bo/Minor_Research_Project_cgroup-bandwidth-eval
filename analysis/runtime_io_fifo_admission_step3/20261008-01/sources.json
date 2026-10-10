@@ -1,0 +1,104 @@
+{
+  "scope_end": "2026-10-08",
+  "created_utc": "2026-10-08T09:09:07.969914+00:00",
+  "review_type": "focused primary-source screen; not exhaustive",
+  "sources": [
+    {
+      "title": "Synchronization and Linearity",
+      "authors": "Baccelli, Cohen, Olsder, Quadrat",
+      "year": 1992,
+      "url": "https://www-rocq.inria.fr/metalau/cohen/documents/BCOQ-book.pdf",
+      "access": "primary author-hosted full PDF",
+      "passages": "\u00a77.2.1, Eq.7.3 and Remark7.1; printed pp306\u2013307",
+      "overlap": "Max-plus single-server FIFO recurrence is established",
+      "remaining": "Not an exhaustive search of all later max-plus optimization work"
+    },
+    {
+      "title": "Packet Pacing in Small Buffer Optical Packet Switched Networks",
+      "authors": "Sivaraman, Elgindy, Moreland, Ostry",
+      "year": 2009,
+      "url": "https://www2.ee.unsw.edu.au/~vijay/pubs/jrnl/09ton.pdf",
+      "access": "primary author-hosted full PDF",
+      "passages": "\u00a7III system model; \u00a7IV-A/B hull update and tangent algorithms, author PDF pp3\u20136",
+      "overlap": "Deadline/network hull algorithms, including identical-delay simplification, predate this work",
+      "difference": "Pacing chooses release scheduling; our fixed FIFO admissions follow the offered trace",
+      "remaining": "No reproduction or complete forward-citation audit"
+    },
+    {
+      "title": "Observer Patterns for Real-Time Systems",
+      "authors": "\u00c9tienne Andr\u00e9",
+      "year": 2013,
+      "url": "https://www.loria.science/andre/documents/observer-patterns-for-real-time-systems.pdf",
+      "access": "primary author full paper",
+      "passages": "Abstract/introduction and \u00a7II\u2013IV observer definition/implementation",
+      "overlap": "Timing-property observers and reachability reduction are established",
+      "remaining": "Does not establish originality of eliminating observers via this fixed-trace monotonicity specialization"
+    },
+    {
+      "title": "Costs and Rewards in Priced Timed Automata",
+      "authors": "Fr\u00e4nzle, Shirmohammadi, Swaminathan, Worrell",
+      "year": 2018,
+      "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ICALP.2018.125",
+      "access": "primary publisher abstract and reference list",
+      "passages": "Abstract, cost/reward observer model and optimum/Pareto reachability references",
+      "overlap": "Quantitative automata optimization is established",
+      "difference": "Rate observers/general automata differ from discrete all-offer failure counting; no incapability claim",
+      "remaining": "Full adaptation and modern quantitative-analysis citation audit not completed"
+    },
+    {
+      "title": "Parametric nonlinear programming for analyzing fuzzy queues with finite capacity",
+      "authors": "Shih-Pin Chen",
+      "year": 2004,
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S037722170300136X",
+      "access": "primary publisher abstract and section snippets",
+      "passages": "Abstract, introduction, fuzzy queues with finite capacity",
+      "overlap": "Extrema of uncertain finite-capacity queue performance already studied",
+      "difference": "Fuzzy stochastic arrival/service rates and stationary measures rather than fixed deterministic offered trace",
+      "remaining": "No direct algorithm comparison"
+    },
+    {
+      "title": "High-Level Modelling, Analysis, and Verification on FPGA-Based Hardware Design",
+      "authors": "Matou\u0161ek, Smr\u010dka, Vojnar",
+      "year": 2005,
+      "url": "https://dl.ifip.org/db/conf/charme/charme2005/MatousekSV05.pdf",
+      "access": "earlier primary-source assessment retained; current PDF timeout and author mirrors inaccessible",
+      "passages": "Earlier reviewed \u00a73\u20134 in sealed originality review",
+      "overlap": "Lossy/delayed FIFO parametric verification exists",
+      "remaining": "Current full-text reinspection/forward citations incomplete"
+    },
+    {
+      "title": "Symbolic Computation of Schedulability Regions Using Parametric Timed Automata",
+      "authors": "Cimatti, Palopoli, Ramadian",
+      "year": 2008,
+      "url": "https://doi.org/10.1109/RTSS.2008.36",
+      "access": "earlier assessment retained; current author publications page inaccessible; author-uploaded text indexed",
+      "passages": "Earlier reviewed \u00a74\u20135 symbolic path regions and SMT implementation",
+      "overlap": "Symbolic parameter-region enumeration is established",
+      "remaining": "Published algorithm reproduction and complete citation audit not done"
+    },
+    {
+      "title": "Symbolic analysis and parameter synthesis for networks of parametric timed automata with global variables using Maude and SMT solving",
+      "authors": "Arias et al.",
+      "year": 2024,
+      "url": "https://doi.org/10.1016/j.scico.2023.103074",
+      "access": "primary publisher indexed abstract/snippets; live full page forbidden",
+      "passages": "Indexed \u00a74 folding symbolic states and \u00a75 synthesis",
+      "overlap": "General symbolic SMT and state folding are prior methodology",
+      "remaining": "Full primary artifact not inspected or reproduced"
+    }
+  ],
+  "claims_not_established": [
+    "First admission-only FIFO all-offer deadline-extrema algorithm",
+    "No equivalent published specialization",
+    "Superiority over published tools"
+  ],
+  "search_families": [
+    "deterministic finite-buffer FIFO workload guard",
+    "parametric FIFO deadline/loss trace analysis",
+    "max-plus completion and parameterized discrete-event systems",
+    "deadline/network convex-hull algorithms",
+    "quantitative timed observers and symbolic parameter regions"
+  ],
+  "forward_citation_audit_complete": false,
+  "verdict": "Building blocks established; exact specialization not found in reviewed passages, originality unverified"
+}

@@ -1,0 +1,986 @@
+                                                          C OZ: Finding Code that Counts with Causal Profiling
+
+                                                                         Charlie Curtsinger ∗                                                                   Emery D. Berger
+                                                                Department of Computer Science                                                   College of Information and Computer Sciences
+                                                                       Grinnell College                                                               University of Massachusetts Amherst
+                                                              curtsinger@cs.grinnell.edu                                                                   emery@cs.umass.edu
+
+
+
+
+arXiv:1608.03676v1 [cs.PF] 12 Aug 2016
+                                         Abstract                                                                                             tance, they often do not have enough of an impact on perfor-
+                                         Improving performance is a central concern for software                                              mance to meet programmers’ demands [10]. Programmers
+                                         developers. To locate optimization opportunities, developers                                         seeking to increase the throughput or responsiveness of their
+                                         rely on software profilers. However, these profilers only report                                     applications thus must resort to manual performance tuning.
+                                         where programs spent their time: optimizing that code may                                               Manually inspecting a program to find optimization op-
+                                         have no impact on performance. Past profilers thus both waste                                        portunities is impractical, so developers use profilers. Con-
+                                         developer time and make it difficult for them to uncover                                             ventional profilers rank code by its contribution to total exe-
+                                         significant optimization opportunities.                                                              cution time. Prominent examples include oprofile, perf, and
+                                             This paper introduces causal profiling. Unlike past pro-                                         gprof [17, 27, 29]. Unfortunately, even when a profiler ac-
+                                         filing approaches, causal profiling indicates exactly where                                          curately reports where a program spends its time, this infor-
+                                         programmers should focus their optimization efforts, and                                             mation can lead programmers astray. Code that runs for a
+                                         quantifies their potential impact. Causal profiling works by                                         long time is not necessarily a good choice for optimization.
+                                         running performance experiments during program execution.                                            For example, optimizing code that draws a loading animation
+                                         Each experiment calculates the impact of any potential op-                                           during a file download will not make the program run faster,
+                                         timization by virtually speeding up code: inserting pauses                                           even though this code runs just as long as the download.
+                                         that slow down all other code running concurrently. The key                                             This phenomenon is not limited to I/O operations. Figure 1
+                                         insight is that this slowdown has the same relative effect as                                        shows a simple program that illustrates the shortcomings of
+                                         running that line faster, thus “virtually” speeding it up.                                           existing profilers, along with its gprof profile in Figure 2a.
+                                             We present C OZ, a causal profiler, which we evaluate on                                         This program spawns two threads, which invoke functions
+                                         a range of highly-tuned applications: Memcached, SQLite,                                             fa and fb respectively. Most profilers will report that these
+                                         and the PARSEC benchmark suite. C OZ identifies previously                                           functions comprise roughly half of the total execution time.
+                                         unknown optimization opportunities that are both significant                                         Other profilers may report that fa is on the critical path, or that
+                                         and targeted. Guided by C OZ, we improve the performance                                             the main thread spends roughly equal time waiting for fa and
+                                         of Memcached by 9%, SQLite by 25%, and accelerate six                                                fb [23]. While accurate, all of this information is potentially
+                                         PARSEC applications by as much as 68%; in most cases,                                                misleading. Optimizing fa away entirely will only speed up
+                                         these optimizations involve modifying under 10 lines of code.                                        the program by 4.5% because fb becomes the new critical
+                                                                                                                                              path.
+                                         1.      Introduction
+                                         Improving performance is a central concern for software                                                                       example.cpp
+                                         developers. While compiler optimizations are of some assis-
+                                                                                                                                          1   void a() { // ˜6.7 seconds
+                                                                                                                                          2     for(volatile size_t x=0; x<2000000000; x++) {}
+                                         ∗ This work was initiated and partially conducted while Charlie Curtsinger
+                                                                                                                                          3   }
+                                         was a PhD student at the University of Massachusetts Amherst.                                    4   void b() { // ˜6.4 seconds
+                                                                                                                                          5     for(volatile size_t y=0; y<1900000000; y++) {}
+                                                                                                                                          6   }
+                                         Permission to make digital or hard copies of all or part of this work for personal or            7   int main() {
+                                         classroom use is granted without fee provided that copies are not made or distributed            8     // Spawn both threads and wait for them.
+                                         for profit or commercial advantage and that copies bear this notice and the full citation        9     thread a_thread(a), b_thread(b);
+                                         on the first page. Copyrights for components of this work owned by others than the              10     a_thread.join(); b_thread.join();
+                                         author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or          11   }
+                                         republish, to post on servers or to redistribute to lists, requires prior specific permission
+                                         and/or a fee. Request permissions from permissions@acm.org.
+                                                                                                                                              Figure 1: A simple multithreaded program that illustrates the
+                                         SOSP’15, October 4–7, 2015, Monterey, CA.
+                                         Copyright is held by the owner/author(s). Publication rights licensed to ACM.                        shortcomings of existing profilers. Optimizing fa will improve
+                                         ACM 978-1-4503-3834-9/15/10. . . $15.00.                                                             performance by no more than 4.5%, while optimizing fb would
+                                         http://dx.doi.org/10.1145/2815400.2815409                                                            have no effect on performance.
+            Conventional Profile for example.cpp                                                         Causal Profile For example.cpp
+    %    cumulative      self               self     total                                               line 2 (a)                  line 5 (b)
+ time       seconds   seconds   calls    Ts/call   Ts/call   name
+
+
+
+
+                                                                         Program Speedup
+                                                                                           6%                   ●   ●
+55.20          7.20      7.20       1                         a()                                         ● ● ●● ●●● ●
+45.19         13.09      5.89       1                         b()                                  ●   ●●● ●● ●
+                                                                                           4%    ●● ●
+% time    self    children      called
+                                     name
+                                     <spontaneous>                                         2%
+  55.0   7.20      0.00              a()
+--------------------------------------------------                                         0%   ●
+                                     <spontaneous>
+  45.0   5.89      0.00              b()                                                        0%   25% 50% 75% 100% 0%         25% 50% 75% 100%
+                                                                                                                      Line Speedup
+(a) A conventional profile for example.cpp, collected with gprof                                     (b) Causal profile for example.cpp
+Figure 2: The gprof and causal profiles for the code in Figure 1. In the causal profile, the y-axis shows the program speedup that would be
+achieved by speeding up each line of code by the percentage on the x-axis. The gray area shows standard error. Gprof reports that fa and fb
+comprise similar fractions of total runtime, but optimizing fa will improve performance by at most 4.5%, and optimizing fb would have no
+effect on performance. The causal profile predicts both outcomes within 0.5%.
+
+    Conventional profilers do not report the potential impact of        cludes, when a web page finishes rendering, or when a query
+optimizations; developers are left to make these predictions            completes. A causal profiler then measures the rate of visits to
+based on their understanding of the program. While these                each progress point to determine any potential optimization’s
+predictions may be easy for programs as simple as the one               effect on throughput. To profile latency, programmers instead
+in Figure 1, accurately predicting the effect of a proposed             place two progress points that correspond to the start and
+optimization is nearly impossible for programmers attempting            end of an event of interest, such as when a transaction begins
+to optimize large applications.                                         and completes. A causal profiler then reports the effect of
+    This paper introduces causal profiling, an approach that            potential optimizations on the average latency between those
+accurately and precisely indicates where programmers should             two progress points.
+focus their optimization efforts, and quantifies their potential           To demonstrate the effectiveness of causal profiling, we
+impact. Figure 2b shows the results of running C OZ, our                have developed C OZ, a causal profiler for Linux. We show
+prototype causal profiler. This profile plots the hypothetical          that C OZ imposes low execution time overhead (mean: 17%,
+speedup of a line of code (x-axis) versus its impact on                 min: 0.1%, max: 65%), making it substantially faster than
+execution time (y-axis). The graph correctly shows that                 gprof (up to 6× overhead).
+optimizing either fa or fb in isolation would have little effect.          We show that causal profiling accurately predicts optimiza-
+    A causal profiler conducts a series of performance exper-           tion opportunities, and that it is effective at guiding optimiza-
+iments to empirically observe the effect of a potential opti-           tion efforts. We apply C OZ to Memcached, SQLite, and the
+mization. Of course it is not possible to automatically speed           extensively studied PARSEC benchmark suite. Guided by
+up any line of code by an arbitrary amount. Instead, a causal           C OZ’s output, we optimized the performance of Memcached
+profiler uses the novel technique of virtual speedups to mimic          by 9%, SQLite by 25%, and six PARSEC applications by as
+the effect of optimizing a specific line of code by a fixed             much as 68%. These optimizations typically involved mod-
+amount. A line is virtually sped up by inserting pauses to              ifying under 10 lines of code. When possible to accurately
+slow all other threads each time the line runs. The key insight         measure the size of our optimizations on the line(s) identified
+is that this slowdown has the same relative effect as running           by C OZ, we compare the observed performance improve-
+that line faster, thus “virtually” speeding it up. Figure 3 shows       ments to C OZ’s predictions: in each case, we find that the real
+the equivalence of virtual and actual speedups.                         effect of our optimization matches C OZ’s prediction.
+    Each performance experiment measures the effect of vir-
+                                                                        Contributions
+tually speeding up one line by a specific amount. By conduct-
+ing many performance experiments over the range of virtual              This paper makes the following contributions:
+speedup from between 0% (no change) and 100% (the line is                1. It presents causal profiling, which identifies code where
+completely eliminated), a causal profiler can predict the effect            optimizations will have the largest impact. Using virtual
+of any potential optimization on a program’s performance.                   speedups and progress points, causal profiling directly
+    Causal profiling further departs from conventional profil-              measures the effect of potential optimizations on both
+ing by making it possible to view the effect of optimizations               throughput and latency (§2).
+on both throughput and latency. To profile throughput, devel-
+                                                                         2. It presents C OZ, a causal profiler that works on unmod-
+opers specify a progress point, indicating a line in the code
+                                                                            ified Linux binaries. It describes C OZ’s implementation
+that corresponds to the end of a unit of work. For example, a
+                                                                            (§3), and demonstrates its efficiency and effectiveness at
+progress point could be the point at which a transaction con-
+                                                                            identifying optimization opportunities (§4).
+2.   Causal Profiling Overview                                                      Illustration of Virtual Speedup
+                                                                    (a) Original Program
+This section describes the major steps in collecting, process-
+ing, and interpreting a causal profile with C OZ, our prototype       t1            f           g        f
+causal profiler.
+                                                                      t2       g            f       g
+Profiler startup. A user invokes C OZ using a command of
+the form coz run --- <program> <args>. At the                                                                     original runtime
+                                                                    (b) Actual Speedup
+beginning of the program’s execution, C OZ collects debug
+information for the executable and all loaded libraries. Users        t1        f         g     f
+may specify file and binary scope, which restricts C OZ’s                                                                      original runtime
+                                                                                                                                       +
+experiments to speedups in the specified files. By default,                                                                          nf · d
+                                                                      t2       g        f       g
+C OZ will consider speedups in any source file from the main
+executable. C OZ builds a map from instructions to source                                               effect of optimizing    f   by d
+lines using the program’s debug information and the specified       (c) Virtual Speedup
+scope. Once the source map is constructed, C OZ creates a             t1            f       f
+                                                                                            …       g         f
+profiler thread and resumes normal execution.
+
+Experiment initialization. C OZ’s profiler thread begins an           t2       g…g              f        g… g
+experiment by selecting a line to virtually speed up, and a
+randomly-chosen percent speedup. Both parameters must be
+selected randomly; any systematic method of exploring lines                                      time
+                                                                  Figure 3: An illustration of virtual speedup: (a) shows the original
+or speedups could lead to systematic bias in profile results.
+                                                                  execution of two threads running functions f and g; (b) shows the
+One might assume that C OZ could exclude lines or virtual         effect of a actually speeding up f by 40%; (c) shows the effect of
+speedup amounts that have not shown a performance effect          virtually speeding up f by 40%. Each time f runs in one thread, all
+early in previous experiments, but prioritizing experiments       other threads pause for 40% of f’s original execution time (shown as
+based on past results would prevent C OZ from identifying         ellipsis). The difference between the runtime in (c) and the original
+an important line if its performance only matters after some      runtime plus nf · d—the number of times f ran times the delay
+warmup period. Once a line and speedup have been selected,        size—is the same as the effect of actually optimizing f.
+the profiler thread saves the number of visits to each progress
+point and begins the experiment.
+                                                                  Producing a causal profile. After an application has been
+Applying a virtual speedup. Every time the profiled pro-          profiled with C OZ, the results of all the performance exper-
+gram creates a thread, C OZ begins sampling the instruction       iments can be combined to produce a causal profile. Each
+pointer from this thread. C OZ processes samples within each      experiment has two independent variables: the line chosen
+thread to implement a sampling version of virtual speedups.       for virtual speedup and the amount of virtual speedup. C OZ
+In Section 3.4, we show the equivalence between the virtual       records the dependent variable, the rate of visits to each
+speedup mechanism shown in Figure 3 and the sampling              progress point, in two numbers: the total number of visits
+approach used by C OZ. Every time a sample is available, a        to each progress point and the effective duration of the exper-
+thread checks whether the sample falls in the line of code        iment (the real runtime minus the total length of all pauses).
+selected for virtual speedup. If so, it forces other threads to   Experiments with the same independent variables can be
+pause. This process continues until the profiler thread indi-     combined by adding the progress point visits and experiment
+cates that the experiment has completed.                          durations.
+                                                                     Once experiments have been combined, C OZ groups ex-
+Ending an experiment. C OZ ends the experiment after a            periments by the line that was virtually sped up. Any lines
+pre-determined time has elapsed. If there were too few visits     that do not have a measurement of 0% virtual speedup are
+to progress points during the experiment—five is the default      discarded; without this baseline measurement we cannot com-
+minimum—C OZ doubles the experiment time for the rest             pute a percent speedup relative to the original program. Mea-
+of the execution. Once the experiment has completed, the          suring this baseline separately for each line guarantees that
+profiler thread logs the results of the experiment, including     any line-dependent overhead from virtual speedups, such as
+the effective duration of the experiment (runtime minus the       the additional cross-thread communication required to insert
+total inserted delay), the selected line and speedup, and the     delays when a frequently-executed line runs, will not skew
+number of visits to all progress points. Before beginning the     profile results. By default, C OZ will also discard any lines
+next experiment, C OZ will pause for a brief cooloff period to    with fewer than 5 different virtual speedup amounts (a plot
+allow any remaining samples to be processed before the next       that only shows the effect of a 75% virtual speedup is not
+experiment begins.                                                particularly useful). Finally, we compute the percent program
+speedup for each grouped experiment as the percent change in       necessary [14]. Note that debug information is available
+rate of visits to each progress point over the baseline (virtual   even for optimized code, and most Linux distributions offer
+speedup of 0%). C OZ then plots the resulting table of line        packages that include this information for common libraries.
+and program speedups for each line, producing the profile             By default, C OZ will only collect debug information for
+graphs shown in this paper.                                        the main executable. This means C OZ will only test potential
+                                                                   optimizations in the main program’s source files. Users can
+Interpreting a causal profile. Once causal profile graphs          specify a source scope to control which source files C OZ will
+have been generated, it is up to the user to interpret them and    select lines from to evaluate potential optimizations. Likewise,
+make an educated choice about which lines may be possible          users can specify a binary scope to control which executables
+to optimize. To help the user identify important lines, C OZ       and libraries will be profiled. Users should use these scope
+sorts the graphs by the slope of their linear regression. Steep    options to specify exactly which code they are willing or able
+upward slopes indicate a line where optimizations will gen-        to change to improve their program’s performance.
+erally have a positive impact, while a flat line indicates that
+optimizing this line will not improve program performance.         3.2   Performance Experiment Implementation
+C OZ also finds lines with a steep downward slope, meaning
+                                                                   C OZ uses a dedicated profiler thread to coordinate perfor-
+any optimization to this line will actually hurt performance.
+                                                                   mance experiments. This thread is responsible for select-
+This downward sloping profile is a strong indication of con-
+                                                                   ing a line to virtually speed up, selecting the size of the vir-
+tention; the line that was virtually sped up interferes with the
+                                                                   tual speedup, measuring the effect of the virtual speedup on
+program’s critical path, and optimizing this line increases the
+                                                                   progress points, and writing profiler output.
+amount of interference. This phenomenon is surprisingly com-
+mon, and can often result in significant optimization opportu-     Starting a performance experiment. A single profiler
+nities. In our evaluation we identify and fix contention issues    thread, created during program initialization, coordinates
+in three applications: fluidanimate, streamcluster,                performance experiments. Before an experiment can begin,
+and memcached, resulting in speedups of 37.5%, 68.4%,              the profiler selects a source line to virtually speed up. To do
+and 9.4% respectively.                                             this, all program threads sample their instruction pointers
+                                                                   and map these addresses to source lines. The first thread to
+3.    Implementation                                               sample a source line that falls within the specified profiling
+This section describes C OZ’s basic functionality and imple-       scope sets this as the line selected for virtual speedup.
+mentation. We briefly discuss the core mechanisms required            Once the profiler receives a valid line from one of the
+to support profiling unmodified Linux x86-64 executables,          program’s threads, it chooses a random virtual speedup be-
+along with implementation details for each of the key compo-       tween 0% and 100%, in multiples of 5%. For any given virtual
+nents of a causal profiler: performance experiments, progress      speedup, the effect on program performance is 1 − pp0s , where
+points, and virtual speedups.                                      p0 is the period between progress point visits with no virtual
+                                                                   speedup, and ps is the same period measured with some vir-
+3.1   Core Mechanisms                                              tual speedup s. Because p0 is required to compute program
+C OZ uses sampling to implement both virtual speedups              speedup for every ps , a virtual speedup of 0 is selected with
+and progress points. When a user starts a program with             50% probability. The remaining 50% is distributed evenly
+the coz command, C OZ injects a profiling runtime library          over the other virtual speedup amounts.
+into the program’s address space using LD PRELOAD. This               Lines for virtual speedup must be selected randomly to
+runtime library creates a dedicated profiler thread to run         prevent bias in the results of performance experiments. A
+performance experiments, but also intercepts each thread           seemingly reasonably (but invalid) approach would be to
+startup and shutdown to start and stop sampling in the thread      begin conducting performance experiments with small vir-
+using the perf even API. Using the perf event API,                 tual speedups, gradually increasing the speedup until it no
+C OZ collects both the current program counter and user-space      longer has an effect on program performance. However, this
+call stack from each thread every 1ms. To keep overhead low,       approach may both over- and under-state the impact of opti-
+C OZ processes samples in batches of ten by default (every         mizing a particular line if its impact varies over time.
+10ms). Processing samples more frequently is unlikely to              For example, a line that has no performance impact during
+improve accuracy, as the additional overhead would distort         a program’s initialization would not be measured later in exe-
+program execution.                                                 cution, when optimizing it could have significant performance
+                                                                   benefit. Conversely, a line that only affects performance dur-
+Attributing samples to source locations. C OZ uses DWARF           ing initialization would have exaggerated performance impact
+debug information to map sampled program counter values to         unless future experiments re-evaluate virtual speedup values
+source locations. The profiled program does not need to con-       for this line during normal execution. Any systematic ap-
+tain DWARF line information; C OZ will use the same search         proach to exploring the space of virtual speedup values could
+procedure as GDB to locate external debug information if           potentially lead to systematic bias in the profile output.
+   Once a line and speedup amount have been selected, C OZ           Little’s Law holds under a wide variety of circumstances,
+saves the current values of all progress point counters and       and is independent of the distributions of the arrival rate and
+begins the performance experiment.                                service time. The key requirement is that Little’s Law only
+Running a performance experiment. Once a performance              holds when the system is stable: the arrival rate cannot exceed
+experiment has started, each of the program’s threads pro-        the service rate. Note that all usable systems are stable: if a
+cesses samples and inserts delays to perform virtual speedups.    system is unstable, its latency will grow without bound since
+After the pre-determined experiment time has elapsed, the         the system will not be able to keep up with arrivals.
+profiler thread logs the end of the experiment, including the     3.4   Virtual Speedup Implementation
+current time, the number and size of delays inserted for vir-
+tual speedup, the running count of samples in the selected        A critical component of any causal profiler is the ability to
+line, and the values for all progress point counters. After a     virtually speed up any fragment of code. A naive implemen-
+performance experiment has finished, C OZ waits until all         tation of virtual speedups is shown in Figure 3; each time the
+samples collected during the current experiment have been         function f runs, all other threads are paused briefly. If f has
+processed. By default, C OZ will process samples in groups        an average runtime of t¯f each time it is called and threads are
+of ten, so this pause time is just ten times the sampling rate    paused for time d each time f runs, then f has an effective
+of 1ms. Lengthening this cooloff period will reduce C OZ’s        average runtime of t¯f − d.
+overhead by inserting fewer delays at the cost of increased           If the real runtime of f was t¯f − d, but we forced every
+profiling time to conduct the same number of performance          thread in the program to pause for time d after f ran (in-
+experiments.                                                      cluding the thread that just executed f) we would measure
+                                                                  the same total runtime as with a virtual speedup. The only
+3.3   Progress Point Implementation                               difference between virtual speedup and a real speedup with
+C OZ supports three mechanisms for monitoring progress            these additional pauses is that we use the time d to allow one
+points: source-level, breakpoint, and sampled.                    thread to finish executing f. The pauses inserted for virtual
+                                                                  speedup increase the total runtime by nf · d, where nf is the
+Source-level progress points. Source-level progress points        total number of times f by any thread. Subtracting nf ·d from
+are the only progress points that require program modification.   the total runtime with virtual speedup gives us the execution
+To indicate a source-level progress point, a developer simply     time we would measure if f had runtime tf − d.
+inserts the COZ PROGRESS macro in the program’s source
+code at the appropriate location.                                 Implementing virtual speedup with sampling. The previ-
+                                                                  ous discussion of virtual speedups assumes an implementa-
+Breakpoint progress points. Breakpoint progress points
+                                                                  tion where every time a specific line of code executes all other
+are specified at the command line. C OZ uses the Linux
+                                                                  threads instantaneously pause for a very brief time (a fraction
+perf event API to set a breakpoint at the first instruction
+                                                                  of the time require to run a single line). Unfortunately, this
+in a line specified in the profiler arguments.
+                                                                  approach would incur prohibitively high overhead that would
+Sampled progress points. Sampled progress points are              distort program execution, making the profile useless. Instead,
+specified on the command line. However, unlike source-level       C OZ periodically samples the program counter and counts
+and breakpoint progress points, sampled progress points do        samples that fall in the line selected for virtual speedup. Then,
+not keep a count of the number of visits to the progress point.   other threads are delayed proportionally to the number of
+Instead, sampled progress points count the number of samples      samples. The number of samples in the selected line, s, is
+that fall within the specified line. As with virtual speedups,    approximately
+the percent change in visits to a sampled progress point can                                        n · t̄
+                                                                                              s≈                                (1)
+be computed even when exact counts are unknown.                                                      P
+Measuring latency. Source-level and breakpoint progress           where P is the period of time between samples, t̄ is the
+points can also be used to measure the impact of an optimiza-     average time required to run the selected line once, and n
+tion on latency rather than throughput. To measure latency, a     is the number of times the selected line is executed.
+developer must specify two progress points: one at the start of       In our original model of virtual speedups, delaying other
+some operation, and the other at the end. The rate of visits to   threads by time d each time the selected line is executed
+the starting progress point measures the arrival rate, and the    has the effect of shortening this line’s runtime by d. With
+difference between the counts at the start and end points tells   sampling, only some executions of the selected line will result
+us how many requests are currently in progress. By denoting       in delays. The effective runtime of the selected line when
+L as the number of requests in progress and λ as the arrival      sampled is t̄ − d, while executions of the selected line that are
+rate, we can solve for the average latency W via Little’s Law,    not sampled simply take time t̄. The effective average time to
+which holds for nearly any queuing system: L = λW [30].           run the selected line is
+Rewriting Little’s Law, we then compute the average latency                               (n − s) · t̄ + s · (t̄ − d)
+as L/λ.                                                                           t̄e =                               .        (2)
+                                                                                                       n
+Using (1), this reduces to                                                        Potentially unblocking calls
+                                                                       pthread mutex unlock         unlock a mutex
+           n · t̄ · (1 − Pt̄ ) + n· t̄
+                                 P · (t̄ − d)            d             pthread cond signal          wake one waiter on a c.v.
+   t̄e =                                      = t̄ · (1 − )   (3)      pthread cond broadcast wake all waiters on c.v.
+                              n                          P
+                                                                       pthread barrier wait         wait at a barrier
+The relative difference between t and t̄e , the amount of virtual      pthread kill                 send signal to a thread
+speedup, is simply                                                     pthread exit                 terminate this thread
+                                  t̄e  d                            Table 1: C OZ intercepts POSIX functions that could wake a blocked
+                      ∆t̄ = 1 −       = .                     (4)   thread. To ensure correctness of virtual speedups, C OZ forces threads
+                                   t̄  P
+                                                                    to execute any unconsumed delays before invoking any of these
+   This result lets C OZ virtually speed up selected lines by       functions and potentially waking another thread.
+a specific amount without instrumentation. Inserting a delay
+                                                                                  Potentially blocking calls
+that is one quarter of the sampling period will virtually speed
+                                                                     pthread mutex lock        lock a mutex
+up the selected line by 25%.                                         pthread cond wait         wait on a condition variable
+Pausing other threads. When one thread receives a sample             pthread barrier wait wait at a barrier
+in the line selected for virtual speedup, all other threads must     pthread join              wait for a thread to complete
+pause. Rather than using POSIX signals, which would have             sigwait                   wait for a signal
+                                                                     sigwaitinfo               wait for a signal
+prohibitively high overhead, C OZ controls inter-thread paus-
+                                                                     sigtimedwait              wait for a signal (with timeout)
+ing using counters. The first counter, shared by all threads,        sigsuspend                wait for a signal
+records the number of times each thread should have paused
+so far. Each thread has a local counter of the number of times      Table 2: C OZ intercepts POSIX functions that could block waiting
+                                                                    for a thread, instrumenting them to update delay counts before and
+that thread has already paused. Whenever a thread’s local
+                                                                    after blocking.
+count of pauses is less than the number of required pauses
+in the global counter, a thread must pause (and increment its
+local counter). To signal all other threads to pause, a thread      unlocked that mutex. If the unlocking thread has executed all
+simply increments both the global counter and its own lo-           the required delays, then the blocked thread has effectively
+cal counter. Every thread checks if pauses are required after       already been delayed; it should not insert any additional
+processing its own samples.                                         delays after unblocking.
+                                                                       To correctly handle suspended threads, a causal profiler
+Ensuring accurate timing. C OZ uses the nanosleep                   must follow a simple rule: If a suspended thread resumes
+POSIX function to insert delays. This function only guaran-         execution because of another thread, the suspended thread
+tees that the thread will pause for at least the requested time,    should be “credited” for any delays inserted in the thread
+but the pause may be longer than requested. C OZ tracks any         responsible for waking it up. Otherwise, the thread should
+excess pause time, which is subtracted from future pauses.          insert all the necessary delays that accumulated during the
+Thread creation. To start sampling and adjust delays, C OZ          time the thread was suspended. To simplify the implementa-
+interposes on the pthread create function. C OZ first               tion of this policy, C OZ forces a thread to execute all required
+initiates perf event sampling in the new thread. It then            delays before it does anything that could block that thread
+inherits the parent thread’s local delay count; any previously      (see Table 2) or wake a suspended thread (shown in Table 1).
+inserted delays to the parent thread also delayed the creation      This means that any resumed thread can skip any required
+of the new thread.                                                  delays after returning from a call which may have blocked
+                                                                    the thread. Note that this special handling is only required for
+3.4.1   Handling Suspended Threads                                  operations that can suspend a thread. C OZ can accommodate
+C OZ only collects samples and inserts delays in a thread while     programs with ad-hoc synchronization that does not suspend
+that thread is actually executing. This means that required         threads with no special handling.
+delays will accumulate in a thread while it is suspended.
+When a thread is suspended on a blocking I/O operation, this        3.4.2   Attributing Samples to Source Lines
+is the desired behavior; pausing the thread while it is already     Samples are attributed to source lines using the source map
+suspended on I/O would not delay the thread’s progress. C OZ        constructed at startup. When a sample does not fall in any
+simply adds these delays after the thread unblocks.                 in-scope source line, the profiler walks the sampled callchain
+    However, a thread can also be suspended while waiting           to find the first in-scope address. This has the effect of at-
+for a mutex or other POSIX synchronization primitive. As            tributing all out-of-scope execution to the last in-scope call-
+with blocking I/O, required delays will accumulate while            site responsible. For example, a program may call printf,
+the thread is suspended, but C OZ may not need to insert all        which calls vfprintf, which in turn calls strlen. Any
+of these delays when the thread resumes. When one thread            samples collected during this chain of calls will be attributed
+resumes after waiting for a mutex, another thread must have         to the source line that issues the original printf call.
+3.4.3    Optimization: Minimizing Delays                                                   Summary of Optimization Results
+                                                                                 Application Speedup             Diff Size       LOC
+If every thread executes the selected line, forcing each thread                 blackscholes 2.56% ± 0.41%       −61, +4         342
+to delay num threads−1 times unnecessarily slows execution.                            dedup 8.95% ± 0.27%       −3, +3          2,570
+If all but one thread executes the selected line, only that thread                      ferret 21.27% ± 0.17% −4, +4             5,937
+needs to pause. The invariant that must be preserved is the                     fluidanimate 37.5% ± 0.56%       −1, +0          1,015
+following: for each thread, the number of pauses plus the                      streamcluster 68.4% ± 1.12%       −1, +0          1,779
+number of samples in the selected line must be equal. When                         swaptions 15.8% ± 1.10%       −10, +16        970
+a sample falls in the selected line, C OZ increments only the                   Memcached 9.39% ± 0.95%          −6, +2          10,475
+local delay count. If the local delay count is still less than the                    SQLite 25.60% ± 1.00% −7, +7               92,635
+global delay count after processing all available samples, C OZ          Table 3: All benchmarks were run ten times before and after
+inserts pauses. If the local delay count is larger than global           optimization. Standard error for speedup was computed using
+                                                                                                                                      t −t
+delay count, the thread increases the global delay count.                Efron’s bootstrap method, where speedup is defined as 0 t0opt .
+                                                                         All speedups are statistically significant at the 99.9% confidence
+Adjusting for phases                                                     level (α = 0.001) using the one-tailed Mann-Whitney U test, which
+                                                                         does not rely on any assumptions about the distribution of execution
+C OZ randomly selects a recently-executed line of code at
+                                                                         times. Lines of code do not include blank or comment-only lines.
+the start of each performance experiment. This increases the
+likelihood that experiments will yield useful information—
+                                                                         where nA is the number of progress point visits during phase
+a virtual speedup would have no effect on lines that never
+                                                                         A. Using (5), the new value for P with the virtual speedup is
+run—but could bias results for programs with phases.
+   If a program runs in phases, optimizing a line will not                                               tA 0 + tB
+                                                                                                  P0 =
+have any effect on progress rate during periods when the line                                                N
+is not being run. However, C OZ will not run performance
+                                                                         and the percent change in P is
+experiments for the line during these periods because only
+                                                                                                                  0
+currently-executing lines are selected. If left uncorrected, this                      P − P0  tA +tB
+                                                                                                      − tA +tB   tA − tA 0
+bias would lead C OZ to overstate the effect of optimizing                      ∆P =          = N T N          =           .
+                                                                                         P            N
+                                                                                                                    T
+lines that run in phases.
+   To eliminate this bias, we break the program’s execution              Finally, using (6) and (7),
+into two logical phases: phase A, during which the selected
+                                                                                                     tA         tobs s
+line runs, and phase B, when it does not. These phases need                            ∆P = ∆pA         ≈ ∆pA ·     · .                   (8)
+not be contiguous. The total runtime T = tA + tB is the sum                                          T          sobs T
+of the durations of the two phases. The average progress rate               C OZ multiplies all measured speedups, ∆pA , by the cor-
+during the entire execution is:                                          rection factor stobs
+                                                                                          obs
+                                                                                              · Ts in its final report.
+                                T   tA + tB                              4.     Evaluation
+                       P =        =         .                      (5)
+                                N      N
+                                                                         Our evaluation answers the following questions: (1) Does
+   C OZ collects samples during the entire execution, record-            causal profiling enable effective performance tuning? (2)
+ing the number of samples in each line. We define s to be                Are C OZ’s performance predictions accurate? (3) Is C OZ’s
+the number of samples in the selected line, of which sobs                overhead low enough to be practical?
+occur during a performance experiment with duration tobs .
+The expected number of samples during the experiment is:                 4.1    Experimental Setup
+                                                                         We perform all experiments on a 64 core, four socket AMD
+                     tobs                                 tobs           Opteron machine with 60GB of memory, running Linux 3.14
+      E[sobs ] = s ·      ,      therefore       tA ≈ s ·      .   (6)   with no modifications. All applications are compiled using
+                      tA                                  sobs
+                                                                         GCC version 4.9.1 at the -O3 optimization level and debug
+     C OZ measures the effect of a virtual speedup during phase          information generated with -g. We disable frame pointer
+A,                                                                       elimination with the -fno-omit-frame-pointer flag
+                                    pA − pA 0                            so the Linux can collect accurate call stacks with each sample.
+                        ∆pA =                                            C OZ is run with the default sampling period of 1ms, with
+                                       pA
+                                                                         sample processing set to occur after every 10 samples. Each
+where pA 0 and pA are the average progress periods with and              performance experiment runs with a cooling-off period of
+without a virtual speedup; this can be rewritten as:                     10ms after each experiment to allow any remaining samples
+                              tA    tA 0
+                                                                         to be processed before the next experiment begins. Due to
+                              nA − nA          tA − tA 0                 space limitations, we only profile throughput (and not latency)
+                 ∆pA =           tA        =                       (7)
+                                 nA
+                                                  tA                     in this evaluation.
+                                        Hash Bucket Collisions in dedup
+                                                                                                     INPUT&                                         OUTPUT&
+                           300
+
+                                                                                 Original
+                           200
+
+
+
+
+ Keys Assigned to Bucket
+                           100                                                                     IMAGE&          FEATURE&
+                                                                                                                                   INDEXING&        RANKING&
+                             0                                                                  SEGMENTATION&     EXTRACTION&
+
+
+
+                                                                                 Midpoint
+                           200
+                           150
+                           100
+                            50
+                             0
+                                                                                             Figure 5: Ferret’s pipeline. The middle four stages each have an
+
+                                                                                 Optimized
+                           7.5
+                           5.0
+                                                                                             associated thread pool; the input and output stages each consist of
+                           2.5                                                               one thread. The colors represent the impact on throughput of each
+                           0.0                                                               stage, as identified by C OZ: green is low impact, orange is medium
+                                   0        1000      2000        3000    4000               impact, and red is high impact.
+                                                   Bucket Index
+Figure 4: In the dedup benchmark, C OZ identified hash bucket                                buckets; over 97% of buckets were never used during the
+traversal as a bottleneck. These plots show collisions per-bucket                            entire execution.
+before, mid-way through, and after optimization of the dedup bench-                             The original hash function adds characters of the hash table
+mark (note different y-axes). The dashed horizontal line shows aver-                         key, which leads to virtually no high order bits being set. The
+age collisions per-utilized bucket for each version. Fixing dedup’s                          resulting hash output is then passed to a bit shifting procedure
+hash function improved performance by 8.9%.                                                  intended to compensate for poor hash functions. We removed
+                                                                                             the bit shifting step, which increased hash table utilization to
+                                                                                             54.4%. We then changed the hash function to bitwise XOR
+4.2                         Effectiveness                                                    32 bit chunks of the key. This increased hash table utilization
+We demonstrate causal profiling’s effectiveness through case                                 to 82.0% and resulted in an 8.95% ± 0.27% performance
+studies. Using C OZ, we collect causal profiles for Mem-                                     improvement. Figure 4 shows the rate of bucket collisions of
+cached, SQLite, and the PARSEC benchmark suite. Using                                        the original hash function, the same hash function without
+these causal profiles, we were able to make small changes                                    the bit shifting “improvement”, and our final hash function.
+to two of the real applications and six PARSEC benchmarks,                                   The entire optimization required changing just three lines of
+resulting in performance improvements as large as 68%. Ta-                                   code. As with ferret, this result was achieved by one graduate
+ble 3 summarizes the results of our optimization efforts. We                                 student who was initially unfamiliar with the code; the entire
+describe our experience using C OZ below, with three gen-                                    profiling and tuning effort took just two hours.
+eral outcomes: (1) cases where C OZ found optimization op-
+                                                                                             Comparison with gprof. We ran both the original and op-
+portunities that gprof and perf did not (dedup, ferret, and
+                                                                                             timized versions of dedup with gprof. As with ferret, the
+SQLite); (2) cases where C OZ identified contention (fluidani-
+                                                                                             optimization opportunities identified by C OZ were not obvi-
+mate, streamcluster, and Memcached); and (3) cases where
+                                                                                             ous in gprof’s output. Overall, hashtable search had
+both C OZ and a conventional profiler identified the optimiza-
+                                                                                             the largest share of highest execution time at 14.38%, but
+tion we implemented (blackscholes and swaptions).
+                                                                                             calls to hashtable search from the hash computation
+                                                                                             stage accounted for just 0.48% of execution time; Gprof’s
+4.2.1                            Case Study: dedup                                           call graph actually obscured the importance of this code. Af-
+The dedup application performs parallel file compression                                     ter optimization, hashtable search’s share of execution
+via deduplication. This process is divided into three main                                   time reduced to 1.1%.
+stages: fine-grained fragmentation, hash computation, and
+compression. We placed a progress point immediately after                                    4.2.2     Case Study: ferret
+dedup completes compression of a single block of data                                        The ferret benchmark performs a content-based image simi-
+(encoder.c:189).                                                                             larity search. Ferret consists of a pipeline with six stages: the
+   C OZ identifies the source line hashtable.c:217 as                                        first and the last stages are for input and output. The middle
+the best opportunity for optimization. This code is the top                                  four stages perform image segmentation, feature extraction,
+of the while loop in hashtable search that traverses                                         indexing, and ranking. Ferret takes two arguments: an in-
+the linked list of entries that have been assigned to the same                               put file and a desired number of threads, which are divided
+hash bucket. This suggests that dedup’s shared hash table has                                equally across the four middle stages. We first inserted a
+a significant number of collisions. Increasing the hash table                                progress point in the final stage of the image search pipeline
+size had no effect on performance. This led us to examine                                    to measure throughput (ferret-parallel.c:398). We
+dedup’s hash function, which could also be responsible for                                   then ran C OZ with the source scope set to evaluate optimiza-
+the large number of hash table collisions. We discovered that                                tions only in ferret-parallel.c, rather than across the
+dedup’s hash function maps keys to just 2.3% of the available                                entire ferret toolkit.
+                                             Causal Profile for ferret                                                          Causal and Perf Profiles for SQLite
+                                Line 320               Line 358             Line 255                                         Line 16916            Line 18974        Line 40345
+
+
+
+
+ Program Speedup
+                   100%
+
+
+
+
+                                                                                               Program Speedup
+                                                                                                                 25%
+                   75%
+                                            ●
+                                          ● ●●                                                                           ●●●●●
+                                           ●                                                                                   ●●
+                                      ●● ●                                                                        0%    ●
+                                                                                                                                 ●
+                   50%               ●●● ●
+                                                                                                                                      ●
+                                                                                                                                   ●
+                                  ●                                                                              −25%          ●    ●●    ●
+                   25%              ●
+                                 ●
+                               ●● ●
+                           ●
+                    0%    ●                                                                                      −50%
+                          0%       50%       100% 0%     50%      100% 0%    50%       100%                             0%      50%           0%      50%       0%      50%
+                                                    Line Speedup                                                                               Line Speedup
+Figure 6: C OZ output for the unmodified ferret application. The                                                   (a) C OZ’s output for SQLite before optimizations.
+x-axis shows the amount of virtual speedup applied to each line,
+versus the resulting change in throughput on the y-axis. The top two                          % Runtime    Symbol
+                                                                                                85.55%     _raw_spin_lock
+lines are executed by the indexing and ranking stages; the third line                           1.76%      x86_pmu_enable_all
+is executed during image segmentation.                                                             ... 30 lines ...
+                                                                                                0.10%      rcu_irq_enter
+                                                                                                0.09%      sqlite3MemSize
+    Figure 6 shows the top three lines identified by C OZ, using                                0.09%      source_load
+its default ranking metric. Lines 320 and 358 are calls to                                        ... 26 lines ...
+                                                                                                0.03%      __queue_work
+cass table query from the indexing and ranking stages.                                          0.03%      pcache1Fetch
+Line 255 is a call to image segment in the segmentation                                         0.03%      kmem_cache_free
+                                                                                                0.03%      update_cfs_rq_blocked_load
+stage. Figure 5 depicts ferret’s pipeline with the associated                                   0.03%      pthreadMutexLeave
+thread pools (colors indicate C OZ’s computed impact on                                         0.03%      sqlite3MemMalloc
+
+throughput of optimizing these stages).
+                                                                                                                   (b) Perf’s output for SQLite before optimizations.
+    Because each important line falls in a different pipeline
+stage, and because C OZ did not find any important lines in the                               Figure 7: C OZ and perf output for SQLite before optimizations.
+queues shared by adjacent stages, we can easily “optimize”                                    The three lines in the causal profile correspond to the function
+a specific line by shifting threads to that stage. We modified                                prologues for sqlite3MemSize, pthreadMutexLeave, and
+                                                                                              pcache1Fetch. A small optimization to each of these lines will
+ferret to let us specify the number of threads assigned to each
+                                                                                              improve program performance, but beyond about a 25% speedup,
+stage separately, a four-line change.
+                                                                                              C OZ predicts that the optimization would actually lead to a slow-
+    C OZ did not find any important lines in the feature extrac-                              down. Changing indirect calls into direct calls for these functions
+tion stage, so we shifted threads from this stage to the three                                improved overall performance by 25.6% ± 1.0%.
+other main stages. After three rounds of profiling and adjust-
+ing thread assignments, we arrived at a final thread allocation
+of 20, 1, 22, and 21 to segmentation, feature extraction, index-                              load, where each thread rapidly inserts rows to its own private
+ing, and ranking respectively. The reallocation of threads led                                table. While this benchmark is synthetic, it exposes any scal-
+to a 21.27% ± 0.17% speedup over the original configuration,                                  ability bottlenecks in the database engine itself because all
+using the same number of threads.                                                             threads should theoretically operate independently. We placed
+                                                                                              a progress point in the benchmark itself (which is linked with
+Comparison with gprof. We also ran ferret with gprof in                                       the database), which executes after each insertion.
+both the initial and final configurations. Optimization oppor-                                    C OZ identified three important optimization opportunities,
+tunities are not immediately obvious from that profile. For ex-                               shown in Figure 7a. At startup, SQLite populates a large
+ample, in the flat profile, the function cass table query                                     number of structs with function pointers to implementation-
+appears near the bottom of the ranking, and is tied with 56                                   specific functions, but most of these functions are only ever
+other functions for most cumulative time.                                                     given a default value determined by compile-time options.
+   Gprof also offers little guidance for optimizing ferret. In                                The three functions C OZ identified unlock a standard pthread
+fact, its output was virtually unchanged before and after our                                 mutex, retrieve the next item from a shared page cache, and
+optimization, despite a large performance change.                                             get the size of an allocated object. These simple functions do
+4.2.3                 Case Study: SQLite                                                      very little work, so the overhead of the indirect function call
+                                                                                              is relatively high. Replacing these indirect calls with direct
+The SQLite database library is widely used by many ap-                                        calls resulted in a 25.60% ± 1.00% speedup.
+plications to store relational data. The embedded database,
+which can be included as a single large C file, is used for                                   Comparison with conventional profilers. Unfortunately,
+many applications including Firefox, Chrome, Safari, Opera,                                   running SQLite with gprof segfaults immediately. The ap-
+Skype, iTunes, and is a standard component of Android, iOS,                                   plication does run with the Linux perf tool, which reports
+Blackberry 10 OS, and Windows Phone 8. We evaluated                                           that the three functions C OZ identified account for a total of
+SQLite performance using a write-intensive parallel work-                                     just 0.15% of total runtime (shown in Figure 7b). Using perf,
+a developer would be misled into thinking that optimizing                                         Causal Profile for fluidanimate
+these functions would be a waste of time. C OZ accurately                                         Line 151                     Line 184
+
+
+
+
+                                                                   Program Speedup
+shows that the opposite is true: optimizing these functions                          10%
+has a dramatic impact on performance.                                                        ●●
+                                                                                               ●
+                                                                                      0%    ●
+                                                                                                ● ●        ●     ●
+                                                                                                 ●                ●●
+4.2.4   Case Study: fluidanimate                                                                   ●●● ●    ●
+                                                                                     −10%                     ●
+                                                                                                     ● ●●    ●
+The fluidanimate benchmark, also provided by Intel, is a phys-
+ical simulation of an incompressible fluid for animation. The                        −20%
+application spawns worker threads that execute in eight con-                                0%      50%           100%0%        50%       100%
+current phases, separated by a barrier. We placed a progress                                                    Line Speedup
+point immediately after the barrier, so it executes each time     Figure 8: C OZ output for fluidanimate, prior to optimiza-
+all threads complete a phase of the computation.                  tion. C OZ finds evidence of contention in two lines in
+    C OZ identifies a single modest potential speedup in the      parsec barrier.cpp, the custom barrier implementation used
+thread creation code, but there was no obvious way to speed       by both fluidanimate and streamcluster. This causal profile reports
+                                                                  that optimizing either line will slow down the application, not speed
+up this code. However, C OZ also identified two significant
+                                                                  it up. These lines precede calls to pthread mutex trylock on
+points of contention, indicated by a downward sloping causal      a contended mutex. Optimizing this code would increase contention
+profile. Figure 8 shows C OZ’s output for these two lines.        on the mutex and interfere with the application’s progress. Replac-
+This result tells us that optimizing the indicated line of code   ing this inefficient barrier implementation sped up fluidanimate and
+would actually slow down the program, rather than speed           streamcluster by 37.5% and 68.4% respectively.
+it up. Both lines C OZ identifies are in a custom barrier
+implementation, immediately before entering a loop that           using a hash of its key. Consequently, locking any one item
+repeatedly calls pthread mutex trylock. Removing                  can potentially contend with independent accesses to other
+this spinning from the barrier would reduce the contention,       items whose keys happen to hash to the same lock index.
+but it was simpler to replace the custom barrier with the         Because reference counts are updated atomically, we can
+default pthread barrier implementation. This one line             safely remove the lock from this function, which resulted in
+change led to a 37.5% ± 0.56% speedup.                            a 9.39% ± 0.95% speedup.
+4.2.5   Case Study: streamcluster                                 4.2.7                Case Study: blackscholes
+The streamcluster benchmark performs online clustering of         The blackscholes benchmark, provided by Intel, solves the
+streaming data. As with fluidanimate, worker threads execute      Black–Scholes differential equation to price a portfolio of
+in concurrent phases separated by a custom barrier, where         stock options. We placed a progress point after each thread
+we placed a progress point. C OZ identified a call to a ran-      completes one round of the iterative approximation to the dif-
+dom number generator as a potential line for optimization.        ferential equation (blackscholes.c:259). C OZ identi-
+Replacing this call with a lightweight random number gen-         fies many lines in the CNDF and BlkSchlsEqEuroNoDiv
+erator had a modest effect on performance (˜2% speedup).          functions that would have a small impact if optimized. This
+As with fluidanimate, C OZ highlighted the custom barrier         same code was identified as a bottleneck by ParaShares [26];
+implementation as a major source of contention. Replacing         this is the only optimization we describe here that was pre-
+this barrier with the default pthread barrier led to a            viously reported. This block of code performs the main
+68.4% ± 1.12% speedup.                                            numerical work of the program, and uses many temporary
+                                                                  variables to break apart the complex computation. Manu-
+4.2.6   Case Study: Memcached                                     ally eliminating common subexpressions and combining 61
+Memcached is a widely-used in-memory caching system. To           piecewise calculations into 4 larger expressions resulted in a
+evaluate cache performance, we ran a benchmark ported from        2.56% ± 0.41% program speedup.
+the Redis performance benchmark. This program spawns 50
+parallel clients that collectively issue 100,000 SET and GET      4.2.8                Case Study: swaptions
+requests for randomly chosen keys. We placed a progress           The swaptions benchmark is a Monte Carlo pricing algorithm
+point at the end of the process command function, which           for swaptions, a type of financial derivative. Like blackscholes
+handles each client request.                                      and fluidanimate, this program was developed by Intel. We
+   Most of the lines C OZ identifies are cases of contention,     placed a progress point after each iteration of the main loop ex-
+with a characteristic downward-sloping causal profile plot.       ecuted by worker threads (HJM Securities.cpp:99).
+One such line is at the start of item remove, which locks             C OZ identified three significant optimization opportunities,
+an item in the cache and then decrements its reference            all inside nested loops over a large multidimensional array.
+count, freeing it if the count goes to zero. To reduce lock       One of these loops zeroed out consecutive values. A second
+initialization overhead, Memcached uses a static array of         loop filled part of the same large array with values from
+locks to protect items, where each item selects its lock          a distribution function, with no obvious opportunities for
+                Results for Unoptimized Applications                                                     Overhead of C OZ
+
+
+
+
+                                                                        Percent Overhead
+ Benchmark        Progress Point          Top Optimization                                 60%
+  bodytrack       TicketDispenser.h:106     ParticleFilter.h:262                           40%
+     canneal      annealer thread.cpp:87    netlist elem.cpp:82
+     facesim      taskQDistCommon.c:109     MATRIX 3X3.h:136
+                                                                                           20%
+   freqmine       fp tree.cpp:383           fp tree.cpp:301                                0%
+    raytrace      BinnedAllDims...:98       RTEmulatedSSE.hxx:784                                ks  c
+                                                                                                bo hole
+                                                                                                   dy s
+         vips
+                                                                                                       tra
+                                                                                                   ca ck
+                  threadgroup.c:360         im Lab2LabQ.c:98                                          nn
+                                                                                                     de l
+                                                                                                   fa p
+                                                                                             flu f m  cee
+                                                                                                          ea
+                                                                                                         du
+                                                                                                         si
+                                                                                                id rr
+                                                                                                  an et
+                                                                                                      im
+        x264
+                                                                                                 fre ate
+                                                                                                     qm
+                  encoder.c:1165            common.c:687                                    str ray ne
+                                                                                           ac  ea tra
+                                                                                                 m cecl
+                                                                                                sw ust
+                                                                                                    ap er
+                                                                                                       tio
+                                                                                                          i
+                                                                                           bl           vi
+                                                                                                       x2   ns
+                                                                                                            ps
+                                                                                                      m  ea64
+Table 4: The locations of inserted progress points for the remaining
+                                                                                                             n
+                                                                                                              Benchmark
+PARSEC benchmarks, and the top optimization opportunities that
+C OZ identifies. The progress point for raytrace was placed on line
+                                                                                                         Delays   Sampling   Startup
+98 of BinnedAllDimsSaveSpace.cxx.
+
+                                                                       Figure 9: Percent overhead for each of C OZ’s possible sources of
+optimization. The third nested loop iterated over the same             overhead. Delays are the overhead due to adding delays for virtual
+array again, but traversed the dimensions in an irregular order.       speedups, Sampling is the cost of collecting and processing samples,
+                                                                       and Startup is the initial cost of processing debugging information.
+Reordering these loops and replacing the first loop with a call
+                                                                       Note that sampling results in slight performance improvements for
+to memset sped execution by 15.8% ± 1.10%.                             swaptions, vips, and x264.
+
+Effectiveness Summary. Our case studies confirm that
+                                                                       4.4                  Efficiency
+C OZ is effective at identifying optimization opportunities
+and guiding performance tuning. In every case, the informa-            We measure C OZ’s profiling overhead on the PARSEC bench-
+tion C OZ provided led us directly to the optimization we              marks running with the native inputs. The sole exception is
+implemented. In most cases, C OZ identified around 20 lines            streamcluster, where we use the test inputs because execution
+of interest, with as many as 50 for larger programs (Mem-              time was excessive with the native inputs.
+cached and x264). C OZ identified optimization opportunities               Figure 9 breaks down the total overhead of running C OZ
+in all of the PARSEC benchmarks, but some required more                on each of the PARSEC benchmarks by category. The average
+invasive changes that are out of scope for this paper. Table 4         overhead with C OZ is 17.6%. C OZ collects debug information
+summarizes our findings for the remaining PARSEC bench-                at startup, which contributes 2.6% to the average overhead.
+marks. We have submitted patches to the developers of all              Sampling during program execution and attributing these
+the applications we optimized.                                         samples to lines using debug information is responsible
+                                                                       for 4.8% of the average overhead. The remaining overhead
+4.3   Accuracy                                                         (10.2%) comes from the delays C OZ inserts to perform virtual
+                                                                       speedups.
+For most of the optimizations described above, it is not
+                                                                           These results were collected by running each benchmark
+possible to quantify the effect our optimization had on the
+                                                                       in four configurations. First, each program was run without
+specific lines that C OZ identified. However, for two of our
+                                                                       C OZ to measure a baseline execution time. In the second
+case studies—ferret and dedup—we can directly compute
+                                                                       configuration, each program was run with C OZ, but execution
+the effect our optimization had on the line C OZ identified
+                                                                       terminated immediately after startup work was completed.
+and compare the resulting speedup to C OZ’s predictions. Our
+                                                                       Third, programs were run with C OZ configured to sample
+results show that C OZ’s predictions are highly accurate.
+                                                                       the program’s execution but not to insert delays (effectively
+   To optimize ferret, we increased the number of threads
+                                                                       testing only virtual speedups of size zero). Finally, each
+for the indexing stage from 16 to 22, which increases the
+                                                                       program was run with C OZ fully enabled. The difference
+throughput of line 320 by 27%. C OZ predicted that this
+                                                                       in execution time between each successive configuration give
+improvement would result in a 21.4% program speedup,
+                                                                       us the startup, sampling, and delay overheads, respectively.
+which is nearly the same as the 21.2% we observe.
+   For dedup, C OZ identified the top of the while loop                Reducing overhead. Most programs have sufficiently long
+that traverses a hash bucket’s linked list. By replacing the           running times (mean: 103s) to amortize the cost of processing
+degenerate hash function, we reduced the average number                debug information, but especially large executables can be
+of elements in each hash bucket from 76.7 to just 2.09. This           expensive to process at startup (x264 and vips, for exam-
+change reduces the number of iterations from 77.7 to 3.09              ple). C OZ could be modified to collect and process debug
+(accounting for the final trip through the loop). This reduction       information lazily to reduce startup overhead. Sampling over-
+corresponds to a speedup of the line C OZ identified by 96%.           head comes mainly from starting and stopping sampling with
+For this speedup, C OZ predicted a performance improvement             the perf event API at thread creation and exit. This cost
+of 9%, very close to our observed speedup of 8.95%.                    could be amortized by sampling globally instead of per-thread,
+which would require root permissions on most machines. If           optimizations will have some impact, but these approaches
+the perf event API supported sampling all threads in a              to not give developers any information about how much per-
+process this overhead could be eliminated. Delay overhead,          formance gain is possible before the critical path changes.
+the largest component of C OZ’s total overhead, could be re-        Hollingsworth and Miller introduce two new metrics to ap-
+duced by allowing programs to execute normally for some             proximate optimization potential: slack, how much a proce-
+time between each experiment. Increasing the time between           dure can be improved before the critical path changes; and
+experiments would significantly reduce overhead, but a longer       logical zeroing, the reduction in critical path length when
+profiling run would be required to collect a usable profile.        a procedure is completely removed [22]. These metrics are
+                                                                    similar to the optimization potential measured by a causal
+Efficiency summary. C OZ’s profiling overhead is on aver-           profiler, but can only be computed with a complete program
+age 17.6% (minimum: 0.1%, maximum: 65%). For all but                activity graph. Collection of a program activity graph is
+three of the benchmarks, its overhead was under 30%. Given          costly, and could introduce significant probe effect.
+that the widely used gprof profiler can impose much higher
+overhead (e.g., 6× for ferret, versus 6% with C OZ), these          Bottleneck identification. Several approaches have used
+results confirm that C OZ has sufficiently low overhead to be       hardware performance counters to identify hardware-level
+used in practice.                                                   performance bottlenecks [8, 12, 32]. Techniques based on
+                                                                    binary instrumentation can identify cache and heap perfor-
+5.    Related Work                                                  mance issues, contended locks, and other program hotspots [5,
+                                                                    31, 36]. ParaShares and Harmony identify basic blocks that
+Causal profiling identifies and quantifies optimization oppor-
+                                                                    run during periods with little or no parallelism [25, 26]. Code
+tunities, while most past work on profilers has focused on
+                                                                    identified by these tools is a good candidate for parallelization
+collecting detailed (though not necessarily actionable) infor-
+                                                                    or classic serial optimizations. Bottlenecks, a profile analysis
+mation with low overhead.
+                                                                    tool, uses heuristics to identify bottlenecks using call-tree
+5.1   General-Purpose Profilers                                     profiles [3]. Given call-tree profiles for different executions,
+                                                                    Bottlenecks can pinpoint which procedures are responsible
+General-purpose profilers are typically implemented using
+                                                                    for the difference in performance. The FreeLunch profiler
+instrumentation, sampling, or both. Systems based on sam-
+                                                                    and Visual Studio’s contention profiler identify locks that are
+pling (including causal profiling) can arbitrarily reduce probe
+                                                                    responsible for significant thread blocking time [11, 16]. BIS
+effect, although sampling must be unbiased [35].
+                                                                    uses similar techniques to identify highly contended critical
+    The UNIX prof tool and oprofile both use sampling ex-
+                                                                    sections on asymmetric multiprocessors, and automatically
+clusively [29, 42]. Oprofile can sample using a variety of
+                                                                    migrates performance-critical code to faster cores [24]. Bottle
+hardware performance counters, which can be used to iden-
+                                                                    graphs present thread execution time and parallelism in a vi-
+tify cache-hostile code, poorly predicted branches, and other
+                                                                    sual format that highlights program bottlenecks [13]. Unlike
+hardware bottlenecks. Gprof combines instrumentation and
+                                                                    causal profiling, these tools do not predict the performance
+sampling to measure execution time [17]. Gprof produces
+                                                                    impact of removing bottlenecks. All these systems can only
+a call graph profile, which counts invocations of functions
+                                                                    identify bottlenecks that arise from explicit thread commu-
+segregated by caller. Cho, Moseley, et al. reduce the overhead
+                                                                    nication, while causal profiling can measure parallel perfor-
+of Gprof’s call-graph profiling by interleaving instrumented
+                                                                    mance problems from any source, including cache coherence
+and un-instrumented execution [9]. Path profilers add further
+                                                                    protocols, scheduling dependencies, and I/O.
+detail, counting executions of each path through a procedure,
+or across procedures [2, 6].                                        Profiling for parallelization and scalability. Several sys-
+                                                                    tems have been developed to measure potential parallelism in
+5.2   Parallel Profilers                                            serial programs [15, 43, 45]. Like causal profiling, these sys-
+Past work on parallel profiling has focused on identifying          tems identify code that will benefit from developer time. Un-
+the critical path or bottlenecks, although optimizing the crit-     like causal profiling, these tools are not aimed at diagnosing
+ical path or removing the bottleneck may not significantly          performance issues in code that has already been parallelized.
+improve program performance.                                            Kulkarni, Pai, and Schuff present general metrics for avail-
+                                                                    able parallelism and scalability [28]. The Cilkview scalabil-
+Critical path profiling. IPS uses traces from message-              ity analyzer uses performance models for Cilk’s constrained
+passing programs to identify the critical path, and reports         parallelism to estimate the performance effect of adding ad-
+the amount of time each procedure contributes to the critical       ditional hardware threads [20]. Causal profiling can detect
+path [34]. IPS-2 extends this approach with limited sup-            performance problems that result from poor scaling on the
+port for shared memory parallelism [33, 44]. Other critical         current hardware platform.
+path profilers rely on languages with first-class threads and
+synchronization to identify the critical path [21, 37, 40]. Iden-   Time attribution profilers. Time attribution profilers assign
+tifying the critical path helps developers find code where          “blame” to concurrently executing code based on what other
+threads are doing. Quartz introduces the notion of “normal-          Acknowledgments
+ized processor time,” which assigns high cost to code that           This material is based upon work supported by the National
+runs while a large fraction of other threads are blocked [4].        Science Foundation under Grants No. CCF-1012195 and
+CPPROFJ extends this approach to Java programs with as-              CCF-1439008. Charlie Curtsinger was supported by a Google
+pects [19]. CPPROFJ uses finer categories for time: running,         PhD Research Fellowship. The authors thank Dan Barowy,
+blocked for a higher-priority thread, waiting on a monitor,          Steve Freund, Emma Tosch, John Vilk, and our shepherd Tim
+and blocked on other events. Tallent and Mellor-Crummey              Harris for their feedback and helpful comments.
+extend this approach further to support Cilk programs, with
+an added category for time spent managing parallelism [41].
+The WAIT tool adds fine-grained categorization to identify
+                                                                     References
+bottlenecks in large-scale production Java systems [1]. Unlike        [1] E. R. Altman, M. Arnold, S. Fink, and N. Mitchell. Perfor-
+causal profiling, these profilers can only capture interference           mance analysis of idle programs. In OOPSLA, pages 739–753.
+between threads that directly affects their scheduler state.              ACM, 2010.
+                                                                      [2] G. Ammons, T. Ball, and J. R. Larus. Exploiting hardware
+                                                                          performance counters with flow and context sensitive profiling.
+5.3   Performance Guidance and Experimentation                            In PLDI, pages 85–96. ACM, 1997.
+Several systems have employed delays to extract informa-              [3] G. Ammons, J.-D. Choi, M. Gupta, and N. Swamy. Finding
+tion about program execution times. Mytkowicz et al. use                  and removing performance bottlenecks in large systems. In
+delays to validate the output of profilers on single-threaded             ECOOP, volume 3086 of Lecture Notes in Computer Science,
+Java programs [35]. Snelick, JáJá et al. use delays to profile          pages 170–194. Springer, 2004.
+parallel programs [38]. This approach measures the effect of          [4] T. E. Anderson and E. D. Lazowska. Quartz: A tool for tuning
+slowdowns in combination, which requires a complete exe-                  parallel program performance. In SIGMETRICS, pages 115–
+cution of the program for each of an exponential number of                125, 1990.
+configurations. Active Dependence Discovery (ADD) intro-              [5] M. M. Bach, M. Charney, R. Cohn, E. Demikhovsky, T. Devor,
+duces performance perturbations to distributed systems and                K. Hazelwood, A. Jaleel, C.-K. Luk, G. Lyons, H. Patil, and
+measures their impact on response time [7]. ADD requires a                A. Tal. Analyzing parallel programs with Pin. Computer,
+                                                                          43(3):34–41, Mar. 2010.
+complete enumeration of system components, and requires
+developers to insert performance perturbations manually. Gu-          [6] T. Ball and J. R. Larus. Efficient path profiling. In MICRO,
+nawi, Agrawal et al. use delays to identify causal dependen-              pages 46–57, 1996.
+cies between events in the EMC Centera storage system to              [7] A. B. Brown, G. Kar, and A. Keller. An active approach to char-
+analyze Centera’s protocols and policies [18]. Song and Lu                acterizing dynamic dependencies for problem determination in
+use machine learning to identify performance anti-patterns in             a distributed environment. In Integrated Network Management,
+source code [39]. Unlike causal profiling, these approaches               pages 377–390. IEEE, 2001.
+do not predict the effect of potential optimizations.                 [8] M. Burtscher, B.-D. Kim, J. R. Diamond, J. D. McCalpin,
+                                                                          L. Koesterke, and J. C. Browne. PerfExpert: An easy-to-use
+                                                                          performance diagnosis tool for HPC applications. In SC, pages
+                                                                          1–11. IEEE, 2010.
+6.    Conclusion                                                      [9] H. K. Cho, T. Moseley, R. E. Hank, D. Bruening, and S. A.
+Profilers are the primary tool in the programmer’s toolbox for            Mahlke. Instant profiling: Instrumentation sampling for pro-
+identifying performance tuning opportunities. Previous pro-               filing datacenter applications. In CGO, pages 1–10. IEEE
+filers only observe actual executions and correlate code with             Computer Society, 2013.
+execution time or performance counters. This information             [10] C. Curtsinger and E. D. Berger. S TABILIZER: Statistically
+can be of limited use because the amount of time spent does               sound performance evaluation. In ASPLOS, New York, NY,
+not necessarily correspond to where programmers should fo-                USA, 2013. ACM.
+cus their optimization efforts. Past profilers are also limited to   [11] F. David, G. Thomas, J. Lawall, and G. Muller. Continuously
+reporting end-to-end execution time, an unimportant quantity              measuring critical section pressure with the free-lunch profiler.
+for servers and interactive applications whose key metrics of             In OOPSLA, pages 291–307, 2014.
+interest are throughput and latency. Causal profiling is a new,      [12] J. R. Diamond, M. Burtscher, J. D. McCalpin, B.-D. Kim, S. W.
+experiment-based approach that establishes causal relation-               Keckler, and J. C. Browne. Evaluation and optimization of mul-
+ships between hypothetical optimizations and their effects. By            ticore performance bottlenecks in supercomputing applications.
+virtually speeding up lines of code, causal profiling identifies          In ISPASS, pages 32–43. IEEE Computer Society, 2011.
+and quantifies the impact on either throughput or latency of         [13] K. Du Bois, J. B. Sartor, S. Eyerman, and L. Eeckhout. Bottle
+any degree of optimization to any line of code. Our prototype             graphs: Visualizing scalability bottlenecks in multi-threaded
+causal profiler, C OZ, is efficient, accurate, and effective at           applications. In OOPSLA, pages 355–372, 2013.
+guiding optimization efforts.                                        [14] Free Software Foundation. Debugging with GDB, tenth edition.
+[15] S. Garcia, D. Jeon, C. M. Louie, and M. B. Taylor. Kremlin:              parallel program measurement system. IEEE Transactions on
+     rethinking and rebooting gprof for the multicore age. In PLDI,           Parallel Distributed Systems, 1(2):206–217, 1990.
+     pages 458–469. ACM, 2011.                                           [34] B. P. Miller and C.-Q. Yang. IPS: An interactive and automatic
+[16] M. Goldin. Thread performance: Resource contention con-                  performance measurement tool for parallel and distributed
+     currency profiling in visual studio 2010. MSDN magazine,                 programs. In ICDCS, pages 482–489, 1987.
+     page 38, 2010.                                                      [35] T. Mytkowicz, A. Diwan, M. Hauswirth, and P. F. Sweeney.
+[17] S. L. Graham, P. B. Kessler, and M. K. McKusick. gprof: a call           Evaluating the accuracy of Java profilers. In PLDI, pages
+     graph execution profiler. In SIGPLAN Symposium on Compiler               187–197. ACM, 2010.
+     Construction, pages 120–126. ACM, 1982.                             [36] N. Nethercote and J. Seward. Valgrind: a framework for
+[18] H. S. Gunawi, N. Agrawal, A. C. Arpaci-Dusseau, R. H. Arpaci-            heavyweight dynamic binary instrumentation. In PLDI, pages
+     Dusseau, and J. Schindler. Deconstructing commodity storage              89–100. ACM, 2007.
+     clusters. In ISCA, pages 60–71. IEEE Computer Society, 2005.        [37] Y. Oyama, K. Taura, and A. Yonezawa. Online computation
+[19] R. J. Hall. CPPROFJ: Aspect-Capable Call Path Profiling of               of critical paths for multithreaded languages. In IPDPS
+     Multi-Threaded Java Applications. In ASE, pages 107–116.                 Workshops, volume 1800 of Lecture Notes in Computer Science,
+     IEEE Computer Society, 2002.                                             pages 301–313. Springer, 2000.
+[20] Y. He, C. E. Leiserson, and W. M. Leiserson. The Cilkview           [38] R. Snelick, J. JáJá, R. Kacker, and G. Lyon. Synthetic-
+     scalability analyzer. In SPAA, pages 145–156. ACM, 2010.                 perturbation techniques for screening shared memory programs.
+                                                                              Software Practice & Experience, 24(8):679–701, 1994.
+[21] J. M. D. Hill, S. A. Jarvis, C. J. Siniolakis, and V. P. Vasilev.
+     Portable and architecture independent parallel performance          [39] L. Song and S. Lu. Statistical debugging for real-world
+     tuning using a call-graph profiling tool. In PDP, pages 286–             performance problems. In OOPSLA, pages 561–578, 2014.
+     294, 1998.                                                          [40] Z. Szebenyi, F. Wolf, and B. J. N. Wylie. Space-efficient time-
+[22] J. K. Hollingsworth and B. P. Miller. Slack: a new performance           series call-path profiling of parallel applications. In SC. ACM,
+     metric for parallel programs. University of Maryland and                 2009.
+     University of Wisconsin-Madison, Tech. Rep, 1994.                   [41] N. R. Tallent and J. M. Mellor-Crummey. Effective perfor-
+[23] Intel. Intel VTune Amplifier 2015, 2014.                                 mance measurement and analysis of multithreaded applications.
+                                                                              In PPOPP, pages 229–240. ACM, 2009.
+[24] J. A. Joao, M. A. Suleman, O. Mutlu, and Y. N. Patt. Bottleneck
+     identification and scheduling in multithreaded applications. In     [42] K. Thompson and D. M. Ritchie. UNIX Programmer’s Manual.
+     ASPLOS, pages 223–234. ACM, 2012.                                        Bell Telephone Laboratories, 1975.
+                                                                         [43] C. von Praun, R. Bordawekar, and C. Cascaval. Modeling
+[25] M. Kambadur, K. Tang, and M. A. Kim. Harmony: Collection
+                                                                              optimistic concurrency using quantitative dependence analysis.
+     and analysis of parallel block vectors. In ISCA, pages 452–463.
+                                                                              In PPoPP, pages 185–196. ACM, 2008.
+     IEEE Computer Society, 2012.
+                                                                         [44] C.-Q. Yang and B. P. Miller. Performance measurement
+[26] M. Kambadur, K. Tang, and M. A. Kim. Parashares: Finding
+                                                                              for parallel and distributed programs: A structured and auto-
+     the important basic blocks in multithreaded programs. In Euro-
+                                                                              matic approach. IEEE Transactions on Software Engineering,
+     Par, Lecture Notes in Computer Science, pages 75–86, 2014.
+                                                                              15(12):1615–1629, 1989.
+[27] kernel.org. perf: Linux profiling with performance counters,
+                                                                         [45] X. Zhang, A. Navabi, and S. Jagannathan. Alchemist: A
+     2014.
+                                                                              transparent dependence distance profiling infrastructure. In
+[28] M. Kulkarni, V. S. Pai, and D. L. Schuff. Towards architec-              CGO, pages 47–58. IEEE Computer Society, 2009.
+     ture independent metrics for multicore performance analysis.
+     SIGMETRICS Performance Evaluation Review, 38(3):10–14,
+     2010.
+[29] J. Levon and P. Elie. oprofile: A system profiler for Linux.
+     http://oprofile.sourceforge.net/, 2004.
+[30] J. D. Little. OR FORUM: Little’s Law as Viewed on Its 50th
+     Anniversary. Operations Research, 59(3):536–549, 2011.
+[31] C.-K. Luk, R. S. Cohn, R. Muth, H. Patil, A. Klauser, P. G.
+     Lowney, S. Wallace, V. J. Reddi, and K. M. Hazelwood. Pin:
+     building customized program analysis tools with dynamic
+     instrumentation. In PLDI, pages 190–200, 2005.
+[32] B. P. Miller, M. D. Callaghan, J. M. Cargille, J. K.
+     Hollingsworth, R. B. Irvin, K. L. Karavanic, K. Kunchitha-
+     padam, and T. Newhall. The paradyn parallel performance
+     measurement tool. IEEE Computer, 28(11):37–46, 1995.
+[33] B. P. Miller, M. Clark, J. K. Hollingsworth, S. Kierstead, S.-S.
+     Lim, and T. Torzewski. IPS-2: The second generation of a
+

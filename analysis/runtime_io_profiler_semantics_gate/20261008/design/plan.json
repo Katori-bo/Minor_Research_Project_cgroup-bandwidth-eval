@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-08",
+  "cases": [
+    {
+      "id": "full_cpu_control",
+      "q": 100,
+      "p": 100,
+      "reserve": 0
+    },
+    {
+      "id": "half_cpu",
+      "q": 50,
+      "p": 100,
+      "reserve": 0
+    },
+    {
+      "id": "fifth_cpu",
+      "q": 20,
+      "p": 100,
+      "reserve": 0
+    },
+    {
+      "id": "half_cpu_controller_1ms",
+      "q": 50,
+      "p": 100,
+      "reserve": 1
+    },
+    {
+      "id": "half_cpu_controller_5ms",
+      "q": 50,
+      "p": 100,
+      "reserve": 5
+    }
+  ],
+  "horizon_ms": 10000,
+  "work_ms": 50,
+  "saving_ms": 30,
+  "assumption": "One indefinitely backlogged application worker; known full initial periodic budget; same reserved controller CPU in baseline and genuine modeled optimization. Perfect aligned 1-ms task-clock sample census and flushed batches. No locks, I/O or wakeup dependency. No real sampling or Linux execution.",
+  "source_paths": "Coz CPU-only credits; BCOZ on-CPU subclass credits; BCOZ line credits with all non-lock blocked samples attributed to target (conditional, not established for Linux quota stack traces).",
+  "limitations": [
+    "source-model counter credit only, not execution of profiler C++/kernel sampler",
+    "no measured overhead or neutral observer claim",
+    "BCOZ blocked attribution unresolved",
+    "deadline miss fractions are not native profiler output"
+  ],
+  "scripts_sha256": {
+    "analysis/assess_profiler_semantics_gate.py": "f59a1e157a72ddcb4f5248c1cd7e31614c893f9a056f0788fb7eb94af4f8723b",
+    "analysis/run_pinned_profiler_reporting.js": "352c2b4bbe860f5d76a726c50f8e1184591cb5e5137658b18612eae7a034f789"
+  },
+  "novelty_gate": "Stop unless a distinct capability survives adequate ordinary replay with matched information/cost.",
+  "new_collection": false
+}

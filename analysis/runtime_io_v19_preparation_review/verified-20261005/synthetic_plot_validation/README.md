@@ -1,0 +1,1 @@
+Rendering validation only. Block effects are synthetic. Phase requests come from retained V18 p1_off and are relabeled across arms and blocks to exercise plotting. No V19 treatment measurements were collected.

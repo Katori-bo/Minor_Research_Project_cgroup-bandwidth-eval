@@ -1,0 +1,208 @@
+{
+  "schema": 1,
+  "revision": 27,
+  "date": "2026-10-07",
+  "purpose": "controlled_load_composition_screen",
+  "seed": 2707102026,
+  "trial_order": [
+    {
+      "id": "b1_low15_on",
+      "block": 1,
+      "low_rate": 15,
+      "counter_probe": true,
+      "collection_order": 1
+    },
+    {
+      "id": "b1_low30_off",
+      "block": 1,
+      "low_rate": 30,
+      "counter_probe": false,
+      "collection_order": 2
+    },
+    {
+      "id": "b1_low15_off",
+      "block": 1,
+      "low_rate": 15,
+      "counter_probe": false,
+      "collection_order": 3
+    },
+    {
+      "id": "b1_low30_on",
+      "block": 1,
+      "low_rate": 30,
+      "counter_probe": true,
+      "collection_order": 4
+    },
+    {
+      "id": "b2_low30_on",
+      "block": 2,
+      "low_rate": 30,
+      "counter_probe": true,
+      "collection_order": 5
+    },
+    {
+      "id": "b2_low15_off",
+      "block": 2,
+      "low_rate": 15,
+      "counter_probe": false,
+      "collection_order": 6
+    },
+    {
+      "id": "b2_low30_off",
+      "block": 2,
+      "low_rate": 30,
+      "counter_probe": false,
+      "collection_order": 7
+    },
+    {
+      "id": "b2_low15_on",
+      "block": 2,
+      "low_rate": 15,
+      "counter_probe": true,
+      "collection_order": 8
+    },
+    {
+      "id": "b3_low15_off",
+      "block": 3,
+      "low_rate": 15,
+      "counter_probe": false,
+      "collection_order": 9
+    },
+    {
+      "id": "b3_low15_on",
+      "block": 3,
+      "low_rate": 15,
+      "counter_probe": true,
+      "collection_order": 10
+    },
+    {
+      "id": "b3_low30_on",
+      "block": 3,
+      "low_rate": 30,
+      "counter_probe": true,
+      "collection_order": 11
+    },
+    {
+      "id": "b3_low30_off",
+      "block": 3,
+      "low_rate": 30,
+      "counter_probe": false,
+      "collection_order": 12
+    },
+    {
+      "id": "b4_low30_off",
+      "block": 4,
+      "low_rate": 30,
+      "counter_probe": false,
+      "collection_order": 13
+    },
+    {
+      "id": "b4_low30_on",
+      "block": 4,
+      "low_rate": 30,
+      "counter_probe": true,
+      "collection_order": 14
+    },
+    {
+      "id": "b4_low15_on",
+      "block": 4,
+      "low_rate": 15,
+      "counter_probe": true,
+      "collection_order": 15
+    },
+    {
+      "id": "b4_low15_off",
+      "block": 4,
+      "low_rate": 15,
+      "counter_probe": false,
+      "collection_order": 16
+    }
+  ],
+  "rates": [
+    15,
+    30
+  ],
+  "planned_trials": 16,
+  "windows": {
+    "low": [
+      [
+        3,
+        8
+      ],
+      [
+        18,
+        23
+      ],
+      [
+        33,
+        38
+      ],
+      [
+        48,
+        53
+      ]
+    ],
+    "busy": [
+      [
+        11.5,
+        14.5
+      ],
+      [
+        26.5,
+        29.5
+      ],
+      [
+        41.5,
+        44.5
+      ],
+      [
+        56.5,
+        59.5
+      ]
+    ]
+  },
+  "sampler": {
+    "interval_sec": 0.02,
+    "bound_sec": 110,
+    "max_gap_ms": 50,
+    "boundary_span_ms": 60
+  },
+  "measurement_quality": {
+    "max_cost_relative_bound_width": 0.04,
+    "max_busy_delivery_bound_width": 0.02
+  },
+  "rules": {
+    "whole_cost_min_increase_pct": 3,
+    "busy_capacity_margin_pct": 2,
+    "observer_interaction_margin_pp": 2,
+    "busy_delivery_min": 0.48,
+    "busy_delivery_max": 0.52
+  },
+  "analysis": {
+    "t_critical_95_df3": 3.182446305284263,
+    "unit": "four_independent_block_contrasts",
+    "bounded_interval": "mean_endpoints_plus_maximum_vertex_sd"
+  },
+  "measurement_bound_sec": 5400,
+  "runtime_preparation_bound_sec": 600,
+  "analysis_bound_sec": 600,
+  "technical_retries": 1,
+  "host_monitor_min_records": 80,
+  "prerequisite_analysis_seal": "02153d973eea003bcb3830696874b1d8c3ac2cfedf6d5739d091da29398a4157",
+  "previous_bundle_seal": "c7e649f94d51e908b976ff06ada089f0dd2e7e31c490becde99b76f06d0b3c10",
+  "scientific_confirmation": false,
+  "novelty_established": false,
+  "software_revision": 3,
+  "failed_generation_bundle_seal": "c60e10277cd474cadfc05652b2ddf8166ea56de331c0cb70c21bd49114e7aa10",
+  "failed_generation_preparation_seal": "5f111a752215a7aa133bf2ff733fdbef90725dda4bd8b3786aa95d051c00ec37",
+  "monitor_failed_generation_bundle_seal": "443a87cca1031f55557f434ef7e1b95c78639fd705832a4c1a7746892ce8fdd3",
+  "monitor_failed_generation_preparation_seal": "5b8db3d82a8c77eab84611e91a3c029218c522a3733857a7da6d185bdd3d4a74",
+  "monitor_lifecycle": {
+    "readiness_bound_sec": 5,
+    "completion_bound_sec": 30,
+    "first_sample_before_service_release": true,
+    "last_sample_after_full_drain": true,
+    "native_stopped_before_monitor_completion_wait": true,
+    "interval_sec": 1
+  }
+}

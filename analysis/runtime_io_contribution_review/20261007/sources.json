@@ -1,0 +1,268 @@
+{
+  "review_date": "2026-10-07",
+  "purpose": "Targeted closest-work comparison for evidence-map claims C01-C10; not a systematic review or novelty certification.",
+  "retrieval": "Web search/open/find; primary text portions inspected, no competing implementation executed. Registry stores metadata and locators, not copies of papers.",
+  "recorded_query_set": [
+    "Go \"Gosched\" \"quota\" latency",
+    "CPU quota burst queue deadline performance model",
+    "container latency prediction PerfSim queueing CPU limit",
+    "\"Gosched\" \"tail latency\" scheduler",
+    "\"Sizing multi-tier systems with temporal dependence\"",
+    "\"CPU-Limits kill Performance\"",
+    "\"Gosched\" \"argos-edge\"",
+    "CPU quota latency scheduler research 2026 SchedBlame",
+    "\"Reducing Tail Latencies Through Environment\"",
+    "site:github.com/cmos486/argos-edge \"v1.3.41.1\"",
+    "site:cmos486.github.io/argos-edge \"Gosched\""
+  ],
+  "query_record_limit": "Explicit final query set retained here. Earlier exploratory searches also informed source selection; this is not a complete export of every search/result.",
+  "sources": [
+    {
+      "id": "P01",
+      "title": "Container-aware GOMAXPROCS; runtime.Gosched documentation",
+      "date_or_version": "2025 blog; documentation accessed 2026-10-07",
+      "type": "official documentation/engineering",
+      "urls": [
+        "https://go.dev/blog/container-aware-gomaxprocs",
+        "https://pkg.go.dev/runtime#Gosched"
+      ],
+      "reviewed": "Blog parallelism versus throughput and explicit settings; Gosched API text",
+      "coverage": "Relevant documentation text"
+    },
+    {
+      "id": "P02",
+      "title": "uber-go/automaxprocs",
+      "date_or_version": "README accessed 2026-10-07",
+      "type": "author-maintained implementation/benchmark",
+      "urls": [
+        "https://github.com/uber-go/automaxprocs"
+      ],
+      "reviewed": "README performance table and quota-aware purpose",
+      "coverage": "README only; benchmark protocol/version underspecified"
+    },
+    {
+      "id": "P03",
+      "title": "Reducing Tail Latencies Through Environment- and Neighbour-aware Thread Management",
+      "authors": "Andrew Jeffery; Chris Jensen; Richard Mortier",
+      "date_or_version": "arXiv:2407.11582v1, 2024",
+      "type": "preprint",
+      "urls": [
+        "https://arxiv.org/html/2407.11582v1"
+      ],
+      "reviewed": "Sections 2-5, including queue-latency treatment and experiment setup",
+      "coverage": "Relevant full-text sections"
+    },
+    {
+      "id": "P04",
+      "title": "CPU-Limits kill Performance: Time to rethink Resource Control",
+      "authors": "Chirag C Shetty et al.",
+      "date_or_version": "SoCC 2025",
+      "type": "conference paper",
+      "doi": "10.1145/3772052.3772219",
+      "urls": [
+        "https://sarthak-chakraborty.github.io/publications/YAAS_SoCC25.pdf"
+      ],
+      "reviewed": "Introduction, section 3 especially 3.2, conclusions",
+      "coverage": "Relevant full-text sections"
+    },
+    {
+      "id": "P05",
+      "title": "Work Stealing for Interactive Services to Meet Target Latency",
+      "authors": "Jing Li et al.",
+      "date_or_version": "PPoPP 2016",
+      "type": "conference paper",
+      "doi": "10.1145/2851141.2851151",
+      "urls": [
+        "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/06/paper-1.pdf"
+      ],
+      "reviewed": "Abstract, introduction, tail-control design and evaluation scope",
+      "coverage": "Relevant full-text sections"
+    },
+    {
+      "id": "P06",
+      "title": "Fairness in Responsive Parallelism",
+      "authors": "Stefan K. Muller; Sam Westrick; Umut A. Acar",
+      "date_or_version": "PACMPL 3, ICFP, article 81, 2019",
+      "type": "conference journal paper",
+      "doi": "10.1145/3341685",
+      "urls": [
+        "https://cs.nyu.edu/~shw8119/19/icfp-fairness.pdf"
+      ],
+      "reviewed": "Abstract and introduction",
+      "coverage": "Conceptual screen; proofs and full evaluation not audited"
+    },
+    {
+      "id": "P07",
+      "title": "hnes/cpuworker",
+      "date_or_version": "README accessed 2026-10-07",
+      "type": "prototype implementation",
+      "urls": [
+        "https://github.com/hnes/cpuworker"
+      ],
+      "reviewed": "README status, demo, concurrency restrictions and AWS setup",
+      "coverage": "README only; internals not audited"
+    },
+    {
+      "id": "P08",
+      "title": "Autothrottle: A Practical Bi-Level Approach to Resource Management for SLO-Targeted Microservices",
+      "authors": "Zibo Wang et al.",
+      "date_or_version": "NSDI 2024",
+      "type": "conference paper",
+      "urls": [
+        "https://www.usenix.org/system/files/nsdi24-wang-zibo.pdf"
+      ],
+      "reviewed": "Sections 1-3: application SLO and service-level CPU/throttle feedback",
+      "coverage": "Relevant full-text design sections; not reproduced"
+    },
+    {
+      "id": "P09",
+      "title": "Sizing multi-tier systems with temporal dependence: benchmarks and analytic models",
+      "authors": "Ningfang Mi; Giuliano Casale; Ludmila Cherkasova; Evgenia Smirni",
+      "date_or_version": "JISA 1, 117-134, 2010",
+      "type": "journal paper",
+      "doi": "10.1007/s13174-010-0012-9",
+      "urls": [
+        "https://link.springer.com/content/pdf/10.1007/s13174-010-0012-9.pdf",
+        "https://link.springer.com/article/10.1007/s13174-010-0012-9"
+      ],
+      "reviewed": "Sections 2-4; busy-period estimator, MAP parameterization and burst benchmarking",
+      "coverage": "Relevant full-text sections"
+    },
+    {
+      "id": "P10",
+      "title": "Strong Temporal Isolation Among Containers in OpenStack for NFV Services",
+      "authors": "Tommaso Cucinotta et al.",
+      "date_or_version": "TCC 11(1), 763-778, 2023",
+      "type": "journal paper",
+      "urls": [
+        "https://retis.santannapisa.it/people/nino/publication/TCC23.pdf"
+      ],
+      "reviewed": "Section 4.2 prediction assumptions, reservation contract, section 6 workload/evaluation setup",
+      "coverage": "Relevant full-text sections"
+    },
+    {
+      "id": "P11",
+      "title": "PerfSim: A Performance Simulator for Cloud Native Microservice Chains",
+      "authors": "Michel Gokan Khan; Javid Taheri; Auday Al-Dulaimy; Andreas Kassler",
+      "date_or_version": "TCC 11(2), 1395-1413, 2023; early online 2021",
+      "type": "journal paper; author-hosted accepted manuscript",
+      "doi": "10.1109/TCC.2021.3135757",
+      "urls": [
+        "https://www.es.mdu.se/pdf_publications/6526.pdf",
+        "https://www.perfsim.com/",
+        "https://pure.qub.ac.uk/en/publications/perfsim-a-performance-simulator-for-cloud-native-microservice-cha/"
+      ],
+      "reviewed": "Section 3.1.4 CPU limits/shares, section 6 prediction metrics and fluctuations",
+      "coverage": "Relevant accepted-manuscript sections; final publication metadata cross-checked"
+    },
+    {
+      "id": "P12",
+      "title": "Mitigating Unnecessary Throttling in Linux CFS Bandwidth Control",
+      "authors": "Odin Ugedal; Rakesh Kumar",
+      "date_or_version": "SBAC-PAD 2022",
+      "type": "conference paper",
+      "urls": [
+        "https://rakeshk.folk.ntnu.no/pubs/SBACPAD22.pdf"
+      ],
+      "reviewed": "Abstract, bandwidth accounting/synchronization discussion and experimental environment",
+      "coverage": "Relevant full-text sections"
+    },
+    {
+      "id": "P13",
+      "title": "Harvesting Spare CPU Resources in Container Systems",
+      "authors": "Hall et al.",
+      "date_or_version": "NSDI 2026",
+      "type": "conference paper",
+      "urls": [
+        "https://www.usenix.org/system/files/nsdi26-hall.pdf"
+      ],
+      "reviewed": "Sections 4-5, affinity/monitoring and cgroup comparison, workload/environment setup",
+      "coverage": "Relevant full-text sections"
+    },
+    {
+      "id": "P14",
+      "title": "SchedBlame: Who Ran While You Waited?",
+      "authors": "Hao Li; Tonghao Zhang; Honglei Wang",
+      "date_or_version": "arXiv:2609.02052v1, September 2026",
+      "type": "preprint",
+      "urls": [
+        "https://arxiv.org/html/2609.02052v1"
+      ],
+      "reviewed": "Abstract/design, demand decomposition, section 9 preliminary evaluation and planned accuracy tests",
+      "coverage": "Relevant full-text sections; evaluation maturity distinguished"
+    },
+    {
+      "id": "P15",
+      "title": "Go issue 73964",
+      "date_or_version": "Issue body/status accessed 2026-10-07",
+      "type": "upstream issue report",
+      "urls": [
+        "https://github.com/golang/go/issues/73964"
+      ],
+      "reviewed": "Reported runnable/timer starvation case and current issue labels/status",
+      "coverage": "Issue body/status, not complete discussion or patch history"
+    },
+    {
+      "id": "P16",
+      "title": "CFS Bandwidth Control",
+      "date_or_version": "Kernel documentation accessed 2026-10-07",
+      "type": "official documentation",
+      "urls": [
+        "https://docs.kernel.org/scheduler/sched-bwc.html"
+      ],
+      "reviewed": "Quota/period, runtime slices, burst credits, statistics and hierarchy",
+      "coverage": "Documentation; listed control files concern cgroup v1"
+    },
+    {
+      "id": "P17",
+      "title": "argos-edge v1.3.41.1: CSV export by keyset, streamed, paced",
+      "date_or_version": "Release notes report deployment 2026-09-26; accessed 2026-10-07",
+      "type": "author engineering report",
+      "urls": [
+        "https://cmos486.github.io/argos-edge/release-notes/v1.3.41.1/"
+      ],
+      "reviewed": "Gosched/pacing comparison, measurement table and retained latency-gate failure",
+      "coverage": "Substantive primary text returned by domain-filtered search; not independently reproduced",
+      "retrieval_note": "Direct open initially failed with cache miss; subsequent search returned full substantive report text"
+    },
+    {
+      "id": "P18",
+      "title": "Unfair by design: eBPF-based scheduling of mixed database workloads",
+      "authors": "Carl-Elliott Bilodeau-Savaria et al.",
+      "date_or_version": "arXiv:2605.02377v1, May 2026",
+      "type": "preprint",
+      "urls": [
+        "https://arxiv.org/html/2605.02377v1"
+      ],
+      "reviewed": "Abstract and introduction",
+      "coverage": "Adjacent-work screen only; full design/evaluation not assessed"
+    },
+    {
+      "id": "P19",
+      "title": "Eunomia: Preemption-based and QoS-aware Core Allocation in Oversubscribed Cloud",
+      "authors": "Yunda Guo et al.",
+      "date_or_version": "DATE 2026",
+      "type": "conference paper",
+      "urls": [
+        "https://past.date-conference.com/proceedings-archive/2026/DATA/1135.pdf"
+      ],
+      "reviewed": "Abstract and introduction",
+      "coverage": "Adjacent-work screen only; full design/evaluation not assessed"
+    }
+  ],
+  "retrieval_gaps": [
+    {
+      "title": "Model-Driven System Capacity Planning Under Workload Burstiness",
+      "date_or_version": "TC 2010",
+      "doi": "10.1109/TC.2009.135",
+      "status": "Metadata lead only; attempted author-hosted retrieval failed; no full-text contribution findings assigned. Related retrieved paper P09 used instead."
+    }
+  ],
+  "limits": [
+    "Selected sections only; review depth differs by source.",
+    "No matching competitor implementation or baseline reproduction.",
+    "No proof that no prior work covers the exact proposed contribution.",
+    "Mutable web/README/issue sources are not frozen publication artifacts.",
+    "No new experiment or host modification; V22 remains unimplemented/unrun."
+  ]
+}

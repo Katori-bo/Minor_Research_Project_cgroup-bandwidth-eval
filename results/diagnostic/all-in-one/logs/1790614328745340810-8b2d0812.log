@@ -1,0 +1,80 @@
+
+[2026-09-28T22:22:08.930799+05:30] python-regression-tests: /usr/bin/python3 -m unittest discover -s /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic -p 'test_*.py' -v
+test_client_launch_preserves_flags_after_trace_toggle (test_diagnostic.DiagnosticPlanTests.test_client_launch_preserves_flags_after_trace_toggle) ... ok
+test_frozen_matrix_and_pilot (test_diagnostic.DiagnosticPlanTests.test_frozen_matrix_and_pilot) ... ok
+test_interaction_uses_trials_as_units (test_diagnostic.DiagnosticPlanTests.test_interaction_uses_trials_as_units) ... ok
+test_pilot_gate_rejects_missing_timing_and_excess_overhead (test_diagnostic.DiagnosticPlanTests.test_pilot_gate_rejects_missing_timing_and_excess_overhead) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.233s
+
+OK
+
+[2026-09-28T22:22:09.277346+05:30] pilot-collection: /usr/bin/python3 -u /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py resume --session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one/pilot
+SESSION: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one/pilot
+All trials already validate; no workload launched.
+
+[2026-09-28T22:22:09.583108+05:30] pilot-analysis: /usr/bin/python3 /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/analyze.py /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one/pilot
+Validated 7 trials: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one/pilot/analysis
+
+[2026-09-28T22:22:10.071493+05:30] full-collection: /usr/bin/python3 -u /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py resume --session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one/full
+SESSION: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one/full
+Settling: at least 600s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 72.5}
+Settling 60s: {'k10temp:Tctl': 45.125}
+Settling 120s: {'k10temp:Tctl': 42.875}
+Settling 180s: {'k10temp:Tctl': 42.5}
+Settling 241s: {'k10temp:Tctl': 44.25}
+Settling 301s: {'k10temp:Tctl': 42.75}
+Settling 361s: {'k10temp:Tctl': 42.5}
+Settling 421s: {'k10temp:Tctl': 42.125}
+Settling 481s: {'k10temp:Tctl': 42.0}
+Settling 541s: {'k10temp:Tctl': 41.875}
+Settling 601s: {'k10temp:Tctl': 41.875}
+Settling 661s: {'k10temp:Tctl': 41.625}
+Settling 721s: {'k10temp:Tctl': 41.625}
+Settling 782s: {'k10temp:Tctl': 41.5}
+Settling 842s: {'k10temp:Tctl': 41.375}
+Settling 902s: {'k10temp:Tctl': 41.25}
+Settling 962s: {'k10temp:Tctl': 41.125}
+Settling 1022s: {'k10temp:Tctl': 41.25}
+Settling 1082s: {'k10temp:Tctl': 41.25}
+Settling 1143s: {'k10temp:Tctl': 41.125}
+Settling 1203s: {'k10temp:Tctl': 41.0}
+Settling 1263s: {'k10temp:Tctl': 41.0}
+Settling 1323s: {'k10temp:Tctl': 41.0}
+Settling 1383s: {'k10temp:Tctl': 41.0}
+Settling 1444s: {'k10temp:Tctl': 41.0}
+Settling 1504s: {'k10temp:Tctl': 41.0}
+Settling 1564s: {'k10temp:Tctl': 41.0}
+Settling 1624s: {'k10temp:Tctl': 40.875}
+Settling 1685s: {'k10temp:Tctl': 40.875}
+Settling 1745s: {'k10temp:Tctl': 40.875}
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py", line 560, in <module>
+    main()
+    ~~~~^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py", line 546, in main
+    old.prepare_environment(session)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/scripts/experiment.py", line 127, in prepare_environment
+    settle(session / f'resume-settling-{time.time_ns()}.json', env['baseline_c'],
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           initial_idle=True, expected_power=env['power_settings'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/scripts/experiment.py", line 115, in settle
+    raise RuntimeError('Temperature did not stabilize within the protocol timeout; inspect settling log.')
+RuntimeError: Temperature did not stabilize within the protocol timeout; inspect settling log.
+
+STOPPED (failed): full-collection exited with code 1; see this launch log for the reason
+Evidence preserved in /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one.
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 141, in run_worker
+    execute(directory, lock)
+    ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 119, in execute
+    stage_command(directory, 'full-collection', collection_command(full, pilot_session=pilot), lock)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 42, in stage_command
+    raise RuntimeError(f'{stage} exited with code {code}; see this launch log for the reason')
+RuntimeError: full-collection exited with code 1; see this launch log for the reason

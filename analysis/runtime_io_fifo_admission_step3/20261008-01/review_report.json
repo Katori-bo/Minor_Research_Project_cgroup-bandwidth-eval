@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-08T09:10:14.719616+00:00",
+  "step": 3,
+  "status": "Offline reduction/proof/verification/comparison completed; stronger-contribution gate not passed",
+  "correctness_milestone_passed": true,
+  "efficiency_gate_passed": false,
+  "novelty_established": false,
+  "originality_audit_complete": false,
+  "real_system_coverage_established": false,
+  "scientific_collection_launched": false,
+  "source_files_sha256": {
+    "analysis/finite_fifo_deadline_reference.py": "945f4f8c057878467cf25453d3cae1ab36313cf45814b08bf48b22acf3511fab",
+    "analysis/finite_fifo_deadline_symbolic_check.py": "013598120ba62af333caec1beb98a08393f7c7c341aa234732e4149b4f0d612f",
+    "analysis/finite_fifo_deadline_smt.py": "6e173fef05e96e325114151e98a25c900df81961b8ad0eb3e262d13ec6998c8d",
+    "analysis/finite_fifo_smt_requirements.txt": "2bc40e2fcd7a609ec720d16ae245d16061a265276184c9c9bb7460cc5a0e6d56",
+    "analysis/finite_fifo_deadline_admission.py": "4ee3b9acea9dbad06ba6729dd9df7c573e4e7b6a524791db88d4f2dac0f479ee",
+    "analysis/finite_fifo_deadline_compact_smt.py": "f42849cb4453b8af33d443181fb6eb0dd96603291382ece7cc627d4146998c4e",
+    "analysis/test_finite_fifo_deadline_admission.py": "aedbc7fb857b1b1f0429cce4f992ee025a36e537e0b265268fe6313ad10e4dee",
+    "analysis/compare_finite_fifo_step3.py": "461364d298d1bb020e7fd15851f1ac827d0449db053a9ea5dfec52cabaca4f18",
+    "analysis/finite_fifo_deadline_shortcut.py": "0e72c9b102f5f197b2d64692b6fa299a54c750b0b4d8d2a8c3b2f72c56eec443",
+    "analysis/test_finite_fifo_deadline_shortcut.py": "aa57ab182e9aa943cae2f094462f4910143e89a14dd69dd121fe9b5ff085d42d",
+    "analysis/check_fifo_step3_shortcuts.py": "8912284cb2aa30340dc6939f365ef3790d5de5a9fc995123950c30fc4966bd42",
+    "docs/runtime_io_fifo_admission_step3_20261008.md": "f47e184e70d6be936cfb074b947b3d086ceae799e9c194cfc8c1e99c27d1ddef"
+  },
+  "tests": {
+    "command": "/tmp/fifo-step2-venv/bin/python3 -m unittest discover -s analysis -p test_finite_fifo_deadline_admission.py -v",
+    "exit_code": 0,
+    "tests_passed": 8,
+    "reported_seconds": 4.585,
+    "provenance": "completed tool session 37389; tests not rerun by packaging",
+    "compared_problems": 837,
+    "comparisons": {
+      "exhaustive": 672,
+      "seeded_rational": 150,
+      "directed": 10,
+      "deadline_invariance": 4,
+      "scale_origin": 1
+    },
+    "whole_region_smt_checks": 59,
+    "seeds": [
+      810202604,
+      810202605
+    ],
+    "compact_smt_compared_problems": 41
+  },
+  "shortcut_tests": {
+    "command": "/tmp/fifo-step2-venv/bin/python3 -m unittest discover -s analysis -p test_finite_fifo_deadline_shortcut.py -v",
+    "exit_code": 0,
+    "tests_passed": 2,
+    "reported_seconds": 0.138,
+    "provenance": "completed exec d10180",
+    "exhaustive_problems": 420,
+    "directed_controls": 1
+  },
+  "predeclared_comparison": {
+    "cases": 20,
+    "runs": 252,
+    "exact_runs": 180,
+    "incomplete_runs": 72,
+    "design_sha256": "b37bedb9e99dc0a18bb27e59fd2fc8a74aa2a8085c98756252754f68c9491f7d",
+    "all_completed_extrema_agree": true,
+    "candidate_completed": 54,
+    "candidate_hard_timeouts": 6,
+    "comparable_candidate_reachable_cases": 17,
+    "candidate_faster": 8,
+    "candidate_slower": 9,
+    "candidate_fewer_regions": 17
+  },
+  "post_pilot_shortcut": {
+    "separate_diagnostic": true,
+    "runs": 63,
+    "original_cases": 20,
+    "certified_original_cases": 20,
+    "cross_method_agreement_cases": 18,
+    "unresolved_control": {
+      "arrivals": [
+        "0",
+        "0",
+        "1/5",
+        "2/5"
+      ],
+      "capacity": 3,
+      "deadline": "1",
+      "service_interval": [
+        "1/2",
+        "4/5"
+      ],
+      "exact_failure_range": [
+        2,
+        3
+      ],
+      "shortcut_status": "undetermined"
+    }
+  },
+  "preservation": {
+    "protected_files_checked": 1911,
+    "mismatches": [],
+    "prior_seals": [
+      {
+        "directory": "analysis/runtime_io_deadline_guard_exploration/20261008-review",
+        "files_checked": 8,
+        "mismatches": []
+      },
+      {
+        "directory": "analysis/runtime_io_originality_review/20261008-01",
+        "files_checked": 5,
+        "mismatches": []
+      },
+      {
+        "directory": "analysis/runtime_io_fifo_reference/20261008-01",
+        "files_checked": 15,
+        "mismatches": []
+      },
+      {
+        "directory": "analysis/runtime_io_fifo_smt_baseline/20261008-01",
+        "files_checked": 44,
+        "mismatches": []
+      }
+    ],
+    "documents_unchanged": {
+      "docs/runtime_io_short_working_draft_v4.md": true,
+      "docs/runtime_io_load_dependent_baseline_assessment_20261008.md": true
+    },
+    "scientific_collection_launched": false
+  },
+  "interpretation": "Correct admission-only reduction; mixed runtime and standard mathematical building blocks. Every pilot extrema problem has a simple certified shortcut, so these cases do not demonstrate the need for full symbolic analysis.",
+  "complexity": "O(N*R*(Hmax+1)), at worst O(N\u00b2R), with R=O(N\u00b3); coarse O(N\u2075) bound does not improve the O(N\u2074) reference bound; rational bit costs excluded.",
+  "next_gate": "Predeclare rejecting traces where the certified shortcut is unresolved; establish benefit versus reachable analysis and audit the precise reduction against closest prior formulations before any collection.",
+  "limitations": [
+    "small synthetic families",
+    "three repeats",
+    "uncontrolled desktop host",
+    "output differences",
+    "solver-only memory not isolated",
+    "timeouts are budget effects",
+    "no published tool reproduction",
+    "no real-system coverage",
+    "Exact service model only",
+    "Written proof is not machine checked",
+    "Focused screen is not full forward-citation audit"
+  ]
+}

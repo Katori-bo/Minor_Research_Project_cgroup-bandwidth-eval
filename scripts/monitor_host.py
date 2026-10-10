@@ -81,6 +81,40 @@ def read_cgroup_cpu_stat(cgroup_rel_path):
                     stats[parts[0]] = int(parts[1])
     return stats
 
+
+def process_snapshot(proc_root='/proc'):
+    """Process CPU ticks, keyed by PID + start time to avoid PID reuse errors.
+
+    Short-lived/exited processes can be missed. Last CPU is a location sample,
+    not attribution of the entire interval's CPU time to that core.
+    """
+    result = {}
+    for path in glob.glob(os.path.join(proc_root, '[0-9]*', 'stat')):
+        try:
+            with open(path) as stream:
+                line = stream.read()
+            left, right = line.index('('), line.rindex(')')
+            pid, comm = int(line[:left].strip()), line[left+1:right]
+            fields = line[right+2:].split()  # begins at /proc stat field 3
+            start = int(fields[19])
+            result[(pid, start)] = dict(pid=pid, start_ticks=start, comm=comm,
+                cpu_ticks=int(fields[11])+int(fields[12]), last_cpu=int(fields[36]))
+        except (OSError, ValueError, IndexError):
+            continue  # Process exited or is not readable; never invent a delta.
+    return result
+
+
+def process_deltas(previous, current, elapsed, ticks_per_second):
+    rows = []
+    for key, record in current.items():
+        if key not in previous: continue
+        ticks = record['cpu_ticks'] - previous[key]['cpu_ticks']
+        if ticks < 0: continue
+        seconds = ticks / ticks_per_second
+        rows.append(dict(record, cpu_delta_ticks=ticks, cpu_delta_sec=seconds,
+                         cpu_pct_one_core=100*seconds/elapsed))
+    return sorted(rows, key=lambda r: (-r['cpu_delta_ticks'], r['pid']))
+
 def main():
     global running
     parser = argparse.ArgumentParser(description="Host and Cgroup Resource Sampler")
@@ -91,7 +125,9 @@ def main():
 
     records = []
     prev_cpu_times = get_cpu_times()
-    prev_time = time.time()
+    prev_processes = process_snapshot()
+    prev_time = time.monotonic()
+    ticks_per_second = os.sysconf('SC_CLK_TCK')
 
     try:
         while running:
@@ -100,6 +136,9 @@ def main():
                 break
             now = time.time()
             cur_cpu_times = get_cpu_times()
+            cur_processes = process_snapshot()
+            sample_time = time.monotonic()
+            process_interval = sample_time - prev_time
 
             util = {}
             for cpu_name, cur_vals in cur_cpu_times.items():
@@ -114,6 +153,10 @@ def main():
 
             entry = {
                 "timestamp": round(now, 3),
+                "process_interval_sec": process_interval,
+                "process_cpu_deltas": process_deltas(prev_processes, cur_processes, process_interval, ticks_per_second),
+                "chatgpt_present": any(r["comm"] == "ChatGPT" for r in cur_processes.values()),
+                "process_snapshot_count": len(cur_processes),
                 "cpu_util_pct": util,
                 "temps_c": get_temperatures(),
                 "freqs_mhz": get_frequencies(),
@@ -129,7 +172,8 @@ def main():
 
             records.append(entry)
             prev_cpu_times = cur_cpu_times
-            prev_time = now
+            prev_time = sample_time
+            prev_processes = cur_processes
     except Exception as exc:
         print(f'Monitor failed: {exc}', file=sys.stderr)
         raise

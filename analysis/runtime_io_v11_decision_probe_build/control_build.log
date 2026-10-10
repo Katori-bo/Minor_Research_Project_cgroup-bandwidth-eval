@@ -1,0 +1,26 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  855.6kB
+Step 1/17 : ARG COMPILER_IMAGE
+Step 2/17 : FROM ${COMPILER_IMAGE} AS control-build
+ ---> 2389ebfa5b7f
+Step 3/17 : ENV CGO_ENABLED=0 GOTOOLCHAIN=local GOENV=off
+ ---> Using cache
+ ---> 3bfcfd36fa8e
+Step 4/17 : COPY control_runtime/ /usr/local/go/src/runtime/
+ ---> 4c410224eb9b
+Step 5/17 : WORKDIR /src
+ ---> Running in 95bc213eba9d
+ ---> Removed intermediate container 95bc213eba9d
+ ---> e69ec4bad73b
+Step 6/17 : COPY service/ ./
+ ---> c5ae02894b14
+Step 7/17 : RUN go test -v runtime -run '^(TestResearchPendingPreemptFairQueue|TestSchedLocalQueue|TestSchedLocalQueueSteal|TestSchedLocalQueueEmpty|TestPreemption|TestPreemptionGC|TestPreemptionAfterSyscall)$' -count=1 -timeout=180s && go test -v -count=1 ./... && go build -trimpath -o /server .
+ ---> Running in c5eb5af94c20
+[91m# runtime [runtime.test]
+/usr/local/go/src/runtime/proc.go:3454:33: researchDecisionStarted.CompareAndSwap undefined (type atomic.Bool has no field or method CompareAndSwap)
+[0mFAIL	runtime [build failed]
+FAIL
+The command '/bin/sh -c go test -v runtime -run '^(TestResearchPendingPreemptFairQueue|TestSchedLocalQueue|TestSchedLocalQueueSteal|TestSchedLocalQueueEmpty|TestPreemption|TestPreemptionGC|TestPreemptionAfterSyscall)$' -count=1 -timeout=180s && go test -v -count=1 ./... && go build -trimpath -o /server .' returned a non-zero code: 1

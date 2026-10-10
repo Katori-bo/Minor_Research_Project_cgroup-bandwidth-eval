@@ -1,0 +1,863 @@
+{
+  "completion_seal_sha256": "a6bbd11a48c42ab01a24841ee9b230ef4bfd02c8456f514429ef5ed4818917d3",
+  "review_script_sha256": "41b61696cf6854274fd18b48be9487bdc30dcbbf7197eb32975de772f56422b0",
+  "sealed_evidence_verified": true,
+  "arms": {
+    "legacy": {
+      "offered": 27172,
+      "timely_500": 18431,
+      "failures": 0,
+      "late_success_work_before": 2021,
+      "timely_500_fraction": 0.6783085529221257,
+      "late_work_before_share_of_misses": 0.2312092437936163
+    },
+    "locked": {
+      "offered": 27172,
+      "timely_500": 16242,
+      "failures": 0,
+      "late_success_work_before": 1715,
+      "timely_500_fraction": 0.5977476814367731,
+      "late_work_before_share_of_misses": 0.15690759377859104
+    },
+    "bounded": {
+      "offered": 27172,
+      "timely_500": 16222,
+      "failures": 0,
+      "late_success_work_before": 1687,
+      "timely_500_fraction": 0.5970116296187251,
+      "late_work_before_share_of_misses": 0.15406392694063928
+    }
+  },
+  "trials": [
+    {
+      "run_id": "completion_b1_legacy",
+      "rep": 1,
+      "arm": "legacy",
+      "offered": 6793,
+      "timely_500": 4363,
+      "failures": 0,
+      "late_success_work_before": 506,
+      "cpu_usec_per_completed_work": 3667.747387016046,
+      "p99_e2e_ms": 884.955463,
+      "p99_post_work_ms": 162.799486,
+      "clock_uncertainty_ns": 151524,
+      "accepted_settling_means_c": {
+        "k10temp:Tctl": 60.125
+      },
+      "monitor_temperature_ranges_c": {
+        "k10temp:temp1_input": {
+          "minimum": 69.375,
+          "maximum": 75.875
+        },
+        "thermal_zone0": {
+          "minimum": 46.0,
+          "maximum": 48.0
+        }
+      },
+      "publication_deadline_classes_for_late_work_before": {
+        "unobserved": 506
+      }
+    },
+    {
+      "run_id": "completion_b1_locked",
+      "rep": 1,
+      "arm": "locked",
+      "offered": 6793,
+      "timely_500": 3972,
+      "failures": 0,
+      "late_success_work_before": 431,
+      "cpu_usec_per_completed_work": 3730.3304872663034,
+      "p99_e2e_ms": 1007.793713,
+      "p99_post_work_ms": 163.584663,
+      "clock_uncertainty_ns": 132438,
+      "accepted_settling_means_c": {
+        "k10temp:Tctl": 57.94230769230769
+      },
+      "monitor_temperature_ranges_c": {
+        "k10temp:temp1_input": {
+          "minimum": 69.0,
+          "maximum": 74.75
+        },
+        "thermal_zone0": {
+          "minimum": 45.0,
+          "maximum": 47.0
+        }
+      },
+      "publication_deadline_classes_for_late_work_before": {
+        "certainly_before": 431
+      },
+      "intervals": {
+        "completion_to_publish_start": {
+          "count": 6793,
+          "p50_ms": 0.00044,
+          "p99_ms": 0.001102,
+          "max_ms": 0.036829,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_lock_wait": {
+          "count": 6793,
+          "p50_ms": 5e-05,
+          "p99_ms": 0.00011,
+          "max_ms": 0.004338,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_held": {
+          "count": 6793,
+          "p50_ms": 0.0001,
+          "p99_ms": 0.000521,
+          "max_ms": 0.036648,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "publication_bracket": {
+          "count": 6793,
+          "p50_ms": 0.000601,
+          "p99_ms": 0.001674,
+          "max_ms": 0.007043,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "publication_to_resume_lower": {
+          "count": 6793,
+          "p50_ms": 14.637665,
+          "p99_ms": 163.584092,
+          "max_ms": 183.866156,
+          "over_1ms": 4287,
+          "over_50ms": 3010
+        }
+      }
+    },
+    {
+      "run_id": "completion_b1_bounded",
+      "rep": 1,
+      "arm": "bounded",
+      "offered": 6793,
+      "timely_500": 3911,
+      "failures": 0,
+      "late_success_work_before": 427,
+      "cpu_usec_per_completed_work": 3734.6973354924185,
+      "p99_e2e_ms": 1010.443893,
+      "p99_post_work_ms": 162.860997,
+      "clock_uncertainty_ns": 120536,
+      "accepted_settling_means_c": {
+        "k10temp:Tctl": 57.26923076923077
+      },
+      "monitor_temperature_ranges_c": {
+        "k10temp:temp1_input": {
+          "minimum": 68.125,
+          "maximum": 74.5
+        },
+        "thermal_zone0": {
+          "minimum": 44.0,
+          "maximum": 45.0
+        }
+      },
+      "publication_deadline_classes_for_late_work_before": {
+        "certainly_before": 427
+      },
+      "intervals": {
+        "completion_to_publish_start": {
+          "count": 6793,
+          "p50_ms": 0.000481,
+          "p99_ms": 0.001132,
+          "max_ms": 0.007244,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_lock_wait": {
+          "count": 6793,
+          "p50_ms": 5e-05,
+          "p99_ms": 0.00011,
+          "max_ms": 0.006702,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_held": {
+          "count": 6793,
+          "p50_ms": 0.00014,
+          "p99_ms": 0.000531,
+          "max_ms": 0.00558,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "publication_bracket": {
+          "count": 6793,
+          "p50_ms": 0.000602,
+          "p99_ms": 0.001763,
+          "max_ms": 101.321813,
+          "over_1ms": 1,
+          "over_50ms": 1
+        },
+        "publication_to_resume_lower": {
+          "count": 6793,
+          "p50_ms": 14.381667,
+          "p99_ms": 162.860155,
+          "max_ms": 171.896309,
+          "over_1ms": 4270,
+          "over_50ms": 2993
+        }
+      }
+    },
+    {
+      "run_id": "completion_b2_bounded",
+      "rep": 2,
+      "arm": "bounded",
+      "offered": 6793,
+      "timely_500": 4094,
+      "failures": 0,
+      "late_success_work_before": 429,
+      "cpu_usec_per_completed_work": 3708.9387604887384,
+      "p99_e2e_ms": 970.329748,
+      "p99_post_work_ms": 162.137495,
+      "clock_uncertainty_ns": 131807,
+      "accepted_settling_means_c": {
+        "k10temp:Tctl": 56.94230769230769
+      },
+      "monitor_temperature_ranges_c": {
+        "k10temp:temp1_input": {
+          "minimum": 68.25,
+          "maximum": 74.375
+        },
+        "thermal_zone0": {
+          "minimum": 44.0,
+          "maximum": 46.0
+        }
+      },
+      "publication_deadline_classes_for_late_work_before": {
+        "certainly_before": 429
+      },
+      "intervals": {
+        "completion_to_publish_start": {
+          "count": 6793,
+          "p50_ms": 0.000501,
+          "p99_ms": 0.001162,
+          "max_ms": 0.006182,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_lock_wait": {
+          "count": 6793,
+          "p50_ms": 5e-05,
+          "p99_ms": 0.00011,
+          "max_ms": 0.004458,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_held": {
+          "count": 6793,
+          "p50_ms": 0.000141,
+          "p99_ms": 0.000531,
+          "max_ms": 0.004048,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "publication_bracket": {
+          "count": 6793,
+          "p50_ms": 0.000621,
+          "p99_ms": 0.001824,
+          "max_ms": 150.133436,
+          "over_1ms": 1,
+          "over_50ms": 1
+        },
+        "publication_to_resume_lower": {
+          "count": 6793,
+          "p50_ms": 11.229781,
+          "p99_ms": 162.136223,
+          "max_ms": 190.519557,
+          "over_1ms": 4127,
+          "over_50ms": 2894
+        }
+      }
+    },
+    {
+      "run_id": "completion_b2_locked",
+      "rep": 2,
+      "arm": "locked",
+      "offered": 6793,
+      "timely_500": 4089,
+      "failures": 0,
+      "late_success_work_before": 441,
+      "cpu_usec_per_completed_work": 3711.5642573237155,
+      "p99_e2e_ms": 967.786237,
+      "p99_post_work_ms": 161.703124,
+      "clock_uncertainty_ns": 183454,
+      "accepted_settling_means_c": {
+        "k10temp:Tctl": 56.94230769230769
+      },
+      "monitor_temperature_ranges_c": {
+        "k10temp:temp1_input": {
+          "minimum": 68.375,
+          "maximum": 74.875
+        },
+        "thermal_zone0": {
+          "minimum": 44.0,
+          "maximum": 47.0
+        }
+      },
+      "publication_deadline_classes_for_late_work_before": {
+        "certainly_before": 441
+      },
+      "intervals": {
+        "completion_to_publish_start": {
+          "count": 6793,
+          "p50_ms": 0.000421,
+          "p99_ms": 0.001092,
+          "max_ms": 0.039053,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_lock_wait": {
+          "count": 6793,
+          "p50_ms": 5e-05,
+          "p99_ms": 0.00011,
+          "max_ms": 0.000721,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_held": {
+          "count": 6793,
+          "p50_ms": 0.000101,
+          "p99_ms": 0.000521,
+          "max_ms": 0.038873,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "publication_bracket": {
+          "count": 6793,
+          "p50_ms": 0.000581,
+          "p99_ms": 0.001593,
+          "max_ms": 0.0107,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "publication_to_resume_lower": {
+          "count": 6793,
+          "p50_ms": 9.546161,
+          "p99_ms": 161.702182,
+          "max_ms": 174.989201,
+          "over_1ms": 4052,
+          "over_50ms": 2815
+        }
+      }
+    },
+    {
+      "run_id": "completion_b2_legacy",
+      "rep": 2,
+      "arm": "legacy",
+      "offered": 6793,
+      "timely_500": 4683,
+      "failures": 0,
+      "late_success_work_before": 470,
+      "cpu_usec_per_completed_work": 3635.2355365817752,
+      "p99_e2e_ms": 838.331152,
+      "p99_post_work_ms": 161.062886,
+      "clock_uncertainty_ns": 123361,
+      "accepted_settling_means_c": {
+        "k10temp:Tctl": 57.44230769230769
+      },
+      "monitor_temperature_ranges_c": {
+        "k10temp:temp1_input": {
+          "minimum": 68.375,
+          "maximum": 74.75
+        },
+        "thermal_zone0": {
+          "minimum": 44.0,
+          "maximum": 46.0
+        }
+      },
+      "publication_deadline_classes_for_late_work_before": {
+        "unobserved": 470
+      }
+    },
+    {
+      "run_id": "completion_b3_locked",
+      "rep": 3,
+      "arm": "locked",
+      "offered": 6793,
+      "timely_500": 4166,
+      "failures": 0,
+      "late_success_work_before": 424,
+      "cpu_usec_per_completed_work": 3707.0409244810835,
+      "p99_e2e_ms": 954.650165,
+      "p99_post_work_ms": 161.25696,
+      "clock_uncertainty_ns": 124713,
+      "accepted_settling_means_c": {
+        "k10temp:Tctl": 57.21153846153846
+      },
+      "monitor_temperature_ranges_c": {
+        "k10temp:temp1_input": {
+          "minimum": 68.375,
+          "maximum": 75.0
+        },
+        "thermal_zone0": {
+          "minimum": 44.0,
+          "maximum": 47.0
+        }
+      },
+      "publication_deadline_classes_for_late_work_before": {
+        "certainly_before": 424
+      },
+      "intervals": {
+        "completion_to_publish_start": {
+          "count": 6793,
+          "p50_ms": 0.000501,
+          "p99_ms": 0.001242,
+          "max_ms": 0.06399,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_lock_wait": {
+          "count": 6793,
+          "p50_ms": 6e-05,
+          "p99_ms": 0.00011,
+          "max_ms": 0.039114,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_held": {
+          "count": 6793,
+          "p50_ms": 0.00012,
+          "p99_ms": 0.000561,
+          "max_ms": 0.063809,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "publication_bracket": {
+          "count": 6793,
+          "p50_ms": 0.000721,
+          "p99_ms": 0.001773,
+          "max_ms": 90.704998,
+          "over_1ms": 1,
+          "over_50ms": 1
+        },
+        "publication_to_resume_lower": {
+          "count": 6793,
+          "p50_ms": 10.707724,
+          "p99_ms": 161.256469,
+          "max_ms": 167.562228,
+          "over_1ms": 4129,
+          "over_50ms": 2768
+        }
+      }
+    },
+    {
+      "run_id": "completion_b3_legacy",
+      "rep": 3,
+      "arm": "legacy",
+      "offered": 6793,
+      "timely_500": 4631,
+      "failures": 0,
+      "late_success_work_before": 519,
+      "cpu_usec_per_completed_work": 3642.877815398204,
+      "p99_e2e_ms": 843.374601,
+      "p99_post_work_ms": 163.007856,
+      "clock_uncertainty_ns": 118041,
+      "accepted_settling_means_c": {
+        "k10temp:Tctl": 57.10576923076923
+      },
+      "monitor_temperature_ranges_c": {
+        "k10temp:temp1_input": {
+          "minimum": 68.0,
+          "maximum": 74.75
+        },
+        "thermal_zone0": {
+          "minimum": 44.0,
+          "maximum": 46.0
+        }
+      },
+      "publication_deadline_classes_for_late_work_before": {
+        "unobserved": 519
+      }
+    },
+    {
+      "run_id": "completion_b3_bounded",
+      "rep": 3,
+      "arm": "bounded",
+      "offered": 6793,
+      "timely_500": 4158,
+      "failures": 0,
+      "late_success_work_before": 424,
+      "cpu_usec_per_completed_work": 3701.369939643751,
+      "p99_e2e_ms": 959.828419,
+      "p99_post_work_ms": 162.06176,
+      "clock_uncertainty_ns": 136256,
+      "accepted_settling_means_c": {
+        "k10temp:Tctl": 57.31730769230769
+      },
+      "monitor_temperature_ranges_c": {
+        "k10temp:temp1_input": {
+          "minimum": 68.5,
+          "maximum": 75.125
+        },
+        "thermal_zone0": {
+          "minimum": 44.0,
+          "maximum": 46.0
+        }
+      },
+      "publication_deadline_classes_for_late_work_before": {
+        "certainly_before": 424
+      },
+      "intervals": {
+        "completion_to_publish_start": {
+          "count": 6793,
+          "p50_ms": 0.000591,
+          "p99_ms": 0.001303,
+          "max_ms": 90.966037,
+          "over_1ms": 1,
+          "over_50ms": 1
+        },
+        "record_lock_wait": {
+          "count": 6793,
+          "p50_ms": 6e-05,
+          "p99_ms": 0.00011,
+          "max_ms": 0.003887,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_held": {
+          "count": 6793,
+          "p50_ms": 0.0002,
+          "p99_ms": 0.000611,
+          "max_ms": 90.965746,
+          "over_1ms": 1,
+          "over_50ms": 1
+        },
+        "publication_bracket": {
+          "count": 6793,
+          "p50_ms": 0.000792,
+          "p99_ms": 0.002214,
+          "max_ms": 0.196658,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "publication_to_resume_lower": {
+          "count": 6793,
+          "p50_ms": 9.905648,
+          "p99_ms": 162.000744,
+          "max_ms": 197.335814,
+          "over_1ms": 4144,
+          "over_50ms": 2619
+        }
+      }
+    },
+    {
+      "run_id": "completion_b4_bounded",
+      "rep": 4,
+      "arm": "bounded",
+      "offered": 6793,
+      "timely_500": 4059,
+      "failures": 0,
+      "late_success_work_before": 407,
+      "cpu_usec_per_completed_work": 3708.0540262034447,
+      "p99_e2e_ms": 971.157972,
+      "p99_post_work_ms": 161.760709,
+      "clock_uncertainty_ns": 98845,
+      "accepted_settling_means_c": {
+        "k10temp:Tctl": 57.29807692307692
+      },
+      "monitor_temperature_ranges_c": {
+        "k10temp:temp1_input": {
+          "minimum": 68.625,
+          "maximum": 74.75
+        },
+        "thermal_zone0": {
+          "minimum": 44.0,
+          "maximum": 46.0
+        }
+      },
+      "publication_deadline_classes_for_late_work_before": {
+        "certainly_before": 407
+      },
+      "intervals": {
+        "completion_to_publish_start": {
+          "count": 6793,
+          "p50_ms": 0.000571,
+          "p99_ms": 0.001283,
+          "max_ms": 0.028162,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_lock_wait": {
+          "count": 6793,
+          "p50_ms": 6e-05,
+          "p99_ms": 0.00011,
+          "max_ms": 0.010219,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_held": {
+          "count": 6793,
+          "p50_ms": 0.00018,
+          "p99_ms": 0.000571,
+          "max_ms": 0.010319,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "publication_bracket": {
+          "count": 6793,
+          "p50_ms": 0.000761,
+          "p99_ms": 0.002314,
+          "max_ms": 0.042439,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "publication_to_resume_lower": {
+          "count": 6793,
+          "p50_ms": 11.325281,
+          "p99_ms": 161.759837,
+          "max_ms": 185.72184,
+          "over_1ms": 4190,
+          "over_50ms": 2744
+        }
+      }
+    },
+    {
+      "run_id": "completion_b4_legacy",
+      "rep": 4,
+      "arm": "legacy",
+      "offered": 6793,
+      "timely_500": 4754,
+      "failures": 0,
+      "late_success_work_before": 526,
+      "cpu_usec_per_completed_work": 3636.025172972177,
+      "p99_e2e_ms": 819.05386,
+      "p99_post_work_ms": 160.861306,
+      "clock_uncertainty_ns": 117290,
+      "accepted_settling_means_c": {
+        "k10temp:Tctl": 57.125
+      },
+      "monitor_temperature_ranges_c": {
+        "k10temp:temp1_input": {
+          "minimum": 66.125,
+          "maximum": 74.25
+        },
+        "thermal_zone0": {
+          "minimum": 44.0,
+          "maximum": 46.0
+        }
+      },
+      "publication_deadline_classes_for_late_work_before": {
+        "unobserved": 526
+      }
+    },
+    {
+      "run_id": "completion_b4_locked",
+      "rep": 4,
+      "arm": "locked",
+      "offered": 6793,
+      "timely_500": 4015,
+      "failures": 0,
+      "late_success_work_before": 419,
+      "cpu_usec_per_completed_work": 3729.96614161637,
+      "p99_e2e_ms": 994.161168,
+      "p99_post_work_ms": 163.555173,
+      "clock_uncertainty_ns": 117349,
+      "accepted_settling_means_c": {
+        "k10temp:Tctl": 56.98076923076923
+      },
+      "monitor_temperature_ranges_c": {
+        "k10temp:temp1_input": {
+          "minimum": 68.125,
+          "maximum": 74.25
+        },
+        "thermal_zone0": {
+          "minimum": 44.0,
+          "maximum": 45.0
+        }
+      },
+      "publication_deadline_classes_for_late_work_before": {
+        "certainly_before": 419
+      },
+      "intervals": {
+        "completion_to_publish_start": {
+          "count": 6793,
+          "p50_ms": 0.000441,
+          "p99_ms": 0.001112,
+          "max_ms": 0.040226,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_lock_wait": {
+          "count": 6793,
+          "p50_ms": 5e-05,
+          "p99_ms": 0.00011,
+          "max_ms": 0.000391,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "record_held": {
+          "count": 6793,
+          "p50_ms": 0.0001,
+          "p99_ms": 0.000541,
+          "max_ms": 0.039694,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "publication_bracket": {
+          "count": 6793,
+          "p50_ms": 0.000602,
+          "p99_ms": 0.001724,
+          "max_ms": 0.009037,
+          "over_1ms": 0,
+          "over_50ms": 0
+        },
+        "publication_to_resume_lower": {
+          "count": 6793,
+          "p50_ms": 11.432706,
+          "p99_ms": 163.553309,
+          "max_ms": 186.813113,
+          "over_1ms": 4133,
+          "over_50ms": 2925
+        }
+      }
+    }
+  ],
+  "screen": {
+    "margins": {
+      "timely_fraction": 0.01,
+      "failure_fraction": 0.001,
+      "cpu_ratio": 0.05,
+      "p99_ratio": 0.1
+    },
+    "comparisons": {
+      "legacy_to_locked": {
+        "pairs": [
+          {
+            "block": 1,
+            "timely_fraction_delta": -0.057559252171352826,
+            "timely_1000_fraction_delta": -0.01177682908876787,
+            "failure_fraction_delta": 0.0,
+            "cpu_ratio": 1.017063089042556,
+            "p99_ratio": 1.1388072678636032,
+            "post_work_late_fraction_delta": -0.011040777270719851,
+            "within_screen": false
+          },
+          {
+            "block": 2,
+            "timely_fraction_delta": -0.08744295598410123,
+            "timely_1000_fraction_delta": -0.004416310908287979,
+            "failure_fraction_delta": 0.0,
+            "cpu_ratio": 1.0209969120222984,
+            "p99_ratio": 1.1544199862920042,
+            "post_work_late_fraction_delta": -0.004269100544678342,
+            "within_screen": false
+          },
+          {
+            "block": 3,
+            "timely_fraction_delta": -0.06845281907846312,
+            "timely_1000_fraction_delta": -0.0035330487266304056,
+            "failure_fraction_delta": 0.0,
+            "cpu_ratio": 1.0176133025411027,
+            "p99_ratio": 1.1319408526982662,
+            "post_work_late_fraction_delta": -0.013984984542911826,
+            "within_screen": false
+          },
+          {
+            "block": 4,
+            "timely_fraction_delta": -0.10878845870749299,
+            "timely_1000_fraction_delta": -0.008390990725747116,
+            "failure_fraction_delta": 0.0,
+            "cpu_ratio": 1.0258361711416324,
+            "p99_ratio": 1.2137921772323983,
+            "post_work_late_fraction_delta": -0.015751508906227,
+            "within_screen": false
+          }
+        ],
+        "block_deltas": {
+          "timely_fraction_delta": {
+            "median": -0.07794788753128218,
+            "minimum": -0.10878845870749299,
+            "maximum": -0.057559252171352826
+          },
+          "timely_1000_fraction_delta": {
+            "median": -0.006403650817017548,
+            "minimum": -0.01177682908876787,
+            "maximum": -0.0035330487266304056
+          },
+          "failure_fraction_delta": {
+            "median": 0.0,
+            "minimum": 0.0,
+            "maximum": 0.0
+          },
+          "post_work_late_fraction_delta": {
+            "median": -0.012512880906815838,
+            "minimum": -0.015751508906227,
+            "maximum": -0.004269100544678342
+          }
+        },
+        "within_screen": false
+      },
+      "locked_to_bounded": {
+        "pairs": [
+          {
+            "block": 1,
+            "timely_fraction_delta": -0.008979832180185499,
+            "timely_1000_fraction_delta": -0.0008832621816575736,
+            "failure_fraction_delta": 0.0,
+            "cpu_ratio": 1.001170633068845,
+            "p99_ratio": 1.0026296849899081,
+            "post_work_late_fraction_delta": -0.0005888414544383963,
+            "within_screen": true
+          },
+          {
+            "block": 2,
+            "timely_fraction_delta": 0.0007360518180480335,
+            "timely_1000_fraction_delta": -0.001324893272486305,
+            "failure_fraction_delta": 0.0,
+            "cpu_ratio": 0.9992926171681397,
+            "p99_ratio": 1.0026281743868197,
+            "post_work_late_fraction_delta": -0.001766524363315175,
+            "within_screen": true
+          },
+          {
+            "block": 3,
+            "timely_fraction_delta": -0.0011776829088767649,
+            "timely_1000_fraction_delta": -0.0002944207272191912,
+            "failure_fraction_delta": 0.0,
+            "cpu_ratio": 0.9984702125083428,
+            "p99_ratio": 1.0054242425024877,
+            "post_work_late_fraction_delta": 0.0,
+            "within_screen": true
+          },
+          {
+            "block": 4,
+            "timely_fraction_delta": 0.006477255998822318,
+            "timely_1000_fraction_delta": 0.0033858383630207545,
+            "failure_fraction_delta": 0.0,
+            "cpu_ratio": 0.9941253849013681,
+            "p99_ratio": 0.9768617033732301,
+            "post_work_late_fraction_delta": -0.001766524363315175,
+            "within_screen": true
+          }
+        ],
+        "block_deltas": {
+          "timely_fraction_delta": {
+            "median": -0.00022081554541436565,
+            "minimum": -0.008979832180185499,
+            "maximum": 0.006477255998822318
+          },
+          "timely_1000_fraction_delta": {
+            "median": -0.0005888414544383824,
+            "minimum": -0.001324893272486305,
+            "maximum": 0.0033858383630207545
+          },
+          "failure_fraction_delta": {
+            "median": 0.0,
+            "minimum": 0.0,
+            "maximum": 0.0
+          },
+          "post_work_late_fraction_delta": {
+            "median": -0.0011776829088767857,
+            "minimum": -0.001766524363315175,
+            "maximum": 0.0
+          }
+        },
+        "within_screen": true
+      }
+    },
+    "decision": "marker_effect_requires_review",
+    "limitation": "Four discovery blocks and practical screens do not prove statistical equivalence. No policy/independent-control batch launches automatically."
+  }
+}

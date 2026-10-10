@@ -1,0 +1,902 @@
+{
+  "status": "screen_complete",
+  "date": "2026-10-08",
+  "type": "retrospective_baseline_and_aggregate_identifiability_screen",
+  "input_trials": 12,
+  "strict_low_trials": 6,
+  "input_measurement_offers": 18900,
+  "input_deadline_misses": 0,
+  "input_throttled_periods": 0,
+  "input_max_waiting_queue": 1,
+  "baselines": {
+    "low_cpu_demand_law": {
+      "fit": {
+        "status": "available",
+        "capacity_rps": 110.69098643297478,
+        "assumption": "Pooled aggregate low-load CPU/job represents loaded CPU demand; unvalidated transfer."
+      },
+      "answered": 16,
+      "declared": 16,
+      "refused": 0,
+      "deadline_mae_pp": 43.290550595238095,
+      "deadline_max_error_pp": 54.476190476190474,
+      "passes": 0,
+      "errors": [
+        {
+          "trial": "val_b1_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 50.666666666666664,
+          "error_pp": 50.666666666666664
+        },
+        {
+          "trial": "val_b1_low30_p12",
+          "observed_miss_pct": 30.75,
+          "predicted_miss_pct": 62.541666666666664,
+          "error_pp": 31.791666666666664
+        },
+        {
+          "trial": "val_b1_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 54.476190476190474,
+          "error_pp": 54.476190476190474
+        },
+        {
+          "trial": "val_b1_low15_p12",
+          "observed_miss_pct": 34.19047619047619,
+          "predicted_miss_pct": 69.95238095238095,
+          "error_pp": 35.76190476190476
+        },
+        {
+          "trial": "val_b2_low30_p12",
+          "observed_miss_pct": 30.666666666666664,
+          "predicted_miss_pct": 62.541666666666664,
+          "error_pp": 31.875
+        },
+        {
+          "trial": "val_b2_low15_p12",
+          "observed_miss_pct": 32.904761904761905,
+          "predicted_miss_pct": 69.95238095238095,
+          "error_pp": 37.047619047619044
+        },
+        {
+          "trial": "val_b2_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 50.666666666666664,
+          "error_pp": 50.666666666666664
+        },
+        {
+          "trial": "val_b2_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 54.476190476190474,
+          "error_pp": 54.476190476190474
+        },
+        {
+          "trial": "val_b3_low15_p12",
+          "observed_miss_pct": 35.952380952380956,
+          "predicted_miss_pct": 69.95238095238095,
+          "error_pp": 33.99999999999999
+        },
+        {
+          "trial": "val_b3_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 54.476190476190474,
+          "error_pp": 54.476190476190474
+        },
+        {
+          "trial": "val_b3_low30_p12",
+          "observed_miss_pct": 31.125000000000004,
+          "predicted_miss_pct": 62.541666666666664,
+          "error_pp": 31.41666666666666
+        },
+        {
+          "trial": "val_b3_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 50.666666666666664,
+          "error_pp": 50.666666666666664
+        },
+        {
+          "trial": "val_b4_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 54.476190476190474,
+          "error_pp": 54.476190476190474
+        },
+        {
+          "trial": "val_b4_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 50.666666666666664,
+          "error_pp": 50.666666666666664
+        },
+        {
+          "trial": "val_b4_low15_p12",
+          "observed_miss_pct": 33.14285714285714,
+          "predicted_miss_pct": 69.95238095238095,
+          "error_pp": 36.80952380952381
+        },
+        {
+          "trial": "val_b4_low30_p12",
+          "observed_miss_pct": 29.166666666666664,
+          "predicted_miss_pct": 62.541666666666664,
+          "error_pp": 33.375
+        }
+      ]
+    },
+    "low_worker_wall_proxy": {
+      "fit": {
+        "status": "available",
+        "capacity_rps": 116.90013964866438,
+        "assumption": "Low-load worker wall time approximates CPU demand; off-CPU time and loaded transfer unvalidated."
+      },
+      "answered": 16,
+      "declared": 16,
+      "refused": 0,
+      "deadline_mae_pp": 39.28013392857143,
+      "deadline_max_error_pp": 49.023809523809526,
+      "passes": 0,
+      "errors": [
+        {
+          "trial": "val_b1_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 45.333333333333336,
+          "error_pp": 45.333333333333336
+        },
+        {
+          "trial": "val_b1_low30_p12",
+          "observed_miss_pct": 30.75,
+          "predicted_miss_pct": 60.0,
+          "error_pp": 29.25
+        },
+        {
+          "trial": "val_b1_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 49.023809523809526,
+          "error_pp": 49.023809523809526
+        },
+        {
+          "trial": "val_b1_low15_p12",
+          "observed_miss_pct": 34.19047619047619,
+          "predicted_miss_pct": 67.23809523809524,
+          "error_pp": 33.04761904761905
+        },
+        {
+          "trial": "val_b2_low30_p12",
+          "observed_miss_pct": 30.666666666666664,
+          "predicted_miss_pct": 60.0,
+          "error_pp": 29.333333333333336
+        },
+        {
+          "trial": "val_b2_low15_p12",
+          "observed_miss_pct": 32.904761904761905,
+          "predicted_miss_pct": 67.23809523809524,
+          "error_pp": 34.333333333333336
+        },
+        {
+          "trial": "val_b2_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 45.333333333333336,
+          "error_pp": 45.333333333333336
+        },
+        {
+          "trial": "val_b2_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 49.023809523809526,
+          "error_pp": 49.023809523809526
+        },
+        {
+          "trial": "val_b3_low15_p12",
+          "observed_miss_pct": 35.952380952380956,
+          "predicted_miss_pct": 67.23809523809524,
+          "error_pp": 31.285714285714285
+        },
+        {
+          "trial": "val_b3_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 49.023809523809526,
+          "error_pp": 49.023809523809526
+        },
+        {
+          "trial": "val_b3_low30_p12",
+          "observed_miss_pct": 31.125000000000004,
+          "predicted_miss_pct": 60.0,
+          "error_pp": 28.874999999999996
+        },
+        {
+          "trial": "val_b3_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 45.333333333333336,
+          "error_pp": 45.333333333333336
+        },
+        {
+          "trial": "val_b4_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 49.023809523809526,
+          "error_pp": 49.023809523809526
+        },
+        {
+          "trial": "val_b4_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 45.333333333333336,
+          "error_pp": 45.333333333333336
+        },
+        {
+          "trial": "val_b4_low15_p12",
+          "observed_miss_pct": 33.14285714285714,
+          "predicted_miss_pct": 67.23809523809524,
+          "error_pp": 34.0952380952381
+        },
+        {
+          "trial": "val_b4_low30_p12",
+          "observed_miss_pct": 29.166666666666664,
+          "predicted_miss_pct": 60.0,
+          "error_pp": 30.833333333333336
+        }
+      ]
+    },
+    "nonbacklogged_linear": {
+      "fit": {
+        "status": "available",
+        "capacity_rps": 125.95250364668553,
+        "intercept": 0.01586581513775731,
+        "demand_sec": 0.0038437837347029408,
+        "quadratic_sec2": 0.0,
+        "residual_sum_squares": 0.005875820944423482,
+        "calibration_max_throughput_rps": 117.02887282956029,
+        "extrapolation_ratio": 1.07625153179183,
+        "fit": "nonnegative_intercept_and_positive_demand_monotonic_capacity_root"
+      },
+      "answered": 16,
+      "declared": 16,
+      "refused": 0,
+      "deadline_mae_pp": 31.31436011904762,
+      "deadline_max_error_pp": 37.92857142857143,
+      "passes": 0,
+      "errors": [
+        {
+          "trial": "val_b1_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 34.6875,
+          "error_pp": 34.6875
+        },
+        {
+          "trial": "val_b1_low30_p12",
+          "observed_miss_pct": 30.75,
+          "predicted_miss_pct": 55.1875,
+          "error_pp": 24.4375
+        },
+        {
+          "trial": "val_b1_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 37.92857142857143,
+          "error_pp": 37.92857142857143
+        },
+        {
+          "trial": "val_b1_low15_p12",
+          "observed_miss_pct": 34.19047619047619,
+          "predicted_miss_pct": 61.92857142857143,
+          "error_pp": 27.73809523809524
+        },
+        {
+          "trial": "val_b2_low30_p12",
+          "observed_miss_pct": 30.666666666666664,
+          "predicted_miss_pct": 55.1875,
+          "error_pp": 24.520833333333336
+        },
+        {
+          "trial": "val_b2_low15_p12",
+          "observed_miss_pct": 32.904761904761905,
+          "predicted_miss_pct": 61.92857142857143,
+          "error_pp": 29.023809523809526
+        },
+        {
+          "trial": "val_b2_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 34.6875,
+          "error_pp": 34.6875
+        },
+        {
+          "trial": "val_b2_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 37.92857142857143,
+          "error_pp": 37.92857142857143
+        },
+        {
+          "trial": "val_b3_low15_p12",
+          "observed_miss_pct": 35.952380952380956,
+          "predicted_miss_pct": 61.92857142857143,
+          "error_pp": 25.976190476190474
+        },
+        {
+          "trial": "val_b3_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 37.92857142857143,
+          "error_pp": 37.92857142857143
+        },
+        {
+          "trial": "val_b3_low30_p12",
+          "observed_miss_pct": 31.125000000000004,
+          "predicted_miss_pct": 55.1875,
+          "error_pp": 24.062499999999996
+        },
+        {
+          "trial": "val_b3_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 34.6875,
+          "error_pp": 34.6875
+        },
+        {
+          "trial": "val_b4_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 37.92857142857143,
+          "error_pp": 37.92857142857143
+        },
+        {
+          "trial": "val_b4_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 34.6875,
+          "error_pp": 34.6875
+        },
+        {
+          "trial": "val_b4_low15_p12",
+          "observed_miss_pct": 33.14285714285714,
+          "predicted_miss_pct": 61.92857142857143,
+          "error_pp": 28.785714285714292
+        },
+        {
+          "trial": "val_b4_low30_p12",
+          "observed_miss_pct": 29.166666666666664,
+          "predicted_miss_pct": 55.1875,
+          "error_pp": 26.020833333333336
+        }
+      ]
+    },
+    "nonbacklogged_quadratic": {
+      "fit": {
+        "status": "available",
+        "capacity_rps": 148.46275808875967,
+        "intercept": 0.0,
+        "demand_sec": 0.005276095883442713,
+        "quadratic_sec2": -1.2853377692608807e-05,
+        "residual_sum_squares": 0.0015855250813121065,
+        "calibration_max_throughput_rps": 117.02887282956029,
+        "extrapolation_ratio": 1.2685994020038063,
+        "fit": "nonnegative_intercept_and_positive_demand_monotonic_capacity_root"
+      },
+      "answered": 16,
+      "declared": 16,
+      "refused": 0,
+      "deadline_mae_pp": 1.1685267857142863,
+      "deadline_max_error_pp": 3.6190476190476204,
+      "passes": 13,
+      "errors": [
+        {
+          "trial": "val_b1_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 0.0,
+          "error_pp": 0.0
+        },
+        {
+          "trial": "val_b1_low30_p12",
+          "observed_miss_pct": 30.75,
+          "predicted_miss_pct": 32.625,
+          "error_pp": 1.875
+        },
+        {
+          "trial": "val_b1_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 0.0,
+          "error_pp": 0.0
+        },
+        {
+          "trial": "val_b1_low15_p12",
+          "observed_miss_pct": 34.19047619047619,
+          "predicted_miss_pct": 36.523809523809526,
+          "error_pp": 2.3333333333333357
+        },
+        {
+          "trial": "val_b2_low30_p12",
+          "observed_miss_pct": 30.666666666666664,
+          "predicted_miss_pct": 32.625,
+          "error_pp": 1.9583333333333357
+        },
+        {
+          "trial": "val_b2_low15_p12",
+          "observed_miss_pct": 32.904761904761905,
+          "predicted_miss_pct": 36.523809523809526,
+          "error_pp": 3.6190476190476204
+        },
+        {
+          "trial": "val_b2_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 0.0,
+          "error_pp": 0.0
+        },
+        {
+          "trial": "val_b2_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 0.0,
+          "error_pp": 0.0
+        },
+        {
+          "trial": "val_b3_low15_p12",
+          "observed_miss_pct": 35.952380952380956,
+          "predicted_miss_pct": 36.523809523809526,
+          "error_pp": 0.5714285714285694
+        },
+        {
+          "trial": "val_b3_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 0.0,
+          "error_pp": 0.0
+        },
+        {
+          "trial": "val_b3_low30_p12",
+          "observed_miss_pct": 31.125000000000004,
+          "predicted_miss_pct": 32.625,
+          "error_pp": 1.4999999999999964
+        },
+        {
+          "trial": "val_b3_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 0.0,
+          "error_pp": 0.0
+        },
+        {
+          "trial": "val_b4_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 0.0,
+          "error_pp": 0.0
+        },
+        {
+          "trial": "val_b4_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": 0.0,
+          "error_pp": 0.0
+        },
+        {
+          "trial": "val_b4_low15_p12",
+          "observed_miss_pct": 33.14285714285714,
+          "predicted_miss_pct": 36.523809523809526,
+          "error_pp": 3.3809523809523867
+        },
+        {
+          "trial": "val_b4_low30_p12",
+          "observed_miss_pct": 29.166666666666664,
+          "predicted_miss_pct": 32.625,
+          "error_pp": 3.4583333333333357
+        }
+      ]
+    },
+    "strict_low_quadratic": {
+      "fit": {
+        "status": "unavailable",
+        "reason": "no admissible monotonic fit/root within 2x calibration throughput"
+      },
+      "answered": 0,
+      "declared": 16,
+      "refused": 16,
+      "deadline_mae_pp": null,
+      "deadline_max_error_pp": null,
+      "passes": 0,
+      "errors": [
+        {
+          "trial": "val_b1_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b1_low30_p12",
+          "observed_miss_pct": 30.75,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b1_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b1_low15_p12",
+          "observed_miss_pct": 34.19047619047619,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b2_low30_p12",
+          "observed_miss_pct": 30.666666666666664,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b2_low15_p12",
+          "observed_miss_pct": 32.904761904761905,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b2_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b2_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b3_low15_p12",
+          "observed_miss_pct": 35.952380952380956,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b3_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b3_low30_p12",
+          "observed_miss_pct": 31.125000000000004,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b3_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b4_low15_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b4_low30_p6",
+          "observed_miss_pct": 0.0,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b4_low15_p12",
+          "observed_miss_pct": 33.14285714285714,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        },
+        {
+          "trial": "val_b4_low30_p12",
+          "observed_miss_pct": 29.166666666666664,
+          "predicted_miss_pct": null,
+          "error_pp": null
+        }
+      ]
+    }
+  },
+  "block_fit_capacities": {
+    "1": 148.36938161491696,
+    "2": 148.55769529824366
+  },
+  "block_sensitivity": [
+    {
+      "trial": "val_b1_low30_p6",
+      "observed_miss_pct": 0.0,
+      "prediction_band_pp": [
+        0.0,
+        0.0
+      ],
+      "distance_outside_band_pp": 0.0,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b1_low30_p12",
+      "observed_miss_pct": 30.75,
+      "prediction_band_pp": [
+        32.416666666666664,
+        32.729166666666664
+      ],
+      "distance_outside_band_pp": 1.6666666666666643,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b1_low15_p6",
+      "observed_miss_pct": 0.0,
+      "prediction_band_pp": [
+        0.0,
+        0.0
+      ],
+      "distance_outside_band_pp": 0.0,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b1_low15_p12",
+      "observed_miss_pct": 34.19047619047619,
+      "prediction_band_pp": [
+        36.285714285714285,
+        36.642857142857146
+      ],
+      "distance_outside_band_pp": 2.095238095238095,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b2_low30_p12",
+      "observed_miss_pct": 30.666666666666664,
+      "prediction_band_pp": [
+        32.416666666666664,
+        32.729166666666664
+      ],
+      "distance_outside_band_pp": 1.75,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b2_low15_p12",
+      "observed_miss_pct": 32.904761904761905,
+      "prediction_band_pp": [
+        36.285714285714285,
+        36.642857142857146
+      ],
+      "distance_outside_band_pp": 3.3809523809523796,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b2_low30_p6",
+      "observed_miss_pct": 0.0,
+      "prediction_band_pp": [
+        0.0,
+        0.0
+      ],
+      "distance_outside_band_pp": 0.0,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b2_low15_p6",
+      "observed_miss_pct": 0.0,
+      "prediction_band_pp": [
+        0.0,
+        0.0
+      ],
+      "distance_outside_band_pp": 0.0,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b3_low15_p12",
+      "observed_miss_pct": 35.952380952380956,
+      "prediction_band_pp": [
+        36.285714285714285,
+        36.642857142857146
+      ],
+      "distance_outside_band_pp": 0.3333333333333286,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b3_low15_p6",
+      "observed_miss_pct": 0.0,
+      "prediction_band_pp": [
+        0.0,
+        0.0
+      ],
+      "distance_outside_band_pp": 0.0,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b3_low30_p12",
+      "observed_miss_pct": 31.125000000000004,
+      "prediction_band_pp": [
+        32.416666666666664,
+        32.729166666666664
+      ],
+      "distance_outside_band_pp": 1.2916666666666607,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b3_low30_p6",
+      "observed_miss_pct": 0.0,
+      "prediction_band_pp": [
+        0.0,
+        0.0
+      ],
+      "distance_outside_band_pp": 0.0,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b4_low15_p6",
+      "observed_miss_pct": 0.0,
+      "prediction_band_pp": [
+        0.0,
+        0.0
+      ],
+      "distance_outside_band_pp": 0.0,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b4_low30_p6",
+      "observed_miss_pct": 0.0,
+      "prediction_band_pp": [
+        0.0,
+        0.0
+      ],
+      "distance_outside_band_pp": 0.0,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b4_low15_p12",
+      "observed_miss_pct": 33.14285714285714,
+      "prediction_band_pp": [
+        36.285714285714285,
+        36.642857142857146
+      ],
+      "distance_outside_band_pp": 3.142857142857146,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    },
+    {
+      "trial": "val_b4_low30_p12",
+      "observed_miss_pct": 29.166666666666664,
+      "prediction_band_pp": [
+        32.416666666666664,
+        32.729166666666664
+      ],
+      "distance_outside_band_pp": 3.25,
+      "scope": "Two-block sensitivity envelope, not a confidence or prediction interval."
+    }
+  ],
+  "aggregate_ambiguity": [
+    {
+      "trial": "val_b1_low30_p6",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        30.791666666666668
+      ],
+      "width_pp": 30.791666666666668,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b1_low30_p12",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        53.4375
+      ],
+      "width_pp": 53.4375,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b1_low15_p6",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        33.904761904761905
+      ],
+      "width_pp": 33.904761904761905,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b1_low15_p12",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        60.023809523809526
+      ],
+      "width_pp": 60.023809523809526,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b2_low30_p12",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        53.4375
+      ],
+      "width_pp": 53.4375,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b2_low15_p12",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        60.023809523809526
+      ],
+      "width_pp": 60.023809523809526,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b2_low30_p6",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        30.791666666666668
+      ],
+      "width_pp": 30.791666666666668,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b2_low15_p6",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        33.904761904761905
+      ],
+      "width_pp": 33.904761904761905,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b3_low15_p12",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        60.023809523809526
+      ],
+      "width_pp": 60.023809523809526,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b3_low15_p6",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        33.904761904761905
+      ],
+      "width_pp": 33.904761904761905,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b3_low30_p12",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        53.4375
+      ],
+      "width_pp": 53.4375,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b3_low30_p6",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        30.791666666666668
+      ],
+      "width_pp": 30.791666666666668,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b4_low15_p6",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        33.904761904761905
+      ],
+      "width_pp": 33.904761904761905,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b4_low30_p6",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        30.791666666666668
+      ],
+      "width_pp": 30.791666666666668,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b4_low15_p12",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        60.023809523809526
+      ],
+      "width_pp": 60.023809523809526,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    },
+    {
+      "trial": "val_b4_low30_p12",
+      "conditional_model_forecast_range_pp": [
+        0.0,
+        53.4375
+      ],
+      "width_pp": 53.4375,
+      "cannot_uniformly_meet_3pp_under_this_family": true
+    }
+  ],
+  "ambiguity_root_capacities_rps": [
+    128.6688688430233,
+    146.2146236852537,
+    175.45754842230446
+  ],
+  "ambiguity_scope": "Conditional illustration for pooled U/X features and a shared constant-rate FIFO model, not a CPU-quota-system theorem or proof against richer passive estimators.",
+  "prospective_status": false,
+  "novelty_established": false,
+  "new_collection": false,
+  "decision": "generic_claim_rejected_specific_guard_gap_unestablished",
+  "next": "Bounded comparison against faithful/adapted response and transient passive estimators using existing rich traces, then specify candidate guard and frozen risk/coverage evaluation before collecting new data."
+}

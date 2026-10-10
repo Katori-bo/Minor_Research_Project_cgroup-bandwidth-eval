@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "at": "2026-10-07T08:21:44.481711+00:00",
+  "rows": [
+    {
+      "trial": "cal_small_1",
+      "size": "small",
+      "source_seal": "b17e4a6c851e447cd1f61bfdef1f259b33d6029c43ba75020790b551311d3901",
+      "whole_cohort_cpu_usec_per_job": 3591.0700824499413,
+      "incompatible_combination_implied_cpu_fraction": 0.5464411642127995,
+      "phases": {
+        "busy": {
+          "interpolated_usage_usec": 9007861.607615951,
+          "midpoint_completions": 2742,
+          "illustrative_cpu_usec_per_completion": 3285.1428182406826,
+          "illustrative_delivered_cpu_fraction": 0.500436755978664
+        },
+        "low": {
+          "interpolated_usage_usec": 4891914.0419023335,
+          "midpoint_completions": 1020,
+          "illustrative_cpu_usec_per_completion": 4795.994158727778,
+          "illustrative_delivered_cpu_fraction": 0.2717730023279074
+        }
+      },
+      "illustrative_whole_over_busy": 1.093124494469648
+    },
+    {
+      "trial": "cal_small_2",
+      "size": "small",
+      "source_seal": "692dec5e5ecdd86c014a5f5ec06964bdc01a90b1098153283f97d52e0eaac75a",
+      "whole_cohort_cpu_usec_per_job": 3589.0625736160187,
+      "incompatible_combination_implied_cpu_fraction": 0.5461356882852375,
+      "phases": {
+        "busy": {
+          "interpolated_usage_usec": 8999545.642914986,
+          "midpoint_completions": 2736,
+          "illustrative_cpu_usec_per_completion": 3289.3076180244834,
+          "illustrative_delivered_cpu_fraction": 0.49997475793972146
+        },
+        "low": {
+          "interpolated_usage_usec": 4903694.178139886,
+          "midpoint_completions": 1020,
+          "illustrative_cpu_usec_per_completion": 4807.543311901849,
+          "illustrative_delivered_cpu_fraction": 0.27242745434110477
+        }
+      },
+      "illustrative_whole_over_busy": 1.0911301071231412
+    },
+    {
+      "trial": "cal_large_1",
+      "size": "large",
+      "source_seal": "2e6ec763a784ca370419685e2f5920349efada74980847c891640b03bca3816d",
+      "whole_cohort_cpu_usec_per_job": 7018.783863368669,
+      "incompatible_combination_implied_cpu_fraction": 0.5396664926056799,
+      "phases": {
+        "busy": {
+          "interpolated_usage_usec": 8985605.615809448,
+          "midpoint_completions": 1385,
+          "illustrative_cpu_usec_per_completion": 6487.8018886710815,
+          "illustrative_delivered_cpu_fraction": 0.4992003119894138
+        },
+        "low": {
+          "interpolated_usage_usec": 4550995.402548819,
+          "midpoint_completions": 505,
+          "illustrative_cpu_usec_per_completion": 9011.872084255087,
+          "illustrative_delivered_cpu_fraction": 0.2528330779193788
+        }
+      },
+      "illustrative_whole_over_busy": 1.0818431240363213
+    },
+    {
+      "trial": "cal_large_2",
+      "size": "large",
+      "source_seal": "c1085825c40b10439f21f7b35a67636c743cdfabf143e8ad9777d4bf77fb77ec",
+      "whole_cohort_cpu_usec_per_job": 7019.6154299175505,
+      "incompatible_combination_implied_cpu_fraction": 0.5397304308336606,
+      "phases": {
+        "busy": {
+          "interpolated_usage_usec": 8980619.271510625,
+          "midpoint_completions": 1383,
+          "illustrative_cpu_usec_per_completion": 6493.578648959237,
+          "illustrative_delivered_cpu_fraction": 0.4989232928617014
+        },
+        "low": {
+          "interpolated_usage_usec": 4563572.50647621,
+          "midpoint_completions": 504,
+          "illustrative_cpu_usec_per_completion": 9054.707354119466,
+          "illustrative_delivered_cpu_fraction": 0.253531805915345
+        }
+      },
+      "illustrative_whole_over_busy": 1.0810087641030766
+    }
+  ],
+  "prediction_seal": "a3e1a7a3b30c526c9303bafada2dc64cdb2f34550f1a2ebf76f8c1b4061ac89d",
+  "script_sha256": "eaa699243c120292e4579ca7465c59df1434623a0006ef0b3845de72f42ced53",
+  "performance_run": false,
+  "causal_mechanism_established": false,
+  "warning": "Exploratory linear interpolation of rounded epoch sample labels. Actual historical counter-read timestamps are unobserved; wall-clock constancy is assumed, not established. These phase numbers are not bounded measurements, confirmatory evidence, forecasts, or per-job CPU attribution.",
+  "interpretation": "Retained counters suggest busy CPU is approximately 0.5 and busy-window CPU/completion is lower than whole-cohort CPU/job. V24 must test this with precise monotonic brackets and observer controls."
+}

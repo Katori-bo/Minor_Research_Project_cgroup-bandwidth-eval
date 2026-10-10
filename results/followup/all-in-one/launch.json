@@ -1,0 +1,21 @@
+{
+  "pid": 85293,
+  "start_tick": "300488",
+  "log": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one/logs/1790389898661508398-3f3d7f6e.log",
+  "launched_at": "2026-09-26T08:01:38.663734+05:30",
+  "command": [
+    "/usr/bin/systemd-inhibit",
+    "--no-ask-password",
+    "--what=idle:sleep",
+    "--mode=block",
+    "--who=CPU quota experiment",
+    "--why=Unattended controlled measurements",
+    "--",
+    "/usr/bin/python3",
+    "-u",
+    "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/pipeline.py",
+    "foreground",
+    "--directory",
+    "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one"
+  ]
+}

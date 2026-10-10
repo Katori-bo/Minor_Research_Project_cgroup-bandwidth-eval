@@ -1,0 +1,432 @@
+{
+  "fits": {
+    "strict_low_worker_wall_unit_wall": {
+      "status": "available",
+      "capacity_rps": 233.80027929732873,
+      "jobs": 2700,
+      "exposure_sec": 11.548318112,
+      "classification": "wall-service special case/adaptation",
+      "quota_mapping": "unit_wall",
+      "assumption": "Unit wall availability transfers to future bursts"
+    },
+    "strict_low_worker_wall_quota_scaled": {
+      "status": "available",
+      "capacity_rps": 116.90013964866436,
+      "jobs": 2700,
+      "exposure_sec": 11.548318112,
+      "classification": "wall-service special case/adaptation",
+      "quota_mapping": "quota_scaled",
+      "assumption": "Wall demand approximates CPU and quota-scaled service transfers to future bursts"
+    },
+    "strict_low_queue_exposure_exact_unit_wall": {
+      "status": "available",
+      "capacity_rps": 233.5212458993024,
+      "jobs": 2700,
+      "exposure_sec": 11.562117141,
+      "classification": "wall-service special case/adaptation",
+      "quota_mapping": "unit_wall",
+      "assumption": "Unit wall availability transfers to future bursts"
+    },
+    "strict_low_queue_exposure_exact_quota_scaled": {
+      "status": "available",
+      "capacity_rps": 116.7606229496512,
+      "jobs": 2700,
+      "exposure_sec": 11.562117141,
+      "classification": "wall-service special case/adaptation",
+      "quota_mapping": "quota_scaled",
+      "assumption": "Wall demand approximates CPU and quota-scaled service transfers to future bursts"
+    },
+    "strict_low_queue_exposure_10ms_unit_wall": {
+      "status": "available",
+      "capacity_rps": 283.21540388844784,
+      "jobs": 2700,
+      "exposure_sec": 9.533379763,
+      "classification": "wall-service special case/adaptation",
+      "quota_mapping": "unit_wall",
+      "assumption": "Unit wall availability transfers to future bursts"
+    },
+    "strict_low_queue_exposure_10ms_quota_scaled": {
+      "status": "available",
+      "capacity_rps": 141.60770194422392,
+      "jobs": 2700,
+      "exposure_sec": 9.533379763,
+      "classification": "wall-service special case/adaptation",
+      "quota_mapping": "quota_scaled",
+      "assumption": "Wall demand approximates CPU and quota-scaled service transfers to future bursts"
+    },
+    "strict_low_affine_wall_demand": {
+      "status": "unavailable",
+      "reason": "no unique admissible demand/capacity root",
+      "coefficients": [
+        0.004248676632015661,
+        1.170865820687952e-06
+      ]
+    },
+    "all_nonbacklogged_worker_wall_unit_wall": {
+      "status": "available",
+      "capacity_rps": 251.76602741237042,
+      "jobs": 18900,
+      "exposure_sec": 75.069699412,
+      "classification": "wall-service special case/adaptation",
+      "quota_mapping": "unit_wall",
+      "assumption": "Unit wall availability transfers to future bursts"
+    },
+    "all_nonbacklogged_worker_wall_quota_scaled": {
+      "status": "available",
+      "capacity_rps": 125.88301370618521,
+      "jobs": 18900,
+      "exposure_sec": 75.069699412,
+      "classification": "wall-service special case/adaptation",
+      "quota_mapping": "quota_scaled",
+      "assumption": "Wall demand approximates CPU and quota-scaled service transfers to future bursts"
+    },
+    "all_nonbacklogged_queue_exposure_exact_unit_wall": {
+      "status": "available",
+      "capacity_rps": 251.53348736743519,
+      "jobs": 18900,
+      "exposure_sec": 75.139100554,
+      "classification": "wall-service special case/adaptation",
+      "quota_mapping": "unit_wall",
+      "assumption": "Unit wall availability transfers to future bursts"
+    },
+    "all_nonbacklogged_queue_exposure_exact_quota_scaled": {
+      "status": "available",
+      "capacity_rps": 125.76674368371759,
+      "jobs": 18900,
+      "exposure_sec": 75.139100554,
+      "classification": "wall-service special case/adaptation",
+      "quota_mapping": "quota_scaled",
+      "assumption": "Wall demand approximates CPU and quota-scaled service transfers to future bursts"
+    },
+    "all_nonbacklogged_queue_exposure_10ms_unit_wall": {
+      "status": "available",
+      "capacity_rps": 266.42381962402936,
+      "jobs": 18900,
+      "exposure_sec": 70.939603023,
+      "classification": "wall-service special case/adaptation",
+      "quota_mapping": "unit_wall",
+      "assumption": "Unit wall availability transfers to future bursts"
+    },
+    "all_nonbacklogged_queue_exposure_10ms_quota_scaled": {
+      "status": "available",
+      "capacity_rps": 133.21190981201468,
+      "jobs": 18900,
+      "exposure_sec": 70.939603023,
+      "classification": "wall-service special case/adaptation",
+      "quota_mapping": "quota_scaled",
+      "assumption": "Wall demand approximates CPU and quota-scaled service transfers to future bursts"
+    },
+    "all_nonbacklogged_affine_wall_demand": {
+      "status": "available",
+      "capacity_rps": 136.7661277687131,
+      "coefficients": [
+        0.004477965206342273,
+        -6.010912569490453e-06
+      ],
+      "residual_sum_squares": 2.963908435034236e-07,
+      "extrapolation_ratio": 1.1686528671253456,
+      "classification": "ordinary load-dependent wall-demand adaptation, not a reproduced published algorithm",
+      "assumptions": "elapsed worker time approximates CPU demand; affine demand transfers beyond observed loads; quota budget .5 becomes available service; shared FIFO approximation"
+    },
+    "calibration_block_cv_selector": {
+      "status": "available",
+      "capacity_rps": 148.46275808875967,
+      "intercept": 0.0,
+      "demand_sec": 0.005276095883442713,
+      "quadratic_sec2": -1.2853377692608807e-05,
+      "residual_sum_squares": 0.0015855250813121065,
+      "calibration_max_throughput_rps": 117.02887282956029,
+      "extrapolation_ratio": 1.2685994020038063,
+      "fit": "nonnegative_intercept_and_positive_demand_monotonic_capacity_root",
+      "selected_family": "quadratic",
+      "classification": "ordinary blocked cross-validation adaptation; not SARDE implementation"
+    }
+  },
+  "predictions": {
+    "strict_low_worker_wall_unit_wall": {
+      "val_b1_low30_p6": 0.0,
+      "val_b1_low30_p12": 0.0,
+      "val_b1_low15_p6": 0.0,
+      "val_b1_low15_p12": 0.0,
+      "val_b2_low30_p12": 0.0,
+      "val_b2_low15_p12": 0.0,
+      "val_b2_low30_p6": 0.0,
+      "val_b2_low15_p6": 0.0,
+      "val_b3_low15_p12": 0.0,
+      "val_b3_low15_p6": 0.0,
+      "val_b3_low30_p12": 0.0,
+      "val_b3_low30_p6": 0.0,
+      "val_b4_low15_p6": 0.0,
+      "val_b4_low30_p6": 0.0,
+      "val_b4_low15_p12": 0.0,
+      "val_b4_low30_p12": 0.0
+    },
+    "strict_low_worker_wall_quota_scaled": {
+      "val_b1_low30_p6": 45.333333333333336,
+      "val_b1_low30_p12": 60.0,
+      "val_b1_low15_p6": 49.023809523809526,
+      "val_b1_low15_p12": 67.23809523809524,
+      "val_b2_low30_p12": 60.0,
+      "val_b2_low15_p12": 67.23809523809524,
+      "val_b2_low30_p6": 45.333333333333336,
+      "val_b2_low15_p6": 49.023809523809526,
+      "val_b3_low15_p12": 67.23809523809524,
+      "val_b3_low15_p6": 49.023809523809526,
+      "val_b3_low30_p12": 60.0,
+      "val_b3_low30_p6": 45.333333333333336,
+      "val_b4_low15_p6": 49.023809523809526,
+      "val_b4_low30_p6": 45.333333333333336,
+      "val_b4_low15_p12": 67.23809523809524,
+      "val_b4_low30_p12": 60.0
+    },
+    "strict_low_queue_exposure_exact_unit_wall": {
+      "val_b1_low30_p6": 0.0,
+      "val_b1_low30_p12": 0.0,
+      "val_b1_low15_p6": 0.0,
+      "val_b1_low15_p12": 0.0,
+      "val_b2_low30_p12": 0.0,
+      "val_b2_low15_p12": 0.0,
+      "val_b2_low30_p6": 0.0,
+      "val_b2_low15_p6": 0.0,
+      "val_b3_low15_p12": 0.0,
+      "val_b3_low15_p6": 0.0,
+      "val_b3_low30_p12": 0.0,
+      "val_b3_low30_p6": 0.0,
+      "val_b4_low15_p6": 0.0,
+      "val_b4_low30_p6": 0.0,
+      "val_b4_low15_p12": 0.0,
+      "val_b4_low30_p12": 0.0
+    },
+    "strict_low_queue_exposure_exact_quota_scaled": {
+      "val_b1_low30_p6": 45.333333333333336,
+      "val_b1_low30_p12": 60.0,
+      "val_b1_low15_p6": 49.023809523809526,
+      "val_b1_low15_p12": 67.23809523809524,
+      "val_b2_low30_p12": 60.0,
+      "val_b2_low15_p12": 67.23809523809524,
+      "val_b2_low30_p6": 45.333333333333336,
+      "val_b2_low15_p6": 49.023809523809526,
+      "val_b3_low15_p12": 67.23809523809524,
+      "val_b3_low15_p6": 49.023809523809526,
+      "val_b3_low30_p12": 60.0,
+      "val_b3_low30_p6": 45.333333333333336,
+      "val_b4_low15_p6": 49.023809523809526,
+      "val_b4_low30_p6": 45.333333333333336,
+      "val_b4_low15_p12": 67.23809523809524,
+      "val_b4_low30_p12": 60.0
+    },
+    "strict_low_queue_exposure_10ms_unit_wall": {
+      "val_b1_low30_p6": 0.0,
+      "val_b1_low30_p12": 0.0,
+      "val_b1_low15_p6": 0.0,
+      "val_b1_low15_p12": 0.0,
+      "val_b2_low30_p12": 0.0,
+      "val_b2_low15_p12": 0.0,
+      "val_b2_low30_p6": 0.0,
+      "val_b2_low15_p6": 0.0,
+      "val_b3_low15_p12": 0.0,
+      "val_b3_low15_p6": 0.0,
+      "val_b3_low30_p12": 0.0,
+      "val_b3_low30_p6": 0.0,
+      "val_b4_low15_p6": 0.0,
+      "val_b4_low30_p6": 0.0,
+      "val_b4_low15_p12": 0.0,
+      "val_b4_low30_p12": 0.0
+    },
+    "strict_low_queue_exposure_10ms_quota_scaled": {
+      "val_b1_low30_p6": 7.041666666666667,
+      "val_b1_low30_p12": 42.166666666666664,
+      "val_b1_low15_p6": 7.833333333333333,
+      "val_b1_low15_p12": 47.333333333333336,
+      "val_b2_low30_p12": 42.166666666666664,
+      "val_b2_low15_p12": 47.333333333333336,
+      "val_b2_low30_p6": 7.041666666666667,
+      "val_b2_low15_p6": 7.833333333333333,
+      "val_b3_low15_p12": 47.333333333333336,
+      "val_b3_low15_p6": 7.833333333333333,
+      "val_b3_low30_p12": 42.166666666666664,
+      "val_b3_low30_p6": 7.041666666666667,
+      "val_b4_low15_p6": 7.833333333333333,
+      "val_b4_low30_p6": 7.041666666666667,
+      "val_b4_low15_p12": 47.333333333333336,
+      "val_b4_low30_p12": 42.166666666666664
+    },
+    "strict_low_affine_wall_demand": {},
+    "all_nonbacklogged_worker_wall_unit_wall": {
+      "val_b1_low30_p6": 0.0,
+      "val_b1_low30_p12": 0.0,
+      "val_b1_low15_p6": 0.0,
+      "val_b1_low15_p12": 0.0,
+      "val_b2_low30_p12": 0.0,
+      "val_b2_low15_p12": 0.0,
+      "val_b2_low30_p6": 0.0,
+      "val_b2_low15_p6": 0.0,
+      "val_b3_low15_p12": 0.0,
+      "val_b3_low15_p6": 0.0,
+      "val_b3_low30_p12": 0.0,
+      "val_b3_low30_p6": 0.0,
+      "val_b4_low15_p6": 0.0,
+      "val_b4_low30_p6": 0.0,
+      "val_b4_low15_p12": 0.0,
+      "val_b4_low30_p12": 0.0
+    },
+    "all_nonbacklogged_worker_wall_quota_scaled": {
+      "val_b1_low30_p6": 34.6875,
+      "val_b1_low30_p12": 55.1875,
+      "val_b1_low15_p6": 37.92857142857143,
+      "val_b1_low15_p12": 61.92857142857143,
+      "val_b2_low30_p12": 55.1875,
+      "val_b2_low15_p12": 61.92857142857143,
+      "val_b2_low30_p6": 34.6875,
+      "val_b2_low15_p6": 37.92857142857143,
+      "val_b3_low15_p12": 61.92857142857143,
+      "val_b3_low15_p6": 37.92857142857143,
+      "val_b3_low30_p12": 55.1875,
+      "val_b3_low30_p6": 34.6875,
+      "val_b4_low15_p6": 37.92857142857143,
+      "val_b4_low30_p6": 34.6875,
+      "val_b4_low15_p12": 61.92857142857143,
+      "val_b4_low30_p12": 55.1875
+    },
+    "all_nonbacklogged_queue_exposure_exact_unit_wall": {
+      "val_b1_low30_p6": 0.0,
+      "val_b1_low30_p12": 0.0,
+      "val_b1_low15_p6": 0.0,
+      "val_b1_low15_p12": 0.0,
+      "val_b2_low30_p12": 0.0,
+      "val_b2_low15_p12": 0.0,
+      "val_b2_low30_p6": 0.0,
+      "val_b2_low15_p6": 0.0,
+      "val_b3_low15_p12": 0.0,
+      "val_b3_low15_p6": 0.0,
+      "val_b3_low30_p12": 0.0,
+      "val_b3_low30_p6": 0.0,
+      "val_b4_low15_p6": 0.0,
+      "val_b4_low30_p6": 0.0,
+      "val_b4_low15_p12": 0.0,
+      "val_b4_low30_p12": 0.0
+    },
+    "all_nonbacklogged_queue_exposure_exact_quota_scaled": {
+      "val_b1_low30_p6": 34.895833333333336,
+      "val_b1_low30_p12": 55.291666666666664,
+      "val_b1_low15_p6": 38.166666666666664,
+      "val_b1_low15_p12": 62.04761904761905,
+      "val_b2_low30_p12": 55.291666666666664,
+      "val_b2_low15_p12": 62.04761904761905,
+      "val_b2_low30_p6": 34.895833333333336,
+      "val_b2_low15_p6": 38.166666666666664,
+      "val_b3_low15_p12": 62.04761904761905,
+      "val_b3_low15_p6": 38.166666666666664,
+      "val_b3_low30_p12": 55.291666666666664,
+      "val_b3_low30_p6": 34.895833333333336,
+      "val_b4_low15_p6": 38.166666666666664,
+      "val_b4_low30_p6": 34.895833333333336,
+      "val_b4_low15_p12": 62.04761904761905,
+      "val_b4_low30_p12": 55.291666666666664
+    },
+    "all_nonbacklogged_queue_exposure_10ms_unit_wall": {
+      "val_b1_low30_p6": 0.0,
+      "val_b1_low30_p12": 0.0,
+      "val_b1_low15_p6": 0.0,
+      "val_b1_low15_p12": 0.0,
+      "val_b2_low30_p12": 0.0,
+      "val_b2_low15_p12": 0.0,
+      "val_b2_low30_p6": 0.0,
+      "val_b2_low15_p6": 0.0,
+      "val_b3_low15_p12": 0.0,
+      "val_b3_low15_p6": 0.0,
+      "val_b3_low30_p12": 0.0,
+      "val_b3_low30_p6": 0.0,
+      "val_b4_low15_p6": 0.0,
+      "val_b4_low30_p6": 0.0,
+      "val_b4_low15_p12": 0.0,
+      "val_b4_low30_p12": 0.0
+    },
+    "all_nonbacklogged_queue_exposure_10ms_quota_scaled": {
+      "val_b1_low30_p6": 23.979166666666668,
+      "val_b1_low30_p12": 50.145833333333336,
+      "val_b1_low15_p6": 26.333333333333332,
+      "val_b1_low15_p12": 56.357142857142854,
+      "val_b2_low30_p12": 50.145833333333336,
+      "val_b2_low15_p12": 56.357142857142854,
+      "val_b2_low30_p6": 23.979166666666668,
+      "val_b2_low15_p6": 26.333333333333332,
+      "val_b3_low15_p12": 56.357142857142854,
+      "val_b3_low15_p6": 26.333333333333332,
+      "val_b3_low30_p12": 50.145833333333336,
+      "val_b3_low30_p6": 23.979166666666668,
+      "val_b4_low15_p6": 26.333333333333332,
+      "val_b4_low30_p6": 23.979166666666668,
+      "val_b4_low15_p12": 56.357142857142854,
+      "val_b4_low30_p12": 50.145833333333336
+    },
+    "all_nonbacklogged_affine_wall_demand": {
+      "val_b1_low30_p6": 17.583333333333332,
+      "val_b1_low30_p12": 47.229166666666664,
+      "val_b1_low15_p6": 19.452380952380953,
+      "val_b1_low15_p12": 53.023809523809526,
+      "val_b2_low30_p12": 47.229166666666664,
+      "val_b2_low15_p12": 53.023809523809526,
+      "val_b2_low30_p6": 17.583333333333332,
+      "val_b2_low15_p6": 19.452380952380953,
+      "val_b3_low15_p12": 53.023809523809526,
+      "val_b3_low15_p6": 19.452380952380953,
+      "val_b3_low30_p12": 47.229166666666664,
+      "val_b3_low30_p6": 17.583333333333332,
+      "val_b4_low15_p6": 19.452380952380953,
+      "val_b4_low30_p6": 17.583333333333332,
+      "val_b4_low15_p12": 53.023809523809526,
+      "val_b4_low30_p12": 47.229166666666664
+    },
+    "calibration_block_cv_selector": {
+      "val_b1_low30_p6": 0.0,
+      "val_b1_low30_p12": 32.625,
+      "val_b1_low15_p6": 0.0,
+      "val_b1_low15_p12": 36.523809523809526,
+      "val_b2_low30_p12": 32.625,
+      "val_b2_low15_p12": 36.523809523809526,
+      "val_b2_low30_p6": 0.0,
+      "val_b2_low15_p6": 0.0,
+      "val_b3_low15_p12": 36.523809523809526,
+      "val_b3_low15_p6": 0.0,
+      "val_b3_low30_p12": 32.625,
+      "val_b3_low30_p6": 0.0,
+      "val_b4_low15_p6": 0.0,
+      "val_b4_low30_p6": 0.0,
+      "val_b4_low15_p12": 36.523809523809526,
+      "val_b4_low30_p12": 32.625
+    }
+  },
+  "cross_validation": {
+    "linear": {
+      "folds": [
+        {
+          "training_block": 1,
+          "heldout_block": 2,
+          "utilization_sse": 0.0029962655055779277
+        },
+        {
+          "training_block": 2,
+          "heldout_block": 1,
+          "utilization_sse": 0.002881639887827607
+        }
+      ],
+      "total_sse": 0.005877905393405535
+    },
+    "quadratic": {
+      "folds": [
+        {
+          "training_block": 1,
+          "heldout_block": 2,
+          "utilization_sse": 0.0008642072915882584
+        },
+        {
+          "training_block": 2,
+          "heldout_block": 1,
+          "utilization_sse": 0.0007237445339582183
+        }
+      ],
+      "total_sse": 0.0015879518255464767
+    }
+  }
+}

@@ -87,11 +87,14 @@ def temperatures():
     return values
 
 
-def settle(log_path, baseline=None, initial_idle=False, expected_power=None):
+def settle(log_path, baseline=None, initial_idle=False, expected_power=None, label=None):
     start = time.monotonic()
     samples = []
     minimum = POLICY['initial_idle_sec'] if initial_idle else POLICY['window_sec']
-    print(f'Settling: at least {minimum}s; checking a stable 60s temperature window.', flush=True)
+    label = label or ('initial idle' if initial_idle else Path(log_path).parent.name)
+    prefix = f'Settling [{label}]'
+    next_report_sec = 0
+    print(f'{prefix}: at least {minimum}s; checking a stable 60s temperature window.', flush=True)
     while True:
         elapsed = time.monotonic() - start
         vals = temperatures()
@@ -103,6 +106,12 @@ def settle(log_path, baseline=None, initial_idle=False, expected_power=None):
             raise RuntimeError('No readable temperature sensor.')
         if expected_power is not None and current_power != comparable_power(expected_power):
             raise RuntimeError('Power settings changed during settling; logs preserved.')
+        # Report the minute boundary before accepting it, so a stable trial
+        # never returns at 60 seconds without printing the final temperatures.
+        if elapsed >= next_report_sec:
+            readings = ', '.join(f'{sensor}={value:.1f}°C' for sensor, value in sorted(vals.items()))
+            print(f'{prefix} t={elapsed:.0f}s: {readings}', flush=True)
+            next_report_sec = (int(elapsed) // 60 + 1) * 60
         # Include the sample just before the window boundary to cover a full minute.
         index = 0
         while index + 1 < len(samples) and samples[index + 1]['elapsed_sec'] <= elapsed - POLICY['window_sec']:
@@ -113,8 +122,6 @@ def settle(log_path, baseline=None, initial_idle=False, expected_power=None):
             return summary
         if elapsed >= minimum + POLICY['timeout_sec']:
             raise RuntimeError('Temperature did not stabilize within the protocol timeout; inspect settling log.')
-        if len(samples) % 12 == 1:
-            print(f'Settling {elapsed:.0f}s: {vals}', flush=True)
         time.sleep(POLICY['sample_sec'])
 
 

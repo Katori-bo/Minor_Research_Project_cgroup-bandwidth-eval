@@ -1,0 +1,97 @@
+{
+  "usable": true,
+  "state_and_cohort_pass": true,
+  "busy_repeatability_pass": true,
+  "calibration_trials": [
+    "cal_b1_steady15",
+    "cal_b1_steady120",
+    "cal_b1_idle0",
+    "cal_b1_steady60",
+    "cal_b1_mixed30",
+    "cal_b1_mixed15",
+    "cal_b1_steady90",
+    "cal_b1_steady30",
+    "cal_b2_steady30",
+    "cal_b2_steady90",
+    "cal_b2_mixed15",
+    "cal_b2_mixed30",
+    "cal_b2_steady60",
+    "cal_b2_idle0",
+    "cal_b2_steady120",
+    "cal_b2_steady15"
+  ],
+  "methods": {
+    "whole": {
+      "status": "available",
+      "capacity_rps": 33.372004418433605,
+      "cpu_sec_per_job": 0.00749130908846183
+    },
+    "busy": {
+      "status": "available",
+      "capacity_rps": 34.85416666666667,
+      "calibration_capacity_bounds_rps": [
+        34.85416666666667,
+        34.85416666666667
+      ]
+    },
+    "idle_corrected": {
+      "status": "available",
+      "capacity_rps": 33.41050023696146,
+      "cpu_sec_per_job": 0.007473248429833207,
+      "background_cpu_rate": 0.000315031564185751
+    },
+    "regression": {
+      "status": "available",
+      "capacity_rps": 29.467316008654628,
+      "intercept": 0.001648677571987639,
+      "demand_sec": 0.008428026575446196,
+      "quadratic_sec2": 0.0,
+      "residual_sum_squares": 8.005200995249328e-05,
+      "calibration_max_throughput_rps": 29.386396441072534,
+      "extrapolation_ratio": 1.002753640370447,
+      "fit": "nonnegative_intercept_and_positive_demand_monotonic_capacity_root",
+      "fit_trial_ids": [
+        "cal_b1_steady15",
+        "cal_b1_steady120",
+        "cal_b1_idle0",
+        "cal_b1_steady60",
+        "cal_b1_steady90",
+        "cal_b1_steady30",
+        "cal_b2_steady30",
+        "cal_b2_steady90",
+        "cal_b2_steady60",
+        "cal_b2_idle0",
+        "cal_b2_steady120",
+        "cal_b2_steady15"
+      ]
+    },
+    "quadratic": {
+      "status": "available",
+      "capacity_rps": 29.810073101551133,
+      "intercept": 0.0,
+      "demand_sec": 0.009033858800275161,
+      "quadratic_sec2": -2.1718560126988202e-05,
+      "residual_sum_squares": 3.058014517467389e-05,
+      "calibration_max_throughput_rps": 29.386396441072534,
+      "extrapolation_ratio": 1.0144174418026444,
+      "fit": "nonnegative_intercept_and_positive_demand_monotonic_capacity_root",
+      "fit_trial_ids": [
+        "cal_b1_steady15",
+        "cal_b1_steady120",
+        "cal_b1_idle0",
+        "cal_b1_steady60",
+        "cal_b1_steady90",
+        "cal_b1_steady30",
+        "cal_b2_steady30",
+        "cal_b2_steady90",
+        "cal_b2_steady60",
+        "cal_b2_idle0",
+        "cal_b2_steady120",
+        "cal_b2_steady15"
+      ]
+    }
+  },
+  "novelty_established": false,
+  "idle_cpu_rate": 0.000315031564185751,
+  "decision": "calibration_qualified"
+}

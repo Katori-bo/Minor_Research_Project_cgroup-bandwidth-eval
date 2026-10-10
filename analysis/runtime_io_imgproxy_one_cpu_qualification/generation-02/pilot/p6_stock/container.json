@@ -1,0 +1,282 @@
+{
+  "argv": [
+    "docker",
+    "create",
+    "--name",
+    "quota-imgproxy-8d01d635ec5749a3b9f0eccb902eb338",
+    "--label",
+    "research.imgproxy.qualification.owner=6914b4203bc143159996c5459894155e",
+    "--cpuset-cpus",
+    "2",
+    "--cpu-period",
+    "100000",
+    "--cpu-quota",
+    "25000",
+    "--memory",
+    "512m",
+    "--pids-limit",
+    "128",
+    "--read-only",
+    "--tmpfs",
+    "/tmp:rw,size=64m",
+    "--mount",
+    "type=bind,src=/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_imgproxy_one_cpu_qualification/generation-02/pilot/p6_stock/qualification,dst=/qualification,readonly",
+    "-p",
+    "127.0.0.1::8080",
+    "-e",
+    "GOMAXPROCS=1",
+    "-e",
+    "IMGPROXY_WORKERS=1",
+    "-e",
+    "IMGPROXY_REQUESTS_QUEUE_SIZE=128",
+    "-e",
+    "IMGPROXY_LOCAL_FILESYSTEM_ROOT=/input",
+    "-e",
+    "IMGPROXY_LOG_LEVEL=error",
+    "-e",
+    "IMGPROXY_USE_ETAG=false",
+    "-e",
+    "IMGPROXY_USE_LAST_MODIFIED=false",
+    "-e",
+    "IMGPROXY_QUALIFICATION=0",
+    "sha256:0268d48513716379a5a5de78c67db5b7f4197d092762ca2d76590a8086fcedd9"
+  ],
+  "inspect": {
+    "Id": "2eb19c82b42d724f4f265f8c7f99fa5d0357a1128423cad11b66424b9cfe0491",
+    "Created": "2026-10-09T15:45:21.497424232Z",
+    "Path": "/gate",
+    "Args": [
+      "--server"
+    ],
+    "State": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 414899,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-09T15:45:21.544482199Z",
+      "FinishedAt": "0001-01-01T00:00:00Z"
+    },
+    "Image": "sha256:0268d48513716379a5a5de78c67db5b7f4197d092762ca2d76590a8086fcedd9",
+    "ResolvConfPath": "/var/lib/docker/containers/2eb19c82b42d724f4f265f8c7f99fa5d0357a1128423cad11b66424b9cfe0491/resolv.conf",
+    "HostnamePath": "/var/lib/docker/containers/2eb19c82b42d724f4f265f8c7f99fa5d0357a1128423cad11b66424b9cfe0491/hostname",
+    "HostsPath": "/var/lib/docker/containers/2eb19c82b42d724f4f265f8c7f99fa5d0357a1128423cad11b66424b9cfe0491/hosts",
+    "LogPath": "/var/lib/docker/containers/2eb19c82b42d724f4f265f8c7f99fa5d0357a1128423cad11b66424b9cfe0491/2eb19c82b42d724f4f265f8c7f99fa5d0357a1128423cad11b66424b9cfe0491-json.log",
+    "Name": "/quota-imgproxy-8d01d635ec5749a3b9f0eccb902eb338",
+    "RestartCount": 0,
+    "Driver": "overlayfs",
+    "Platform": "linux",
+    "MountLabel": "",
+    "ProcessLabel": "",
+    "AppArmorProfile": "",
+    "ExecIDs": null,
+    "HostConfig": {
+      "Binds": null,
+      "ContainerIDFile": "",
+      "LogConfig": {
+        "Type": "json-file",
+        "Config": {}
+      },
+      "NetworkMode": "bridge",
+      "PortBindings": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": ""
+          }
+        ]
+      },
+      "RestartPolicy": {
+        "Name": "no",
+        "MaximumRetryCount": 0
+      },
+      "AutoRemove": false,
+      "VolumeDriver": "",
+      "VolumesFrom": null,
+      "ConsoleSize": [
+        0,
+        0
+      ],
+      "CapAdd": null,
+      "CapDrop": null,
+      "CgroupnsMode": "private",
+      "Dns": null,
+      "DnsOptions": [],
+      "DnsSearch": [],
+      "ExtraHosts": null,
+      "GroupAdd": null,
+      "IpcMode": "private",
+      "Cgroup": "",
+      "Links": null,
+      "OomScoreAdj": 0,
+      "PidMode": "",
+      "Privileged": false,
+      "PublishAllPorts": false,
+      "ReadonlyRootfs": true,
+      "SecurityOpt": null,
+      "Tmpfs": {
+        "/tmp": "rw,size=64m"
+      },
+      "UTSMode": "",
+      "UsernsMode": "",
+      "ShmSize": 67108864,
+      "Runtime": "runc",
+      "Isolation": "",
+      "CpuShares": 0,
+      "Memory": 536870912,
+      "NanoCpus": 0,
+      "CgroupParent": "",
+      "BlkioWeight": 0,
+      "BlkioWeightDevice": [],
+      "BlkioDeviceReadBps": [],
+      "BlkioDeviceWriteBps": [],
+      "BlkioDeviceReadIOps": [],
+      "BlkioDeviceWriteIOps": [],
+      "CpuPeriod": 100000,
+      "CpuQuota": 25000,
+      "CpuRealtimePeriod": 0,
+      "CpuRealtimeRuntime": 0,
+      "CpusetCpus": "2",
+      "CpusetMems": "",
+      "Devices": [],
+      "DeviceCgroupRules": null,
+      "DeviceRequests": null,
+      "MemoryReservation": 0,
+      "MemorySwap": 1073741824,
+      "MemorySwappiness": null,
+      "OomKillDisable": null,
+      "PidsLimit": 128,
+      "Ulimits": null,
+      "CpuCount": 0,
+      "CpuPercent": 0,
+      "IOMaximumIOps": 0,
+      "IOMaximumBandwidth": 0,
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_imgproxy_one_cpu_qualification/generation-02/pilot/p6_stock/qualification",
+          "Target": "/qualification",
+          "ReadOnly": true
+        }
+      ],
+      "MaskedPaths": [
+        "/proc/acpi",
+        "/proc/asound",
+        "/proc/interrupts",
+        "/proc/kcore",
+        "/proc/keys",
+        "/proc/latency_stats",
+        "/proc/sched_debug",
+        "/proc/scsi",
+        "/proc/timer_list",
+        "/proc/timer_stats",
+        "/sys/devices/virtual/powercap",
+        "/sys/firmware"
+      ],
+      "ReadonlyPaths": [
+        "/proc/bus",
+        "/proc/fs",
+        "/proc/irq",
+        "/proc/sys",
+        "/proc/sysrq-trigger"
+      ]
+    },
+    "Storage": {
+      "RootFS": {
+        "Snapshot": {
+          "Name": "overlayfs"
+        }
+      }
+    },
+    "Mounts": [
+      {
+        "Type": "bind",
+        "Source": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_imgproxy_one_cpu_qualification/generation-02/pilot/p6_stock/qualification",
+        "Destination": "/qualification",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      }
+    ],
+    "Config": {
+      "Hostname": "2eb19c82b42d",
+      "Domainname": "",
+      "User": "",
+      "AttachStdin": false,
+      "AttachStdout": true,
+      "AttachStderr": true,
+      "ExposedPorts": {
+        "8080/tcp": {}
+      },
+      "Tty": false,
+      "OpenStdin": false,
+      "StdinOnce": false,
+      "Env": [
+        "GOMAXPROCS=1",
+        "IMGPROXY_WORKERS=1",
+        "IMGPROXY_REQUESTS_QUEUE_SIZE=128",
+        "IMGPROXY_LOCAL_FILESYSTEM_ROOT=/input",
+        "IMGPROXY_LOG_LEVEL=error",
+        "IMGPROXY_USE_ETAG=false",
+        "IMGPROXY_USE_LAST_MODIFIED=false",
+        "IMGPROXY_QUALIFICATION=0"
+      ],
+      "Cmd": [
+        "--server"
+      ],
+      "Image": "sha256:0268d48513716379a5a5de78c67db5b7f4197d092762ca2d76590a8086fcedd9",
+      "Volumes": null,
+      "WorkingDir": "",
+      "Entrypoint": [
+        "/gate"
+      ],
+      "Labels": {
+        "research.imgproxy.qualification.owner": "6914b4203bc143159996c5459894155e"
+      }
+    },
+    "NetworkSettings": {
+      "SandboxID": "345b8bbbef5a3b157c97e23fe59ad13e29fe1d2d8a8c658e897f7d5c4e3e3425",
+      "SandboxKey": "/var/run/docker/netns/345b8bbbef5a",
+      "Ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "33099"
+          }
+        ]
+      },
+      "Networks": {
+        "bridge": {
+          "IPAMConfig": null,
+          "Links": null,
+          "Aliases": null,
+          "DriverOpts": null,
+          "GwPriority": 0,
+          "NetworkID": "4833a806bd1ccb659b775af4965ac4c5ccdf2234d9a752851a7f9983d969335e",
+          "EndpointID": "50df282e320602435f660bad4c277db0939105af84e993d8f554897751f1aa84",
+          "Gateway": "172.17.0.1",
+          "IPAddress": "172.17.0.2",
+          "MacAddress": "5e:8e:78:f0:a3:a7",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "DNSNames": null
+        }
+      }
+    },
+    "ImageManifestDescriptor": {
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "digest": "sha256:0268d48513716379a5a5de78c67db5b7f4197d092762ca2d76590a8086fcedd9",
+      "size": 406,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      }
+    }
+  }
+}

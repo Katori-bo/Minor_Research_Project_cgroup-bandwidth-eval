@@ -1,0 +1,88 @@
+{
+  "completed_utc": "2026-10-08T07:53:06.628194+00:00",
+  "milestone": "General exact reference solver, correctness argument and independent small-model verification",
+  "mathematical_scope": "One shared constant service time; rational inputs; entire real closed interval; initially empty tail-drop FIFO; late jobs finish",
+  "tests": {
+    "recorded_utc": "2026-10-08T07:51:41.388891+00:00",
+    "provenance": "Recorded from the successful unittest tool output in this session before packaging; packaging does not rerun or invent test results.",
+    "command": "python3 -m unittest discover -s analysis -p test_finite_fifo_deadline_reference.py -v",
+    "working_directory": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency",
+    "tests_run": 14,
+    "failures": 0,
+    "errors": 0,
+    "status": "OK",
+    "reported_elapsed_seconds": 11.682,
+    "exhaustive_problems": 672,
+    "seeded_rational_problems": 200,
+    "directed_model_comparison_problems": 9,
+    "total_model_comparison_problems": 881,
+    "measurement_scope": "software verification runtime, not a scientific service experiment or scalability benchmark",
+    "source_sha256": {
+      "finite_fifo_deadline_reference.py": "945f4f8c057878467cf25453d3cae1ab36313cf45814b08bf48b22acf3511fab",
+      "finite_fifo_deadline_symbolic_check.py": "013598120ba62af333caec1beb98a08393f7c7c341aa234732e4149b4f0d612f",
+      "test_finite_fifo_deadline_reference.py": "b53d010f1f7a26a423a0182074266cee75a583d38e4e25da2177eeff2cc0dc7b"
+    }
+  },
+  "examples": [
+    {
+      "name": "interior_maximum",
+      "offered": 4,
+      "minimum_fraction": "0",
+      "maximum_fraction": "3/4",
+      "minimum_witness": "1/2",
+      "maximum_witness": "137/160",
+      "reference_stats": {
+        "root_expressions": 40,
+        "distinct_breakpoints": 8,
+        "cells": 15,
+        "fixed_parameter_replays": 17,
+        "offer_evaluations": 68
+      },
+      "independent_checker_agrees": true
+    },
+    {
+      "name": "interior_minimum",
+      "offered": 4,
+      "minimum_fraction": "1/2",
+      "maximum_fraction": "3/4",
+      "minimum_witness": "131/120",
+      "maximum_witness": "1",
+      "reference_stats": {
+        "root_expressions": 40,
+        "distinct_breakpoints": 5,
+        "cells": 9,
+        "fixed_parameter_replays": 11,
+        "offer_evaluations": 44
+      },
+      "independent_checker_agrees": true
+    },
+    {
+      "name": "boundary_only_minimum",
+      "offered": 2,
+      "minimum_fraction": "0",
+      "maximum_fraction": "1/2",
+      "minimum_witness": "1/2",
+      "maximum_witness": "5/8",
+      "reference_stats": {
+        "root_expressions": 8,
+        "distinct_breakpoints": 2,
+        "cells": 3,
+        "fixed_parameter_replays": 5,
+        "offer_evaluations": 10
+      },
+      "independent_checker_agrees": true
+    }
+  ],
+  "local_document_links_verified": 4,
+  "protected_files_unchanged": 1911,
+  "prior_originality_and_guard_seals_verified": true,
+  "current_draft_and_baseline_assessment_unchanged": true,
+  "scientific_collection_launched": false,
+  "scientific_evidence_fitted": false,
+  "smt_baseline_implemented": false,
+  "published_methods_reproduced": false,
+  "large_trace_scalability_established": false,
+  "novelty_established": false,
+  "correctness_scope": "Written induction argument plus differential tests, not a machine-checked proof",
+  "next_gate": "Independent SMT baseline and prior-method comparison before algorithmic improvement or fresh collection"
+}

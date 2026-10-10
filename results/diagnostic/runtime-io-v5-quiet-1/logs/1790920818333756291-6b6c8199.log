@@ -1,0 +1,140 @@
+
+[2026-10-02T11:30:18.412375+05:30] build-and-go-tests: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/build.sh
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  40.45kB
+Step 1/7 : FROM golang:1.26.1-alpine AS build
+ ---> 2389ebfa5b7f
+Step 2/7 : WORKDIR /src
+ ---> Using cache
+ ---> c31f012bdebd
+Step 3/7 : COPY go.mod *.go ./
+ ---> Using cache
+ ---> fd345e8f655d
+Step 4/7 : RUN go test -count=1 ./... && CGO_ENABLED=0 go build -trimpath -o /server .
+ ---> Using cache
+ ---> 9ee902611632
+Step 5/7 : FROM scratch
+ ---> 
+Step 6/7 : COPY --from=build /server /server
+ ---> Using cache
+ ---> 3437eabe5b6b
+Step 7/7 : ENTRYPOINT ["/server"]
+ ---> Using cache
+ ---> 894692c87322
+Successfully built 894692c87322
+Successfully tagged quota-diagnostic-service:4
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  24.58kB
+Step 1/6 : FROM golang:1.26.1-alpine AS build
+ ---> 2389ebfa5b7f
+Step 2/6 : WORKDIR /src
+ ---> Using cache
+ ---> c31f012bdebd
+Step 3/6 : COPY go.mod *.go ./
+ ---> Using cache
+ ---> 3f56fc627a8c
+Step 4/6 : RUN go test -count=1 ./... && CGO_ENABLED=0 go build -trimpath -o /loadgen .
+ ---> Using cache
+ ---> 4d5ed49b5671
+Step 5/6 : FROM scratch
+ ---> 
+Step 6/6 : COPY --from=build /loadgen /loadgen
+ ---> Using cache
+ ---> 87b456713ae7
+Successfully built 87b456713ae7
+Successfully tagged quota-diagnostic-loadgen:1
+
+[2026-10-02T11:30:18.954946+05:30] python-regression-tests: /usr/bin/python3 -m unittest discover -s /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic -p 'test_*.py' -v
+test_client_launch_preserves_flags_after_trace_toggle (test_diagnostic.DiagnosticPlanTests.test_client_launch_preserves_flags_after_trace_toggle) ... ok
+test_completed_audit_recomputes_raw_outcomes_and_detects_changed_evidence (test_diagnostic.DiagnosticPlanTests.test_completed_audit_recomputes_raw_outcomes_and_detects_changed_evidence) ... ok
+test_frozen_matrix_and_pilot (test_diagnostic.DiagnosticPlanTests.test_frozen_matrix_and_pilot) ... ok
+test_interaction_uses_trials_as_units (test_diagnostic.DiagnosticPlanTests.test_interaction_uses_trials_as_units) ... ok
+test_offline_usb_power_source_does_not_change_power_record (test_diagnostic.DiagnosticPlanTests.test_offline_usb_power_source_does_not_change_power_record) ... ok
+test_pilot_gate_rejects_missing_timing_and_excess_overhead (test_diagnostic.DiagnosticPlanTests.test_pilot_gate_rejects_missing_timing_and_excess_overhead) ... ok
+test_pipeline_stops_after_pilot_unless_full_requested (test_diagnostic.DiagnosticPlanTests.test_pipeline_stops_after_pilot_unless_full_requested) ... 
+PILOT COMPLETE: /tmp/tmpoc04hgzf/PILOT_COMPLETED.md
+
+COMPLETE: /tmp/tmpwe0ek5e5/COMPLETED.md
+ok
+test_response_event_validates_ids_order_and_preserves_write_failures (test_diagnostic.DiagnosticPlanTests.test_response_event_validates_ids_order_and_preserves_write_failures) ... ok
+test_signed_difference_retains_overlap_and_uses_matching_request (test_diagnostic.DiagnosticPlanTests.test_signed_difference_retains_overlap_and_uses_matching_request) ... ok
+test_trace_clock_mapping_and_goroutine_states (test_diagnostic.DiagnosticPlanTests.test_trace_clock_mapping_and_goroutine_states) ... ok
+test_trial_analysis_joins_ids_before_quantiles (test_diagnostic.DiagnosticPlanTests.test_trial_analysis_joins_ids_before_quantiles) ... ok
+test_broken_transition_chain_fails (test_trace_analysis.TraceEvidenceTests.test_broken_transition_chain_fails) ... ok
+test_capture_does_not_cover_final_flush_fails (test_trace_analysis.TraceEvidenceTests.test_capture_does_not_cover_final_flush_fails) ... ok
+test_drain_waits_for_final_response_not_just_handler (test_trace_analysis.TraceEvidenceTests.test_drain_waits_for_final_response_not_just_handler) ... ok
+test_failed_request_missing_exit_or_worker_fails (test_trace_analysis.TraceEvidenceTests.test_failed_request_missing_exit_or_worker_fails) ... ok
+test_incomplete_capture_and_bad_clock_fail (test_trace_analysis.TraceEvidenceTests.test_incomplete_capture_and_bad_clock_fail) ... ok
+test_missing_final_boundary_or_duplicate_exit_fails (test_trace_analysis.TraceEvidenceTests.test_missing_final_boundary_or_duplicate_exit_fails) ... ok
+test_missing_initial_state_fails (test_trace_analysis.TraceEvidenceTests.test_missing_initial_state_fails) ... ok
+test_missing_scheduler_evidence_fails_for_success_and_timeout (test_trace_analysis.TraceEvidenceTests.test_missing_scheduler_evidence_fails_for_success_and_timeout) ... ok
+test_parser_rejects_duplicate_logs_and_missing_states (test_trace_analysis.TraceEvidenceTests.test_parser_rejects_duplicate_logs_and_missing_states) ... ok
+test_reads_remain_ambiguous_even_with_multiple_requests (test_trace_analysis.TraceEvidenceTests.test_reads_remain_ambiguous_even_with_multiple_requests) ... ok
+test_task_mismatch_missing_end_and_rejection_mismatch_fail (test_trace_analysis.TraceEvidenceTests.test_task_mismatch_missing_end_and_rejection_mismatch_fail) ... ok
+test_zero_id_outcomes_external_gaps_and_other_work (test_trace_analysis.TraceEvidenceTests.test_zero_id_outcomes_external_gaps_and_other_work) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.241s
+
+OK
+
+[2026-10-02T11:30:19.296421+05:30] pilot-collection: /usr/bin/python3 -u /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py new --session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v5-quiet-1/pilot --pilot
+SESSION: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v5-quiet-1/pilot
+Settling: at least 600s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 62.75}
+Settling 60s: {'k10temp:Tctl': 42.5}
+Settling 120s: {'k10temp:Tctl': 42.25}
+Settling 180s: {'k10temp:Tctl': 42.125}
+Settling 241s: {'k10temp:Tctl': 42.125}
+Settling 301s: {'k10temp:Tctl': 42.125}
+Settling 361s: {'k10temp:Tctl': 42.0}
+Settling 421s: {'k10temp:Tctl': 42.0}
+Settling 481s: {'k10temp:Tctl': 42.0}
+Settling 541s: {'k10temp:Tctl': 42.0}
+RUN 1/6 trace_overhead_1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 44.125}
+Settling 60s: {'k10temp:Tctl': 41.875}
+RUN 2/6 trace_overhead_2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 90.0}
+Settling 60s: {'k10temp:Tctl': 43.25}
+RUN 3/6 trace_overhead_3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 56.375}
+Settling 60s: {'k10temp:Tctl': 43.125}
+RUN 4/6 trace_overhead_4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 56.25}
+Settling 60s: {'k10temp:Tctl': 43.25}
+RUN 5/6 trace_p100000_w1_on
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 90.5}
+Settling 60s: {'k10temp:Tctl': 46.625}
+Settling 120s: {'k10temp:Tctl': 44.125}
+RUN 6/6 trace_p100000_w1_off
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 90.375}
+Settling 60s: {'k10temp:Tctl': 45.625}
+
+[2026-10-02T11:54:23.805440+05:30] pilot-analysis: /usr/bin/python3 /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/analyze.py /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v5-quiet-1/pilot
+Pilot gate needs review: failure_rates_not_worse
+
+STOPPED (failed): pilot-analysis exited with code 1; see this launch log for the reason
+Evidence preserved in /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/runtime-io-v5-quiet-1.
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 153, in run_worker
+    execute(directory, lock, full_collection=full_collection)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 113, in execute
+    stage_command(directory, 'pilot-analysis', [sys.executable, runner.HERE / 'analyze.py', pilot], lock)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 42, in stage_command
+    raise RuntimeError(f'{stage} exited with code {code}; see this launch log for the reason')
+RuntimeError: pilot-analysis exited with code 1; see this launch log for the reason

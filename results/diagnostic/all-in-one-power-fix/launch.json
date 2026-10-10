@@ -1,0 +1,21 @@
+{
+  "pid": 29179,
+  "start_tick": "4175915",
+  "log": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix/logs/1790711848921591136-623057c6.log",
+  "launched_at": "2026-09-30T01:27:28.922479+05:30",
+  "command": [
+    "/usr/bin/systemd-inhibit",
+    "--no-ask-password",
+    "--what=idle:sleep",
+    "--mode=block",
+    "--who=CPU quota experiment",
+    "--why=Unattended controlled measurements",
+    "--",
+    "/usr/bin/python3",
+    "-u",
+    "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py",
+    "foreground",
+    "--directory",
+    "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix"
+  ]
+}

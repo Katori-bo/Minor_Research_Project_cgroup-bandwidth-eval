@@ -1,0 +1,82 @@
+{
+  "pid": 111360,
+  "cgroup": "/sys/fs/cgroup/system.slice/docker-30d579d34caed286f64b4e96e4cf3f3e788043a71f8a313ab4de850df57905d3.scope",
+  "cgroup_id": 24115,
+  "capped": true,
+  "initial_limits": {
+    "cpu.max": "50000 100000",
+    "cpu.max.burst": "0",
+    "cpuset.cpus.effective": "2,4",
+    "memory.max": "max",
+    "pids.max": "18088"
+  },
+  "resource_baseline": {
+    "limits": {
+      "cpu.max": "50000 100000",
+      "cpu.max.burst": "0",
+      "cpuset.cpus.effective": "2,4",
+      "memory.max": "max",
+      "pids.max": "18088"
+    },
+    "host_config": {
+      "Memory": 0,
+      "MemorySwap": 0,
+      "PidsLimit": null
+    }
+  },
+  "time_namespaces": {
+    "host": {
+      "monotonic": [
+        0,
+        0
+      ],
+      "boottime": [
+        0,
+        0
+      ]
+    },
+    "service": {
+      "monotonic": [
+        0,
+        0
+      ],
+      "boottime": [
+        0,
+        0
+      ]
+    }
+  },
+  "uncapped_ancestors": [
+    {
+      "path": "/sys/fs/cgroup/system.slice",
+      "cpu_max": "max 100000"
+    }
+  ],
+  "initial_cpu_stat": {
+    "usage_usec": 30860,
+    "user_usec": 14621,
+    "system_usec": 16238,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 1,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "startup": "single-thread FIFO before original /server exec",
+  "owned_bpf_ids": [
+    779,
+    781,
+    782,
+    783,
+    784,
+    785,
+    786,
+    787,
+    788,
+    789,
+    790,
+    791
+  ]
+}

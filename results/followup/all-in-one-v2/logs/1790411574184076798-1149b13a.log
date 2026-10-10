@@ -1,0 +1,126 @@
+
+[2026-09-26T14:02:54.265814+05:30] build-and-go-tests: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/build.sh
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  14.85kB
+Step 1/7 : FROM golang:1.26.1-alpine AS build
+ ---> 2389ebfa5b7f
+Step 2/7 : WORKDIR /src
+ ---> Using cache
+ ---> c31f012bdebd
+Step 3/7 : COPY go.mod *.go ./
+ ---> Using cache
+ ---> e79bd38d43b9
+Step 4/7 : RUN go test -count=1 ./... && CGO_ENABLED=0 go build -trimpath -o /server .
+ ---> Using cache
+ ---> 9a5601769d4b
+Step 5/7 : FROM scratch
+ ---> 
+Step 6/7 : COPY --from=build /server /server
+ ---> Using cache
+ ---> a35197e75431
+Step 7/7 : ENTRYPOINT ["/server"]
+ ---> Using cache
+ ---> 70f87d93f9f1
+Successfully built 70f87d93f9f1
+Successfully tagged quota-followup-service:1
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  19.46kB
+Step 1/6 : FROM golang:1.26.1-alpine AS build
+ ---> 2389ebfa5b7f
+Step 2/6 : WORKDIR /src
+ ---> Using cache
+ ---> c31f012bdebd
+Step 3/6 : COPY go.mod *.go ./
+ ---> Using cache
+ ---> 70ef2327dad8
+Step 4/6 : RUN go test -count=1 ./... && CGO_ENABLED=0 go build -trimpath -o /loadgen .
+ ---> Using cache
+ ---> c67d3042bece
+Step 5/6 : FROM scratch
+ ---> 
+Step 6/6 : COPY --from=build /loadgen /loadgen
+ ---> Using cache
+ ---> 774ce3ba4f3c
+Successfully built 774ce3ba4f3c
+Successfully tagged quota-followup-loadgen:1
+
+[2026-09-26T14:02:54.807026+05:30] python-regression-tests: /usr/bin/python3 -m unittest discover -s /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup -p 'test_*.py' -v
+test_constant_environment_does_not_crash_analysis (test_followup.MechanismAndControlTests.test_constant_environment_does_not_crash_analysis) ... ok
+test_drain_waits_for_both_jobs_and_handlers (test_followup.MechanismAndControlTests.test_drain_waits_for_both_jobs_and_handlers) ... ok
+test_full_analysis_keeps_studies_and_traffic_patterns_separate (test_followup.MechanismAndControlTests.test_full_analysis_keeps_studies_and_traffic_patterns_separate) ... ok
+test_known_interaction_and_bootstrap (test_followup.MechanismAndControlTests.test_known_interaction_and_bootstrap) ... ok
+test_matrix_retains_extension_and_loads_replication (test_followup.MechanismAndControlTests.test_matrix_retains_extension_and_loads_replication) ... ok
+test_pilot_overhead_gate (test_followup.MechanismAndControlTests.test_pilot_overhead_gate) ... ok
+test_changed_file_is_not_silently_reused (test_followup.SavedTrialTests.test_changed_file_is_not_silently_reused) ... ok
+test_failed_attempt_never_counts_as_success (test_followup.SavedTrialTests.test_failed_attempt_never_counts_as_success) ... ok
+test_interrupt_retains_evidence_and_uses_a_new_attempt (test_followup.SavedTrialTests.test_interrupt_retains_evidence_and_uses_a_new_attempt) ... ok
+test_missing_completion_marker_is_incomplete (test_followup.SavedTrialTests.test_missing_completion_marker_is_incomplete) ... ok
+test_power_change_is_found_even_when_saved_flags_are_empty (test_followup.SavedTrialTests.test_power_change_is_found_even_when_saved_flags_are_empty) ... ok
+test_server_timestamps_are_checked (test_followup.SavedTrialTests.test_server_timestamps_are_checked) ... ok
+test_throughput_window_excludes_late_responses_but_cohort_retains_them (test_followup.SavedTrialTests.test_throughput_window_excludes_late_responses_but_cohort_retains_them) ... ok
+test_valid_trial_can_be_reused (test_followup.SavedTrialTests.test_valid_trial_can_be_reused) ... ok
+test_validation_recomputes_counts_even_with_new_hashes (test_followup.SavedTrialTests.test_validation_recomputes_counts_even_with_new_hashes) ... ok
+test_child_shares_coordinator_lock_while_unrelated_process_is_excluded (test_pipeline.LockInheritanceTests.test_child_shares_coordinator_lock_while_unrelated_process_is_excluded) ... ok
+test_empty_session_directory_is_not_reused_as_new (test_pipeline.PipelineTests.test_empty_session_directory_is_not_reused_as_new) ... ok
+test_failed_pilot_analysis_never_starts_full_collection (test_pipeline.PipelineTests.test_failed_pilot_analysis_never_starts_full_collection) ... ok
+test_repeat_command_does_not_launch_duplicate_or_completed_job (test_pipeline.PipelineTests.test_repeat_command_does_not_launch_duplicate_or_completed_job) ... ok
+test_resume_does_not_rebuild_or_overwrite_existing_sessions (test_pipeline.PipelineTests.test_resume_does_not_rebuild_or_overwrite_existing_sessions) ... ok
+test_stage_failure_has_nonzero_status_and_no_success_event (test_pipeline.PipelineTests.test_stage_failure_has_nonzero_status_and_no_success_event) ... ok
+test_successful_pipeline_runs_every_stage_and_writes_completion (test_pipeline.PipelineTests.test_successful_pipeline_runs_every_stage_and_writes_completion) ... ok
+test_worker_records_failure_and_closes_lock (test_pipeline.PipelineTests.test_worker_records_failure_and_closes_lock) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 2.658s
+
+OK
+
+[2026-09-26T14:02:57.586445+05:30] pilot-collection: /usr/bin/python3 -u /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py new --session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/pilot --pilot
+SESSION: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2/pilot
+Settling: at least 600s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 81.25}
+Settling 60s: {'k10temp:Tctl': 68.5}
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py", line 538, in <module>
+    main()
+    ~~~~^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py", line 524, in main
+    old.prepare_environment(session)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/scripts/experiment.py", line 135, in prepare_environment
+    summary = settle(session / 'initial-settling.json', initial_idle=True, expected_power=settings)
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/scripts/experiment.py", line 118, in settle
+    time.sleep(POLICY['sample_sec'])
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/run.py", line 491, in stop
+    raise KeyboardInterrupt(f'signal {signum}')
+KeyboardInterrupt: signal 15
+
+STOPPED (interrupted): signal 15
+Evidence preserved in /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/followup/all-in-one-v2.
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/pipeline.py", line 144, in run_worker
+    execute(directory, lock)
+    ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/pipeline.py", line 115, in execute
+    stage_command(directory, 'pilot-collection', collection_command(pilot, pilot=True), lock)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/pipeline.py", line 40, in stage_command
+    code = process.wait()
+  File "/usr/lib/python3.14/subprocess.py", line 1279, in wait
+    return self._wait(timeout=timeout)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 2084, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.14/subprocess.py", line 2042, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/followup/pipeline.py", line 138, in stop
+    raise KeyboardInterrupt(f'signal {signum}')
+KeyboardInterrupt: signal 15

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "at": "2026-10-07T06:18:13.366655+00:00",
+  "raw_completion_verified": true,
+  "generation": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v22/generation-02",
+  "analysis_path": "analysis/1791352638937269784",
+  "analysis_seal": "cc36be003929873a4892a159e4c528c5ceb50e345b9213df2a663943757c44fb",
+  "prediction_seal": "a54aade0f4af121c18e5e140ec94f24d7ed68985b9c324619fb21dea768e48b7",
+  "review_script_sha256": "bb558131d0414a8b6e4a493e1ccac56b97b3d90243d6aac1f1fee70aaa3c1009",
+  "decision": "primary_transfer_pass",
+  "completed_validation_trials": 8,
+  "paired_blocks": 4,
+  "primary_checks_passed": 12,
+  "calibration": {
+    "passed": true,
+    "decision": "adequate_stable",
+    "trials": [
+      {
+        "trial": "cal_1",
+        "backlogged_windows_valid": true,
+        "completions": 2741,
+        "count_lower": 2741,
+        "count_upper": 2742,
+        "capacity_rps": 152.27777777777777,
+        "cpu_sec_per_job": 0.0035900095686736346
+      },
+      {
+        "trial": "cal_2",
+        "backlogged_windows_valid": true,
+        "completions": 2748,
+        "count_lower": 2748,
+        "count_upper": 2749,
+        "capacity_rps": 152.66666666666666,
+        "cpu_sec_per_job": 0.0035842449580450464
+      }
+    ],
+    "relative_disagreement": 0.002550555656768061,
+    "mu_busy": 152.47222222222223,
+    "mu_cpu": 139.38730446149563,
+    "sensitivity_lower": 144.66388888888886,
+    "sensitivity_upper": 160.35833333333335
+  },
+  "metrics": {
+    "burst_miss_range_pct": [
+      10.96717208891506,
+      11.924039452377448
+    ],
+    "mean_burst_miss_pct": 11.61857794788753,
+    "max_primary_abs_error_pp": 1.5457088179007812,
+    "max_queue_abs_error": 5,
+    "max_recovery_worst_error_ms": 46.08723848793561,
+    "even_all_offer_500ms_misses": 0.0,
+    "successful_after1000ms": 0,
+    "rejections": 0,
+    "even_cpu_job_paired_ratio": [
+      1.147778567665595,
+      1.1464699792833235,
+      1.1489080836058345,
+      1.1481807472943293
+    ],
+    "mean_even_cpu_job_increase_pct": 14.783434446227051,
+    "max_individual_burst_response_abs_error_ms": 98.24450356113762
+  },
+  "supporting_queue_pass": true,
+  "even_screen_pass": true,
+  "baseline_advantage": true,
+  "performance_run": false,
+  "settings_changed": false,
+  "novelty_established": false,
+  "limits": "V22 validates one host/boot/service/work size. CPU/job and wall busy capacity are distinct; their causal difference is not isolated. Yielding off; no cross-workload generalization."
+}

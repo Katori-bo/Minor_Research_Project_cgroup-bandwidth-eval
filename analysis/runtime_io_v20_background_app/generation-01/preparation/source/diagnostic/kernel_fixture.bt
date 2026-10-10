@@ -1,0 +1,60 @@
+// $1: initially sleeping fixture PID; $2: exact cgroup v2 ID.
+// No broad stacks, uprobes, unsafe helpers, pinned maps or global tracefs edits.
+config = { max_map_keys=128; max_probes=12; max_bpf_progs=16;
+           perf_rb_pages=64; print_maps_on_exit=false; }
+begin {
+  @targets[$1]=1;
+  printf("BEGIN %llu %llu\n", nsecs(monotonic), cgroup);
+}
+tracepoint:sched:sched_process_fork /has_key(@targets, args.parent_pid)/ {
+  @targets[args.child_pid]=1;
+  @emitted=count();
+  printf("F %llu %u %d %d\n", nsecs(monotonic), cpu, args.parent_pid, args.child_pid);
+}
+tracepoint:sched:sched_process_exit /has_key(@targets, args.pid)/ {
+  @emitted=count();
+  printf("X %llu %u %d\n", nsecs(monotonic), cpu, args.pid);
+  @dead[args.pid]=1;
+}
+tracepoint:sched:sched_switch /has_key(@targets, args.prev_pid) || has_key(@targets, args.next_pid)/ {
+  @emitted=count();
+  printf("S %llu %u %d %d %lld %d %d\n", nsecs(monotonic), cpu,
+         args.prev_pid, args.next_pid, args.prev_state,
+         has_key(@targets, args.prev_pid), has_key(@targets, args.next_pid));
+  if (has_key(@dead, args.prev_pid)) {
+    if (!delete(@targets, args.prev_pid)) { errorf("Missing exiting target"); }
+    if (!delete(@dead, args.prev_pid)) { errorf("Missing exit state"); }
+  }
+}
+tracepoint:sched:sched_wakeup,tracepoint:sched:sched_wakeup_new /has_key(@targets, args.pid)/ {
+  @emitted=count();
+  printf("W %llu %u %d %d\n", nsecs(monotonic), cpu, args.pid, args.target_cpu);
+}
+fentry:vmlinux:throttle_cfs_rq /args.cfs_rq->tg->css.cgroup->kn->id == $2/ {
+  @te[(uint64)args.cfs_rq]=nsecs(monotonic);
+}
+fexit:vmlinux:throttle_cfs_rq /args.cfs_rq->tg->css.cgroup->kn->id == $2/ {
+  $q=(uint64)args.cfs_rq;
+  if (has_key(@te, $q)) {
+    @emitted=count();
+    printf("T %llu %llu %d %llu %llu %d %d\n", @te[$q], nsecs(monotonic),
+           args.cfs_rq->rq->cpu, $2, $q, retval, args.cfs_rq->throttled);
+    if (!delete(@te, $q)) { errorf("Missing throttle entry at cleanup"); }
+  } else { errorf("Missing throttle entry"); }
+}
+fentry:vmlinux:unthrottle_cfs_rq /args.cfs_rq->tg->css.cgroup->kn->id == $2/ {
+  @ue[(uint64)args.cfs_rq]=nsecs(monotonic);
+  @was[(uint64)args.cfs_rq]=args.cfs_rq->throttled;
+}
+fexit:vmlinux:unthrottle_cfs_rq /args.cfs_rq->tg->css.cgroup->kn->id == $2/ {
+  $q=(uint64)args.cfs_rq;
+  if (has_key(@ue, $q) && has_key(@was, $q)) {
+    @emitted=count();
+    printf("U %llu %llu %d %llu %llu %d %d\n", @ue[$q], nsecs(monotonic),
+           args.cfs_rq->rq->cpu, $2, $q, @was[$q], args.cfs_rq->throttled);
+    if (!delete(@ue, $q)) { errorf("Missing unthrottle entry at cleanup"); }
+    if (!delete(@was, $q)) { errorf("Missing unthrottle state at cleanup"); }
+  } else { errorf("Missing unthrottle entry/state"); }
+}
+interval:s:8 { exit(); }
+end { printf("END %llu %llu\n", nsecs(monotonic), (uint64)@emitted); }

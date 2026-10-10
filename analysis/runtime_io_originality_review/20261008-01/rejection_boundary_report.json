@@ -1,0 +1,919 @@
+{
+  "scientific_measurements_launched": false,
+  "role": "synthetic mathematical counterexample and tiny exact reference",
+  "novelty_established": false,
+  "assumptions": [
+    "initially empty single FIFO server",
+    "identical constant service time",
+    "2 positions including active job",
+    "reject new offer only when full",
+    "late jobs continue to completion",
+    "departures at arrival instant processed first",
+    "completion exactly at relative deadline is timely",
+    "rejections and late completions count as misses over all 4 offers"
+  ],
+  "cases": [
+    {
+      "service_s": "1",
+      "capacity_rps": "1",
+      "misses": 2,
+      "rejections": 1,
+      "events": [
+        {
+          "offer": 0,
+          "arrival_s": "0",
+          "completion_s": "1",
+          "outcome": "timely"
+        },
+        {
+          "offer": 1,
+          "arrival_s": "0",
+          "completion_s": "2",
+          "outcome": "late"
+        },
+        {
+          "offer": 2,
+          "arrival_s": "19/20",
+          "completion_s": null,
+          "outcome": "rejected"
+        },
+        {
+          "offer": 3,
+          "arrival_s": "39/20",
+          "completion_s": "3",
+          "outcome": "timely"
+        }
+      ]
+    },
+    {
+      "service_s": "9/10",
+      "capacity_rps": "10/9",
+      "misses": 3,
+      "rejections": 0,
+      "events": [
+        {
+          "offer": 0,
+          "arrival_s": "0",
+          "completion_s": "9/10",
+          "outcome": "timely"
+        },
+        {
+          "offer": 1,
+          "arrival_s": "0",
+          "completion_s": "9/5",
+          "outcome": "late"
+        },
+        {
+          "offer": 2,
+          "arrival_s": "19/20",
+          "completion_s": "27/10",
+          "outcome": "late"
+        },
+        {
+          "offer": 3,
+          "arrival_s": "39/20",
+          "completion_s": "18/5",
+          "outcome": "late"
+        }
+      ]
+    },
+    {
+      "service_s": "1/2",
+      "capacity_rps": "2",
+      "misses": 0,
+      "rejections": 0,
+      "events": [
+        {
+          "offer": 0,
+          "arrival_s": "0",
+          "completion_s": "1/2",
+          "outcome": "timely"
+        },
+        {
+          "offer": 1,
+          "arrival_s": "0",
+          "completion_s": "1",
+          "outcome": "timely"
+        },
+        {
+          "offer": 2,
+          "arrival_s": "19/20",
+          "completion_s": "3/2",
+          "outcome": "timely"
+        },
+        {
+          "offer": 3,
+          "arrival_s": "39/20",
+          "completion_s": "49/20",
+          "outcome": "timely"
+        }
+      ]
+    }
+  ],
+  "endpoint_miss_range_pct": [
+    0,
+    50
+  ],
+  "actual_model_family_miss_range_pct": [
+    0,
+    75
+  ],
+  "critical_service_times_s": [
+    "1/2",
+    "41/80",
+    "21/40",
+    "11/20",
+    "13/20",
+    "41/60",
+    "7/10",
+    "61/80",
+    "19/20",
+    "39/40",
+    "1"
+  ],
+  "cells": [
+    {
+      "kind": "boundary",
+      "left_s": "1/2",
+      "right_s": "1/2",
+      "sample": {
+        "service_s": "1/2",
+        "capacity_rps": "2",
+        "misses": 0,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "1/2",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "1",
+            "outcome": "timely"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "3/2",
+            "outcome": "timely"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "49/20",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "boundary",
+      "left_s": "41/80",
+      "right_s": "41/80",
+      "sample": {
+        "service_s": "41/80",
+        "capacity_rps": "80/41",
+        "misses": 0,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "41/80",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "41/40",
+            "outcome": "timely"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "123/80",
+            "outcome": "timely"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "197/80",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "boundary",
+      "left_s": "21/40",
+      "right_s": "21/40",
+      "sample": {
+        "service_s": "21/40",
+        "capacity_rps": "40/21",
+        "misses": 0,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "21/40",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "21/20",
+            "outcome": "timely"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "63/40",
+            "outcome": "timely"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "99/40",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "boundary",
+      "left_s": "11/20",
+      "right_s": "11/20",
+      "sample": {
+        "service_s": "11/20",
+        "capacity_rps": "20/11",
+        "misses": 0,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "11/20",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "11/10",
+            "outcome": "timely"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "33/20",
+            "outcome": "timely"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "5/2",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "boundary",
+      "left_s": "13/20",
+      "right_s": "13/20",
+      "sample": {
+        "service_s": "13/20",
+        "capacity_rps": "20/13",
+        "misses": 1,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "13/20",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "13/10",
+            "outcome": "late"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "39/20",
+            "outcome": "timely"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "13/5",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "boundary",
+      "left_s": "41/60",
+      "right_s": "41/60",
+      "sample": {
+        "service_s": "41/60",
+        "capacity_rps": "60/41",
+        "misses": 1,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "41/60",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "41/30",
+            "outcome": "late"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "41/20",
+            "outcome": "timely"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "41/15",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "boundary",
+      "left_s": "7/10",
+      "right_s": "7/10",
+      "sample": {
+        "service_s": "7/10",
+        "capacity_rps": "10/7",
+        "misses": 2,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "7/10",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "7/5",
+            "outcome": "late"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "21/10",
+            "outcome": "late"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "14/5",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "boundary",
+      "left_s": "61/80",
+      "right_s": "61/80",
+      "sample": {
+        "service_s": "61/80",
+        "capacity_rps": "80/61",
+        "misses": 2,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "61/80",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "61/40",
+            "outcome": "late"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "183/80",
+            "outcome": "late"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "61/20",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "boundary",
+      "left_s": "19/20",
+      "right_s": "19/20",
+      "sample": {
+        "service_s": "19/20",
+        "capacity_rps": "20/19",
+        "misses": 3,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "19/20",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "19/10",
+            "outcome": "late"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "57/20",
+            "outcome": "late"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "19/5",
+            "outcome": "late"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "boundary",
+      "left_s": "39/40",
+      "right_s": "39/40",
+      "sample": {
+        "service_s": "39/40",
+        "capacity_rps": "40/39",
+        "misses": 2,
+        "rejections": 1,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "39/40",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "39/20",
+            "outcome": "late"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": null,
+            "outcome": "rejected"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "117/40",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "boundary",
+      "left_s": "1",
+      "right_s": "1",
+      "sample": {
+        "service_s": "1",
+        "capacity_rps": "1",
+        "misses": 2,
+        "rejections": 1,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "1",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "2",
+            "outcome": "late"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": null,
+            "outcome": "rejected"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "3",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "open_interval",
+      "left_s": "1/2",
+      "right_s": "41/80",
+      "sample": {
+        "service_s": "81/160",
+        "capacity_rps": "160/81",
+        "misses": 0,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "81/160",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "81/80",
+            "outcome": "timely"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "243/160",
+            "outcome": "timely"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "393/160",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "open_interval",
+      "left_s": "41/80",
+      "right_s": "21/40",
+      "sample": {
+        "service_s": "83/160",
+        "capacity_rps": "160/83",
+        "misses": 0,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "83/160",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "83/80",
+            "outcome": "timely"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "249/160",
+            "outcome": "timely"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "79/32",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "open_interval",
+      "left_s": "21/40",
+      "right_s": "11/20",
+      "sample": {
+        "service_s": "43/80",
+        "capacity_rps": "80/43",
+        "misses": 0,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "43/80",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "43/40",
+            "outcome": "timely"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "129/80",
+            "outcome": "timely"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "199/80",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "open_interval",
+      "left_s": "11/20",
+      "right_s": "13/20",
+      "sample": {
+        "service_s": "3/5",
+        "capacity_rps": "5/3",
+        "misses": 1,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "3/5",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "6/5",
+            "outcome": "late"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "9/5",
+            "outcome": "timely"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "51/20",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "open_interval",
+      "left_s": "13/20",
+      "right_s": "41/60",
+      "sample": {
+        "service_s": "2/3",
+        "capacity_rps": "3/2",
+        "misses": 1,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "2/3",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "4/3",
+            "outcome": "late"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "2",
+            "outcome": "timely"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "8/3",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "open_interval",
+      "left_s": "41/60",
+      "right_s": "7/10",
+      "sample": {
+        "service_s": "83/120",
+        "capacity_rps": "120/83",
+        "misses": 2,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "83/120",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "83/60",
+            "outcome": "late"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "83/40",
+            "outcome": "late"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "83/30",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "open_interval",
+      "left_s": "7/10",
+      "right_s": "61/80",
+      "sample": {
+        "service_s": "117/160",
+        "capacity_rps": "160/117",
+        "misses": 2,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "117/160",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "117/80",
+            "outcome": "late"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "351/160",
+            "outcome": "late"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "117/40",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "open_interval",
+      "left_s": "61/80",
+      "right_s": "19/20",
+      "sample": {
+        "service_s": "137/160",
+        "capacity_rps": "160/137",
+        "misses": 3,
+        "rejections": 0,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "137/160",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "137/80",
+            "outcome": "late"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": "411/160",
+            "outcome": "late"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "137/40",
+            "outcome": "late"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "open_interval",
+      "left_s": "19/20",
+      "right_s": "39/40",
+      "sample": {
+        "service_s": "77/80",
+        "capacity_rps": "80/77",
+        "misses": 2,
+        "rejections": 1,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "77/80",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "77/40",
+            "outcome": "late"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": null,
+            "outcome": "rejected"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "233/80",
+            "outcome": "timely"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "open_interval",
+      "left_s": "39/40",
+      "right_s": "1",
+      "sample": {
+        "service_s": "79/80",
+        "capacity_rps": "80/79",
+        "misses": 2,
+        "rejections": 1,
+        "events": [
+          {
+            "offer": 0,
+            "arrival_s": "0",
+            "completion_s": "79/80",
+            "outcome": "timely"
+          },
+          {
+            "offer": 1,
+            "arrival_s": "0",
+            "completion_s": "79/40",
+            "outcome": "late"
+          },
+          {
+            "offer": 2,
+            "arrival_s": "19/20",
+            "completion_s": null,
+            "outcome": "rejected"
+          },
+          {
+            "offer": 3,
+            "arrival_s": "39/20",
+            "completion_s": "237/80",
+            "outcome": "timely"
+          }
+        ]
+      }
+    }
+  ],
+  "verification": {
+    "hand_traces_passed": true,
+    "existing_fifo_crosscheck_passed": true,
+    "boundary_and_open_interval_enumeration_passed": true
+  },
+  "limitation": "Does not estimate true capacity or bound real-system/model discrepancy."
+}

@@ -1,0 +1,40 @@
+{
+  "mode": "sleep",
+  "pid": 86068,
+  "cgroup": "/sys/fs/cgroup/quota-v18-fixture-e6ae61af85c5428b97af282cd53c2f97-sleep",
+  "cgroup_id": 19528,
+  "cpu": 2,
+  "observer_cpus": [
+    0,
+    1
+  ],
+  "argv": [
+    "/usr/bin/bpftrace",
+    "-q",
+    "-k",
+    "-B",
+    "line",
+    "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v18_kernel_fixtures/20261004T124634Z-86037/source/kernel_fixture.bt",
+    "86068",
+    "19528"
+  ],
+  "cpu_stat_before": {
+    "usage_usec": 0,
+    "user_usec": 0,
+    "system_usec": 0,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 0,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "resource_settings": {
+    "cpu.max": "max 100000\n",
+    "cpu.max.burst": "0\n",
+    "pids.max": "16\n",
+    "memory.max": "268435456\n",
+    "cpuset.cpus.effective": "2\n"
+  }
+}

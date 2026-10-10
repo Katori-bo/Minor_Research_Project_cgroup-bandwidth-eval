@@ -1,0 +1,272 @@
+
+[2026-09-30T01:27:29.061338+05:30] python-regression-tests: /usr/bin/python3 -m unittest discover -s /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic -p 'test_*.py' -v
+test_client_launch_preserves_flags_after_trace_toggle (test_diagnostic.DiagnosticPlanTests.test_client_launch_preserves_flags_after_trace_toggle) ... ok
+test_frozen_matrix_and_pilot (test_diagnostic.DiagnosticPlanTests.test_frozen_matrix_and_pilot) ... ok
+test_interaction_uses_trials_as_units (test_diagnostic.DiagnosticPlanTests.test_interaction_uses_trials_as_units) ... ok
+test_offline_usb_power_source_does_not_change_power_record (test_diagnostic.DiagnosticPlanTests.test_offline_usb_power_source_does_not_change_power_record) ... ok
+test_pilot_gate_rejects_missing_timing_and_excess_overhead (test_diagnostic.DiagnosticPlanTests.test_pilot_gate_rejects_missing_timing_and_excess_overhead) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.234s
+
+OK
+
+[2026-09-30T01:27:29.390223+05:30] pilot-collection: /usr/bin/python3 -u /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py resume --session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix/pilot
+SESSION: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix/pilot
+Settling: at least 600s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 62.875}
+Settling 60s: {'k10temp:Tctl': 42.75}
+Settling 120s: {'k10temp:Tctl': 49.875}
+Settling 180s: {'k10temp:Tctl': 41.5}
+Settling 240s: {'k10temp:Tctl': 43.375}
+Settling 301s: {'k10temp:Tctl': 43.375}
+Settling 361s: {'k10temp:Tctl': 41.875}
+Settling 421s: {'k10temp:Tctl': 40.0}
+Settling 481s: {'k10temp:Tctl': 42.75}
+Settling 541s: {'k10temp:Tctl': 41.125}
+Settling 601s: {'k10temp:Tctl': 42.375}
+Settling 661s: {'k10temp:Tctl': 42.5}
+Settling 721s: {'k10temp:Tctl': 40.625}
+Settling 782s: {'k10temp:Tctl': 39.5}
+RUN 1/7 pilot_overhead_1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 41.875}
+Settling 60s: {'k10temp:Tctl': 39.5}
+Settling 120s: {'k10temp:Tctl': 39.375}
+Settling 180s: {'k10temp:Tctl': 39.375}
+Settling 240s: {'k10temp:Tctl': 39.375}
+Settling 301s: {'k10temp:Tctl': 42.375}
+Settling 361s: {'k10temp:Tctl': 41.25}
+Settling 421s: {'k10temp:Tctl': 41.75}
+Settling 481s: {'k10temp:Tctl': 39.0}
+Settling 541s: {'k10temp:Tctl': 39.875}
+Settling 601s: {'k10temp:Tctl': 39.0}
+RUN 2/7 pilot_overhead_2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 51.5}
+Settling 60s: {'k10temp:Tctl': 40.875}
+Settling 120s: {'k10temp:Tctl': 38.875}
+Settling 180s: {'k10temp:Tctl': 39.0}
+Settling 240s: {'k10temp:Tctl': 40.0}
+Settling 301s: {'k10temp:Tctl': 39.5}
+Settling 361s: {'k10temp:Tctl': 38.625}
+RUN 3/7 pilot_overhead_3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 50.75}
+Settling 60s: {'k10temp:Tctl': 39.25}
+Settling 120s: {'k10temp:Tctl': 38.75}
+Settling 180s: {'k10temp:Tctl': 38.875}
+Settling 240s: {'k10temp:Tctl': 38.625}
+Settling 301s: {'k10temp:Tctl': 40.25}
+Settling 361s: {'k10temp:Tctl': 38.875}
+Settling 421s: {'k10temp:Tctl': 38.375}
+Settling 481s: {'k10temp:Tctl': 40.125}
+Settling 541s: {'k10temp:Tctl': 38.25}
+Settling 601s: {'k10temp:Tctl': 38.25}
+Settling 661s: {'k10temp:Tctl': 38.875}
+Settling 722s: {'k10temp:Tctl': 38.125}
+Settling 782s: {'k10temp:Tctl': 38.25}
+RUN 4/7 pilot_overhead_4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 50.125}
+Settling 60s: {'k10temp:Tctl': 39.25}
+Settling 120s: {'k10temp:Tctl': 38.375}
+Settling 180s: {'k10temp:Tctl': 39.375}
+Settling 240s: {'k10temp:Tctl': 38.25}
+Settling 301s: {'k10temp:Tctl': 38.5}
+Settling 361s: {'k10temp:Tctl': 38.25}
+Settling 421s: {'k10temp:Tctl': 38.5}
+Settling 481s: {'k10temp:Tctl': 38.375}
+Settling 541s: {'k10temp:Tctl': 40.625}
+Settling 601s: {'k10temp:Tctl': 41.75}
+Settling 661s: {'k10temp:Tctl': 38.0}
+RUN 5/7 pilot_p100000_w1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 50.625}
+Settling 60s: {'k10temp:Tctl': 40.75}
+Settling 120s: {'k10temp:Tctl': 38.5}
+Settling 180s: {'k10temp:Tctl': 38.375}
+Settling 240s: {'k10temp:Tctl': 39.75}
+Settling 301s: {'k10temp:Tctl': 38.625}
+Settling 361s: {'k10temp:Tctl': 39.25}
+Settling 421s: {'k10temp:Tctl': 39.875}
+Settling 481s: {'k10temp:Tctl': 38.5}
+Settling 541s: {'k10temp:Tctl': 39.125}
+Settling 601s: {'k10temp:Tctl': 40.375}
+Settling 661s: {'k10temp:Tctl': 38.875}
+Settling 721s: {'k10temp:Tctl': 40.125}
+Settling 782s: {'k10temp:Tctl': 38.875}
+Settling 842s: {'k10temp:Tctl': 41.125}
+Settling 902s: {'k10temp:Tctl': 39.0}
+RUN 6/7 pilot_p250000_w4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 57.125}
+Settling 60s: {'k10temp:Tctl': 40.875}
+Settling 120s: {'k10temp:Tctl': 39.5}
+Settling 180s: {'k10temp:Tctl': 40.25}
+Settling 240s: {'k10temp:Tctl': 39.75}
+Settling 301s: {'k10temp:Tctl': 39.625}
+RUN 7/7 pilot_p250000_w1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 56.125}
+Settling 60s: {'k10temp:Tctl': 42.25}
+Settling 120s: {'k10temp:Tctl': 46.125}
+Settling 180s: {'k10temp:Tctl': 45.25}
+Settling 240s: {'k10temp:Tctl': 40.625}
+
+[2026-09-30T02:52:16.870656+05:30] pilot-analysis: /usr/bin/python3 /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/analyze.py /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix/pilot
+Validated 7 trials: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix/pilot/analysis
+
+[2026-09-30T02:52:17.368428+05:30] full-collection: /usr/bin/python3 -u /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py new --session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix/full --pilot-session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix/pilot
+SESSION: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix/full
+Settling: at least 600s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 67.5}
+Settling 60s: {'k10temp:Tctl': 42.75}
+Settling 120s: {'k10temp:Tctl': 40.375}
+Settling 180s: {'k10temp:Tctl': 43.125}
+Settling 240s: {'k10temp:Tctl': 41.875}
+Settling 301s: {'k10temp:Tctl': 42.0}
+Settling 361s: {'k10temp:Tctl': 40.125}
+Settling 421s: {'k10temp:Tctl': 41.25}
+Settling 481s: {'k10temp:Tctl': 40.125}
+Settling 541s: {'k10temp:Tctl': 41.25}
+Settling 601s: {'k10temp:Tctl': 40.25}
+Settling 661s: {'k10temp:Tctl': 42.625}
+Settling 721s: {'k10temp:Tctl': 40.375}
+RUN 1/20 D_p250000_w4_g2_bursty_r5
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 42.875}
+Settling 60s: {'k10temp:Tctl': 40.625}
+Settling 120s: {'k10temp:Tctl': 40.25}
+Settling 180s: {'k10temp:Tctl': 40.125}
+Settling 240s: {'k10temp:Tctl': 43.125}
+Settling 301s: {'k10temp:Tctl': 41.125}
+RUN 2/20 D_p250000_w1_g2_bursty_r2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 58.875}
+Settling 60s: {'k10temp:Tctl': 42.0}
+Settling 120s: {'k10temp:Tctl': 41.5}
+Settling 180s: {'k10temp:Tctl': 41.5}
+Settling 240s: {'k10temp:Tctl': 40.875}
+RUN 3/20 D_p100000_w1_g2_bursty_r5
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 63.5}
+Settling 60s: {'k10temp:Tctl': 42.0}
+Settling 120s: {'k10temp:Tctl': 42.25}
+Settling 180s: {'k10temp:Tctl': 41.5}
+Settling 240s: {'k10temp:Tctl': 41.25}
+Settling 301s: {'k10temp:Tctl': 41.75}
+Settling 361s: {'k10temp:Tctl': 41.125}
+RUN 4/20 D_p250000_w4_g2_bursty_r2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 61.875}
+Settling 60s: {'k10temp:Tctl': 42.125}
+Settling 120s: {'k10temp:Tctl': 43.75}
+Settling 180s: {'k10temp:Tctl': 41.625}
+Settling 240s: {'k10temp:Tctl': 41.875}
+Settling 301s: {'k10temp:Tctl': 41.25}
+Settling 361s: {'k10temp:Tctl': 41.375}
+Settling 421s: {'k10temp:Tctl': 42.625}
+Settling 481s: {'k10temp:Tctl': 41.125}
+RUN 5/20 D_p100000_w1_g2_bursty_r3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 60.5}
+Settling 60s: {'k10temp:Tctl': 49.625}
+Settling 120s: {'k10temp:Tctl': 41.75}
+Settling 180s: {'k10temp:Tctl': 42.125}
+Settling 240s: {'k10temp:Tctl': 41.625}
+Settling 301s: {'k10temp:Tctl': 42.25}
+Settling 361s: {'k10temp:Tctl': 41.375}
+RUN 6/20 D_p250000_w1_g2_bursty_r4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 62.0}
+Settling 60s: {'k10temp:Tctl': 42.625}
+Settling 120s: {'k10temp:Tctl': 41.875}
+Settling 180s: {'k10temp:Tctl': 41.75}
+Settling 241s: {'k10temp:Tctl': 42.0}
+Settling 301s: {'k10temp:Tctl': 43.25}
+Settling 361s: {'k10temp:Tctl': 42.0}
+Settling 421s: {'k10temp:Tctl': 41.375}
+Settling 481s: {'k10temp:Tctl': 41.5}
+RUN 7/20 D_p250000_w1_g2_bursty_r1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 63.625}
+Settling 60s: {'k10temp:Tctl': 43.375}
+Settling 120s: {'k10temp:Tctl': 42.0}
+Settling 180s: {'k10temp:Tctl': 41.625}
+Settling 240s: {'k10temp:Tctl': 41.625}
+Settling 301s: {'k10temp:Tctl': 41.5}
+Settling 361s: {'k10temp:Tctl': 41.5}
+RUN 8/20 D_p100000_w1_g2_bursty_r1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 65.125}
+Settling 60s: {'k10temp:Tctl': 42.625}
+RUN 9/20 D_p250000_w4_g2_bursty_r4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 62.375}
+Settling 60s: {'k10temp:Tctl': 42.875}
+Settling 120s: {'k10temp:Tctl': 48.75}
+Settling 180s: {'k10temp:Tctl': 42.0}
+Settling 240s: {'k10temp:Tctl': 41.875}
+Settling 301s: {'k10temp:Tctl': 41.75}
+Settling 361s: {'k10temp:Tctl': 41.5}
+Settling 421s: {'k10temp:Tctl': 41.5}
+RUN 10/20 D_p250000_w1_g2_bursty_r5
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 60.5}
+Settling 60s: {'k10temp:Tctl': 42.625}
+RUN 11/20 D_p250000_w4_g2_bursty_r1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 64.25}
+Settling 60s: {'k10temp:Tctl': 42.875}
+RUN 12/20 D_p100000_w4_g2_bursty_r5
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 61.25}
+Settling 60s: {'k10temp:Tctl': 43.25}
+RUN 13/20 D_p100000_w4_g2_bursty_r1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 57.75}
+Settling 60s: {'k10temp:Tctl': 43.375}
+Settling 120s: {'k10temp:Tctl': 42.75}
+RUN 14/20 D_p100000_w4_g2_bursty_r3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 57.75}
+Settling 60s: {'k10temp:Tctl': 43.375}
+RUN 15/20 D_p250000_w1_g2_bursty_r3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 57.375}
+Settling 60s: {'k10temp:Tctl': 44.5}
+Settling 120s: {'k10temp:Tctl': 42.75}
+Settling 180s: {'k10temp:Tctl': 42.5}
+RUN 16/20 D_p100000_w1_g2_bursty_r4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 64.75}
+Settling 60s: {'k10temp:Tctl': 43.25}
+Settling 120s: {'k10temp:Tctl': 42.75}
+Settling 180s: {'k10temp:Tctl': 42.625}
+Settling 240s: {'k10temp:Tctl': 42.375}
+RUN 17/20 D_p100000_w4_g2_bursty_r2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 62.375}
+Settling 60s: {'k10temp:Tctl': 43.25}
+Settling 120s: {'k10temp:Tctl': 42.5}
+Settling 180s: {'k10temp:Tctl': 42.125}
+Settling 240s: {'k10temp:Tctl': 42.125}
+RUN 18/20 D_p100000_w1_g2_bursty_r2
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 57.0}
+Settling 60s: {'k10temp:Tctl': 43.0}
+RUN 19/20 D_p100000_w4_g2_bursty_r4
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 63.0}
+Settling 60s: {'k10temp:Tctl': 43.625}
+Settling 120s: {'k10temp:Tctl': 42.75}
+RUN 20/20 D_p250000_w4_g2_bursty_r3
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 58.75}
+Settling 60s: {'k10temp:Tctl': 43.375}
+
+[2026-09-30T04:56:22.080743+05:30] full-analysis: /usr/bin/python3 /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/analyze.py /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix/full
+Validated 20 trials: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix/full/analysis
+
+COMPLETE: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/all-in-one-power-fix/COMPLETED.md

@@ -1,0 +1,190 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  857.6kB
+Step 1/17 : ARG COMPILER_IMAGE
+Step 2/17 : FROM ${COMPILER_IMAGE} AS control-build
+ ---> 2389ebfa5b7f
+Step 3/17 : ENV CGO_ENABLED=0 GOTOOLCHAIN=local GOENV=off
+ ---> Using cache
+ ---> 3bfcfd36fa8e
+Step 4/17 : COPY control_runtime/ /usr/local/go/src/runtime/
+ ---> e5e2fba0229a
+Step 5/17 : WORKDIR /src
+ ---> Running in bcafec72357a
+ ---> Removed intermediate container bcafec72357a
+ ---> 0c53d1e83d6a
+Step 6/17 : COPY service/ ./
+ ---> 33950117e869
+Step 7/17 : RUN go test -v runtime -run '^(TestResearchPendingPreemptFairQueue|TestSchedLocalQueue|TestSchedLocalQueueSteal|TestSchedLocalQueueEmpty|TestPreemption|TestPreemptionGC|TestPreemptionAfterSyscall)$' -count=1 -timeout=180s && go test -v -count=1 ./... && go build -trimpath -o /server .
+ ---> Running in 5a3254427011
+=== RUN   TestPreemption
+--- PASS: TestPreemption (0.00s)
+=== RUN   TestPreemptionGC
+--- PASS: TestPreemptionGC (0.00s)
+=== RUN   TestSchedLocalQueue
+--- PASS: TestSchedLocalQueue (0.00s)
+=== RUN   TestSchedLocalQueueSteal
+--- PASS: TestSchedLocalQueueSteal (0.00s)
+=== RUN   TestSchedLocalQueueEmpty
+--- PASS: TestSchedLocalQueueEmpty (5.97s)
+=== RUN   TestPreemptionAfterSyscall
+=== RUN   TestPreemptionAfterSyscall/10µs
+=== RUN   TestPreemptionAfterSyscall/100µs
+=== RUN   TestPreemptionAfterSyscall/1ms
+--- PASS: TestPreemptionAfterSyscall (0.71s)
+    --- PASS: TestPreemptionAfterSyscall/10µs (0.65s)
+    --- PASS: TestPreemptionAfterSyscall/100µs (0.04s)
+    --- PASS: TestPreemptionAfterSyscall/1ms (0.01s)
+=== RUN   TestResearchPendingPreemptFairQueue
+--- PASS: TestResearchPendingPreemptFairQueue (0.00s)
+PASS
+ok  	runtime	6.689s
+=== RUN   TestTimedOutQueuedWorkCompletesAndResetWaits
+--- PASS: TestTimedOutQueuedWorkCompletesAndResetWaits (0.00s)
+=== RUN   TestSnapshotsDoNotPublishCompletionBeforeEvents
+--- PASS: TestSnapshotsDoNotPublishCompletionBeforeEvents (0.15s)
+=== RUN   TestTimingHeadersMatchAndOffMeansOff
+--- PASS: TestTimingHeadersMatchAndOffMeansOff (0.00s)
+=== RUN   TestWorkMatchesOriginalSHAWork
+--- PASS: TestWorkMatchesOriginalSHAWork (0.00s)
+=== RUN   TestExitMarkerIncludesFinalLockWait
+--- PASS: TestExitMarkerIncludesFinalLockWait (0.02s)
+=== RUN   TestWriteFailureIsRetained
+--- PASS: TestWriteFailureIsRetained (0.00s)
+=== RUN   TestRealHTTPResponseUnchangedAndEventsDrained
+--- PASS: TestRealHTTPResponseUnchangedAndEventsDrained (0.00s)
+=== RUN   TestTraceConnectionReuseAndFinalFlush
+--- PASS: TestTraceConnectionReuseAndFinalFlush (0.01s)
+=== RUN   TestTraceOutcomeFixture
+--- PASS: TestTraceOutcomeFixture (0.11s)
+=== RUN   TestFileTraceOutcomeFixture
+--- PASS: TestFileTraceOutcomeFixture (0.11s)
+=== RUN   TestComponentOutcomeFixtures
+=== RUN   TestComponentOutcomeFixtures/runtime
+=== RUN   TestComponentOutcomeFixtures/custom
+--- PASS: TestComponentOutcomeFixtures (0.21s)
+    --- PASS: TestComponentOutcomeFixtures/runtime (0.11s)
+    --- PASS: TestComponentOutcomeFixtures/custom (0.11s)
+=== RUN   TestYieldOutcomeFixtures
+=== RUN   TestYieldOutcomeFixtures/combined
+=== RUN   TestYieldOutcomeFixtures/custom
+--- PASS: TestYieldOutcomeFixtures (0.22s)
+    --- PASS: TestYieldOutcomeFixtures/combined (0.12s)
+    --- PASS: TestYieldOutcomeFixtures/custom (0.10s)
+=== RUN   TestMemoryTraceDeferredPersistenceAndOverflow
+--- PASS: TestMemoryTraceDeferredPersistenceAndOverflow (0.00s)
+=== RUN   TestMemoryTracePersistenceFailureInvalidatesStatus
+--- PASS: TestMemoryTracePersistenceFailureInvalidatesStatus (0.00s)
+=== RUN   TestTraceWriteErrorAndDisabledMode
+--- PASS: TestTraceWriteErrorAndDisabledMode (0.00s)
+=== RUN   TestTraceStopRejectsUndrainedResponse
+--- PASS: TestTraceStopRejectsUndrainedResponse (0.00s)
+=== RUN   TestWorkerYieldCompletesIdenticalWork
+--- PASS: TestWorkerYieldCompletesIdenticalWork (0.00s)
+=== RUN   TestWorkerYieldEnvironmentIsExplicit
+--- PASS: TestWorkerYieldEnvironmentIsExplicit (0.00s)
+PASS
+ok  	research-service	0.854s
+ ---> Removed intermediate container 5a3254427011
+ ---> 7579948521ff
+Step 8/17 : FROM ${COMPILER_IMAGE} AS observed-build
+ ---> 2389ebfa5b7f
+Step 9/17 : ENV CGO_ENABLED=0 GOTOOLCHAIN=local GOENV=off
+ ---> Using cache
+ ---> 3bfcfd36fa8e
+Step 10/17 : COPY observed_runtime/ /usr/local/go/src/runtime/
+ ---> 74ed9a6d5986
+Step 11/17 : WORKDIR /src
+ ---> Running in 73a8f087cdd7
+ ---> Removed intermediate container 73a8f087cdd7
+ ---> 0d5aa190c566
+Step 12/17 : COPY service/ ./
+ ---> 81ed27725d36
+Step 13/17 : RUN go test -v runtime -run '^(TestResearchPendingPreemptFairQueue|TestSchedLocalQueue|TestSchedLocalQueueSteal|TestSchedLocalQueueEmpty|TestPreemption|TestPreemptionGC|TestPreemptionAfterSyscall)$' -count=1 -timeout=180s && go test -v -count=1 ./... && go build -trimpath -o /server .
+ ---> Running in b43d6765d39f
+=== RUN   TestPreemption
+--- PASS: TestPreemption (0.00s)
+=== RUN   TestPreemptionGC
+--- PASS: TestPreemptionGC (0.01s)
+=== RUN   TestSchedLocalQueue
+--- PASS: TestSchedLocalQueue (0.00s)
+=== RUN   TestSchedLocalQueueSteal
+--- PASS: TestSchedLocalQueueSteal (0.00s)
+=== RUN   TestSchedLocalQueueEmpty
+--- PASS: TestSchedLocalQueueEmpty (5.97s)
+=== RUN   TestPreemptionAfterSyscall
+=== RUN   TestPreemptionAfterSyscall/10µs
+=== RUN   TestPreemptionAfterSyscall/100µs
+=== RUN   TestPreemptionAfterSyscall/1ms
+--- PASS: TestPreemptionAfterSyscall (0.61s)
+    --- PASS: TestPreemptionAfterSyscall/10µs (0.54s)
+    --- PASS: TestPreemptionAfterSyscall/100µs (0.05s)
+    --- PASS: TestPreemptionAfterSyscall/1ms (0.02s)
+=== RUN   TestResearchPendingPreemptFairQueue
+--- PASS: TestResearchPendingPreemptFairQueue (0.00s)
+PASS
+ok  	runtime	6.589s
+=== RUN   TestTimedOutQueuedWorkCompletesAndResetWaits
+--- PASS: TestTimedOutQueuedWorkCompletesAndResetWaits (0.00s)
+=== RUN   TestSnapshotsDoNotPublishCompletionBeforeEvents
+--- PASS: TestSnapshotsDoNotPublishCompletionBeforeEvents (0.14s)
+=== RUN   TestTimingHeadersMatchAndOffMeansOff
+--- PASS: TestTimingHeadersMatchAndOffMeansOff (0.00s)
+=== RUN   TestWorkMatchesOriginalSHAWork
+--- PASS: TestWorkMatchesOriginalSHAWork (0.00s)
+=== RUN   TestExitMarkerIncludesFinalLockWait
+--- PASS: TestExitMarkerIncludesFinalLockWait (0.02s)
+=== RUN   TestWriteFailureIsRetained
+--- PASS: TestWriteFailureIsRetained (0.00s)
+=== RUN   TestRealHTTPResponseUnchangedAndEventsDrained
+--- PASS: TestRealHTTPResponseUnchangedAndEventsDrained (0.00s)
+=== RUN   TestTraceConnectionReuseAndFinalFlush
+--- PASS: TestTraceConnectionReuseAndFinalFlush (0.01s)
+=== RUN   TestTraceOutcomeFixture
+--- PASS: TestTraceOutcomeFixture (0.11s)
+=== RUN   TestFileTraceOutcomeFixture
+--- PASS: TestFileTraceOutcomeFixture (0.11s)
+=== RUN   TestComponentOutcomeFixtures
+=== RUN   TestComponentOutcomeFixtures/runtime
+=== RUN   TestComponentOutcomeFixtures/custom
+--- PASS: TestComponentOutcomeFixtures (0.21s)
+    --- PASS: TestComponentOutcomeFixtures/runtime (0.11s)
+    --- PASS: TestComponentOutcomeFixtures/custom (0.10s)
+=== RUN   TestYieldOutcomeFixtures
+=== RUN   TestYieldOutcomeFixtures/combined
+=== RUN   TestYieldOutcomeFixtures/custom
+--- PASS: TestYieldOutcomeFixtures (0.22s)
+    --- PASS: TestYieldOutcomeFixtures/combined (0.12s)
+    --- PASS: TestYieldOutcomeFixtures/custom (0.11s)
+=== RUN   TestMemoryTraceDeferredPersistenceAndOverflow
+--- PASS: TestMemoryTraceDeferredPersistenceAndOverflow (0.00s)
+=== RUN   TestMemoryTracePersistenceFailureInvalidatesStatus
+--- PASS: TestMemoryTracePersistenceFailureInvalidatesStatus (0.00s)
+=== RUN   TestTraceWriteErrorAndDisabledMode
+--- PASS: TestTraceWriteErrorAndDisabledMode (0.00s)
+=== RUN   TestTraceStopRejectsUndrainedResponse
+--- PASS: TestTraceStopRejectsUndrainedResponse (0.00s)
+=== RUN   TestWorkerYieldCompletesIdenticalWork
+--- PASS: TestWorkerYieldCompletesIdenticalWork (0.00s)
+=== RUN   TestWorkerYieldEnvironmentIsExplicit
+--- PASS: TestWorkerYieldEnvironmentIsExplicit (0.00s)
+PASS
+ok  	research-service	0.835s
+ ---> Removed intermediate container b43d6765d39f
+ ---> 3da80274e7d7
+Step 14/17 : FROM scratch AS control
+ ---> 
+Step 15/17 : LABEL research.runtime.variant="decision-probe-control"
+ ---> Running in eae71cf0d29d
+ ---> Removed intermediate container eae71cf0d29d
+ ---> d0b7a36c1fad
+Step 16/17 : COPY --from=control-build /server /server
+ ---> 15869dcf015f
+Step 17/17 : ENTRYPOINT ["/server"]
+ ---> Running in 789e4450e2aa
+ ---> Removed intermediate container 789e4450e2aa
+ ---> cf3788b192ad
+Successfully built cf3788b192ad
+Successfully tagged quota-diagnostic-decision-control:11

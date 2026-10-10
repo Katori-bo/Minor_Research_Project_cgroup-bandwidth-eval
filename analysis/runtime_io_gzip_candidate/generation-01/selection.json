@@ -1,0 +1,73 @@
+{
+  "candidate": "gnu-gzip-1.15-fixed-ndjson-generation-01",
+  "role": "candidate selection and untimed correctness only; no performance qualification",
+  "input_records": 4096,
+  "record_bytes": 256,
+  "input_bytes": 1048576,
+  "generator": "xorshift32, seed 0x6d2b79f5, ten 8-hex words per record, sorted compact ASCII JSON padded before LF",
+  "command": [
+    "/application/gzip",
+    "-n",
+    "-6",
+    "-c",
+    "--",
+    "/input/corpus.ndjson"
+  ],
+  "operation": "one new GNU gzip process compresses the whole fixed corpus per offered request",
+  "upstream_version": "1.15",
+  "upstream_commit": "e6263160768c73f6117f3c1de78291a60f2cb796",
+  "upstream_source_url": "https://ftp.gnu.org/gnu/gzip/gzip-1.15.tar.xz",
+  "upstream_source_sha256": "9aa0cc780dec156b8282844833b342ab7cb08c25d2cd9a1869cdd0df31deff48",
+  "host_binary_provenance": "Arch Linux installed gzip 1.15-1; retained binary, not a claimed source-reproducible build",
+  "selection_basis": "Audit a finite native compression task with an explicit one-job completion boundary; do not select on model errors or favorable quota timings.",
+  "direct_correctness_invocations_cap": 3,
+  "direct_invocation_timeout_sec": 15,
+  "output_bytes_cap": 2097152,
+  "correctness_retries": 0,
+  "scientific_collection": false,
+  "performance_runner_implemented": false,
+  "qualification": {
+    "functional_created_cap": 2,
+    "pilot_created_cap": 12,
+    "retries": 0,
+    "rate": 5,
+    "interval_ns": 200000000,
+    "warmup_offers": 25,
+    "measurement_offers": 200,
+    "pair_orders": [
+      "reference,observed",
+      "observed,reference",
+      "reference,observed",
+      "observed,reference",
+      "reference,observed",
+      "observed,reference"
+    ],
+    "limits": {
+      "cpu.max": "25000 100000",
+      "cpu.max.burst": "0",
+      "cpuset.cpus.effective": "2",
+      "memory.max": "536870912",
+      "pids.max": "128"
+    },
+    "queue_capacity": 128,
+    "worker_jobs": 1,
+    "client_inflight_cap": 32,
+    "active_service_sec": 120,
+    "total_sec": 1200,
+    "cleanup_reserve_sec": 120,
+    "dispatch_p99_ns": 2000000,
+    "dispatch_max_ns": 10000000,
+    "queue_le_100us_fraction": 0.99,
+    "measurement_throttled_periods": 0,
+    "required_success_fraction": 1,
+    "observer_cost_upper_relative": 0.05,
+    "pairs": 6,
+    "t_multiplier": 2.571,
+    "df": 5,
+    "endpoints": [
+      "whole-cgroup CPU per offered request",
+      "median offered-to-full-body latency"
+    ]
+  },
+  "scope": "Same-host compression workload/execution-stack transfer through a bespoke C service wrapper. No hardware, independent-team, or existing production HTTP-service transfer claim."
+}

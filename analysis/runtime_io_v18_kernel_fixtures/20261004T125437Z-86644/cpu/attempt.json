@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "mode": "cpu",
+    "pid": 86701,
+    "cgroup": "/sys/fs/cgroup/quota-v18-fixture-53697f6b4c0544e0beadfdc4ed3ccec5-cpu",
+    "cgroup_id": 19759,
+    "cpu": 2,
+    "observer_cpus": [
+      0,
+      1
+    ],
+    "argv": [
+      "/usr/bin/bpftrace",
+      "-q",
+      "-k",
+      "-B",
+      "line",
+      "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_v18_kernel_fixtures/20261004T125437Z-86644/source/kernel_fixture.bt",
+      "86701",
+      "19759"
+    ],
+    "cpu_stat_before": {
+      "usage_usec": 0,
+      "user_usec": 0,
+      "system_usec": 0,
+      "nice_usec": 0,
+      "core_sched.force_idle_usec": 0,
+      "nr_periods": 0,
+      "nr_throttled": 0,
+      "throttled_usec": 0,
+      "nr_bursts": 0,
+      "burst_usec": 0
+    },
+    "resource_settings": {
+      "cpu.max": "max 100000\n",
+      "cpu.max.burst": "0\n",
+      "pids.max": "16\n",
+      "memory.max": "268435456\n",
+      "cpuset.cpus.effective": "2\n"
+    },
+    "cpu_stat_after": {
+      "usage_usec": 604066,
+      "user_usec": 602073,
+      "system_usec": 1993,
+      "nice_usec": 0,
+      "core_sched.force_idle_usec": 0,
+      "nr_periods": 0,
+      "nr_throttled": 0,
+      "throttled_usec": 0,
+      "nr_bursts": 0,
+      "burst_usec": 0
+    },
+    "observer_returncode": 0,
+    "worker_returncode": 0,
+    "owned_bpf_ids": [
+      386,
+      388,
+      389,
+      390,
+      391,
+      392,
+      393,
+      394,
+      395,
+      396,
+      397,
+      398
+    ],
+    "cpu_stat_delta": {
+      "usage_usec": 604066,
+      "user_usec": 602073,
+      "system_usec": 1993,
+      "nice_usec": 0,
+      "core_sched.force_idle_usec": 0,
+      "nr_periods": 0,
+      "nr_throttled": 0,
+      "throttled_usec": 0,
+      "nr_bursts": 0,
+      "burst_usec": 0
+    }
+  },
+  "error": null,
+  "cleanup_errors": [],
+  "cgroup_removed": true,
+  "owned_bpf_ids": [
+    386,
+    388,
+    389,
+    390,
+    391,
+    392,
+    393,
+    394,
+    395,
+    396,
+    397,
+    398
+  ]
+}

@@ -1,0 +1,140 @@
+--- a/src/runtime/proc.go
++++ b/src/runtime/proc.go
+@@ -3386,7 +3386,7 @@
+ // Tries to steal from other P's, get g from local or global queue, poll network.
+ // tryWakeP indicates that the returned goroutine is not normal (GC worker, trace
+ // reader) so the caller should try to wake a P.
+-func findRunnable() (gp *g, inheritTime, tryWakeP bool) {
++func findRunnable(preemptRequested bool) (gp *g, inheritTime, tryWakeP bool) {
+ 	mp := getg().m
+ 
+ 	// The conditions here and in handoffp must agree: if
+@@ -3440,7 +3440,11 @@
+ 	// Check the global runnable queue once in a while to ensure fairness.
+ 	// Otherwise two goroutines can completely occupy the local runqueue
+ 	// by constantly respawning each other.
+-	if pp.schedtick%61 == 0 && !sched.runq.empty() {
++	// Research candidate: honor a pending preemption at the next ordinary
++	// work selection, even when the previous G parked before preemption.
++	forceFair := preemptRequested
++	preemptRequested = false
++	if (forceFair || pp.schedtick%61 == 0) && !sched.runq.empty() {
+ 		lock(&sched.lock)
+ 		gp := globrunqget()
+ 		unlock(&sched.lock)
+@@ -3465,8 +3469,8 @@
+ 		asmcgocall(*cgo_yield, nil)
+ 	}
+ 
+-	// local runq
+-	if gp, inheritTime := runqget(pp); gp != nil {
++	// On a fairness turn, prefer older local work over runnext.
++	if gp, inheritTime := runqgetPolicy(pp, !forceFair); gp != nil {
+ 		return gp, inheritTime, false
+ 	}
+ 
+@@ -4152,6 +4156,7 @@
+ 
+ top:
+ 	pp := mp.p.ptr()
++	preemptRequested := pp.preempt
+ 	pp.preempt = false
+ 
+ 	// Safety check: if we are spinning, the run queue should be empty.
+@@ -4161,7 +4166,7 @@
+ 		throw("schedule: spinning with local work")
+ 	}
+ 
+-	gp, inheritTime, tryWakeP := findRunnable() // blocks until work is available
++	gp, inheritTime, tryWakeP := findRunnable(preemptRequested) // blocks until work is available
+ 
+ 	// May be on a new P.
+ 	pp = mp.p.ptr()
+@@ -7596,12 +7601,18 @@
+ // current time slice. Otherwise, it should start a new time slice.
+ // Executed only by the owner P.
+ func runqget(pp *p) (gp *g, inheritTime bool) {
++	return runqgetPolicy(pp, true)
++}
++
++// runqgetPolicy preserves normal runnext priority unless a fairness turn
++// requests older local work first. A fairness turn starts a new time slice.
++func runqgetPolicy(pp *p, preferNext bool) (gp *g, inheritTime bool) {
+ 	// If there's a runnext, it's the next G to run.
+ 	next := pp.runnext
+ 	// If the runnext is non-0 and the CAS fails, it could only have been stolen by another P,
+ 	// because other Ps can race to set runnext to 0, but only the current P can set it to non-0.
+ 	// Hence, there's no need to retry this CAS if it fails.
+-	if next != 0 && pp.runnext.cas(next, 0) {
++	if preferNext && next != 0 && pp.runnext.cas(next, 0) {
+ 		return next.ptr(), true
+ 	}
+ 
+@@ -7609,6 +7620,10 @@
+ 		h := atomic.LoadAcq(&pp.runqhead) // load-acquire, synchronize with other consumers
+ 		t := pp.runqtail
+ 		if t == h {
++			// Keep the sole runnext runnable when no older local work exists.
++			if !preferNext && next != 0 && pp.runnext.cas(next, 0) {
++				return next.ptr(), false
++			}
+ 			return nil, false
+ 		}
+ 		gp := pp.runq[h%uint32(len(pp.runq))].ptr()
+--- a/src/runtime/export_test.go
++++ b/src/runtime/export_test.go
+@@ -2079,3 +2079,43 @@
+ 
+ 	return string(buf)
+ }
++
++// RunResearchFairQueueTest verifies queue conservation and ordering for the
++// experimental pending-preemption policy. It is not a latency benchmark.
++func RunResearchFairQueueTest() {
++	for _, preferNext := range []bool{true, false} {
++		for _, wrapped := range []bool{false, true} {
++			pp := new(p)
++			gs := make([]g, 3)
++			Escape(gs)
++			if wrapped {
++				pp.runqhead = uint32(len(pp.runq)) - 1
++				pp.runqtail = pp.runqhead
++			}
++			runqput(pp, &gs[0], false)
++			runqput(pp, &gs[1], false)
++			runqput(pp, &gs[2], true)
++			order := []int{0, 1, 2}
++			if preferNext {
++				order = []int{2, 0, 1}
++			}
++			for _, index := range order {
++				gp, inherit := runqgetPolicy(pp, preferNext)
++				if gp != &gs[index] || inherit != (preferNext && index == 2) {
++					throw("research fairness queue order/time slice mismatch")
++				}
++			}
++			if gp, _ := runqgetPolicy(pp, preferNext); gp != nil || !runqempty(pp) {
++				throw("research fairness queue lost or duplicated work")
++			}
++		}
++		pp := new(p)
++		gp := new(g)
++		Escape(gp)
++		runqput(pp, gp, true)
++		got, inherit := runqgetPolicy(pp, preferNext)
++		if got != gp || inherit != preferNext || !runqempty(pp) {
++			throw("research fairness stranded sole runnext")
++		}
++	}
++}
+--- a/src/runtime/proc_test.go
++++ b/src/runtime/proc_test.go
+@@ -1573,3 +1573,8 @@
+ 		t.Fatalf("expected %q, but got:\n%s", want, got)
+ 	}
+ }
++
++// A functional queue-policy check, not a performance measurement.
++func TestResearchPendingPreemptFairQueue(t *testing.T) {
++	runtime.RunResearchFairQueueTest()
++}

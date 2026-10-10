@@ -1,0 +1,29 @@
+{
+  "role": "forensic localization only; not a replacement qualification",
+  "functional_created_cap": 1,
+  "run_created_cap": 1,
+  "retries": 0,
+  "total_sec": 300,
+  "cleanup_reserve_sec": 120,
+  "active_service_sec": 120,
+  "settling_sec": 10,
+  "idle_sec": 40,
+  "warmup_offers": 25,
+  "measurement_offers": 200,
+  "rate": 5,
+  "interval_ns": 200000000,
+  "measurement_sec": 40,
+  "counter_interval_sec": 0.004,
+  "counter_sample_cap": 32000,
+  "limits": {
+    "cpu.max": "25000 100000",
+    "cpu.max.burst": "0",
+    "cpuset.cpus.effective": "2,4",
+    "memory.max": "536870912",
+    "pids.max": "128"
+  },
+  "scientific_collection": false,
+  "settings_changed": false,
+  "observer_cost_qualification": false,
+  "caveat": "Counter update intervals are not scheduler throttle start/end timestamps. Monitoring overhead is not qualified."
+}

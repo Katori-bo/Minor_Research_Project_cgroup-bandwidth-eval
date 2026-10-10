@@ -1,0 +1,4 @@
+{
+  "error": "live service thread changed cgroup/CPU affinity",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/imgproxy_one_cpu_qualify.py\", line 197, in trial\n    q.save(directory / 'threads-before.json', q.bridge.snapshot(service.pid, service.group))\n                                              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/kernel_service_bridge.py\", line 317, in snapshot\n    raise ValueError('live service thread changed cgroup/CPU affinity')\nValueError: live service thread changed cgroup/CPU affinity\n"
+}

@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "decision": "verified_diagnostic_complete_explanation_and_equivalence_unresolved",
+  "session": "analysis/runtime_io_v25/generation-01",
+  "analysis_path": "analysis/runtime_io_v25/generation-01/analysis/1791389865386770727",
+  "independent_completion_replay_passed": true,
+  "completed_trials": 16,
+  "planned_trials": 16,
+  "technical_failures": [],
+  "all_owned_cleanups_verified": true,
+  "collection_duration_min": 56.00964154808329,
+  "native_capture": {
+    "on_trials": 8,
+    "total_samples": 33260,
+    "max_wall_ms": 0.274273,
+    "skipped_deadlines": 0,
+    "all_measurement_quality_budgets_passed": true
+  },
+  "by_size": {
+    "small": {
+      "mean_signed_sampler_difference": {
+        "capacity_pct": 0.2516074923119933,
+        "cost_pct": -0.09397481393716191,
+        "miss_pp": -1.5275323910482967
+      },
+      "miss_off_mean_pct": 24.175500588928152,
+      "miss_on_mean_pct": 22.647968197879855,
+      "maximum_observed_repeat_miss_difference_pp": 0.6183745583038807,
+      "order_contrasts": [
+        {
+          "blocks": [
+            1,
+            2
+          ],
+          "order": "off_then_on",
+          "on_trials": [
+            "b2_small_on_r1",
+            "b2_small_on_r2"
+          ],
+          "off_trials": [
+            "b1_small_off_r1",
+            "b1_small_off_r2"
+          ],
+          "signed_difference": {
+            "capacity_pct": 0.16769144773616548,
+            "cost_pct": -0.07441514348169787,
+            "miss_pp": -1.4502355712603077
+          }
+        },
+        {
+          "blocks": [
+            3,
+            4
+          ],
+          "order": "on_then_off",
+          "on_trials": [
+            "b3_small_on_r1",
+            "b3_small_on_r2"
+          ],
+          "off_trials": [
+            "b4_small_off_r1",
+            "b4_small_off_r2"
+          ],
+          "signed_difference": {
+            "capacity_pct": 0.33557046979865773,
+            "cost_pct": -0.11354016793611749,
+            "miss_pp": -1.6048292108362823
+          }
+        }
+      ],
+      "busy_state_eligible": 4,
+      "low_state_eligible": 0,
+      "whole_over_busy_cost_bounds_envelope": [
+        1.0603318146665688,
+        1.0914027555784585
+      ],
+      "actual_busy_cpu_bounds_envelope": [
+        0.49327794444444445,
+        0.5066281666666667
+      ],
+      "whole_cost_nominal_cpu_capacity_rps": 138.82148996316232,
+      "measured_busy_capacity_on_mean_rps": 149.41666666666666,
+      "capacity_underprediction_pct": 7.091027353154045
+    },
+    "large": {
+      "mean_signed_sampler_difference": {
+        "capacity_pct": 0.129701686121928,
+        "cost_pct": -0.09358900384294243,
+        "miss_pp": -1.0895170789163728
+      },
+      "miss_off_mean_pct": 21.57685512367491,
+      "miss_on_mean_pct": 20.487338044758538,
+      "maximum_observed_repeat_miss_difference_pp": 3.121319199057716,
+      "order_contrasts": [
+        {
+          "blocks": [
+            1,
+            2
+          ],
+          "order": "on_then_off",
+          "on_trials": [
+            "b1_large_on_r1",
+            "b1_large_on_r2"
+          ],
+          "off_trials": [
+            "b2_large_off_r1",
+            "b2_large_off_r2"
+          ],
+          "signed_difference": {
+            "capacity_pct": 0.33457249070631967,
+            "cost_pct": -0.1964759838068823,
+            "miss_pp": -2.2820965842167276
+          }
+        },
+        {
+          "blocks": [
+            3,
+            4
+          ],
+          "order": "off_then_on",
+          "on_trials": [
+            "b4_large_on_r1",
+            "b4_large_on_r2"
+          ],
+          "off_trials": [
+            "b3_large_off_r1",
+            "b3_large_off_r2"
+          ],
+          "signed_difference": {
+            "capacity_pct": -0.07388252678241806,
+            "cost_pct": 0.009530461696652275,
+            "miss_pp": 0.10306242638397833
+          }
+        }
+      ],
+      "busy_state_eligible": 4,
+      "low_state_eligible": 0,
+      "whole_over_busy_cost_bounds_envelope": [
+        1.0499706886236673,
+        1.0787917846872832
+      ],
+      "actual_busy_cpu_bounds_envelope": [
+        0.49342566666666665,
+        0.5067125
+      ],
+      "whole_cost_nominal_cpu_capacity_rps": 70.53009377979092,
+      "measured_busy_capacity_on_mean_rps": 75.05555555555556,
+      "capacity_underprediction_pct": 6.029482750833717
+    }
+  },
+  "low_state_failures": {
+    "trials": 8,
+    "queue_maximum_above_one": 7,
+    "positive_throttling_lower_bound": 6,
+    "positive_throttling_upper_bound": 8
+  },
+  "whole_busy_cost_lower_bound_at_least_five_percent_count": 7,
+  "equivalence_established": false,
+  "scientific_explanation_established": false,
+  "novelty_established": false,
+  "interpretation": "Whole-cohort CPU/completion exceeded measured busy-window CPU/completion across all eight on trials while delivered busy CPU stayed near 0.5. This supports a scoped empirical estimator mismatch, not a proven pure unthrottled-low-state explanation. Small-job miss differences recur across both order contrasts and cannot be dismissed as repeat variation; large-job differences are not separated from observed repeat variation. Neither is a causal/equivalence result.",
+  "next_step": "Stop automatic collection and review a modest draft using V22/V23 plus these descriptive findings. Keep the state mechanism exploratory and deadline observer effects unresolved. Further tests require a specific essential claim, not an automatic generation.",
+  "live_experiments_invoked_during_review": false,
+  "evidence_sha256": {
+    "analysis/runtime_io_v25/generation-01/latest_analysis.json": "2f7036f84723484b7ec7b47b01593d4c8852a1d810366875ab522042c9a35f94",
+    "analysis/runtime_io_v25/generation-01/collection_receipt.json": "a08bc995f1420e3c5a0e78b6b758a5915ffe8fbbf6824515369e7390aba43133",
+    "analysis/runtime_io_v25/generation-01/measurement_lifetime.json": "fd45ce867ee5308d2fe9e819584c30b0db6dbee9399e931112b02c88201584cf",
+    "analysis/runtime_io_v25/generation-01/preparation/seal.json": "3eb33dc6a36deca5fcd5335d9dd835a8556e2406368282c99c1e87e904e84367",
+    "analysis/runtime_io_v25/generation-01/bundle/seal.json": "3b97e880641d680dbed4ea424457ee8272a325397dd41c717023afa49d515cdd",
+    "analysis/runtime_io_v25/generation-01/environment_seal.json": "33c41b3ab6762eead5cf8ae83cf54941a2449bbfaa8f31fb64cc24f1019e79a8",
+    "analysis/runtime_io_v25/generation-01/observer_review/seal.json": "33a6ff4649f76156007ce9efc39048c63aee6708f8bc1dc5695c83c6e2b39900",
+    "analysis/runtime_io_v25/generation-01/analysis/1791389865386770727/report.json": "2bafe3b34c6374c1aa945ba4264f93cb94182ea760a99f8ca20c64abd26647ba",
+    "analysis/runtime_io_v25/generation-01/analysis/1791389865386770727/report.md": "b5f3888513265cfa57917c68d794d5a046cb6bca578b818762a84448fbb03acb",
+    "analysis/runtime_io_v25/generation-01/analysis/1791389865386770727/seal.json": "89f46ed194deecda43b3ae8a23cd820d7c911c68fbd07da373df1828fcc85424",
+    "analysis/runtime_io_v25/generation-01/slots/b1_small_off_r1/attempt-1791387095435455664/seal.json": "c67961681a63223d0af116232f3ab29dabd069e1195941781f1885d8828c82d7",
+    "analysis/runtime_io_v25/generation-01/slots/b1_small_off_r1/attempt-1791387095435455664/derived.json": "50208d0e9d9590aecbd290112e58fe9ad27766a79255ec45d8abb9941c7f3a23",
+    "analysis/runtime_io_v25/generation-01/slots/b1_small_off_r1/attempt-1791387095435455664/phase_accounting.json": "313a2fed90e71bc6543c2848a685b69d5ed6b901fcded419972363e15262f301",
+    "analysis/runtime_io_v25/generation-01/slots/b1_small_off_r1/attempt-1791387095435455664/cleanup.json": "825913e69649d2700523086c5d0777f2fa5891a5535fad8c60664573f71199c7",
+    "analysis/runtime_io_v25/generation-01/slots/b1_small_off_r1/attempt-1791387095435455664/complete.json": "8ef5290a988eb182f352e7aa15094e034e8bd457228fa98a57d672bc76b0e17f",
+    "analysis/runtime_io_v25/generation-01/slots/b1_small_off_r2/attempt-1791387262686099307/seal.json": "1df3553ae5105fa98967b9ed52def29b89d2da5bc9a823a9f439b8eb8f1456dd",
+    "analysis/runtime_io_v25/generation-01/slots/b1_small_off_r2/attempt-1791387262686099307/derived.json": "c11d80204ce01cbf417f36d8385a284e09a379bf5bd16489ef58ce2b15ce4fbf",
+    "analysis/runtime_io_v25/generation-01/slots/b1_small_off_r2/attempt-1791387262686099307/phase_accounting.json": "7a6a8294483cfa67c128146bd3aac19c2ce95f0774aa2472078a8f205a7e782c",
+    "analysis/runtime_io_v25/generation-01/slots/b1_small_off_r2/attempt-1791387262686099307/cleanup.json": "49658601dc40002b737467ec9fc06eb8cc0021d00cf094de65a60d5ac21c0834",
+    "analysis/runtime_io_v25/generation-01/slots/b1_small_off_r2/attempt-1791387262686099307/complete.json": "0a1932b78f7966ceb0d01959fd7958bcb9565a78a350735dc1e1fd876a97906c",
+    "analysis/runtime_io_v25/generation-01/slots/b1_large_on_r1/attempt-1791387435044516516/seal.json": "385ecbafdd4de3644db662b320a95a3b2a2372d392f4b3a14b3768ec7d5d1010",
+    "analysis/runtime_io_v25/generation-01/slots/b1_large_on_r1/attempt-1791387435044516516/derived.json": "914ff5e5ae71ebd05f30f8604bf79cd5829ff19ceac9a9bc16d0c751046d7acb",
+    "analysis/runtime_io_v25/generation-01/slots/b1_large_on_r1/attempt-1791387435044516516/phase_accounting.json": "9014fdeccb1791ea65f3fe2a486aacc621c336f17595483cd3472b73336b149c",
+    "analysis/runtime_io_v25/generation-01/slots/b1_large_on_r1/attempt-1791387435044516516/cleanup.json": "2cfa2f7d3369ce20f1de52b3aa691637c62ca98bf970684d4c0853b8350cbfe5",
+    "analysis/runtime_io_v25/generation-01/slots/b1_large_on_r1/attempt-1791387435044516516/complete.json": "77ec1e5cec0b34cf972312019e03b37e34bd93b31fc6214912708aaae0d62225",
+    "analysis/runtime_io_v25/generation-01/slots/b1_large_on_r1/attempt-1791387435044516516/counter.json": "529a4703af0972f07d5d28517518b6f675d41245efc52b33ecabf411c38c3e9a",
+    "analysis/runtime_io_v25/generation-01/slots/b1_large_on_r1/attempt-1791387435044516516/counter.raw.json": "9cb329b4d73c067bc4a8f1454044c0f5b3affef6d4c460aa9fe002daa5d39b8c",
+    "analysis/runtime_io_v25/generation-01/slots/b1_large_on_r2/attempt-1791387606997826718/seal.json": "8bd61e0cd6d9371e970a8e75306a13326bc8df027341e1258ceb4eb3f752b9a8",
+    "analysis/runtime_io_v25/generation-01/slots/b1_large_on_r2/attempt-1791387606997826718/derived.json": "9a601467371146576a6b38c2d499b50adb0ba5d07568785f559ebd0e52af4de1",
+    "analysis/runtime_io_v25/generation-01/slots/b1_large_on_r2/attempt-1791387606997826718/phase_accounting.json": "c0b62674a1bf05b4c58a7debe68b78ee956ceafd4eace79b93799d58fabdae44",
+    "analysis/runtime_io_v25/generation-01/slots/b1_large_on_r2/attempt-1791387606997826718/cleanup.json": "149b4e5dee7ad94fee5e885ea11589ef1ea043b0f6aa0c7bc9125bb4bdd58e01",
+    "analysis/runtime_io_v25/generation-01/slots/b1_large_on_r2/attempt-1791387606997826718/complete.json": "7cfc8dc3b9a64fd714a9c7f58a329b9a3632d79171e8ac0c8bf0f882a4337471",
+    "analysis/runtime_io_v25/generation-01/slots/b1_large_on_r2/attempt-1791387606997826718/counter.json": "ec405b274c12de8f465345d56cb6b22def2107ed9551e031e157f2ca87d275cb",
+    "analysis/runtime_io_v25/generation-01/slots/b1_large_on_r2/attempt-1791387606997826718/counter.raw.json": "c56d63d4b5963da096d5da81adee708fa9390285b41a4a4625d1dc2bee3a4a1e",
+    "analysis/runtime_io_v25/generation-01/slots/b2_large_off_r1/attempt-1791387778926954942/seal.json": "246810cdbd7ce91c946a9d11f5a39fd04fe95aa443ec29b89857335e8ebe5a7c",
+    "analysis/runtime_io_v25/generation-01/slots/b2_large_off_r1/attempt-1791387778926954942/derived.json": "49b6bbc3f9856ca124e1ffaa7ccc48cdefa94d8514d9f7c6f7170d74a485d5b8",
+    "analysis/runtime_io_v25/generation-01/slots/b2_large_off_r1/attempt-1791387778926954942/phase_accounting.json": "b1c665c7f916ca45c25aae9e0845803926ed4721af4cc55c0dce830d26c26cef",
+    "analysis/runtime_io_v25/generation-01/slots/b2_large_off_r1/attempt-1791387778926954942/cleanup.json": "f15a6aab54723ca8df841b2ded384c9af4c483165d84d6ff9a7b42dea20d8c84",
+    "analysis/runtime_io_v25/generation-01/slots/b2_large_off_r1/attempt-1791387778926954942/complete.json": "41565b1a6093f5a5d9ab29d9d7723ef6a6201b5731ff81fc39775d9b2ca1eaa8",
+    "analysis/runtime_io_v25/generation-01/slots/b2_large_off_r2/attempt-1791387950517497507/seal.json": "4008d8e487fb5740f8446106acd85c42ae7639f8cdb976eb5cc4402f381cbe09",
+    "analysis/runtime_io_v25/generation-01/slots/b2_large_off_r2/attempt-1791387950517497507/derived.json": "28067a6cfeb358b5c5147c4dafdb6186d5c096f4862c79026704b965b9bdd792",
+    "analysis/runtime_io_v25/generation-01/slots/b2_large_off_r2/attempt-1791387950517497507/phase_accounting.json": "e37b67ba215e5f783d16cb6b96744ffc3d78e029c5a3e9741d44f8ecf1364123",
+    "analysis/runtime_io_v25/generation-01/slots/b2_large_off_r2/attempt-1791387950517497507/cleanup.json": "e35f0e2a9eefa9d984349d59825aa7af39913ae1768ff70bfc78c83db86fb4af",
+    "analysis/runtime_io_v25/generation-01/slots/b2_large_off_r2/attempt-1791387950517497507/complete.json": "c6bb286a288bf256e08b85e6b79288d5f27c21d66ba7ada57dd50f0a1a9038ac",
+    "analysis/runtime_io_v25/generation-01/slots/b2_small_on_r1/attempt-1791388127110291279/seal.json": "980a3211b60101d99a7ee763dfd7cfa2427d23ba5e4e0fb21d784c2f1f5a1cd5",
+    "analysis/runtime_io_v25/generation-01/slots/b2_small_on_r1/attempt-1791388127110291279/derived.json": "9bd8e2daf0b3ef585c49a37117d3112d1c80ec4883ae7ea395734d0f37e760e1",
+    "analysis/runtime_io_v25/generation-01/slots/b2_small_on_r1/attempt-1791388127110291279/phase_accounting.json": "5a5228f452b04a7ff29689e2c7762a5224eb2aa2fadf7755175ed06d6bc336a0",
+    "analysis/runtime_io_v25/generation-01/slots/b2_small_on_r1/attempt-1791388127110291279/cleanup.json": "68cf6153a0e1139dd0281c2cf9d50b17c8f523473e9db87ec2c668d9f7f58af9",
+    "analysis/runtime_io_v25/generation-01/slots/b2_small_on_r1/attempt-1791388127110291279/complete.json": "98deb8eca1491185b9b3e80e9667d7b26644cd59497bdcb1102a5442c861f228",
+    "analysis/runtime_io_v25/generation-01/slots/b2_small_on_r1/attempt-1791388127110291279/counter.json": "24f1f3e8eaa1933de88b2014758e37b6627cd80b9e4d3bb6616c9e14615968f0",
+    "analysis/runtime_io_v25/generation-01/slots/b2_small_on_r1/attempt-1791388127110291279/counter.raw.json": "b1438d807097f793d7a3a1490fda1cf8820886e4af681d90323b6491abb4db97",
+    "analysis/runtime_io_v25/generation-01/slots/b2_small_on_r2/attempt-1791388299798475301/seal.json": "b6d82461051c9798f02657f1762e94a7014cf54b8cac6548e73b348d7e9ed74d",
+    "analysis/runtime_io_v25/generation-01/slots/b2_small_on_r2/attempt-1791388299798475301/derived.json": "12038927ba79e7c8159e9f978f3c4b6998df94335e615099ca1640252a181ec1",
+    "analysis/runtime_io_v25/generation-01/slots/b2_small_on_r2/attempt-1791388299798475301/phase_accounting.json": "19383a969d6d996b5e5e429d02088477f61c0e3ae43c5d6f00acbec25886eee2",
+    "analysis/runtime_io_v25/generation-01/slots/b2_small_on_r2/attempt-1791388299798475301/cleanup.json": "5578cfe212670b4d9f3e6c9d27c81629101a589f3203d3318f51ff583f3a35ec",
+    "analysis/runtime_io_v25/generation-01/slots/b2_small_on_r2/attempt-1791388299798475301/complete.json": "e54733422cab4a24562c504dcdc2352756c3153d28670bb1b8d6227d5a94836a",
+    "analysis/runtime_io_v25/generation-01/slots/b2_small_on_r2/attempt-1791388299798475301/counter.json": "8c28d1964536e383e5994ef1c314e07091ebae109c150a394adbb69cdbfe3c55",
+    "analysis/runtime_io_v25/generation-01/slots/b2_small_on_r2/attempt-1791388299798475301/counter.raw.json": "e8493dfaf2f7bb33cf8159f22ed4a3a085226ea3028b4d6427ec453edc554835",
+    "analysis/runtime_io_v25/generation-01/slots/b3_small_on_r1/attempt-1791388472426292191/seal.json": "7780d92b8f347a8871f455aa25425ac56b787ea20fd7406b458c24d310d63d55",
+    "analysis/runtime_io_v25/generation-01/slots/b3_small_on_r1/attempt-1791388472426292191/derived.json": "08aa7d220f5ccab33268af2cc384e2794fd9c786cadabe8c2cce083144330318",
+    "analysis/runtime_io_v25/generation-01/slots/b3_small_on_r1/attempt-1791388472426292191/phase_accounting.json": "5236b80f321001b5ddabe6cb1958fefca4d341ef002c2088a5cabe7876fc5fdd",
+    "analysis/runtime_io_v25/generation-01/slots/b3_small_on_r1/attempt-1791388472426292191/cleanup.json": "4002d793d205d6f054f1b7e2e852eb828919e707326e2eaa17c7329c929c9be3",
+    "analysis/runtime_io_v25/generation-01/slots/b3_small_on_r1/attempt-1791388472426292191/complete.json": "680f8c32dba01f9a3bed151ada7627df17c9cfc3dcb9ef8826fc22278c4ee025",
+    "analysis/runtime_io_v25/generation-01/slots/b3_small_on_r1/attempt-1791388472426292191/counter.json": "23ee3fceafd53168c1e87b521d818804073f6a86ef68034275d45add1e4b7438",
+    "analysis/runtime_io_v25/generation-01/slots/b3_small_on_r1/attempt-1791388472426292191/counter.raw.json": "a406248c581cfb27eab1a24eef16fa167c70001a22f7815a3422ef279023791b",
+    "analysis/runtime_io_v25/generation-01/slots/b3_small_on_r2/attempt-1791388645066899756/seal.json": "927244605e9a614599cdb67bd06d3989becf29b3780e25d256437a4c4fd986b5",
+    "analysis/runtime_io_v25/generation-01/slots/b3_small_on_r2/attempt-1791388645066899756/derived.json": "f3b9bd9f17280dc4249e6f99c5faa093922c9b6b28439cb85eb60a5d54fb28f2",
+    "analysis/runtime_io_v25/generation-01/slots/b3_small_on_r2/attempt-1791388645066899756/phase_accounting.json": "7381034d7a980f4a59cdd11138bbcf6ca48255418b9e0f6b8148912c893d96e4",
+    "analysis/runtime_io_v25/generation-01/slots/b3_small_on_r2/attempt-1791388645066899756/cleanup.json": "9185c6d458b8327163da6f8d4b3b9abccd9f2c412f1f8819318ac32e6aae1c88",
+    "analysis/runtime_io_v25/generation-01/slots/b3_small_on_r2/attempt-1791388645066899756/complete.json": "186fcca90d9fbafc38f3d213c02f00b4bcd296329e91fee4b996f86193452710",
+    "analysis/runtime_io_v25/generation-01/slots/b3_small_on_r2/attempt-1791388645066899756/counter.json": "96d88188354a15ce34282e49598b504820d76345506a7625c9a3f2c269f0d99c",
+    "analysis/runtime_io_v25/generation-01/slots/b3_small_on_r2/attempt-1791388645066899756/counter.raw.json": "2d5e5bf9bcdc55961ac469f62b9eb0ceaebb956542e9481061922d9bbd3e98c7",
+    "analysis/runtime_io_v25/generation-01/slots/b3_large_off_r1/attempt-1791388817728281574/seal.json": "f8fcadda597b80c055508843b7e6f4f453ec68cf7ce0670a6becf72f7f41bb0d",
+    "analysis/runtime_io_v25/generation-01/slots/b3_large_off_r1/attempt-1791388817728281574/derived.json": "c5658915c6f3c0d5ec55ba476db856191bd3ffe2a6cd3b93a005fe1c2b578bcf",
+    "analysis/runtime_io_v25/generation-01/slots/b3_large_off_r1/attempt-1791388817728281574/phase_accounting.json": "df7052247d55e46e607a87b6b9e091a9de85f3f575cf6bbbd83472c37f83f8cb",
+    "analysis/runtime_io_v25/generation-01/slots/b3_large_off_r1/attempt-1791388817728281574/cleanup.json": "82993ff00c6e88a982d53b4dce4d29049bcc4acfe5ef56db68da96462aa45249",
+    "analysis/runtime_io_v25/generation-01/slots/b3_large_off_r1/attempt-1791388817728281574/complete.json": "00f3aa59b9bab10533d3c37a86a66df8cd07f2fa4d18b0d31824ad39da615d5d",
+    "analysis/runtime_io_v25/generation-01/slots/b3_large_off_r2/attempt-1791388989355268362/seal.json": "83e40b4ec79ca8c6352fd8cacf9ea0fb11dac76345f1b17e9cdd9cb4c4a8b659",
+    "analysis/runtime_io_v25/generation-01/slots/b3_large_off_r2/attempt-1791388989355268362/derived.json": "844585e215b012ee4f9a390031f2eb7e9718ba00b3d86315b7cce9608cc3bf8e",
+    "analysis/runtime_io_v25/generation-01/slots/b3_large_off_r2/attempt-1791388989355268362/phase_accounting.json": "e297469c9016545a89949e2a8c05c7b30019a760704d144fbe39809a34196875",
+    "analysis/runtime_io_v25/generation-01/slots/b3_large_off_r2/attempt-1791388989355268362/cleanup.json": "2718f3b0b6abcfaf3903ed7fdccea49a8059bfd7e349bafd26073c70a318a419",
+    "analysis/runtime_io_v25/generation-01/slots/b3_large_off_r2/attempt-1791388989355268362/complete.json": "3f12aa81b30e14d9725a2125096678ef1254c41abd70cbe196c375d120cf9f80",
+    "analysis/runtime_io_v25/generation-01/slots/b4_large_on_r1/attempt-1791389160934680762/seal.json": "8258f761296d676f9309212e2f4a220c9d4f18efea5933f6077f1fb0ef64cd48",
+    "analysis/runtime_io_v25/generation-01/slots/b4_large_on_r1/attempt-1791389160934680762/derived.json": "b592cfffbd74fa5db13f20a4883877061fed7cbc30dcfe5d6eedb32b8912ff4e",
+    "analysis/runtime_io_v25/generation-01/slots/b4_large_on_r1/attempt-1791389160934680762/phase_accounting.json": "e50ede5381a3608b6be3eed694cc21aa62b9845ae03a3df4737fd41d9b348e42",
+    "analysis/runtime_io_v25/generation-01/slots/b4_large_on_r1/attempt-1791389160934680762/cleanup.json": "99beca482176405536abb265717aaab8f36e19947dc94d63b65a2ac61602f216",
+    "analysis/runtime_io_v25/generation-01/slots/b4_large_on_r1/attempt-1791389160934680762/complete.json": "efa98243afc63f009910fc1f007102788dd584baf3f76b877772b65f956914ea",
+    "analysis/runtime_io_v25/generation-01/slots/b4_large_on_r1/attempt-1791389160934680762/counter.json": "8448bcfa676ff72fb32dcf6f057aca13e9e479b252a5c89fb17c761032301e40",
+    "analysis/runtime_io_v25/generation-01/slots/b4_large_on_r1/attempt-1791389160934680762/counter.raw.json": "fb1c7929a222b34caf2a9e06a2de7e8027f51f167228d3fc89ef77affb656593",
+    "analysis/runtime_io_v25/generation-01/slots/b4_large_on_r2/attempt-1791389337998671425/seal.json": "763d1e1820b7ea2f510a73baf61e59f2fafa70f5571b7b265563cc2d5403e565",
+    "analysis/runtime_io_v25/generation-01/slots/b4_large_on_r2/attempt-1791389337998671425/derived.json": "59aceea02347396b871450d4c8939aeeab36e3184f45de4826bab08aa33d7bcf",
+    "analysis/runtime_io_v25/generation-01/slots/b4_large_on_r2/attempt-1791389337998671425/phase_accounting.json": "14eed0c3c9d9c2db5d45a5592b8b2b44b9b85084a5e8bc96c791399ba937cbdb",
+    "analysis/runtime_io_v25/generation-01/slots/b4_large_on_r2/attempt-1791389337998671425/cleanup.json": "4e28e1d3297881bf7fc871248026225071ba9b146da846d98f2e7dc0810de229",
+    "analysis/runtime_io_v25/generation-01/slots/b4_large_on_r2/attempt-1791389337998671425/complete.json": "f4f9c69d98e9f83b013553df92b741a8e0f0da411934bf132311f06959aec0e6",
+    "analysis/runtime_io_v25/generation-01/slots/b4_large_on_r2/attempt-1791389337998671425/counter.json": "db4f896eb9546fd69ad34f3f4014d7de6dbef014a571e5b50f1c6d284fa6bad8",
+    "analysis/runtime_io_v25/generation-01/slots/b4_large_on_r2/attempt-1791389337998671425/counter.raw.json": "9673e6dda5f707dfdb62018fe834702c68213482b0fa0cf9aa13357cc82f33de",
+    "analysis/runtime_io_v25/generation-01/slots/b4_small_off_r1/attempt-1791389510020979228/seal.json": "6917187b41ab91b11d4f1af766beca814d9f0526ae2100ad42c9a58228ca6e2f",
+    "analysis/runtime_io_v25/generation-01/slots/b4_small_off_r1/attempt-1791389510020979228/derived.json": "9a87ca3e0d918556a3463a85514df58864f88e3259e3bda550650d5b3738656d",
+    "analysis/runtime_io_v25/generation-01/slots/b4_small_off_r1/attempt-1791389510020979228/phase_accounting.json": "f0f8739438797b1b1d25c6c09f8fd417e3022a5549085e5d2daf979ce12e7eb8",
+    "analysis/runtime_io_v25/generation-01/slots/b4_small_off_r1/attempt-1791389510020979228/cleanup.json": "0fa5f53a813d0a57b6f25cf6583be90943a19c7de5cfd05f09a0ff1d235d29c2",
+    "analysis/runtime_io_v25/generation-01/slots/b4_small_off_r1/attempt-1791389510020979228/complete.json": "6a8a8fa0d66ca75244155716f454af3b2c16cd5ced750ea473bab28d9f9bf83b",
+    "analysis/runtime_io_v25/generation-01/slots/b4_small_off_r2/attempt-1791389682286452249/seal.json": "909672df9e425554c499968ccfd5a6d30ec19acf7cf13598eaa95cd9392467ab",
+    "analysis/runtime_io_v25/generation-01/slots/b4_small_off_r2/attempt-1791389682286452249/derived.json": "4ad369dc64315fcdf8f41518bf4abb04bf34177b05e58e8e7de660bbbd711f35",
+    "analysis/runtime_io_v25/generation-01/slots/b4_small_off_r2/attempt-1791389682286452249/phase_accounting.json": "4b6881a1b92bc9fe15e5216cc6b6544d33e210542f0648da05e3f86e9910b251",
+    "analysis/runtime_io_v25/generation-01/slots/b4_small_off_r2/attempt-1791389682286452249/cleanup.json": "64c8f7344c8ff0e598c920c380d99a8eb9a090e79088aac36649290c351af239",
+    "analysis/runtime_io_v25/generation-01/slots/b4_small_off_r2/attempt-1791389682286452249/complete.json": "6f06e601c98ecc8bd0f9e32306d723a99feb9675fdb5a208267a7c478e051660"
+  }
+}

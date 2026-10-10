@@ -1,0 +1,57 @@
+{
+  "active_handlers": 0,
+  "admitted": 1,
+  "client_gone_at_completion": 0,
+  "completed": 1,
+  "custom_recording": true,
+  "events": [
+    {
+      "id": 0,
+      "admission_ns": 22355747,
+      "worker_start_ns": 22359003,
+      "completion_ns": 25615346,
+      "queue_wait_ns": 3256,
+      "processing_ns": 3256343,
+      "depth_at_admission": 0,
+      "client_gone_at_completion": false
+    }
+  ],
+  "go_version": "go1.26.1",
+  "gomaxprocs": 2,
+  "handler_events": [
+    {
+      "id": 0,
+      "entry_ns": 22327645,
+      "admission_ns": 22355747,
+      "resume_ns": 25630665,
+      "pre_admission_ns": 28102,
+      "post_work_wait_ns": 15319,
+      "write_start_ns": 25648738,
+      "write_end_ns": 25653397,
+      "handler_exit_ns": 25654169,
+      "write_calls": 1,
+      "write_bytes": 39,
+      "write_error": ""
+    }
+  ],
+  "instrument": true,
+  "queue_cap": 128,
+  "queue_len": 0,
+  "queue_max": 0,
+  "rejected": 0,
+  "runtime_capture": false,
+  "runtime_trace_storage": "memory",
+  "scheduler_counter_window": "reset_to_snapshot_including_control_and_drain",
+  "scheduler_counters": {
+    "gc_worker_before_ordinary": 0,
+    "global_selected": 0,
+    "ordinary_fairness_reached": 0,
+    "pending_seen": 0,
+    "regular_local_selected": 0,
+    "sole_runnext_selected": 0,
+    "trace_reader_before_ordinary": 0
+  },
+  "scheduler_observation_enabled": true,
+  "worker_yield": false,
+  "workers": 4
+}

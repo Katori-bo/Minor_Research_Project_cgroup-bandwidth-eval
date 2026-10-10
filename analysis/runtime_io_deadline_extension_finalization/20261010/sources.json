@@ -1,0 +1,140 @@
+{
+  "review_date": "2026-10-10",
+  "purpose": "Targeted closest-work comparison for the completed V30/V31/NGINX deadline-resolution evidence; not a systematic review or novelty certification.",
+  "retrieval": "Web search, open and find on primary author/publisher/documentation sources; no competing implementation executed. Stores metadata and section locators, not paper copies.",
+  "recorded_query_set": [
+    "CPU quota throttling tail latency prediction CFS bandwidth deadline empirical latency distribution paper",
+    "cgroup CPU quota latency service model prediction periodic resource reservation response time paper",
+    "empirical latency distribution predict deadline misses queueing low load calibration paper",
+    "\"cpu quota\" \"latency\" \"prediction\" \"period\"",
+    "\"CPU\" \"quota\" \"latency distribution\" empirical calibration",
+    "\"YAAS\" \"SoCC\" \"2025\" CPU limits",
+    "\"Mi\" \"Burstiness in Multi-tier Applications\" 2010",
+    "\"Predicting Latency Distributions of Aperiodic Time-Critical Services\" authors pdf",
+    "\"CPU-Limits kill Performance\" arxiv",
+    "\"response time distribution\" \"CFS\" \"predict\" cgroup",
+    "\"empirical\" \"deadline\" \"CPU quota\" latency",
+    "\"Predicting Latency Distributions\" \"periodic\" \"response\" \"2019\" site:cse.wustl.edu",
+    "\"Predicting Latency Distributions\" \"experimental\" \"service time\" site:cse.wustl.edu",
+    "\"Predicting Latency Distributions of Aperiodic Time-Critical Services\" \"Poisson\"",
+    "\"Predicting Latency Distributions of Aperiodic Time-Critical Services\" \"Redis\"",
+    "\"CEDULE\" \"quantile regression\"",
+    "\"Predicting Latency Distributions of Aperiodic Time-Critical Services\" Poisson Redis (domain: cse.wustl.edu)"
+  ],
+  "query_record_limit": "Selected explicit queries retained, not a full export of every search/result. Earlier project literature screens informed source selection. Exact-match absence is not proof of novelty.",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "CFS Bandwidth Control",
+      "author": "Linux kernel documentation",
+      "version": "Live documentation accessed 2026-10-10",
+      "type": "official documentation",
+      "urls": ["https://docs.kernel.org/scheduler/sched-bwc.html"],
+      "reviewed": "Background, system-wide settings, caveats and examples; browser extraction lines 127–134 for period/latency example",
+      "access": "Primary text available",
+      "coverage": "Relevant documentation sections"
+    },
+    {
+      "id": "S02",
+      "title": "Predicting Latency Distributions of Aperiodic Time-Critical Services",
+      "authors": "Haoran Li; Chenyang Lu; Christopher Gill",
+      "venue": "RTSS 2019",
+      "type": "conference paper",
+      "urls": ["https://www.cse.wustl.edu/~cdgill/publications/rtss19.pdf", "https://www.cse.wustl.edu/~lu/papers/rtss19.pdf"],
+      "metadata_verification_url": "https://www.cse.wustl.edu/~lu/publications.html",
+      "reviewed": "Indexed primary abstract, introduction, Sections II and III; author publication entry verifies year/venue",
+      "access": "Direct PDF open repeatedly failed with retrieval/internal errors; substantial primary passages available through search index",
+      "coverage": "Premises and high-level method only; no complete algorithm or evaluation audit"
+    },
+    {
+      "id": "S03",
+      "title": "Strong Temporal Isolation Among Containers in OpenStack for NFV Services",
+      "authors": "Tommaso Cucinotta et al.",
+      "venue": "IEEE Transactions on Cloud Computing, 2023",
+      "type": "journal paper",
+      "urls": ["https://retis.santannapisa.it/people/nino/publication/TCC23.pdf"],
+      "reviewed": "Section 4.2, especially 4.2.1; evaluation setup; browser extraction lines 638–701 and 1122–1125",
+      "access": "Primary PDF text available",
+      "coverage": "Relevant model premises and selected evaluation passages, not a full reimplementation"
+    },
+    {
+      "id": "S04",
+      "title": "CEDULE: A Scheduling Framework for Burstable Performance in Cloud Computing",
+      "authors": "Ali; Pinciroli; Yan; Smirni",
+      "venue": "ICAC 2018",
+      "type": "conference paper",
+      "urls": ["https://www2.cs.uh.edu/~fyan/Paper/Feng-ICAC18.pdf"],
+      "reviewed": "Sections II–III, profiling, prediction and held-out evaluation; browser extraction lines 314–368 for quantile models",
+      "access": "Primary PDF text available",
+      "coverage": "Selected method and evaluation sections"
+    },
+    {
+      "id": "S05",
+      "title": "Sizing multi-tier systems with temporal dependence: benchmarks and analytic models",
+      "authors": "Ningfang Mi; Giuliano Casale; Ludmila Cherkasova; Evgenia Smirni",
+      "venue": "Journal of Internet Services and Applications, 2010",
+      "doi": "10.1007/s13174-010-0012-9",
+      "type": "journal paper",
+      "urls": ["https://link.springer.com/content/pdf/10.1007/s13174-010-0012-9.pdf"],
+      "reviewed": "Sections 3.2–3.3; browser extraction lines 389–419 and 463–480 for busy-period/dispersion fitting",
+      "access": "Publisher PDF text available; alternative author PDF retrieval failed",
+      "coverage": "Selected characterization and model-comparison sections"
+    },
+    {
+      "id": "S06",
+      "title": "Reducing Tail Latencies Through Environment- and Neighbour-aware Thread Management",
+      "authors": "Andrew Jeffery; Chris Jensen; Richard Mortier",
+      "version": "arXiv:2407.11582v1, 2024",
+      "type": "preprint",
+      "urls": ["https://arxiv.org/html/2407.11582v1", "https://arxiv.org/abs/2407.11582"],
+      "reviewed": "Sections 2–5; workload and enqueue/start/finish timing, queue-latency treatment and thread management",
+      "access": "Primary HTML text available",
+      "coverage": "Relevant experiment and mechanism sections; historical version explicitly pinned"
+    },
+    {
+      "id": "S07",
+      "title": "CPU-Limits kill Performance: Time to rethink Resource Control",
+      "authors": "Chirag C Shetty et al.",
+      "venue": "SoCC 2025",
+      "type": "conference paper",
+      "urls": ["https://sarthak-chakraborty.github.io/publications/YAAS_SoCC25.pdf", "https://arxiv.org/abs/2510.10747"],
+      "reviewed": "Introduction and Section 3.2, especially microbursts under low average utilization",
+      "access": "Primary author PDF text available",
+      "coverage": "Relevant motivation and mechanism sections; no controller artifact execution"
+    },
+    {
+      "id": "S08",
+      "title": "PerfSim: A Performance Simulator for Cloud Native Microservice Chains",
+      "authors": "Michel Gokan Khan; Javid Taheri; Auday Al-Dulaimy; Andreas Kassler",
+      "version": "Author accepted manuscript; DOI 10.1109/TCC.2021.3135757",
+      "type": "journal author manuscript",
+      "urls": ["https://www.es.mdu.se/pdf_publications/6526.pdf"],
+      "reviewed": "Abstract, Section 3.1.4 CPU resource limits, Section 6 including 6.3.1 response/execution-time validation",
+      "access": "Primary author PDF text available",
+      "coverage": "Selected model and endpoint passages; no competing simulator executed"
+    },
+    {
+      "id": "S09",
+      "title": "Mitigating Unnecessary Throttling in Linux CFS Bandwidth Control",
+      "authors": "Odin Ugedal; Rakesh Kumar",
+      "venue": "SBAC-PAD 2022",
+      "type": "conference paper",
+      "urls": ["https://rakeshk.folk.ntnu.no/pubs/SBACPAD22.pdf"],
+      "reviewed": "Abstract and introduction; browser extraction lines 8–111",
+      "access": "Primary PDF text available",
+      "coverage": "Contextual mechanism check, not a full kernel patch or benchmark audit"
+    },
+    {
+      "id": "S10",
+      "title": "Enabling Containerisation of Distributed Applications with Real-Time Constraints",
+      "authors": "Nasim Samimi; Luca Abeni; Daniel Casini; Mauro Marinoni; Twan Basten; Mitra Nasri; Marc Geilen; Alessandro Biondi",
+      "venue": "ECRTS 2025",
+      "doi": "10.4230/LIPIcs.ECRTS.2025.3",
+      "type": "conference paper",
+      "urls": ["https://drops.dagstuhl.de/storage/00lipics/lipics-vol335-ecrts2025/html/LIPIcs.ECRTS.2025.3/LIPIcs.ECRTS.2025.3.html"],
+      "reviewed": "Abstract, introduction and Section 2; browser extraction lines 1–89",
+      "access": "Publisher primary HTML available",
+      "coverage": "Contextual scheduler-contract comparison, not a full implementation audit"
+    }
+  ]
+}

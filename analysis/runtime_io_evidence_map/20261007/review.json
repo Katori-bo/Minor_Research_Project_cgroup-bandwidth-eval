@@ -1,0 +1,288 @@
+{
+  "schema": 1,
+  "review": "Step 1 evidence consolidation",
+  "created_utc": "2026-10-07T04:07:00.515708+00:00",
+  "scope": "Saved reports and summary arithmetic; not fresh replay of every raw trial or novelty assessment.",
+  "supported_claim_ids": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09",
+    "C10",
+    "C11"
+  ],
+  "checks": {
+    "selected_summary_arithmetic_matches_claims": true,
+    "original_report_json_hash_matches_saved_review": true,
+    "original_analysis_seal_hash_matches_saved_review": true,
+    "original_report_markdown_matches_seal": true,
+    "all_evidence_map_local_links_resolve": true,
+    "boot_comparison_and_normalized_service_changes_checked": true
+  },
+  "selected_summary_metrics": {
+    "original_gap_ms": [
+      17.28048856775357,
+      0.057857137641689975
+    ],
+    "original_yield_deadline_delta_pp": -0.08832621816576847,
+    "repeat_yield_100_deadline_delta_pp": 1.6377152951567746,
+    "repeat_yield_20_deadline_delta_pp": 0.02576181363168062,
+    "original_queue_delta_ms": 15.077768494737208,
+    "queue_miss_share_percent": 95.57104777527168,
+    "heldout_max_abs_miss_error_pp": 1.7812453996761373,
+    "heldout_max_abs_peak_error_jobs": 5,
+    "heldout_max_abs_mean_recovery_error_ms": 81.76348750467798,
+    "publication_bounded_crossings": 1182,
+    "v19_publication_resume_lower_bound_ms": 54.3177425,
+    "v12_500ms_misses": {
+      "2": 7899,
+      "1": 9298
+    },
+    "normalized_service_changes": {
+      "dbus-:1.2-org.kde.kameleon.qmk.helper@0.service": {
+        "before": null,
+        "after": [
+          "transient",
+          "-"
+        ]
+      }
+    }
+  },
+  "inspected_or_linked_file_hashes": [
+    {
+      "path": "analysis/review_v20_backlog.py",
+      "sha256": "eb782afcf080b3aefb4c3d4dad82cb30c37a5920fd9ca15a6be8848ec56a5a9e",
+      "bytes": 28683
+    },
+    {
+      "path": "analysis/runtime_io_minimal_computation_screen/generation-02/partial_analysis/1791292967721661400/report.md",
+      "sha256": "f7c2c964367fd4ceb19b476bfa19029a98ad565b81f299652bee8115b787f30a",
+      "bytes": 2673
+    },
+    {
+      "path": "analysis/runtime_io_system_state_snapshots/1791343349016869707-pre-restart.json",
+      "sha256": "c4bab08eb77f159d205c798ec11bf7c20bae570f1cd3a4c99fb0df884bfd6db8",
+      "bytes": 522288
+    },
+    {
+      "path": "analysis/runtime_io_system_state_snapshots/1791345410649559361-post-restart.json",
+      "sha256": "8920636bb589c7063f0029962aa066bae1c6d2874b9ef5472a7894fee2285e80",
+      "bytes": 535369
+    },
+    {
+      "path": "analysis/runtime_io_system_state_snapshots/1791345410664662815-comparison.json",
+      "sha256": "4a8be8626ad272bac0a028d6d4dc18ea9aa673f3551f7424f0ccfc67d18540d8",
+      "bytes": 61233
+    },
+    {
+      "path": "analysis/runtime_io_v12_tradeoff_review/deadline_after_work.json",
+      "sha256": "d12623e09f8383520d496e695aa2fe3c8f730c9c35bd1f49345566561e46c7d6",
+      "bytes": 58119
+    },
+    {
+      "path": "analysis/runtime_io_v12_tradeoff_review/gap_audit_and_completion_deadlines.md",
+      "sha256": "e17e553e9658e65d3574b42501cd1aeb00571d13cfa3b31d6ff2b73d744c3764",
+      "bytes": 18177
+    },
+    {
+      "path": "analysis/runtime_io_v12_tradeoff_review/report.md",
+      "sha256": "54160d65e6f6fb6c921a1efce1b4a09780cbb19b45703a2841ec59ed6ef32473",
+      "bytes": 15944
+    },
+    {
+      "path": "analysis/runtime_io_v12_tradeoff_review/summary.json",
+      "sha256": "245f4bdf634c83700de62bc82bea245c4bb564354edb53c505c8110b58992d63",
+      "bytes": 718008
+    },
+    {
+      "path": "analysis/runtime_io_v15_marker_review/report.md",
+      "sha256": "7fbbaf0757d7c19db92412dc7e6e79f97b938363c236cdb039511229f7868b9c",
+      "bytes": 5844
+    },
+    {
+      "path": "analysis/runtime_io_v16_repeatability_review/report.md",
+      "sha256": "04d4201da1cf90ab72d4ae87904d5ffcc39fd71a85d670f8e11d738cb0078265",
+      "bytes": 3825
+    },
+    {
+      "path": "analysis/runtime_io_v18_observer_cost_review/generation-04-1791136754967461238/review.md",
+      "sha256": "1d9162aa3474ba226a11009be0a13cfa649b36958f094b3de4be6ec40bff956a",
+      "bytes": 1709
+    },
+    {
+      "path": "analysis/runtime_io_v19_residual_review/20261005/summary.json",
+      "sha256": "2006ed221ff69ceaf51067607ceed93eb6d301afa1fea8396e9b4919428cca24",
+      "bytes": 19564
+    },
+    {
+      "path": "analysis/runtime_io_v20_backlog_review/20261005/report.json",
+      "sha256": "3fd59e5f731969776557f3d03a87037345108df0d952d8c35db8e99c683cd6e0",
+      "bytes": 248528
+    },
+    {
+      "path": "analysis/runtime_io_v20_execution_delay/generation-03/analysis/1791215103576116652/report.json",
+      "sha256": "ed13b5fd1c8d525a4bc57204ca296eb4bda76b61d6a750842533160e63436be1",
+      "bytes": 61498
+    },
+    {
+      "path": "analysis/runtime_io_v20_execution_delay/generation-03/analysis/1791215103576116652/report.md",
+      "sha256": "ea2d4485380e57f20c0253509cae0e09276b03e38eedb7d0ff50c7eb1c11e732",
+      "bytes": 1344
+    },
+    {
+      "path": "analysis/runtime_io_v20_execution_delay/generation-03/analysis/1791215103576116652/seal.json",
+      "sha256": "eb3ce5a93a7e281351da0bff9a92837e20138bce2f1784aa4466fc20a4637050",
+      "bytes": 1016
+    },
+    {
+      "path": "analysis/runtime_io_v20_execution_delay/generation-04/analysis/1791263686578222719/report.md",
+      "sha256": "238c364dcf344ee2b352b86a801b7685ca1c805af7d22c2d7106ebefb3129eb3",
+      "bytes": 1349
+    },
+    {
+      "path": "analysis/runtime_io_v20_repeat_review/20261006/report.json",
+      "sha256": "c328672db3c87a7b4e09b36728f1858c2bf42a5eec5ccc21645c8d6adccbdd17",
+      "bytes": 56559
+    },
+    {
+      "path": "analysis/runtime_io_v20_result_review/20261005/report.json",
+      "sha256": "cdb40abf271dfd3ca3773f23f42fe15eba03d43cc560a29166463ada1c29e1a2",
+      "bytes": 10317
+    },
+    {
+      "path": "diagnostic/system_state_snapshot.py",
+      "sha256": "2c9f068c10cd71cfdbe2acde608cbf5633501345476744aff28d189a1a8b3f03",
+      "bytes": 14400
+    },
+    {
+      "path": "docs/current_research_plan.md",
+      "sha256": "d24c3ff67ed79022f1038a11f7215150f9cd752b649ed4d8076c6f61012736d6",
+      "bytes": 49427
+    },
+    {
+      "path": "docs/runtime_io_evidence_map.md",
+      "sha256": "90e96f7d8299fe583dbdf7829bbc40f701618cea05c130f9424948b229c847ae",
+      "bytes": 17005
+    },
+    {
+      "path": "docs/runtime_io_execution_state_continuation_findings.md",
+      "sha256": "89af895d6117d4458011c4cc0d60c8756e553bbe1a20d14f5250d5bee6ee74f2",
+      "bytes": 4777
+    },
+    {
+      "path": "docs/runtime_io_gc_screen_findings.md",
+      "sha256": "2556de5408afdf3451c3a772bb9bbe770c4d858706e8bd46910978735824f095",
+      "bytes": 5772
+    },
+    {
+      "path": "docs/runtime_io_investigation_catalogue.md",
+      "sha256": "918d581e1fa66d641188568766eafd22241bd0dc871995583c3732b8428d7d98",
+      "bytes": 15088
+    },
+    {
+      "path": "docs/runtime_io_leftover_observer_findings.md",
+      "sha256": "4d1eca88f81856ba5d762a8272a58fac7194eebf7a387c0d76e91f4c7325dfd1",
+      "bytes": 3396
+    },
+    {
+      "path": "docs/runtime_io_paper_scope.md",
+      "sha256": "f438c10975b095e093378a9661cfb9b661f37050934722faf52835295213d4a3",
+      "bytes": 4029
+    },
+    {
+      "path": "docs/runtime_io_period_cost_pilot_findings.md",
+      "sha256": "393f211088390c00af3653690dbe819aa4557206f34821e7e842187705c2e5af",
+      "bytes": 7322
+    },
+    {
+      "path": "docs/runtime_io_period_reversal_audit.md",
+      "sha256": "d71ec699aa803c5442e78e83618a167df15c408f0ae6e3026ec84ae23353428b",
+      "bytes": 8442
+    },
+    {
+      "path": "docs/runtime_io_period_reversal_closing_findings.md",
+      "sha256": "cbb417c447afda9e409c26f095525bc4607adcd3969b3a17f3a3ca4c74895fde",
+      "bytes": 5115
+    },
+    {
+      "path": "docs/runtime_io_software_audit_findings.md",
+      "sha256": "75116d160ac8227c0dd47d3f8049060bd460027747a72c81884e270aa7c726f8",
+      "bytes": 4897
+    },
+    {
+      "path": "docs/runtime_io_v19_residual_findings.md",
+      "sha256": "995c2ab417ad0e87cf132e8f8a05996068bba72ddb6845ed2bdbb6c3b7dfd62f",
+      "bytes": 3816
+    },
+    {
+      "path": "docs/runtime_io_v20_backlog_findings.md",
+      "sha256": "3536ef2091368f3b0f462c895143032457b6567aa842c8bc29b1b1850d8f4079",
+      "bytes": 18595
+    },
+    {
+      "path": "docs/runtime_io_v20_findings.md",
+      "sha256": "3b1d4e9e59f0f2cc32427c47788dacc62822051429691909352180895a2536af",
+      "bytes": 4729
+    },
+    {
+      "path": "docs/runtime_io_v20_repeat_findings.md",
+      "sha256": "9191a36aea05f627c61e4be6455425abf3da0ad9af856b11fe1ec909d3378763",
+      "bytes": 7729
+    },
+    {
+      "path": "docs/runtime_io_v22_prospective_queue_plan.md",
+      "sha256": "9b96fe835bd8bf4c98641d6d09ee1bd483c86e2c04c94f1850b9d4e6c24e9d26",
+      "bytes": 11002
+    },
+    {
+      "path": "results/diagnostic/runtime-io-v17-shared-loading-1/session/analysis/report.md",
+      "sha256": "71532438193baa4e2f660ba25d93be61379167ef8f6f152265ff21879b26c9b6",
+      "bytes": 5165
+    }
+  ],
+  "local_links": [
+    "../analysis/runtime_io_evidence_map/20261007/review.json",
+    "runtime_io_v22_prospective_queue_plan.md",
+    "../analysis/runtime_io_v12_tradeoff_review/report.md",
+    "../analysis/runtime_io_v12_tradeoff_review/gap_audit_and_completion_deadlines.md",
+    "../analysis/runtime_io_v12_tradeoff_review/deadline_after_work.json",
+    "runtime_io_v19_residual_findings.md",
+    "../analysis/runtime_io_v19_residual_review/20261005/summary.json",
+    "runtime_io_v20_findings.md",
+    "../analysis/runtime_io_v20_result_review/20261005/report.json",
+    "../analysis/runtime_io_v20_execution_delay/generation-03/analysis/1791215103576116652/report.md",
+    "runtime_io_v20_backlog_findings.md",
+    "../analysis/runtime_io_v20_backlog_review/20261005/report.json",
+    "../analysis/review_v20_backlog.py",
+    "runtime_io_v20_repeat_findings.md",
+    "../analysis/runtime_io_v20_repeat_review/20261006/report.json",
+    "../analysis/runtime_io_v20_execution_delay/generation-04/analysis/1791263686578222719/report.md",
+    "runtime_io_period_cost_pilot_findings.md",
+    "runtime_io_period_reversal_audit.md",
+    "../analysis/runtime_io_minimal_computation_screen/generation-02/partial_analysis/1791292967721661400/report.md",
+    "runtime_io_period_reversal_closing_findings.md",
+    "runtime_io_execution_state_continuation_findings.md",
+    "../analysis/runtime_io_v15_marker_review/report.md",
+    "../analysis/runtime_io_v16_repeatability_review/report.md",
+    "../results/diagnostic/runtime-io-v17-shared-loading-1/session/analysis/report.md",
+    "../analysis/runtime_io_v18_observer_cost_review/generation-04-1791136754967461238/review.md",
+    "runtime_io_gc_screen_findings.md",
+    "runtime_io_software_audit_findings.md",
+    "runtime_io_leftover_observer_findings.md",
+    "../analysis/runtime_io_system_state_snapshots/1791343349016869707-pre-restart.json",
+    "../analysis/runtime_io_system_state_snapshots/1791345410649559361-post-restart.json",
+    "../analysis/runtime_io_system_state_snapshots/1791345410664662815-comparison.json",
+    "../diagnostic/system_state_snapshot.py",
+    "runtime_io_investigation_catalogue.md"
+  ],
+  "raw_trials_freshly_replayed": false,
+  "new_performance_collection_launched": false,
+  "host_settings_changed": false,
+  "novelty_established": false,
+  "next_step": "Closest-work/contribution matrix; prospective capacity transfer remains untested."
+}

@@ -1,0 +1,146 @@
+{
+  "margins": {
+    "timely_fraction": 0.01,
+    "failure_fraction": 0.001,
+    "cpu_ratio": 0.05,
+    "p99_ratio": 0.1
+  },
+  "comparisons": {
+    "legacy_to_locked": {
+      "pairs": [
+        {
+          "block": 1,
+          "timely_fraction_delta": -0.057559252171352826,
+          "timely_1000_fraction_delta": -0.01177682908876787,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 1.017063089042556,
+          "p99_ratio": 1.1388072678636032,
+          "post_work_late_fraction_delta": -0.011040777270719851,
+          "within_screen": false
+        },
+        {
+          "block": 2,
+          "timely_fraction_delta": -0.08744295598410123,
+          "timely_1000_fraction_delta": -0.004416310908287979,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 1.0209969120222984,
+          "p99_ratio": 1.1544199862920042,
+          "post_work_late_fraction_delta": -0.004269100544678342,
+          "within_screen": false
+        },
+        {
+          "block": 3,
+          "timely_fraction_delta": -0.06845281907846312,
+          "timely_1000_fraction_delta": -0.0035330487266304056,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 1.0176133025411027,
+          "p99_ratio": 1.1319408526982662,
+          "post_work_late_fraction_delta": -0.013984984542911826,
+          "within_screen": false
+        },
+        {
+          "block": 4,
+          "timely_fraction_delta": -0.10878845870749299,
+          "timely_1000_fraction_delta": -0.008390990725747116,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 1.0258361711416324,
+          "p99_ratio": 1.2137921772323983,
+          "post_work_late_fraction_delta": -0.015751508906227,
+          "within_screen": false
+        }
+      ],
+      "block_deltas": {
+        "timely_fraction_delta": {
+          "median": -0.07794788753128218,
+          "minimum": -0.10878845870749299,
+          "maximum": -0.057559252171352826
+        },
+        "timely_1000_fraction_delta": {
+          "median": -0.006403650817017548,
+          "minimum": -0.01177682908876787,
+          "maximum": -0.0035330487266304056
+        },
+        "failure_fraction_delta": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0
+        },
+        "post_work_late_fraction_delta": {
+          "median": -0.012512880906815838,
+          "minimum": -0.015751508906227,
+          "maximum": -0.004269100544678342
+        }
+      },
+      "within_screen": false
+    },
+    "locked_to_bounded": {
+      "pairs": [
+        {
+          "block": 1,
+          "timely_fraction_delta": -0.008979832180185499,
+          "timely_1000_fraction_delta": -0.0008832621816575736,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 1.001170633068845,
+          "p99_ratio": 1.0026296849899081,
+          "post_work_late_fraction_delta": -0.0005888414544383963,
+          "within_screen": true
+        },
+        {
+          "block": 2,
+          "timely_fraction_delta": 0.0007360518180480335,
+          "timely_1000_fraction_delta": -0.001324893272486305,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9992926171681397,
+          "p99_ratio": 1.0026281743868197,
+          "post_work_late_fraction_delta": -0.001766524363315175,
+          "within_screen": true
+        },
+        {
+          "block": 3,
+          "timely_fraction_delta": -0.0011776829088767649,
+          "timely_1000_fraction_delta": -0.0002944207272191912,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9984702125083428,
+          "p99_ratio": 1.0054242425024877,
+          "post_work_late_fraction_delta": 0.0,
+          "within_screen": true
+        },
+        {
+          "block": 4,
+          "timely_fraction_delta": 0.006477255998822318,
+          "timely_1000_fraction_delta": 0.0033858383630207545,
+          "failure_fraction_delta": 0.0,
+          "cpu_ratio": 0.9941253849013681,
+          "p99_ratio": 0.9768617033732301,
+          "post_work_late_fraction_delta": -0.001766524363315175,
+          "within_screen": true
+        }
+      ],
+      "block_deltas": {
+        "timely_fraction_delta": {
+          "median": -0.00022081554541436565,
+          "minimum": -0.008979832180185499,
+          "maximum": 0.006477255998822318
+        },
+        "timely_1000_fraction_delta": {
+          "median": -0.0005888414544383824,
+          "minimum": -0.001324893272486305,
+          "maximum": 0.0033858383630207545
+        },
+        "failure_fraction_delta": {
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0
+        },
+        "post_work_late_fraction_delta": {
+          "median": -0.0011776829088767857,
+          "minimum": -0.001766524363315175,
+          "maximum": 0.0
+        }
+      },
+      "within_screen": true
+    }
+  },
+  "decision": "marker_effect_requires_review",
+  "limitation": "Four discovery blocks and practical screens do not prove statistical equivalence. No policy/independent-control batch launches automatically."
+}

@@ -1,0 +1,98 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  66.05kB
+Step 1/11 : ARG COMPILER_IMAGE
+Step 2/11 : FROM ${COMPILER_IMAGE} AS build
+ ---> 2389ebfa5b7f
+Step 3/11 : WORKDIR /src
+ ---> Using cache
+ ---> c31f012bdebd
+Step 4/11 : COPY go.mod *.go ./
+ ---> 60192ad9150c
+Step 5/11 : RUN go version && go test -count=1 -v ./...
+ ---> Running in 4ba4f16fbdb4
+go version go1.26.1 linux/amd64
+=== RUN   TestAblationCancellationResetAndNoOverwrite
+--- PASS: TestAblationCancellationResetAndNoOverwrite (0.00s)
+=== RUN   TestAblationConcurrentMetricsAndResetGenerations
+--- PASS: TestAblationConcurrentMetricsAndResetGenerations (0.09s)
+=== RUN   TestAblationOverflowDoesNotBlockOrOverwrite
+--- PASS: TestAblationOverflowDoesNotBlockOrOverwrite (0.00s)
+=== RUN   TestAblationResetWaitsForRecordCommit
+--- PASS: TestAblationResetWaitsForRecordCommit (0.00s)
+=== RUN   TestTimedOutQueuedWorkCompletesAndResetWaits
+--- PASS: TestTimedOutQueuedWorkCompletesAndResetWaits (0.00s)
+=== RUN   TestSnapshotsDoNotPublishCompletionBeforeEvents
+--- PASS: TestSnapshotsDoNotPublishCompletionBeforeEvents (0.14s)
+=== RUN   TestTimingHeadersMatchAndOffMeansOff
+--- PASS: TestTimingHeadersMatchAndOffMeansOff (0.00s)
+=== RUN   TestWorkMatchesOriginalSHAWork
+--- PASS: TestWorkMatchesOriginalSHAWork (0.00s)
+=== RUN   TestExitMarkerIncludesFinalLockWait
+--- PASS: TestExitMarkerIncludesFinalLockWait (0.02s)
+=== RUN   TestWriteFailureIsRetained
+--- PASS: TestWriteFailureIsRetained (0.00s)
+=== RUN   TestRealHTTPResponseUnchangedAndEventsDrained
+--- PASS: TestRealHTTPResponseUnchangedAndEventsDrained (0.00s)
+=== RUN   TestTraceConnectionReuseAndFinalFlush
+--- PASS: TestTraceConnectionReuseAndFinalFlush (0.00s)
+=== RUN   TestParallelismEntryRetainsRejectionAndCancellation
+--- PASS: TestParallelismEntryRetainsRejectionAndCancellation (0.00s)
+=== RUN   TestParallelismClockGenerationAndReset
+--- PASS: TestParallelismClockGenerationAndReset (0.00s)
+=== RUN   TestTraceOutcomeFixture
+--- PASS: TestTraceOutcomeFixture (0.11s)
+=== RUN   TestFileTraceOutcomeFixture
+--- PASS: TestFileTraceOutcomeFixture (0.11s)
+=== RUN   TestComponentOutcomeFixtures
+=== RUN   TestComponentOutcomeFixtures/runtime
+=== RUN   TestComponentOutcomeFixtures/custom
+--- PASS: TestComponentOutcomeFixtures (0.21s)
+    --- PASS: TestComponentOutcomeFixtures/runtime (0.11s)
+    --- PASS: TestComponentOutcomeFixtures/custom (0.10s)
+=== RUN   TestYieldOutcomeFixtures
+=== RUN   TestYieldOutcomeFixtures/combined
+=== RUN   TestYieldOutcomeFixtures/custom
+--- PASS: TestYieldOutcomeFixtures (0.22s)
+    --- PASS: TestYieldOutcomeFixtures/combined (0.12s)
+    --- PASS: TestYieldOutcomeFixtures/custom (0.10s)
+=== RUN   TestMemoryTraceDeferredPersistenceAndOverflow
+--- PASS: TestMemoryTraceDeferredPersistenceAndOverflow (0.02s)
+=== RUN   TestMemoryTracePersistenceFailureInvalidatesStatus
+--- PASS: TestMemoryTracePersistenceFailureInvalidatesStatus (0.00s)
+=== RUN   TestTraceWriteErrorAndDisabledMode
+--- PASS: TestTraceWriteErrorAndDisabledMode (0.00s)
+=== RUN   TestTraceStopRejectsUndrainedResponse
+--- PASS: TestTraceStopRejectsUndrainedResponse (0.00s)
+=== RUN   TestWorkerYieldCompletesIdenticalWork
+--- PASS: TestWorkerYieldCompletesIdenticalWork (0.00s)
+=== RUN   TestWorkerYieldEnvironmentIsExplicit
+--- PASS: TestWorkerYieldEnvironmentIsExplicit (0.00s)
+PASS
+ok  	research-service	0.940s
+ ---> Removed intermediate container 4ba4f16fbdb4
+ ---> bc61ae8cb663
+Step 6/11 : ARG MODE=passive
+ ---> Running in b5f061d76edc
+ ---> Removed intermediate container b5f061d76edc
+ ---> e9dd09d73332
+Step 7/11 : RUN CGO_ENABLED=0 go build -trimpath -ldflags="-X main.defaultAblationMode=${MODE}" -o /server .
+ ---> Running in f8715112e626
+ ---> Removed intermediate container f8715112e626
+ ---> 28fad2f0ed59
+Step 8/11 : FROM scratch
+ ---> 
+Step 9/11 : LABEL research.runtime.variant="stock" research.study="observer-ablation-v1"
+ ---> Running in 28e7c46f7665
+ ---> Removed intermediate container 28e7c46f7665
+ ---> 15bf0d1a245f
+Step 10/11 : COPY --from=build /server /server
+ ---> 18f6e1b33cf5
+Step 11/11 : ENTRYPOINT ["/server"]
+ ---> Running in c000c16183ce
+ ---> Removed intermediate container c000c16183ce
+ ---> 8cb81b5a6a2b
+Successfully built 8cb81b5a6a2b
+Successfully tagged quota-observer-ablation-clocks:14

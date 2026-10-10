@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "session": "analysis/runtime_io_v24/generation-01",
+  "decision": "incomplete_technical_counter_read_width_failure",
+  "accepted_trials": 1,
+  "planned_trials": 12,
+  "first_trial_independently_verified": true,
+  "runtime_preparation_verified": true,
+  "failed_attempts": [
+    {
+      "path": "analysis/runtime_io_v24/generation-01/slots/b1_small_on/attempt-1791370318304278546",
+      "samples": 4086,
+      "read_width_violations": [
+        {
+          "index_zero_based": 3015,
+          "read_number": 3016,
+          "width_ns": 3408707,
+          "since_sampler_start_ns": 61057706222
+        }
+      ],
+      "other_sample_violations": [],
+      "sampler_failure": null,
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false,
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-1b81d3ef583d120a978cbbaa360fa5c9a75e7af6f2f9b53990a7f86d9666103a.scope",
+        "container_id": "1b81d3ef583d120a978cbbaa360fa5c9a75e7af6f2f9b53990a7f86d9666103a"
+      },
+      "complete_marker_present": false
+    },
+    {
+      "path": "analysis/runtime_io_v24/generation-01/slots/b1_small_on/attempt-1791370504847663302",
+      "samples": 4086,
+      "read_width_violations": [
+        {
+          "index_zero_based": 3015,
+          "read_number": 3016,
+          "width_ns": 3326864,
+          "since_sampler_start_ns": 61070140209
+        }
+      ],
+      "other_sample_violations": [],
+      "sampler_failure": null,
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false,
+        "cgroup": "/sys/fs/cgroup/system.slice/docker-002b0143f61a3c5a11953cb4196823a32da29c01a3178e50aad9c22f99419bbc.scope",
+        "container_id": "002b0143f61a3c5a11953cb4196823a32da29c01a3178e50aad9c22f99419bbc"
+      },
+      "complete_marker_present": false
+    }
+  ],
+  "stop_reason": "Both same-slot attempts breached the frozen 2 ms counter read bracket; the single permitted technical retry was exhausted.",
+  "sampler_pause_cause": {
+    "status": "not_directly_recorded_in_original_run",
+    "candidate": "Python garbage collection scanning retained sample dictionaries",
+    "evidence": "Both attempts failed at sample index 3015, near 61.06 seconds. A separate offline synthetic-file allocation replay of the same read_counter produced a 2.958 ms generation-1 GC event and a 3.008 ms read; its index was 4019, so this supports plausibility, not attribution of the original pause."
+  },
+  "scope": "No workload, Docker, root audit, real cgroup sampler, host configuration change, or source modification during this review. Offline synthetic regular-file parser allocation replay only.",
+  "next_step": "Preserve generation-01 as incomplete. If repairing the sampler, use new versioned sources and a new generation; retain or prospectively justify measurement bounds, and repeat runtime qualification before measurement. Do not loosen generation-01 acceptance rules or discard its failed samples.",
+  "evidence_sha256": {
+    "analysis/runtime_io_v24/generation-01/slots/b1_small_on/attempt-1791370318304278546/counter.json": "00dbddfa9361c5dcfc6acb8cd62330173489d99727ba35e38ad76ef4ec4eb264",
+    "analysis/runtime_io_v24/generation-01/slots/b1_small_on/attempt-1791370318304278546/interruption.json": "85248b9e2ac48c6ebfca1e498b75fcfa888d67e6ae1da6d47c7510d78e596bc9",
+    "analysis/runtime_io_v24/generation-01/slots/b1_small_on/attempt-1791370318304278546/cleanup.json": "57c857ec9a74989f40961d7e61ad47edc73b9b3a7bf188d629f15aa6a212ff1b",
+    "analysis/runtime_io_v24/generation-01/slots/b1_small_on/attempt-1791370318304278546/seal.json": "8ae710f8f02b256c4b7550aefe35e2a6e08ee975d8da1be96bcf5e4ef39c08c2",
+    "analysis/runtime_io_v24/generation-01/slots/b1_small_on/attempt-1791370504847663302/counter.json": "a19e5d290ebc961faffc04cc15be12a06657a903d889d0206ef3b1f61aeb8229",
+    "analysis/runtime_io_v24/generation-01/slots/b1_small_on/attempt-1791370504847663302/interruption.json": "e06afeb74292dc154ce3c75db07f2f160708e0013e7d9b7aa7f36e33764375d9",
+    "analysis/runtime_io_v24/generation-01/slots/b1_small_on/attempt-1791370504847663302/cleanup.json": "77b493691b5a0de17a99938691a14c74dc25c18664815c0f09f8e38e8a65fbed",
+    "analysis/runtime_io_v24/generation-01/slots/b1_small_on/attempt-1791370504847663302/seal.json": "d8c64a9128a9e6d9c5b769885e46430844bf7391d3348115bf518ff2c75cb393",
+    "diagnostic/v24_counter.py": "e7cdd5f64a9fbb6b446a59b96930b460bff45fd45c7998a7939c3da1ef8b67a5",
+    "diagnostic/v24_model.py": "32bc87f7e931097ef470479b478341283c9557f43fe6cd7fad1f4f737e826fbf",
+    "diagnostic/v24_study.py": "506884ce26c0d956d213025dab857892ff87bc9b1f6213d927ae5e3ce8da91da",
+    "analysis/runtime_io_v24/generation-01/worker_interruption.json": "231183950a13f14d32009841c8342b479a030270d6c7e562168f9ca1b5c63c3a",
+    "analysis/runtime_io_v24/generation-01/bundle/seal.json": "7d2e9d735562b1282d445cca340d78f82bb618088dd45830c82924b6390f686b",
+    "analysis/runtime_io_v24/generation-01/preparation/seal.json": "90e48891817fe6b794e30d98321ab7d79d90b38f1a1a61d73f0068bb3b45c400"
+  }
+}

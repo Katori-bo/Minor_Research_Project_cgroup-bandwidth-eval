@@ -1,0 +1,39 @@
+{
+  "status": "retrospective_model_development_after_V30_outcomes",
+  "calibration_inputs_only": true,
+  "prospective_confirmation": false,
+  "no_new_measurements": true,
+  "deadlines_ms": [
+    9,
+    9.5,
+    10,
+    10.5,
+    11,
+    12,
+    20,
+    25,
+    50,
+    100,
+    500
+  ],
+  "original_frozen_deadlines_ms": [
+    10,
+    20,
+    25,
+    35,
+    50,
+    75,
+    100,
+    150,
+    500
+  ],
+  "empirical_baseline": "paired empirical distribution of e2e minus queue from four original low-rate calibration trials",
+  "empirical_scope": "steady requests with negligible queue and no observed throttling; no overload/burst capability asserted",
+  "validation_filters": "none; all scheduled validation offers retained; profile C is an explicit outside-scope negative control",
+  "convolution": "all worker/residual cross-pairs preserve marginals but break pairing; ordinary comparator, no fitting to outcomes",
+  "arithmetic_sensitivity": "replacing recorded processing-wall stage is arithmetic only, not a physical intervention or prospective model",
+  "CPU_boundary": "worker wall time is not CPU demand; implied budget above configured Q is an incompatibility diagnostic, not a new periodic model",
+  "no_oracle_phase_selection": true,
+  "novelty_established": false,
+  "causal_mechanism_established": false
+}

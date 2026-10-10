@@ -1,0 +1,64 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  870.9kB
+Step 1/21 : ARG COMPILER_IMAGE
+Step 2/21 : FROM ${COMPILER_IMAGE} AS control-build
+ ---> 2389ebfa5b7f
+Step 3/21 : ENV CGO_ENABLED=0 GOTOOLCHAIN=local GOENV=off
+ ---> Using cache
+ ---> 3bfcfd36fa8e
+Step 4/21 : COPY control_runtime/ /usr/local/go/src/runtime/
+ ---> Using cache
+ ---> cf3e7228ae30
+Step 5/21 : WORKDIR /src
+ ---> Using cache
+ ---> ee2af47a0f2e
+Step 6/21 : COPY service/ ./
+ ---> Using cache
+ ---> ac7ef5b93da2
+Step 7/21 : RUN go test -v runtime -run '^(TestResearchPendingPreemptFairQueue|TestSchedLocalQueue|TestSchedLocalQueueSteal|TestSchedLocalQueueEmpty|TestPreemption|TestPreemptionGC|TestPreemptionAfterSyscall)$' -count=1 -timeout=180s && go test -v -count=1 ./... && go build -trimpath -o /server .
+ ---> Using cache
+ ---> 93322c99e070
+Step 8/21 : FROM ${COMPILER_IMAGE} AS observed-build
+ ---> 2389ebfa5b7f
+Step 9/21 : ENV CGO_ENABLED=0 GOTOOLCHAIN=local GOENV=off
+ ---> Using cache
+ ---> 3bfcfd36fa8e
+Step 10/21 : COPY observed_runtime/ /usr/local/go/src/runtime/
+ ---> Using cache
+ ---> e911101ab505
+Step 11/21 : WORKDIR /src
+ ---> Using cache
+ ---> 140467d2bd72
+Step 12/21 : COPY service/ ./
+ ---> Using cache
+ ---> 1e25dbe1e23d
+Step 13/21 : RUN go test -v runtime -run '^(TestResearchPendingPreemptFairQueue|TestSchedLocalQueue|TestSchedLocalQueueSteal|TestSchedLocalQueueEmpty|TestPreemption|TestPreemptionGC|TestPreemptionAfterSyscall)$' -count=1 -timeout=180s && go test -v -count=1 ./... && go build -trimpath -o /server .
+ ---> Using cache
+ ---> 67565216632e
+Step 14/21 : FROM scratch AS control
+ ---> 
+Step 15/21 : LABEL research.runtime.variant="decision-probe-control"
+ ---> Using cache
+ ---> d0b7a36c1fad
+Step 16/21 : COPY --from=control-build /server /server
+ ---> Using cache
+ ---> fbb14e4162d2
+Step 17/21 : ENTRYPOINT ["/server"]
+ ---> Using cache
+ ---> 4db1985140aa
+Step 18/21 : FROM scratch AS observed
+ ---> 
+Step 19/21 : LABEL research.runtime.variant="decision-probe-observed"
+ ---> Using cache
+ ---> 8d9994b53d5b
+Step 20/21 : COPY --from=observed-build /server /server
+ ---> cfeb715e9a39
+Step 21/21 : ENTRYPOINT ["/server"]
+ ---> Running in c7e698e572d5
+ ---> Removed intermediate container c7e698e572d5
+ ---> bf0f73f4b54b
+Successfully built bf0f73f4b54b
+Successfully tagged quota-diagnostic-decision-observed:11

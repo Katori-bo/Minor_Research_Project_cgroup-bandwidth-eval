@@ -1,0 +1,33 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  58.37kB
+Step 1/10 : ARG COMPILER_IMAGE
+Step 2/10 : FROM ${COMPILER_IMAGE} AS build
+ ---> 2389ebfa5b7f
+Step 3/10 : WORKDIR /src
+ ---> Using cache
+ ---> c31f012bdebd
+Step 4/10 : COPY go.mod *.go ./
+ ---> Using cache
+ ---> 43a563f66399
+Step 5/10 : RUN go version && go test -count=1 -v ./...
+ ---> Using cache
+ ---> 02808021dee7
+Step 6/10 : RUN CGO_ENABLED=0 go build -trimpath -gcflags="research-service=-m=2" -o /server .
+ ---> Using cache
+ ---> 46b001e56c7f
+Step 7/10 : FROM scratch
+ ---> 
+Step 8/10 : LABEL research.runtime.variant="stock" research.study="inline-clock-screen-v1"
+ ---> Using cache
+ ---> b974efaf85b4
+Step 9/10 : COPY --from=build /server /server
+ ---> Using cache
+ ---> 04967a357e64
+Step 10/10 : ENTRYPOINT ["/server"]
+ ---> Using cache
+ ---> 3e45fa352a65
+Successfully built 3e45fa352a65
+Successfully tagged quota-inline-marker-boundary-five:15

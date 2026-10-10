@@ -1,0 +1,258 @@
+{
+  "argv": [
+    "docker",
+    "create",
+    "--name",
+    "quota-nginx-7e4e732a10584a2fa368568e059b75b0",
+    "--label",
+    "research.nginx.feasibility.owner=28cbdc1cba3d493b877be6d7c7b1926f",
+    "--user",
+    "1000:1000",
+    "--cpuset-cpus",
+    "2",
+    "--cpu-period",
+    "100000",
+    "--cpu-quota",
+    "25000",
+    "--memory",
+    "512m",
+    "--pids-limit",
+    "128",
+    "--read-only",
+    "--tmpfs",
+    "/tmp:rw,size=64m",
+    "--mount",
+    "type=bind,src=/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_nginx_prediction/generation-01/preparation/cohort-1/qualification,dst=/qualification,readonly",
+    "-p",
+    "127.0.0.1::8080",
+    "sha256:2a67781d4c7970383162d776158bd0b5b39c26b85bb198a82b9b97ef1cc619fb"
+  ],
+  "inspect": {
+    "Id": "3246da0159bc34b1c56d379f3c39f5b6aa414ef12ee326256440ad64b42eb750",
+    "Created": "2026-10-09T17:53:04.136361055Z",
+    "Path": "/gate",
+    "Args": [
+      "--server"
+    ],
+    "State": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 447259,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-09T17:53:04.188502467Z",
+      "FinishedAt": "0001-01-01T00:00:00Z"
+    },
+    "Image": "sha256:2a67781d4c7970383162d776158bd0b5b39c26b85bb198a82b9b97ef1cc619fb",
+    "ResolvConfPath": "/var/lib/docker/containers/3246da0159bc34b1c56d379f3c39f5b6aa414ef12ee326256440ad64b42eb750/resolv.conf",
+    "HostnamePath": "/var/lib/docker/containers/3246da0159bc34b1c56d379f3c39f5b6aa414ef12ee326256440ad64b42eb750/hostname",
+    "HostsPath": "/var/lib/docker/containers/3246da0159bc34b1c56d379f3c39f5b6aa414ef12ee326256440ad64b42eb750/hosts",
+    "LogPath": "/var/lib/docker/containers/3246da0159bc34b1c56d379f3c39f5b6aa414ef12ee326256440ad64b42eb750/3246da0159bc34b1c56d379f3c39f5b6aa414ef12ee326256440ad64b42eb750-json.log",
+    "Name": "/quota-nginx-7e4e732a10584a2fa368568e059b75b0",
+    "RestartCount": 0,
+    "Driver": "overlayfs",
+    "Platform": "linux",
+    "MountLabel": "",
+    "ProcessLabel": "",
+    "AppArmorProfile": "",
+    "ExecIDs": null,
+    "HostConfig": {
+      "Binds": null,
+      "ContainerIDFile": "",
+      "LogConfig": {
+        "Type": "json-file",
+        "Config": {}
+      },
+      "NetworkMode": "bridge",
+      "PortBindings": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": ""
+          }
+        ]
+      },
+      "RestartPolicy": {
+        "Name": "no",
+        "MaximumRetryCount": 0
+      },
+      "AutoRemove": false,
+      "VolumeDriver": "",
+      "VolumesFrom": null,
+      "ConsoleSize": [
+        0,
+        0
+      ],
+      "CapAdd": null,
+      "CapDrop": null,
+      "CgroupnsMode": "private",
+      "Dns": null,
+      "DnsOptions": [],
+      "DnsSearch": [],
+      "ExtraHosts": null,
+      "GroupAdd": null,
+      "IpcMode": "private",
+      "Cgroup": "",
+      "Links": null,
+      "OomScoreAdj": 0,
+      "PidMode": "",
+      "Privileged": false,
+      "PublishAllPorts": false,
+      "ReadonlyRootfs": true,
+      "SecurityOpt": null,
+      "Tmpfs": {
+        "/tmp": "rw,size=64m"
+      },
+      "UTSMode": "",
+      "UsernsMode": "",
+      "ShmSize": 67108864,
+      "Runtime": "runc",
+      "Isolation": "",
+      "CpuShares": 0,
+      "Memory": 536870912,
+      "NanoCpus": 0,
+      "CgroupParent": "",
+      "BlkioWeight": 0,
+      "BlkioWeightDevice": [],
+      "BlkioDeviceReadBps": [],
+      "BlkioDeviceWriteBps": [],
+      "BlkioDeviceReadIOps": [],
+      "BlkioDeviceWriteIOps": [],
+      "CpuPeriod": 100000,
+      "CpuQuota": 25000,
+      "CpuRealtimePeriod": 0,
+      "CpuRealtimeRuntime": 0,
+      "CpusetCpus": "2",
+      "CpusetMems": "",
+      "Devices": [],
+      "DeviceCgroupRules": null,
+      "DeviceRequests": null,
+      "MemoryReservation": 0,
+      "MemorySwap": 1073741824,
+      "MemorySwappiness": null,
+      "OomKillDisable": null,
+      "PidsLimit": 128,
+      "Ulimits": null,
+      "CpuCount": 0,
+      "CpuPercent": 0,
+      "IOMaximumIOps": 0,
+      "IOMaximumBandwidth": 0,
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_nginx_prediction/generation-01/preparation/cohort-1/qualification",
+          "Target": "/qualification",
+          "ReadOnly": true
+        }
+      ],
+      "MaskedPaths": [
+        "/proc/acpi",
+        "/proc/asound",
+        "/proc/interrupts",
+        "/proc/kcore",
+        "/proc/keys",
+        "/proc/latency_stats",
+        "/proc/sched_debug",
+        "/proc/scsi",
+        "/proc/timer_list",
+        "/proc/timer_stats",
+        "/sys/devices/virtual/powercap",
+        "/sys/firmware"
+      ],
+      "ReadonlyPaths": [
+        "/proc/bus",
+        "/proc/fs",
+        "/proc/irq",
+        "/proc/sys",
+        "/proc/sysrq-trigger"
+      ]
+    },
+    "Storage": {
+      "RootFS": {
+        "Snapshot": {
+          "Name": "overlayfs"
+        }
+      }
+    },
+    "Mounts": [
+      {
+        "Type": "bind",
+        "Source": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/analysis/runtime_io_nginx_prediction/generation-01/preparation/cohort-1/qualification",
+        "Destination": "/qualification",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      }
+    ],
+    "Config": {
+      "Hostname": "3246da0159bc",
+      "Domainname": "",
+      "User": "1000:1000",
+      "AttachStdin": false,
+      "AttachStdout": true,
+      "AttachStderr": true,
+      "ExposedPorts": {
+        "8080/tcp": {}
+      },
+      "Tty": false,
+      "OpenStdin": false,
+      "StdinOnce": false,
+      "Env": null,
+      "Cmd": null,
+      "Image": "sha256:2a67781d4c7970383162d776158bd0b5b39c26b85bb198a82b9b97ef1cc619fb",
+      "Volumes": null,
+      "WorkingDir": "",
+      "Entrypoint": [
+        "/gate",
+        "--server"
+      ],
+      "Labels": {
+        "research.nginx.feasibility.owner": "28cbdc1cba3d493b877be6d7c7b1926f"
+      }
+    },
+    "NetworkSettings": {
+      "SandboxID": "9719cf17fd3cb9c078073fc27ac2ee14b387d9ec674070e35221f63b81698edd",
+      "SandboxKey": "/var/run/docker/netns/9719cf17fd3c",
+      "Ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "33114"
+          }
+        ]
+      },
+      "Networks": {
+        "bridge": {
+          "IPAMConfig": null,
+          "Links": null,
+          "Aliases": null,
+          "DriverOpts": null,
+          "GwPriority": 0,
+          "NetworkID": "4833a806bd1ccb659b775af4965ac4c5ccdf2234d9a752851a7f9983d969335e",
+          "EndpointID": "d45d175745dd0128c1f635b81efa8c372982c63660bd97e07154a2ba00a921d6",
+          "Gateway": "172.17.0.1",
+          "IPAddress": "172.17.0.2",
+          "MacAddress": "66:e7:d1:3d:32:81",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "DNSNames": null
+        }
+      }
+    },
+    "ImageManifestDescriptor": {
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "digest": "sha256:2a67781d4c7970383162d776158bd0b5b39c26b85bb198a82b9b97ef1cc619fb",
+      "size": 405,
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      }
+    }
+  }
+}

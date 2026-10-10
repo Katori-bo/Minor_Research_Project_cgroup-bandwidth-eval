@@ -9,6 +9,20 @@ POLICY = dict(initial_idle_sec=600, sample_sec=5, window_sec=60,
               baseline_tolerance_c=3.0, timeout_sec=1200)
 
 
+def external_power_settings(supplies):
+    result = {}
+    for supply in sorted(supplies):
+        if (supply / 'online').exists():
+            online = (supply / 'online').read_text().strip()
+            supply_type = (supply / 'type').read_text().strip() if (supply / 'type').exists() else None
+            # Some kernels expose an unused USB-C input only after a reboot.
+            # Its offline presence is not a change to the active power source.
+            if supply_type == 'USB' and online == '0':
+                continue
+            result[supply.name] = online
+    return result
+
+
 def power_settings(include_profile=False):
     result = {'policies': {}, 'platform_profile': None, 'external_power': {}}
     for policy in sorted(Path('/sys/devices/system/cpu/cpufreq').glob('policy*')):
@@ -22,9 +36,7 @@ def power_settings(include_profile=False):
     p = Path('/sys/firmware/acpi/platform_profile')
     if p.exists():
         result['platform_profile'] = p.read_text().strip()
-    for supply in sorted(Path('/sys/class/power_supply').glob('*')):
-        if (supply / 'online').exists():
-            result['external_power'][supply.name] = (supply / 'online').read_text().strip()
+    result['external_power'] = external_power_settings(Path('/sys/class/power_supply').glob('*'))
     if include_profile:
         result['desktop_profile'] = None
         if shutil.which('powerprofilesctl'):

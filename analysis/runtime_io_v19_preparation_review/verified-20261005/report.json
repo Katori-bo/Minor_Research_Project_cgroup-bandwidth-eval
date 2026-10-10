@@ -1,0 +1,116 @@
+{
+  "status": "preparation_verified_measurement_pending",
+  "generation": "generation-03",
+  "preparation_seal_sha256": "68a0b9cd749580c4ad657ccfcf1e6f8f5a90f323441529b398c3ff4c833eb163",
+  "frozen_source_count": 105,
+  "tests": 33,
+  "functional": {
+    "four_a": {
+      "offered": 114,
+      "outcome_counts": {
+        "success": 114
+      },
+      "completed_computations": 114,
+      "missing_handler_count": 0,
+      "clock_uncertainty_ns": 138589,
+      "client_dropped": 0,
+      "missed_arrivals": 0,
+      "computed_missing_handler_count": 0,
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false
+      }
+    },
+    "one": {
+      "offered": 114,
+      "outcome_counts": {
+        "success": 114
+      },
+      "completed_computations": 114,
+      "missing_handler_count": 0,
+      "clock_uncertainty_ns": 135803,
+      "client_dropped": 0,
+      "missed_arrivals": 0,
+      "computed_missing_handler_count": 0,
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false
+      }
+    },
+    "one_cancel": {
+      "offered": 453,
+      "outcome_counts": {
+        "timeout": 453
+      },
+      "completed_computations": 430,
+      "missing_handler_count": 407,
+      "clock_uncertainty_ns": 206405,
+      "client_dropped": 0,
+      "missed_arrivals": 0,
+      "computed_missing_handler_count": 384,
+      "cleanup": {
+        "errors": [],
+        "failure": null,
+        "container_removed": true,
+        "cgroup_removed": true,
+        "tracing_used": false,
+        "watchdog_intervened": false
+      }
+    }
+  },
+  "failed_generation_cleanup_audits": {
+    "generation-01": [
+      {
+        "path": "analysis/runtime_io_v19_worker_control/generation-01/cleanup_audits/1791180938939452305",
+        "seal_sha256": "9112c22021aeaa2b7cba6f8019acd229948e1d4849d30dc01bf8b99969197c2a"
+      }
+    ],
+    "generation-02": [
+      {
+        "path": "analysis/runtime_io_v19_worker_control/generation-02/cleanup_audits/1791181264844930536",
+        "seal_sha256": "8580453bb6905fc39e136c7a5cd09ff054aea736c1802489994e7b2cf7504072"
+      }
+    ]
+  },
+  "raw_tamper_checks": {
+    "checks": [
+      "relocated actual functional evidence replays exactly",
+      {
+        "check": "resealed client latency modification",
+        "rejected": "saved derivation differs from raw replay"
+      },
+      {
+        "check": "resealed derived timely fraction modification",
+        "rejected": "saved derivation differs from raw replay"
+      },
+      {
+        "check": "additional unsealed file",
+        "rejected": "evidence seal mismatch: /tmp/v19-final-review-zm9o_t61/session/preparation/functional/four_a"
+      },
+      {
+        "check": "modified actual container executable",
+        "rejected": "evidence seal mismatch: /tmp/v19-final-review-zm9o_t61/session/preparation/functional/four_a"
+      }
+    ],
+    "plot_inputs": "Synthetic block effects; V18 retained requests relabeled only to check rendering. Not V19 measurements."
+  },
+  "plots_visually_inspected": true,
+  "plot_inputs_are_measurements": false,
+  "v18_independent_completion": "effects_outside_margins",
+  "full_rehearsals_completed": 0,
+  "discovery_trials_completed": 0,
+  "roadmap_provenance": {
+    "archived_previous_path": "analysis/runtime_io_v19_preparation_review/verified-20261005/provenance/current_research_plan_before_implementation.md",
+    "previous_sha256": "7796e85426111abaa98e62b36210f472537aab3dd469985d4b4af42807ea00c0",
+    "current_sha256": "6fb7b679b63f4e27ef66af4f9ee2cb42b1aa46663baa1c0d9ed3326fc7ac7644"
+  },
+  "external_document_sha256": "2d33e11186bd277cd8acf66facb169e575a784560502e441ec4423c71662e87d"
+}

@@ -1,0 +1,55 @@
+{
+  "pid": 94975,
+  "cgroup": "/sys/fs/cgroup/system.slice/docker-e0cbd86c23a3617e63a19facfb3b40c126920989b38063f58a3bcb3b86af2ace.scope",
+  "cgroup_id": 22276,
+  "capped": true,
+  "gomaxprocs": 1,
+  "initial_limits": {
+    "cpu.max": "50000 100000",
+    "cpu.max.burst": "0",
+    "cpuset.cpus.effective": "2,4",
+    "memory.max": "268435456",
+    "pids.max": "128"
+  },
+  "uncapped_ancestors": [
+    {
+      "path": "/sys/fs/cgroup/system.slice",
+      "cpu_max": "max 100000"
+    }
+  ],
+  "initial_cpu_stat": {
+    "usage_usec": 31445,
+    "user_usec": 18120,
+    "system_usec": 13325,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 0,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "time_namespaces": {
+    "host": {
+      "monotonic": [
+        0,
+        0
+      ],
+      "boottime": [
+        0,
+        0
+      ]
+    },
+    "service": {
+      "monotonic": [
+        0,
+        0
+      ],
+      "boottime": [
+        0,
+        0
+      ]
+    }
+  },
+  "startup": "single-thread FIFO before original /server exec"
+}

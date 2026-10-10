@@ -1,0 +1,4 @@
+{
+  "error": "Gzip qualification gate failed: queue_domain; no replacement allowed",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/gzip_qualify.py\", line 343, in trial\n    result = analyze(case, arm, count, performance)\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/gzip_qualify.py\", line 318, in analyze\n    if enforce: require(not exits, 'Gzip qualification gate failed: ' + ','.join(exits) + '; no replacement allowed')\n                ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/gzip_qualify.py\", line 42, in require\n    if not ok: raise ValueError(message)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Gzip qualification gate failed: queue_domain; no replacement allowed\n"
+}

@@ -1,0 +1,40 @@
+{
+  "decision": "runtime_preparation_failed_missing_client_clock_fields",
+  "generation": "analysis/runtime_io_v27/generation-01",
+  "preparation_seal_sha256": "5f111a752215a7aa133bf2ff733fdbef90725dda4bd8b3786aa95d051c00ec37",
+  "bundle_seal_sha256": "c60e10277cd474cadfc05652b2ddf8166ea56de331c0cb70c21bd49114e7aa10",
+  "error": "'clock_anchors'",
+  "missing_fields": [
+    "clock_anchors",
+    "client_test_start_ns"
+  ],
+  "functional_offers": 999,
+  "functional_successes": 999,
+  "completed_measurement_trials": 0,
+  "owned_cleanup_verified": true,
+  "cleanups": {
+    "preparation/functional/functional_rate15/cleanup.json": {
+      "errors": [],
+      "failure": null,
+      "container_removed": true,
+      "cgroup_removed": true,
+      "tracing_used": false,
+      "watchdog_intervened": false,
+      "cgroup": "/sys/fs/cgroup/system.slice/docker-d97212ee6d424690be9030bb9da06415e3ae79abe86d73a7dd2a4d511cd99421.scope",
+      "container_id": "d97212ee6d424690be9030bb9da06415e3ae79abe86d73a7dd2a4d511cd99421"
+    },
+    "preparation/resource_preflight/cleanup.json": {
+      "errors": [],
+      "failure": null,
+      "container_removed": true,
+      "cgroup_removed": true,
+      "tracing_used": false,
+      "watchdog_intervened": false,
+      "cgroup": "/sys/fs/cgroup/system.slice/docker-a3abc843f623e9d64d4ffe3d84ddeebc41675d3a644cc77a0c1b6301217cc245.scope",
+      "container_id": "a3abc843f623e9d64d4ffe3d84ddeebc41675d3a644cc77a0c1b6301217cc245"
+    }
+  },
+  "source_root_cause": "V27 client used base diagnostic/loadgen source without build_parallelism.client_source clock instrumentation.",
+  "test_gap": "Synthetic raw fixtures injected clocks; no compiled-client report integration check.",
+  "old_evidence_preserved": true
+}

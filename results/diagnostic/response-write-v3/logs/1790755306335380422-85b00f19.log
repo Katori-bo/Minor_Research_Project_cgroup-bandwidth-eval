@@ -1,0 +1,141 @@
+
+[2026-09-30T13:31:46.418198+05:30] build-and-go-tests: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/build.sh
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  22.02kB
+Step 1/7 : FROM golang:1.26.1-alpine AS build
+ ---> 2389ebfa5b7f
+Step 2/7 : WORKDIR /src
+ ---> Using cache
+ ---> c31f012bdebd
+Step 3/7 : COPY go.mod *.go ./
+ ---> Using cache
+ ---> d0f9f31e4c8b
+Step 4/7 : RUN go test -count=1 ./... && CGO_ENABLED=0 go build -trimpath -o /server .
+ ---> Using cache
+ ---> 77ff0e0ff101
+Step 5/7 : FROM scratch
+ ---> 
+Step 6/7 : COPY --from=build /server /server
+ ---> Using cache
+ ---> b678da4c3d26
+Step 7/7 : ENTRYPOINT ["/server"]
+ ---> Using cache
+ ---> 409ba680abc8
+Successfully built 409ba680abc8
+Successfully tagged quota-diagnostic-service:2
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  24.58kB
+Step 1/6 : FROM golang:1.26.1-alpine AS build
+ ---> 2389ebfa5b7f
+Step 2/6 : WORKDIR /src
+ ---> Using cache
+ ---> c31f012bdebd
+Step 3/6 : COPY go.mod *.go ./
+ ---> Using cache
+ ---> 3f56fc627a8c
+Step 4/6 : RUN go test -count=1 ./... && CGO_ENABLED=0 go build -trimpath -o /loadgen .
+ ---> Using cache
+ ---> 4d5ed49b5671
+Step 5/6 : FROM scratch
+ ---> 
+Step 6/6 : COPY --from=build /loadgen /loadgen
+ ---> Using cache
+ ---> 87b456713ae7
+Successfully built 87b456713ae7
+Successfully tagged quota-diagnostic-loadgen:1
+
+[2026-09-30T13:31:46.963522+05:30] python-regression-tests: /usr/bin/python3 -m unittest discover -s /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic -p 'test_*.py' -v
+test_client_launch_preserves_flags_after_trace_toggle (test_diagnostic.DiagnosticPlanTests.test_client_launch_preserves_flags_after_trace_toggle) ... ok
+test_completed_audit_recomputes_raw_outcomes_and_detects_changed_evidence (test_diagnostic.DiagnosticPlanTests.test_completed_audit_recomputes_raw_outcomes_and_detects_changed_evidence) ... ok
+test_frozen_matrix_and_pilot (test_diagnostic.DiagnosticPlanTests.test_frozen_matrix_and_pilot) ... ok
+test_interaction_uses_trials_as_units (test_diagnostic.DiagnosticPlanTests.test_interaction_uses_trials_as_units) ... ok
+test_offline_usb_power_source_does_not_change_power_record (test_diagnostic.DiagnosticPlanTests.test_offline_usb_power_source_does_not_change_power_record) ... ok
+test_pilot_gate_rejects_missing_timing_and_excess_overhead (test_diagnostic.DiagnosticPlanTests.test_pilot_gate_rejects_missing_timing_and_excess_overhead) ... ok
+test_pipeline_stops_after_pilot_unless_full_requested (test_diagnostic.DiagnosticPlanTests.test_pipeline_stops_after_pilot_unless_full_requested) ... 
+PILOT COMPLETE: /tmp/tmp8m7pfzol/PILOT_COMPLETED.md
+
+COMPLETE: /tmp/tmppwzx4hao/COMPLETED.md
+ok
+test_response_event_validates_ids_order_and_preserves_write_failures (test_diagnostic.DiagnosticPlanTests.test_response_event_validates_ids_order_and_preserves_write_failures) ... ok
+test_signed_difference_retains_overlap_and_uses_matching_request (test_diagnostic.DiagnosticPlanTests.test_signed_difference_retains_overlap_and_uses_matching_request) ... ok
+test_trial_analysis_joins_ids_before_quantiles (test_diagnostic.DiagnosticPlanTests.test_trial_analysis_joins_ids_before_quantiles) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.239s
+
+OK
+
+[2026-09-30T13:31:47.310665+05:30] pilot-collection: /usr/bin/python3 -u /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py new --session /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/response-write-v3/pilot --pilot
+SESSION: /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/response-write-v3/pilot
+Settling: at least 600s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 72.25}
+Settling 60s: {'k10temp:Tctl': 55.625}
+Settling 120s: {'k10temp:Tctl': 50.375}
+Settling 180s: {'k10temp:Tctl': 51.125}
+Settling 240s: {'k10temp:Tctl': 50.75}
+Settling 301s: {'k10temp:Tctl': 49.125}
+Settling 361s: {'k10temp:Tctl': 48.75}
+Settling 421s: {'k10temp:Tctl': 48.375}
+Settling 481s: {'k10temp:Tctl': 53.625}
+Settling 541s: {'k10temp:Tctl': 51.125}
+Settling 601s: {'k10temp:Tctl': 48.25}
+Settling 661s: {'k10temp:Tctl': 48.0}
+Settling 722s: {'k10temp:Tctl': 47.75}
+Settling 782s: {'k10temp:Tctl': 49.375}
+Settling 842s: {'k10temp:Tctl': 50.125}
+Settling 902s: {'k10temp:Tctl': 48.625}
+Settling 962s: {'k10temp:Tctl': 47.25}
+Settling 1022s: {'k10temp:Tctl': 46.875}
+RUN 1/6 pilot_overhead_1
+Settling: at least 60s; checking a stable 60s temperature window.
+Settling 0s: {'k10temp:Tctl': 50.25}
+Settling 60s: {'k10temp:Tctl': 54.75}
+Settling 120s: {'k10temp:Tctl': 47.375}
+Settling 180s: {'k10temp:Tctl': 57.75}
+Settling 240s: {'k10temp:Tctl': 52.375}
+Settling 301s: {'k10temp:Tctl': 57.75}
+Settling 361s: {'k10temp:Tctl': 55.875}
+Settling 421s: {'k10temp:Tctl': 56.375}
+Settling 481s: {'k10temp:Tctl': 56.75}
+Settling 541s: {'k10temp:Tctl': 57.75}
+Settling 601s: {'k10temp:Tctl': 59.0}
+Settling 661s: {'k10temp:Tctl': 58.875}
+Settling 721s: {'k10temp:Tctl': 60.125}
+Settling 782s: {'k10temp:Tctl': 60.125}
+Settling 842s: {'k10temp:Tctl': 60.25}
+Settling 902s: {'k10temp:Tctl': 60.5}
+Settling 962s: {'k10temp:Tctl': 64.125}
+Settling 1022s: {'k10temp:Tctl': 62.125}
+Settling 1082s: {'k10temp:Tctl': 67.875}
+Settling 1142s: {'k10temp:Tctl': 62.75}
+Settling 1203s: {'k10temp:Tctl': 62.625}
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py", line 582, in <module>
+    main()
+    ~~~~^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py", line 571, in main
+    d = run_attempt(session, config, meta['pilot'], next_attempt(session / 'attempts' / config['run_id']))
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/run.py", line 375, in run_attempt
+    thermal = old.settle(d / 'settling.json', env['baseline_c'], expected_power=before)
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/scripts/experiment.py", line 115, in settle
+    raise RuntimeError('Temperature did not stabilize within the protocol timeout; inspect settling log.')
+RuntimeError: Temperature did not stabilize within the protocol timeout; inspect settling log.
+
+STOPPED (failed): pilot-collection exited with code 1; see this launch log for the reason
+Evidence preserved in /home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/results/diagnostic/response-write-v3.
+Traceback (most recent call last):
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 153, in run_worker
+    execute(directory, lock, full_collection=full_collection)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 112, in execute
+    stage_command(directory, 'pilot-collection', collection_command(pilot, pilot=True), lock)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/diagnostic/pipeline.py", line 42, in stage_command
+    raise RuntimeError(f'{stage} exited with code {code}; see this launch log for the reason')
+RuntimeError: pilot-collection exited with code 1; see this launch log for the reason

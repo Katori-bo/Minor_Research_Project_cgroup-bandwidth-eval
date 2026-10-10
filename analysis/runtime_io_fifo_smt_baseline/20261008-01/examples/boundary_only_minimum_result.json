@@ -1,0 +1,147 @@
+{
+  "schema": 1,
+  "method": "generic Z3 finite-trace SMT baseline",
+  "status": "exact",
+  "problem": {
+    "arrivals": [
+      "0",
+      "0"
+    ],
+    "system_slots": 2,
+    "relative_deadline": "1",
+    "service_interval": [
+      "1/2",
+      "3/4"
+    ],
+    "time_unit": "seconds"
+  },
+  "z3_version": "4.15.4",
+  "scope": "one shared constant service time; finite tail-drop FIFO; late jobs finish",
+  "novelty_established": false,
+  "real_system_coverage_established": false,
+  "limits": {
+    "max_offers": 128,
+    "per_check_ms": 2000,
+    "total_check_ms": 10000,
+    "resource_limit": 0
+  },
+  "stats": {
+    "occupancy_terms": 1,
+    "solver_checks": 8,
+    "solver_check_seconds": 0.0008114790000490757
+  },
+  "queries": [
+    {
+      "label": "minimum threshold 1",
+      "constraint": "failure_count <= 1",
+      "result": "sat",
+      "seconds": 0.00010617099997034529
+    },
+    {
+      "label": "minimum threshold 0",
+      "constraint": "failure_count <= 0",
+      "result": "sat",
+      "seconds": 0.00013120900007379532
+    },
+    {
+      "label": "minimum attainment",
+      "constraint": "failure_count == 0",
+      "result": "sat",
+      "seconds": 9.659299996656046e-05
+    },
+    {
+      "label": "minimum strict improvement excluded",
+      "constraint": "failure_count < 0",
+      "result": "unsat",
+      "seconds": 0.00010379600007581757
+    },
+    {
+      "label": "maximum threshold 1",
+      "constraint": "failure_count >= 1",
+      "result": "sat",
+      "seconds": 8.786699993379443e-05
+    },
+    {
+      "label": "maximum threshold 2",
+      "constraint": "failure_count >= 2",
+      "result": "unsat",
+      "seconds": 9.992000002512214e-05
+    },
+    {
+      "label": "maximum attainment",
+      "constraint": "failure_count == 1",
+      "result": "sat",
+      "seconds": 8.892899995771586e-05
+    },
+    {
+      "label": "maximum strict improvement excluded",
+      "constraint": "failure_count > 1",
+      "result": "unsat",
+      "seconds": 9.699400004592462e-05
+    }
+  ],
+  "minimum": {
+    "failures": 0,
+    "failure_fraction": "0",
+    "witness_service_time": "1/2",
+    "witness": {
+      "witness_service_time": "1/2",
+      "offered": 2,
+      "failures": 0,
+      "rejected": 0,
+      "late": 0,
+      "timely": 2,
+      "failure_fraction": "0",
+      "offers": [
+        {
+          "index": 0,
+          "arrival": "0",
+          "completion": "1/2",
+          "latency": "1/2",
+          "outcome": "timely"
+        },
+        {
+          "index": 1,
+          "arrival": "0",
+          "completion": "1",
+          "latency": "1",
+          "outcome": "timely"
+        }
+      ]
+    },
+    "strict_improvement_query": "failure_count < 0",
+    "strict_improvement_result": "unsat"
+  },
+  "maximum": {
+    "failures": 1,
+    "failure_fraction": "1/2",
+    "witness_service_time": "3/4",
+    "witness": {
+      "witness_service_time": "3/4",
+      "offered": 2,
+      "failures": 1,
+      "rejected": 0,
+      "late": 1,
+      "timely": 1,
+      "failure_fraction": "1/2",
+      "offers": [
+        {
+          "index": 0,
+          "arrival": "0",
+          "completion": "3/4",
+          "latency": "3/4",
+          "outcome": "timely"
+        },
+        {
+          "index": 1,
+          "arrival": "0",
+          "completion": "3/2",
+          "latency": "3/2",
+          "outcome": "late"
+        }
+      ]
+    },
+    "strict_improvement_query": "failure_count > 1",
+    "strict_improvement_result": "unsat"
+  }
+}

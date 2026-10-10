@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-08",
+  "status": "retrospective_known_outcomes",
+  "script_sha256": "d9e57129430aaac25e6a840f31a6de34bbc40a7495faab3c73c48b7b9a8d8899",
+  "predictor_inputs": "Only idle/steady calibration observations and their request events. Mixed/busy and validation measurements excluded.",
+  "methods": [
+    "single-worker BL/RPS/MLPS wall special case, strict-low and all nonbacklogged",
+    "open single-queue event/exposure adaptation of MHE, exact and 10ms grid, strict-low and all nonbacklogged",
+    "affine worker-wall demand versus throughput, strict-low and all nonbacklogged",
+    "two-block CPU cross-validation selector between existing linear/quadratic fits"
+  ],
+  "quota_mappings": [
+    "unit-availability wall service (no quota correction)",
+    "conditional quota-scaled wall service (.5)"
+  ],
+  "response_root_rule": "positive demand and monotonic required-CPU curve through root; unique root <=2x maximum input throughput",
+  "moving_horizon_step_ns": 10000000,
+  "selection_loss": "other-block utilization SSE; fit selected family on all twelve calibration rows",
+  "comparison_error_pp": 3,
+  "uncertainty": "ordinary block-maximum split-conformal residual calibration; 95% coverage sample-count feasibility only; no claimed guarantee",
+  "collection": false,
+  "custom_guard": false,
+  "novelty_established": false
+}
