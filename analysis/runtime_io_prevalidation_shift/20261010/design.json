@@ -1,0 +1,35 @@
+{
+  "accept_rule": "candidate_score_pp <=5 and all reference/warmup offers successful; abstain on failures",
+  "assumptions": "location-shift forecast requires stable response shape and persistence from warmup into measurement; warmup neither bounds future shift nor certifies future reliability",
+  "candidate": "deadline-amplified median location shift with chronological warmup check",
+  "candidate_score_pp": "max(abs(p_shift-p_reference), abs(p_shift_early12-p_shift_late12))",
+  "center_offer_excluded_from_half_comparison": true,
+  "chronological_halves": [
+    12,
+    12
+  ],
+  "comparators": [
+    "always reference",
+    "recent25 empirical CDF",
+    "reference+25 sample weighted CDF",
+    "ordinary location-shift CDF",
+    "warmup-reference deadline disagreement <=5pp",
+    "warmup early12-late12 deadline disagreement <=5pp",
+    "reference-warmup ECDF sup distance <=5pp"
+  ],
+  "cost_contract": "all sample-dependent candidates/comparators get same reference and last25 warmup samples, same decision time; report full apparatus warmup and calibration separately; no claim of qualified 25-offer-only deployment",
+  "coverage_floor_pct": 50,
+  "deadline": "unchanged campaign primary: Go 10ms, NGINX 20.565395ms",
+  "decision_time": "after completed target-rate warmup and drain, before measurement; later than original campaign forecast",
+  "error_tolerance_pp": 5,
+  "inference": "campaigns and cohorts dependent, no pooled significance, thresholds frozen for this screen after earlier outcomes known",
+  "population": "all 18 Go,18 original NGINX,24 policy confirmation and12 rate cohorts; retain saturation and separately report observed10%-90% transition cases",
+  "primary_warmup_offers": 25,
+  "reference": "Go complete response pool; original NGINX pool; policy-matched power pool; ordinary fixed-5/s rate pool",
+  "role": "known-outcome retrospective development; no independent confirmation",
+  "shape_diagnostics": "ECDF distance after estimated translation and q25/q75 displacement relative to median displacement; descriptive only, no tuned shape cutoff",
+  "shift_forecast": "p_shift=1-F_reference(D-shift_ns); strict >D counting",
+  "shift_ns": "median(last25 complete warmup responses) - median(reference)",
+  "stopping_rule": "no threshold/window/deadline tuning or new performance collection in this assessment; require independent episodes and comparator advantage before proposing confirmation",
+  "temporal_rule_ablation": "shift-only and chronological-only checks reported without selecting a winner"
+}

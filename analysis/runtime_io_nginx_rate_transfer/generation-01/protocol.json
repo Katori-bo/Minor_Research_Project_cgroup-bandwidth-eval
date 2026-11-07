@@ -1,0 +1,53 @@
+{
+  "schema": "nginx-rate-transfer-v1",
+  "fixed_policy": "P0",
+  "governor": "powersave",
+  "epp": "balance_performance",
+  "target_cpu": 2,
+  "quota_us": 25000,
+  "period_us": 100000,
+  "calibration_rates": [
+    4,
+    5,
+    8
+  ],
+  "validation_rates": [
+    4,
+    8
+  ],
+  "calibration_cohorts": 6,
+  "calibration_count": 400,
+  "blocks": 6,
+  "validation_cohorts": 12,
+  "validation_count": 300,
+  "qualification_count": 20,
+  "qualification_lifetime_count": 400,
+  "warmup_count": 25,
+  "primary_deadline_ns": 20565395,
+  "secondary_deadlines_ns": [
+    10000000,
+    25000000,
+    50000000
+  ],
+  "settling_sec": 10,
+  "campaign_total_sec": 2700,
+  "qualification_total_sec": 600,
+  "cleanup_reserve_sec": 120,
+  "service_active_sec": 120,
+  "cohort_reserve_sec": 150,
+  "within_service_reserve_sec": 8,
+  "retries": 0,
+  "improvement_reference_pp": 2,
+  "accuracy_upper_reference_pp": 5,
+  "t_multiplier": 2.571,
+  "fixed_frequency": false,
+  "host_policy_writes": false,
+  "new_estimator": false,
+  "calibration_offers": 2400,
+  "validation_offers": 3600,
+  "scientific_total_offers": 6450,
+  "qualification_total_offers": 560,
+  "population": "all offered requests under the configured quota, including throttling",
+  "failed_offers": "misses beyond every finite deadline in all references and scores",
+  "observers": "original client/cgroup controls; policy boundary readbacks and CPU3 procstat only"
+}

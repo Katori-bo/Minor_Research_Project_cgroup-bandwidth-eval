@@ -1,0 +1,660 @@
+{
+  "status": "stopped_domain_exit_partial_descriptive_result",
+  "elapsed_sec": 1256.169178619999,
+  "original_stop": {
+    "complete": false,
+    "status": "campaign_stopped",
+    "phase": "validation",
+    "error": "Power applicability exit: measurement_throttling",
+    "elapsed_sec": 1256.169178619999,
+    "no_replacement": true
+  },
+  "completed_calibration_cohorts": 4,
+  "calibration_offers": 1600,
+  "completed_validation_cohorts": 12,
+  "planned_validation_cohorts": 24,
+  "validation_offers": 3600,
+  "validation_successful": 3600,
+  "complete_balanced_blocks": 3,
+  "within_domain_complete_blocks": 2,
+  "primary_deadline_ns": 20565395,
+  "stopped_cohort": {
+    "role": "validation",
+    "index": 12,
+    "policy": "P0",
+    "rate_rps": 8,
+    "interval_ns": 125000000,
+    "block": 3,
+    "count": 300,
+    "warmup_count": 25,
+    "profile": "C"
+  },
+  "throttle_delta": {
+    "usage_usec": 5619771,
+    "user_usec": 5475846,
+    "system_usec": 143925,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 376,
+    "nr_throttled": 1,
+    "throttled_usec": 11793,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "methods": {
+    "pooled": {
+      "descriptive_mae_pp": 40.083333333333336,
+      "maximum_error_pp": 41.5625,
+      "errors_above_5pp": 12,
+      "block_mae_pp": [
+        40.083333333333336,
+        40.0,
+        40.16666666666667
+      ]
+    },
+    "matched": {
+      "descriptive_mae_pp": 0.5624999999999991,
+      "maximum_error_pp": 2.5416666666666643,
+      "errors_above_5pp": 0,
+      "block_mae_pp": [
+        0.9166666666666656,
+        0.4374999999999962,
+        0.3333333333333355
+      ]
+    },
+    "baseline": {
+      "descriptive_mae_pp": 41.0,
+      "maximum_error_pp": 80.875,
+      "errors_above_5pp": 6,
+      "block_mae_pp": [
+        41.354166666666664,
+        40.87499999999999,
+        40.770833333333336
+      ]
+    },
+    "warmup": {
+      "descriptive_mae_pp": 3.0833333333333335,
+      "maximum_error_pp": 12.0,
+      "errors_above_5pp": 4,
+      "block_mae_pp": [
+        1.0833333333333306,
+        5.000000000000002,
+        3.166666666666668
+      ]
+    },
+    "matched_update": {
+      "descriptive_mae_pp": 0.48737373737373635,
+      "maximum_error_pp": 2.3939393939393927,
+      "errors_above_5pp": 0,
+      "block_mae_pp": [
+        0.8863636363636351,
+        0.27272727272726893,
+        0.303030303030305
+      ]
+    },
+    "pooled_update": {
+      "descriptive_mae_pp": 39.514102564102565,
+      "maximum_error_pp": 40.95384615384614,
+      "errors_above_5pp": 12,
+      "block_mae_pp": [
+        39.483333333333334,
+        39.46153846153847,
+        39.5974358974359
+      ]
+    }
+  },
+  "policy_summary": {
+    "P0": {
+      "cohorts": 6,
+      "observed_miss_percent": 80.16666666666666,
+      "mean_response_ms": 20.54278181777778,
+      "calibration_prediction_percent": 80.875
+    },
+    "P1": {
+      "cohorts": 6,
+      "observed_miss_percent": 0.0,
+      "mean_response_ms": 16.69509453888889,
+      "calibration_prediction_percent": 0.0
+    }
+  },
+  "cohort_errors": [
+    {
+      "config": {
+        "role": "validation",
+        "index": 1,
+        "policy": "P1",
+        "rate_rps": 4,
+        "interval_ns": 250000000,
+        "block": 1,
+        "count": 300,
+        "warmup_count": 25,
+        "profile": "A"
+      },
+      "observed_miss_fraction": 0.0,
+      "predictions": {
+        "pooled": 0.404375,
+        "matched": 0.0,
+        "baseline": 0.80875,
+        "warmup": 0.0,
+        "matched_update": 0.0,
+        "pooled_update": 0.39815384615384614
+      },
+      "absolute_error_pp": {
+        "pooled": 40.4375,
+        "matched": 0.0,
+        "baseline": 80.875,
+        "warmup": 0.0,
+        "matched_update": 0.0,
+        "pooled_update": 39.815384615384616
+      },
+      "domain_exits": [],
+      "successful": 300,
+      "counter_delta": {
+        "usage_usec": 4485969,
+        "user_usec": 4348101,
+        "system_usec": 137868,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 598,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "config": {
+        "role": "validation",
+        "index": 2,
+        "policy": "P0",
+        "rate_rps": 4,
+        "interval_ns": 250000000,
+        "block": 1,
+        "count": 300,
+        "warmup_count": 25,
+        "profile": "A"
+      },
+      "observed_miss_fraction": 0.7833333333333333,
+      "predictions": {
+        "pooled": 0.404375,
+        "matched": 0.80875,
+        "baseline": 0.80875,
+        "warmup": 0.76,
+        "matched_update": 0.8072727272727273,
+        "pooled_update": 0.40984615384615386
+      },
+      "absolute_error_pp": {
+        "pooled": 37.895833333333336,
+        "matched": 2.5416666666666643,
+        "baseline": 2.5416666666666643,
+        "warmup": 2.3333333333333317,
+        "matched_update": 2.3939393939393927,
+        "pooled_update": 37.34871794871795
+      },
+      "domain_exits": [],
+      "successful": 300,
+      "counter_delta": {
+        "usage_usec": 5622181,
+        "user_usec": 5495037,
+        "system_usec": 127144,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 601,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "config": {
+        "role": "validation",
+        "index": 3,
+        "policy": "P0",
+        "rate_rps": 8,
+        "interval_ns": 125000000,
+        "block": 1,
+        "count": 300,
+        "warmup_count": 25,
+        "profile": "C"
+      },
+      "observed_miss_fraction": 0.82,
+      "predictions": {
+        "pooled": 0.404375,
+        "matched": 0.80875,
+        "baseline": 0.80875,
+        "warmup": 0.8,
+        "matched_update": 0.8084848484848485,
+        "pooled_update": 0.4104615384615385
+      },
+      "absolute_error_pp": {
+        "pooled": 41.5625,
+        "matched": 1.1249999999999982,
+        "baseline": 1.1249999999999982,
+        "warmup": 1.9999999999999907,
+        "matched_update": 1.1515151515151478,
+        "pooled_update": 40.95384615384614
+      },
+      "domain_exits": [],
+      "successful": 300,
+      "counter_delta": {
+        "usage_usec": 5641759,
+        "user_usec": 5483956,
+        "system_usec": 157803,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 376,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "config": {
+        "role": "validation",
+        "index": 4,
+        "policy": "P1",
+        "rate_rps": 8,
+        "interval_ns": 125000000,
+        "block": 1,
+        "count": 300,
+        "warmup_count": 25,
+        "profile": "C"
+      },
+      "observed_miss_fraction": 0.0,
+      "predictions": {
+        "pooled": 0.404375,
+        "matched": 0.0,
+        "baseline": 0.80875,
+        "warmup": 0.0,
+        "matched_update": 0.0,
+        "pooled_update": 0.39815384615384614
+      },
+      "absolute_error_pp": {
+        "pooled": 40.4375,
+        "matched": 0.0,
+        "baseline": 80.875,
+        "warmup": 0.0,
+        "matched_update": 0.0,
+        "pooled_update": 39.815384615384616
+      },
+      "domain_exits": [],
+      "successful": 300,
+      "counter_delta": {
+        "usage_usec": 4497741,
+        "user_usec": 4361272,
+        "system_usec": 136469,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 376,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "config": {
+        "role": "validation",
+        "index": 5,
+        "policy": "P1",
+        "rate_rps": 8,
+        "interval_ns": 125000000,
+        "block": 2,
+        "count": 300,
+        "warmup_count": 25,
+        "profile": "C"
+      },
+      "observed_miss_fraction": 0.0,
+      "predictions": {
+        "pooled": 0.404375,
+        "matched": 0.0,
+        "baseline": 0.80875,
+        "warmup": 0.0,
+        "matched_update": 0.0,
+        "pooled_update": 0.39815384615384614
+      },
+      "absolute_error_pp": {
+        "pooled": 40.4375,
+        "matched": 0.0,
+        "baseline": 80.875,
+        "warmup": 0.0,
+        "matched_update": 0.0,
+        "pooled_update": 39.815384615384616
+      },
+      "domain_exits": [],
+      "successful": 300,
+      "counter_delta": {
+        "usage_usec": 4501774,
+        "user_usec": 4372684,
+        "system_usec": 129091,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 376,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "config": {
+        "role": "validation",
+        "index": 6,
+        "policy": "P0",
+        "rate_rps": 4,
+        "interval_ns": 250000000,
+        "block": 2,
+        "count": 300,
+        "warmup_count": 25,
+        "profile": "A"
+      },
+      "observed_miss_fraction": 0.8,
+      "predictions": {
+        "pooled": 0.404375,
+        "matched": 0.80875,
+        "baseline": 0.80875,
+        "warmup": 0.72,
+        "matched_update": 0.806060606060606,
+        "pooled_update": 0.40923076923076923
+      },
+      "absolute_error_pp": {
+        "pooled": 39.56250000000001,
+        "matched": 0.8749999999999925,
+        "baseline": 0.8749999999999925,
+        "warmup": 8.000000000000007,
+        "matched_update": 0.6060606060605989,
+        "pooled_update": 39.07692307692308
+      },
+      "domain_exits": [],
+      "successful": 300,
+      "counter_delta": {
+        "usage_usec": 5623433,
+        "user_usec": 5478833,
+        "system_usec": 144600,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 748,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "config": {
+        "role": "validation",
+        "index": 7,
+        "policy": "P0",
+        "rate_rps": 8,
+        "interval_ns": 125000000,
+        "block": 2,
+        "count": 300,
+        "warmup_count": 25,
+        "profile": "C"
+      },
+      "observed_miss_fraction": 0.8,
+      "predictions": {
+        "pooled": 0.404375,
+        "matched": 0.80875,
+        "baseline": 0.80875,
+        "warmup": 0.68,
+        "matched_update": 0.8048484848484848,
+        "pooled_update": 0.4086153846153846
+      },
+      "absolute_error_pp": {
+        "pooled": 39.56250000000001,
+        "matched": 0.8749999999999925,
+        "baseline": 0.8749999999999925,
+        "warmup": 12.0,
+        "matched_update": 0.48484848484847687,
+        "pooled_update": 39.13846153846154
+      },
+      "domain_exits": [],
+      "successful": 300,
+      "counter_delta": {
+        "usage_usec": 5620064,
+        "user_usec": 5471266,
+        "system_usec": 148797,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 376,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "config": {
+        "role": "validation",
+        "index": 8,
+        "policy": "P1",
+        "rate_rps": 4,
+        "interval_ns": 250000000,
+        "block": 2,
+        "count": 300,
+        "warmup_count": 25,
+        "profile": "A"
+      },
+      "observed_miss_fraction": 0.0,
+      "predictions": {
+        "pooled": 0.404375,
+        "matched": 0.0,
+        "baseline": 0.80875,
+        "warmup": 0.0,
+        "matched_update": 0.0,
+        "pooled_update": 0.39815384615384614
+      },
+      "absolute_error_pp": {
+        "pooled": 40.4375,
+        "matched": 0.0,
+        "baseline": 80.875,
+        "warmup": 0.0,
+        "matched_update": 0.0,
+        "pooled_update": 39.815384615384616
+      },
+      "domain_exits": [],
+      "successful": 300,
+      "counter_delta": {
+        "usage_usec": 4482298,
+        "user_usec": 4344692,
+        "system_usec": 137606,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 598,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "config": {
+        "role": "validation",
+        "index": 9,
+        "policy": "P0",
+        "rate_rps": 4,
+        "interval_ns": 250000000,
+        "block": 3,
+        "count": 300,
+        "warmup_count": 25,
+        "profile": "A"
+      },
+      "observed_miss_fraction": 0.7966666666666666,
+      "predictions": {
+        "pooled": 0.404375,
+        "matched": 0.80875,
+        "baseline": 0.80875,
+        "warmup": 0.72,
+        "matched_update": 0.806060606060606,
+        "pooled_update": 0.40923076923076923
+      },
+      "absolute_error_pp": {
+        "pooled": 39.229166666666664,
+        "matched": 1.2083333333333335,
+        "baseline": 1.2083333333333335,
+        "warmup": 7.666666666666666,
+        "matched_update": 0.9393939393939399,
+        "pooled_update": 38.74358974358974
+      },
+      "domain_exits": [],
+      "successful": 300,
+      "counter_delta": {
+        "usage_usec": 5623622,
+        "user_usec": 5476286,
+        "system_usec": 147335,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 750,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "config": {
+        "role": "validation",
+        "index": 10,
+        "policy": "P1",
+        "rate_rps": 8,
+        "interval_ns": 125000000,
+        "block": 3,
+        "count": 300,
+        "warmup_count": 25,
+        "profile": "C"
+      },
+      "observed_miss_fraction": 0.0,
+      "predictions": {
+        "pooled": 0.404375,
+        "matched": 0.0,
+        "baseline": 0.80875,
+        "warmup": 0.0,
+        "matched_update": 0.0,
+        "pooled_update": 0.39815384615384614
+      },
+      "absolute_error_pp": {
+        "pooled": 40.4375,
+        "matched": 0.0,
+        "baseline": 80.875,
+        "warmup": 0.0,
+        "matched_update": 0.0,
+        "pooled_update": 39.815384615384616
+      },
+      "domain_exits": [],
+      "successful": 300,
+      "counter_delta": {
+        "usage_usec": 4495067,
+        "user_usec": 4355552,
+        "system_usec": 139514,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 376,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "config": {
+        "role": "validation",
+        "index": 11,
+        "policy": "P1",
+        "rate_rps": 4,
+        "interval_ns": 250000000,
+        "block": 3,
+        "count": 300,
+        "warmup_count": 25,
+        "profile": "A"
+      },
+      "observed_miss_fraction": 0.0,
+      "predictions": {
+        "pooled": 0.404375,
+        "matched": 0.0,
+        "baseline": 0.80875,
+        "warmup": 0.0,
+        "matched_update": 0.0,
+        "pooled_update": 0.39815384615384614
+      },
+      "absolute_error_pp": {
+        "pooled": 40.4375,
+        "matched": 0.0,
+        "baseline": 80.875,
+        "warmup": 0.0,
+        "matched_update": 0.0,
+        "pooled_update": 39.815384615384616
+      },
+      "domain_exits": [],
+      "successful": 300,
+      "counter_delta": {
+        "usage_usec": 4494764,
+        "user_usec": 4361772,
+        "system_usec": 132991,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 748,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "config": {
+        "role": "validation",
+        "index": 12,
+        "policy": "P0",
+        "rate_rps": 8,
+        "interval_ns": 125000000,
+        "block": 3,
+        "count": 300,
+        "warmup_count": 25,
+        "profile": "C"
+      },
+      "observed_miss_fraction": 0.81,
+      "predictions": {
+        "pooled": 0.404375,
+        "matched": 0.80875,
+        "baseline": 0.80875,
+        "warmup": 0.76,
+        "matched_update": 0.8072727272727273,
+        "pooled_update": 0.40984615384615386
+      },
+      "absolute_error_pp": {
+        "pooled": 40.56250000000001,
+        "matched": 0.12500000000000844,
+        "baseline": 0.12500000000000844,
+        "warmup": 5.000000000000004,
+        "matched_update": 0.27272727272728003,
+        "pooled_update": 40.01538461538462
+      },
+      "domain_exits": [
+        "measurement_throttling"
+      ],
+      "successful": 300,
+      "counter_delta": {
+        "usage_usec": 5619771,
+        "user_usec": 5475846,
+        "system_usec": 143925,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 376,
+        "nr_throttled": 1,
+        "throttled_usec": 11793,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    }
+  ],
+  "qualification_replay_verified": true,
+  "evidence_seals_verified": true,
+  "fresh_global_and_warmup_prediction_barriers_verified": true,
+  "cleanup_and_restoration_records_verified": true,
+  "six_block_acceptance_test_available": false,
+  "novelty_established": false,
+  "historical_excursion_cause_identified": false,
+  "interpretation": "All twelve collected cohorts, including the domain exit, are retained. These are outcome-stopped partial descriptive results, not the planned six-block acceptance test, a clean in-domain experiment or a new estimator."
+}

@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-10",
+  "scope": "Targeted primary-source capability comparison after the completed rate-transfer result. No competing artifact executed; not a systematic review or proof of originality.",
+  "queries": [
+    "CPU quota deadline miss probability empirical latency calibration power policy load conditioned CEDULE ReTail response distributions",
+    "MPORA ECRTS 2026 deadline uncertainty profiling",
+    "Predicting Latency Distributions of Aperiodic Time-Critical Services RTSS 2019",
+    "Predicting Latency Distributions of Aperiodic Time-Critical Services deterministic Poisson (cse.wustl.edu)",
+    "calibration deadline cgroup latency prediction power load",
+    "latency prediction distribution shift CPU empirical profiling"
+  ],
+  "coverage_limit": "Selected primary passages and named closest methods, informed by earlier sealed reviews. Broad search hits without relevant verified primary content were not used. Exact-match absence is not a novelty finding. Full RTSS PDF retrieval remains unavailable.",
+  "sources": [
+    {"id": "P1", "title": "CFS Bandwidth Control", "url": "https://docs.kernel.org/scheduler/sched-bwc.html", "type": "official live documentation", "inspection": "Background, caveats and period/latency examples", "access": "Primary text available", "role": "Resource-control semantics; no stationarity certificate"},
+    {"id": "P2", "title": "Predicting Latency Distributions of Aperiodic Time-Critical Services", "venue": "RTSS 2019", "url": "https://www.cse.wustl.edu/~lu/papers/rtss19.pdf", "alternate_url": "https://www.cse.wustl.edu/~cdgill/publications/rtss19.pdf", "inspection": "Indexed author-PDF introduction and Sections II-III: model premises, output and Xen/Redis evaluation setting", "access": "Both direct PDF retrievals failed; substantial indexed primary passages available", "role": "Closest periodic-server distribution-model precedent; no complete algorithm or artifact audit"},
+    {"id": "P3", "title": "Strong Temporal Isolation Among Containers in OpenStack for NFV Services", "venue": "IEEE TCC 2023", "url": "https://retis.santannapisa.it/people/nino/publication/TCC23.pdf", "inspection": "Section 4.2.1, equations 1-3, and evaluation setup with 2 ms HCBS period", "access": "Primary PDF available", "role": "Explicit premises of the average-speed approximation"},
+    {"id": "P4", "title": "CEDULE: A Scheduling Framework for Burstable Performance in Cloud Computing", "venue": "ICAC 2018", "url": "https://www2.cs.uh.edu/~fyan/Paper/Feng-ICAC18.pdf", "inspection": "Sections II.B-C and III profiling-cost discussion/Table II; CPU-limit/load profiles and quantile-regression prediction", "access": "Primary PDF available", "role": "Closest load/profile-based prediction precedent and acquisition-cost comparison"},
+    {"id": "P5", "title": "Tales of the Tail: Hardware, OS, and Application-level Sources of Tail Latency", "venue": "SoCC 2014", "url": "https://syslab.cs.washington.edu/papers/latency-socc14.pdf", "inspection": "Sections 3.1.3, 3.2 and 4.6, including NGINX workload and low-utilization power mechanisms", "access": "Primary PDF available", "role": "Closest empirical power/tail precedent; different workload and estimand"},
+    {"id": "P6", "title": "ReTail: Opting for Learning Simplicity to Enable QoS-Aware Power Management in the Cloud", "venue": "HPCA 2022", "url": "https://people.csail.mit.edu/delimitrou/papers/2022.hpca.retail.pdf", "inspection": "Sections IV.B-C, V, VI.B-D and VII.G: feature availability, frequency-conditioned latency, active controller, monitor and drift retraining", "access": "Primary PDF available", "role": "Power/state-aware prediction and online adaptation precedent"},
+    {"id": "P7", "title": "Uncertainty-Aware Resource Allocation for Multi-Path Programs with In-Kernel Predictions", "venue": "ECRTS 2026", "url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol375-ecrts2026/html/LIPIcs.ECRTS.2026.17/LIPIcs.ECRTS.2026.17.html", "inspection": "Sections 6.1-6.2 exchangeability, weighted conformal thresholds and distribution-shift limits; Section 7 empirical profiling and data augmentation", "access": "Primary proceedings HTML available", "role": "State/allocation-conditioned uncertainty precedent; distinct task-progress/resource endpoint"},
+    {"id": "P8", "title": "amd-pstate CPU Performance Scaling Driver", "url": "https://docs.kernel.org/admin-guide/pm/amd-pstate.html", "type": "official live documentation", "inspection": "Driver operation modes and active amd_pstate_epp behavior", "access": "Primary text available", "role": "EPP readback is a hardware preference, not fixed physical frequency"}
+  ]
+}

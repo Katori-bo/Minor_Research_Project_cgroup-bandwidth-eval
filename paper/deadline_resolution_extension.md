@@ -1,38 +1,45 @@
-# Deadline Forecasting Under a Fractional CPU Quota: Prospective Comparisons and Application-Transfer Limits
+# Deadline Forecasting Under a Fractional CPU Quota: Prospective Comparisons and Calibration-Transfer Limits
 
-Completed empirical extension manuscript, 10 October 2026. Scientific results
+Completed empirical extension manuscript, revised 11 October 2026. Scientific results
 are reported at their declared scope; exploratory analyses are identified
-separately. Supporting evidence and prior versions remain preserved.
+separately. This revision consolidates the policy, rate-transfer and fresh
+deadline-panel studies, later reliability screens and measurement-feasibility
+decisions. Supporting evidence and prior manuscript versions remain preserved.
 
 ## Abstract
 
-Accurate average capacity need not imply accurate deadline forecasts when
-intermittent CPU availability is represented as continuous speed. We compare
-established prediction approaches on one Linux host under a 25 ms/100 ms CPU
-quota. In a Go HTTP service, fresh calibration and eighteen held-out steady
-and burst trials give 25 ms deadline-miss mean absolute errors of 73.599
-percentage points for constant-rate busy-capacity FIFO and 2.341 for an
-ordinary periodic-budget approximation with calibrated response delay.
-The latter correctly classifies all eighteen trials against a 5% miss budget,
-but is less accurate at other deadlines. Post-study exploration motivates an
-ordinary queue-adjusted empirical latency reference, which fails on burst traffic.
-A separate prospective study repeats calibration and uses eighteen trials at
-new steady rates of 5, 11 and 19 requests/s. At 10 ms its error is 1.844 points,
-versus 67.340 for periodic+delay, within the declared observed low-queue domain
-with zero recorded measurement throttling. A retrospective control using the
-same calibration cohorts' complete client responses has 1.802 points error;
-the study does not establish a benefit from splitting worker and residual time.
-A third prospective study tests a
-different complete-response empirical forecast in stock NGINX gzip compression,
-including waiting. At its frozen 20.565395 ms deadline, mean error is 5.981
-points and the conditional 95% interval is [1.321,10.642] points; the required
-upper endpoint of <=5 points is not supported. The contribution is scoped
-prospective evidence of predictive adequacy and transfer limits. The results
-establish no new estimator, causal mechanism or universal selection rule.
+Accurate average capacity need not preserve deadline forecasts, and nominal
+calibration controls need not assure later response-distribution transfer.
+We evaluate established approaches in six separately calibrated prospective
+campaigns on one Linux host under a 25 ms/100 ms CPU quota. In a Go HTTP
+service, eighteen steady and burst trials give 25 ms deadline-miss mean absolute
+errors of 73.599 percentage points for the tested constant-rate busy-capacity
+FIFO and 2.341 for periodic service with calibrated delay. A separate eighteen-trial
+steady-traffic study gives 10 ms error of 1.844 points for a queue-adjusted CDF,
+versus 67.340 for periodic+delay, in an observed low-queue domain. A retrospective
+complete-response CDF control gives 1.802 points, limiting decomposition claims;
+the empirical reference still fails on exploratory burst traffic. In stock
+NGINX gzip compression, a complete-response reference at the frozen 20.565395 ms
+deadline gives 5.981 points error, with conditional 95% interval [1.321,10.642],
+failing the required upper bound <=5 points. Fresh controls retain this adverse
+result: matching assigned power policy reduces error from 24.729 to 15.708
+points but remains insufficiently accurate. Later fixed-policy, rate-matched
+calibration gives 1.194 points error, while ordinary 5/s calibration also passes
+at 1.972 points; the 0.778-point improvement interval [-0.375,1.931] does not
+support the required advantage. A fresh five-deadline panel gives policy-specific
+worst-cutoff block scores of 6.611 and 4.889 points, with conditional 97.5%
+interval upper bounds 11.391 and 7.158; neither meets the 5-point accuracy gate.
+Zero error at an older saturated deadline therefore does not establish panel
+accuracy. Retrospective reliability screens supply no confirmed advance selector;
+measurement qualification and precision/cost limits hold further local collection.
+The contribution is reproducible prospective
+evidence of the tested procedures' adequacy and transfer limitations. The
+campaigns establish no new estimator, historical physical cause, universal
+selection rule or independently verified hardware generality.
 
 ## 1. Question and contribution
 
-We ask: **how accurately do constant-rate, periodic-budget and empirical latency references forecast deadline misses under the tested fractional CPU quota, deadlines and traffic conditions?**
+We ask: **how accurately do constant-rate, periodic-budget and empirical latency references forecast deadline misses under the tested fractional CPU quota, deadlines and traffic conditions, and what do ordinary calibration-transfer controls establish?**
 
 The completed [capacity-calibration paper](capacity_calibration_empirical.md) [7] compared independently measured
 capacity inputs within a common finite FIFO model. This extension tests the
@@ -45,7 +52,7 @@ The artifact labels V1/V29 denote precursor capacity studies, V30 the 25 ms
 comparison, and V31 the subsequent 10 ms study. We retain these identifiers
 to make each claim traceable to its separate frozen protocol.
 
-There are five distinct evidence stages:
+There are eight distinct evidence stages:
 
 1. The retained V1 and V29 studies establish scoped capacity and long-deadline
    evidence with independently calibrated inputs.
@@ -64,15 +71,27 @@ There are five distinct evidence stages:
    forecast and does not meet its primary accuracy criterion. It shares the
    physical host and broad client-completion outcome, with different calibration
    inputs, completion checks, observed domain and model comparison.
+6. After a stopped exploratory power-policy pilot, a fresh all-offer confirmation
+   compares pooled and policy-matched references. Matching improves error but
+   fails the frozen absolute-accuracy requirement; the pilot is not pooled in.
+7. A fresh fixed-P0 study compares target-rate and ordinary 5/s references.
+   Both transfer accurately, without the required incremental advantage from
+   rate matching. This later episode does not identify or repair the earlier cause.
+8. A fresh policy-specific five-deadline panel tests the scope suggested by
+   retrospective deadline checks. Neither policy meets its frozen accuracy gate,
+   despite substantial matching advantage over pooling and zero P1 error at the
+   older saturated cutoff. It is a separate prospective study on the same host.
 
 This separation prevents a successful exploratory remedy from acquiring
 confirmation status merely because its parameters came from calibration.
 
-The contribution has three parts: a prospective 25 ms contrast between
-constant-rate and periodic service approximations; a separate prospective
-10 ms empirical-calibration comparison within an observed low-queue domain;
-and a preserved adverse test of a complete-response forecast in stock NGINX.
-These studies quantify the adequacy of selected existing approaches. The
+The contribution has three parts: prospective numerical comparisons of selected
+approximations at fixed deadlines and declared traffic/domain contracts; a
+calibration-transfer audit retaining the adverse NGINX result and complete
+ordinary-control follow-ups; and an auditable artifact preserving fresh
+calibration, advance forecast barriers, all-offer outcomes and domain exits.
+The artifact strengthens reproducibility, not algorithmic novelty. These
+studies quantify the adequacy of selected existing approaches. The
 Go and NGINX validation both count all-offer client-completion misses, including
 waiting. Different completion checks, calibration inputs, deadlines, domains
 and comparison contracts prevent combining their results into a controlled
@@ -80,7 +99,7 @@ application effect or a common accuracy interval.
 
 ![Three separate prospective comparisons](../analysis/runtime_io_deadline_extension_finalization/20261010/figures/prospective_comparisons.png)
 
-**Figure 1.** Three separate prospective comparisons. Bars show equal-profile/block mean absolute miss-fraction error. The NGINX point and interval show the declared conditional six-block mean-error interval; small points are its six block errors. The dashed line is its 5 pp upper-interval criterion. Completion checks, calibration inputs, deadlines, domains, comparators and criteria differ; these panels do not establish a common model ranking. The retrospective complete-response control is reported separately in Section 10.
+**Figure 1.** The initial three separate prospective comparisons. Bars show equal-profile/block mean absolute miss-fraction error. The NGINX point and interval show the declared conditional six-block mean-error interval; small points are its six block errors. The dashed line is its 5 pp upper-interval criterion. Completion checks, calibration inputs, deadlines, domains, comparators and criteria differ; these panels do not establish a common model ranking. The retrospective complete-response control is reported in Section 10; the fresh policy and rate controls are reported in Sections 12 and 13.
 
 ## 2. Related work and contribution scope
 
@@ -114,16 +133,30 @@ Likewise, [Jeffery et al. (2024 preprint)](https://arxiv.org/html/2407.11582v1)
 already distinguish queue and worker latency in quota-aware thread management;
 stage instrumentation itself supplies no algorithmic novelty.
 
+[Tales of the Tail (SoCC 2014)](https://syslab.cs.washington.edu/papers/latency-socc14.pdf) [8]
+already measures hardware, OS and application sources of tail latency, including
+NGINX and low-utilization power effects. Our assigned-policy comparison does
+not discover that power management affects tails or identify a new mechanism.
+[ReTail (HPCA 2022)](https://people.csail.mit.edu/delimitrou/papers/2022.hpca.retail.pdf) [9]
+uses request features and frequency-conditioned latency models with active
+frequency control, monitoring and drift-triggered retraining. Those richer
+inputs and online decisions differ from our campaign-wide frozen CDF.
+[MPORA (ECRTS 2026)](https://drops.dagstuhl.de/storage/00lipics/lipics-vol375-ecrts2026/html/LIPIcs.ECRTS.2026.17/LIPIcs.ECRTS.2026.17.html) [10]
+uses execution-state/allocation models and weighted conformal uncertainty for
+deadline-aware shared-resource allocation. Its task-progress endpoint and
+profiling contract differ; shifted coverage remains assumption-dependent.
+Neither our CDF failures nor our lack of those inputs refute these methods.
+
 The possible incremental contribution is the measured, prospectively tested
 contrast across selected deadlines and traffic conditions, accompanied by
-adverse transfer evidence. It is restricted to the declared comparators and
+adverse transfer evidence and fresh ordinary-control follow-ups. It is restricted to the declared comparators and
 observed domains. The queue-adjusted CDF does not dominate every deadline,
 a steep CDF is not a new mechanism, and NGINX tests a separate calibration-transfer
 contract for the broad client-response outcome.
 No universal deadline/period boundary, advance applicability selector,
 independent-hardware replication or state-of-the-art superiority follows.
-The focused review records ten primary sources and its access/coverage gaps
-in `docs/runtime_io_deadline_boundary_prior_work_review_20261010.md`.
+The original focused review and the later transfer-consolidation capability
+audit retain source locators and access/coverage gaps in the supporting material.
 Finding no exact match in selected passages is insufficient to claim a first
 result; scientific novelty remains a candidate requiring further assessment.
 
@@ -158,7 +191,7 @@ the residual is an isolated measurement of SHA CPU demand.
 
 ### Outcome and statistical units
 
-For the three primary extension comparisons, an offer at deadline D misses if
+For all five primary campaigns, an offer at deadline D misses if
 it is unsuccessful or its successful
 scheduled-offer-to-completion duration exceeds D; equality is timely. Failed,
 rejected, timed-out or missing offers retain their place in the denominator.
@@ -166,7 +199,9 @@ Let $p_{b,k}(D)$ be the observed all-offer miss fraction for profile $k$ in bloc
 and $\hat p_{b,k}(D)$ its frozen forecast. Trial absolute error is
 $100\left|\hat p_{b,k}(D)-p_{b,k}(D)\right|$ percentage points. Each block error is the
 arithmetic mean of its three profile errors, and primary MAE is the mean of
-the six block errors. Equal profile weighting differs from pooling all offers.
+the six block errors in the initial studies. The power confirmation averages
+four policy/rate cells per block; rate transfer averages two rate cells. Equal
+cell weighting differs from pooling all offers.
 
 For V30 and V31, improvement is the difference between comparator and tested
 reference block errors. The declared 95% interval is
@@ -178,6 +213,13 @@ block summaries and condition on the finite frozen calibrations. They do not
 propagate calibration uncertainty or treat requests as independent replicates.
 Blocks were collected sequentially. Counterbalancing controls profile position
 but cannot establish independence or remove drift between blocks.
+
+The two fresh NGINX controls apply the same conditional interval formula to
+their own block errors and paired improvements. Matched accuracy requires an
+error-interval upper bound <=5 pp. Incremental advantage requires mean
+improvement >=2 pp and an improvement-interval lower bound >0; it does not
+require a >=2 pp lower confidence bound. Accuracy and advantage are reported
+separately. These are frozen engineering references, not universal guarantees.
 Engineering tolerances and the six-block budget were fixed before outcomes;
 they are not established universal SLOs or power guarantees.
 
@@ -597,7 +639,338 @@ quota phase were not recorded, so finer causal attribution remains unavailable.
 The separate diagnosis report and per-request milestone CSV retain all offers
 and explicitly distinguish these exploratory observations from confirmation.
 
-## 12. Interpretation and remaining scope
+## 12. Fresh NGINX power-policy confirmation
+
+After the original NGINX transfer failure, a separately designed power-policy
+pilot stopped at its zero-throttling applicability gate. Twelve of twenty-four
+planned validation cohorts were collected; cohort 12 recorded throttling.
+The entire prefix is preserved as exploratory, including the exit. It supplies
+no complete six-block acceptance test and is not pooled with the following
+fresh confirmation. This stop was not repaired by deleting or replacing a trial.
+
+The fresh confirmation prospectively changes the population to all offered
+requests under the configured quota, including throttling and waiting. Transport
+errors and non-200 responses count as misses; corrupt complete output or invalid
+identity/accounting records invalidate collection. The change is a disclosed
+scope change, not a resume of the pilot. Pilot observations do not enter any
+new reference. The preserved stock NGINX/client binaries, 1 MiB corpus, gzip
+level 6, one worker on CPU 2 and 25 ms/100 ms quota remain fixed. The primary
+deadline remains 20.565395 ms, rather than a new favorable endpoint.
+
+P0 uses the powersave governor with balance_performance EPP; P1 uses the same
+governor with performance EPP. The setting is applied before ten-second settling
+and held through each fresh service. Four new 400-offer calibration cohorts
+at 5/s supply two references per policy in a randomly chosen balanced order.
+All global forecasts freeze before validation. Six randomized blocks each
+contain P0-4/s, P0-8/s, P1-4/s and P1-8/s once; each cohort has 25 warmup
+and 300 measurement offers. Warmup and sample-weighted updates freeze separately
+before that cohort's measurement and are later-decision comparisons.
+
+Qualification and all twenty-four validation cohorts completed. The scientific
+campaign retained 1,600 calibration, 7,200 validation and 700 warmup offers in
+35.79 minutes. All responses succeeded; neither scientific phase recorded
+throttling. Source/evidence seals, advance forecast barriers, all-offer accounting,
+owned cleanup and restoration records verify. Absence of recorded throttling
+does not remove the broader all-offer contract.
+
+| Forecast | MAE pp | Conditional 95% interval pp | Maximum error pp | Cohorts >5 pp |
+|---|---:|---:|---:|---:|
+| Pooled policies | 24.729 | [20.377, 29.082] | 44.583 | 18/24 |
+| Policy-matched | 15.708 | [12.695, 18.721] | 43.167 | 11/24 |
+| P0-only | 55.458 | [52.445, 58.471] | 79.500 | 23/24 |
+| 25-offer warmup | 4.778 | [0.582, 8.974] | 25.000 | 7/24 |
+| Matched + warmup | 15.250 | [12.286, 18.214] | 41.970 | 11/24 |
+| Pooled + warmup | 24.350 | [20.036, 28.664] | 43.903 | 18/24 |
+
+Policy matching improves over pooled calibration by 9.021 pp, conditional
+95% interval [1.746, 16.296] pp. The improvement condition passes, but the
+matched accuracy upper bound 18.721 pp exceeds 5 pp: the combined claim is
+not supported. Warmup's smaller mean error does not rescue the claim; its
+upper bound is 8.974 pp, maximum error 25 pp, and information/budget differ.
+
+P0 calibration predicts 79.5% misses (81% and 78% in its two cohorts); later
+P0 validation averages 48.889%, ranging from 36.333% to 84.333%. P1 calibration
+and all twelve P1 validation cohorts have zero observed primary misses. This
+easy P1 endpoint does not hide P0's failure or certify zero future risk.
+The pooled reference deliberately combines different assigned policies;
+beating it is not superiority over a published state-aware predictor. The
+matched references use 800 offers per policy, while both global procedures
+share a 1,600-offer acquisition process. The baseline-only reference uses P0
+samples for both policies and is another deliberately mismatched control.
+
+The successful P0 mean response changes from 20.507 ms during calibration to
+20.190 ms during validation, mainly through shorter dispatch-to-header elapsed
+time; client stages do not identify server CPU or scheduling mechanisms.
+Calibration is at 5/s and validation at 4/s or 8/s, leaving rate and chronology
+unresolved. Matching EPP does not establish fixed physical frequency: the
+[AMD active-driver documentation](https://docs.kernel.org/admin-guide/pm/amd-pstate.html) [11]
+describes autonomous hardware decisions influenced by workload and physical
+conditions. No historical frequency cause is established. At secondary 10 ms
+all measured offers miss; at 25 and 50 ms all are timely. These saturated
+endpoints do not replace the failed primary accuracy test.
+
+## 13. Fresh NGINX rate-transfer control under fixed P0
+
+A subsequent prospective control asks whether full target-rate calibration
+transfers accurately and materially improves over ordinary 5/s calibration.
+It retains the exact application, binaries, client endpoint, quota and
+20.565395 ms deadline. P0 remains fixed with read-only policy checks; no host
+power policy is written. Qualification includes three rate smoke cohorts and
+a full 400-offer 4/s lifecycle case. Qualification and historical power outcomes
+cannot supply scientific reference samples or choose a new endpoint.
+
+Six fresh calibration cohorts contain two 400-offer cohorts each at 4, 5 and
+8/s, in a random balanced order. All global references freeze before validation.
+Six randomized blocks each contain one fresh 300-offer cohort at 4/s and one
+at 8/s. Every cohort has 25 warmup offers; all-offer scoring, retained throttling,
+response integrity and later warmup forecast barriers follow the frozen contract.
+Qualification and all twelve validation cohorts completed. The scientific
+campaign retained 2,400 calibration, 3,600 validation and 450 warmup offers in
+23.96 minutes, all successful.
+
+| Forecast | MAE pp | Conditional 95% interval pp | Maximum error pp | Cohorts >5 pp |
+|---|---:|---:|---:|---:|
+| Rate-matched | 1.194 | [0.808, 1.581] | 2.333 | 0/12 |
+| Fixed 5/s | 1.972 | [1.037, 2.907] | 4.500 | 0/12 |
+| Pooled rates | 1.361 | [1.091, 1.632] | 3.208 | 0/12 |
+| 25-offer warmup | 7.528 | [4.629, 10.426] | 13.667 | 7/12 |
+| Matched + warmup | 1.149 | [0.841, 1.457] | 2.182 | 0/12 |
+| 5/s + warmup | 2.073 | [1.055, 3.091] | 4.485 | 0/12 |
+| Pooled + warmup | 1.371 | [1.074, 1.669] | 3.216 | 0/12 |
+
+Rate-matched accuracy passes the <=5 pp upper-bound condition. The improvement
+over fixed 5/s is 0.778 pp, interval [-0.375, 1.931] pp, failing both the mean
+>=2 pp and positive lower-bound advantage conditions. Ordinary 5/s and pooled
+calibration also meet the accuracy target; every cohort error for all three
+is <=5 pp. Neither superiority nor equivalence between rate-matched and 5/s
+references is established. The combined accuracy-and-advantage claim is not
+supported, while accurate rate-matched transfer in this episode is supported.
+
+Each target-rate reference uses 800 calibration offers. Covering both 4/s and
+8/s requires 1,600 offers, versus 800 for the shared 5/s reference; pooling
+uses 2,400. All three pools were acquired by the actual study. Matched and
+baseline effective sample counts are equal per target, but standalone procedural
+costs were not experimentally compared. Warmup and updates decide later and
+consume additional samples; their accuracy does not establish a free remedy.
+
+Primary observed misses range from 78.667% to 84.000%. Accurate prediction
+therefore describes poor deadline compliance, rather than useful SLO control
+near the 5% miss budget. The primary endpoint is not saturated. Validation
+cohort 5 (8/s, block 3) records one throttled period and 6,600 us aggregate
+throttling; cohort 9 (8/s, block 5) records one period and 9,133 us. Both remain
+in all scores. Aggregate counters do not align an event with a specific response.
+No other scientific observation flags or unsuccessful offers were recorded.
+At secondary 10 ms every measured offer misses; at 50 ms all are timely. At
+25 ms matched and 5/s MAE are 0.027778 pp. No secondary endpoint replaces
+the predeclared primary result.
+
+The earlier power P0 and the fresh 5/s P0 references both happen to predict
+79.5% misses from different fresh samples, but their later distributions differ.
+Because ordinary 5/s calibration also transfers accurately here, these data do
+not establish that matching offered rate repaired the preceding failure.
+Campaigns differ in time, fresh instances and unmeasured physical state; they
+are not randomized trials of the cause or repair. Keep the successful and
+failed episodes separate, without pooling them into a favorable acceptance test.
+
+## 14. Fresh NGINX calibration-only deadline panel
+
+The earlier saved-data deadline-scope check showed why an accurate historical
+endpoint may hide errors near the response CDF transition. That analysis was
+retrospective development. The subsequent generation-01 study separately froze
+five deadlines per policy from fresh calibration, before any validation outcomes.
+It retained stock NGINX/native zlib, the 1 MiB gzip-6 corpus, Q25 ms/P100 ms,
+one worker on CPU2 and the recorded P0/P1 policy contracts. Matching policy
+readback does not hold physical execution speed fixed.
+
+Four calibration services acquired 800 measured offers per policy. Zero-based
+lower-order ranks 79, 199, 399, 599 and 719 froze the 1/10, 1/4, 1/2, 3/4 and
+9/10 cutoffs. P0 cutoffs were 17.433213, 20.683338, 21.041565, 21.341755 and
+21.562926 ms; P1 cutoffs were 16.133618, 16.383808, 16.664488, 16.946228 and
+17.170689 ms. Six randomized blocks each included P0/P1 at 4/s and 8/s, with
+25 warmup and 300 target offers per fresh service. The historical 20.565395 ms
+cutoff was additional and descriptive; it did not select the primary result.
+
+For each policy and block, average the absolute miss-probability errors across
+both rates at each cutoff, then take the maximum across the five cutoffs.
+The mean of six block scores is the primary statistic. Each policy's conditional
+97.5% interval must have upper endpoint <=5 pp. This max-after-rate-average
+score differs from the historical single-deadline MAE and from averaging panel
+errors. The paired policy family has >=95% coverage only under independent,
+approximately normal block scores. Six chronological blocks do not verify
+those assumptions; shared calibration uncertainty is not propagated.
+
+| Policy | Matched score (pp) | Conditional 97.5% interval (pp) | Pooled score (pp) | Accuracy supported |
+|---|---:|---:|---:|---|
+| P0 | 6.611 | [1.831, 11.391] | 44.111 | No |
+| P1 | 4.889 | [2.620, 7.158] | 38.222 | No |
+
+The frozen status is `deadline_panel_accuracy_not_supported`. P1's point score
+below 5 pp does not pass its upper-bound gate. Neither failed gate proves that
+the population score exceeds 5 pp. Secondary pooled-minus-matched gains were
+37.500 pp for P0 (conditional descriptive 95% interval [33.703, 41.297]) and
+33.333 pp for P1 ([30.405, 36.262]); they do not replace absolute accuracy.
+Warmup-only scores were 14.278/11.556 pp, with upper bounds 20.186/17.228 pp.
+Matched-plus-warmup scores were 6.515/4.886 pp, with upper bounds 11.261/7.166 pp.
+These predeclared ordinary controls remain descriptive, without choosing a
+winner after validation. Every control is charged the complete acquisition;
+warmup updates decide later and use additional information.
+
+Matched panel-average MAEs were 3.483/3.067 pp, masking harder individual cutoffs.
+Each policy had 11 errors >5 pp among 60 cohort/cutoff cells; the maximum errors
+were 19.667/11.000 pp. These 120 correlated cells are not independent replicates.
+At the older cutoff P0 MAE was 3.181 pp and P1 was zero. P1 calibration and targets
+both had zero misses there. Yet P1 cohort 15 at 4/s forecast 25% versus 36%
+misses at its 16.946228 ms cutoff. This post-validation illustration shows the
+scope of the predeclared panel result; it supplies no advance selection rule.
+
+All 10,530 offers succeeded: 1,030 qualification, 1,600 calibration measurements,
+100 calibration warmup, 7,200 target and 600 target warmup offers. Qualification
+took 279.086 s and science 2,140.385 s, with source/forecast barriers, all-offer
+accounting, owned cleanup and normal/dead-owner restoration verified. Validation
+cohort 1 (P0, 8/s) recorded one throttled period / 4,703 us and remains included.
+That aggregate observation cannot assign delay to requests or identify the
+forecast error's cause. The complete result supports a deadline-scope limitation
+of the tested reference, without a uniform CDF guarantee, identified mechanism,
+new estimator or independent-host replication. Its frozen gates remain unchanged.
+
+## 15. Exploratory advance-reliability checks
+
+The original Go and NGINX saved records were examined for information available
+before future measurement that could warn of poor transfer. These checks were
+declared after the original outcomes were known and remain exploratory. Smaller
+calibration dispersion does not rank the two episodes' later accuracy correctly:
+Go's four complete-response calibration cohorts span 13.274 pp and NGINX's
+span 11.750 pp, while their later MAEs are 1.802 and 5.981 pp respectively.
+Ordinary cohort agreement, sampling-width illustrations and deadline sensitivity
+checks either flag both episodes or fail to warn usefully. Same-population
+sampling uncertainty does not bound unmeasured future distribution changes.
+
+Recent 25-offer warmup CDFs give MAE 5.037 pp for Go and 9.463 pp for original
+NGINX, worse than their older complete-response references. Ordinary pooled
+updating modestly changes some Go errors but leaves the large NGINX excursion.
+The fresh power and rate studies prospectively include their own ordinary
+warmup comparisons; their respective warmup accuracy upper bounds of 8.974
+and 10.426 pp also fail the 5 pp reference. Decision time and acquisition budget
+must accompany these comparisons. No warning threshold, blend or warmup window
+is selected from the validation outcomes.
+
+Later saved-data screens retain their development status: the campaign outcomes
+were known before the candidate checks were specified. Using information recorded
+before target measurement does not make a newly chosen rule prospective.
+
+| Fixed development screen | Retained observation | Limit |
+|---|---|---|
+| Warmup CPU-duration shift | Power: three larger-error forecasts accepted; rate: all twelve accurate forecasts refused | Aggregate CPU agreement and an additive timing mapping do not assure subsequent transfer |
+| Client-stage guard, 54 NGINX cohorts | Answers 1/18 original, 12/24 power and 2/12 rate; power answers are exclusively zero-miss P1 | No useful advantage over whole-response checks; inadequate transition coverage |
+| Continuous first-100/next-200 probe | Power MAE falls 15.521 to 2.729 pp, but one agreeing probe has 31.5 pp future error | Later information can improve averages while internal agreement fails to assure persistence |
+| Five-cutoff sensitivity screen, 78 NGINX cohorts | New panel median-shift guard accepts 10/24, including three larger errors, and refuses eight within-margin cohorts | No confirmed reliability signal; exploratory cohort-maximum labels differ from primary gates |
+
+The continuous screen compares every method on the same final 200 offers,
+so its original-reference MAE differs from the 300-offer primary. Power cohort
+23 has 46% and 50% misses in two 50-offer probe halves, passing the fixed <=5 pp
+agreement check. Its 100-offer forecast is 48%, versus 79.5% in the subsequent
+200 offers. The case illustrates an observed persistence failure without
+identifying physical drift. A 100-offer continuous probe consumes roughly
+12.5–25 seconds at 8–4/s in addition to warmup, calibration and decision overhead.
+Saved body completion timestamps support the offline split; live decision and
+integrity-check timing were not qualified. P1's zero-miss cases lower the pooled
+power error and do not validate P0 reliability.
+
+In the new panel's sensitivity screen, cohort 1 has only -20.851 us warmup
+median drift and 1.875 pp implied probability change, yet 19.667 pp future error.
+Ordinary median correction lowers older power panel MAE from 18.514 to 4.930 pp
+but worsens original NGINX from 5.437 to 7.200, rate from 2.617 to 6.466 and
+new panel from 3.275 to 6.709 pp. These panel-average development scores do not
+revise any frozen block gate. All cohorts, common references, chronology and
+failure/throttle observations remain included; no threshold or favorable subset
+is selected for confirmation.
+
+No novel estimator or validated advance reliability signal emerges. This is
+a limitation of the tested observations and checks, not a refutation of
+state-conditioned prediction or conformal methods. Their additional inputs,
+feedback and distributional assumptions must be honored in any later comparison.
+
+## 16. Measurement qualification and precision/cost limits
+
+The separate worker CPU/runnable-wait observer completed both boundary probes
+and all 24 randomized overhead services: 7,890 successful offers, six paired
+on/off blocks per rate. Identity, chronology, cgroup residual and quiet carryover
+checks passed, while all six behavioral equivalence intervals exceeded their
+frozen +/-2 pp probability or +/-100 us mean-time margins. The status remains
+`observer_overhead_qualification_inconclusive`, with `qualified=false`.
+All point estimates were inside their margins and every interval contained zero;
+this establishes neither equivalence nor harmful observer effects. The observed
+0.908–1.462 ms operation time per warmup does not replace behavioral qualification.
+This is a measurement study, separate from the six scientific campaigns;
+worker-wait's predictive usefulness was never tested.
+
+Offline warmup precision/cost analysis retained all 78 NGINX calibration/warmup
+pairs without using target outcomes for its precision calculations. The new
+panel's median full 95% warmup-median interval span was 525.452 us, versus
+empirical symmetric CDF sensitivity radii 47.708/43.496 us. Exact binomial
+rank geometry assumes IID/stationarity, unverified here; location-based mapped
+ranges are not future-error intervals and do not cover shape changes or later
+drift. A conservative one-window IID DKWM illustration requires 738 offers
+for a sufficient <=5 pp bound at 95%, not a minimum sample size or power result.
+Replacing 24 target warmups by 738 offers would add 17,112 offers and 53.475
+nominal minutes. The conditional science projection grows from 35.673 to
+89.148 minutes, beyond the 45-minute cap, and violates the 120-second enclosing
+service limit at both rates even before startup/drain. Longer warmups remain held.
+
+A later execution-rate candidate specifies worker-attributed APERF/MPERF ratio
+and runtime measurements, exact identity/window boundaries and randomized
+observer-on/off comparison. This is an offline design; no hardware counter
+measurement or new observer implementation occurred. At most approximately eight
+pairs per rate fit its budget under old worker-wait service-cost observations.
+Substituting that different observer's historical variability into a 14-gate
+simultaneous-interval design gives warmup halfwidths 268.804/262.564 us, versus
+a proposed 20 us allowance. Even 100 us width-only geometry needs 32/31 pairs.
+These are zero-centered planning scenarios, not actual new-observer variability,
+power, necessary sample sizes or all-gate success probabilities. The proposed
+~0.05436% per-window clock precision goal additionally uses a hypothetical
+20 ms CPU-service scale and an unverified additive clock-to-response mapping.
+Counter counts alone do not certify that mapping or absolute window accuracy.
+
+Hold further local hardware collection with these candidates. Reopening requires
+an independently justified measurement/comparison redesign or an explicitly
+changed budget, followed by a newly frozen qualification. Measurement qualification
+would still require a separate demonstrated pre-validation-state-to-future-error
+relation, an ordinary comparator with identical information and acquisition cost,
+and fresh evaluation of a frozen rule. No scope-only collection, small repeat,
+relaxed gate or fitted selector follows from the present consolidation. The
+pending independent V31 host study retains its separate contract.
+
+## 17. Consolidated evidence and contribution boundary
+
+| Study | Deadline (ms) | Reference MAE (pp) | Comparator MAE (pp) | Frozen result |
+|---|---:|---:|---:|---|
+| Go V30 | 25 | Periodic + delay: 2.341 | Fluid busy FIFO: 73.599 | Prospective gates passed |
+| Go V31 | 10 | Queue-adjusted CDF: 1.844 | Periodic + delay: 67.340 | Prospective gates passed in observed domain |
+| NGINX original | 20.565395 | Complete-response CDF: 5.981 | No head-to-head comparator | Prospective accuracy gate not supported |
+| NGINX power confirmation | 20.565395 | Policy-matched CDF: 15.708 | Pooled policies: 24.729 | Improvement passed; accuracy failed |
+| NGINX rate transfer | 20.565395 | Rate-matched CDF: 1.194 | Fixed 5/s CDF: 1.972 | Accuracy passed; advantage not supported |
+
+This is an evidence ledger, not a cross-application or general method ranking.
+The five single-deadline campaigns above and the sixth panel campaign
+(Section 14) use the same physical host; fresh calibration and service instances
+are not new hosts. The panel uses a worst-cutoff block score, so its 6.611/4.889 pp
+results must not be read as the single-deadline MAE in this ledger. Their comparator information, traffic, applicability
+contracts and acceptance gates differ. The unusually large V30 contrast partly
+reflects its fluid comparator's per-job floor of 28.640 ms, already above the
+25 ms deadline. V31's simple retrospective response control limits the case
+for richer decomposition. Policy matching's pooled comparator intentionally
+mixes assignments, and rate matching supplies no required extra advantage over
+an ordinary shared reference. These limits accompany the positive numbers.
+
+The defensible contribution is quantitative prospective evidence of the tested
+procedures' adequacy and calibration-transfer limitations, including unfavorable
+controls. No first result, new estimator, universal boundary, identified physical
+mechanism or published-method superiority follows. Seals, advance barriers and
+retained failures strengthen credibility; reproducibility alone is not scientific
+novelty. The breadth and originality of the empirical insight remain the main
+submission risk, rather than the recorded arithmetic.
+
+## 18. Interpretation and remaining scope
 
 The evidence documents scoped differences in predictive adequacy. Average busy
 capacity supports retained long-deadline forecasts; ordinary periodic service
@@ -621,7 +994,14 @@ The subsequent stock-NGINX complete-response study did not meet its declared
 accuracy criterion (Section 11). This supplies negative evidence for that newly
 scoped application-transfer question; the broad client-completion outcome is
 shared, but calibration inputs, completion checks, domain qualification and
-comparators differ. Independent host transfer and qualified mechanism
+comparators differ. The fresh policy control improves a pooled comparison
+without sufficient accuracy; the fresh rate control gives accurate transfer
+without the required extra advantage over 5/s calibration (Sections 12–13).
+The fresh panel fails both policy accuracy gates despite zero P1 error at the
+older cutoff (Section 14). Later reliability screens and qualification/cost
+audits leave the transfer difference unexplained and further local collection
+held (Sections 15–16).
+Independent host transfer and qualified mechanism
 measurements remain subsequent scope extensions. Further within-service sweeps
 would not supply that missing hardware evidence. Consolidating both the scoped
 confirmation and the transfer limit yields an empirical contribution candidate.
@@ -640,8 +1020,11 @@ The principal comparisons use different accuracy criteria and different
 validation cohorts. V30 compares periodic service against constant-rate FIFO
 at 25 ms; V31 compares a queue-adjusted CDF against periodic+delay at
 10 ms; NGINX tests a full-response CDF without that comparator. Their errors
-cannot be pooled into a general method ranking. Secondary deadline grids,
-cohort sensitivities and saved-stage diagnoses are descriptive; they supply
+cannot be pooled into a general method ranking. The power confirmation compares
+policy matching with a mixed reference, and rate transfer compares matched with
+shared 5/s calibration, under broader all-offer contracts. The fresh five-cutoff panel has its own prospective primary contract. Older
+secondary deadline grids, cohort sensitivities and saved-stage diagnoses are
+descriptive; they supply
 neither additional primary confirmation nor a causal explanation.
 
 The targeted literature review identifies close precedents for periodic service,
@@ -650,7 +1033,16 @@ executed under a matched contract. The present evidence supports an incremental
 empirical contribution candidate; it does not establish a first result or
 superiority over published methods.
 
-## 13. Reproducibility
+The user-arranged independent V31 replication is pending; no new-host outcome
+or inspected completed package has been received. It is excluded from every
+table and conclusion here. Further contribution work needs a concrete additional
+capability, a compatible comparator with fair information/acquisition costs,
+and an independent evaluation design. A causal extension additionally requires
+measurements or interventions that identify the proposed cause. The current
+result supplies no validated advance observable, so a new guard or another
+same-settings campaign is not selected as a demonstrated contribution path.
+
+## 19. Reproducibility
 
 Frozen protocols, source/binary identities, per-offer forecasts, calibration
 records, raw all-offer outcomes and result seals are retained. Completed
@@ -666,7 +1058,16 @@ replay. Five numerical checks of empirical boundary counting, convolution,
 calibration-leakage rejection and stage-count conservation complement the
 periodic slot-oracle tests. Software checks are not empirical replicates.
 
-## 14. Conclusion
+The 11 October consolidation adds the fresh deadline-panel result, later
+development screens and measurement/precision holds to the complete power and
+rate controls. A new offline audit verifies the new primary table and
+Markdown/LaTeX derivation, replays the panel and qualification records and
+preserves all historical tables and 2,559 protected inputs. Earlier checkers
+run against their captured manuscript versions in a temporary logical workspace;
+their original source and seals remain unchanged. Compiler diagnostics are recorded for the current source.
+No new performance collection or public release accompanies this revision.
+
+## 20. Conclusion
 
 Under the tested fractional CPU quota, predictive adequacy depends on the
 selected deadline and observed traffic conditions. A periodic-budget
@@ -679,6 +1080,17 @@ meet its declared primary accuracy criterion despite successful measurement
 gates and zero recorded measurement throttling. The retrospective Go
 complete-response control further limits claims that stage decomposition or
 queue subtraction is needed for the observed 10 ms accuracy.
+
+Fresh NGINX follow-ups preserve the transfer limitation: assigned-policy matching
+improves the pooled reference but fails absolute accuracy, while later rate-matched
+calibration and ordinary 5/s calibration both transfer accurately without a
+supported incremental advantage. These outcomes do not identify a causal repair
+or an advance rule for trustworthy transfer. The fresh panel further fails
+both policy accuracy gates despite accurate prediction at an older saturated
+cutoff. Later screens, observer qualification and precision/cost audits supply
+no affordable qualified reliability method; further local hardware collection
+with these candidates stays held. Independent-host replication remains
+pending and is not included.
 
 Together these results document the usefulness and limits of selected
 established approximations in reproducible prospective tests. They support
@@ -701,3 +1113,11 @@ questions; the completed comparisons retain their original outcomes and scope.
 6. Andrew Jeffery; Chris Jensen; Richard Mortier. Reducing Tail Latencies Through Environment- and Neighbour-aware Thread Management. arXiv:2407.11582v1, 2024. [Primary source](https://arxiv.org/html/2407.11582v1).
 
 7. Capacity Calibration and Deadline Forecasts Under a Fractional CPU Quota. Retained precursor manuscript, 2026; authors and public artifact location unset. [Local manuscript](capacity_calibration_empirical.md).
+
+8. Jialin Li; Naveen Kr. Sharma; Dan R. K. Ports; Steven D. Gribble. Tales of the Tail: Hardware, OS, and Application-level Sources of Tail Latency. SoCC 2014. [Primary source](https://syslab.cs.washington.edu/papers/latency-socc14.pdf).
+
+9. Shuang Chen; Angela Jin; Christina Delimitrou; Jose F. Martinez. ReTail: Opting for Learning Simplicity to Enable QoS-Aware Power Management in the Cloud. HPCA 2022. [Primary source](https://people.csail.mit.edu/delimitrou/papers/2022.hpca.retail.pdf).
+
+10. Abigail Eisenklam et al. Uncertainty-Aware Resource Allocation for Multi-Path Programs with In-Kernel Predictions. ECRTS 2026. DOI: 10.4230/LIPIcs.ECRTS.2026.17. [Primary source](https://drops.dagstuhl.de/storage/00lipics/lipics-vol375-ecrts2026/html/LIPIcs.ECRTS.2026.17/LIPIcs.ECRTS.2026.17.html).
+
+11. Linux kernel documentation. amd-pstate CPU Performance Scaling Driver. Live documentation accessed 2026-10-10. [Primary source](https://docs.kernel.org/admin-guide/pm/amd-pstate.html).

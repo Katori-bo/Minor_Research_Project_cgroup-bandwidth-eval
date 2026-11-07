@@ -1,0 +1,61 @@
+{
+  "accessed_utc_date": "2026-10-10",
+  "new_counter_collection": false,
+  "predictive_relation_demonstrated": false,
+  "purpose": "Check accounting semantics and established feature/state prediction, not establish novelty",
+  "recorded_collector_audit": {
+    "diagnostic/nginx_power_confirmation_guard.py": {
+      "policy_fields": [
+        "related_cpus",
+        "affected_cpus",
+        "scaling_driver",
+        "scaling_governor",
+        "scaling_min_freq",
+        "scaling_max_freq",
+        "energy_performance_preference"
+      ],
+      "realized_frequency_recorded": false
+    },
+    "diagnostic/nginx_power_confirmation_study.py": {
+      "isolated_warmup_cgroup_delta": true,
+      "matched_worker_schedstat": false,
+      "sibling_pair_brackets_future_measurement": true
+    },
+    "diagnostic/nginx_prediction_study.py": {
+      "separate_monotonic_warmup_boundary": false,
+      "warmup_synchronous_before_measurement": true
+    },
+    "diagnostic/nginx_rate_transfer_study.py": {
+      "isolated_warmup_cgroup_delta": true,
+      "matched_worker_schedstat": false,
+      "sibling_pair_brackets_future_measurement": true
+    }
+  },
+  "sources": [
+    {
+      "checked": "cpu.stat usage/user/system accounting covers cgroup processes including descendants; not per-request work",
+      "title": "Control Group v2 CPU accounting",
+      "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html#cpu"
+    },
+    {
+      "checked": "Per-process CPU-running and runnable-wait counters; increments require baseline; waiting is not all off-CPU time",
+      "title": "Linux Scheduler Statistics",
+      "url": "https://docs.kernel.org/scheduler/sched-stats.html#proc-pid-schedstat"
+    },
+    {
+      "checked": "EPP is a preference; hardware selects frequency considering workload, power and thermal conditions",
+      "title": "AMD pstate active mode",
+      "url": "https://docs.kernel.org/admin-guide/pm/amd-pstate.html#active-mode"
+    },
+    {
+      "checked": "scaling_cur_freq may be requested rather than exact actual frequency; hardware current/average interfaces optional",
+      "title": "CPUFreq Policy Interface",
+      "url": "https://docs.kernel.org/admin-guide/pm/cpufreq.html#policy-interface-in-sysfs"
+    },
+    {
+      "checked": "IV.B-D feature lateness, feature selection, isolated fixed-frequency profiling; established state/feature prediction; not executed as a comparator",
+      "title": "ReTail: Opting for Learning Simplicity to Enable QoS-Aware Power Management in the Cloud",
+      "url": "https://people.csail.mit.edu/delimitrou/papers/2022.hpca.retail.pdf"
+    }
+  ]
+}

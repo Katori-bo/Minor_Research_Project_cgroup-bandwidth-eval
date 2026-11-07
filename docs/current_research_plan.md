@@ -1,5 +1,328 @@
 # Current research plan: deadline failures after worker computation
 
+**Completed findings consolidated; collection hold retained — 2026-10-11:**
+The user authorized consolidation following the bounded qualification no-go.
+The [current manuscript](../paper/deadline_resolution_extension.md), standalone
+LaTeX and supporting/reproduction documents now include the sixth prospective
+campaign's failed policy-specific deadline-panel gates, later known-outcome
+reliability screens and measurement/precision decisions. All original scientific
+verdicts, failed controls and acquisition costs remain visible. The
+[consolidation record](runtime_io_empirical_consolidation_20261011.md) and
+[new audit](../analysis/runtime_io_empirical_consolidation/20261011/) preserve the
+four preceding manuscript versions, historical tables and 2,559 protected inputs.
+Native compilation succeeds; use `python3 -B analysis/verify_empirical_consolidation.py`
+for current documents and historical-version replay. Longer-warmup, worker-wait
+and execution-rate local hardware collection remain held. The proposed clock
+observer was not measured, and no state-to-future relation or new method is
+validated. Friend-owned V31 remains pending and excluded under its separate
+contract. No new collection, settings, upload or submission. This completes
+the preceding integration recommendation; earlier next steps remain historical.
+
+**Execution-rate qualification designed; collection held — 2026-10-11:** The
+user authorized the bounded qualification definition. The
+[offline design](runtime_io_execution_rate_qualification_design_20261011.md)
+specifies task attribution/lifecycle controls, two NGINX boundary probes, a
+conditional eight-pair-per-rate on/off comparison and fourteen simultaneous
+equivalence intervals. It is not an implemented or launchable protocol. No-go
+for implementation or collection under present evidence: old-observer warmup
+SD gives conditional zero-center halfwidths 268.804/262.564 us at eight pairs,
+versus the new declared 20 us engineering allowance. Fitting that width would
+need >92% SD reduction; no such redesign is justified. Even looser 100 us
+simultaneous geometry needs 32/31 pairs versus an optimistic budget cap of eight.
+The 669-balanced-pair, 54.454-hour illustration concerns only substituted warmup
+width, not power, a minimum size, actual new-counter behavior or all-gate success.
+The clock precision goal also depends on an unvalidated CPU-service/response
+mapping. This holds the candidate without demonstrating harm or uselessness;
+no unchanged small repeat, scope-only collector or relaxed gate is selected.
+Eight numerical checks and sealed replay pass; 2,559 protected paths including
+the prior audit/review inputs and live paper verify. No hardware event, settings,
+service, predictor or manuscript changes. Further collection requires an
+independently justified precision/cost redesign or an explicitly changed budget,
+then a fresh prepared package. Longer warmups and worker-wait remain held;
+friend-owned V31 remains pending. Earlier next-step statements retain historical
+scope; empirical manuscript integration is a separate next task.
+
+**Execution-rate candidate audited — 2026-10-11:** The user requested the next
+step after holding longer warmups. The
+[read-only decision note](runtime_io_execution_rate_candidate_20261011.md) defines
+APERF/MPERF warmup/reference drift alongside worker CPU demand. This host exposes
+the events, but usable access, task attribution, boundary accuracy, precision and
+behavioral cost are untested. Upstream MSR counting is task-capable; CPU-wide
+counting must not be labelled worker-only. Task counting can incur scheduling
+updates even with two boundary reads. Generic frequency-aware prediction and
+this counter idea have prior work, including our older minimal-SHA proposal.
+The possible contribution remains improved advance reliability against a
+comparator receiving identical state, offers and cost; the warmup-to-future
+relation is an untested hypothesis. Next deliverable is an offline scope and
+precision/cost qualification design with a go/no-go decision before observer
+implementation or external collection. No predictive campaign, hardware event,
+service, setting change or manuscript edit is selected by this audit. The sealed
+package verifies 2,542 protected paths including both prior review inputs and
+the live paper. Longer warmups and worker-wait remain held; friend-owned V31
+remains pending. Earlier statements retain historical scope.
+
+**Longer-warmup collection hold confirmed by the user — 2026-10-11:** The user
+accepted the precision/cost audit's recommendation. Keep the longer-warmup
+hardware experiment on hold; no new collector, launch, repeat or manuscript
+integration is selected by this decision. Research is not generally paused.
+Before another collection proposal, a concrete candidate must address both
+within-window precision and the relation between the observed warmup state and
+later validation, with a fair comparator and acceptable measurement cost.
+Existing scientific evidence and acceptance gates remain unchanged; worker-wait
+remains held and friend-owned V31 remains pending.
+
+**Warmup precision/cost audit completed — 2026-10-11:** The authorized
+[offline assessment](runtime_io_warmup_precision_cost_assessment_20261011.md)
+retains all 78 calibration/warmup pairs and loads no target outcomes for precision.
+Nine numerical checks and sealed arithmetic replay pass. Under the stated IID
+order-statistic construction, the new campaign's median full warmup 95% interval
+span is 525.452 us versus empirical symmetric sensitivity radii 47.708 us (P0)
+and 43.496 us (P1). Median-difference intervals map to broad empirical probability
+ranges; these are not future forecast-error intervals or established IID coverage
+for the workload. The one-window IID DKWM illustration has 27.162 pp halfwidth
+at n=25 and a sufficient <=5 pp count of 738, not a minimum or power estimate.
+Replacing the latest target warmups by 738 adds 17,112 offers and 53.475 minutes
+nominal time, projecting science to 89.148 minutes conditional on unchanged other
+behavior. It violates both the 45-minute science budget and optimistic 120-second
+service feasibility at 4/s and 8/s. The conservative equal-alpha paired bound
+also has a 5.233 pp floor at fixed 800 calibration offers; this is a limitation
+of that bound, not universal impossibility. Hold longer-warmup hardware collection.
+Precision improvement alone needs a demonstrated window-to-future relation before
+it can justify another run. No new protocol, launcher, settings or manuscript
+edit is selected. Worker-wait held; friend-owned V31 pending. All prior review
+inputs, sensitivity/scope/cost packages and live paper remain unchanged.
+Earlier statements retain historical scope.
+
+**Additional deadline-sensitivity investigation completed — 2026-10-10:** The
+user requested more investigation before manuscript integration. The
+[bounded assessment](runtime_io_deadline_sensitivity_assessment_20261010.md)
+retains all 78 NGINX validation cohorts and their calibration-only five-cutoff
+panels. Eight numerical checks pass and saved replay verifies; preceding 54
+panel scores and all new 24-cohort cutoff errors reconcile. Four fixed diagnostics
+use calibration and existing 25-offer warmup; no threshold/parameter search.
+Calibration agreement admits all older power cohorts despite all 24 having
+some panel error >5 pp. Fixed +/-100 us sensitivity refuses all 78; ordinary
+warmup-CDF disagreement refuses every new panel cohort. The median-shift flag
+accepts 10/24 new cohorts, with three larger errors and eight false warnings.
+New cohort 1 has only -20.851 us warmup median drift and a 1.875 pp implied
+change but 19.667 pp future panel error. Median correction improves older power
+MAE 18.514 to 4.930 pp but worsens original, rate and new panel (3.275 to
+6.709 pp). This does not establish a robust selector or correction. Within-policy
+new median-feature ranking differs (P0 AUC .471, P1 .719), descriptive in 12
+cohorts each; no favorable subset or changed threshold is selected. The >5 pp
+cohort-maximum label is exploratory and leaves frozen primary gates unchanged.
+Close this fixed screen: these diagnostics do not justify a fresh hardware run.
+A further candidate needs a concrete independently motivated feature, measurement
+feasibility and equal-cost ordinary comparator before collection. No manuscript
+edit here; worker-wait held; friend-owned V31 pending. New and old review inputs
+(1,453/1,081 files), paper and sealed scope/cost packages remain unchanged.
+Earlier next-step statements retain historical scope.
+
+**Fresh deadline-panel study completed — 2026-10-10:** The external campaign
+and canonical raw replay complete with status `deadline_panel_accuracy_not_supported`.
+The [sealed assessment](runtime_io_nginx_deadline_panel_assessment_20261010.md)
+retains all 10,530 successful offers, six qualification services, four fresh
+calibration services and 24 validation services. Qualification took 4.65 minutes;
+science took 35.67 minutes. Source/forecast barriers, independent score arithmetic,
+owned cleanup and independent policy restoration verify. One P0/8/s cohort
+records a single throttled period / 4,703 us and remains included.
+Matched primary worst-cutoff block means are P0 6.611 pp (conditional 97.5%
+interval [1.831, 11.391]) and P1 4.889 pp ([2.620, 7.158]); neither upper bound
+meets <=5 pp. P1's point mean below 5 does not pass the uncertainty gate; gate
+failure does not prove population error above 5. Matching substantially improves
+on pooled references (secondary gains 37.500 and 33.333 pp), separate from
+absolute accuracy. At the historical deadline P1 still has zero misses forecast
+and observed, while panel cohort/cutoff error reaches 11 pp. This strengthens the
+empirical deadline-scope limitation, not a new method or causal mechanism.
+Close this bounded collection branch; no repeat, relaxed gate or selector tuning
+is selected. Next is integration of the complete result, retaining conditional
+block assumptions and all previous evidence, before another concrete hypothesis.
+The review preserves 1,453 input hashes; 1,081 prior-review inputs and scope/cost
+seals remain unchanged, including the live manuscript. No manuscript edit occurs
+in this assessment. Worker-wait remains held; friend-owned V31 remains pending.
+Earlier statements retain historical scope.
+
+**Fresh deadline-panel study prepared — 2026-10-10:** The user authorized
+preparation of the next prospective experiment. The
+[frozen protocol](runtime_io_nginx_deadline_panel_protocol_20261010.md) and external
+launcher now verify: 31 offline checks pass, including calibration-only ranks,
+all-offer failure mass, separate policy decisions, worst-cutoff scoring,
+pre-measurement forecast barriers and independent policy restoration using fake
+sysfs. No hardware collection has started. Qualification includes four smoke
+services and two full calibration-lifetime services under P0/P1, plus normal and
+owner-exit restoring fixtures. Four fresh calibration services freeze five
+cutoffs per policy before 24 validation services in six randomized blocks.
+The main method is the ordinary matched-policy CDF; pooled, P0 and equal-acquired
+warmup controls are descriptive. Per-policy primary scores take the worst cutoff
+of errors averaged across rates, with two conditional 97.5% block intervals and
+upper <=5 pp gates. Shared calibration uncertainty is not propagated; block
+normality/independence remain assumptions. This is neither every-cohort/rate nor
+all-deadline accuracy. Total 10,530 offers, <=10+45 minutes plus terminal/preflight.
+The preparation and review are sealed under
+`analysis/runtime_io_nginx_deadline_panel/generation-01/`; no retries or replacement.
+The previous review's 1,081 inputs and sealed scope/cost packages remain unchanged.
+Manuscript unchanged; worker-wait held; friend-owned V31 pending. Earlier
+statements retain historical scope.
+
+**Additional deadline-scope experiment complete — 2026-10-10:** The user
+requested more experimentation before another manuscript update. A bounded
+[offline experiment](runtime_io_deadline_scope_assessment_20261010.md) retains all
+54 NGINX cohorts and compares the unchanged endpoint with complete empirical
+CDFs and calibration-only deadline panels. Primary scores reconcile; six tests
+and saved replay pass. P1 matched-policy forecasts have zero error at the
+historical cutoff but mean empirical CDF discrepancy 23.892 pp and panel MAE
+14.372 pp. P1 cohort 21 has 46 pp error at its calibration median cutoff despite
+zero error at the historical deadline. Rate matching's original MAE remains
+1.194 pp; panel MAE 2.618 pp is essentially ordinary 5/s's 2.617 pp. These known,
+finite-sample results support a scope question, not causality, new-method novelty
+or latent-distribution guarantees. The next fresh candidate is a prospectively
+declared multi-deadline calibration-transfer study, with appropriate sample/cost
+and per-policy scoring, requiring its own frozen package. No fresh launcher,
+traffic or manuscript edit follows this replay. Worker-wait remains held;
+friend-owned V31 remains pending. Earlier statements retain historical scope.
+
+**Worker-wait precision/cost audit complete — 2026-10-10:** The authorized
+[offline planning assessment](runtime_io_worker_wait_precision_cost_assessment_20261010.md)
+retains every pair and the inconclusive frozen qualification. Warmup variability
+dominates: a zero-effect width-only balanced illustration needs 30 fresh pairs
+per rate (~2.45 h); a conservative sufficient >=80% normal-model bound for all
+six interval gates uses 102 per rate (~8.29 h). If pilot means persist, unequal
+139/804 pairs project ~30.78 h. These are conditional development scenarios,
+not minimum necessary sample sizes, actual power or qualification guarantees.
+Future noise and long-run stationarity are unestablished; six pairs estimate SD
+weakly. Six numerical checks and saved arithmetic replay pass. Hold unchanged
+observer collection; no small repeat is justified by this audit. Revisit only
+for a concrete independently justified measurement improvement or larger research
+budget with its own fresh qualification design. No experiment, relaxed margin,
+predictor or manuscript edit is selected. Friend-owned V31 remains pending.
+Earlier statements below retain their historical scope.
+
+**Worker-wait qualification completed — 2026-10-10:** The external run and
+canonical raw replay complete successfully: both boundary probes and all 24
+overhead services, all 7,890 offers successful. The
+[completed assessment](runtime_io_worker_wait_qualification_assessment_20261010.md)
+records `observer_overhead_qualification_inconclusive`, `qualified=false`.
+Operational counter boundaries pass; all six behavioral equivalence intervals
+extend beyond their frozen margins. Two throttled cohorts remain included.
+Small point estimates and low observer wall time do not establish equivalence;
+the result also does not demonstrate harm. Close this bounded run and hold
+predictive discovery. Any revisit first needs a bounded offline precision/cost
+design review and a separately frozen fresh qualification if justified. No repeat,
+margin change, predictor fit or new collection is selected. Predictive usefulness
+remains untested; manuscript and friend-owned V31 remain separate. Preparation
+and earlier next-step statements below retain their historical scope.
+
+**Worker-wait qualification prepared — 2026-10-10:** The
+[frozen operational protocol](runtime_io_worker_wait_qualification_protocol_20261010.md)
+and separate external-terminal launcher are implemented and sealed. Two boundary
+services precede six randomized paired observer-on/off blocks at each of 4/s and
+8/s: 7,890 offers, <=10+45 minutes. Counter scope/carryover and observer cost have
+separate fixed checks; six conditional equivalence intervals must lie inside
+the declared +/-2 pp probability and +/-100 us mean-time margins. Power and
+scheduler settings remain unchanged. Twenty-six offline checks pass, including
+fake-service collection ordering and absence of reads in the off arm. Preparation
+verifies; hardware qualification has not started. The launcher ends at qualification
+with no automatic discovery, retry or predictor fitting. Earlier candidate,
+scientific and manuscript records remain preserved; friend-owned V31 is pending.
+
+**Worker-wait candidate developed — 2026-10-10:** The
+[measurement proposal](runtime_io_worker_wait_candidate_20261010.md) defines matched
+25-offer worker CPU/runnable-wait increments and equal-information ordinary checks.
+Nine offline tests pass. Local CONFIG_SCHED_INFO=y and nonzero per-task counters
+with sched_schedstats=0 correct the earlier inference that this switch must be
+enabled. No setting change is selected. Hardware interval accuracy and observer
+cost need external qualification before discovery. No live collector, fitted
+guard or confirmation campaign is prepared. Earlier sealed capability notes retain
+historical text, superseded by this correction. The manuscript and friend-owned
+V31 remain separate.
+
+**Advance-signal search — 2026-10-10:** The additional
+[response-stage screen](runtime_io_stage_signal_assessment_20261010.md) is complete
+on all 54 saved NGINX cohorts. It supplies no useful selector: original coverage
+1/18, only P1 answers in power, and rate coverage 2/12 with ten false warnings.
+Earlier timing, CPU and continuous-probe failures remain retained. No new traffic
+or manuscript change follows. The next hypothesis is worker runnable-wait drift
+conditional on CPU demand; matched worker counters are missing here. Source,
+capability and cost feasibility must precede discovery collection. This is an
+unvalidated ordinary state feature, not a method contribution. Friend-owned
+V31 remains pending. Earlier next steps below retain historical scope.
+
+The [read-only worker-wait capability follow-up](runtime_io_worker_wait_feasibility_20261010.md)
+finds scheduler statistics disabled in the current session. No setting changed.
+Using this candidate would require explicit restoration and overhead qualification;
+its state-to-future relation remains untested. The capability check is not evidence
+of historical counter state or a reason to launch a confirmation experiment.
+
+**Manuscript integration complete — 2026-10-10:** The existing
+[manuscript](../paper/deadline_resolution_extension.md) and standalone LaTeX
+now include the complete power/rate follow-ups, exploratory reliability screens
+and five-study ledger. Abstract, contribution, related work, discussion and
+supporting/reproduction documents are updated. Native compilation passed; a
+[new integration package](../analysis/runtime_io_deadline_transfer_integration/20261010/)
+checks current documents and preserves prior manuscript/scientific evidence.
+Current verification is `python3 -B analysis/verify_deadline_transfer_integration.py`;
+older checkers retain their historical document contracts. Next assess further
+contribution through the [concrete capability gate](runtime_io_post_integration_contribution_gate_20261010.md),
+before choosing another experiment. No new signal, method gap or collection
+is established here. Friend-owned V31 remains pending and excluded from the
+manuscript. Prior stop/hold decisions remain in force; earlier steps are historical.
+
+**Transfer consolidation complete — 2026-10-10:** The
+[five-study evidence ledger and closest-method comparison](runtime_io_transfer_consolidation_20261010.md)
+are complete, with a primary-source register, numerical replay and preserved
+assessment package. The defensible output is a scoped empirical study of the
+tested forecasts and transfer limitations. Periodic modeling, load profiling,
+power-aware prediction and uncertainty-aware allocation are established; no
+new-method gap or advance reliability signal has emerged. The
+[contribution note](../paper/deadline_transfer_contribution_note.md) gives
+manuscript integration wording. Next integrate the complete follow-ups into
+the empirical account while preserving historical manuscript/audit snapshots.
+No new collection is selected: reopen only for a concrete additional capability,
+fair compatible comparator and independent evaluation contract. The friend's
+V31 remains pending and will be verified separately. Prior stop/hold gates
+remain in force; earlier next-step statements below are historical.
+
+**Rate-transfer result complete — 2026-10-10:** Qualification and all six
+validation blocks replay successfully. Rate-matched CDF accuracy passes
+(MAE 1.194 pp, conditional upper bound 1.581 pp); ordinary 5/s accuracy also
+passes (MAE 1.972 pp, upper bound 2.907 pp). The matched gain of 0.778 pp,
+interval [-0.375, 1.931] pp, fails the frozen advantage criterion. Both throttled
+cohorts remain included. See the [sealed assessment](../analysis/runtime_io_nginx_rate_transfer_review/20261010-generation01/report.md)
+and [paper addendum](../paper/nginx_rate_transfer_addendum.md). Close the bounded
+rate-matching branch. Carry both this accurate-transfer episode and the earlier
+power-confirmation failure into the empirical argument; rate matching has not
+been shown to repair the historical failure. Next consolidate the evidence and
+assess the paper's scoped contribution before proposing another experiment.
+No automatic repeat, new diagnostic or method novelty is established. Independent
+V31 remains with the friend, pending verified return. Earlier next steps below
+are historical; prior stop/hold gates remain in force.
+
+**Rate-matched study prepared — 2026-10-10:** The user authorized the next
+ordinary calibration comparison. Its [frozen protocol](runtime_io_nginx_rate_transfer_protocol_20261010.md)
+and separately named collector/launcher are implemented; source, baseline and
+fresh schedule seals verify and 21 software checks pass. P0 stays fixed with
+read-only boundary checks. Separate qualification includes the full 400-offer
+4/s lifetime case before six fresh calibration and twelve validation cohorts.
+The scientific budget is 6,450 offers and 45 minutes, plus qualification <=10
+minutes. Hardware qualification/collection have not started in this chat;
+run the normal-user external launcher with Codex closed. Accuracy and
+incremental advantage are assessed separately, without retries. Prior power
+results remain sealed and their branch closed; friend's V31 result is pending.
+
+**Latest checkpoint — 2026-10-10:** The
+[power-confirmation result and next research checkpoint](runtime_io_research_checkpoint_20261010.md)
+are recorded. The fresh study completed all six blocks: policy matching
+improved pooled forecast MAE by 9.021 pp, but matched MAE 15.708 pp and upper
+bound 18.721 pp failed the <=5 pp accuracy criterion. No scientific-phase
+throttling occurred. Close the policy-intervention branch and retain the
+[paper addendum](../paper/nginx_power_confirmation_addendum.md). The user's
+friend owns the independent V31 replication; its verified result remains
+pending and will be incorporated separately on return. The next candidate
+is [rate-matched transfer across fresh instances](runtime_io_rate_matched_transfer_candidate_20261010.md),
+an ordinary empirical control requiring its own decision and frozen package;
+no new campaign or new-method novelty is established. Prior custom-method
+stop/hold decisions remain in force. Earlier active statements below are historical.
+
 **Dynamic quota-update gate complete — 2026-10-08:** The
 [bounded offline replay](runtime_io_quota_update_replay_assessment_20261008.md)
 and independent checks are complete. A phase-sensitive conditional CPU effect

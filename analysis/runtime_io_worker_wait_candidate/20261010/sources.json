@@ -1,0 +1,35 @@
+{
+  "accounting_qualified": false,
+  "capability_inference_correction": "sched_schedstats=0 alone did not establish per-task counters unavailable",
+  "date": "2026-10-10",
+  "exact_running_kernel_source_match": false,
+  "historical_nginx_worker_counter_data_present": false,
+  "online_collector_implemented": false,
+  "signal_validated": false,
+  "sources": [
+    {
+      "checked": "proc_pid_schedstat uses sum_exec_runtime, sched_info.run_delay and pcount under CONFIG_SCHED_INFO",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/master/fs/proc/base.c"
+    },
+    {
+      "checked": "sched_info_on returns CONFIG_SCHED_INFO availability; distinct from additional sched_schedstats statistics",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/master/include/linux/sched/stat.h"
+    },
+    {
+      "checked": "Same CONFIG_SCHED_INFO distinction in versioned source",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.12/include/linux/sched/stat.h"
+    },
+    {
+      "checked": "Three per-task fields running nanoseconds, runqueue wait nanoseconds, scheduling count",
+      "url": "https://docs.kernel.org/scheduler/sched-stats.html#proc-pid-schedstat"
+    },
+    {
+      "checked": "run_delay accumulates on scheduler arrival/dequeue; pending intervals are not automatically fully represented at an arbitrary read",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/master/kernel/sched/stats.h"
+    },
+    {
+      "checked": "Switch governs additional scheduler statistics and incurs overhead when enabled; switch remains unchanged",
+      "url": "https://www.kernel.org/doc/html/latest/admin-guide/sysctl/kernel.html#sched-schedstats"
+    }
+  ]
+}

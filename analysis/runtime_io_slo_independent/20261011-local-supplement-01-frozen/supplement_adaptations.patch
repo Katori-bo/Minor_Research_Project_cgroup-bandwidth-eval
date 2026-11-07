@@ -1,0 +1,144 @@
+--- v6/runtime/setup.py
++++ supplement/runtime/setup.py
+@@ -14,7 +14,9 @@
+ import common as c
+ 
+ 
+-def setup(root):
++def setup(root,amendment_accepted=False):
++    from local_supplement import accept
++    accept(root,amendment_accepted)
+     package=c.verify_package(root);host=package['host']['id'];started=time.monotonic_ns()
+     state=Path(root)/'runs'/host/'setup'
+     c.require(not state.exists(),'preserve setup attempt; no automatic resume/overwrite')
+@@ -47,7 +49,7 @@
+ 
+ if __name__=='__main__':
+     p=argparse.ArgumentParser(description=__doc__);p.add_argument('command',choices=['verify-package','check','setup'])
+-    args=p.parse_args()
++    p.add_argument('--amendment-accepted',action='store_true');args=p.parse_args()
+     if args.command=='verify-package':c.verify_package(ROOT);print('Portable package verifies; runtime qualification and allocation confirmation remain pending.')
+     elif args.command=='check':print(json.dumps(c.check_host(ROOT),indent=2))
+-    else:setup(ROOT)
++    else:setup(ROOT,args.amendment_accepted)
+--- v6/runtime/supervisor.py
++++ supplement/runtime/supervisor.py
+@@ -103,6 +103,13 @@
+     package=c.verify_package(root);plan=c.read(Path(root)/'scientific/plan.json');host=package['host']['id']
+     c.require(allocation_confirmed,'host allocation is unconfirmed; external collection requires --allocation-confirmed')
+     c.require(app not in package.get('consumed_allocations',{}),'allocation already consumed in preserved source package; no retry')
++    if 'local_supplement' in package:
++        receipt=Path(root)/'runs'/host/'amendment_acceptance.json'
++        c.require(receipt.exists(),'amendment acceptance must precede campaign admission')
++        accepted=c.read(receipt)
++        c.require(accepted.get('accepted') is True and accepted.get('plan_sha256')==c.sha(Path(root)/'scientific/plan.json')
++                  and accepted.get('package_seal_sha256')==c.sha(Path(root)/'runtime_seal.json'),
++                  'amendment acceptance identity differs')
+     value=allocation(plan,host,app)
+     c.require(app in ('Go','NGINX'),'foreign application')
+     parent=Path(root)/'runs'/host;parent.mkdir(parents=True,exist_ok=True)
+@@ -115,7 +122,9 @@
+     directory.mkdir();return directory,value
+ 
+ 
+-def close_unavailable(root,app,reason,allocation_confirmed=False):
++def close_unavailable(root,app,reason,allocation_confirmed=False,amendment_accepted=False):
++    from local_supplement import accept
++    accept(root,amendment_accepted)
+     c.require(reason and reason.strip(),'explicit unavailability reason required')
+     root=Path(root);directory,alloc=admit(root,app,allocation_confirmed)
+     c.write(directory/'allocation.json',alloc)
+@@ -172,7 +181,9 @@
+     c.write(directory/'observer.json',dict(path=str(audit),sha256=c.sha(audit),review=result))
+ 
+ 
+-def run(root,app,allocation_confirmed=False):
++def run(root,app,allocation_confirmed=False,amendment_accepted=False):
++    from local_supplement import accept
++    accept(root,amendment_accepted)
+     root=Path(root);package=c.verify_package(root)
+     from v31_common import require_desktop_absent
+     require_desktop_absent()
+@@ -235,10 +246,10 @@
+     p=argparse.ArgumentParser(description=__doc__);p.add_argument('command',choices=['run','watchdog','close-unavailable'])
+     p.add_argument('--application',choices=['Go','NGINX']);p.add_argument('--directory',type=Path)
+     p.add_argument('--reason')
+-    p.add_argument('--allocation-confirmed',action='store_true');args=p.parse_args()
++    p.add_argument('--allocation-confirmed',action='store_true');p.add_argument('--amendment-accepted',action='store_true');args=p.parse_args()
+     if args.command=='watchdog':watchdog(args.directory)
+-    elif args.command=='close-unavailable':close_unavailable(root,args.application,args.reason,args.allocation_confirmed)
+-    else:run(root,args.application,args.allocation_confirmed)
++    elif args.command=='close-unavailable':close_unavailable(root,args.application,args.reason,args.allocation_confirmed,args.amendment_accepted)
++    else:run(root,args.application,args.allocation_confirmed,args.amendment_accepted)
+ 
+ 
+ if __name__=='__main__':main()
+--- v6/slo/report.py
++++ supplement/slo/report.py
+@@ -61,7 +61,8 @@
+         next(c for c in r['cells'] if c['label']=='q/39/40')['deadline_ns'] is not None and
+         next(c for c in r['cells'] if c['label']=='q/39/40')['methods']['reference']['score']
+             ['positive_slack_small_error_false_assurance']]
+-    return dict(planned_windows=72,windows=all_windows,tables=output,
++    e.require(len(all_windows)==plan['planned_target_windows'],'planned window denominator differs')
++    return dict(planned_windows=plan['planned_target_windows'],windows=all_windows,tables=output,
+         primary_event_windows=[dict(campaign_id=r['campaign_id'],window_id=r['window_id']) for r in primary],
+         independent_hardware_event_observed=any(campaigns[r['campaign_id']]['host']=='host02' for r in primary),
+         missing_windows_assumed_safe=False,population_risk_certified=False)
+--- v6/runtime/assemble_returns.py
++++ supplement/runtime/assemble_returns.py
+@@ -26,7 +26,7 @@
+ 
+ 
+ def assemble(roots):
+-    r.require(len(roots)==2,'the two frozen host packages are required')
++    r.require(len(roots) in (1,2),'declared study host package count required')
+     hosts={};plan=None;records={};closed=[];cost=[];bound=sum_elapsed=0
+     for root in map(Path,roots):
+         package=r.verify_package(root);host=package['host']['id']
+@@ -94,7 +94,7 @@
+                 independently_parsed_acquisitions=acquisition_cost.acquired(directory),
+                 preparation_raw_snapshot_is_subset_not_additive=True,
+                 raw_outcomes_retained=True,partial_cost_is_not_zero=True))
+-    r.require(set(hosts)=={'host01','host02'} and bound==30600 and len(closed)==4,'fixed study allocation inventory differs')
++    r.require(set(hosts)=={x['host'] for x in plan['campaigns']} and bound==plan['budget']['total_cap_sec'] and len(closed)==len(plan['campaigns']),'fixed study allocation inventory differs')
+     result=reporting.report(plan,records)
+     available=sum(row['status']=='primary_domain' and next(cell for cell in row['cells'] if cell['label']=='q/39/40')['deadline_ns'] is not None
+                   for row in result['windows'] if row['status']!='unavailable')
+@@ -105,6 +105,14 @@
+         allocated_cap_sec=bound,observed_campaign_elapsed_sec=sum_elapsed,
+         all_campaigns_within_hard_cap=all(x['summary']['within_hard_cap'] for x in closed),
+         primary_available_windows=available,primary_verdict=verdict,population_guarantee=False)
++    result['study_id']=plan['id']
++    result['primary_results_pooled_with_parent']=False
++    if plan.get('amendment'):
++        result['interpretation']='fresh same-host supplemental evaluation; no independent hardware claim'
++        for root in map(Path,roots):
++            if r.verify_package(root).get('local_supplement'):
++                from local_supplement import original_ledger
++                result['preserved_original_attempt_ledger']=original_ledger(root)
+     return result
+ 
+ 
+--- v6/runtime/test_runtime.py
++++ supplement/runtime/test_runtime.py
+@@ -169,8 +169,9 @@
+ class Lifecycle(unittest.TestCase):
+     def setUp(self):
+         self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
+-        self.root=Path(self.temp.name);self.plan=r.read(ROOT/'scientific/plan.json')
++        self.root=Path(self.temp.name);self.plan=r.read(ROOT/'original_scientific/plan.json')
+         self.package=r.read(ROOT/'runtime_package.json')
++        self.package.pop('local_supplement',None)
+         self.package.pop('consumed_allocations',None)  # Fresh synthetic allocation fixtures.
+ 
+     def test_actual_audit_writer_and_reader_accept_supervisor_route(self):
+@@ -341,7 +342,7 @@
+         with self.assertRaises(ValueError):r.placement(host,topo,set(range(12)))
+ 
+     def test_retained_intel_control_core_separation_is_preserved(self):
+-        host=next(x for x in r.read(ROOT/'scientific/plan.json')['hosts'] if x['id']=='host02')
++        host=next(x for x in r.read(ROOT/'original_scientific/plan.json')['hosts'] if x['id']=='host02')
+         topo={str(i):dict(core=str(i%4),package='0',siblings=str(i%4)+','+str(i%4+4)) for i in range(8)}
+         r.placement(host,topo,set(range(8)))
+         topo['1']['core']='0'

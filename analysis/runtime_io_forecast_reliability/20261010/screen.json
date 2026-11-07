@@ -1,0 +1,897 @@
+{
+  "campaigns": [
+    {
+      "baselines": {
+        "always_forecast": {
+          "accepted_cohorts": 18,
+          "accepted_errors_above_tolerance": 1,
+          "accepted_mae_pp": 1.802498670919723,
+          "answer_coverage_pct": 100.0,
+          "descriptive_bad_accepted_fraction": 0.05555555555555555,
+          "maximum_accepted_error_pp": 5.350358143880413,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        },
+        "bounded_shift_100us_illustration": {
+          "accepted_cohorts": 0,
+          "accepted_errors_above_tolerance": 0,
+          "accepted_mae_pp": null,
+          "answer_coverage_pct": 0.0,
+          "descriptive_bad_accepted_fraction": null,
+          "maximum_accepted_error_pp": null,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        },
+        "calibration_zero_throttle_only": {
+          "accepted_cohorts": 18,
+          "accepted_errors_above_tolerance": 1,
+          "accepted_mae_pp": 1.802498670919723,
+          "answer_coverage_pct": 100.0,
+          "descriptive_bad_accepted_fraction": 0.05555555555555555,
+          "maximum_accepted_error_pp": 5.350358143880413,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        },
+        "chronological_calibration_check": {
+          "accepted_cohorts": 0,
+          "accepted_errors_above_tolerance": 0,
+          "accepted_mae_pp": null,
+          "answer_coverage_pct": 0.0,
+          "descriptive_bad_accepted_fraction": null,
+          "maximum_accepted_error_pp": null,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        },
+        "cohort_agreement": {
+          "accepted_cohorts": 0,
+          "accepted_errors_above_tolerance": 0,
+          "accepted_mae_pp": null,
+          "answer_coverage_pct": 0.0,
+          "descriptive_bad_accepted_fraction": null,
+          "maximum_accepted_error_pp": null,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        },
+        "descriptive_cohort_t_precision": {
+          "accepted_cohorts": 0,
+          "accepted_errors_above_tolerance": 0,
+          "accepted_mae_pp": null,
+          "answer_coverage_pct": 0.0,
+          "descriptive_bad_accepted_fraction": null,
+          "maximum_accepted_error_pp": null,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        },
+        "iid_dkw_precision_illustration": {
+          "accepted_cohorts": 0,
+          "accepted_errors_above_tolerance": 0,
+          "accepted_mae_pp": null,
+          "answer_coverage_pct": 0.0,
+          "descriptive_bad_accepted_fraction": null,
+          "maximum_accepted_error_pp": null,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        },
+        "timing_rate_support": {
+          "accepted_cohorts": 6,
+          "accepted_errors_above_tolerance": 0,
+          "accepted_mae_pp": 1.7925706771860608,
+          "answer_coverage_pct": 33.333333333333336,
+          "descriptive_bad_accepted_fraction": 0.0,
+          "maximum_accepted_error_pp": 3.2110453648915183,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        }
+      },
+      "blocks": [
+        {
+          "block": 1,
+          "mae_pp": 2.08329322499363
+        },
+        {
+          "block": 2,
+          "mae_pp": 1.9271538178420684
+        },
+        {
+          "block": 3,
+          "mae_pp": 2.6154569676836914
+        },
+        {
+          "block": 4,
+          "mae_pp": 2.9147658459399395
+        },
+        {
+          "block": 5,
+          "mae_pp": 0.7706935439728966
+        },
+        {
+          "block": 6,
+          "mae_pp": 0.503628625086113
+        }
+      ],
+      "calibration": {
+        "calibration_cohorts": [
+          {
+            "median_ms": 10.267683,
+            "miss_pct": 70.79646017699115,
+            "name": "v31_cal_b1_steady15",
+            "rate_rps": 3.75,
+            "recorded_throttle_periods": 0,
+            "samples": 113
+          },
+          {
+            "median_ms": 10.193935,
+            "miss_pct": 69.33333333333333,
+            "name": "v31_cal_b1_steady30",
+            "rate_rps": 7.5,
+            "recorded_throttle_periods": 0,
+            "samples": 225
+          },
+          {
+            "median_ms": 10.226163,
+            "miss_pct": 68.88888888888889,
+            "name": "v31_cal_b2_steady30",
+            "rate_rps": 7.5,
+            "recorded_throttle_periods": 0,
+            "samples": 225
+          },
+          {
+            "median_ms": 10.18198,
+            "miss_pct": 57.52212389380531,
+            "name": "v31_cal_b2_steady15",
+            "rate_rps": 3.75,
+            "recorded_throttle_periods": 0,
+            "samples": 113
+          }
+        ],
+        "calibration_no_recorded_throttle": true,
+        "chronological_calibration_folds": [
+          {
+            "deadline_ns": 10000000,
+            "error_pp": 1.4631268436578182,
+            "observed_pct": 69.33333333333333,
+            "predicted_pct": 70.79646017699115,
+            "target_cohort": "v31_cal_b1_steady30",
+            "training_cohorts": 1
+          },
+          {
+            "deadline_ns": 10000000,
+            "error_pp": 0.9335963182117126,
+            "observed_pct": 68.88888888888889,
+            "predicted_pct": 69.8224852071006,
+            "target_cohort": "v31_cal_b2_steady30",
+            "training_cohorts": 2
+          },
+          {
+            "deadline_ns": 10000000,
+            "error_pp": 11.9272544365677,
+            "observed_pct": 57.52212389380531,
+            "predicted_pct": 69.44937833037301,
+            "target_cohort": "v31_cal_b2_steady15",
+            "training_cohorts": 3
+          }
+        ],
+        "cohort_range_pp": 13.27433628318584,
+        "deadline_ns": 10000000,
+        "deadline_stress": [
+          {
+            "earlier_deadline_probability_pct": 69.5266272189349,
+            "later_deadline_probability_pct": 65.53254437869822,
+            "maximum_one_sided_change_pp": 2.071005917159752,
+            "offset_ns": 50000
+          },
+          {
+            "earlier_deadline_probability_pct": 71.89349112426035,
+            "later_deadline_probability_pct": 61.53846153846154,
+            "maximum_one_sided_change_pp": 5.917159763313613,
+            "offset_ns": 100000
+          },
+          {
+            "earlier_deadline_probability_pct": 75.14792899408285,
+            "later_deadline_probability_pct": 46.15384615384615,
+            "maximum_one_sided_change_pp": 21.301775147929,
+            "offset_ns": 250000
+          }
+        ],
+        "descriptive_cohort_t_halfwidth_pp": 9.75387688314288,
+        "endpoint": "scheduled offer through client completion after body consumption/close",
+        "equal_cohort_mean_pct": 66.63520157325466,
+        "iid_dkw_halfwidth_pp": 5.223467368233152,
+        "legitimate_future_risk_certificate": false,
+        "max_cohort_deviation_from_pooled_pp": 9.933497407969845,
+        "maximum_chronological_calibration_error_pp": 11.9272544365677,
+        "name": "Go V31",
+        "pooled_forecast_pct": 67.45562130177515,
+        "samples": 676,
+        "timing_rate_support_rps": [
+          3.75,
+          7.5
+        ]
+      },
+      "calibration_prefixes": [
+        {
+          "accepted_cohorts": 18,
+          "accepted_errors_above_tolerance": 3,
+          "accepted_mae_pp": 3.308864926238002,
+          "answer_coverage_pct": 100.0,
+          "calibration_cohorts": 1,
+          "descriptive_bad_accepted_fraction": 0.16666666666666666,
+          "maximum_accepted_error_pp": 8.691197019096407,
+          "predicted_miss_pct": 70.79646017699115,
+          "risk_certificate": false,
+          "samples": 113,
+          "total_cohorts": 18
+        },
+        {
+          "accepted_cohorts": 18,
+          "accepted_errors_above_tolerance": 2,
+          "accepted_mae_pp": 2.558566564639443,
+          "answer_coverage_pct": 100.0,
+          "calibration_cohorts": 2,
+          "descriptive_bad_accepted_fraction": 0.1111111111111111,
+          "maximum_accepted_error_pp": 7.7172220492058585,
+          "predicted_miss_pct": 69.8224852071006,
+          "risk_certificate": false,
+          "samples": 338,
+          "total_cohorts": 18
+        },
+        {
+          "accepted_cohorts": 18,
+          "accepted_errors_above_tolerance": 2,
+          "accepted_mae_pp": 2.3512849664574484,
+          "answer_coverage_pct": 100.0,
+          "calibration_cohorts": 3,
+          "descriptive_bad_accepted_fraction": 0.1111111111111111,
+          "maximum_accepted_error_pp": 7.3441151724782685,
+          "predicted_miss_pct": 69.44937833037301,
+          "risk_certificate": false,
+          "samples": 563,
+          "total_cohorts": 18
+        },
+        {
+          "accepted_cohorts": 18,
+          "accepted_errors_above_tolerance": 1,
+          "accepted_mae_pp": 1.802498670919723,
+          "answer_coverage_pct": 100.0,
+          "calibration_cohorts": 4,
+          "descriptive_bad_accepted_fraction": 0.05555555555555555,
+          "maximum_accepted_error_pp": 5.350358143880413,
+          "predicted_miss_pct": 67.45562130177515,
+          "risk_certificate": false,
+          "samples": 676,
+          "total_cohorts": 18
+        }
+      ],
+      "profiles": [
+        {
+          "mae_pp": 1.7925706771860608,
+          "profile": "A"
+        },
+        {
+          "mae_pp": 1.0858585858585859,
+          "profile": "B"
+        },
+        {
+          "mae_pp": 2.5290667497145223,
+          "profile": "C"
+        }
+      ],
+      "validation": [
+        {
+          "block": 1,
+          "error_pp": 1.1222879684418245,
+          "name": "v31_b1_A",
+          "observed_miss_pct": 66.33333333333333,
+          "offers": 300,
+          "profile": "A",
+          "rate_rps": 5
+        },
+        {
+          "block": 1,
+          "error_pp": 2.8474090012551443,
+          "name": "v31_b1_B",
+          "observed_miss_pct": 70.3030303030303,
+          "offers": 660,
+          "profile": "B",
+          "rate_rps": 11
+        },
+        {
+          "block": 1,
+          "error_pp": 2.28018270528392,
+          "name": "v31_b1_C",
+          "observed_miss_pct": 65.17543859649123,
+          "offers": 1140,
+          "profile": "C",
+          "rate_rps": 19
+        },
+        {
+          "block": 2,
+          "error_pp": 2.8777120315581755,
+          "name": "v31_b2_A",
+          "observed_miss_pct": 70.33333333333333,
+          "offers": 300,
+          "profile": "A",
+          "rate_rps": 5
+        },
+        {
+          "block": 2,
+          "error_pp": 1.9383180921642378,
+          "name": "v31_b2_B",
+          "observed_miss_pct": 69.39393939393939,
+          "offers": 660,
+          "profile": "B",
+          "rate_rps": 11
+        },
+        {
+          "block": 2,
+          "error_pp": 0.965431329803792,
+          "name": "v31_b2_C",
+          "observed_miss_pct": 68.42105263157895,
+          "offers": 1140,
+          "profile": "C",
+          "rate_rps": 19
+        },
+        {
+          "block": 3,
+          "error_pp": 2.544378698224847,
+          "name": "v31_b3_A",
+          "observed_miss_pct": 70.0,
+          "offers": 300,
+          "profile": "A",
+          "rate_rps": 5
+        },
+        {
+          "block": 3,
+          "error_pp": 1.0919849381387934,
+          "name": "v31_b3_B",
+          "observed_miss_pct": 66.36363636363636,
+          "offers": 660,
+          "profile": "B",
+          "rate_rps": 11
+        },
+        {
+          "block": 3,
+          "error_pp": 4.210007266687434,
+          "name": "v31_b3_C",
+          "observed_miss_pct": 63.24561403508772,
+          "offers": 1140,
+          "profile": "C",
+          "rate_rps": 19
+        },
+        {
+          "block": 4,
+          "error_pp": 3.2110453648915183,
+          "name": "v31_b4_A",
+          "observed_miss_pct": 70.66666666666667,
+          "offers": 300,
+          "profile": "A",
+          "rate_rps": 5
+        },
+        {
+          "block": 4,
+          "error_pp": 0.18289402904788687,
+          "name": "v31_b4_B",
+          "observed_miss_pct": 67.27272727272727,
+          "offers": 660,
+          "profile": "B",
+          "rate_rps": 11
+        },
+        {
+          "block": 4,
+          "error_pp": 5.350358143880413,
+          "name": "v31_b4_C",
+          "observed_miss_pct": 62.10526315789474,
+          "offers": 1140,
+          "profile": "C",
+          "rate_rps": 19
+        },
+        {
+          "block": 5,
+          "error_pp": 0.7889546351084817,
+          "name": "v31_b5_A",
+          "observed_miss_pct": 66.66666666666667,
+          "offers": 300,
+          "profile": "A",
+          "rate_rps": 5
+        },
+        {
+          "block": 5,
+          "error_pp": 0.03137887753273105,
+          "name": "v31_b5_B",
+          "observed_miss_pct": 67.42424242424242,
+          "offers": 660,
+          "profile": "B",
+          "rate_rps": 11
+        },
+        {
+          "block": 5,
+          "error_pp": 1.491747119277477,
+          "name": "v31_b5_C",
+          "observed_miss_pct": 68.94736842105263,
+          "offers": 1140,
+          "profile": "C",
+          "rate_rps": 19
+        },
+        {
+          "block": 6,
+          "error_pp": 0.21104536489151826,
+          "name": "v31_b6_A",
+          "observed_miss_pct": 67.66666666666667,
+          "offers": 300,
+          "profile": "A",
+          "rate_rps": 5
+        },
+        {
+          "block": 6,
+          "error_pp": 0.4231665770127222,
+          "name": "v31_b6_B",
+          "observed_miss_pct": 67.87878787878788,
+          "offers": 660,
+          "profile": "B",
+          "rate_rps": 11
+        },
+        {
+          "block": 6,
+          "error_pp": 0.8766739333540983,
+          "name": "v31_b6_C",
+          "observed_miss_pct": 66.57894736842105,
+          "offers": 1140,
+          "profile": "C",
+          "rate_rps": 19
+        }
+      ]
+    },
+    {
+      "baselines": {
+        "always_forecast": {
+          "accepted_cohorts": 18,
+          "accepted_errors_above_tolerance": 7,
+          "accepted_mae_pp": 5.981481481481481,
+          "answer_coverage_pct": 100.0,
+          "descriptive_bad_accepted_fraction": 0.3888888888888889,
+          "maximum_accepted_error_pp": 38.33333333333333,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        },
+        "bounded_shift_100us_illustration": {
+          "accepted_cohorts": 0,
+          "accepted_errors_above_tolerance": 0,
+          "accepted_mae_pp": null,
+          "answer_coverage_pct": 0.0,
+          "descriptive_bad_accepted_fraction": null,
+          "maximum_accepted_error_pp": null,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        },
+        "calibration_zero_throttle_only": {
+          "accepted_cohorts": 18,
+          "accepted_errors_above_tolerance": 7,
+          "accepted_mae_pp": 5.981481481481481,
+          "answer_coverage_pct": 100.0,
+          "descriptive_bad_accepted_fraction": 0.3888888888888889,
+          "maximum_accepted_error_pp": 38.33333333333333,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        },
+        "chronological_calibration_check": {
+          "accepted_cohorts": 0,
+          "accepted_errors_above_tolerance": 0,
+          "accepted_mae_pp": null,
+          "answer_coverage_pct": 0.0,
+          "descriptive_bad_accepted_fraction": null,
+          "maximum_accepted_error_pp": null,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        },
+        "cohort_agreement": {
+          "accepted_cohorts": 0,
+          "accepted_errors_above_tolerance": 0,
+          "accepted_mae_pp": null,
+          "answer_coverage_pct": 0.0,
+          "descriptive_bad_accepted_fraction": null,
+          "maximum_accepted_error_pp": null,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        },
+        "descriptive_cohort_t_precision": {
+          "accepted_cohorts": 0,
+          "accepted_errors_above_tolerance": 0,
+          "accepted_mae_pp": null,
+          "answer_coverage_pct": 0.0,
+          "descriptive_bad_accepted_fraction": null,
+          "maximum_accepted_error_pp": null,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        },
+        "iid_dkw_precision_illustration": {
+          "accepted_cohorts": 18,
+          "accepted_errors_above_tolerance": 7,
+          "accepted_mae_pp": 5.981481481481481,
+          "answer_coverage_pct": 100.0,
+          "descriptive_bad_accepted_fraction": 0.3888888888888889,
+          "maximum_accepted_error_pp": 38.33333333333333,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        },
+        "timing_rate_support": {
+          "accepted_cohorts": 0,
+          "accepted_errors_above_tolerance": 0,
+          "accepted_mae_pp": null,
+          "answer_coverage_pct": 0.0,
+          "descriptive_bad_accepted_fraction": null,
+          "maximum_accepted_error_pp": null,
+          "risk_certificate": false,
+          "total_cohorts": 18
+        }
+      },
+      "blocks": [
+        {
+          "block": 1,
+          "mae_pp": 3.444444444444443
+        },
+        {
+          "block": 2,
+          "mae_pp": 14.777777777777777
+        },
+        {
+          "block": 3,
+          "mae_pp": 3.8888888888888906
+        },
+        {
+          "block": 4,
+          "mae_pp": 3.555555555555555
+        },
+        {
+          "block": 5,
+          "mae_pp": 6.333333333333331
+        },
+        {
+          "block": 6,
+          "mae_pp": 3.888888888888888
+        }
+      ],
+      "calibration": {
+        "calibration_cohorts": [
+          {
+            "median_ms": 20.510439,
+            "miss_pct": 44.5,
+            "name": "cohort-1",
+            "rate_rps": 5,
+            "recorded_throttle_periods": 0,
+            "samples": 400
+          },
+          {
+            "median_ms": 20.621183,
+            "miss_pct": 56.25,
+            "name": "cohort-2",
+            "rate_rps": 5,
+            "recorded_throttle_periods": 0,
+            "samples": 400
+          },
+          {
+            "median_ms": 20.537041,
+            "miss_pct": 48.5,
+            "name": "cohort-3",
+            "rate_rps": 5,
+            "recorded_throttle_periods": 0,
+            "samples": 400
+          },
+          {
+            "median_ms": 20.5788045,
+            "miss_pct": 50.75,
+            "name": "cohort-4",
+            "rate_rps": 5,
+            "recorded_throttle_periods": 0,
+            "samples": 400
+          }
+        ],
+        "calibration_no_recorded_throttle": true,
+        "chronological_calibration_folds": [
+          {
+            "deadline_ns": 20510182,
+            "error_pp": 9.75,
+            "observed_pct": 59.75,
+            "predicted_pct": 50.0,
+            "target_cohort": "cohort-2",
+            "training_cohorts": 1
+          },
+          {
+            "deadline_ns": 20571520,
+            "error_pp": 2.0,
+            "observed_pct": 48.0,
+            "predicted_pct": 50.0,
+            "target_cohort": "cohort-3",
+            "training_cohorts": 2
+          },
+          {
+            "deadline_ns": 20564358,
+            "error_pp": 1.0,
+            "observed_pct": 51.0,
+            "predicted_pct": 50.0,
+            "target_cohort": "cohort-4",
+            "training_cohorts": 3
+          }
+        ],
+        "cohort_range_pp": 11.75,
+        "deadline_ns": 20565395,
+        "deadline_stress": [
+          {
+            "earlier_deadline_probability_pct": 53.9375,
+            "later_deadline_probability_pct": 45.625,
+            "maximum_one_sided_change_pp": 4.375,
+            "offset_ns": 50000
+          },
+          {
+            "earlier_deadline_probability_pct": 57.75,
+            "later_deadline_probability_pct": 41.625,
+            "maximum_one_sided_change_pp": 8.375,
+            "offset_ns": 100000
+          },
+          {
+            "earlier_deadline_probability_pct": 67.9375,
+            "later_deadline_probability_pct": 29.8125,
+            "maximum_one_sided_change_pp": 20.1875,
+            "offset_ns": 250000
+          }
+        ],
+        "descriptive_cohort_t_halfwidth_pp": 7.802133460489685,
+        "endpoint": "scheduled offer through complete encoded-body receipt, correctness checked afterward",
+        "equal_cohort_mean_pct": 50.0,
+        "iid_dkw_halfwidth_pp": 3.395253789351549,
+        "legitimate_future_risk_certificate": false,
+        "max_cohort_deviation_from_pooled_pp": 6.25,
+        "maximum_chronological_calibration_error_pp": 9.75,
+        "name": "NGINX",
+        "pooled_forecast_pct": 50.0,
+        "samples": 1600,
+        "timing_rate_support_rps": [
+          5,
+          5
+        ]
+      },
+      "calibration_prefixes": [
+        {
+          "accepted_cohorts": 18,
+          "accepted_errors_above_tolerance": 4,
+          "accepted_mae_pp": 5.296296296296296,
+          "answer_coverage_pct": 100.0,
+          "calibration_cohorts": 1,
+          "descriptive_bad_accepted_fraction": 0.2222222222222222,
+          "maximum_accepted_error_pp": 43.83333333333333,
+          "predicted_miss_pct": 44.5,
+          "risk_certificate": false,
+          "samples": 400,
+          "total_cohorts": 18
+        },
+        {
+          "accepted_cohorts": 18,
+          "accepted_errors_above_tolerance": 8,
+          "accepted_mae_pp": 6.273148148148147,
+          "answer_coverage_pct": 100.0,
+          "calibration_cohorts": 2,
+          "descriptive_bad_accepted_fraction": 0.4444444444444444,
+          "maximum_accepted_error_pp": 37.95833333333333,
+          "predicted_miss_pct": 50.375,
+          "risk_certificate": false,
+          "samples": 800,
+          "total_cohorts": 18
+        },
+        {
+          "accepted_cohorts": 18,
+          "accepted_errors_above_tolerance": 7,
+          "accepted_mae_pp": 5.814814814814814,
+          "answer_coverage_pct": 100.0,
+          "calibration_cohorts": 3,
+          "descriptive_bad_accepted_fraction": 0.3888888888888889,
+          "maximum_accepted_error_pp": 38.58333333333333,
+          "predicted_miss_pct": 49.75,
+          "risk_certificate": false,
+          "samples": 1200,
+          "total_cohorts": 18
+        },
+        {
+          "accepted_cohorts": 18,
+          "accepted_errors_above_tolerance": 7,
+          "accepted_mae_pp": 5.981481481481481,
+          "answer_coverage_pct": 100.0,
+          "calibration_cohorts": 4,
+          "descriptive_bad_accepted_fraction": 0.3888888888888889,
+          "maximum_accepted_error_pp": 38.33333333333333,
+          "predicted_miss_pct": 50.0,
+          "risk_certificate": false,
+          "samples": 1600,
+          "total_cohorts": 18
+        }
+      ],
+      "profiles": [
+        {
+          "mae_pp": 1.3888888888888882,
+          "profile": "A"
+        },
+        {
+          "mae_pp": 10.166666666666666,
+          "profile": "B"
+        },
+        {
+          "mae_pp": 6.388888888888888,
+          "profile": "C"
+        }
+      ],
+      "validation": [
+        {
+          "block": 1,
+          "error_pp": 0.6666666666666643,
+          "name": "cohort-1",
+          "observed_miss_pct": 50.666666666666664,
+          "offers": 300,
+          "profile": "A",
+          "rate_rps": 4.0
+        },
+        {
+          "block": 1,
+          "error_pp": 3.0,
+          "name": "cohort-2",
+          "observed_miss_pct": 47.0,
+          "offers": 300,
+          "profile": "B",
+          "rate_rps": 5.999999988
+        },
+        {
+          "block": 1,
+          "error_pp": 6.666666666666664,
+          "name": "cohort-3",
+          "observed_miss_pct": 43.333333333333336,
+          "offers": 300,
+          "profile": "C",
+          "rate_rps": 8.0
+        },
+        {
+          "block": 2,
+          "error_pp": 38.33333333333333,
+          "name": "cohort-4",
+          "observed_miss_pct": 88.33333333333333,
+          "offers": 300,
+          "profile": "B",
+          "rate_rps": 5.999999988
+        },
+        {
+          "block": 2,
+          "error_pp": 3.3333333333333357,
+          "name": "cohort-5",
+          "observed_miss_pct": 46.666666666666664,
+          "offers": 300,
+          "profile": "C",
+          "rate_rps": 8.0
+        },
+        {
+          "block": 2,
+          "error_pp": 2.6666666666666643,
+          "name": "cohort-6",
+          "observed_miss_pct": 47.333333333333336,
+          "offers": 300,
+          "profile": "A",
+          "rate_rps": 4.0
+        },
+        {
+          "block": 3,
+          "error_pp": 9.0,
+          "name": "cohort-7",
+          "observed_miss_pct": 41.0,
+          "offers": 300,
+          "profile": "C",
+          "rate_rps": 8.0
+        },
+        {
+          "block": 3,
+          "error_pp": 0.3333333333333357,
+          "name": "cohort-8",
+          "observed_miss_pct": 49.666666666666664,
+          "offers": 300,
+          "profile": "A",
+          "rate_rps": 4.0
+        },
+        {
+          "block": 3,
+          "error_pp": 2.3333333333333357,
+          "name": "cohort-9",
+          "observed_miss_pct": 47.666666666666664,
+          "offers": 300,
+          "profile": "B",
+          "rate_rps": 5.999999988
+        },
+        {
+          "block": 4,
+          "error_pp": 0.0,
+          "name": "cohort-10",
+          "observed_miss_pct": 50.0,
+          "offers": 300,
+          "profile": "A",
+          "rate_rps": 4.0
+        },
+        {
+          "block": 4,
+          "error_pp": 4.666666666666664,
+          "name": "cohort-11",
+          "observed_miss_pct": 45.333333333333336,
+          "offers": 300,
+          "profile": "C",
+          "rate_rps": 8.0
+        },
+        {
+          "block": 4,
+          "error_pp": 6.0,
+          "name": "cohort-12",
+          "observed_miss_pct": 44.0,
+          "offers": 300,
+          "profile": "B",
+          "rate_rps": 5.999999988
+        },
+        {
+          "block": 5,
+          "error_pp": 7.666666666666664,
+          "name": "cohort-13",
+          "observed_miss_pct": 42.333333333333336,
+          "offers": 300,
+          "profile": "C",
+          "rate_rps": 8.0
+        },
+        {
+          "block": 5,
+          "error_pp": 9.666666666666664,
+          "name": "cohort-14",
+          "observed_miss_pct": 40.333333333333336,
+          "offers": 300,
+          "profile": "B",
+          "rate_rps": 5.999999988
+        },
+        {
+          "block": 5,
+          "error_pp": 1.6666666666666643,
+          "name": "cohort-15",
+          "observed_miss_pct": 48.333333333333336,
+          "offers": 300,
+          "profile": "A",
+          "rate_rps": 4.0
+        },
+        {
+          "block": 6,
+          "error_pp": 1.6666666666666643,
+          "name": "cohort-16",
+          "observed_miss_pct": 48.333333333333336,
+          "offers": 300,
+          "profile": "B",
+          "rate_rps": 5.999999988
+        },
+        {
+          "block": 6,
+          "error_pp": 3.0,
+          "name": "cohort-17",
+          "observed_miss_pct": 47.0,
+          "offers": 300,
+          "profile": "A",
+          "rate_rps": 4.0
+        },
+        {
+          "block": 6,
+          "error_pp": 7.0,
+          "name": "cohort-18",
+          "observed_miss_pct": 43.0,
+          "offers": 300,
+          "profile": "C",
+          "rate_rps": 8.0
+        }
+      ]
+    }
+  ],
+  "count_illustrations": {
+    "actual_exchangeable_history_to_future_error_calibration_episodes_established": 0,
+    "iid_cdf_samples_for_5pp_95pct": 738,
+    "minimum_error_calibration_episodes_for_finite_95_split_conformal_quantile": 19,
+    "upper_risk_with_two_zero_failure_independent_episodes": 0.7763932022500211,
+    "zero_failure_accepted_episodes_for_one_sided_95_upper_risk_le_5pct": 59
+  },
+  "future_risk_established": false,
+  "new_collection": false,
+  "new_estimator": false,
+  "role": "retrospective_discovery_not_fresh_validation"
+}

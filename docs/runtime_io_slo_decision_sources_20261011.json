@@ -1,0 +1,43 @@
+{
+  "access_date": "2026-10-11",
+  "role": "targeted primary-source capability check, not systematic novelty review",
+  "sources": [
+    {
+      "title": "Google SRE: Service Level Objectives",
+      "url": "https://sre.google/sre-book/service-level-objectives/",
+      "inspection": "Primary chapter, SLI/SLO definitions and aggregation discussion",
+      "capability": "Defines outcome, objective and aggregation; multiple objectives and distribution-aware evaluation are established."
+    },
+    {
+      "title": "Reeve: A short proof of the Dvoretzky-Kiefer-Wolfowitz-Massart inequality",
+      "url": "https://arxiv.org/html/2403.16651v1",
+      "inspection": "Primary theorem and corollaries; independence/common-CDF premises",
+      "capability": "Uniform empirical-to-population CDF sampling bounds; does not supply future drift control."
+    },
+    {
+      "title": "NIST: Confidence intervals for a proportion",
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm",
+      "inspection": "Exact binomial interval equations and worked 4/20, 90% example",
+      "capability": "Ordinary binomial target uncertainty; independent Bernoulli assumptions remain necessary."
+    },
+    {
+      "title": "CEDULE, ICAC 2018",
+      "url": "https://www2.cs.uh.edu/~fyan/Paper/Feng-ICAC18.pdf",
+      "inspection": "Primary paper; earlier local capability audit retained; current PDF opening",
+      "capability": "Profile-based tail prediction and resource-decision contracts are established; not executed in this audit."
+    },
+    {
+      "title": "Barber et al.: Conformal prediction beyond exchangeability",
+      "url": "https://arxiv.org/abs/2202.13415",
+      "inspection": "Primary author abstract; earlier local full-text capability audit retained",
+      "capability": "Drift-aware predictive inference is established; our sampling bands do not reproduce it."
+    },
+    {
+      "title": "Saxena et al.: Towards Performance Robustness for Microservices, NSDI 2026",
+      "url": "https://www.usenix.org/system/files/nsdi26-saxena.pdf",
+      "inspection": "Primary abstract, introduction and Section 2; model/scope opening, not full artifact audit",
+      "capability": "Galileo/PERC certificates address tail-latency robustness under bounded environmental perturbations and guide learned SLO controllers. Its richer model/control contract is not reproduced or refuted here."
+    }
+  ],
+  "novelty_established": false
+}

@@ -1,0 +1,46 @@
+{
+  "question": "Can fixed calibration and warmup timing checks warn about larger panel transfer errors?",
+  "role": "Known development outcomes; fixed new diagnostics specified before calculation, not prospective confirmation",
+  "specs": [
+    [
+      "NGINX original",
+      "runtime_io_nginx_prediction",
+      4,
+      18
+    ],
+    [
+      "NGINX power",
+      "runtime_io_nginx_power_confirmation",
+      4,
+      24
+    ],
+    [
+      "NGINX rate",
+      "runtime_io_nginx_rate_transfer",
+      6,
+      12
+    ],
+    [
+      "NGINX panel",
+      "runtime_io_nginx_deadline_panel",
+      4,
+      24
+    ]
+  ],
+  "tolerance_pp": 5,
+  "stress_ns": 100000,
+  "warmup_offers": 25,
+  "quantiles": [
+    "1/10",
+    "1/4",
+    "1/2",
+    "3/4",
+    "9/10"
+  ],
+  "threshold_search": false,
+  "additional_traffic": false,
+  "manuscript_edit": false,
+  "failure_mass_retained": true,
+  "target_used_for_features": false,
+  "original_primary_gates_unchanged": true
+}

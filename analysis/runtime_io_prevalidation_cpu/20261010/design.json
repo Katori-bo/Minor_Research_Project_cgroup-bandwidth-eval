@@ -1,0 +1,27 @@
+{
+  "accept": "abs(p_cpu-p_reference)<=5pp and no unsuccessful reference/warmup offers or warmup throttle; no tuning",
+  "assumptions": "aggregate cgroup CPU includes service/control overhead; not perrequest CPU and not cycles or physical frequency; additive mapping assumes serial onCPU contribution and stable nonCPU time and warmup-to-measurement persistence",
+  "calibration_cpu_reference": "sum isolated warmup CPU use / sum warmup offers for the two corresponding reference calibration cohorts; compare warmup with warmup",
+  "candidate": "absolute CDF miss-probability change at D under additive CPU-duration shift",
+  "comparators": [
+    "reference",
+    "recent25 CDF",
+    "weighted update",
+    "ordinary CPU-conditioned additive CDF identical to candidate correction",
+    "ordinary deadline-disagreement guard"
+  ],
+  "counter": "cgroup cpu.stat usage_usec delta around completed25-offer warmup",
+  "coverage_floor_pct": 50,
+  "cpu_shift_ns": "1000*(target_warmup_cpu_us_per_offer-reference_calibration_warmup_cpu_us_per_offer)",
+  "decision_time": "after25 warmup offers and counter snapshots, before future measurement",
+  "evaluation": "all-offer reference-error >5pp warnings and coverage, separate10%-90% transition and policy subgroups; futureCPU used only for persistence assessment",
+  "limits": "originalNGINX lacks isolated baseline; no originalexcursion score, no independent validation, no new traffic",
+  "population": [
+    "NGINX power confirmation all24",
+    "NGINX rate transfer all12"
+  ],
+  "prediction": "p_cpu=1-F_reference(D-cpu_shift_ns)",
+  "reference": "policy-matched power pool; ordinary fixed5/s rate pool",
+  "role": "retrospective development after timing-shift screen and CPU-counter inventory; historical outcomes known",
+  "tolerance_pp": 5
+}

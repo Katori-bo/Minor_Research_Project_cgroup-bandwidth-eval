@@ -1,0 +1,1701 @@
+{
+  "campaigns": [
+    {
+      "cpu_change_pct_range": [
+        -1.1915860310112492,
+        3.8478383282237294
+      ],
+      "deadline_ns": 20565395,
+      "guards": {
+        "always": {
+          "accepted": 24,
+          "accepted_mae_pp": 15.708333333333332,
+          "bad_accepted": 11,
+          "bad_accepted_fraction": 0.4583333333333333,
+          "caught_bad": 0,
+          "coverage_pct": 100.0,
+          "false_warnings": 0,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 43.166666666666664,
+          "total": 24,
+          "transition_coverage_pct": 100.0,
+          "transition_total": 12,
+          "useful_screen": false
+        },
+        "cpu_shift": {
+          "accepted": 16,
+          "accepted_mae_pp": 7.166666666666666,
+          "bad_accepted": 3,
+          "bad_accepted_fraction": 0.1875,
+          "caught_bad": 8,
+          "coverage_pct": 66.66666666666667,
+          "false_warnings": 0,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 39.5,
+          "total": 24,
+          "transition_coverage_pct": 33.333333333333336,
+          "transition_total": 12,
+          "useful_screen": false
+        },
+        "deadline_disagreement": {
+          "accepted": 13,
+          "accepted_mae_pp": 0.3717948717948714,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 11,
+          "coverage_pct": 54.166666666666664,
+          "false_warnings": 0,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 4.833333333333329,
+          "total": 24,
+          "transition_coverage_pct": 8.333333333333334,
+          "transition_total": 12,
+          "useful_screen": false
+        }
+      },
+      "mean_future_minus_warmup_cpu_us": 51.89583333333303,
+      "name": "NGINX power",
+      "policy_subgroups": {
+        "P0": {
+          "guards": {
+            "always": {
+              "accepted": 12,
+              "accepted_mae_pp": 31.416666666666664,
+              "bad_accepted": 11,
+              "bad_accepted_fraction": 0.9166666666666666,
+              "caught_bad": 0,
+              "coverage_pct": 100.0,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 43.166666666666664,
+              "total": 12,
+              "transition_coverage_pct": 100.0,
+              "transition_total": 12,
+              "useful_screen": false
+            },
+            "cpu_shift": {
+              "accepted": 4,
+              "accepted_mae_pp": 28.666666666666664,
+              "bad_accepted": 3,
+              "bad_accepted_fraction": 0.75,
+              "caught_bad": 8,
+              "coverage_pct": 33.333333333333336,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 39.5,
+              "total": 12,
+              "transition_coverage_pct": 33.333333333333336,
+              "transition_total": 12,
+              "useful_screen": false
+            },
+            "deadline_disagreement": {
+              "accepted": 1,
+              "accepted_mae_pp": 4.833333333333329,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 11,
+              "coverage_pct": 8.333333333333334,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 4.833333333333329,
+              "total": 12,
+              "transition_coverage_pct": 8.333333333333334,
+              "transition_total": 12,
+              "useful_screen": false
+            }
+          },
+          "predictors": {
+            "cpu_conditioned": {
+              "answered": 12,
+              "errors_above_5pp": 11,
+              "mae_pp": 25.489583333333332,
+              "maximum_error_pp": 34.916666666666664
+            },
+            "pooled_update": {
+              "answered": 12,
+              "errors_above_5pp": 11,
+              "mae_pp": 30.48989898989899,
+              "maximum_error_pp": 41.96969696969696
+            },
+            "recent25": {
+              "answered": 12,
+              "errors_above_5pp": 7,
+              "mae_pp": 9.222222222222221,
+              "maximum_error_pp": 25.0
+            },
+            "reference": {
+              "answered": 12,
+              "errors_above_5pp": 11,
+              "mae_pp": 31.416666666666664,
+              "maximum_error_pp": 43.166666666666664
+            }
+          }
+        },
+        "P1": {
+          "guards": {
+            "always": {
+              "accepted": 12,
+              "accepted_mae_pp": 0.0,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 100.0,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 0.0,
+              "total": 12,
+              "transition_coverage_pct": null,
+              "transition_total": 0,
+              "useful_screen": true
+            },
+            "cpu_shift": {
+              "accepted": 12,
+              "accepted_mae_pp": 0.0,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 100.0,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 0.0,
+              "total": 12,
+              "transition_coverage_pct": null,
+              "transition_total": 0,
+              "useful_screen": true
+            },
+            "deadline_disagreement": {
+              "accepted": 12,
+              "accepted_mae_pp": 0.0,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 100.0,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 0.0,
+              "total": 12,
+              "transition_coverage_pct": null,
+              "transition_total": 0,
+              "useful_screen": true
+            }
+          },
+          "predictors": {
+            "cpu_conditioned": {
+              "answered": 12,
+              "errors_above_5pp": 0,
+              "mae_pp": 0.0,
+              "maximum_error_pp": 0.0
+            },
+            "pooled_update": {
+              "answered": 12,
+              "errors_above_5pp": 0,
+              "mae_pp": 0.010101010101010102,
+              "maximum_error_pp": 0.12121212121212122
+            },
+            "recent25": {
+              "answered": 12,
+              "errors_above_5pp": 0,
+              "mae_pp": 0.3333333333333333,
+              "maximum_error_pp": 4.0
+            },
+            "reference": {
+              "answered": 12,
+              "errors_above_5pp": 0,
+              "mae_pp": 0.0,
+              "maximum_error_pp": 0.0
+            }
+          }
+        }
+      },
+      "predictors": {
+        "cpu_conditioned": {
+          "answered": 24,
+          "errors_above_5pp": 11,
+          "mae_pp": 12.744791666666666,
+          "maximum_error_pp": 34.916666666666664
+        },
+        "pooled_update": {
+          "answered": 24,
+          "errors_above_5pp": 11,
+          "mae_pp": 15.249999999999998,
+          "maximum_error_pp": 41.96969696969696
+        },
+        "recent25": {
+          "answered": 24,
+          "errors_above_5pp": 7,
+          "mae_pp": 4.777777777777777,
+          "maximum_error_pp": 25.0
+        },
+        "reference": {
+          "answered": 24,
+          "errors_above_5pp": 11,
+          "mae_pp": 15.708333333333332,
+          "maximum_error_pp": 43.166666666666664
+        }
+      },
+      "rows": [
+        {
+          "block": 1,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.016671774
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": 1.4077457298379503,
+            "cpu_per_warmup_offer_us": 15235.52,
+            "cpu_score_pp": 0.0,
+            "cpu_shift_ns": 211500.0,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "reference_cpu_per_warmup_offer_us": 15024.02,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 15267.94,
+          "future_minus_warmup_cpu_us": 32.42000000000007,
+          "name": "cohort-1",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 1,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.017371498
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": 1.5001311233611148,
+            "cpu_per_warmup_offer_us": 15249.4,
+            "cpu_score_pp": 0.0,
+            "cpu_shift_ns": 225379.99999999919,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "reference_cpu_per_warmup_offer_us": 15024.02,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 15253.836666666666,
+          "future_minus_warmup_cpu_us": 4.436666666666497,
+          "name": "cohort-2",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 1,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.020718865
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -1.183013469637051,
+            "cpu_per_warmup_offer_us": 18443.4,
+            "cpu_score_pp": 9.125,
+            "cpu_shift_ns": -220799.99999999927,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 70.375,
+              "pooled_update": 78.42424242424242,
+              "recent25": 44.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18664.2,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18663.673333333332,
+          "future_minus_warmup_cpu_us": 220.2733333333308,
+          "name": "cohort-3",
+          "observed_miss_pct": 40.333333333333336,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 1,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.020312466
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -0.6498001521629826,
+            "cpu_per_warmup_offer_us": 18542.92,
+            "cpu_score_pp": 4.25,
+            "cpu_shift_ns": -121280.00000000247,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 75.25,
+              "pooled_update": 78.42424242424242,
+              "recent25": 44.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18664.2,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18690.08,
+          "future_minus_warmup_cpu_us": 147.1600000000035,
+          "name": "cohort-4",
+          "observed_miss_pct": 44.333333333333336,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 2,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.01649864
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": 2.516902932770315,
+            "cpu_per_warmup_offer_us": 15402.16,
+            "cpu_score_pp": 0.0,
+            "cpu_shift_ns": 378139.9999999994,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "reference_cpu_per_warmup_offer_us": 15024.02,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 15299.93,
+          "future_minus_warmup_cpu_us": -102.22999999999956,
+          "name": "cohort-5",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 2,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.015901743
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": 1.9644542539213772,
+            "cpu_per_warmup_offer_us": 15319.16,
+            "cpu_score_pp": 0.0,
+            "cpu_shift_ns": 295139.9999999994,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "reference_cpu_per_warmup_offer_us": 15024.02,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 15357.193333333333,
+          "future_minus_warmup_cpu_us": 38.03333333333285,
+          "name": "cohort-6",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 2,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.020827741
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -0.6435850451666725,
+            "cpu_per_warmup_offer_us": 18544.08,
+            "cpu_score_pp": 4.25,
+            "cpu_shift_ns": -120119.99999999898,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 75.25,
+              "pooled_update": 78.66666666666667,
+              "recent25": 52.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18664.2,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18612.963333333333,
+          "future_minus_warmup_cpu_us": 68.8833333333314,
+          "name": "cohort-7",
+          "observed_miss_pct": 44.333333333333336,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 2,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.020249804
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -0.8405396427385137,
+            "cpu_per_warmup_offer_us": 18507.32,
+            "cpu_score_pp": 5.125,
+            "cpu_shift_ns": -156880.00000000102,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 74.375,
+              "pooled_update": 78.66666666666667,
+              "recent25": 52.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18664.2,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18696.363333333335,
+          "future_minus_warmup_cpu_us": 189.04333333333489,
+          "name": "cohort-8",
+          "observed_miss_pct": 49.333333333333336,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 3,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.016972067
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": 2.018767280661238,
+            "cpu_per_warmup_offer_us": 15327.32,
+            "cpu_score_pp": 0.0,
+            "cpu_shift_ns": 303299.9999999993,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "reference_cpu_per_warmup_offer_us": 15024.02,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 15304.516666666666,
+          "future_minus_warmup_cpu_us": -22.803333333333285,
+          "name": "cohort-9",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 3,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.020321047
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -0.691805702896453,
+            "cpu_per_warmup_offer_us": 18535.08,
+            "cpu_score_pp": 4.75,
+            "cpu_shift_ns": -129119.99999999898,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 74.75,
+              "pooled_update": 78.66666666666667,
+              "recent25": 52.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18664.2,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18586.263333333332,
+          "future_minus_warmup_cpu_us": 51.183333333330665,
+          "name": "cohort-10",
+          "observed_miss_pct": 40.0,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 3,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.016313621
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": 1.7173832303205128,
+            "cpu_per_warmup_offer_us": 15282.04,
+            "cpu_score_pp": 0.0,
+            "cpu_shift_ns": 258020.00000000044,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "reference_cpu_per_warmup_offer_us": 15024.02,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 15300.07,
+          "future_minus_warmup_cpu_us": 18.029999999998836,
+          "name": "cohort-11",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 3,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.02054754
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -1.0010608544700594,
+            "cpu_per_warmup_offer_us": 18477.36,
+            "cpu_score_pp": 7.125,
+            "cpu_shift_ns": -186840.00000000015,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 72.375,
+              "pooled_update": 78.9090909090909,
+              "recent25": 60.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18664.2,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18695.32,
+          "future_minus_warmup_cpu_us": 217.95999999999913,
+          "name": "cohort-12",
+          "observed_miss_pct": 45.333333333333336,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 4,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.020179347
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -1.1915860310112492,
+            "cpu_per_warmup_offer_us": 18441.8,
+            "cpu_score_pp": 9.25,
+            "cpu_shift_ns": -222400.00000000146,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 70.25,
+              "pooled_update": 78.18181818181819,
+              "recent25": 36.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18664.2,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18663.49,
+          "future_minus_warmup_cpu_us": 221.69000000000233,
+          "name": "cohort-13",
+          "observed_miss_pct": 47.666666666666664,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 4,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.020552408
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -1.1313637873576088,
+            "cpu_per_warmup_offer_us": 18453.04,
+            "cpu_score_pp": 8.125,
+            "cpu_shift_ns": -211159.99999999985,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 71.375,
+              "pooled_update": 78.06060606060606,
+              "recent25": 32.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18664.2,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18693.303333333333,
+          "future_minus_warmup_cpu_us": 240.2633333333324,
+          "name": "cohort-14",
+          "observed_miss_pct": 45.333333333333336,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 4,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.016810022
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": 2.3832502885379414,
+            "cpu_per_warmup_offer_us": 15382.08,
+            "cpu_score_pp": 0.0,
+            "cpu_shift_ns": 358059.9999999995,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "reference_cpu_per_warmup_offer_us": 15024.02,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 15317.346666666666,
+          "future_minus_warmup_cpu_us": -64.73333333333358,
+          "name": "cohort-15",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 4,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.017558174
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": 3.289532362177372,
+            "cpu_per_warmup_offer_us": 15518.24,
+            "cpu_score_pp": 0.0,
+            "cpu_shift_ns": 494219.99999999936,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "reference_cpu_per_warmup_offer_us": 15024.02,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 15426.853333333333,
+          "future_minus_warmup_cpu_us": -91.38666666666722,
+          "name": "cohort-16",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 5,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.02033941
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -1.1461514557280839,
+            "cpu_per_warmup_offer_us": 18450.28,
+            "cpu_score_pp": 8.25,
+            "cpu_shift_ns": -213920.0000000019,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 71.25,
+              "pooled_update": 78.3030303030303,
+              "recent25": 40.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18664.2,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18617.04,
+          "future_minus_warmup_cpu_us": 166.76000000000204,
+          "name": "cohort-17",
+          "observed_miss_pct": 36.333333333333336,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 5,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.017505802
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": 3.619137887196633,
+            "cpu_per_warmup_offer_us": 15567.76,
+            "cpu_score_pp": 0.0,
+            "cpu_shift_ns": 543739.9999999998,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "reference_cpu_per_warmup_offer_us": 15024.02,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 15295.116666666667,
+          "future_minus_warmup_cpu_us": -272.64333333333343,
+          "name": "cohort-18",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 5,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.017159555
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": 1.8321328113247937,
+            "cpu_per_warmup_offer_us": 15299.28,
+            "cpu_score_pp": 0.0,
+            "cpu_shift_ns": 275260.00000000023,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "reference_cpu_per_warmup_offer_us": 15024.02,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 15314.606666666667,
+          "future_minus_warmup_cpu_us": 15.326666666665915,
+          "name": "cohort-19",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 5,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.022443745
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": -0.23788857813354936,
+            "cpu_per_warmup_offer_us": 18619.8,
+            "cpu_score_pp": 1.375,
+            "cpu_shift_ns": -44400.000000001455,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 78.125,
+              "pooled_update": 79.63636363636364,
+              "recent25": 84.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18664.2,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18656.536666666667,
+          "future_minus_warmup_cpu_us": 36.73666666666759,
+          "name": "cohort-20",
+          "observed_miss_pct": 84.33333333333333,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 6,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.017238802
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": 3.8478383282237294,
+            "cpu_per_warmup_offer_us": 15602.12,
+            "cpu_score_pp": 0.0,
+            "cpu_shift_ns": 578100.0000000003,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 0.0,
+              "pooled_update": 0.12121212121212122,
+              "recent25": 4.0,
+              "reference": 0.0
+            },
+            "reference_cpu_per_warmup_offer_us": 15024.02,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 15463.683333333332,
+          "future_minus_warmup_cpu_us": -138.43666666666832,
+          "name": "cohort-21",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 6,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.016519495
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": true,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": 2.3667433882542666,
+            "cpu_per_warmup_offer_us": 15379.6,
+            "cpu_score_pp": 0.0,
+            "cpu_shift_ns": 355579.99999999994,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "reference_cpu_per_warmup_offer_us": 15024.02,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 15297.88,
+          "future_minus_warmup_cpu_us": -81.72000000000116,
+          "name": "cohort-22",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 6,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.020611161
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -0.9534831388433473,
+            "cpu_per_warmup_offer_us": 18486.24,
+            "cpu_score_pp": 6.0,
+            "cpu_shift_ns": -177959.99999999913,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 73.5,
+              "pooled_update": 78.42424242424242,
+              "recent25": 44.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18664.2,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18675.616666666665,
+          "future_minus_warmup_cpu_us": 189.37666666666337,
+          "name": "cohort-23",
+          "observed_miss_pct": 69.0,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 6,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.020531219
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -0.9648417826641498,
+            "cpu_per_warmup_offer_us": 18484.12,
+            "cpu_score_pp": 6.25,
+            "cpu_shift_ns": -180080.00000000175,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 73.25,
+              "pooled_update": 78.78787878787878,
+              "recent25": 56.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18664.2,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18645.996666666666,
+          "future_minus_warmup_cpu_us": 161.876666666667,
+          "name": "cohort-24",
+          "observed_miss_pct": 40.333333333333336,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        }
+      ]
+    },
+    {
+      "cpu_change_pct_range": [
+        -1.9911613009233609,
+        -1.2555988741435042
+      ],
+      "deadline_ns": 20565395,
+      "guards": {
+        "always": {
+          "accepted": 12,
+          "accepted_mae_pp": 1.9722222222222239,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 0,
+          "coverage_pct": 100.0,
+          "false_warnings": 0,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 4.5,
+          "total": 12,
+          "transition_coverage_pct": 100.0,
+          "transition_total": 12,
+          "useful_screen": true
+        },
+        "cpu_shift": {
+          "accepted": 0,
+          "accepted_mae_pp": null,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": null,
+          "caught_bad": 0,
+          "coverage_pct": 0.0,
+          "false_warnings": 12,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": null,
+          "total": 12,
+          "transition_coverage_pct": 0.0,
+          "transition_total": 12,
+          "useful_screen": false
+        },
+        "deadline_disagreement": {
+          "accepted": 5,
+          "accepted_mae_pp": 1.633333333333337,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 0,
+          "coverage_pct": 41.666666666666664,
+          "false_warnings": 7,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 4.5,
+          "total": 12,
+          "transition_coverage_pct": 41.666666666666664,
+          "transition_total": 12,
+          "useful_screen": false
+        }
+      },
+      "mean_future_minus_warmup_cpu_us": 310.8238888888891,
+      "name": "NGINX rate",
+      "policy_subgroups": {
+        "P0": {
+          "guards": {
+            "always": {
+              "accepted": 12,
+              "accepted_mae_pp": 1.9722222222222239,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 100.0,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 4.5,
+              "total": 12,
+              "transition_coverage_pct": 100.0,
+              "transition_total": 12,
+              "useful_screen": true
+            },
+            "cpu_shift": {
+              "accepted": 0,
+              "accepted_mae_pp": null,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": null,
+              "caught_bad": 0,
+              "coverage_pct": 0.0,
+              "false_warnings": 12,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": null,
+              "total": 12,
+              "transition_coverage_pct": 0.0,
+              "transition_total": 12,
+              "useful_screen": false
+            },
+            "deadline_disagreement": {
+              "accepted": 5,
+              "accepted_mae_pp": 1.633333333333337,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 41.666666666666664,
+              "false_warnings": 7,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 4.5,
+              "total": 12,
+              "transition_coverage_pct": 41.666666666666664,
+              "transition_total": 12,
+              "useful_screen": false
+            }
+          },
+          "predictors": {
+            "cpu_conditioned": {
+              "answered": 12,
+              "errors_above_5pp": 12,
+              "mae_pp": 17.121527777777782,
+              "maximum_error_pp": 24.875
+            },
+            "pooled_update": {
+              "answered": 12,
+              "errors_above_5pp": 0,
+              "mae_pp": 2.0732323232323266,
+              "maximum_error_pp": 4.484848484848484
+            },
+            "recent25": {
+              "answered": 12,
+              "errors_above_5pp": 7,
+              "mae_pp": 7.527777777777781,
+              "maximum_error_pp": 13.666666666666671
+            },
+            "reference": {
+              "answered": 12,
+              "errors_above_5pp": 0,
+              "mae_pp": 1.9722222222222239,
+              "maximum_error_pp": 4.5
+            }
+          }
+        }
+      },
+      "predictors": {
+        "cpu_conditioned": {
+          "answered": 12,
+          "errors_above_5pp": 12,
+          "mae_pp": 17.121527777777782,
+          "maximum_error_pp": 24.875
+        },
+        "pooled_update": {
+          "answered": 12,
+          "errors_above_5pp": 0,
+          "mae_pp": 2.0732323232323266,
+          "maximum_error_pp": 4.484848484848484
+        },
+        "recent25": {
+          "answered": 12,
+          "errors_above_5pp": 7,
+          "mae_pp": 7.527777777777781,
+          "maximum_error_pp": 13.666666666666671
+        },
+        "reference": {
+          "answered": 12,
+          "errors_above_5pp": 0,
+          "mae_pp": 1.9722222222222239,
+          "maximum_error_pp": 4.5
+        }
+      },
+      "rows": [
+        {
+          "block": 1,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.020605853
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": -1.9911613009233609,
+            "cpu_per_warmup_offer_us": 18371.6,
+            "cpu_score_pp": 20.375,
+            "cpu_shift_ns": -373240.00000000163,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 59.125,
+              "pooled_update": 79.51515151515152,
+              "recent25": 80.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18744.84,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18783.666666666668,
+          "future_minus_warmup_cpu_us": 412.06666666666933,
+          "name": "cohort-1",
+          "observed_miss_pct": 84.0,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 1,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.021442107
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": -1.468350756794945,
+            "cpu_per_warmup_offer_us": 18469.6,
+            "cpu_score_pp": 13.125,
+            "cpu_shift_ns": -275240.00000000163,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 66.375,
+              "pooled_update": 79.39393939393939,
+              "recent25": 76.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18744.84,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18772.403333333332,
+          "future_minus_warmup_cpu_us": 302.8033333333333,
+          "name": "cohort-2",
+          "observed_miss_pct": 80.66666666666667,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 2,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.02182226
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -1.732530125623899,
+            "cpu_per_warmup_offer_us": 18420.08,
+            "cpu_score_pp": 15.75,
+            "cpu_shift_ns": -324759.99999999837,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 63.75,
+              "pooled_update": 79.27272727272727,
+              "recent25": 72.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18744.84,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18781.32,
+          "future_minus_warmup_cpu_us": 361.23999999999796,
+          "name": "cohort-3",
+          "observed_miss_pct": 83.66666666666667,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 2,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.020611159
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": -1.632022465915961,
+            "cpu_per_warmup_offer_us": 18438.92,
+            "cpu_score_pp": 14.375,
+            "cpu_shift_ns": -305920.00000000186,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 65.125,
+              "pooled_update": 79.39393939393939,
+              "recent25": 76.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18744.84,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18769.353333333333,
+          "future_minus_warmup_cpu_us": 330.4333333333343,
+          "name": "cohort-4",
+          "observed_miss_pct": 80.66666666666667,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 3,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.020771317
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -1.3228173726742898,
+            "cpu_per_warmup_offer_us": 18496.88,
+            "cpu_score_pp": 11.875,
+            "cpu_shift_ns": -247959.99999999913,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 67.625,
+              "pooled_update": 79.27272727272727,
+              "recent25": 72.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18744.84,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18753.096666666668,
+          "future_minus_warmup_cpu_us": 256.21666666666715,
+          "name": "cohort-5",
+          "observed_miss_pct": 81.66666666666667,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 3,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.020736252
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": -1.2560256582611506,
+            "cpu_per_warmup_offer_us": 18509.4,
+            "cpu_score_pp": 11.125,
+            "cpu_shift_ns": -235439.9999999987,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 68.375,
+              "pooled_update": 79.39393939393939,
+              "recent25": 76.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18744.84,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18750.21,
+          "future_minus_warmup_cpu_us": 240.80999999999767,
+          "name": "cohort-6",
+          "observed_miss_pct": 79.66666666666667,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 4,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.021382624
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": true
+            },
+            "cpu_change_pct": -1.7769156738601244,
+            "cpu_per_warmup_offer_us": 18411.76,
+            "cpu_score_pp": 16.625,
+            "cpu_shift_ns": -333080.00000000175,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 62.875,
+              "pooled_update": 79.39393939393939,
+              "recent25": 76.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18744.84,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18659.75,
+          "future_minus_warmup_cpu_us": 247.9900000000016,
+          "name": "cohort-7",
+          "observed_miss_pct": 80.66666666666667,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 4,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.021124546
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -1.646746517975084,
+            "cpu_per_warmup_offer_us": 18436.16,
+            "cpu_score_pp": 14.75,
+            "cpu_shift_ns": -308680.0000000003,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 64.75,
+              "pooled_update": 79.27272727272727,
+              "recent25": 72.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18744.84,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18731.466666666667,
+          "future_minus_warmup_cpu_us": 295.3066666666673,
+          "name": "cohort-8",
+          "observed_miss_pct": 78.66666666666667,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 5,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.021394691
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -1.2555988741435042,
+            "cpu_per_warmup_offer_us": 18509.48,
+            "cpu_score_pp": 11.125,
+            "cpu_shift_ns": -235360.00000000058,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 68.375,
+              "pooled_update": 79.27272727272727,
+              "recent25": 72.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18744.84,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18757.193333333333,
+          "future_minus_warmup_cpu_us": 247.71333333333314,
+          "name": "cohort-9",
+          "observed_miss_pct": 81.33333333333333,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 5,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.021084599
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -1.8601385768030054,
+            "cpu_per_warmup_offer_us": 18396.16,
+            "cpu_score_pp": 18.375,
+            "cpu_shift_ns": -348680.0000000003,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 61.125,
+              "pooled_update": 79.27272727272727,
+              "recent25": 72.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18744.84,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18727.93,
+          "future_minus_warmup_cpu_us": 331.77000000000044,
+          "name": "cohort-10",
+          "observed_miss_pct": 78.66666666666667,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 6,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 6.020729841
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -1.9124196312158448,
+            "cpu_per_warmup_offer_us": 18386.36,
+            "cpu_score_pp": 19.25,
+            "cpu_shift_ns": -358479.99999999953,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 60.25,
+              "pooled_update": 79.15151515151516,
+              "recent25": 68.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18744.84,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18738.056666666667,
+          "future_minus_warmup_cpu_us": 351.6966666666667,
+          "name": "cohort-11",
+          "observed_miss_pct": 81.66666666666667,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 6,
+          "cost": {
+            "reference_cpu_warmup_offers": 50,
+            "reference_offers": 800,
+            "warmup_offers": 25,
+            "warmup_span_sec": 3.020596183
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "cpu_shift": false,
+              "deadline_disagreement": false
+            },
+            "cpu_change_pct": -1.8490421897439435,
+            "cpu_per_warmup_offer_us": 18398.24,
+            "cpu_score_pp": 18.375,
+            "cpu_shift_ns": -346599.99999999854,
+            "future_outcomes_used": false,
+            "predictions_pct": {
+              "cpu_conditioned": 61.125,
+              "pooled_update": 79.27272727272727,
+              "recent25": 72.0,
+              "reference": 79.5
+            },
+            "reference_cpu_per_warmup_offer_us": 18744.84,
+            "risk_certificate": false
+          },
+          "future_cpu_per_offer_us": 18750.08,
+          "future_minus_warmup_cpu_us": 351.84000000000015,
+          "name": "cohort-12",
+          "observed_miss_pct": 83.0,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        }
+      ]
+    }
+  ],
+  "features_computed_before_future_measurement_reads": true,
+  "independent_validation": false,
+  "new_collection": false,
+  "role": "retrospective development after timing-shift screen and CPU-counter inventory; historical outcomes known"
+}

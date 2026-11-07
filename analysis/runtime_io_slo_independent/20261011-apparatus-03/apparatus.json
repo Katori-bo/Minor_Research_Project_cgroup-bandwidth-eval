@@ -1,0 +1,65 @@
+{
+  "all_planned_windows": 72,
+  "collection_authorized": false,
+  "collector_adapters_unchanged": true,
+  "external_campaign_supervisor_implemented": true,
+  "hardware_collection_started": false,
+  "new_outcomes_acquired": false,
+  "packages": [
+    {
+      "compiled_exports": 69,
+      "host": "host01",
+      "offline_checks": 35,
+      "path": "handoff/slo-host01-20261011-runtime-v3",
+      "scientific_plan_sha256": "166633a4d9caf5799ea3dbb3169e0e0e85805aef938141df1a1aabf6bfa0d729",
+      "seal_sha256": "32df7a58ab29e40299eff4cd4d405f9c02f4a35f7a4df6ebb91fa1a9cd8183c1"
+    },
+    {
+      "compiled_exports": 69,
+      "host": "host02",
+      "offline_checks": 35,
+      "path": "handoff/slo-host02-20261011-runtime-v3",
+      "scientific_plan_sha256": "166633a4d9caf5799ea3dbb3169e0e0e85805aef938141df1a1aabf6bfa0d729",
+      "seal_sha256": "705aa6136ce90b203ec727a68878c28ca404f1ed31cac765de03dd1628b75e56"
+    }
+  ],
+  "placement_correction": "AMD control CPUs 0,1 may share their physical core; service cores remain distinct and disjoint; Intel control separation retained",
+  "portable_dependency_closure_packaged": true,
+  "predecessor_seals_sha256": {
+    "analysis/runtime_io_slo_independent/20261011-apparatus-01/apparatus_seal.json": "f9524334a406e9879ea3fe780ad1e17ae40da94e1dffa34edfeaa3531eb71777",
+    "analysis/runtime_io_slo_independent/20261011-v1-frozen/seal.json": "e727e58c0963ec49e1adc84aaa2d93358208d5e59225a551e895ba91d823546a",
+    "handoff/v31-host02-intel-20261011/package_seal.json": "e0cbc30c781efc014c37e9c204cff2442f3a2cf01b8bc50a0cea2dc1d3de81b1"
+  },
+  "registered_utc": "2026-10-11T08:42:35.054859+00:00",
+  "rejected_preparations_preserved": [
+    "handoff/slo-host01-20261011-v1",
+    "handoff/slo-host01-20261011-apparatus02"
+  ],
+  "remaining": [
+    "explicit frozen host availability/allocation confirmation",
+    "external apparatus qualification before calibration/targets"
+  ],
+  "repository_sources_sha256": {
+    "docs/runtime_io_slo_host_gate_20261011.md": "115ccedb9aedfae9a5fdfd504b8e1ad1d0d81f30f509e3820da838ee40036dc2",
+    "replication/slo_runtime/README.md": "4be7fbdf97aa6064721f79fab22e025c132969333c17c865f407e8ac84db2b7d",
+    "replication/slo_runtime/assemble_returns.py": "79a863c35347a06e66d1bf0bb1de8fd2c6bce4ee871b98cf810cec93f323f26d",
+    "replication/slo_runtime/build_package.py": "ce00e31c752f77ac335cc88cee73462b5506d7481b74dd507d57911c24d7a0a4",
+    "replication/slo_runtime/common.py": "2ca8b54b8befb8ab59057fd10609f20ccd640624041be34f4fdd7f3dc5e53359",
+    "replication/slo_runtime/cost.py": "0dcaaac7f8832c9b930df0f164334032f3ec7668f4bcaac3b97bb2f50e5f7f08",
+    "replication/slo_runtime/go_backend.py": "5561d1c018461851d1cc48096eab0393cdbf339d884744370c9402150fbb314f",
+    "replication/slo_runtime/nginx_backend.py": "edc3bdfc100753cd523236acead030d63f3c7b5e9d93672d1039da54add58d69",
+    "replication/slo_runtime/register_apparatus.py": "67c5bfedc9646c8f031135ea154a4f7b587d382e9403d78d91405c67d53334c1",
+    "replication/slo_runtime/setup.py": "75829dd8e1c7956fd42ab04ae17a508643820716324ebe475ac42b47b3bd398f",
+    "replication/slo_runtime/supervisor.py": "c326b5a190d85e5114d5ee1bfcf965c6286c4435322c62cb1afd33bf2118a0b6",
+    "replication/slo_runtime/test_runtime.py": "9104b80a70c3c5e1bd90a94c2864c08b5e41aeb30813618c5f3acfd812166c6f",
+    "replication/slo_runtime/worker.py": "36e2ad72a9cf28acafc0771f1b6eeafb12fdaca531fad154fb6096b12ab320a6"
+  },
+  "runtime_qualified": false,
+  "schema": 2,
+  "scientific_plan_sha256": "166633a4d9caf5799ea3dbb3169e0e0e85805aef938141df1a1aabf6bfa0d729",
+  "scientific_plan_unchanged": true,
+  "scope": "portable runtime, single-attempt supervisor and returned-decision replay; offline engineering",
+  "successor_of": "analysis/runtime_io_slo_independent/20261011-apparatus-02",
+  "third_party_python_imports": [],
+  "total_campaign_cap_sec": 30600
+}

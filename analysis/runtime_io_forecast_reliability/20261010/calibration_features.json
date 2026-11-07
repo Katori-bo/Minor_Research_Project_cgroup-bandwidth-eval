@@ -1,0 +1,200 @@
+[
+  {
+    "calibration_cohorts": [
+      {
+        "median_ms": 10.267683,
+        "miss_pct": 70.79646017699115,
+        "name": "v31_cal_b1_steady15",
+        "rate_rps": 3.75,
+        "recorded_throttle_periods": 0,
+        "samples": 113
+      },
+      {
+        "median_ms": 10.193935,
+        "miss_pct": 69.33333333333333,
+        "name": "v31_cal_b1_steady30",
+        "rate_rps": 7.5,
+        "recorded_throttle_periods": 0,
+        "samples": 225
+      },
+      {
+        "median_ms": 10.226163,
+        "miss_pct": 68.88888888888889,
+        "name": "v31_cal_b2_steady30",
+        "rate_rps": 7.5,
+        "recorded_throttle_periods": 0,
+        "samples": 225
+      },
+      {
+        "median_ms": 10.18198,
+        "miss_pct": 57.52212389380531,
+        "name": "v31_cal_b2_steady15",
+        "rate_rps": 3.75,
+        "recorded_throttle_periods": 0,
+        "samples": 113
+      }
+    ],
+    "calibration_no_recorded_throttle": true,
+    "chronological_calibration_folds": [
+      {
+        "deadline_ns": 10000000,
+        "error_pp": 1.4631268436578182,
+        "observed_pct": 69.33333333333333,
+        "predicted_pct": 70.79646017699115,
+        "target_cohort": "v31_cal_b1_steady30",
+        "training_cohorts": 1
+      },
+      {
+        "deadline_ns": 10000000,
+        "error_pp": 0.9335963182117126,
+        "observed_pct": 68.88888888888889,
+        "predicted_pct": 69.8224852071006,
+        "target_cohort": "v31_cal_b2_steady30",
+        "training_cohorts": 2
+      },
+      {
+        "deadline_ns": 10000000,
+        "error_pp": 11.9272544365677,
+        "observed_pct": 57.52212389380531,
+        "predicted_pct": 69.44937833037301,
+        "target_cohort": "v31_cal_b2_steady15",
+        "training_cohorts": 3
+      }
+    ],
+    "cohort_range_pp": 13.27433628318584,
+    "deadline_ns": 10000000,
+    "deadline_stress": [
+      {
+        "earlier_deadline_probability_pct": 69.5266272189349,
+        "later_deadline_probability_pct": 65.53254437869822,
+        "maximum_one_sided_change_pp": 2.071005917159752,
+        "offset_ns": 50000
+      },
+      {
+        "earlier_deadline_probability_pct": 71.89349112426035,
+        "later_deadline_probability_pct": 61.53846153846154,
+        "maximum_one_sided_change_pp": 5.917159763313613,
+        "offset_ns": 100000
+      },
+      {
+        "earlier_deadline_probability_pct": 75.14792899408285,
+        "later_deadline_probability_pct": 46.15384615384615,
+        "maximum_one_sided_change_pp": 21.301775147929,
+        "offset_ns": 250000
+      }
+    ],
+    "descriptive_cohort_t_halfwidth_pp": 9.75387688314288,
+    "endpoint": "scheduled offer through client completion after body consumption/close",
+    "equal_cohort_mean_pct": 66.63520157325466,
+    "iid_dkw_halfwidth_pp": 5.223467368233152,
+    "legitimate_future_risk_certificate": false,
+    "max_cohort_deviation_from_pooled_pp": 9.933497407969845,
+    "maximum_chronological_calibration_error_pp": 11.9272544365677,
+    "name": "Go V31",
+    "pooled_forecast_pct": 67.45562130177515,
+    "samples": 676,
+    "timing_rate_support_rps": [
+      3.75,
+      7.5
+    ]
+  },
+  {
+    "calibration_cohorts": [
+      {
+        "median_ms": 20.510439,
+        "miss_pct": 44.5,
+        "name": "cohort-1",
+        "rate_rps": 5,
+        "recorded_throttle_periods": 0,
+        "samples": 400
+      },
+      {
+        "median_ms": 20.621183,
+        "miss_pct": 56.25,
+        "name": "cohort-2",
+        "rate_rps": 5,
+        "recorded_throttle_periods": 0,
+        "samples": 400
+      },
+      {
+        "median_ms": 20.537041,
+        "miss_pct": 48.5,
+        "name": "cohort-3",
+        "rate_rps": 5,
+        "recorded_throttle_periods": 0,
+        "samples": 400
+      },
+      {
+        "median_ms": 20.5788045,
+        "miss_pct": 50.75,
+        "name": "cohort-4",
+        "rate_rps": 5,
+        "recorded_throttle_periods": 0,
+        "samples": 400
+      }
+    ],
+    "calibration_no_recorded_throttle": true,
+    "chronological_calibration_folds": [
+      {
+        "deadline_ns": 20510182,
+        "error_pp": 9.75,
+        "observed_pct": 59.75,
+        "predicted_pct": 50.0,
+        "target_cohort": "cohort-2",
+        "training_cohorts": 1
+      },
+      {
+        "deadline_ns": 20571520,
+        "error_pp": 2.0,
+        "observed_pct": 48.0,
+        "predicted_pct": 50.0,
+        "target_cohort": "cohort-3",
+        "training_cohorts": 2
+      },
+      {
+        "deadline_ns": 20564358,
+        "error_pp": 1.0,
+        "observed_pct": 51.0,
+        "predicted_pct": 50.0,
+        "target_cohort": "cohort-4",
+        "training_cohorts": 3
+      }
+    ],
+    "cohort_range_pp": 11.75,
+    "deadline_ns": 20565395,
+    "deadline_stress": [
+      {
+        "earlier_deadline_probability_pct": 53.9375,
+        "later_deadline_probability_pct": 45.625,
+        "maximum_one_sided_change_pp": 4.375,
+        "offset_ns": 50000
+      },
+      {
+        "earlier_deadline_probability_pct": 57.75,
+        "later_deadline_probability_pct": 41.625,
+        "maximum_one_sided_change_pp": 8.375,
+        "offset_ns": 100000
+      },
+      {
+        "earlier_deadline_probability_pct": 67.9375,
+        "later_deadline_probability_pct": 29.8125,
+        "maximum_one_sided_change_pp": 20.1875,
+        "offset_ns": 250000
+      }
+    ],
+    "descriptive_cohort_t_halfwidth_pp": 7.802133460489685,
+    "endpoint": "scheduled offer through complete encoded-body receipt, correctness checked afterward",
+    "equal_cohort_mean_pct": 50.0,
+    "iid_dkw_halfwidth_pp": 3.395253789351549,
+    "legitimate_future_risk_certificate": false,
+    "max_cohort_deviation_from_pooled_pp": 6.25,
+    "maximum_chronological_calibration_error_pp": 9.75,
+    "name": "NGINX",
+    "pooled_forecast_pct": 50.0,
+    "samples": 1600,
+    "timing_rate_support_rps": [
+      5,
+      5
+    ]
+  }
+]

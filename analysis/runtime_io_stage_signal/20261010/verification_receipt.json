@@ -1,0 +1,33 @@
+{
+  "checks": [
+    {
+      "command": "python3 -B analysis/screen_stage_transfer_signal.py --verify",
+      "passed": true
+    },
+    {
+      "command": "python3 -B -m unittest discover -s analysis -p test_stage_transfer_signal.py -v",
+      "passed": true,
+      "tests": 6
+    },
+    {
+      "command": "python3 -B analysis/screen_prevalidation_shift.py --verify",
+      "passed": true
+    },
+    {
+      "command": "python3 -B analysis/screen_prevalidation_cpu.py --verify",
+      "passed": true
+    },
+    {
+      "command": "python3 -B analysis/screen_continuous_persistence.py --verify",
+      "passed": true
+    },
+    {
+      "command": "python3 -B analysis/verify_deadline_transfer_integration.py",
+      "historical_evidence_files_preserved": 4881,
+      "passed": true
+    }
+  ],
+  "independent_validation": false,
+  "manuscript_edited": false,
+  "new_collection": false
+}

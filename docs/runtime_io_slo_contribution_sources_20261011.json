@@ -1,0 +1,115 @@
+{
+  "access_date": "2026-10-11",
+  "role": "targeted primary-source claim comparison; not systematic novelty certification",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Towards Performance Robustness for Microservices (Galileo/PERC)",
+      "url": "https://www.usenix.org/system/files/nsdi26-saxena.pdf",
+      "publication": "NSDI 2026",
+      "inspection": "Full primary PDF; sections 4.2-4.4, 6, 7.1-7.4 and Appendix E inspected",
+      "limits": "No artifact execution; no claim that exact quota/decision contract is absent throughout the literature"
+    },
+    {
+      "id": "S02",
+      "title": "SuanMing: Explainable Prediction of Performance Degradations in Microservice Applications",
+      "url": "https://research.spec.org/icpe_proceedings/2021/proceedings/p165.pdf",
+      "publication": "ICPE 2021",
+      "inspection": "Full primary PDF; sections 2.1-2.7, 3.1.4-3.1.6, 3.2.1-3.2.2; Table 1",
+      "limits": "No artifact execution; regression/classification comparison directly precedes our evaluation concept"
+    },
+    {
+      "id": "S03",
+      "title": "Sinan: ML-Based and QoS-Aware Resource Management for Cloud Microservices",
+      "url": "https://people.csail.mit.edu/delimitrou/papers/2021.asplos.sinan.pdf",
+      "publication": "ASPLOS 2021",
+      "inspection": "Full author PDF; section 3 motivation, 3.1 and 3.2",
+      "limits": "No trained-model or controller reproduction"
+    },
+    {
+      "id": "S04",
+      "title": "CEDULE: A Scheduling Framework for Burstable Performance in Cloud Computing",
+      "url": "https://www2.cs.uh.edu/~fyan/Paper/Feng-ICAC18.pdf",
+      "publication": "ICAC 2018",
+      "inspection": "Full author PDF; sections II.B-II.C and III.E",
+      "limits": "No direct quantile/probability metric equivalence or artifact execution"
+    },
+    {
+      "id": "S05",
+      "title": "RScale",
+      "url": "https://www.cs.utsa.edu/~plama/papers/UCC20.pdf",
+      "publication": "UCC 2020",
+      "inspection": "Full author PDF; sections III.B-III.D, equation 6, Algorithm 1, evaluation setup",
+      "limits": "No GP or scaling reproduction; posterior confidence is model-dependent"
+    },
+    {
+      "id": "S06",
+      "title": "Uncertainty-Aware Resource Allocation for Multi-Path Programs with In-Kernel Predictions (MPORA)",
+      "url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol375-ecrts2026/html/LIPIcs.ECRTS.2026.17/LIPIcs.ECRTS.2026.17.html",
+      "publication": "ECRTS 2026",
+      "inspection": "Primary proceedings HTML; sections 5.2 and 6.1-6.3, equations 6-8 and 11",
+      "limits": "No task instrumentation or residual-model reproduction"
+    },
+    {
+      "id": "S07",
+      "title": "CPU-Limits kill Performance: Time to rethink Resource Control",
+      "url": "https://sarthak-chakraborty.github.io/publications/YAAS_SoCC25.pdf",
+      "publication": "SoCC 2025",
+      "inspection": "Full author PDF; section 3.2 microburst and low-average-utilization discussion",
+      "limits": "No causal attribution to our campaigns"
+    },
+    {
+      "id": "S08",
+      "title": "Conformal Prediction Beyond Exchangeability",
+      "url": "https://arxiv.org/html/2202.13415v4",
+      "publication": "Author manuscript v4",
+      "inspection": "Primary full HTML; coverage-gap formulation, sections 2-3 and 4.5",
+      "limits": "No proof reproduction or residual dataset matching"
+    },
+    {
+      "id": "S09",
+      "title": "SLO-Scaler: Uncertainty-Aware SLO-Driven Autoscaling for Microservices",
+      "url": "https://arxiv.org/pdf/2608.18390",
+      "publication": "August 2026 preprint",
+      "inspection": "Full author PDF; sections III-VI, data/training budget, uncertainty policy, limitations",
+      "limits": "HTML endpoint failed; PDF math extraction partly garbled; no exact equation reconstruction or artifact execution"
+    },
+    {
+      "id": "S10",
+      "title": "SLO-Aware uncertainty calibration in predictive autoscaling: toward auditable governance of cloud-native systems",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/07366981.2026.2663080",
+      "publication": "EDPACS 2026",
+      "inspection": "Publisher abstract and metadata only",
+      "limits": "Full publisher article endpoint unavailable; assumptions and full validation remain unaudited"
+    },
+    {
+      "id": "L01",
+      "title": "Calibrate, Then Route: A Measured Study of Learned Request Routing for Disaggregated LLM Serving",
+      "url": "https://arxiv.org/abs/2609.16206",
+      "publication": "September 2026 preprint",
+      "inspection": "Primary author abstract only; cross-domain lead",
+      "limits": "Not a closest-work full-text comparison or evidence about CPU-quota performance"
+    }
+  ],
+  "query_examples": [
+    "tail latency prediction calibration transfer CPU quotas SLO uncertainty conformal prediction",
+    "tail latency prediction calibration SLO failures empirical",
+    "CPU quota prediction latency uncertainty SLO",
+    "tail latency prediction evaluation false assurance coverage calibration transfer microservice CPU limit",
+    "SuanMing Grohmann pdf",
+    "SLO-Aware uncertainty calibration predictive autoscaling paper"
+  ],
+  "primary_sources_only_for_claims": true,
+  "competing_artifacts_executed": false,
+  "citation_graph_exhaustive": false,
+  "scientific_novelty_established": false,
+  "known_outcome_campaigns_reclassified": false,
+  "new_collection": false,
+  "review_file": "docs/runtime_io_slo_contribution_review_20261011.md",
+  "independent_design_status": "bounded draft; not registered or launchable",
+  "unresolved_checks": [
+    "Full S10 validation contract",
+    "Broader citation coverage before any first-result claim",
+    "Portable independent decision apparatus and timing budget"
+  ]
+}

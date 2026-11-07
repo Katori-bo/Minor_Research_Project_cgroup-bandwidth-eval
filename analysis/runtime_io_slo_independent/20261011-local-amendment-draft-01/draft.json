@@ -1,0 +1,64 @@
+{
+  "collection_authorized": false,
+  "combined_attempt_ledger_slots": 108,
+  "combined_planned_campaign_cap_sec": 45900,
+  "document_sha256": "5f2146cd8f4dc1ff81f389ea1c60abbe0eb6993868601179d31e51eaa9df4cc8",
+  "independent_host_availability": "unconfirmed",
+  "launch_ready": false,
+  "original_closed_attempts": {
+    "Go": {
+      "package_seal_sha256": "32df7a58ab29e40299eff4cd4d405f9c02f4a35f7a4df6ebb91fa1a9cd8183c1",
+      "return_seal_sha256": "85f0cbe1bcd6518d91b8d6ff6023ae519011d8ba4bc9944f5c863fa55c41ca57",
+      "source_package": "handoff/slo-host01-20261011-runtime-v3",
+      "supervisor_finished": {
+        "acquired_campaign_cap_sec": 12600,
+        "allocation_closed": true,
+        "cleanup_errors": [],
+        "elapsed_sec": 46.675556012,
+        "failure": "read_only_inventory stopped; preserve partial evidence",
+        "no_retry": true,
+        "within_hard_cap": true
+      }
+    },
+    "NGINX": {
+      "package_seal_sha256": "4691486acd9cec0ba781fa13da4d12443e4e86db39283c28276d8e6659d94bbc",
+      "return_seal_sha256": "c49f2b707375bc3fe34bb394dc95765ddd7419aee2bec622af43a1a3da975d2b",
+      "source_package": "handoff/slo-host01-20261011-runtime-v4",
+      "supervisor_finished": {
+        "acquired_campaign_cap_sec": 2700,
+        "allocation_closed": true,
+        "cleanup_errors": [],
+        "elapsed_sec": 187.520880128,
+        "failure": "collect stopped; preserve partial evidence",
+        "no_retry": true,
+        "within_hard_cap": true
+      }
+    }
+  },
+  "original_planned_windows": 72,
+  "parent_scientific_plan_sha256": "166633a4d9caf5799ea3dbb3169e0e0e85805aef938141df1a1aabf6bfa0d729",
+  "primary_results_pooled": false,
+  "proposed_extra_campaign_cap_sec": 15300,
+  "proposed_supplemental_campaigns": [
+    {
+      "application": "Go",
+      "cap_sec": 12600,
+      "host": "host01",
+      "id": "slo_local_supplement01_host01_Go",
+      "planned_windows": 18,
+      "scientific_attempt_limit": 1
+    },
+    {
+      "application": "NGINX",
+      "cap_sec": 2700,
+      "host": "host01",
+      "id": "slo_local_supplement01_host01_NGINX",
+      "planned_windows": 18,
+      "scientific_attempt_limit": 1
+    }
+  ],
+  "proposed_supplemental_planned_windows": 36,
+  "scientific_design_frozen": false,
+  "status": "draft_route_unconfirmed",
+  "supplemental_independent_hardware_claim_allowed": false
+}

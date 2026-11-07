@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-10",
+  "rows": [
+    {
+      "study": "Go V30",
+      "deadline_ms": 25,
+      "reference": "Periodic + delay",
+      "mae_pp": 2.341465854843779,
+      "comparator": "Fluid busy FIFO",
+      "comparator_mae_pp": 73.59903381642512,
+      "status": "Prospective gates passed",
+      "cohorts": 18
+    },
+    {
+      "study": "Go V31",
+      "deadline_ms": 10,
+      "reference": "Queue-adjusted CDF",
+      "mae_pp": 1.8444367897809195,
+      "comparator": "Periodic + delay",
+      "comparator_mae_pp": 67.3396662566703,
+      "status": "Prospective gates passed in observed domain",
+      "cohorts": 18
+    },
+    {
+      "study": "NGINX original",
+      "deadline_ms": 20.565395,
+      "reference": "Complete-response CDF",
+      "mae_pp": 5.981481481481482,
+      "accuracy_interval_pp": [
+        1.3209883996231495,
+        10.641974563339815
+      ],
+      "status": "Prospective accuracy gate not supported",
+      "cohorts": 18
+    },
+    {
+      "study": "NGINX power confirmation",
+      "deadline_ms": 20.565395,
+      "reference": "Policy-matched CDF",
+      "mae_pp": 15.708333333333336,
+      "accuracy_interval_pp": [
+        12.69521854769069,
+        18.72144811897598
+      ],
+      "comparator": "Pooled policies",
+      "comparator_mae_pp": 24.729166666666664,
+      "gain_pp": {
+        "mean": 9.020833333333332,
+        "conditional_95_interval": [
+          1.7461203153861904,
+          16.295546351280475
+        ],
+        "blocks": [
+          2.5833333333333286,
+          7.083333333333332,
+          2.9166666666666643,
+          6.75,
+          19.875,
+          14.916666666666663
+        ]
+      },
+      "status": "Improvement passed; accuracy failed",
+      "cohorts": 24
+    },
+    {
+      "study": "NGINX rate transfer",
+      "deadline_ms": 20.565395,
+      "reference": "Rate-matched CDF",
+      "mae_pp": 1.194444444444447,
+      "accuracy_interval_pp": [
+        0.8077873296872474,
+        1.5811015592016466
+      ],
+      "comparator": "Fixed 5/s CDF",
+      "comparator_mae_pp": 1.9722222222222188,
+      "comparator_accuracy_interval_pp": [
+        1.0372364877796518,
+        2.9072079566647857
+      ],
+      "gain_pp": {
+        "mean": 0.7777777777777718,
+        "conditional_95_interval": [
+          -0.37513697650476285,
+          1.9306925320603066
+        ],
+        "blocks": [
+          1.6041666666666567,
+          1.6041666666666565,
+          0.39583333333332305,
+          -0.7708333333333373,
+          -0.1041666666666663,
+          1.9374999999999978
+        ]
+      },
+      "status": "Accuracy passed; advantage not supported",
+      "cohorts": 12
+    }
+  ],
+  "table_markdown": "| Study | Deadline (ms) | Reference MAE (pp) | Comparator MAE (pp) | Frozen result |\n|---|---:|---:|---:|---|\n| Go V30 | 25 | Periodic + delay: 2.341 | Fluid busy FIFO: 73.599 | Prospective gates passed |\n| Go V31 | 10 | Queue-adjusted CDF: 1.844 | Periodic + delay: 67.340 | Prospective gates passed in observed domain |\n| NGINX original | 20.565395 | Complete-response CDF: 5.981 | No head-to-head comparator | Prospective accuracy gate not supported |\n| NGINX power confirmation | 20.565395 | Policy-matched CDF: 15.708 | Pooled policies: 24.729 | Improvement passed; accuracy failed |\n| NGINX rate transfer | 20.565395 | Rate-matched CDF: 1.194 | Fixed 5/s CDF: 1.972 | Accuracy passed; advantage not supported |",
+  "go_complete_response_control": {
+    "mae_pp": 1.802498670919723,
+    "maximum_error_pp": 5.350358143880413,
+    "samples": 676,
+    "provenance": "retrospective_method_selection; not prospective observer removal"
+  },
+  "rate_reference_budgets": {
+    "per_known_rate_offers": 800,
+    "both_target_rates_offers": 1600,
+    "shared_5_rps_offers": 800,
+    "pooled_offers": 2400,
+    "scientific_campaign_total_offers": 6450
+  },
+  "retained_rate_throttling": [
+    {
+      "cohort": 5,
+      "block": 3,
+      "rate_rps": 8,
+      "nr_throttled": 1,
+      "throttled_usec": 6600
+    },
+    {
+      "cohort": 9,
+      "block": 5,
+      "rate_rps": 8,
+      "nr_throttled": 1,
+      "throttled_usec": 9133
+    }
+  ],
+  "source_record_sha256": {
+    "analysis/runtime_io_v30_result_review/20261009-generation01/report.json": "d3729d418bf35a0a64be9e415342c2d3bea3703c7a9324573e0e43fb30d7320f",
+    "analysis/runtime_io_v31_result_review/20261009-generation01/report.json": "a3494515ccb105aa2c560caa0d3b55a80fc3913bc5135303ee479248571e7789",
+    "analysis/runtime_io_deadline_extension_revision/20261010-review-corrections/report.json": "171ff78048591b0861a248f783dd4ed473ccd4dccad3c958c5aee100275774b5",
+    "analysis/runtime_io_nginx_prediction_result_review/20261009-generation01/report.json": "9d55a3d14d0ba582b3a5a5f79070f5481ebf0d425df68d23deea4b52b8e5aa8d",
+    "analysis/runtime_io_nginx_power_confirmation_review/20261010-generation01/report.json": "00e45f3ceed4470326f9748cd1d8012a343d5f7b1fb3a8a06333a2d57548a381",
+    "analysis/runtime_io_nginx_rate_transfer_review/20261010-generation01/report.json": "7c334e09719c552cb4734260465d2d0567164c09e236ffd29a87be35b8c22488",
+    "analysis/runtime_io_nginx_power_policy_review/20261010-generation01/report.json": "5c03ec5c4d5635c59e52c6e7a19ab23fd165bb1cd9a137230d28dc2e1afed463"
+  },
+  "independent_host_result_received": false,
+  "new_method_gap_established": false,
+  "new_estimator_novelty_established": false,
+  "historical_failure_cause_identified": false,
+  "state_of_the_art_superiority_tested": false,
+  "decision": "Consolidate the scoped empirical paper. Hold new collection and custom diagnostics until a concrete capability, fair compatible comparator and independent evaluation contract exist."
+}

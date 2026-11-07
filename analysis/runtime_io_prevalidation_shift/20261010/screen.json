@@ -1,0 +1,4372 @@
+{
+  "campaigns": [
+    {
+      "apparatus_warmup_offers": 4200,
+      "calibration_total_offers": 676,
+      "candidate_consumed_warmup_offers": 450,
+      "deadline_ns": 10000000,
+      "guards": {
+        "always": {
+          "accepted": 18,
+          "accepted_mae_pp": 1.802498670919723,
+          "bad_accepted": 1,
+          "bad_accepted_fraction": 0.05555555555555555,
+          "caught_bad": 0,
+          "coverage_pct": 100.0,
+          "false_warnings": 0,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 5.350358143880413,
+          "total": 18,
+          "transition_coverage_pct": 100.0,
+          "transition_total": 18,
+          "useful_screen": false
+        },
+        "deadline_disagreement": {
+          "accepted": 11,
+          "accepted_mae_pp": 1.6746883346073616,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 1,
+          "coverage_pct": 61.111111111111114,
+          "false_warnings": 6,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 4.210007266687434,
+          "total": 18,
+          "transition_coverage_pct": 61.111111111111114,
+          "transition_total": 18,
+          "useful_screen": true
+        },
+        "ecdf_distance": {
+          "accepted": 0,
+          "accepted_mae_pp": null,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": null,
+          "caught_bad": 1,
+          "coverage_pct": 0.0,
+          "false_warnings": 17,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": null,
+          "total": 18,
+          "transition_coverage_pct": 0.0,
+          "transition_total": 18,
+          "useful_screen": false
+        },
+        "ordinary_temporal_disagreement": {
+          "accepted": 1,
+          "accepted_mae_pp": 0.965431329803792,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 1,
+          "coverage_pct": 5.555555555555555,
+          "false_warnings": 16,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 0.965431329803792,
+          "total": 18,
+          "transition_coverage_pct": 5.555555555555555,
+          "transition_total": 18,
+          "useful_screen": false
+        },
+        "shift_and_temporal": {
+          "accepted": 4,
+          "accepted_mae_pp": 1.4835131130677652,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 1,
+          "coverage_pct": 22.22222222222222,
+          "false_warnings": 13,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 2.8474090012551443,
+          "total": 18,
+          "transition_coverage_pct": 22.22222222222222,
+          "transition_total": 18,
+          "useful_screen": false
+        },
+        "shift_only": {
+          "accepted": 12,
+          "accepted_mae_pp": 1.940855927698032,
+          "bad_accepted": 1,
+          "bad_accepted_fraction": 0.08333333333333333,
+          "caught_bad": 0,
+          "coverage_pct": 66.66666666666667,
+          "false_warnings": 6,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 5.350358143880413,
+          "total": 18,
+          "transition_coverage_pct": 66.66666666666667,
+          "transition_total": 18,
+          "useful_screen": false
+        },
+        "temporal_only": {
+          "accepted": 7,
+          "accepted_mae_pp": 1.208094199997033,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 1,
+          "coverage_pct": 38.888888888888886,
+          "false_warnings": 10,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 2.8474090012551443,
+          "total": 18,
+          "transition_coverage_pct": 38.888888888888886,
+          "transition_total": 18,
+          "useful_screen": false
+        }
+      },
+      "name": "Go V31",
+      "policy_subgroups": {},
+      "predictors": {
+        "location_shift": {
+          "answered": 18,
+          "errors_above_5pp": 5,
+          "mae_pp": 3.2838627109882172,
+          "maximum_error_pp": 7.309768504100489
+        },
+        "pooled_update": {
+          "answered": 18,
+          "errors_above_5pp": 0,
+          "mae_pp": 1.778723112194093,
+          "maximum_error_pp": 4.941812448382009
+        },
+        "recent25": {
+          "answered": 18,
+          "errors_above_5pp": 9,
+          "mae_pp": 5.0367712209817475,
+          "maximum_error_pp": 14.824561403508767
+        },
+        "reference": {
+          "answered": 18,
+          "errors_above_5pp": 1,
+          "mae_pp": 1.802498670919723,
+          "maximum_error_pp": 5.350358143880413
+        }
+      },
+      "rows": [
+        {
+          "block": 1,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.807309091,
+            "full_offers": 100,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 5,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 5.621301775147927,
+            "ecdf_distance_pp": 11.976331360946746,
+            "future_outcomes_used": false,
+            "median_shift_ns": -42472.0,
+            "ordinary_temporal_score_pp": 8.333333333333329,
+            "predictions_pct": {
+              "location_shift": 66.12426035502959,
+              "pooled_update": 67.47503566333809,
+              "recent25": 68.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": 191082.75,
+              "0.5": -42472.0,
+              "0.75": -76711.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 1.331360946745562,
+            "temporal_score_pp": 5.621301775147927,
+            "translated_shape_distance_pp": 10.053254437869818
+          },
+          "measurement_offers": 300,
+          "name": "v31_b1_A",
+          "observed_miss_pct": 66.33333333333333,
+          "policy": null,
+          "profile": "A",
+          "rate_rps": 5
+        },
+        {
+          "block": 1,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.919306352,
+            "full_offers": 220,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 11,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 4.88165680473373,
+            "ecdf_distance_pp": 23.491124260355033,
+            "future_outcomes_used": false,
+            "median_shift_ns": -78214.0,
+            "ordinary_temporal_score_pp": 16.666666666666664,
+            "predictions_pct": {
+              "location_shift": 63.75739644970414,
+              "pooled_update": 67.47503566333809,
+              "recent25": 68.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": 19623.75,
+              "0.5": -78214.0,
+              "0.75": -219016.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 3.6982248520710144,
+            "temporal_score_pp": 4.88165680473373,
+            "translated_shape_distance_pp": 15.798816568047346
+          },
+          "measurement_offers": 660,
+          "name": "v31_b1_B",
+          "observed_miss_pct": 70.3030303030303,
+          "policy": null,
+          "profile": "B",
+          "rate_rps": 11
+        },
+        {
+          "block": 1,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.957989584,
+            "full_offers": 380,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 19,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 5.029585798816569,
+            "ecdf_distance_pp": 20.0887573964497,
+            "future_outcomes_used": false,
+            "median_shift_ns": 111227.0,
+            "ordinary_temporal_score_pp": 8.333333333333329,
+            "predictions_pct": {
+              "location_shift": 72.48520710059172,
+              "pooled_update": 67.90299572039943,
+              "recent25": 80.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": 340166.75,
+              "0.5": 111227.0,
+              "0.75": 145083.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 5.029585798816569,
+            "temporal_score_pp": 0.8875739644970508,
+            "translated_shape_distance_pp": 12.54437869822485
+          },
+          "measurement_offers": 1140,
+          "name": "v31_b1_C",
+          "observed_miss_pct": 65.17543859649123,
+          "policy": null,
+          "profile": "C",
+          "rate_rps": 19
+        },
+        {
+          "block": 2,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.919659758,
+            "full_offers": 220,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 11,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 4.437869822485197,
+            "ecdf_distance_pp": 12.22485207100592,
+            "future_outcomes_used": false,
+            "median_shift_ns": 100032.0,
+            "ordinary_temporal_score_pp": 8.333333333333329,
+            "predictions_pct": {
+              "location_shift": 71.89349112426035,
+              "pooled_update": 67.61768901569187,
+              "recent25": 72.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": 12452.75,
+              "0.5": 100032.0,
+              "0.75": 89589.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 4.437869822485197,
+            "temporal_score_pp": 3.6982248520710073,
+            "translated_shape_distance_pp": 8.307692307692308
+          },
+          "measurement_offers": 660,
+          "name": "v31_b2_B",
+          "observed_miss_pct": 69.39393939393939,
+          "policy": null,
+          "profile": "B",
+          "rate_rps": 11
+        },
+        {
+          "block": 2,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.957607026,
+            "full_offers": 380,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 19,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 2.662721893491124,
+            "ecdf_distance_pp": 13.153846153846155,
+            "future_outcomes_used": false,
+            "median_shift_ns": 62591.0,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 70.11834319526628,
+              "pooled_update": 67.47503566333809,
+              "recent25": 68.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": 129727.75,
+              "0.5": 62591.0,
+              "0.75": -78438.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 2.662721893491124,
+            "temporal_score_pp": 1.627218934911241,
+            "translated_shape_distance_pp": 14.597633136094679
+          },
+          "measurement_offers": 1140,
+          "name": "v31_b2_C",
+          "observed_miss_pct": 68.42105263157895,
+          "policy": null,
+          "profile": "C",
+          "rate_rps": 19
+        },
+        {
+          "block": 2,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.809516526,
+            "full_offers": 100,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 5,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 7.692307692307693,
+            "ecdf_distance_pp": 17.378698224852073,
+            "future_outcomes_used": false,
+            "median_shift_ns": 83296.0,
+            "ordinary_temporal_score_pp": 16.666666666666657,
+            "predictions_pct": {
+              "location_shift": 71.44970414201184,
+              "pooled_update": 67.61768901569187,
+              "recent25": 72.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": 193085.75,
+              "0.5": 83296.0,
+              "0.75": 76802.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 3.994082840236686,
+            "temporal_score_pp": 7.692307692307693,
+            "translated_shape_distance_pp": 10.644970414201183
+          },
+          "measurement_offers": 300,
+          "name": "v31_b2_A",
+          "observed_miss_pct": 70.33333333333333,
+          "policy": null,
+          "profile": "A",
+          "rate_rps": 5
+        },
+        {
+          "block": 3,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.957558851,
+            "full_offers": 380,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 19,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 16.71597633136095,
+            "ecdf_distance_pp": 10.603550295857989,
+            "future_outcomes_used": false,
+            "median_shift_ns": -18165.0,
+            "ordinary_temporal_score_pp": 24.999999999999993,
+            "predictions_pct": {
+              "location_shift": 67.01183431952663,
+              "pooled_update": 67.61768901569187,
+              "recent25": 72.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": 54147.75,
+              "0.5": -18165.0,
+              "0.75": -59986.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.4437869822485254,
+            "temporal_score_pp": 16.71597633136095,
+            "translated_shape_distance_pp": 12.082840236686387
+          },
+          "measurement_offers": 1140,
+          "name": "v31_b3_C",
+          "observed_miss_pct": 63.24561403508772,
+          "policy": null,
+          "profile": "C",
+          "rate_rps": 19
+        },
+        {
+          "block": 3,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.810910167,
+            "full_offers": 100,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 5,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 5.917159763313606,
+            "ecdf_distance_pp": 22.10650887573964,
+            "future_outcomes_used": false,
+            "median_shift_ns": 120967.0,
+            "ordinary_temporal_score_pp": 25.0,
+            "predictions_pct": {
+              "location_shift": 72.63313609467455,
+              "pooled_update": 67.76034236804566,
+              "recent25": 76.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": 353773.75,
+              "0.5": 120967.0,
+              "0.75": 129761.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 5.177514792899402,
+            "temporal_score_pp": 5.917159763313606,
+            "translated_shape_distance_pp": 11.603550295857978
+          },
+          "measurement_offers": 300,
+          "name": "v31_b3_A",
+          "observed_miss_pct": 70.0,
+          "policy": null,
+          "profile": "A",
+          "rate_rps": 5
+        },
+        {
+          "block": 3,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.919698363,
+            "full_offers": 220,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 11,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 16.568047337278102,
+            "ecdf_distance_pp": 13.384615384615383,
+            "future_outcomes_used": false,
+            "median_shift_ns": -37372.0,
+            "ordinary_temporal_score_pp": 25.0,
+            "predictions_pct": {
+              "location_shift": 66.42011834319527,
+              "pooled_update": 67.33238231098431,
+              "recent25": 64.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": -58032.25,
+              "0.5": -37372.0,
+              "0.75": 126355.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 1.0355029585798832,
+            "temporal_score_pp": 16.568047337278102,
+            "translated_shape_distance_pp": 13.798816568047345
+          },
+          "measurement_offers": 660,
+          "name": "v31_b3_B",
+          "observed_miss_pct": 66.36363636363636,
+          "policy": null,
+          "profile": "B",
+          "rate_rps": 11
+        },
+        {
+          "block": 4,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.810100364,
+            "full_offers": 100,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 5,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 6.952662721893489,
+            "ecdf_distance_pp": 23.62721893491124,
+            "future_outcomes_used": false,
+            "median_shift_ns": 123492.0,
+            "ordinary_temporal_score_pp": 25.0,
+            "predictions_pct": {
+              "location_shift": 72.92899408284023,
+              "pooled_update": 67.76034236804566,
+              "recent25": 76.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": 316619.75,
+              "0.5": 123492.0,
+              "0.75": 56640.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 5.4733727810650805,
+            "temporal_score_pp": 6.952662721893489,
+            "translated_shape_distance_pp": 10.905325443786978
+          },
+          "measurement_offers": 300,
+          "name": "v31_b4_A",
+          "observed_miss_pct": 70.66666666666667,
+          "policy": null,
+          "profile": "A",
+          "rate_rps": 5
+        },
+        {
+          "block": 4,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.958118873,
+            "full_offers": 380,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 19,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 11.094674556213015,
+            "ecdf_distance_pp": 13.798816568047345,
+            "future_outcomes_used": false,
+            "median_shift_ns": -10362.0,
+            "ordinary_temporal_score_pp": 8.333333333333336,
+            "predictions_pct": {
+              "location_shift": 67.3076923076923,
+              "pooled_update": 67.04707560627675,
+              "recent25": 56.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": -236221.25,
+              "0.5": -10362.0,
+              "0.75": 162902.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.14792899408284654,
+            "temporal_score_pp": 11.094674556213015,
+            "translated_shape_distance_pp": 14.094674556213016
+          },
+          "measurement_offers": 1140,
+          "name": "v31_b4_C",
+          "observed_miss_pct": 62.10526315789474,
+          "policy": null,
+          "profile": "C",
+          "rate_rps": 19
+        },
+        {
+          "block": 4,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.919464389,
+            "full_offers": 220,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 11,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 3.994082840236686,
+            "ecdf_distance_pp": 14.301775147928991,
+            "future_outcomes_used": false,
+            "median_shift_ns": 86007.0,
+            "ordinary_temporal_score_pp": 33.333333333333336,
+            "predictions_pct": {
+              "location_shift": 71.44970414201184,
+              "pooled_update": 67.76034236804566,
+              "recent25": 76.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": 245737.75,
+              "0.5": 86007.0,
+              "0.75": 8708.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 3.994082840236686,
+            "temporal_score_pp": 3.254437869822482,
+            "translated_shape_distance_pp": 8.550295857988166
+          },
+          "measurement_offers": 660,
+          "name": "v31_b4_B",
+          "observed_miss_pct": 67.27272727272727,
+          "policy": null,
+          "profile": "B",
+          "rate_rps": 11
+        },
+        {
+          "block": 5,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.95785737,
+            "full_offers": 380,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 19,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 7.248520710059168,
+            "ecdf_distance_pp": 15.887573964497047,
+            "future_outcomes_used": false,
+            "median_shift_ns": 42587.0,
+            "ordinary_temporal_score_pp": 16.666666666666664,
+            "predictions_pct": {
+              "location_shift": 69.5266272189349,
+              "pooled_update": 67.47503566333809,
+              "recent25": 68.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": -1085249.25,
+              "0.5": 42587.0,
+              "0.75": 65436.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 2.071005917159752,
+            "temporal_score_pp": 7.248520710059168,
+            "translated_shape_distance_pp": 12.18934911242604
+          },
+          "measurement_offers": 1140,
+          "name": "v31_b5_C",
+          "observed_miss_pct": 68.94736842105263,
+          "policy": null,
+          "profile": "C",
+          "rate_rps": 19
+        },
+        {
+          "block": 5,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.919327881,
+            "full_offers": 220,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 11,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 6.360946745562131,
+            "ecdf_distance_pp": 28.816568047337277,
+            "future_outcomes_used": false,
+            "median_shift_ns": 166677.0,
+            "ordinary_temporal_score_pp": 8.333333333333329,
+            "predictions_pct": {
+              "location_shift": 73.81656804733728,
+              "pooled_update": 67.90299572039943,
+              "recent25": 80.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": 436640.75,
+              "0.5": 166677.0,
+              "0.75": 95592.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 6.360946745562131,
+            "temporal_score_pp": 4.585798816568044,
+            "translated_shape_distance_pp": 13.136094674556215
+          },
+          "measurement_offers": 660,
+          "name": "v31_b5_B",
+          "observed_miss_pct": 67.42424242424242,
+          "policy": null,
+          "profile": "B",
+          "rate_rps": 11
+        },
+        {
+          "block": 5,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.810386033,
+            "full_offers": 100,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 5,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 8.727810650887577,
+            "ecdf_distance_pp": 12.479289940828398,
+            "future_outcomes_used": false,
+            "median_shift_ns": -6719.0,
+            "ordinary_temporal_score_pp": 33.333333333333336,
+            "predictions_pct": {
+              "location_shift": 67.3076923076923,
+              "pooled_update": 67.61768901569187,
+              "recent25": 72.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": 42731.75,
+              "0.5": -6719.0,
+              "0.75": 62096.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.14792899408284654,
+            "temporal_score_pp": 8.727810650887577,
+            "translated_shape_distance_pp": 13.071005917159761
+          },
+          "measurement_offers": 300,
+          "name": "v31_b5_A",
+          "observed_miss_pct": 66.66666666666667,
+          "policy": null,
+          "profile": "A",
+          "rate_rps": 5
+        },
+        {
+          "block": 6,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.919595121,
+            "full_offers": 220,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 11,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 5.917159763313606,
+            "ecdf_distance_pp": 16.230769230769226,
+            "future_outcomes_used": false,
+            "median_shift_ns": 106799.0,
+            "ordinary_temporal_score_pp": 16.666666666666657,
+            "predictions_pct": {
+              "location_shift": 72.18934911242603,
+              "pooled_update": 67.76034236804566,
+              "recent25": 76.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": 268443.75,
+              "0.5": 106799.0,
+              "0.75": 22355.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 4.733727810650876,
+            "temporal_score_pp": 5.917159763313606,
+            "translated_shape_distance_pp": 13.301775147928996
+          },
+          "measurement_offers": 660,
+          "name": "v31_b6_B",
+          "observed_miss_pct": 67.87878787878788,
+          "policy": null,
+          "profile": "B",
+          "rate_rps": 11
+        },
+        {
+          "block": 6,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.807460519,
+            "full_offers": 100,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 5,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 5.4733727810650805,
+            "ecdf_distance_pp": 15.319526627218933,
+            "future_outcomes_used": false,
+            "median_shift_ns": 126376.0,
+            "ordinary_temporal_score_pp": 8.333333333333329,
+            "predictions_pct": {
+              "location_shift": 72.92899408284023,
+              "pooled_update": 67.47503566333809,
+              "recent25": 68.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": 27311.75,
+              "0.5": 126376.0,
+              "0.75": 101911.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 5.4733727810650805,
+            "temporal_score_pp": 2.2189349112425987,
+            "translated_shape_distance_pp": 9.08284023668639
+          },
+          "measurement_offers": 300,
+          "name": "v31_b6_A",
+          "observed_miss_pct": 67.66666666666667,
+          "policy": null,
+          "profile": "A",
+          "rate_rps": 5
+        },
+        {
+          "block": 6,
+          "cost": {
+            "configured_warmup_sec": 20,
+            "full_observed_client_span_sec": 19.958063114,
+            "full_offers": 380,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 19,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 9.023668639053248,
+            "ecdf_distance_pp": 11.917159763313617,
+            "future_outcomes_used": false,
+            "median_shift_ns": -92152.0,
+            "ordinary_temporal_score_pp": 8.333333333333336,
+            "predictions_pct": {
+              "location_shift": 62.1301775147929,
+              "pooled_update": 67.33238231098431,
+              "recent25": 64.0,
+              "reference": 67.45562130177515
+            },
+            "quartile_shift_ns": {
+              "0.25": -7247.25,
+              "0.5": -92152.0,
+              "0.75": -49171.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 5.325443786982255,
+            "temporal_score_pp": 9.023668639053248,
+            "translated_shape_distance_pp": 11.301775147928995
+          },
+          "measurement_offers": 1140,
+          "name": "v31_b6_C",
+          "observed_miss_pct": 66.57894736842105,
+          "policy": null,
+          "profile": "C",
+          "rate_rps": 19
+        }
+      ]
+    },
+    {
+      "apparatus_warmup_offers": 450,
+      "calibration_total_offers": 1600,
+      "candidate_consumed_warmup_offers": 450,
+      "deadline_ns": 20565395,
+      "guards": {
+        "always": {
+          "accepted": 18,
+          "accepted_mae_pp": 5.981481481481481,
+          "bad_accepted": 7,
+          "bad_accepted_fraction": 0.3888888888888889,
+          "caught_bad": 0,
+          "coverage_pct": 100.0,
+          "false_warnings": 0,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 38.33333333333333,
+          "total": 18,
+          "transition_coverage_pct": 100.0,
+          "transition_total": 18,
+          "useful_screen": false
+        },
+        "deadline_disagreement": {
+          "accepted": 6,
+          "accepted_mae_pp": 4.333333333333332,
+          "bad_accepted": 3,
+          "bad_accepted_fraction": 0.5,
+          "caught_bad": 4,
+          "coverage_pct": 33.333333333333336,
+          "false_warnings": 8,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 9.0,
+          "total": 18,
+          "transition_coverage_pct": 33.333333333333336,
+          "transition_total": 18,
+          "useful_screen": false
+        },
+        "ecdf_distance": {
+          "accepted": 0,
+          "accepted_mae_pp": null,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": null,
+          "caught_bad": 7,
+          "coverage_pct": 0.0,
+          "false_warnings": 11,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": null,
+          "total": 18,
+          "transition_coverage_pct": 0.0,
+          "transition_total": 18,
+          "useful_screen": false
+        },
+        "ordinary_temporal_disagreement": {
+          "accepted": 2,
+          "accepted_mae_pp": 2.333333333333332,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 7,
+          "coverage_pct": 11.11111111111111,
+          "false_warnings": 9,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 3.0,
+          "total": 18,
+          "transition_coverage_pct": 11.11111111111111,
+          "transition_total": 18,
+          "useful_screen": false
+        },
+        "shift_and_temporal": {
+          "accepted": 1,
+          "accepted_mae_pp": 1.6666666666666643,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 7,
+          "coverage_pct": 5.555555555555555,
+          "false_warnings": 10,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 1.6666666666666643,
+          "total": 18,
+          "transition_coverage_pct": 5.555555555555555,
+          "transition_total": 18,
+          "useful_screen": false
+        },
+        "shift_only": {
+          "accepted": 9,
+          "accepted_mae_pp": 4.259259259259258,
+          "bad_accepted": 4,
+          "bad_accepted_fraction": 0.4444444444444444,
+          "caught_bad": 3,
+          "coverage_pct": 50.0,
+          "false_warnings": 6,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 9.0,
+          "total": 18,
+          "transition_coverage_pct": 50.0,
+          "transition_total": 18,
+          "useful_screen": false
+        },
+        "temporal_only": {
+          "accepted": 2,
+          "accepted_mae_pp": 2.333333333333332,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 7,
+          "coverage_pct": 11.11111111111111,
+          "false_warnings": 9,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 3.0,
+          "total": 18,
+          "transition_coverage_pct": 11.11111111111111,
+          "transition_total": 18,
+          "useful_screen": false
+        }
+      },
+      "name": "NGINX",
+      "policy_subgroups": {},
+      "predictors": {
+        "location_shift": {
+          "answered": 18,
+          "errors_above_5pp": 12,
+          "mae_pp": 9.21875,
+          "maximum_error_pp": 45.52083333333333
+        },
+        "pooled_update": {
+          "answered": 18,
+          "errors_above_5pp": 7,
+          "mae_pp": 5.971225071225071,
+          "maximum_error_pp": 38.54871794871794
+        },
+        "recent25": {
+          "answered": 18,
+          "errors_above_5pp": 10,
+          "mae_pp": 9.462962962962962,
+          "maximum_error_pp": 52.33333333333333
+        },
+        "reference": {
+          "answered": 18,
+          "errors_above_5pp": 7,
+          "mae_pp": 5.981481481481481,
+          "maximum_error_pp": 38.33333333333333
+        }
+      },
+      "rows": [
+        {
+          "block": 1,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 6.020979287,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 4.0,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 31.25,
+            "ecdf_distance_pp": 9.624999999999995,
+            "future_outcomes_used": false,
+            "median_shift_ns": -19539.0,
+            "ordinary_temporal_score_pp": 25.0,
+            "predictions_pct": {
+              "location_shift": 48.5625,
+              "pooled_update": 49.96923076923077,
+              "recent25": 48.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": 111313.75,
+              "0.5": -19539.0,
+              "0.75": 3102.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 1.4375,
+            "temporal_score_pp": 31.25,
+            "translated_shape_distance_pp": 10.124999999999995
+          },
+          "measurement_offers": 300,
+          "name": "cohort-1",
+          "observed_miss_pct": 50.666666666666664,
+          "policy": null,
+          "profile": "A",
+          "rate_rps": 4.0
+        },
+        {
+          "block": 1,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 4.020379153,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 5.999999988,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 13.0,
+            "ecdf_distance_pp": 20.437500000000004,
+            "future_outcomes_used": false,
+            "median_shift_ns": -159641.0,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 37.0,
+              "pooled_update": 49.723076923076924,
+              "recent25": 32.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -149141.25,
+              "0.5": -159641.0,
+              "0.75": -22937.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 13.0,
+            "temporal_score_pp": 0.125,
+            "translated_shape_distance_pp": 13.875000000000004
+          },
+          "measurement_offers": 300,
+          "name": "cohort-2",
+          "observed_miss_pct": 47.0,
+          "policy": null,
+          "profile": "B",
+          "rate_rps": 5.999999988
+        },
+        {
+          "block": 1,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 3.020850619,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 8.0,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 37.8125,
+            "ecdf_distance_pp": 9.625,
+            "future_outcomes_used": false,
+            "median_shift_ns": 14241.0,
+            "ordinary_temporal_score_pp": 25.000000000000007,
+            "predictions_pct": {
+              "location_shift": 51.25,
+              "pooled_update": 50.09230769230769,
+              "recent25": 56.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -133339.25,
+              "0.5": 14241.0,
+              "0.75": -59323.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 1.25,
+            "temporal_score_pp": 37.8125,
+            "translated_shape_distance_pp": 10.25
+          },
+          "measurement_offers": 300,
+          "name": "cohort-3",
+          "observed_miss_pct": 43.333333333333336,
+          "policy": null,
+          "profile": "C",
+          "rate_rps": 8.0
+        },
+        {
+          "block": 2,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 4.020296442,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 5.999999988,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 7.8125,
+            "ecdf_distance_pp": 16.250000000000004,
+            "future_outcomes_used": false,
+            "median_shift_ns": -89308.0,
+            "ordinary_temporal_score_pp": 16.666666666666664,
+            "predictions_pct": {
+              "location_shift": 42.8125,
+              "pooled_update": 49.784615384615385,
+              "recent25": 36.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": 1666.75,
+              "0.5": -89308.0,
+              "0.75": -46692.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 7.1875,
+            "temporal_score_pp": 7.8125,
+            "translated_shape_distance_pp": 9.875
+          },
+          "measurement_offers": 300,
+          "name": "cohort-4",
+          "observed_miss_pct": 88.33333333333333,
+          "policy": null,
+          "profile": "B",
+          "rate_rps": 5.999999988
+        },
+        {
+          "block": 2,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 3.020308201,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 8.0,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 30.875,
+            "ecdf_distance_pp": 13.375000000000004,
+            "future_outcomes_used": false,
+            "median_shift_ns": -146475.0,
+            "ordinary_temporal_score_pp": 41.66666666666667,
+            "predictions_pct": {
+              "location_shift": 37.875,
+              "pooled_update": 49.90769230769231,
+              "recent25": 44.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -108901.25,
+              "0.5": -146475.0,
+              "0.75": 29651.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 12.125,
+            "temporal_score_pp": 30.875,
+            "translated_shape_distance_pp": 16.125
+          },
+          "measurement_offers": 300,
+          "name": "cohort-5",
+          "observed_miss_pct": 46.666666666666664,
+          "policy": null,
+          "profile": "C",
+          "rate_rps": 8.0
+        },
+        {
+          "block": 2,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 6.020331154,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 4.0,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 18.1875,
+            "ecdf_distance_pp": 10.125,
+            "future_outcomes_used": false,
+            "median_shift_ns": -55264.0,
+            "ordinary_temporal_score_pp": 8.333333333333336,
+            "predictions_pct": {
+              "location_shift": 45.125,
+              "pooled_update": 49.90769230769231,
+              "recent25": 44.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -8817.25,
+              "0.5": -55264.0,
+              "0.75": 4472.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 4.875,
+            "temporal_score_pp": 18.1875,
+            "translated_shape_distance_pp": 9.062499999999996
+          },
+          "measurement_offers": 300,
+          "name": "cohort-6",
+          "observed_miss_pct": 47.333333333333336,
+          "policy": null,
+          "profile": "A",
+          "rate_rps": 4.0
+        },
+        {
+          "block": 3,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 3.020585033,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 8.0,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 21.0625,
+            "ecdf_distance_pp": 10.499999999999998,
+            "future_outcomes_used": false,
+            "median_shift_ns": 12199.0,
+            "ordinary_temporal_score_pp": 25.000000000000007,
+            "predictions_pct": {
+              "location_shift": 51.1875,
+              "pooled_update": 50.03076923076923,
+              "recent25": 52.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": 99974.75,
+              "0.5": 12199.0,
+              "0.75": 2977.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 1.1875,
+            "temporal_score_pp": 21.0625,
+            "translated_shape_distance_pp": 11.562499999999998
+          },
+          "measurement_offers": 300,
+          "name": "cohort-7",
+          "observed_miss_pct": 41.0,
+          "policy": null,
+          "profile": "C",
+          "rate_rps": 8.0
+        },
+        {
+          "block": 3,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 6.021268084,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 4.0,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 21.0,
+            "ecdf_distance_pp": 21.499999999999996,
+            "future_outcomes_used": false,
+            "median_shift_ns": 227985.0,
+            "ordinary_temporal_score_pp": 25.0,
+            "predictions_pct": {
+              "location_shift": 66.8125,
+              "pooled_update": 50.215384615384615,
+              "recent25": 64.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": 184522.75,
+              "0.5": 227985.0,
+              "0.75": 194212.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 16.8125,
+            "temporal_score_pp": 21.0,
+            "translated_shape_distance_pp": 15.437500000000004
+          },
+          "measurement_offers": 300,
+          "name": "cohort-8",
+          "observed_miss_pct": 49.666666666666664,
+          "policy": null,
+          "profile": "A",
+          "rate_rps": 4.0
+        },
+        {
+          "block": 3,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 4.02080407,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 5.999999988,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 27.0625,
+            "ecdf_distance_pp": 17.0,
+            "future_outcomes_used": false,
+            "median_shift_ns": 124553.0,
+            "ordinary_temporal_score_pp": 41.666666666666664,
+            "predictions_pct": {
+              "location_shift": 59.875,
+              "pooled_update": 50.09230769230769,
+              "recent25": 56.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": 162742.75,
+              "0.5": 124553.0,
+              "0.75": -105880.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 9.875,
+            "temporal_score_pp": 27.0625,
+            "translated_shape_distance_pp": 19.75
+          },
+          "measurement_offers": 300,
+          "name": "cohort-9",
+          "observed_miss_pct": 47.666666666666664,
+          "policy": null,
+          "profile": "B",
+          "rate_rps": 5.999999988
+        },
+        {
+          "block": 4,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 6.02108931,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 4.0,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 9.1875,
+            "ecdf_distance_pp": 8.562499999999998,
+            "future_outcomes_used": false,
+            "median_shift_ns": 62261.0,
+            "ordinary_temporal_score_pp": 16.66666666666667,
+            "predictions_pct": {
+              "location_shift": 55.0625,
+              "pooled_update": 50.03076923076923,
+              "recent25": 52.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -83585.25,
+              "0.5": 62261.0,
+              "0.75": 47321.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 5.0625,
+            "temporal_score_pp": 9.1875,
+            "translated_shape_distance_pp": 11.187500000000005
+          },
+          "measurement_offers": 300,
+          "name": "cohort-10",
+          "observed_miss_pct": 50.0,
+          "policy": null,
+          "profile": "A",
+          "rate_rps": 4.0
+        },
+        {
+          "block": 4,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 3.020448355,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 8.0,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 33.125,
+            "ecdf_distance_pp": 19.437500000000007,
+            "future_outcomes_used": false,
+            "median_shift_ns": -117439.0,
+            "ordinary_temporal_score_pp": 33.33333333333333,
+            "predictions_pct": {
+              "location_shift": 40.1875,
+              "pooled_update": 49.723076923076924,
+              "recent25": 32.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -197819.25,
+              "0.5": -117439.0,
+              "0.75": -191876.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 9.8125,
+            "temporal_score_pp": 33.125,
+            "translated_shape_distance_pp": 11.9375
+          },
+          "measurement_offers": 300,
+          "name": "cohort-11",
+          "observed_miss_pct": 45.333333333333336,
+          "policy": null,
+          "profile": "C",
+          "rate_rps": 8.0
+        },
+        {
+          "block": 4,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 4.020791729,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 5.999999988,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 15.75,
+            "ecdf_distance_pp": 13.812499999999996,
+            "future_outcomes_used": false,
+            "median_shift_ns": -23798.0,
+            "ordinary_temporal_score_pp": 33.333333333333336,
+            "predictions_pct": {
+              "location_shift": 48.125,
+              "pooled_update": 49.90769230769231,
+              "recent25": 44.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": 96769.75,
+              "0.5": -23798.0,
+              "0.75": -75589.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 1.875,
+            "temporal_score_pp": 15.75,
+            "translated_shape_distance_pp": 14.9375
+          },
+          "measurement_offers": 300,
+          "name": "cohort-12",
+          "observed_miss_pct": 44.0,
+          "policy": null,
+          "profile": "B",
+          "rate_rps": 5.999999988
+        },
+        {
+          "block": 5,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 3.020227317,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 8.0,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 10.25,
+            "ecdf_distance_pp": 12.0,
+            "future_outcomes_used": false,
+            "median_shift_ns": -84614.0,
+            "ordinary_temporal_score_pp": 16.66666666666667,
+            "predictions_pct": {
+              "location_shift": 43.0,
+              "pooled_update": 49.96923076923077,
+              "recent25": 48.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -76298.25,
+              "0.5": -84614.0,
+              "0.75": -117569.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 7.0,
+            "temporal_score_pp": 10.25,
+            "translated_shape_distance_pp": 8.187500000000004
+          },
+          "measurement_offers": 300,
+          "name": "cohort-13",
+          "observed_miss_pct": 42.333333333333336,
+          "policy": null,
+          "profile": "C",
+          "rate_rps": 8.0
+        },
+        {
+          "block": 5,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 4.020974434,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 5.999999988,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 25.6875,
+            "ecdf_distance_pp": 25.1875,
+            "future_outcomes_used": false,
+            "median_shift_ns": -350624.0,
+            "ordinary_temporal_score_pp": 8.333333333333336,
+            "predictions_pct": {
+              "location_shift": 24.3125,
+              "pooled_update": 49.90769230769231,
+              "recent25": 44.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -326493.25,
+              "0.5": -350624.0,
+              "0.75": -103916.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 25.6875,
+            "temporal_score_pp": 9.9375,
+            "translated_shape_distance_pp": 23.37499999999999
+          },
+          "measurement_offers": 300,
+          "name": "cohort-14",
+          "observed_miss_pct": 40.333333333333336,
+          "policy": null,
+          "profile": "B",
+          "rate_rps": 5.999999988
+        },
+        {
+          "block": 5,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 6.020561191,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 4.0,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 3.125,
+            "ecdf_distance_pp": 11.25,
+            "future_outcomes_used": false,
+            "median_shift_ns": 10139.0,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 50.9375,
+              "pooled_update": 50.03076923076923,
+              "recent25": 52.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -171236.25,
+              "0.5": 10139.0,
+              "0.75": -65362.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.9375,
+            "temporal_score_pp": 3.125,
+            "translated_shape_distance_pp": 11.25
+          },
+          "measurement_offers": 300,
+          "name": "cohort-15",
+          "observed_miss_pct": 48.333333333333336,
+          "policy": null,
+          "profile": "A",
+          "rate_rps": 4.0
+        },
+        {
+          "block": 6,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 4.020588573,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 5.999999988,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 15.8125,
+            "ecdf_distance_pp": 12.374999999999991,
+            "future_outcomes_used": false,
+            "median_shift_ns": 59509.0,
+            "ordinary_temporal_score_pp": 16.66666666666667,
+            "predictions_pct": {
+              "location_shift": 54.8125,
+              "pooled_update": 50.09230769230769,
+              "recent25": 56.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -301587.25,
+              "0.5": 59509.0,
+              "0.75": 40463.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 4.8125,
+            "temporal_score_pp": 15.8125,
+            "translated_shape_distance_pp": 11.750000000000002
+          },
+          "measurement_offers": 300,
+          "name": "cohort-16",
+          "observed_miss_pct": 48.333333333333336,
+          "policy": null,
+          "profile": "B",
+          "rate_rps": 5.999999988
+        },
+        {
+          "block": 6,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 6.020783655,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 4.0,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 9.8125,
+            "ecdf_distance_pp": 10.750000000000004,
+            "future_outcomes_used": false,
+            "median_shift_ns": -47107.0,
+            "ordinary_temporal_score_pp": 8.333333333333336,
+            "predictions_pct": {
+              "location_shift": 45.875,
+              "pooled_update": 49.90769230769231,
+              "recent25": 44.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": 70483.75,
+              "0.5": -47107.0,
+              "0.75": -33498.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 4.125,
+            "temporal_score_pp": 9.8125,
+            "translated_shape_distance_pp": 11.062499999999996
+          },
+          "measurement_offers": 300,
+          "name": "cohort-17",
+          "observed_miss_pct": 47.0,
+          "policy": null,
+          "profile": "A",
+          "rate_rps": 4.0
+        },
+        {
+          "block": 6,
+          "cost": {
+            "configured_warmup_sec": null,
+            "full_observed_client_span_sec": 3.020368674,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "same_service_target_rate_rps": 8.0,
+            "unsuccessful": 0
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 13.0,
+            "ecdf_distance_pp": 20.187499999999993,
+            "future_outcomes_used": false,
+            "median_shift_ns": 23483.0,
+            "ordinary_temporal_score_pp": 8.333333333333336,
+            "predictions_pct": {
+              "location_shift": 51.625,
+              "pooled_update": 50.03076923076923,
+              "recent25": 52.0,
+              "reference": 50.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -74423.25,
+              "0.5": 23483.0,
+              "0.75": -208469.5
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 1.625,
+            "temporal_score_pp": 13.0,
+            "translated_shape_distance_pp": 21.687499999999993
+          },
+          "measurement_offers": 300,
+          "name": "cohort-18",
+          "observed_miss_pct": 43.0,
+          "policy": null,
+          "profile": "C",
+          "rate_rps": 8.0
+        }
+      ]
+    },
+    {
+      "apparatus_warmup_offers": 600,
+      "calibration_total_offers": 1600,
+      "candidate_consumed_warmup_offers": 600,
+      "deadline_ns": 20565395,
+      "guards": {
+        "always": {
+          "accepted": 24,
+          "accepted_mae_pp": 15.708333333333332,
+          "bad_accepted": 11,
+          "bad_accepted_fraction": 0.4583333333333333,
+          "caught_bad": 0,
+          "coverage_pct": 100.0,
+          "false_warnings": 0,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 43.166666666666664,
+          "total": 24,
+          "transition_coverage_pct": 100.0,
+          "transition_total": 12,
+          "useful_screen": false
+        },
+        "deadline_disagreement": {
+          "accepted": 13,
+          "accepted_mae_pp": 0.3717948717948714,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 11,
+          "coverage_pct": 54.166666666666664,
+          "false_warnings": 0,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 4.833333333333329,
+          "total": 24,
+          "transition_coverage_pct": 8.333333333333334,
+          "transition_total": 12,
+          "useful_screen": false
+        },
+        "ecdf_distance": {
+          "accepted": 0,
+          "accepted_mae_pp": null,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": null,
+          "caught_bad": 11,
+          "coverage_pct": 0.0,
+          "false_warnings": 13,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": null,
+          "total": 24,
+          "transition_coverage_pct": 0.0,
+          "transition_total": 12,
+          "useful_screen": false
+        },
+        "ordinary_temporal_disagreement": {
+          "accepted": 13,
+          "accepted_mae_pp": 5.743589743589744,
+          "bad_accepted": 2,
+          "bad_accepted_fraction": 0.15384615384615385,
+          "caught_bad": 9,
+          "coverage_pct": 54.166666666666664,
+          "false_warnings": 2,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 39.5,
+          "total": 24,
+          "transition_coverage_pct": 16.666666666666668,
+          "transition_total": 12,
+          "useful_screen": false
+        },
+        "shift_and_temporal": {
+          "accepted": 12,
+          "accepted_mae_pp": 0.0,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 11,
+          "coverage_pct": 50.0,
+          "false_warnings": 1,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 0.0,
+          "total": 24,
+          "transition_coverage_pct": 0.0,
+          "transition_total": 12,
+          "useful_screen": false
+        },
+        "shift_only": {
+          "accepted": 12,
+          "accepted_mae_pp": 0.0,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 11,
+          "coverage_pct": 50.0,
+          "false_warnings": 1,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 0.0,
+          "total": 24,
+          "transition_coverage_pct": 0.0,
+          "transition_total": 12,
+          "useful_screen": false
+        },
+        "temporal_only": {
+          "accepted": 16,
+          "accepted_mae_pp": 5.625,
+          "bad_accepted": 3,
+          "bad_accepted_fraction": 0.1875,
+          "caught_bad": 8,
+          "coverage_pct": 66.66666666666667,
+          "false_warnings": 0,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 39.5,
+          "total": 24,
+          "transition_coverage_pct": 33.333333333333336,
+          "transition_total": 12,
+          "useful_screen": false
+        }
+      },
+      "name": "NGINX power",
+      "policy_subgroups": {
+        "P0": {
+          "guards": {
+            "always": {
+              "accepted": 12,
+              "accepted_mae_pp": 31.416666666666664,
+              "bad_accepted": 11,
+              "bad_accepted_fraction": 0.9166666666666666,
+              "caught_bad": 0,
+              "coverage_pct": 100.0,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 43.166666666666664,
+              "total": 12,
+              "transition_coverage_pct": 100.0,
+              "transition_total": 12,
+              "useful_screen": false
+            },
+            "deadline_disagreement": {
+              "accepted": 1,
+              "accepted_mae_pp": 4.833333333333329,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 11,
+              "coverage_pct": 8.333333333333334,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 4.833333333333329,
+              "total": 12,
+              "transition_coverage_pct": 8.333333333333334,
+              "transition_total": 12,
+              "useful_screen": false
+            },
+            "ecdf_distance": {
+              "accepted": 0,
+              "accepted_mae_pp": null,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": null,
+              "caught_bad": 11,
+              "coverage_pct": 0.0,
+              "false_warnings": 1,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": null,
+              "total": 12,
+              "transition_coverage_pct": 0.0,
+              "transition_total": 12,
+              "useful_screen": false
+            },
+            "ordinary_temporal_disagreement": {
+              "accepted": 2,
+              "accepted_mae_pp": 37.33333333333333,
+              "bad_accepted": 2,
+              "bad_accepted_fraction": 1.0,
+              "caught_bad": 9,
+              "coverage_pct": 16.666666666666668,
+              "false_warnings": 1,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 39.5,
+              "total": 12,
+              "transition_coverage_pct": 16.666666666666668,
+              "transition_total": 12,
+              "useful_screen": false
+            },
+            "shift_and_temporal": {
+              "accepted": 0,
+              "accepted_mae_pp": null,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": null,
+              "caught_bad": 11,
+              "coverage_pct": 0.0,
+              "false_warnings": 1,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": null,
+              "total": 12,
+              "transition_coverage_pct": 0.0,
+              "transition_total": 12,
+              "useful_screen": false
+            },
+            "shift_only": {
+              "accepted": 0,
+              "accepted_mae_pp": null,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": null,
+              "caught_bad": 11,
+              "coverage_pct": 0.0,
+              "false_warnings": 1,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": null,
+              "total": 12,
+              "transition_coverage_pct": 0.0,
+              "transition_total": 12,
+              "useful_screen": false
+            },
+            "temporal_only": {
+              "accepted": 4,
+              "accepted_mae_pp": 22.5,
+              "bad_accepted": 3,
+              "bad_accepted_fraction": 0.75,
+              "caught_bad": 8,
+              "coverage_pct": 33.333333333333336,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 39.5,
+              "total": 12,
+              "transition_coverage_pct": 33.333333333333336,
+              "transition_total": 12,
+              "useful_screen": false
+            }
+          },
+          "predictors": {
+            "location_shift": {
+              "answered": 12,
+              "errors_above_5pp": 9,
+              "mae_pp": 10.45486111111111,
+              "maximum_error_pp": 22.0
+            },
+            "pooled_update": {
+              "answered": 12,
+              "errors_above_5pp": 11,
+              "mae_pp": 30.48989898989899,
+              "maximum_error_pp": 41.96969696969696
+            },
+            "recent25": {
+              "answered": 12,
+              "errors_above_5pp": 7,
+              "mae_pp": 9.222222222222221,
+              "maximum_error_pp": 25.0
+            },
+            "reference": {
+              "answered": 12,
+              "errors_above_5pp": 11,
+              "mae_pp": 31.416666666666664,
+              "maximum_error_pp": 43.166666666666664
+            }
+          }
+        },
+        "P1": {
+          "guards": {
+            "always": {
+              "accepted": 12,
+              "accepted_mae_pp": 0.0,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 100.0,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 0.0,
+              "total": 12,
+              "transition_coverage_pct": null,
+              "transition_total": 0,
+              "useful_screen": true
+            },
+            "deadline_disagreement": {
+              "accepted": 12,
+              "accepted_mae_pp": 0.0,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 100.0,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 0.0,
+              "total": 12,
+              "transition_coverage_pct": null,
+              "transition_total": 0,
+              "useful_screen": true
+            },
+            "ecdf_distance": {
+              "accepted": 0,
+              "accepted_mae_pp": null,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": null,
+              "caught_bad": 0,
+              "coverage_pct": 0.0,
+              "false_warnings": 12,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": null,
+              "total": 12,
+              "transition_coverage_pct": null,
+              "transition_total": 0,
+              "useful_screen": false
+            },
+            "ordinary_temporal_disagreement": {
+              "accepted": 11,
+              "accepted_mae_pp": 0.0,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 91.66666666666667,
+              "false_warnings": 1,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 0.0,
+              "total": 12,
+              "transition_coverage_pct": null,
+              "transition_total": 0,
+              "useful_screen": true
+            },
+            "shift_and_temporal": {
+              "accepted": 12,
+              "accepted_mae_pp": 0.0,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 100.0,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 0.0,
+              "total": 12,
+              "transition_coverage_pct": null,
+              "transition_total": 0,
+              "useful_screen": true
+            },
+            "shift_only": {
+              "accepted": 12,
+              "accepted_mae_pp": 0.0,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 100.0,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 0.0,
+              "total": 12,
+              "transition_coverage_pct": null,
+              "transition_total": 0,
+              "useful_screen": true
+            },
+            "temporal_only": {
+              "accepted": 12,
+              "accepted_mae_pp": 0.0,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 100.0,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 0.0,
+              "total": 12,
+              "transition_coverage_pct": null,
+              "transition_total": 0,
+              "useful_screen": true
+            }
+          },
+          "predictors": {
+            "location_shift": {
+              "answered": 12,
+              "errors_above_5pp": 0,
+              "mae_pp": 0.0,
+              "maximum_error_pp": 0.0
+            },
+            "pooled_update": {
+              "answered": 12,
+              "errors_above_5pp": 0,
+              "mae_pp": 0.010101010101010102,
+              "maximum_error_pp": 0.12121212121212122
+            },
+            "recent25": {
+              "answered": 12,
+              "errors_above_5pp": 0,
+              "mae_pp": 0.3333333333333333,
+              "maximum_error_pp": 4.0
+            },
+            "reference": {
+              "answered": 12,
+              "errors_above_5pp": 0,
+              "mae_pp": 0.0,
+              "maximum_error_pp": 0.0
+            }
+          }
+        }
+      },
+      "predictors": {
+        "location_shift": {
+          "answered": 24,
+          "errors_above_5pp": 9,
+          "mae_pp": 5.227430555555555,
+          "maximum_error_pp": 22.0
+        },
+        "pooled_update": {
+          "answered": 24,
+          "errors_above_5pp": 11,
+          "mae_pp": 15.249999999999998,
+          "maximum_error_pp": 41.96969696969696
+        },
+        "recent25": {
+          "answered": 24,
+          "errors_above_5pp": 7,
+          "mae_pp": 4.777777777777777,
+          "maximum_error_pp": 25.0
+        },
+        "reference": {
+          "answered": 24,
+          "errors_above_5pp": 11,
+          "mae_pp": 15.708333333333332,
+          "maximum_error_pp": 43.166666666666664
+        }
+      },
+      "rows": [
+        {
+          "block": 1,
+          "cost": {
+            "full_observed_client_span_sec": 6.016671774,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 0.0,
+            "ecdf_distance_pp": 24.624999999999996,
+            "future_outcomes_used": false,
+            "median_shift_ns": -152216.5,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -167810.0,
+              "0.5": -152216.5,
+              "0.75": -240887.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.0,
+            "temporal_score_pp": 0.0,
+            "translated_shape_distance_pp": 11.875000000000002
+          },
+          "measurement_offers": 300,
+          "name": "cohort-1",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 1,
+          "cost": {
+            "full_observed_client_span_sec": 3.017371498,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 0.0,
+            "ecdf_distance_pp": 29.25000000000001,
+            "future_outcomes_used": false,
+            "median_shift_ns": -247013.5,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -254474.0,
+              "0.5": -247013.5,
+              "0.75": -294405.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.0,
+            "temporal_score_pp": 0.0,
+            "translated_shape_distance_pp": 11.375000000000002
+          },
+          "measurement_offers": 300,
+          "name": "cohort-2",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 1,
+          "cost": {
+            "full_observed_client_span_sec": 3.020718865,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 43.25,
+            "ecdf_distance_pp": 56.62499999999999,
+            "future_outcomes_used": false,
+            "median_shift_ns": -660188.5,
+            "ordinary_temporal_score_pp": 33.333333333333336,
+            "predictions_pct": {
+              "location_shift": 36.25,
+              "pooled_update": 78.42424242424242,
+              "recent25": 44.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -595645.0,
+              "0.5": -660188.5,
+              "0.75": -535957.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 43.25,
+            "temporal_score_pp": 39.375,
+            "translated_shape_distance_pp": 17.625
+          },
+          "measurement_offers": 300,
+          "name": "cohort-3",
+          "observed_miss_pct": 40.333333333333336,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 1,
+          "cost": {
+            "full_observed_client_span_sec": 6.020312466,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 36.375,
+            "ecdf_distance_pp": 51.37500000000001,
+            "future_outcomes_used": false,
+            "median_shift_ns": -589164.5,
+            "ordinary_temporal_score_pp": 25.0,
+            "predictions_pct": {
+              "location_shift": 43.125,
+              "pooled_update": 78.42424242424242,
+              "recent25": 44.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -592215.0,
+              "0.5": -589164.5,
+              "0.75": -648195.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 36.375,
+            "temporal_score_pp": 15.75,
+            "translated_shape_distance_pp": 10.499999999999998
+          },
+          "measurement_offers": 300,
+          "name": "cohort-4",
+          "observed_miss_pct": 44.333333333333336,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 2,
+          "cost": {
+            "full_observed_client_span_sec": 6.01649864,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 0.0,
+            "ecdf_distance_pp": 24.874999999999996,
+            "future_outcomes_used": false,
+            "median_shift_ns": -250202.5,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -47547.0,
+              "0.5": -250202.5,
+              "0.75": -172818.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.0,
+            "temporal_score_pp": 0.0,
+            "translated_shape_distance_pp": 20.5
+          },
+          "measurement_offers": 300,
+          "name": "cohort-5",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 2,
+          "cost": {
+            "full_observed_client_span_sec": 3.015901743,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 0.0,
+            "ecdf_distance_pp": 13.999999999999996,
+            "future_outcomes_used": false,
+            "median_shift_ns": -114312.5,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "quartile_shift_ns": {
+              "0.25": 66541.0,
+              "0.5": -114312.5,
+              "0.75": 26981.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.0,
+            "temporal_score_pp": 0.0,
+            "translated_shape_distance_pp": 14.250000000000007
+          },
+          "measurement_offers": 300,
+          "name": "cohort-6",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 2,
+          "cost": {
+            "full_observed_client_span_sec": 6.020827741,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 22.25,
+            "ecdf_distance_pp": 44.99999999999999,
+            "future_outcomes_used": false,
+            "median_shift_ns": -435641.5,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 57.25,
+              "pooled_update": 78.66666666666667,
+              "recent25": 52.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -483459.0,
+              "0.5": -435641.5,
+              "0.75": -502929.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 22.25,
+            "temporal_score_pp": 3.0,
+            "translated_shape_distance_pp": 10.624999999999996
+          },
+          "measurement_offers": 300,
+          "name": "cohort-7",
+          "observed_miss_pct": 44.333333333333336,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 2,
+          "cost": {
+            "full_observed_client_span_sec": 3.020249804,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 23.375,
+            "ecdf_distance_pp": 43.99999999999999,
+            "future_outcomes_used": false,
+            "median_shift_ns": -411935.5,
+            "ordinary_temporal_score_pp": 16.66666666666667,
+            "predictions_pct": {
+              "location_shift": 58.125,
+              "pooled_update": 78.66666666666667,
+              "recent25": 52.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -659944.0,
+              "0.5": -411935.5,
+              "0.75": -424594.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 21.375,
+            "temporal_score_pp": 23.375,
+            "translated_shape_distance_pp": 15.500000000000004
+          },
+          "measurement_offers": 300,
+          "name": "cohort-8",
+          "observed_miss_pct": 49.333333333333336,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 3,
+          "cost": {
+            "full_observed_client_span_sec": 3.016972067,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 0.0,
+            "ecdf_distance_pp": 15.874999999999995,
+            "future_outcomes_used": false,
+            "median_shift_ns": -148851.5,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "quartile_shift_ns": {
+              "0.25": 83303.0,
+              "0.5": -148851.5,
+              "0.75": -129607.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.0,
+            "temporal_score_pp": 0.0,
+            "translated_shape_distance_pp": 16.250000000000004
+          },
+          "measurement_offers": 300,
+          "name": "cohort-9",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 3,
+          "cost": {
+            "full_observed_client_span_sec": 6.020321047,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 27.875,
+            "ecdf_distance_pp": 43.50000000000001,
+            "future_outcomes_used": false,
+            "median_shift_ns": -507848.5,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 51.625,
+              "pooled_update": 78.66666666666667,
+              "recent25": 52.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -454270.0,
+              "0.5": -507848.5,
+              "0.75": -444686.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 27.875,
+            "temporal_score_pp": 1.875,
+            "translated_shape_distance_pp": 15.499999999999991
+          },
+          "measurement_offers": 300,
+          "name": "cohort-10",
+          "observed_miss_pct": 40.0,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 3,
+          "cost": {
+            "full_observed_client_span_sec": 6.016313621,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 0.0,
+            "ecdf_distance_pp": 16.874999999999996,
+            "future_outcomes_used": false,
+            "median_shift_ns": -81962.5,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "quartile_shift_ns": {
+              "0.25": 126603.0,
+              "0.5": -81962.5,
+              "0.75": -137727.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.0,
+            "temporal_score_pp": 0.0,
+            "translated_shape_distance_pp": 20.25
+          },
+          "measurement_offers": 300,
+          "name": "cohort-11",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 3,
+          "cost": {
+            "full_observed_client_span_sec": 3.02054754,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 31.0,
+            "ecdf_distance_pp": 48.75,
+            "future_outcomes_used": false,
+            "median_shift_ns": -420510.5,
+            "ordinary_temporal_score_pp": 33.333333333333336,
+            "predictions_pct": {
+              "location_shift": 57.5,
+              "pooled_update": 78.9090909090909,
+              "recent25": 60.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -337625.0,
+              "0.5": -420510.5,
+              "0.75": -469962.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 22.0,
+            "temporal_score_pp": 31.0,
+            "translated_shape_distance_pp": 9.125000000000005
+          },
+          "measurement_offers": 300,
+          "name": "cohort-12",
+          "observed_miss_pct": 45.333333333333336,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 4,
+          "cost": {
+            "full_observed_client_span_sec": 6.020179347,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 41.125,
+            "ecdf_distance_pp": 54.37499999999999,
+            "future_outcomes_used": false,
+            "median_shift_ns": -634504.5,
+            "ordinary_temporal_score_pp": 8.333333333333329,
+            "predictions_pct": {
+              "location_shift": 38.375,
+              "pooled_update": 78.18181818181819,
+              "recent25": 36.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -693071.0,
+              "0.5": -634504.5,
+              "0.75": -690545.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 41.125,
+            "temporal_score_pp": 12.875,
+            "translated_shape_distance_pp": 10.875000000000002
+          },
+          "measurement_offers": 300,
+          "name": "cohort-13",
+          "observed_miss_pct": 47.666666666666664,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 4,
+          "cost": {
+            "full_observed_client_span_sec": 3.020552408,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 54.25,
+            "ecdf_distance_pp": 53.87499999999999,
+            "future_outcomes_used": false,
+            "median_shift_ns": -762849.5,
+            "ordinary_temporal_score_pp": 8.333333333333336,
+            "predictions_pct": {
+              "location_shift": 25.25,
+              "pooled_update": 78.06060606060606,
+              "recent25": 32.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -530775.0,
+              "0.5": -762849.5,
+              "0.75": -673730.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 54.25,
+            "temporal_score_pp": 23.25,
+            "translated_shape_distance_pp": 16.000000000000004
+          },
+          "measurement_offers": 300,
+          "name": "cohort-14",
+          "observed_miss_pct": 45.333333333333336,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 4,
+          "cost": {
+            "full_observed_client_span_sec": 6.016810022,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 0.0,
+            "ecdf_distance_pp": 15.375000000000005,
+            "future_outcomes_used": false,
+            "median_shift_ns": -15348.5,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -105310.0,
+              "0.5": -15348.5,
+              "0.75": -89252.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.0,
+            "temporal_score_pp": 0.0,
+            "translated_shape_distance_pp": 14.000000000000002
+          },
+          "measurement_offers": 300,
+          "name": "cohort-15",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 4,
+          "cost": {
+            "full_observed_client_span_sec": 3.017558174,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 0.0,
+            "ecdf_distance_pp": 51.37499999999999,
+            "future_outcomes_used": false,
+            "median_shift_ns": 458310.5,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "quartile_shift_ns": {
+              "0.25": 602742.0,
+              "0.5": 458310.5,
+              "0.75": 456499.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.0,
+            "temporal_score_pp": 0.0,
+            "translated_shape_distance_pp": 12.625
+          },
+          "measurement_offers": 300,
+          "name": "cohort-16",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 5,
+          "cost": {
+            "full_observed_client_span_sec": 3.02033941,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 49.25,
+            "ecdf_distance_pp": 53.49999999999999,
+            "future_outcomes_used": false,
+            "median_shift_ns": -708209.5,
+            "ordinary_temporal_score_pp": 8.333333333333329,
+            "predictions_pct": {
+              "location_shift": 30.25,
+              "pooled_update": 78.3030303030303,
+              "recent25": 40.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -747208.0,
+              "0.5": -708209.5,
+              "0.75": -600920.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 49.25,
+            "temporal_score_pp": 12.5,
+            "translated_shape_distance_pp": 17.625
+          },
+          "measurement_offers": 300,
+          "name": "cohort-17",
+          "observed_miss_pct": 36.333333333333336,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 5,
+          "cost": {
+            "full_observed_client_span_sec": 6.017505802,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 0.0,
+            "ecdf_distance_pp": 13.625000000000004,
+            "future_outcomes_used": false,
+            "median_shift_ns": -85056.5,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "quartile_shift_ns": {
+              "0.25": 159101.0,
+              "0.5": -85056.5,
+              "0.75": 31544.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.0,
+            "temporal_score_pp": 0.0,
+            "translated_shape_distance_pp": 20.875
+          },
+          "measurement_offers": 300,
+          "name": "cohort-18",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 5,
+          "cost": {
+            "full_observed_client_span_sec": 3.017159555,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 0.0,
+            "ecdf_distance_pp": 15.999999999999993,
+            "future_outcomes_used": false,
+            "median_shift_ns": -89567.5,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -88777.0,
+              "0.5": -89567.5,
+              "0.75": -26993.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.0,
+            "temporal_score_pp": 0.0,
+            "translated_shape_distance_pp": 10.37499999999999
+          },
+          "measurement_offers": 300,
+          "name": "cohort-19",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 5,
+          "cost": {
+            "full_observed_client_span_sec": 6.022443745,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 5.125,
+            "ecdf_distance_pp": 51.24999999999999,
+            "future_outcomes_used": false,
+            "median_shift_ns": 593021.5,
+            "ordinary_temporal_score_pp": 16.66666666666667,
+            "predictions_pct": {
+              "location_shift": 84.625,
+              "pooled_update": 79.63636363636364,
+              "recent25": 84.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": 480361.0,
+              "0.5": 593021.5,
+              "0.75": 652662.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 5.125,
+            "temporal_score_pp": 3.375,
+            "translated_shape_distance_pp": 14.249999999999996
+          },
+          "measurement_offers": 300,
+          "name": "cohort-20",
+          "observed_miss_pct": 84.33333333333333,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 6,
+          "cost": {
+            "full_observed_client_span_sec": 6.017238802,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 0.0,
+            "ecdf_distance_pp": 49.5,
+            "future_outcomes_used": false,
+            "median_shift_ns": 749570.5,
+            "ordinary_temporal_score_pp": 8.333333333333334,
+            "predictions_pct": {
+              "location_shift": 0.0,
+              "pooled_update": 0.12121212121212122,
+              "recent25": 4.0,
+              "reference": 0.0
+            },
+            "quartile_shift_ns": {
+              "0.25": 566203.0,
+              "0.5": 749570.5,
+              "0.75": 935029.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.0,
+            "temporal_score_pp": 0.0,
+            "translated_shape_distance_pp": 23.625
+          },
+          "measurement_offers": 300,
+          "name": "cohort-21",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 6,
+          "cost": {
+            "full_observed_client_span_sec": 3.016519495,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": true,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 0.0,
+            "ecdf_distance_pp": 26.875,
+            "future_outcomes_used": false,
+            "median_shift_ns": -304495.5,
+            "ordinary_temporal_score_pp": 0.0,
+            "predictions_pct": {
+              "location_shift": 0.0,
+              "pooled_update": 0.0,
+              "recent25": 0.0,
+              "reference": 0.0
+            },
+            "quartile_shift_ns": {
+              "0.25": -95142.0,
+              "0.5": -304495.5,
+              "0.75": -284004.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.0,
+            "temporal_score_pp": 0.0,
+            "translated_shape_distance_pp": 22.625
+          },
+          "measurement_offers": 300,
+          "name": "cohort-22",
+          "observed_miss_pct": 0.0,
+          "policy": "P1",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 6,
+          "cost": {
+            "full_observed_client_span_sec": 3.020611161,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 32.5,
+            "ecdf_distance_pp": 50.24999999999999,
+            "future_outcomes_used": false,
+            "median_shift_ns": -551636.5,
+            "ordinary_temporal_score_pp": 8.333333333333336,
+            "predictions_pct": {
+              "location_shift": 47.0,
+              "pooled_update": 78.42424242424242,
+              "recent25": 44.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -603361.0,
+              "0.5": -551636.5,
+              "0.75": -544469.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 32.5,
+            "temporal_score_pp": 0.75,
+            "translated_shape_distance_pp": 8.499999999999996
+          },
+          "measurement_offers": 300,
+          "name": "cohort-23",
+          "observed_miss_pct": 69.0,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 6,
+          "cost": {
+            "full_observed_client_span_sec": 6.020531219,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 22.25,
+            "ecdf_distance_pp": 49.0,
+            "future_outcomes_used": false,
+            "median_shift_ns": -435903.5,
+            "ordinary_temporal_score_pp": 8.333333333333336,
+            "predictions_pct": {
+              "location_shift": 57.25,
+              "pooled_update": 78.78787878787878,
+              "recent25": 56.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -542921.0,
+              "0.5": -435903.5,
+              "0.75": -438370.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 22.25,
+            "temporal_score_pp": 18.0,
+            "translated_shape_distance_pp": 10.625000000000002
+          },
+          "measurement_offers": 300,
+          "name": "cohort-24",
+          "observed_miss_pct": 40.333333333333336,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        }
+      ]
+    },
+    {
+      "apparatus_warmup_offers": 300,
+      "calibration_total_offers": 2400,
+      "candidate_consumed_warmup_offers": 300,
+      "deadline_ns": 20565395,
+      "guards": {
+        "always": {
+          "accepted": 12,
+          "accepted_mae_pp": 1.9722222222222239,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 0,
+          "coverage_pct": 100.0,
+          "false_warnings": 0,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 4.5,
+          "total": 12,
+          "transition_coverage_pct": 100.0,
+          "transition_total": 12,
+          "useful_screen": true
+        },
+        "deadline_disagreement": {
+          "accepted": 5,
+          "accepted_mae_pp": 1.633333333333337,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 0,
+          "coverage_pct": 41.666666666666664,
+          "false_warnings": 7,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 4.5,
+          "total": 12,
+          "transition_coverage_pct": 41.666666666666664,
+          "transition_total": 12,
+          "useful_screen": false
+        },
+        "ecdf_distance": {
+          "accepted": 0,
+          "accepted_mae_pp": null,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": null,
+          "caught_bad": 0,
+          "coverage_pct": 0.0,
+          "false_warnings": 12,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": null,
+          "total": 12,
+          "transition_coverage_pct": 0.0,
+          "transition_total": 12,
+          "useful_screen": false
+        },
+        "ordinary_temporal_disagreement": {
+          "accepted": 0,
+          "accepted_mae_pp": null,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": null,
+          "caught_bad": 0,
+          "coverage_pct": 0.0,
+          "false_warnings": 12,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": null,
+          "total": 12,
+          "transition_coverage_pct": 0.0,
+          "transition_total": 12,
+          "useful_screen": false
+        },
+        "shift_and_temporal": {
+          "accepted": 4,
+          "accepted_mae_pp": 1.7500000000000036,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 0,
+          "coverage_pct": 33.333333333333336,
+          "false_warnings": 8,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 4.5,
+          "total": 12,
+          "transition_coverage_pct": 33.333333333333336,
+          "transition_total": 12,
+          "useful_screen": false
+        },
+        "shift_only": {
+          "accepted": 6,
+          "accepted_mae_pp": 2.0555555555555594,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 0,
+          "coverage_pct": 50.0,
+          "false_warnings": 6,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 4.5,
+          "total": 12,
+          "transition_coverage_pct": 50.0,
+          "transition_total": 12,
+          "useful_screen": true
+        },
+        "temporal_only": {
+          "accepted": 5,
+          "accepted_mae_pp": 1.833333333333337,
+          "bad_accepted": 0,
+          "bad_accepted_fraction": 0.0,
+          "caught_bad": 0,
+          "coverage_pct": 41.666666666666664,
+          "false_warnings": 7,
+          "independent_risk_validation": false,
+          "maximum_accepted_error_pp": 4.5,
+          "total": 12,
+          "transition_coverage_pct": 41.666666666666664,
+          "transition_total": 12,
+          "useful_screen": false
+        }
+      },
+      "name": "NGINX rate",
+      "policy_subgroups": {
+        "P0": {
+          "guards": {
+            "always": {
+              "accepted": 12,
+              "accepted_mae_pp": 1.9722222222222239,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 100.0,
+              "false_warnings": 0,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 4.5,
+              "total": 12,
+              "transition_coverage_pct": 100.0,
+              "transition_total": 12,
+              "useful_screen": true
+            },
+            "deadline_disagreement": {
+              "accepted": 5,
+              "accepted_mae_pp": 1.633333333333337,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 41.666666666666664,
+              "false_warnings": 7,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 4.5,
+              "total": 12,
+              "transition_coverage_pct": 41.666666666666664,
+              "transition_total": 12,
+              "useful_screen": false
+            },
+            "ecdf_distance": {
+              "accepted": 0,
+              "accepted_mae_pp": null,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": null,
+              "caught_bad": 0,
+              "coverage_pct": 0.0,
+              "false_warnings": 12,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": null,
+              "total": 12,
+              "transition_coverage_pct": 0.0,
+              "transition_total": 12,
+              "useful_screen": false
+            },
+            "ordinary_temporal_disagreement": {
+              "accepted": 0,
+              "accepted_mae_pp": null,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": null,
+              "caught_bad": 0,
+              "coverage_pct": 0.0,
+              "false_warnings": 12,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": null,
+              "total": 12,
+              "transition_coverage_pct": 0.0,
+              "transition_total": 12,
+              "useful_screen": false
+            },
+            "shift_and_temporal": {
+              "accepted": 4,
+              "accepted_mae_pp": 1.7500000000000036,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 33.333333333333336,
+              "false_warnings": 8,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 4.5,
+              "total": 12,
+              "transition_coverage_pct": 33.333333333333336,
+              "transition_total": 12,
+              "useful_screen": false
+            },
+            "shift_only": {
+              "accepted": 6,
+              "accepted_mae_pp": 2.0555555555555594,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 50.0,
+              "false_warnings": 6,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 4.5,
+              "total": 12,
+              "transition_coverage_pct": 50.0,
+              "transition_total": 12,
+              "useful_screen": true
+            },
+            "temporal_only": {
+              "accepted": 5,
+              "accepted_mae_pp": 1.833333333333337,
+              "bad_accepted": 0,
+              "bad_accepted_fraction": 0.0,
+              "caught_bad": 0,
+              "coverage_pct": 41.666666666666664,
+              "false_warnings": 7,
+              "independent_risk_validation": false,
+              "maximum_accepted_error_pp": 4.5,
+              "total": 12,
+              "transition_coverage_pct": 41.666666666666664,
+              "transition_total": 12,
+              "useful_screen": false
+            }
+          },
+          "predictors": {
+            "location_shift": {
+              "answered": 12,
+              "errors_above_5pp": 6,
+              "mae_pp": 6.968750000000003,
+              "maximum_error_pp": 18.04166666666667
+            },
+            "pooled_update": {
+              "answered": 12,
+              "errors_above_5pp": 0,
+              "mae_pp": 2.0732323232323266,
+              "maximum_error_pp": 4.484848484848484
+            },
+            "recent25": {
+              "answered": 12,
+              "errors_above_5pp": 7,
+              "mae_pp": 7.527777777777781,
+              "maximum_error_pp": 13.666666666666671
+            },
+            "reference": {
+              "answered": 12,
+              "errors_above_5pp": 0,
+              "mae_pp": 1.9722222222222239,
+              "maximum_error_pp": 4.5
+            }
+          }
+        }
+      },
+      "predictors": {
+        "location_shift": {
+          "answered": 12,
+          "errors_above_5pp": 6,
+          "mae_pp": 6.968750000000003,
+          "maximum_error_pp": 18.04166666666667
+        },
+        "pooled_update": {
+          "answered": 12,
+          "errors_above_5pp": 0,
+          "mae_pp": 2.0732323232323266,
+          "maximum_error_pp": 4.484848484848484
+        },
+        "recent25": {
+          "answered": 12,
+          "errors_above_5pp": 7,
+          "mae_pp": 7.527777777777781,
+          "maximum_error_pp": 13.666666666666671
+        },
+        "reference": {
+          "answered": 12,
+          "errors_above_5pp": 0,
+          "mae_pp": 1.9722222222222239,
+          "maximum_error_pp": 4.5
+        }
+      },
+      "rows": [
+        {
+          "block": 1,
+          "cost": {
+            "full_observed_client_span_sec": 3.020605853,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 1.5,
+            "ecdf_distance_pp": 14.374999999999998,
+            "future_outcomes_used": false,
+            "median_shift_ns": 55471.5,
+            "ordinary_temporal_score_pp": 25.0,
+            "predictions_pct": {
+              "location_shift": 81.0,
+              "pooled_update": 79.51515151515152,
+              "recent25": 80.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -90373.5,
+              "0.5": 55471.5,
+              "0.75": -165142.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 1.5,
+            "temporal_score_pp": 1.0,
+            "translated_shape_distance_pp": 18.500000000000007
+          },
+          "measurement_offers": 300,
+          "name": "cohort-1",
+          "observed_miss_pct": 84.0,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 1,
+          "cost": {
+            "full_observed_client_span_sec": 6.021442107,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 12.25,
+            "ecdf_distance_pp": 11.124999999999998,
+            "future_outcomes_used": false,
+            "median_shift_ns": 15567.5,
+            "ordinary_temporal_score_pp": 16.666666666666657,
+            "predictions_pct": {
+              "location_shift": 79.75,
+              "pooled_update": 79.39393939393939,
+              "recent25": 76.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -47605.5,
+              "0.5": 15567.5,
+              "0.75": 32181.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.25,
+            "temporal_score_pp": 12.25,
+            "translated_shape_distance_pp": 11.124999999999998
+          },
+          "measurement_offers": 300,
+          "name": "cohort-2",
+          "observed_miss_pct": 80.66666666666667,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 2,
+          "cost": {
+            "full_observed_client_span_sec": 3.02182226,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": true,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 15.625,
+            "ecdf_distance_pp": 12.875000000000004,
+            "future_outcomes_used": false,
+            "median_shift_ns": 108915.5,
+            "ordinary_temporal_score_pp": 24.999999999999993,
+            "predictions_pct": {
+              "location_shift": 82.25,
+              "pooled_update": 79.27272727272727,
+              "recent25": 72.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -227717.5,
+              "0.5": 108915.5,
+              "0.75": 2925.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 2.75,
+            "temporal_score_pp": 15.625,
+            "translated_shape_distance_pp": 15.625000000000004
+          },
+          "measurement_offers": 300,
+          "name": "cohort-3",
+          "observed_miss_pct": 83.66666666666667,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 2,
+          "cost": {
+            "full_observed_client_span_sec": 6.020611159,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 2.0,
+            "ecdf_distance_pp": 10.250000000000004,
+            "future_outcomes_used": false,
+            "median_shift_ns": -31409.5,
+            "ordinary_temporal_score_pp": 16.666666666666657,
+            "predictions_pct": {
+              "location_shift": 79.0,
+              "pooled_update": 79.39393939393939,
+              "recent25": 76.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -85067.5,
+              "0.5": -31409.5,
+              "0.75": 23587.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 0.5,
+            "temporal_score_pp": 2.0,
+            "translated_shape_distance_pp": 8.750000000000002
+          },
+          "measurement_offers": 300,
+          "name": "cohort-4",
+          "observed_miss_pct": 80.66666666666667,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 3,
+          "cost": {
+            "full_observed_client_span_sec": 3.020771317,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 10.0,
+            "ecdf_distance_pp": 21.125000000000004,
+            "future_outcomes_used": false,
+            "median_shift_ns": -218759.5,
+            "ordinary_temporal_score_pp": 24.999999999999993,
+            "predictions_pct": {
+              "location_shift": 69.5,
+              "pooled_update": 79.27272727272727,
+              "recent25": 72.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -422813.5,
+              "0.5": -218759.5,
+              "0.75": -199693.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 10.0,
+            "temporal_score_pp": 1.875,
+            "translated_shape_distance_pp": 12.874999999999998
+          },
+          "measurement_offers": 300,
+          "name": "cohort-5",
+          "observed_miss_pct": 81.66666666666667,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 3,
+          "cost": {
+            "full_observed_client_span_sec": 6.020736252,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 4.5,
+            "ecdf_distance_pp": 19.999999999999996,
+            "future_outcomes_used": false,
+            "median_shift_ns": -128634.5,
+            "ordinary_temporal_score_pp": 16.666666666666657,
+            "predictions_pct": {
+              "location_shift": 75.125,
+              "pooled_update": 79.39393939393939,
+              "recent25": 76.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": 28103.5,
+              "0.5": -128634.5,
+              "0.75": -155634.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 4.375,
+            "temporal_score_pp": 4.5,
+            "translated_shape_distance_pp": 10.125
+          },
+          "measurement_offers": 300,
+          "name": "cohort-6",
+          "observed_miss_pct": 79.66666666666667,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 4,
+          "cost": {
+            "full_observed_client_span_sec": 3.021382624,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": true,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": true,
+              "shift_only": true,
+              "temporal_only": true
+            },
+            "candidate_score_pp": 2.75,
+            "ecdf_distance_pp": 13.374999999999998,
+            "future_outcomes_used": false,
+            "median_shift_ns": 115622.5,
+            "ordinary_temporal_score_pp": 16.666666666666657,
+            "predictions_pct": {
+              "location_shift": 82.25,
+              "pooled_update": 79.39393939393939,
+              "recent25": 76.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -124606.5,
+              "0.5": 115622.5,
+              "0.75": 3591.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 2.75,
+            "temporal_score_pp": 2.125,
+            "translated_shape_distance_pp": 16.874999999999996
+          },
+          "measurement_offers": 300,
+          "name": "cohort-7",
+          "observed_miss_pct": 80.66666666666667,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 4,
+          "cost": {
+            "full_observed_client_span_sec": 6.021124546,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 11.875,
+            "ecdf_distance_pp": 36.625,
+            "future_outcomes_used": false,
+            "median_shift_ns": -246993.5,
+            "ordinary_temporal_score_pp": 24.999999999999993,
+            "predictions_pct": {
+              "location_shift": 67.625,
+              "pooled_update": 79.27272727272727,
+              "recent25": 72.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -388282.5,
+              "0.5": -246993.5,
+              "0.75": -343848.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 11.875,
+            "temporal_score_pp": 10.125,
+            "translated_shape_distance_pp": 16.125
+          },
+          "measurement_offers": 300,
+          "name": "cohort-8",
+          "observed_miss_pct": 78.66666666666667,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 5,
+          "cost": {
+            "full_observed_client_span_sec": 3.021394691,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 14.625,
+            "ecdf_distance_pp": 13.125000000000004,
+            "future_outcomes_used": false,
+            "median_shift_ns": -146784.5,
+            "ordinary_temporal_score_pp": 8.333333333333329,
+            "predictions_pct": {
+              "location_shift": 74.0,
+              "pooled_update": 79.27272727272727,
+              "recent25": 72.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -225768.5,
+              "0.5": -146784.5,
+              "0.75": 36465.25
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 5.5,
+            "temporal_score_pp": 14.625,
+            "translated_shape_distance_pp": 20.875
+          },
+          "measurement_offers": 300,
+          "name": "cohort-9",
+          "observed_miss_pct": 81.33333333333333,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        },
+        {
+          "block": 5,
+          "cost": {
+            "full_observed_client_span_sec": 6.021084599,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 14.75,
+            "ecdf_distance_pp": 25.749999999999996,
+            "future_outcomes_used": false,
+            "median_shift_ns": -188354.5,
+            "ordinary_temporal_score_pp": 8.333333333333329,
+            "predictions_pct": {
+              "location_shift": 71.5,
+              "pooled_update": 79.27272727272727,
+              "recent25": 72.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -276724.5,
+              "0.5": -188354.5,
+              "0.75": -265986.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 8.0,
+            "temporal_score_pp": 14.75,
+            "translated_shape_distance_pp": 11.625
+          },
+          "measurement_offers": 300,
+          "name": "cohort-10",
+          "observed_miss_pct": 78.66666666666667,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 6,
+          "cost": {
+            "full_observed_client_span_sec": 6.020729841,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 24.75,
+            "ecdf_distance_pp": 37.375,
+            "future_outcomes_used": false,
+            "median_shift_ns": -328397.5,
+            "ordinary_temporal_score_pp": 33.33333333333333,
+            "predictions_pct": {
+              "location_shift": 63.625,
+              "pooled_update": 79.15151515151516,
+              "recent25": 68.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -429744.5,
+              "0.5": -328397.5,
+              "0.75": -355357.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 15.875,
+            "temporal_score_pp": 24.75,
+            "translated_shape_distance_pp": 10.999999999999998
+          },
+          "measurement_offers": 300,
+          "name": "cohort-11",
+          "observed_miss_pct": 81.66666666666667,
+          "policy": "P0",
+          "profile": "A",
+          "rate_rps": 4
+        },
+        {
+          "block": 6,
+          "cost": {
+            "full_observed_client_span_sec": 3.020596183,
+            "full_offers": 25,
+            "last_25_offers": 25,
+            "reference_offers": 800
+          },
+          "features": {
+            "accepts": {
+              "always": true,
+              "deadline_disagreement": false,
+              "ecdf_distance": false,
+              "ordinary_temporal_disagreement": false,
+              "shift_and_temporal": false,
+              "shift_only": false,
+              "temporal_only": false
+            },
+            "candidate_score_pp": 11.25,
+            "ecdf_distance_pp": 21.625000000000007,
+            "future_outcomes_used": false,
+            "median_shift_ns": -238510.5,
+            "ordinary_temporal_score_pp": 24.999999999999993,
+            "predictions_pct": {
+              "location_shift": 68.25,
+              "pooled_update": 79.27272727272727,
+              "recent25": 72.0,
+              "reference": 79.5
+            },
+            "quartile_shift_ns": {
+              "0.25": -163818.5,
+              "0.5": -238510.5,
+              "0.75": -208800.75
+            },
+            "risk_certificate": false,
+            "shift_score_pp": 11.25,
+            "temporal_score_pp": 11.25,
+            "translated_shape_distance_pp": 13.124999999999998
+          },
+          "measurement_offers": 300,
+          "name": "cohort-12",
+          "observed_miss_pct": 83.0,
+          "policy": "P0",
+          "profile": "C",
+          "rate_rps": 8
+        }
+      ]
+    }
+  ],
+  "features_computed_before_future_measurement_reads": true,
+  "independent_validation": false,
+  "new_collection": false,
+  "new_estimator": false,
+  "role": "known-outcome retrospective development; no independent confirmation"
+}

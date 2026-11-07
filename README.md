@@ -3,6 +3,82 @@
 GitHub artifact snapshot: [download and restore the complete saved evidence](publication/README.md).
 Large records and software snapshots accompany the [10 October 2026 release](https://github.com/Katori-bo/Minor_Research_Project_cgroup-bandwidth-eval/releases/tag/research-snapshot-2026-10-10).
 
+## Latest local research checkpoint (2026-10-11)
+
+**Empirical consolidation complete; local hardware collection held — 2026-10-11.**
+The [updated manuscript](paper/deadline_resolution_extension.md) and
+[standalone LaTeX](paper/deadline_resolution_extension.tex) now retain all six
+completed prospective campaigns, including the fresh five-deadline panel whose
+P0/P1 accuracy gates were not supported. Later reliability screens, inconclusive
+worker-wait qualification and warmup/execution-rate precision/cost holds are
+reported at their original scope. Planning scenarios do not establish the new
+observer's behavior or a verified clock-to-response mapping. Native compilation
+passes. The [consolidation record](docs/runtime_io_empirical_consolidation_20261011.md)
+and [audit package](analysis/runtime_io_empirical_consolidation/20261011/) preserve
+prior manuscript versions, historical tables and 2,559 protected inputs; use
+`python3 -B analysis/verify_empirical_consolidation.py` for the current chain.
+No new experiment, host setting change, upload or submission occurred. Friend-owned
+independent V31 remains pending and excluded. Earlier paragraphs retain their
+historical scope.
+
+**Manuscript integration complete.** The existing
+[Markdown manuscript](paper/deadline_resolution_extension.md) and
+[standalone LaTeX](paper/deadline_resolution_extension.tex) now include both
+complete controls, exploratory reliability checks and the five-study ledger.
+The abstract, contribution, related work, discussion and supporting/reproduction
+documents reflect the scoped empirical result. Native LaTeX compilation passed;
+the [new audit package](analysis/runtime_io_deadline_transfer_integration/20261010/)
+preserves older manuscript versions and verifies the integration. Use
+`python3 -B analysis/verify_deadline_transfer_integration.py` for current documents
+and historical snapshots. Friend-owned V31 remains pending. The
+[further-contribution gate](docs/runtime_io_post_integration_contribution_gate_20261010.md)
+requires a concrete additional capability and fair independent evaluation before
+another experiment. No upload, submission or new collection occurred. Earlier
+checkpoint paragraphs below retain their historical scope.
+
+**Transfer evidence consolidated against the closest prior methods.** The
+[claim and capability assessment](docs/runtime_io_transfer_consolidation_20261010.md)
+supports a scoped empirical paper, with successful forecasts and failed transfer
+controls preserved. No new estimator, advance reliability rule, causal repair
+or published-method superiority is established. The
+[contribution note](paper/deadline_transfer_contribution_note.md) supplies
+integration wording; the finalized manuscript remains unchanged. New collection
+stays on hold pending a concrete claim, compatible comparator and independent
+evaluation contract. Friend-owned V31 remains pending. Later paragraphs retain
+their preceding checkpoint scope; no upload or release accompanies this update.
+
+**Rate-transfer study completed and replay verified.** Rate-matched calibration
+met the accuracy target (MAE 1.194 pp, conditional upper bound 1.581 pp), but
+ordinary 5/s calibration also passed (MAE 1.972 pp, upper bound 2.907 pp).
+Matched improvement was 0.778 pp, interval [-0.375, 1.931] pp, failing the
+frozen incremental-advantage criterion. All twelve validation cohorts remain
+included, including two with recorded throttling. Close this bounded branch;
+rate mismatch is not established as the cause of the preceding failure.
+The [sealed assessment](analysis/runtime_io_nginx_rate_transfer_review/20261010-generation01/report.md)
+and [paper addendum](paper/nginx_rate_transfer_addendum.md) retain the result.
+Friend-owned V31 remains pending. No new method or general reliability guarantee
+is established. Preparation statements below retain their historical scope.
+
+The user-authorized [fixed-P0 rate-matched study](docs/runtime_io_nginx_rate_transfer_protocol_20261010.md)
+is now prepared separately: 21 software checks pass and sources/baseline/fresh
+schedule are sealed. Hardware qualification and collection remain pending;
+its external launcher is `diagnostic/start_nginx_rate_transfer.sh`. It holds
+power settings fixed, uses six fresh calibration and twelve validation cohorts,
+and retains 6,450 scientific offers. This does not reopen the prior power
+intervention or incorporate a pending V31 independent-host result.
+
+The [research checkpoint](docs/runtime_io_research_checkpoint_20261010.md) records
+the completed power-policy confirmation: matching improved the pooled comparison
+but failed the frozen absolute-accuracy criterion. Its
+[verified result](analysis/runtime_io_nginx_power_confirmation_review/20261010-generation01/report.md)
+and [paper addendum](paper/nginx_power_confirmation_addendum.md) are retained
+locally; no new upload or release accompanies this note. That collection branch
+is closed. The user's friend is handling independent V31 replication, pending
+verified return. The [next candidate](docs/runtime_io_rate_matched_transfer_candidate_20261010.md)
+is rate-matched transfer across fresh instances, an ordinary empirical control;
+no new method or campaign is established. Earlier planning statements retain
+their historical scope.
+
 ## Deadline-forecasting extension completed (2026-10-10)
 
 The [completed extension](paper/deadline_resolution_extension.md) consolidates

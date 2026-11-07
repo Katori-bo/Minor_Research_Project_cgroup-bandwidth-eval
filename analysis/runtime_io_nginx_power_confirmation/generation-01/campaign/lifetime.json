@@ -1,0 +1,54 @@
+{
+  "started_monotonic": 13054.89007263,
+  "protocol": {
+    "schema": "nginx-power-confirmation-v1",
+    "policies": {
+      "P0": "balance_performance",
+      "P1": "performance"
+    },
+    "target_cpu": 2,
+    "governor": "powersave",
+    "quota_us": 25000,
+    "period_us": 100000,
+    "rates": [
+      4,
+      8
+    ],
+    "calibration_rate": 5,
+    "calibration_cohorts": 4,
+    "calibration_count": 400,
+    "blocks": 6,
+    "validation_count": 300,
+    "qualification_count": 20,
+    "warmup_count": 25,
+    "primary_deadline_ns": 20565395,
+    "secondary_deadlines_ns": [
+      10000000,
+      25000000,
+      50000000
+    ],
+    "settling_sec": 10,
+    "campaign_total_sec": 2700,
+    "cleanup_reserve_sec": 120,
+    "qualification_total_sec": 600,
+    "service_active_sec": 120,
+    "policy_lease_sec": 150,
+    "retries": 0,
+    "improvement_reference_pp": 2,
+    "accuracy_upper_reference_pp": 5,
+    "t_multiplier": 2.571,
+    "fixed_frequency": false,
+    "new_estimator": false,
+    "population": "all offered requests under the configured quota, including throttling",
+    "failed_offers": "misses beyond every finite deadline in all references and scores",
+    "observations_allowed": [
+      "measurement_throttling",
+      "warmup_throttling",
+      "client_response_overlap",
+      "client_inflight_cap",
+      "dispatch_gate",
+      "unsuccessful_offers"
+    ],
+    "observers": "original client/cgroup controls; policy boundary readbacks and CPU3 procstat only"
+  }
+}

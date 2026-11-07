@@ -1,0 +1,106 @@
+[
+  {
+    "command": "analysis/verify_deadline_transfer_integration.py",
+    "exit_code": 0,
+    "stdout": "{\n  \"status\": \"transfer_integration_verified\",\n  \"historical_table_groups_preserved\": 8,\n  \"new_method_rows_checked\": 13,\n  \"complete_primary_campaigns\": 5,\n  \"historical_evidence_files_preserved\": 4881,\n  \"performance_collection\": false\n}\n",
+    "stderr": "",
+    "manuscript_version": "preserved 10 October integration",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/review_nginx_deadline_panel.py --verify",
+    "exit_code": 0,
+    "stdout": "Complete deadline-panel evidence, independent scores, forecast barriers and sealed review verify.\n",
+    "stderr": "",
+    "manuscript_version": "preserved 10 October integration",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/screen_prevalidation_shift.py --verify",
+    "exit_code": 0,
+    "stdout": "Frozen design, raw seals, all-offer and shift oracles, prior-result reconciliation and screen recomputation verify.\n",
+    "stderr": "",
+    "manuscript_version": "preserved 10 October integration",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/screen_prevalidation_cpu.py --verify",
+    "exit_code": 0,
+    "stdout": "CPU design, original seals/counter deltas, forecast barrier, shift/throttle oracles and recomputation verify.\n",
+    "stderr": "",
+    "manuscript_version": "preserved 10 October integration",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/screen_continuous_persistence.py --verify",
+    "exit_code": 0,
+    "stdout": "Frozen100/200 design, raw seals, body-timing barriers, all54 cohorts, full300 reconciliation, exact scores and report recomputation verify.\n",
+    "stderr": "",
+    "manuscript_version": "preserved 10 October integration",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/screen_stage_transfer_signal.py --verify",
+    "exit_code": 0,
+    "stdout": "Stage protocol, sealed raw inputs, calibration, chronology, historical comparators and recomputation verify.\n",
+    "stderr": "",
+    "manuscript_version": "preserved 10 October integration",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/screen_deadline_scope.py --verify",
+    "exit_code": 0,
+    "stdout": "All 54 cohorts, original primary forecasts and deadline-scope analysis verify; no collection.\n",
+    "stderr": "",
+    "manuscript_version": "preserved 10 October integration",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/screen_deadline_sensitivity.py --verify",
+    "exit_code": 0,
+    "stdout": "All 78 cohorts, fixed features, forecast reconciliation and sealed screen verify.\n",
+    "stderr": "",
+    "manuscript_version": "preserved 10 October integration",
+    "performance_collection": false
+  },
+  {
+    "command": "diagnostic/nginx_worker_wait_study.py replay",
+    "exit_code": 0,
+    "stdout": "{\n  \"status\": \"observer_overhead_qualification_inconclusive\",\n  \"qualified\": false,\n  \"rates\": {\n    \"4\": {\n      \"tests\": {\n        \"measurement_miss_pct\": {\n          \"differences\": [\n            -2.333333333333343,\n            1.0000000000000142,\n            1.6666666666666714,\n            0.6666666666666714,\n            -0.3333333333333286,\n            1.0\n          ],\n          \"mean\": 0.27777777777778095,\n          \"conditional_interval\": [\n            -2.5215419513133916,\n            3.0770975068689532\n          ],\n          \"margin\": 2,\n          \"equivalence_supported\": false\n        },\n        \"measurement_mean_ns\": {\n          \"differences\": [\n            -124288.67333333567,\n            -1834.6733333319426,\n            -5350.863333333284,\n            36238.76333333179,\n            -51150.053333334625,\n            15530.170000001788\n          ],\n          \"mean\": -21809.22166666699,\n          \"conditional_interval\": [\n            -134771.185871447,\n            91152.74253811302\n          ],\n          \"margin\": 100000,\n          \"equivalence_supported\": false\n        },\n        \"warmup_mean_ns\": {\n          \"differences\": [\n            59021.76000000164,\n            -198085.3999999985,\n            38421.759999997914,\n            13031.280000001192,\n            311206.5200000033,\n            -129089.19999999925\n          ],\n          \"mean\": 15751.120000001043,\n          \"conditional_interval\": [\n            -328939.58445679926,\n            360441.82445680135\n          ],\n          \"margin\": 100000,\n          \"equivalence_supported\": false\n        }\n      },\n      \"endpoint_transition_informative\": true,\n      \"mean_miss_pct\": 80.86111111111111,\n      \"qualifies\": false\n    },\n    \"8\": {\n      \"tests\": {\n        \"measurement_miss_pct\": {\n          \"differences\": [\n            0.3333333333333286,\n            -3.333333333333343,\n            -1.0,\n            0.0,\n            2.0,\n            -3.0\n          ],\n          \"mean\": -0.8333333333333357,\n          \"conditional_interval\": [\n            -4.832828163470802,\n            3.1661614968041314\n          ],\n          \"margin\": 2,\n          \"equivalence_supported\": false\n        },\n        \"measurement_mean_ns\": {\n          \"differences\": [\n            -83261.28333333135,\n            -75887.99333333224,\n            -41442.66666666791,\n            -38487.29333333671,\n            99609.62333333492,\n            -33669.25\n          ],\n          \"mean\": -28856.477222222213,\n          \"conditional_interval\": [\n            -157989.1708626783,\n            100276.21641823387\n          ],\n          \"margin\": 100000,\n          \"equivalence_supported\": false\n        },\n        \"warmup_mean_ns\": {\n          \"differences\": [\n            -28809.919999998063,\n            9803.919999998063,\n            80923.60000000149,\n            -360126.0799999982,\n            -182629.44000000134,\n            76824.27999999747\n          ],\n          \"mean\": -67335.60666666676,\n          \"conditional_interval\": [\n            -404025.63563562714,\n            269354.42230229365\n          ],\n          \"margin\": 100000,\n          \"equivalence_supported\": false\n        }\n      },\n      \"endpoint_transition_informative\": true,\n      \"mean_miss_pct\": 82.02777777777779,\n      \"qualifies\": false\n    }\n  },\n  \"all_offers_retained\": true,\n  \"predictive_usefulness_tested\": false,\n  \"inference\": \"Six paired block differences per rate; intervals conditional on approximately independent normal differences. No distribution-free or absolute counter accuracy guarantee.\",\n  \"simultaneous_model_intervals\": \"Six 99.5% conditional intervals; Bonferroni family coverage >=97% under the stated assumptions\"\n}\n",
+    "stderr": "",
+    "manuscript_version": "preserved 10 October integration",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/worker_wait_precision_cost.py --verify analysis/runtime_io_worker_wait_precision_cost/20261010/planning.json",
+    "exit_code": 0,
+    "stdout": "Offline precision/cost inputs and arithmetic verify; no collection or qualification performed.\n",
+    "stderr": "",
+    "manuscript_version": "preserved 10 October integration",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/warmup_precision_cost.py --verify",
+    "exit_code": 0,
+    "stdout": "All 78 warmups, exact ranks, precision/cost arithmetic and sealed audit verify.\n",
+    "stderr": "",
+    "manuscript_version": "preserved 10 October integration",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/audit_execution_rate_capability.py --verify",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"verified\", \"protected_paths\": 2542, \"counter_access_or_measurement_tested\": false, \"package\": \"/tmp/empirical-history-5k69dves/analysis/runtime_io_execution_rate_candidate/20261011\"}\n",
+    "stderr": "",
+    "manuscript_version": "preserved 10 October integration",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/plan_execution_rate_qualification.py --verify",
+    "exit_code": 0,
+    "stdout": "Execution-rate qualification design and inputs verify; no measurement or qualification performed.\n",
+    "stderr": "",
+    "manuscript_version": "preserved 10 October integration",
+    "performance_collection": false
+  }
+]

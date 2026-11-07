@@ -1,0 +1,68 @@
+{
+  "acquisition_limit": "recorded client emits JSON only at whole-cohort end and has no correctness-check completion/online inference timestamp; body availability establishes offline chronological feasibility only; online observer and inference cost not qualified",
+  "campaigns": [
+    {
+      "calibration_cohorts": 4,
+      "folder": "runtime_io_nginx_prediction",
+      "name": "NGINX original",
+      "reference": "all four 5/s calibration cohorts",
+      "validation_cohorts": 18
+    },
+    {
+      "calibration_cohorts": 4,
+      "folder": "runtime_io_nginx_power_confirmation",
+      "name": "NGINX power",
+      "reference": "same assigned policy two calibration cohorts",
+      "validation_cohorts": 24
+    },
+    {
+      "calibration_cohorts": 6,
+      "folder": "runtime_io_nginx_rate_transfer",
+      "name": "NGINX rate",
+      "reference": "ordinary fixed5/s two calibration cohorts",
+      "validation_cohorts": 12
+    }
+  ],
+  "cost": "100 additional target-rate probe offers per episode on top of acquired calibration, earlier25-offer warmup plus qualification/settling/startup; scheduled100-offer window12.5..25sec at8..4rps; exact99interval plus completion time also recorded; no claimed deployment reduction",
+  "deadline_ns": 20565395,
+  "decision_time": "hypothetical online observer after the first100 bodies complete, before scheduled offer101; body completion barrier checked against raw timestamps",
+  "do_not": [
+    "tune prefix lengths, thresholds, deadlines or blends",
+    "use suffix to compute forecasts or flags",
+    "pool cohorts as independent episodes",
+    "claim causality,novelty,online qualification or independent validation",
+    "launch newtraffic"
+  ],
+  "error_tolerance_pp": 5,
+  "guard": {
+    "accept": "score<=5pp and first100 body timestamps available before offer101",
+    "forecast": "recent100; compare identical accepted subset errors for all3 methods",
+    "name": "probe_half_agreement",
+    "score": "abs(miss_pct(first50)-miss_pct(next50))"
+  },
+  "methods": {
+    "original": "unchanged permitted calibration all-offer CDF",
+    "recent100": "all-offer miss fraction from first100 at fixedD",
+    "sample_weighted_update": "permitted calibration plus first100 offers, weighted by offer count"
+  },
+  "metrics": [
+    "percampaign/subgroup MAE,max,error>5pp counts",
+    "equalweight6block descriptive paired gains",
+    "guardcoverage,transitioncoverage,badaccepted,caughtbad,falsewarnings",
+    "alloffer conservation/full300 original result reconciliation",
+    "body timestamp barrier and fullacquisition cost"
+  ],
+  "minimum_coverage_pct": 50,
+  "outcome_accounting": "strict greater-than deadline; unsuccessful and dropped offers always misses; retain all54 cohorts including throttling; absent chronological feasibility retained as domainflag and guard abstention, no favorable retry",
+  "probe_offers": 100,
+  "question": "Does a continuous first100-offer response profile predict the following200 offers accurately at useful cost?",
+  "role": "retrospective development after all historical outcomes known; new prefix-to-suffix scores not yet computed",
+  "split_order": "scheduled offer IDs measurement-0..99 probe; measurement-100..299 target; no sorting by response time or completion time",
+  "stopping": "complete this single frozen100/200 screen; no automatic window search or experiment launch; propose independent confirmation only if a useful comparator-supported candidate survives",
+  "target_offers": 200,
+  "transition_region_pct": [
+    10,
+    90
+  ],
+  "usefulness": "for all3 campaigns and separately P0 power, accepted recent100 errors<=5pp in every retained cohort, >=50percent coverage overall and among transition cases; all-answer predictor scored separately"
+}

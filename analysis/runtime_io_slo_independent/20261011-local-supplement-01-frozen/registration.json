@@ -1,0 +1,619 @@
+{
+  "additional_campaign_cap_sec": 15300,
+  "collection_started": false,
+  "combined_planned_cap_sec": 45900,
+  "execution_accepted": false,
+  "native_allocation_confirmed": false,
+  "offline_engineering_cost_components": {
+    "components_not_complete_end_to_end_timer": true,
+    "offline_test_wall_sec": 8.569,
+    "pre_test_build_sec": 0.814708579
+  },
+  "offline_tests": 53,
+  "original_attempt_ledger": {
+    "combined_attempt_ledger_slots": 108,
+    "combined_planned_cap_sec": 45900,
+    "original_allocations": [
+      {
+        "acquired_raw_offers": [
+          {
+            "client_dropped": 0,
+            "declared_offers": 38,
+            "parseable": true,
+            "path": "session/preparation/functional/functional_4/loadgen.json",
+            "recorded_rows": 38,
+            "sha256": "7a24651b5f22ed8905cfeebac1918231b80badfc846f7d76dd9b35db66059663"
+          },
+          {
+            "client_dropped": 0,
+            "declared_offers": 114,
+            "parseable": true,
+            "path": "session/preparation/functional/functional_cancel/loadgen.json",
+            "recorded_rows": 114,
+            "sha256": "92bbbbf637715d62d870727f650edc57973bbeb0729fd596587982ebce43fd3b"
+          },
+          {
+            "client_dropped": 0,
+            "declared_offers": 60,
+            "parseable": true,
+            "path": "session/preparation/functional/functional_1/loadgen.json",
+            "recorded_rows": 60,
+            "sha256": "25bb050cf54c9cdd56d4769063e2b7b29da59de45e530f23475491cc5635f268"
+          },
+          {
+            "client_dropped": 0,
+            "declared_offers": 288,
+            "parseable": true,
+            "path": "session/preparation/functional/functional_2/loadgen.json",
+            "recorded_rows": 288,
+            "sha256": "b085755c5fb6c8a1d0fdbc6e6490b92e5ee6e0778a1ccc3e33f944c11dcfa175"
+          },
+          {
+            "client_dropped": 0,
+            "declared_offers": 10,
+            "parseable": true,
+            "path": "session/preparation/functional/functional_3/loadgen.json",
+            "recorded_rows": 10,
+            "sha256": "e02deb69c2649d173da0d9820fd59fff488f0762787481121b972b9391606faf"
+          }
+        ],
+        "application": "Go",
+        "campaign_id": "slo_v1_host01_Go",
+        "original_acquisition_cost": null,
+        "original_preparation_cost": {
+          "control": {
+            "additional_probes_sent": false,
+            "attempted_existing_control_calls": {
+              "GET clock": 36,
+              "GET health": 20,
+              "GET metrics": 7,
+              "POST reset": 6
+            },
+            "server_acceptance_not_inferred_from_attempts": true
+          },
+          "partial_is_not_zero": true,
+          "raw_acquisitions": [
+            {
+              "client_dropped": 0,
+              "declared_offers": 38,
+              "parseable": true,
+              "path": "session/preparation/functional/functional_4/loadgen.json",
+              "recorded_rows": 38,
+              "sha256": "7a24651b5f22ed8905cfeebac1918231b80badfc846f7d76dd9b35db66059663"
+            },
+            {
+              "client_dropped": 0,
+              "declared_offers": 114,
+              "parseable": true,
+              "path": "session/preparation/functional/functional_cancel/loadgen.json",
+              "recorded_rows": 114,
+              "sha256": "92bbbbf637715d62d870727f650edc57973bbeb0729fd596587982ebce43fd3b"
+            },
+            {
+              "client_dropped": 0,
+              "declared_offers": 60,
+              "parseable": true,
+              "path": "session/preparation/functional/functional_1/loadgen.json",
+              "recorded_rows": 60,
+              "sha256": "25bb050cf54c9cdd56d4769063e2b7b29da59de45e530f23475491cc5635f268"
+            },
+            {
+              "client_dropped": 0,
+              "declared_offers": 288,
+              "parseable": true,
+              "path": "session/preparation/functional/functional_2/loadgen.json",
+              "recorded_rows": 288,
+              "sha256": "b085755c5fb6c8a1d0fdbc6e6490b92e5ee6e0778a1ccc3e33f944c11dcfa175"
+            },
+            {
+              "client_dropped": 0,
+              "declared_offers": 10,
+              "parseable": true,
+              "path": "session/preparation/functional/functional_3/loadgen.json",
+              "recorded_rows": 10,
+              "sha256": "e02deb69c2649d173da0d9820fd59fff488f0762787481121b972b9391606faf"
+            }
+          ]
+        },
+        "planned_windows": 18,
+        "preparation_is_subset_not_additive": true,
+        "return_seal_sha256": "85f0cbe1bcd6518d91b8d6ff6023ae519011d8ba4bc9944f5c863fa55c41ca57",
+        "setup_cost": {
+          "created_ns": 92973807364723,
+          "go_image": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+          "host_check": {
+            "allowed_cpus": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "baseline": {
+              "boot_id": "3820f122-6e59-4500-bd9f-fb248d68008f",
+              "kernel": "7.2.8-arch1-2",
+              "topology": {
+                "0": "0-1",
+                "1": "0-1",
+                "10": "10-11",
+                "11": "10-11",
+                "2": "2-3",
+                "3": "2-3",
+                "4": "4-5",
+                "5": "4-5",
+                "6": "6-7",
+                "7": "6-7",
+                "8": "8-9",
+                "9": "8-9"
+              }
+            },
+            "collection_started": false,
+            "docker": "29.8.2",
+            "host": "host01",
+            "power": {
+              "desktop_profile": "balanced",
+              "external_power": {
+                "ACAD": "1"
+              },
+              "platform_profile": "balanced",
+              "policies": {
+                "policy0": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy1": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy10": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy11": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy2": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy3": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy4": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy5": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy6": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy7": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy8": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy9": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                }
+              }
+            },
+            "temperatures_c": {
+              "k10temp:hwmon5:Tctl": 67.75
+            },
+            "topology": {
+              "0": {
+                "core": "0",
+                "package": "0",
+                "siblings": "0-1"
+              },
+              "1": {
+                "core": "0",
+                "package": "0",
+                "siblings": "0-1"
+              },
+              "10": {
+                "core": "5",
+                "package": "0",
+                "siblings": "10-11"
+              },
+              "11": {
+                "core": "5",
+                "package": "0",
+                "siblings": "10-11"
+              },
+              "2": {
+                "core": "1",
+                "package": "0",
+                "siblings": "2-3"
+              },
+              "3": {
+                "core": "1",
+                "package": "0",
+                "siblings": "2-3"
+              },
+              "4": {
+                "core": "2",
+                "package": "0",
+                "siblings": "4-5"
+              },
+              "5": {
+                "core": "2",
+                "package": "0",
+                "siblings": "4-5"
+              },
+              "6": {
+                "core": "3",
+                "package": "0",
+                "siblings": "6-7"
+              },
+              "7": {
+                "core": "3",
+                "package": "0",
+                "siblings": "6-7"
+              },
+              "8": {
+                "core": "4",
+                "package": "0",
+                "siblings": "8-9"
+              },
+              "9": {
+                "core": "4",
+                "package": "0",
+                "siblings": "8-9"
+              }
+            }
+          },
+          "nginx_image": "sha256:f06ac2db8e0c5a3c4991f1c79718c0020447635131a8793f24d36df29d09bca1",
+          "no_traffic_started": true,
+          "package_seal_sha256": "32df7a58ab29e40299eff4cd4d405f9c02f4a35f7a4df6ebb91fa1a9cd8183c1",
+          "setup_elapsed_sec": 0.552528831,
+          "setup_is_external_image_preparation": true,
+          "setup_is_offline_engineering_cost": false
+        },
+        "source_package": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/handoff/slo-host01-20261011-runtime-v3",
+        "source_package_seal_sha256": "32df7a58ab29e40299eff4cd4d405f9c02f4a35f7a4df6ebb91fa1a9cd8183c1",
+        "summary": {
+          "acquired_campaign_cap_sec": 12600,
+          "allocation_closed": true,
+          "cleanup_errors": [],
+          "elapsed_sec": 46.675556012,
+          "failure": "read_only_inventory stopped; preserve partial evidence",
+          "no_retry": true,
+          "within_hard_cap": true
+        },
+        "unavailable_target_windows": 18
+      },
+      {
+        "acquired_raw_offers": [],
+        "application": "NGINX",
+        "campaign_id": "slo_v1_host01_NGINX",
+        "original_acquisition_cost": {
+          "control": {
+            "additional_probes_sent": false,
+            "attempted_existing_control_calls": {},
+            "server_acceptance_not_inferred_from_attempts": true
+          },
+          "error": "NGINX independent watchdog exited",
+          "finished_ns": 94921678739662,
+          "missing_future_offers_imputed": false,
+          "preparation_control_cost_file": "preparation_cost.json",
+          "raw_acquisitions": [],
+          "selected_samples_do_not_replace_acquired_offers": true,
+          "stage_ledger": "ledger",
+          "stopped_stage": "qualification_1"
+        },
+        "original_preparation_cost": {
+          "control": {
+            "additional_probes_sent": false,
+            "attempted_existing_control_calls": {},
+            "server_acceptance_not_inferred_from_attempts": true
+          },
+          "partial_is_not_zero": true,
+          "raw_acquisitions": []
+        },
+        "planned_windows": 18,
+        "preparation_is_subset_not_additive": true,
+        "return_seal_sha256": "c49f2b707375bc3fe34bb394dc95765ddd7419aee2bec622af43a1a3da975d2b",
+        "setup_cost": {
+          "created_ns": 94733480756469,
+          "go_image": "sha256:9d4e51d8a227ea7b3d4ef32d2fe9df7db23111f4a17ae7ae3e199f0dec064ce5",
+          "host_check": {
+            "allowed_cpus": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "baseline": {
+              "boot_id": "3820f122-6e59-4500-bd9f-fb248d68008f",
+              "kernel": "7.2.8-arch1-2",
+              "topology": {
+                "0": "0-1",
+                "1": "0-1",
+                "10": "10-11",
+                "11": "10-11",
+                "2": "2-3",
+                "3": "2-3",
+                "4": "4-5",
+                "5": "4-5",
+                "6": "6-7",
+                "7": "6-7",
+                "8": "8-9",
+                "9": "8-9"
+              }
+            },
+            "collection_started": false,
+            "docker": "29.8.2",
+            "host": "host01",
+            "power": {
+              "desktop_profile": "balanced",
+              "external_power": {
+                "ACAD": "1"
+              },
+              "platform_profile": "balanced",
+              "policies": {
+                "policy0": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy1": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy10": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy11": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy2": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy3": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy4": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy5": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy6": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy7": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy8": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                },
+                "policy9": {
+                  "energy_performance_preference": "balance_performance",
+                  "scaling_driver": "amd-pstate-epp",
+                  "scaling_governor": "powersave",
+                  "scaling_max_freq": "4280985",
+                  "scaling_min_freq": "1108930"
+                }
+              }
+            },
+            "temperatures_c": {
+              "k10temp:hwmon5:Tctl": 68.0
+            },
+            "topology": {
+              "0": {
+                "core": "0",
+                "package": "0",
+                "siblings": "0-1"
+              },
+              "1": {
+                "core": "0",
+                "package": "0",
+                "siblings": "0-1"
+              },
+              "10": {
+                "core": "5",
+                "package": "0",
+                "siblings": "10-11"
+              },
+              "11": {
+                "core": "5",
+                "package": "0",
+                "siblings": "10-11"
+              },
+              "2": {
+                "core": "1",
+                "package": "0",
+                "siblings": "2-3"
+              },
+              "3": {
+                "core": "1",
+                "package": "0",
+                "siblings": "2-3"
+              },
+              "4": {
+                "core": "2",
+                "package": "0",
+                "siblings": "4-5"
+              },
+              "5": {
+                "core": "2",
+                "package": "0",
+                "siblings": "4-5"
+              },
+              "6": {
+                "core": "3",
+                "package": "0",
+                "siblings": "6-7"
+              },
+              "7": {
+                "core": "3",
+                "package": "0",
+                "siblings": "6-7"
+              },
+              "8": {
+                "core": "4",
+                "package": "0",
+                "siblings": "8-9"
+              },
+              "9": {
+                "core": "4",
+                "package": "0",
+                "siblings": "8-9"
+              }
+            }
+          },
+          "nginx_image": "sha256:a3d93d17a20df5ffbce3c1c13c7052048b2bed082bdc1f8120bb1e6c5d1ce5fd",
+          "no_traffic_started": true,
+          "package_seal_sha256": "4691486acd9cec0ba781fa13da4d12443e4e86db39283c28276d8e6659d94bbc",
+          "setup_elapsed_sec": 0.564776065,
+          "setup_is_external_image_preparation": true,
+          "setup_is_offline_engineering_cost": false
+        },
+        "source_package": "/home/Aditya/Desktop/Research_project/cpu-quota-tail-latency/handoff/slo-host01-20261011-runtime-v4",
+        "source_package_seal_sha256": "4691486acd9cec0ba781fa13da4d12443e4e86db39283c28276d8e6659d94bbc",
+        "summary": {
+          "acquired_campaign_cap_sec": 2700,
+          "allocation_closed": true,
+          "cleanup_errors": [],
+          "elapsed_sec": 187.520880128,
+          "failure": "collect stopped; preserve partial evidence",
+          "no_retry": true,
+          "within_hard_cap": true
+        },
+        "unavailable_target_windows": 18
+      }
+    ],
+    "original_and_supplement_primary_results_pooled": false,
+    "parent_planned_windows": 72,
+    "parent_study_id": "independent-slo-decision-v1",
+    "pending_intel_windows": 36,
+    "preserved_local_unavailable_windows": 36,
+    "supplement_replaces_original_slots": false
+  },
+  "original_denominator": 72,
+  "original_scientific_plan_preserved": true,
+  "package": "handoff/slo-host01-20261011-local-supplement-03",
+  "public_or_third_party_registration": false,
+  "registered_utc": "2026-10-11T10:05:53.875886+00:00",
+  "rejected_or_superseded_preparations_preserved": [
+    "handoff/slo-host01-20261011-local-supplement-01",
+    "handoff/slo-host01-20261011-local-supplement-02"
+  ],
+  "runtime_qualified": false,
+  "runtime_seal_sha256": "382881b9d7615471fa04112276c41c0eea3a305610b71b2b0308ca5961c1100c",
+  "scientific_plan_sha256": "932fea8cf61bbe2b17f76d183e2f258012e1ab7119bba06e7e754388f818291d",
+  "sources_sha256": {
+    "docs/runtime_io_slo_local_supplement_execution_20261011.md": "89ad30da716ba74421c508132a015cd1497395dab90e15fd1e0a17070e144680",
+    "docs/runtime_io_slo_local_supplement_protocol_20261011.md": "2f2486e88b75ef7c4a0bd9154a4045be34811030abeec1d6569e3ad17fed5fb7",
+    "replication/slo_runtime/build_local_supplement.py": "291cf252f6367e00080a7041801de7c77a02b7e0dfdc3e98787a40729918dc92",
+    "replication/slo_runtime/local_supplement.py": "6490392da850ec556ac6799130babd54b31f70ff884cfd166429c45ce76d08a9",
+    "replication/slo_runtime/prelaunch_local_supplement.py": "57056303551bcedd6030f1dbdf3f31b6d1caff119a54563454b5e312c1e7690d",
+    "replication/slo_runtime/start_local_supplement.sh": "425f0616c936387b172943217fc1030bdd48d5de16792fea615f28212e4426eb",
+    "replication/slo_runtime/test_local_supplement.py": "2f930c6f41f366048b58bd50d835642a6999fa1dc70f2ee63f2c2d56a27ea155"
+  },
+  "status": "sealed_conditional_local_supplement",
+  "supplement_denominator": 36
+}

@@ -1,0 +1,110 @@
+{
+  "all_outcomes_unrun": true,
+  "collection_authorized": false,
+  "consumed_allocations": {},
+  "go_source_files": [
+    "analysis/periodic_budget_model.py",
+    "diagnostic/analyze.py",
+    "diagnostic/build_fairness.py",
+    "diagnostic/build_parallelism.py",
+    "diagnostic/build_repeatability.py",
+    "diagnostic/completion_analysis.py",
+    "diagnostic/component_analysis.py",
+    "diagnostic/execution_delay_analysis.py",
+    "diagnostic/execution_delay_common.py",
+    "diagnostic/fairness_study.py",
+    "diagnostic/kernel_bridge_analysis.py",
+    "diagnostic/kernel_fixture_analysis.py",
+    "diagnostic/kernel_fixtures.py",
+    "diagnostic/kernel_observer_common.py",
+    "diagnostic/kernel_service_bridge.py",
+    "diagnostic/kernel_tools.py",
+    "diagnostic/leftover_observer_audit.py",
+    "diagnostic/leftover_observer_review.py",
+    "diagnostic/nginx_common.py",
+    "diagnostic/nginx_helpers.py",
+    "diagnostic/nginx_prediction_common.py",
+    "diagnostic/nginx_prediction_model.py",
+    "diagnostic/nginx_prediction_study.py",
+    "diagnostic/nginx_qualify.py",
+    "diagnostic/parallelism_analysis.py",
+    "diagnostic/pipeline.py",
+    "diagnostic/repeatability_analysis.py",
+    "diagnostic/run.py",
+    "diagnostic/runtime_fairness/prepare.py",
+    "diagnostic/trace_analysis.py",
+    "diagnostic/v23_model.py",
+    "diagnostic/v24r3_counter.py",
+    "diagnostic/v24r3_model.py",
+    "diagnostic/v24r3_software.py",
+    "diagnostic/v27r3_common.py",
+    "diagnostic/v27r3_model.py",
+    "diagnostic/v29_common.py",
+    "diagnostic/v29_model.py",
+    "diagnostic/v29_monitor.py",
+    "diagnostic/v31_common.py",
+    "diagnostic/v31_model.py",
+    "diagnostic/v31_monitor_control.py",
+    "diagnostic/v31_raw.py",
+    "diagnostic/v31_service.py",
+    "diagnostic/v31_study.py",
+    "diagnostic/v31_verify.py",
+    "diagnostic/verify_execution_delay.py",
+    "scripts/environment_controls.py",
+    "scripts/experiment.py",
+    "scripts/host02_platform.py",
+    "scripts/portable_platform.py"
+  ],
+  "host": {
+    "control_cpus": [
+      0,
+      1
+    ],
+    "cpu": "AMD Ryzen 5 5600H",
+    "go_service_cpus": [
+      2,
+      4
+    ],
+    "id": "host01",
+    "nginx_service_cpus": [
+      2
+    ],
+    "order": [
+      "Go",
+      "NGINX"
+    ]
+  },
+  "immutable_originals_preserved": true,
+  "local_supplement": {
+    "amendment_acceptance_required": true,
+    "original_closed_attempts": {
+      "Go": {
+        "package_seal_sha256": "32df7a58ab29e40299eff4cd4d405f9c02f4a35f7a4df6ebb91fa1a9cd8183c1",
+        "relative_package": "../slo-host01-20261011-runtime-v3",
+        "return_seal_sha256": "85f0cbe1bcd6518d91b8d6ff6023ae519011d8ba4bc9944f5c863fa55c41ca57",
+        "setup_sha256": "efc66c8e47543d9353fc4f467868acd8dd116821feb7458b8b6b6d38053f0d56",
+        "supervisor_finished_sha256": "3c10a9a89fead4985979960369b4d5b68c4a86b78374f7bfd7d29d6a2a80d9fb"
+      },
+      "NGINX": {
+        "package_seal_sha256": "4691486acd9cec0ba781fa13da4d12443e4e86db39283c28276d8e6659d94bbc",
+        "relative_package": "../slo-host01-20261011-runtime-v4",
+        "return_seal_sha256": "c49f2b707375bc3fe34bb394dc95765ddd7419aee2bec622af43a1a3da975d2b",
+        "setup_sha256": "05d71c29546f42f52fafa9b4e81560f42957d2d990188e157565dc74d5461254",
+        "supervisor_finished_sha256": "94630d8c63774d4e0d51e3b5e04bfc11153e1f006f4a7e5302c878054b0d6424"
+      }
+    },
+    "original_results_replaced": false,
+    "parent_package_seal_sha256": "c2a6a0f2895890f0e986b4bc5e7bab981729966640f4f63dde9f02e3e8936ec8",
+    "parent_scientific_plan_sha256": "166633a4d9caf5799ea3dbb3169e0e0e85805aef938141df1a1aabf6bfa0d729",
+    "relative_parent_package": "../slo-host01-20261011-runtime-v6"
+  },
+  "new_campaigns_unrun": true,
+  "nginx_fresh_import_identity_declared": true,
+  "original_nginx_image": "sha256:2a67781d4c7970383162d776158bd0b5b39c26b85bb198a82b9b97ef1cc619fb",
+  "previous_apparatus_seal_sha256": "f9524334a406e9879ea3fe780ad1e17ae40da94e1dffa34edfeaa3531eb71777",
+  "runtime_qualified": false,
+  "schema": 1,
+  "scientific_plan_sha256": "932fea8cf61bbe2b17f76d183e2f258012e1ab7119bba06e7e754388f818291d",
+  "scientific_seal_sha256": "aedc546e2b941b0190ef61ed090bafab7c19961491378662459cd265afa42e23",
+  "third_party_python_imports": []
+}

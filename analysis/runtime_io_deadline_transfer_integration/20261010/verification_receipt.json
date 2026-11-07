@@ -1,0 +1,43 @@
+[
+  {
+    "command": "Prior revision checker against its sealed manuscript snapshots",
+    "exit_code": 0,
+    "stdout": "{\n  \"status\": \"review_corrections_verified\",\n  \"original_scientific_table_rows\": 31,\n  \"retrospective_table_rows\": 2,\n  \"protected_evidence_files\": 4866,\n  \"primary_intervals_recomputed\": [\n    [\n      68.90032913723064,\n      73.61480678593205\n    ],\n    [\n      63.925435993108664,\n      67.0650229406701\n    ],\n    [\n      1.3209883996231495,\n      10.641974563339815\n    ]\n  ]\n}\nResponse-CDF control: forecast 67.455621%, MAE 1.802499 pp, maximum 5.350358 pp.\n",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/screen_forecast_reliability.py --verify",
+    "exit_code": 0,
+    "stdout": "Screen recomputation, original consumed-input seals, CDF counting oracles and saved-result reconciliation pass.\n",
+    "stderr": "",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/screen_recent_timing_observable.py --verify",
+    "exit_code": 0,
+    "stdout": "Recent-timing recomputation, consumed original seals, prior-result reconciliation and boundary/failure accounting verify.\n",
+    "stderr": "",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/review_nginx_power_stopped.py --verify",
+    "exit_code": 0,
+    "stdout": "Selection seal verifies; service implementation/qualification remain pending.\nSelection seal verifies; service implementation/qualification remain pending.\nStopped campaign seals, all twelve raw cohorts, forecasts and review package verify.\n",
+    "stderr": "",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/review_nginx_power_confirmation.py --verify",
+    "exit_code": 0,
+    "stdout": "Complete confirmation, forecast barriers, restoration records and sealed assessment verify.\n",
+    "stderr": "",
+    "performance_collection": false
+  },
+  {
+    "command": "analysis/review_nginx_rate_transfer.py --verify",
+    "exit_code": 0,
+    "stdout": "Complete rate-transfer evidence, forecast barriers, cleanup and sealed assessment verify.\n",
+    "stderr": "",
+    "performance_collection": false
+  }
+]

@@ -1,0 +1,254 @@
+{
+  "status": "observer_overhead_qualification_inconclusive",
+  "qualified": false,
+  "total_offers": 7890,
+  "successful_offers": 7890,
+  "boundary_complete": true,
+  "overhead_complete": true,
+  "boundary_seconds": 41.52592909600207,
+  "overhead_seconds": 1752.785710070002,
+  "observer_wall_ms_range": [
+    0.907878,
+    1.461552
+  ],
+  "shared_controls_wall_ms_range": [
+    128.354828,
+    131.242293
+  ],
+  "boundaries": [
+    {
+      "rate_rps": 4,
+      "checks": {
+        "feature": {
+          "delta": {
+            "running_ns": 467778035,
+            "runnable_wait_ns": 219511,
+            "timeslices": 63
+          },
+          "offered": 25,
+          "running_ns_per_offer": 18711121.4,
+          "runnable_wait_ns_per_offer": 8780.44,
+          "qualification_oracle_only": true,
+          "hardware_qualified": false
+        },
+        "worker_cgroup_residual_ns_per_offer": 1.4,
+        "idle_carryover": {
+          "running_ns": 0,
+          "runnable_wait_ns": 0,
+          "timeslices": 0
+        },
+        "operational_boundary_checks": true,
+        "absolute_wait_accuracy_verified": false
+      },
+      "observer_wall_ns": 1242215
+    },
+    {
+      "rate_rps": 8,
+      "checks": {
+        "feature": {
+          "delta": {
+            "running_ns": 464272977,
+            "runnable_wait_ns": 674632,
+            "timeslices": 123
+          },
+          "offered": 25,
+          "running_ns_per_offer": 18570919.08,
+          "runnable_wait_ns_per_offer": 26985.28,
+          "qualification_oracle_only": true,
+          "hardware_qualified": false
+        },
+        "worker_cgroup_residual_ns_per_offer": 0.92,
+        "idle_carryover": {
+          "running_ns": 0,
+          "runnable_wait_ns": 0,
+          "timeslices": 0
+        },
+        "operational_boundary_checks": true,
+        "absolute_wait_accuracy_verified": false
+      },
+      "observer_wall_ns": 1616195
+    }
+  ],
+  "retained_throttling": [
+    {
+      "config": {
+        "role": "overhead",
+        "index": 7,
+        "rate_rps": 8,
+        "arm": "off",
+        "policy": "P0",
+        "block": 2,
+        "profile": "8",
+        "interval_ns": 125000000,
+        "warmup_count": 25,
+        "count": 300
+      },
+      "measurement_counter_delta": {
+        "usage_usec": 5642156,
+        "user_usec": 5517086,
+        "system_usec": 125070,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 376,
+        "nr_throttled": 1,
+        "throttled_usec": 11603,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    {
+      "config": {
+        "role": "overhead",
+        "index": 15,
+        "rate_rps": 8,
+        "arm": "on",
+        "policy": "P0",
+        "block": 4,
+        "profile": "8",
+        "interval_ns": 125000000,
+        "warmup_count": 25,
+        "count": 300
+      },
+      "measurement_counter_delta": {
+        "usage_usec": 5631731,
+        "user_usec": 5471033,
+        "system_usec": 160698,
+        "nice_usec": 0,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 376,
+        "nr_throttled": 1,
+        "throttled_usec": 1057,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    }
+  ],
+  "comparison": {
+    "status": "observer_overhead_qualification_inconclusive",
+    "qualified": false,
+    "rates": {
+      "4": {
+        "tests": {
+          "measurement_miss_pct": {
+            "differences": [
+              -2.333333333333343,
+              1.0000000000000142,
+              1.6666666666666714,
+              0.6666666666666714,
+              -0.3333333333333286,
+              1.0
+            ],
+            "mean": 0.27777777777778095,
+            "conditional_interval": [
+              -2.5215419513133916,
+              3.0770975068689532
+            ],
+            "margin": 2,
+            "equivalence_supported": false
+          },
+          "measurement_mean_ns": {
+            "differences": [
+              -124288.67333333567,
+              -1834.6733333319426,
+              -5350.863333333284,
+              36238.76333333179,
+              -51150.053333334625,
+              15530.170000001788
+            ],
+            "mean": -21809.22166666699,
+            "conditional_interval": [
+              -134771.185871447,
+              91152.74253811302
+            ],
+            "margin": 100000,
+            "equivalence_supported": false
+          },
+          "warmup_mean_ns": {
+            "differences": [
+              59021.76000000164,
+              -198085.3999999985,
+              38421.759999997914,
+              13031.280000001192,
+              311206.5200000033,
+              -129089.19999999925
+            ],
+            "mean": 15751.120000001043,
+            "conditional_interval": [
+              -328939.58445679926,
+              360441.82445680135
+            ],
+            "margin": 100000,
+            "equivalence_supported": false
+          }
+        },
+        "endpoint_transition_informative": true,
+        "mean_miss_pct": 80.86111111111111,
+        "qualifies": false
+      },
+      "8": {
+        "tests": {
+          "measurement_miss_pct": {
+            "differences": [
+              0.3333333333333286,
+              -3.333333333333343,
+              -1.0,
+              0.0,
+              2.0,
+              -3.0
+            ],
+            "mean": -0.8333333333333357,
+            "conditional_interval": [
+              -4.832828163470802,
+              3.1661614968041314
+            ],
+            "margin": 2,
+            "equivalence_supported": false
+          },
+          "measurement_mean_ns": {
+            "differences": [
+              -83261.28333333135,
+              -75887.99333333224,
+              -41442.66666666791,
+              -38487.29333333671,
+              99609.62333333492,
+              -33669.25
+            ],
+            "mean": -28856.477222222213,
+            "conditional_interval": [
+              -157989.1708626783,
+              100276.21641823387
+            ],
+            "margin": 100000,
+            "equivalence_supported": false
+          },
+          "warmup_mean_ns": {
+            "differences": [
+              -28809.919999998063,
+              9803.919999998063,
+              80923.60000000149,
+              -360126.0799999982,
+              -182629.44000000134,
+              76824.27999999747
+            ],
+            "mean": -67335.60666666676,
+            "conditional_interval": [
+              -404025.63563562714,
+              269354.42230229365
+            ],
+            "margin": 100000,
+            "equivalence_supported": false
+          }
+        },
+        "endpoint_transition_informative": true,
+        "mean_miss_pct": 82.02777777777779,
+        "qualifies": false
+      }
+    },
+    "all_offers_retained": true,
+    "predictive_usefulness_tested": false,
+    "inference": "Six paired block differences per rate; intervals conditional on approximately independent normal differences. No distribution-free or absolute counter accuracy guarantee.",
+    "simultaneous_model_intervals": "Six 99.5% conditional intervals; Bonferroni family coverage >=97% under the stated assumptions"
+  },
+  "predictive_usefulness_tested": false,
+  "discovery_started": false
+}

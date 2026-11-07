@@ -1,0 +1,125 @@
+{
+  "collection_performed": false,
+  "cost": {
+    "cap_incremental_offers": 10490,
+    "cap_overhead_projected_sec": 2337.0476134266696,
+    "cap_overhead_spare_after_reserve_sec": 242.9523865733304,
+    "historical_pair_seconds": {
+      "4": 186.62138038083353,
+      "8": 105.50957129750017
+    },
+    "new_counter_cost_included": false,
+    "optimistic_balanced_pairs_per_rate_cap": 8,
+    "overhead_phase_cap_sec": 2700,
+    "overhead_reserve_sec": 120,
+    "scope_cap_is_observed_time": false,
+    "scope_phase_cap_sec": 600,
+    "scope_plus_cap_projected_minutes": 48.95079355711116,
+    "scope_plus_warmup_only_width_projected_hours": 54.45433518689035,
+    "warmup_only_width_balanced_pairs_per_rate": 669,
+    "warmup_only_width_incremental_offers": 869790
+  },
+  "decision": "no_go_implementation_or_collection_with_current_precision_cost_evidence",
+  "family_alpha": 0.05,
+  "fixed_calibration_only_cutoffs_ns": [
+    17433213,
+    20683338,
+    21041565,
+    21341755,
+    21562926
+  ],
+  "interpretation": "Width-only geometry substitutes old-observer SD and a zero center for future statistics; not power, actual new-observer moments, a sample-size minimum, or qualification. Only two of fourteen gates have moments used here; their modeled precision is already insufficient. Future chronological paired normality and cost transfer are unverified. No variance-reduction method or larger budget is justified by this computation.",
+  "mean_equivalence_margin_ns": 20000,
+  "measurement_qualified": false,
+  "miss_equivalence_margin_pp": 2,
+  "precision": {
+    "assumed_cpu_service_scale_ns": 20000000,
+    "clock_time_budget_ns": 21748.0,
+    "cpu_time_to_response_mapping_verified": false,
+    "empirical_symmetric_radii_ns": {
+      "P0": 47708,
+      "P1": 43496
+    },
+    "limits_are_sampling_confidence_intervals": false,
+    "planning_radius_ns": 43496,
+    "single_window_clock_log_error_limit": 0.0005434046044326997,
+    "single_window_cpu_accounting_error_ns_per_offer": 10874.0,
+    "single_window_relative_upper_clock_error_pct": 0.05435522754619201
+  },
+  "predictive_usefulness_tested": false,
+  "prior_calibration_cost": {
+    "P0_cutoff_pool_offers": 800,
+    "new_calibration_acquired": false,
+    "source_campaign_measured_offers": 1600,
+    "source_campaign_warmup_offers": 100
+  },
+  "proposed_gates": 14,
+  "schema": "execution-rate-qualification-offline-design-v1",
+  "scope": "P0 only, rates 4/s and 8/s",
+  "sd_sensitivity_grid": [
+    {
+      "both_warmup_geometries_inside_margin": false,
+      "historical_sd_fraction": 1,
+      "warmup_zero_center_widths_ns": {
+        "4": 268803.5688052136,
+        "8": 262564.32273278787
+      }
+    },
+    {
+      "both_warmup_geometries_inside_margin": false,
+      "historical_sd_fraction": 0.5,
+      "warmup_zero_center_widths_ns": {
+        "4": 134401.7844026068,
+        "8": 131282.16136639394
+      }
+    },
+    {
+      "both_warmup_geometries_inside_margin": false,
+      "historical_sd_fraction": 0.25,
+      "warmup_zero_center_widths_ns": {
+        "4": 67200.8922013034,
+        "8": 65641.08068319697
+      }
+    },
+    {
+      "both_warmup_geometries_inside_margin": false,
+      "historical_sd_fraction": 0.1,
+      "warmup_zero_center_widths_ns": {
+        "4": 26880.35688052136,
+        "8": 26256.432273278788
+      }
+    },
+    {
+      "both_warmup_geometries_inside_margin": true,
+      "historical_sd_fraction": 0.05,
+      "warmup_zero_center_widths_ns": {
+        "4": 13440.17844026068,
+        "8": 13128.216136639394
+      }
+    }
+  ],
+  "warmup_gate_planning": {
+    "4": {
+      "historical_paired_sd_ns": 176857.21512351072,
+      "maximum_sd_at_cap_for_zero_center_width_ns": 13158.844274993158,
+      "needed_sd_fraction_of_historical": 0.07440377406035426,
+      "pilot_mean_geometry_has_no_solution": false,
+      "required_sd_reduction_pct": 92.55962259396458,
+      "single_95pct_zero_center_halfwidth_at_cap_ns": 147856.37878117824,
+      "zero_center_halfwidth_at_cap_ns": 268803.5688052136,
+      "zero_center_looser_100us_width_only_pairs": 32,
+      "zero_center_width_only_pairs": 669
+    },
+    "8": {
+      "historical_paired_sd_ns": 172752.15175049007,
+      "maximum_sd_at_cap_for_zero_center_width_ns": 13158.844274993158,
+      "needed_sd_fraction_of_historical": 0.07617181112741671,
+      "pilot_mean_geometry_has_no_solution": true,
+      "required_sd_reduction_pct": 92.38281888725834,
+      "single_95pct_zero_center_halfwidth_at_cap_ns": 144424.45883050954,
+      "zero_center_halfwidth_at_cap_ns": 262564.32273278787,
+      "zero_center_looser_100us_width_only_pairs": 31,
+      "zero_center_width_only_pairs": 639
+    }
+  }
+}

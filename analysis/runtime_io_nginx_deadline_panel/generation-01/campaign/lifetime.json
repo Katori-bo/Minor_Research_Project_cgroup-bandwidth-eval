@@ -1,0 +1,63 @@
+{
+  "started_monotonic": 36234.130100265,
+  "protocol": {
+    "schema": "nginx-deadline-panel-v1",
+    "policies": {
+      "P0": "balance_performance",
+      "P1": "performance"
+    },
+    "target_cpu": 2,
+    "governor": "powersave",
+    "quota_us": 25000,
+    "period_us": 100000,
+    "rates": [
+      4,
+      8
+    ],
+    "calibration_rate": 5,
+    "calibration_cohorts": 4,
+    "calibration_count": 400,
+    "blocks": 6,
+    "validation_count": 300,
+    "warmup_count": 25,
+    "qualification_count": 20,
+    "qualification_lifetime_count": 400,
+    "quantiles": [
+      "1/10",
+      "1/4",
+      "1/2",
+      "3/4",
+      "9/10"
+    ],
+    "quantile_rule": "floor(q*(n-1)), all offered outcomes; failure mass at infinity",
+    "historical_deadline_ns": 20565395,
+    "settling_sec": 10,
+    "service_active_sec": 120,
+    "within_service_reserve_sec": 8,
+    "policy_lease_sec": 150,
+    "qualification_total_sec": 600,
+    "campaign_total_sec": 2700,
+    "cohort_reserve_sec": 150,
+    "cleanup_reserve_sec": 120,
+    "retries": 0,
+    "scientific_measurement_offers": 8800,
+    "scientific_total_offers": 9500,
+    "qualification_total_offers": 1030,
+    "total_offers": 10530,
+    "accuracy_upper_reference_pp": 5,
+    "primary_t_multiplier": 3.164,
+    "primary_interval_coverage": 0.975,
+    "primary_score": "Per policy and block, max over five cutoffs of the mean absolute all-offer error across rates4/8; six blocks",
+    "primary_family": "Two matched-policy accuracy intervals; Bonferroni coverage >=95% conditional on independent approximately normal block scores. Calibration uncertainty not propagated.",
+    "descriptive_t_multiplier": 2.571,
+    "improvement_reference_pp": 2,
+    "stats_switch_required": 0,
+    "fixed_frequency": false,
+    "new_estimator": false,
+    "population": "All offers under the declared quota including throttling",
+    "failed_offers": "Misses at every finite deadline; no success-only renormalization",
+    "observers": "Original stock client/cgroup controls, policy boundary readbacks and CPU3 procstat; no worker sampler",
+    "equal_acquisition_for_methods": true,
+    "all_deadline_population_guarantee": false
+  }
+}
