@@ -3,6 +3,19 @@
 GitHub artifact snapshot: [download and restore the complete saved evidence](publication/README.md).
 Large records and software snapshots accompany the [10 October 2026 release](https://github.com/Katori-bo/Minor_Research_Project_cgroup-bandwidth-eval/releases/tag/research-snapshot-2026-10-10).
 
+## Repository update (2026-11-07)
+
+The saved research closeout and supporting materials are now published in the
+[GitHub repository](https://github.com/Katori-bo/Minor_Research_Project_cgroup-bandwidth-eval/commit/dc0b7a9).
+The update includes the [current research index](RESEARCH_FINAL.md),
+[unified manuscript](paper/unified_manuscript.md), standalone LaTeX source,
+reproduction guide, updated research plan, analysis tools and retained
+supporting evidence. To verify the saved manuscript from the repository root,
+run `python3 -B analysis/verify_unified_manuscript.py`. This publication
+preserves completed work and saved results; it does not report new performance
+collection or a change to the study's scientific conclusions. Independent-host
+confirmation remains pending as described in the closeout materials.
+
 ## Latest local research checkpoint (2026-10-11)
 
 **Empirical consolidation complete; local hardware collection held — 2026-10-11.**
